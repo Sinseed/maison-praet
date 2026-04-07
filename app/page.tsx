@@ -24,7 +24,7 @@ const MANDATS: Mandat[] = [
   { id: 4, titre: 'Immeuble locatif', lieu: 'Lausanne', prix: "1'790'000", pieces: '-', surface: '-', terrain: '-', categorie: 'exclusif', img: '/photos/lausanne-levant/IMG_6321.jpg' },
   { id: 5, titre: 'Villa jumelée', lieu: 'Cossonay-Ville', prix: "1'450'000", pieces: '5.5', surface: '-', terrain: '-', categorie: 'exclusif', img: '' },
   { id: 6, titre: 'Appartement PPE', lieu: 'Epalinges', prix: "1'090'000", pieces: '4', surface: '-', terrain: '-', categorie: 'exclusif', img: '' },
-  { id: 7, titre: 'Appartement PPE', lieu: 'Le Mont-sur-Lausanne', prix: "930'000", pieces: '-', surface: '-', terrain: '-', categorie: 'exclusif', img: '' },
+  { id: 7, titre: 'Appartement PPE', lieu: 'Le Mont-sur-Lausanne', prix: "930'000", pieces: '-', surface: '-', terrain: '-', categorie: 'exclusif', img: '/photos/lemont/IMG_4544.jpg' },
   // Mandats partagés
   { id: 8, titre: 'Maison jumelée', lieu: 'Gland', prix: "2'750'000", pieces: '-', surface: '-', terrain: '-', categorie: 'partage', img: '/photos/gland-buis/DJI_20260115164414_0005_D.jpg' },
   { id: 9, titre: 'Maison villageoise', lieu: 'Tartegnin', prix: "1'660'000", pieces: '-', surface: '-', terrain: '-', categorie: 'partage', img: '' },
