@@ -36,7 +36,8 @@ export const MANDATS: Mandat[] = [
   {
     id: 2, slug: 'immeuble-lausanne-vallon', titre: 'Immeuble de rendement', lieu: 'Lausanne',
     prix: "6'000'000", pieces: '-', surface: '520 m²', terrain: '-', categorie: 'en_vente',
-    img: '', photos: [],
+    img: '/photos/lausanne-vallon/DJI_20260116105551_0007_D.jpg',
+    photos: ['/photos/lausanne-vallon/DJI_20260116105551_0007_D.jpg','/photos/lausanne-vallon/IMG_6521.jpg','/photos/lausanne-vallon/IMG_6523.jpg','/photos/lausanne-vallon/IMG_6524.jpg','/photos/lausanne-vallon/IMG_6525.jpg','/photos/lausanne-vallon/IMG_6526.jpg'],
     description: "Immeuble de rendement idéalement situé à Lausanne. Surface locative d'environ 520 m². Revenus locatifs stables. Détails sur demande."
   },
   {
