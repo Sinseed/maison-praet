@@ -140,8 +140,8 @@ export const MANDATS: Mandat[] = [
   {
     id: 17, slug: 'maison-jouxtens', titre: 'Maison individuelle', lieu: 'Jouxtens-Mézery',
     prix: '-', pieces: '-', surface: '-', terrain: '-', categorie: 'vendu',
-    img: '/photos/jouxtens/IMG_4469.jpg',
-    photos: ['/photos/jouxtens/IMG_4469.jpg','/photos/jouxtens/IMG_4471.jpg','/photos/jouxtens/IMG_4480.jpg','/photos/jouxtens/IMG_4481.jpg','/photos/jouxtens/IMG_4491.jpg','/photos/jouxtens/IMG_4492.jpg','/photos/jouxtens/IMG_4494.jpg','/photos/jouxtens/IMG_4502.jpg','/photos/jouxtens/IMG_4503.jpg','/photos/jouxtens/IMG_4504.jpg','/photos/jouxtens/IMG_4507.jpg'],
+    img: '/photos/jouxtens/jouxtens_10.jpg',
+    photos: ['/photos/jouxtens/jouxtens_10.jpg','/photos/jouxtens/jouxtens_09.jpg','/photos/jouxtens/jouxtens_12.jpg','/photos/jouxtens/jouxtens_01.jpg','/photos/jouxtens/jouxtens_05.jpg','/photos/jouxtens/jouxtens_04.jpg','/photos/jouxtens/jouxtens_03.jpg','/photos/jouxtens/jouxtens_07.jpg','/photos/jouxtens/jouxtens_11.jpg','/photos/jouxtens/jouxtens_08.jpg','/photos/jouxtens/jouxtens_06.jpg','/photos/jouxtens/jouxtens_02.jpg'],
     description: "Maison individuelle à Jouxtens-Mézery, commune résidentielle prisée aux portes de Lausanne. Transaction conclue avec succès."
   },
 ]
