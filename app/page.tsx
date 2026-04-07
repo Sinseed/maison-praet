@@ -26,7 +26,7 @@ const MANDATS: Mandat[] = [
   { id: 6, titre: 'Appartement PPE', lieu: 'Epalinges', prix: "1'090'000", pieces: '4', surface: '-', terrain: '-', categorie: 'exclusif', img: '' },
   { id: 7, titre: 'Appartement PPE', lieu: 'Le Mont-sur-Lausanne', prix: "930'000", pieces: '-', surface: '-', terrain: '-', categorie: 'exclusif', img: '' },
   // Mandats partagés
-  { id: 8, titre: 'Maison jumelée', lieu: 'Gland', prix: "2'750'000", pieces: '-', surface: '-', terrain: '-', categorie: 'partage', img: '' },
+  { id: 8, titre: 'Maison jumelée', lieu: 'Gland', prix: "2'750'000", pieces: '-', surface: '-', terrain: '-', categorie: 'partage', img: '/photos/gland-buis/DJI_20260115164414_0005_D.jpg' },
   { id: 9, titre: 'Maison villageoise', lieu: 'Tartegnin', prix: "1'660'000", pieces: '-', surface: '-', terrain: '-', categorie: 'partage', img: '' },
   { id: 10, titre: 'Maison mitoyenne', lieu: 'Dully', prix: "1'590'000", pieces: '-', surface: '-', terrain: '-', categorie: 'partage', img: '' },
   { id: 11, titre: 'Appartement', lieu: 'Gland', prix: "1'250'000", pieces: '-', surface: '-', terrain: '-', categorie: 'partage', img: '' },
