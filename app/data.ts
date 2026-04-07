@@ -217,7 +217,7 @@ Ma méthode : je préfère perdre un mandat en donnant un prix honnête que de l
     categorie: 'Guide pratique',
     contenu: `Choisir un courtier, c'est confier un actif de plusieurs centaines de milliers de francs à quelqu'un. Pas à un algorithme. Pas à une plateforme. À une personne qui va défendre vos intérêts face à des acquéreurs bien informés et souvent bien accompagnés.
 
-La question centrale : est-ce qu'il va se battre pour moi ? Un bon courtier ne se contente pas de publier une annonce et d'attendre les appels. Il négocie. Il tient le prix. Il filtre les offres opportunistes et sait dire non à un acquéreur qui tente sa chance 15% en dessous. Quand une offre arrive, il l'analyse, la contextualise, et vous conseille avec franchise. Demandez-lui : racontez-moi une négociation où vous avez tenu bon pour votre client. S'il n'a pas de réponse concrète, c'est un signal. Un courtier qui a l'habitude de se battre pour ses vendeurs a toujours une histoire à raconter.
+La question centrale : est-ce qu'il va se battre pour moi ? Un bon courtier ne se contente pas de publier une annonce et d'attendre les appels. Il négocie. Il tient le prix. Il filtre les offres opportunistes et sait dire non à un acquéreur qui tente sa chance 15% en dessous. Quand une offre arrive, il l'analyse, la contextualise, et vous conseille avec franchise. Demandez-lui : racontez-moi une négociation où vous avez tenu bon pour votre client. S'il n'a pas de réponse concrète, c'est un signal. Un courtier qui a l'habitude de se battre pour ses vendeurs a toujours une histoire à raconter. Et demandez-lui aussi un chiffre simple : à quel pourcentage du prix estimé vos biens se vendent-ils réellement ? C'est le meilleur indicateur de sa capacité à fixer un prix juste et à le défendre.
 
 La connaissance du marché local est non négociable. Un courtier qui travaille entre Genève et Zurich ne connaît pas le prix au m² à Cossonay. Demandez des références de ventes récentes dans votre commune ou votre quartier. Un bon courtier les a en tête. Il connaît les acquéreurs actifs, les notaires du coin, les délais réels. C'est cette connaissance fine qui lui permet de défendre votre prix avec des arguments concrets face à un acquéreur qui négocie.
 
@@ -238,7 +238,7 @@ Mon conseil : rencontrez au moins deux courtiers avant de choisir. Posez-leur le
 export const STATS = [
   { value: '6+', label: "Années d'expérience" },
   { value: '40+', label: 'Transactions réalisées' },
-  { value: '100%', label: 'Arc lémanique & Gros-de-Vaud' },
+  { value: '96.8%', label: 'Vendus au prix estimé' },
 ]
 
 export const FILTRES = [
