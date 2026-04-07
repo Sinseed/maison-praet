@@ -149,7 +149,7 @@ Mon conseil : méfiez-vous des estimations en ligne. Elles se basent sur des alg
   {
     slug: 'frais-vente-immobiliere-suisse',
     titre: 'Vendre en Suisse : tous les frais à anticiper',
-    chapeau: "Commission, impôt sur le gain immobilier, frais de notaire, remboursement hypothécaire... Le net vendeur réserve parfois des surprises. Tour d'horizon.",
+    chapeau: "Commission, impôt sur le gain immobilier, frais de notaire, remboursement hypothécaire... Le montant qu'il vous reste après la vente réserve parfois des surprises. Tour d'horizon.",
     date: '2026-04-01',
     categorie: 'Guide pratique',
     contenu: `Quand un propriétaire me demande "combien va me rester après la vente ?", la réponse n'est jamais simplement le prix de vente moins l'hypothèque. Voici les postes à connaître.
@@ -165,7 +165,7 @@ Le remboursement anticipé de l'hypothèque peut coûter cher si vous avez un ta
 Les diagnostics et certificats ne sont pas obligatoires pour vendre dans le Canton de Vaud, mais un CECB (Certificat énergétique cantonal des bâtiments) est de plus en plus demandé par les acquéreurs et leurs banques. Comptez entre CHF 1'000.- et CHF 3'000.- selon la taille du bâtiment.
 
 Mon conseil : faites le calcul complet avant de fixer votre prix minimum. Je propose systématiquement à mes clients un décompte vendeur prévisionnel qui liste tous ces postes.`,
-    cta: "Besoin d'y voir clair sur le net vendeur de votre bien ? Contactez-moi pour un décompte personnalisé."
+    cta: "Besoin d'y voir clair sur ce qu'il vous restera après la vente ? Contactez-moi pour un décompte personnalisé."
   },
   {
     slug: 'marche-immobilier-vaudois-2026',
