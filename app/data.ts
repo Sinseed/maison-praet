@@ -194,20 +194,22 @@ Mon analyse : c'est un bon moment pour vendre si votre bien est en bon état et 
     chapeau: "Trois mois sur le marché sans offre sérieuse ? Le problème est presque toujours le même. Et la solution aussi.",
     date: '2026-03-18',
     categorie: 'Conseils vendeurs',
-    contenu: `Après six ans de courtage dans le Canton de Vaud, je peux affirmer ceci : quand un bien ne se vend pas, la cause est dans 90% des cas liée au prix. Pas à la localisation, pas au marché, pas à la saison. Au prix.
+    contenu: `Après six ans de courtage dans le Canton de Vaud, je peux affirmer ceci : quand un bien ne se vend pas, la cause est dans la grande majorité des cas liée au prix ou à la présentation. Pas à la localisation, pas au marché, pas à la saison.
 
 Voici les signaux qui ne trompent pas.
 
-Beaucoup de visites mais aucune offre. Votre bien plaît, mais pas à ce prix. Les acquéreurs visitent, comparent, et trouvent mieux ailleurs pour le même budget. La solution : une correction de prix de 5 à 8% relance immédiatement l'intérêt.
+Beaucoup de visites mais aucune offre. Votre bien plaît, mais pas à ce prix. Les acquéreurs visitent, comparent, et trouvent mieux ailleurs pour le même budget. Le bien est attractif, le prix ne l'est pas.
 
-Peu de visites et peu de clics sur les portails. Votre bien est invisible ou mal présenté. Deux causes possibles : le prix est tellement au-dessus du marché que les acquéreurs ne le regardent même pas, ou les photos et la description ne rendent pas justice au bien. La solution : revoir le prix ET la présentation.
+Peu de visites et peu de clics sur les portails. Votre bien est invisible ou mal présenté. Deux causes possibles : le prix est tellement au-dessus du marché que les acquéreurs ne le regardent même pas, ou les photos et la description ne rendent pas justice au bien. Parfois les deux à la fois.
 
-Des offres, mais toutes en dessous de 10% du prix affiché. Le marché vous envoie un message clair. Quand trois acquéreurs indépendants arrivent au même chiffre, ce n'est pas eux qui se trompent.
+Des offres, mais toutes nettement en dessous du prix affiché. Le marché vous envoie un message clair. Quand trois acquéreurs indépendants arrivent au même chiffre, ce n'est pas eux qui se trompent.
 
-Le piège du courtier complaisant. Certains courtiers gonflent leur estimation pour décrocher le mandat, puis proposent des baisses de prix successives. Résultat : le bien reste des mois en ligne, accumule les jours de publication, et chaque acquéreur potentiel se demande "qu'est-ce qui ne va pas avec ce bien ?". C'est exactement la spirale que j'essaie d'éviter avec mes clients.
+Votre bien est en ligne depuis plus de 60 jours. C'est un signal que beaucoup de vendeurs sous-estiment. Les portails immobiliers affichent la durée de publication. Un acquéreur qui voit un bien en ligne depuis trois mois se pose immédiatement la question : qu'est-ce qui ne va pas ? Chaque semaine supplémentaire érode la crédibilité du prix. C'est un cercle vicieux : plus le bien stagne, plus l'acquéreur se sent en position de force pour négocier.
 
-Ma méthode : je préfère perdre un mandat en donnant un prix honnête que de le gagner avec un prix irréaliste. Si mon estimation ne correspond pas à vos attentes, je vous l'explique et je vous laisse le choix. Mais je ne vous ferai pas perdre six mois.`,
-    cta: "Votre bien est en vente depuis trop longtemps ? Contactez-moi pour un deuxième avis, franc et sans engagement."
+Le piège du courtier complaisant. Certains courtiers gonflent leur estimation pour décrocher le mandat, puis proposent des baisses de prix successives. Résultat : le bien accumule les jours en ligne, et chaque acquéreur potentiel se demande "qu'est-ce qui ne va pas avec ce bien ?". C'est exactement la spirale que j'essaie d'éviter avec mes clients.
+
+Ma méthode : je préfère perdre un mandat en donnant un prix honnête que de le gagner avec un prix irréaliste. Si votre attente de prix ne correspond pas à mon estimation, je vous le dis clairement, je vous explique pourquoi, et vous êtes libre de votre décision. Mais je ne vous laisserai pas partir sur un prix que le marché ne validera pas sans vous avoir prévenu.`,
+    cta: "Votre bien est en vente depuis trop longtemps ? Contactez-moi pour une analyse de votre situation, franche et sans engagement."
   },
   {
     slug: 'choisir-son-courtier-suisse-romande',
