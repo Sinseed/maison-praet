@@ -22,7 +22,7 @@ const MANDATS: Mandat[] = [
   { id: 2, titre: 'Immeuble de rendement', lieu: 'Lausanne', prix: "6'000'000", pieces: '-', surface: '520 m²', terrain: '-', categorie: 'en_vente', img: '' },
   { id: 3, titre: 'Immeuble locatif', lieu: 'Glion', prix: "2'420'000", pieces: '-', surface: '-', terrain: '-', categorie: 'en_vente', img: '/photos/glion/dji_fly_20260305_135802_0017_1772715631429_photo.jpg' },
   { id: 4, titre: 'Immeuble locatif', lieu: 'Lausanne', prix: "1'790'000", pieces: '-', surface: '-', terrain: '-', categorie: 'reserve', img: '/photos/lausanne-levant/IMG_6321.jpg' },
-  { id: 5, titre: 'Villa jumelée', lieu: 'Cossonay-Ville', prix: "1'450'000", pieces: '5.5', surface: '-', terrain: '-', categorie: 'en_vente', img: '' },
+  { id: 5, titre: 'Villa jumelée', lieu: 'Cossonay-Ville', prix: "1'450'000", pieces: '5.5', surface: '-', terrain: '-', categorie: 'en_vente', img: '/photos/cossonay/DJI_20260304145633_0009_D.jpg' },
   { id: 6, titre: 'Appartement PPE', lieu: 'Epalinges', prix: "1'090'000", pieces: '4', surface: '-', terrain: '-', categorie: 'en_vente', img: '' },
   { id: 7, titre: 'Appartement PPE', lieu: 'Le Mont-sur-Lausanne', prix: "930'000", pieces: '-', surface: '-', terrain: '-', categorie: 'en_vente', img: '/photos/lemont/IMG_4544.jpg' },
   { id: 8, titre: 'Maison jumelée', lieu: 'Gland', prix: "2'750'000", pieces: '-', surface: '-', terrain: '-', categorie: 'en_vente', img: '/photos/gland-buis/DJI_20260115164414_0005_D.jpg' },
