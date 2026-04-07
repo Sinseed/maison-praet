@@ -12,7 +12,7 @@ type Mandat = {
   pieces: string
   surface: string
   terrain: string
-  categorie: 'exclusif' | 'partage' | 'vendu'
+  categorie: 'exclusif' | 'partage' | 'vendu' | 'reserve'
   img: string
 }
 
@@ -21,7 +21,7 @@ const MANDATS: Mandat[] = [
   { id: 1, titre: 'Maison individuelle', lieu: 'Yverdon-les-Bains', prix: "2'290'000", pieces: '8.5', surface: '240 m²', terrain: "1'260 m²", categorie: 'exclusif', img: '/photos/yverdon/IMG_5987.jpg' },
   { id: 2, titre: 'Immeuble de rendement', lieu: 'Lausanne', prix: "6'000'000", pieces: '-', surface: '520 m²', terrain: '-', categorie: 'exclusif', img: '' },
   { id: 3, titre: 'Immeuble locatif', lieu: 'Glion', prix: "2'420'000", pieces: '-', surface: '-', terrain: '-', categorie: 'exclusif', img: '/photos/glion/dji_fly_20260305_135802_0017_1772715631429_photo.jpg' },
-  { id: 4, titre: 'Immeuble locatif', lieu: 'Lausanne', prix: "1'790'000", pieces: '-', surface: '-', terrain: '-', categorie: 'exclusif', img: '/photos/lausanne-levant/IMG_6321.jpg' },
+  { id: 4, titre: 'Immeuble locatif', lieu: 'Lausanne', prix: "1'790'000", pieces: '-', surface: '-', terrain: '-', categorie: 'reserve', img: '/photos/lausanne-levant/IMG_6321.jpg' },
   { id: 5, titre: 'Villa jumelée', lieu: 'Cossonay-Ville', prix: "1'450'000", pieces: '5.5', surface: '-', terrain: '-', categorie: 'exclusif', img: '' },
   { id: 6, titre: 'Appartement PPE', lieu: 'Epalinges', prix: "1'090'000", pieces: '4', surface: '-', terrain: '-', categorie: 'exclusif', img: '' },
   { id: 7, titre: 'Appartement PPE', lieu: 'Le Mont-sur-Lausanne', prix: "930'000", pieces: '-', surface: '-', terrain: '-', categorie: 'exclusif', img: '/photos/lemont/IMG_4544.jpg' },
@@ -232,11 +232,13 @@ function Mandats() {
   const badgeLabel = (cat: string) => {
     if (cat === 'exclusif') return 'Exclusif'
     if (cat === 'partage') return 'Partagé'
+    if (cat === 'reserve') return 'Réservé'
     return 'Vendu'
   }
   const badgeColor = (cat: string) => {
     if (cat === 'exclusif') return 'bg-brand-gold text-brand-dark'
     if (cat === 'partage') return 'bg-brand-border text-brand-text'
+    if (cat === 'reserve') return 'bg-amber-700/60 text-amber-200'
     return 'bg-green-800/60 text-green-200'
   }
 
