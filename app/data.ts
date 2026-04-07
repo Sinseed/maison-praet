@@ -130,6 +130,13 @@ export const MANDATS: Mandat[] = [
     photos: ['/photos/crissier/P1010660.jpg','/photos/crissier/P1010664.jpg','/photos/crissier/IMG_4063.jpg','/photos/crissier/IMG_4068.jpg','/photos/crissier/sejour-piscine.png','/photos/crissier/cuisine.jpg','/photos/crissier/chambre-lumineuse.jpg','/photos/crissier/chambre-combles.jpg','/photos/crissier/chambre-ado.jpg','/photos/crissier/chambre-enfant.jpg','/photos/crissier/sdb-baignoire.jpg','/photos/crissier/sdb-douche.jpg','/photos/crissier/dressing.png'],
     description: "Villa individuelle avec piscine à Crissier. Pièces de réception lumineuses avec cheminée, cuisine équipée, plusieurs chambres et salles de bains rénovées. Jardin arboré et piscine. Transaction conclue avec succès."
   },
+  {
+    id: 16, slug: 'maison-gilly', titre: 'Maison villageoise', lieu: 'Gilly',
+    prix: '-', pieces: '-', surface: '-', terrain: '-', categorie: 'vendu',
+    img: '/photos/gilly/IMG_4158__1_.jpg',
+    photos: ['/photos/gilly/IMG_4158__1_.jpg','/photos/gilly/IMG_4162.jpg','/photos/gilly/IMG_4165.jpg','/photos/gilly/IMG_4169.jpg','/photos/gilly/IMG_4170.jpg','/photos/gilly/IMG_4173.jpg','/photos/gilly/IMG_4174.jpg','/photos/gilly/IMG_4176.jpg','/photos/gilly/IMG_4177.jpg','/photos/gilly/IMG_4179.jpg','/photos/gilly/IMG_4180.jpg','/photos/gilly/IMG_4183.jpg'],
+    description: "Maison villageoise de caractère à Gilly, au coeur du vignoble de La Côte. Murs crépis, tomettes, poutres apparentes et poêle à bois. Terrasse sur les toits et volumes atypiques. Transaction conclue avec succès."
+  },
 ]
 
 // ─── ARTICLES ───────────────────────────────────────────────────────────────
