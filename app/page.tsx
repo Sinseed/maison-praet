@@ -1,100 +1,40 @@
 'use client'
 import { useState, useEffect } from 'react'
-import { Phone, Mail, MapPin, ChevronDown, ArrowRight, Shield, TrendingUp, Users, Menu, X } from 'lucide-react'
+import { Phone, Mail, MapPin, ChevronDown, ArrowRight, Shield, TrendingUp, Users, Menu, X, Camera, BookOpen, Send } from 'lucide-react'
 import Link from 'next/link'
+import { MANDATS, ARTICLES, STATS, FILTRES } from './data'
 
-// ─── DATA ────────────────────────────────────────────────────────────────────
-type Mandat = {
-  id: number
-  titre: string
-  lieu: string
-  prix: string
-  pieces: string
-  surface: string
-  terrain: string
-  categorie: 'en_vente' | 'vendu' | 'reserve'
-  img: string
-}
-
-const MANDATS: Mandat[] = [
-  // En vente
-  { id: 1, titre: 'Maison individuelle', lieu: 'Yverdon-les-Bains', prix: "2'290'000", pieces: '8.5', surface: '240 m²', terrain: "1'260 m²", categorie: 'en_vente', img: '/photos/yverdon/IMG_5987.jpg' },
-  { id: 2, titre: 'Immeuble de rendement', lieu: 'Lausanne', prix: "6'000'000", pieces: '-', surface: '520 m²', terrain: '-', categorie: 'en_vente', img: '' },
-  { id: 3, titre: 'Immeuble locatif', lieu: 'Glion', prix: "2'420'000", pieces: '-', surface: '-', terrain: '-', categorie: 'en_vente', img: '/photos/glion/dji_fly_20260305_135802_0017_1772715631429_photo.jpg' },
-  { id: 4, titre: 'Immeuble locatif', lieu: 'Lausanne', prix: "1'790'000", pieces: '-', surface: '-', terrain: '-', categorie: 'reserve', img: '/photos/lausanne-levant/IMG_6321.jpg' },
-  { id: 5, titre: 'Villa jumelée', lieu: 'Cossonay-Ville', prix: "1'450'000", pieces: '5.5', surface: '-', terrain: '-', categorie: 'en_vente', img: '/photos/cossonay/DJI_20260304145633_0009_D.jpg' },
-  { id: 6, titre: 'Appartement PPE', lieu: 'Epalinges', prix: "1'090'000", pieces: '4', surface: '-', terrain: '-', categorie: 'en_vente', img: '' },
-  { id: 7, titre: 'Appartement PPE', lieu: 'Le Mont-sur-Lausanne', prix: "930'000", pieces: '-', surface: '-', terrain: '-', categorie: 'en_vente', img: '/photos/lemont/IMG_4544.jpg' },
-  { id: 8, titre: 'Maison jumelée', lieu: 'Gland', prix: "2'750'000", pieces: '-', surface: '-', terrain: '-', categorie: 'en_vente', img: '/photos/gland-buis/DJI_20260115164414_0005_D.jpg' },
-  { id: 9, titre: 'Maison villageoise', lieu: 'Tartegnin', prix: "1'660'000", pieces: '-', surface: '-', terrain: '-', categorie: 'en_vente', img: '/photos/tartegnin/Retouchées__1_.jpg' },
-  { id: 10, titre: 'Maison mitoyenne', lieu: 'Dully', prix: "1'590'000", pieces: '-', surface: '-', terrain: '-', categorie: 'en_vente', img: '' },
-  { id: 11, titre: 'Appartement', lieu: 'Gland', prix: "1'250'000", pieces: '-', surface: '-', terrain: '-', categorie: 'en_vente', img: '/photos/gland-aubepine/DJI_20260115163614_0002_D.jpg' },
-  { id: 12, titre: 'Appartement', lieu: 'Longirod', prix: "795'000", pieces: '-', surface: '-', terrain: '-', categorie: 'en_vente', img: '/photos/longirod/DJI_20260119103256_0010_D.jpg' },
-  // Ventes conclues
-  { id: 13, titre: 'Maison individuelle', lieu: 'Senarclens', prix: "1'500'000", pieces: '-', surface: '-', terrain: '-', categorie: 'vendu', img: '/photos/senarclens/1775570719205_IMG_5840.jpg' },
-  { id: 14, titre: 'Immeuble 3 logements', lieu: 'Lausanne', prix: "1'480'000", pieces: '-', surface: '-', terrain: '-', categorie: 'vendu', img: '/photos/lausanne-monttendre/IMG_6530.jpg' },
-]
-
-const STATS = [
-  { value: '6+', label: "Années d'expérience" },
-  { value: '40+', label: 'Transactions réalisées' },
-  { value: '100%', label: 'Arc lémanique & Gros-de-Vaud' },
-]
-
-const FILTRES = [
-  { key: 'all', label: 'Tous' },
-  { key: 'en_vente', label: 'En vente' },
-  { key: 'vendu', label: 'Vendus' },
-] as const
-
-// ─── NAV ─────────────────────────────────────────────────────────────────────
 function Nav() {
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
-
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60)
     window.addEventListener('scroll', onScroll)
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
-
+  const links = [
+    {label: 'À propos', href: '#apropos'},{label: 'Nos biens', href: '#nosbiens'},
+    {label: 'Approche', href: '#approche'},{label: 'Journal', href: '#journal'},{label: 'Contact', href: '#contact'},
+  ]
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? 'bg-brand-dark/95 backdrop-blur-md border-b border-brand-border' : ''}`}>
       <div className="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
-        <a href="#" className="font-display text-2xl font-semibold tracking-wide text-white">
-          Maison <span className="text-brand-gold">Praet</span>
-        </a>
+        <a href="#" className="font-display text-2xl font-semibold tracking-wide text-white">Maison <span className="text-brand-gold">Praet</span></a>
         <div className="hidden md:flex items-center gap-10">
-          {[{label: 'À propos', href: '#apropos'}, {label: 'Nos biens', href: '#nosbiens'}, {label: 'Approche', href: '#approche'}, {label: 'Contact', href: '#contact'}].map(item => (
-            <a key={item.label} href={item.href}
-               className="font-body text-sm tracking-widest uppercase text-brand-muted hover:text-brand-gold transition-colors duration-300">
-              {item.label}
-            </a>
-          ))}
-          <Link href="/crm" className="font-body text-xs tracking-widest uppercase text-brand-border hover:text-brand-muted transition-colors duration-300">
-            CRM
-          </Link>
+          {links.map(item => (<a key={item.label} href={item.href} className="font-body text-sm tracking-widest uppercase text-brand-muted hover:text-brand-gold transition-colors duration-300">{item.label}</a>))}
+          <Link href="/crm" className="font-body text-xs tracking-widest uppercase text-brand-border hover:text-brand-muted transition-colors duration-300">CRM</Link>
         </div>
-        <button onClick={() => setOpen(!open)} className="md:hidden text-white">
-          {open ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        <button onClick={() => setOpen(!open)} className="md:hidden text-white">{open ? <X size={24} /> : <Menu size={24} />}</button>
       </div>
       {open && (
         <div className="md:hidden bg-brand-dark/98 backdrop-blur-lg border-t border-brand-border px-6 pb-6 space-y-4">
-          {[{label: 'À propos', href: '#apropos'}, {label: 'Nos biens', href: '#nosbiens'}, {label: 'Approche', href: '#approche'}, {label: 'Contact', href: '#contact'}].map(item => (
-            <a key={item.label} href={item.href}
-               onClick={() => setOpen(false)}
-               className="block font-body text-sm tracking-widest uppercase text-brand-muted hover:text-brand-gold transition-colors">
-              {item.label}
-            </a>
-          ))}
+          {links.map(item => (<a key={item.label} href={item.href} onClick={() => setOpen(false)} className="block font-body text-sm tracking-widest uppercase text-brand-muted hover:text-brand-gold transition-colors">{item.label}</a>))}
         </div>
       )}
     </nav>
   )
 }
 
-// ─── HERO ────────────────────────────────────────────────────────────────────
 function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -105,52 +45,31 @@ function Hero() {
       </div>
       <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
         <div className="w-px h-20 bg-gradient-to-b from-transparent via-brand-gold to-transparent mx-auto mb-10 opacity-40" />
-        <p className="font-body text-sm tracking-[0.35em] uppercase text-brand-gold mb-8">
-          Courtage immobilier · Canton de Vaud
-        </p>
+        <p className="font-body text-sm tracking-[0.35em] uppercase text-brand-gold mb-8">Courtage immobilier · Canton de Vaud</p>
         <h1 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-light text-white leading-[1.1] mb-8 text-balance">
-          L&apos;immobilier, c&apos;est avant tout
-          <span className="block italic text-brand-gold font-normal mt-2">une relation.</span>
+          L&apos;immobilier, c&apos;est avant tout<span className="block italic text-brand-gold font-normal mt-2">une relation.</span>
         </h1>
-        <p className="font-body text-lg sm:text-xl text-brand-muted max-w-2xl mx-auto mb-12 leading-relaxed">
-          Thomas Praet · Courtier certifié USPI · Plus de 6 ans sur le terrain, de Morges à Yverdon-les-Bains.
-        </p>
+        <p className="font-body text-lg sm:text-xl text-brand-muted max-w-2xl mx-auto mb-12 leading-relaxed">Thomas Praet · Courtier certifié USPI · Plus de 6 ans sur le terrain, de Morges à Yverdon-les-Bains.</p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a href="#contact"
-             className="group inline-flex items-center gap-3 bg-brand-gold text-brand-dark px-8 py-4 font-body text-sm font-medium tracking-widest uppercase hover:bg-brand-goldLight transition-all duration-300">
-            Prendre contact
-            <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-          </a>
-          <a href="#nosbiens"
-             className="inline-flex items-center gap-3 border border-brand-border text-brand-text px-8 py-4 font-body text-sm tracking-widest uppercase hover:border-brand-gold hover:text-brand-gold transition-all duration-300">
-            Voir nos biens
-          </a>
+          <a href="#estimation" className="group inline-flex items-center gap-3 bg-brand-gold text-brand-dark px-8 py-4 font-body text-sm font-medium tracking-widest uppercase hover:bg-brand-goldLight transition-all duration-300">Estimer mon bien<ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" /></a>
+          <a href="#nosbiens" className="inline-flex items-center gap-3 border border-brand-border text-brand-text px-8 py-4 font-body text-sm tracking-widest uppercase hover:border-brand-gold hover:text-brand-gold transition-all duration-300">Voir nos biens</a>
         </div>
       </div>
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-        <ChevronDown size={20} className="text-brand-muted" />
-      </div>
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce"><ChevronDown size={20} className="text-brand-muted" /></div>
     </section>
   )
 }
 
-// ─── STATS BAR ──────────────────────────────────────────────────────────────
 function StatsBar() {
   return (
     <section className="border-y border-brand-border">
       <div className="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 sm:grid-cols-3 gap-8">
-        {STATS.map(s => (
-          <div key={s.label} className="text-center">
-            <p className="font-display text-4xl md:text-5xl font-light text-brand-gold">{s.value}</p>
-            <p className="font-body text-sm tracking-widest uppercase text-brand-muted mt-2">{s.label}</p>
-          </div>
-        ))}
+        {STATS.map(s => (<div key={s.label} className="text-center"><p className="font-display text-4xl md:text-5xl font-light text-brand-gold">{s.value}</p><p className="font-body text-sm tracking-widest uppercase text-brand-muted mt-2">{s.label}</p></div>))}
       </div>
     </section>
   )
 }
 
-// ─── ABOUT ──────────────────────────────────────────────────────────────────
 function About() {
   return (
     <section id="apropos" className="max-w-7xl mx-auto px-6 py-24 md:py-32">
@@ -161,36 +80,19 @@ function About() {
         </div>
         <div>
           <p className="font-body text-sm tracking-[0.3em] uppercase text-brand-gold mb-4">À propos</p>
-          <h2 className="font-display text-4xl md:text-5xl font-light text-white mb-8 leading-tight">
-            Un courtier qui vous dit<br />
-            <span className="italic text-brand-gold">la vérité.</span>
-          </h2>
+          <h2 className="font-display text-4xl md:text-5xl font-light text-white mb-8 leading-tight">Un courtier qui vous dit<br /><span className="italic text-brand-gold">la vérité.</span></h2>
           <div className="space-y-5 font-body text-brand-text leading-relaxed">
-            <p>
-              Je ne suis pas un courtier qui promet un prix pour obtenir un mandat, puis le baisse trois mois plus tard.
-              Si je ne suis pas convaincu de pouvoir vendre votre bien dans de bonnes conditions, je vous le dis.
-            </p>
-            <p>
-              Depuis plus de six ans, j&apos;accompagne des propriétaires sur l&apos;ensemble de l&apos;arc lémanique et du Gros-de-Vaud.
-              Chaque mandat est traité avec la même rigueur : estimation fondée, stratégie de prix réaliste, suivi transparent
-              jusqu&apos;à la signature chez le notaire.
-            </p>
-            <p>
-              Certifié USPI, rattaché à Golay Immobilier SA, une régie lausannoise de référence.
-            </p>
+            <p>Je ne suis pas un courtier qui promet un prix pour obtenir un mandat, puis le baisse trois mois plus tard. Si je ne suis pas convaincu de pouvoir vendre votre bien dans de bonnes conditions, je vous le dis.</p>
+            <p>Depuis plus de six ans, j&apos;accompagne des propriétaires sur l&apos;ensemble de l&apos;arc lémanique et du Gros-de-Vaud. Chaque mandat est traité avec la même rigueur : estimation fondée, stratégie de prix réaliste, suivi transparent jusqu&apos;à la signature chez le notaire.</p>
+            <p>Certifié USPI, rattaché à Golay Immobilier SA, une régie lausannoise de référence.</p>
           </div>
-          <blockquote className="mt-10 pl-6 border-l-2 border-brand-gold/40">
-            <p className="font-display text-xl italic text-brand-goldLight leading-relaxed">
-              &laquo;&nbsp;Si je n&apos;en suis pas convaincu, je vous le dis.&nbsp;&raquo;
-            </p>
-          </blockquote>
+          <blockquote className="mt-10 pl-6 border-l-2 border-brand-gold/40"><p className="font-display text-xl italic text-brand-goldLight leading-relaxed">&laquo;&nbsp;Si je n&apos;en suis pas convaincu, je vous le dis.&nbsp;&raquo;</p></blockquote>
         </div>
       </div>
     </section>
   )
 }
 
-// ─── APPROACH ───────────────────────────────────────────────────────────────
 function Approach() {
   const services = [
     { icon: <TrendingUp size={28} />, title: 'Estimation & stratégie de prix', desc: "Analyse complète : valeur intrinsèque, valeur de rendement, valeur vénale. Un rapport structuré qui vous donne les clés pour décider en connaissance de cause." },
@@ -202,10 +104,7 @@ function Approach() {
       <div className="max-w-7xl mx-auto px-6 py-24 md:py-32">
         <div className="text-center mb-16">
           <p className="font-body text-sm tracking-[0.3em] uppercase text-brand-gold mb-4">Mon approche</p>
-          <h2 className="font-display text-4xl md:text-5xl font-light text-white">
-            Trois étapes,<br />
-            <span className="italic text-brand-gold">un seul objectif.</span>
-          </h2>
+          <h2 className="font-display text-4xl md:text-5xl font-light text-white">Trois étapes,<br /><span className="italic text-brand-gold">un seul objectif.</span></h2>
         </div>
         <div className="grid md:grid-cols-3 gap-8">
           {services.map((s, i) => (
@@ -222,128 +121,78 @@ function Approach() {
   )
 }
 
-// ─── MANDATS ────────────────────────────────────────────────────────────────
-function Mandats() {
+function MandatsSection() {
   const [filtre, setFiltre] = useState<string>('all')
   const filtered = filtre === 'all' ? MANDATS : MANDATS.filter(m => m.categorie === filtre)
-
-  const badgeLabel = (cat: string) => {
-    if (cat === 'en_vente') return 'En vente'
-    if (cat === 'reserve') return 'Réservé'
-    return 'Vendu'
-  }
-  const badgeColor = (cat: string) => {
-    if (cat === 'en_vente') return 'bg-brand-gold text-brand-dark'
-    if (cat === 'reserve') return 'bg-amber-700/60 text-amber-200'
-    return 'bg-green-800/60 text-green-200'
-  }
-
+  const badgeLabel = (cat: string) => cat === 'en_vente' ? 'En vente' : cat === 'reserve' ? 'Réservé' : 'Vendu'
+  const badgeColor = (cat: string) => cat === 'en_vente' ? 'bg-brand-gold text-brand-dark' : cat === 'reserve' ? 'bg-amber-700/60 text-amber-200' : 'bg-green-800/60 text-green-200'
   return (
     <section id="nosbiens" className="max-w-7xl mx-auto px-6 py-24 md:py-32">
       <div className="text-center mb-12">
         <p className="font-body text-sm tracking-[0.3em] uppercase text-brand-gold mb-4">Portefeuille</p>
-        <h2 className="font-display text-4xl md:text-5xl font-light text-white">
-          Nos biens <span className="italic text-brand-gold">en cours</span>
-        </h2>
+        <h2 className="font-display text-4xl md:text-5xl font-light text-white">Nos biens <span className="italic text-brand-gold">en cours</span></h2>
       </div>
       <div className="flex justify-center gap-3 mb-12 flex-wrap">
-        {FILTRES.map(f => (
-          <button key={f.key} onClick={() => setFiltre(f.key)}
-            className={`font-body text-xs tracking-widest uppercase px-5 py-2.5 border transition-all duration-300 ${
-              filtre === f.key ? 'border-brand-gold text-brand-gold bg-brand-gold/10' : 'border-brand-border text-brand-muted hover:border-brand-gold/50 hover:text-brand-gold'
-            }`}>
-            {f.label}
-          </button>
-        ))}
+        {FILTRES.map(f => (<button key={f.key} onClick={() => setFiltre(f.key)} className={`font-body text-xs tracking-widest uppercase px-5 py-2.5 border transition-all duration-300 ${filtre === f.key ? 'border-brand-gold text-brand-gold bg-brand-gold/10' : 'border-brand-border text-brand-muted hover:border-brand-gold/50 hover:text-brand-gold'}`}>{f.label}</button>))}
       </div>
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {filtered.map(m => (
-          <div key={m.id} className="group bg-brand-card border border-brand-border overflow-hidden hover:border-brand-gold/30 transition-all duration-500">
+          <Link href={`/biens/${m.slug}`} key={m.id} className="group bg-brand-card border border-brand-border overflow-hidden hover:border-brand-gold/30 transition-all duration-500 block">
             <div className="relative aspect-[4/3] bg-brand-dark overflow-hidden">
-              {m.img ? (
-                <img src={m.img} alt={m.titre} className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-700" />
-              ) : (
-                <div className="absolute inset-0 flex items-center justify-center text-brand-muted/40 font-body text-xs tracking-widest uppercase">Photo à venir</div>
-              )}
-              <div className="absolute top-4 right-4">
-                <span className={`px-3 py-1 font-body text-xs font-medium tracking-widest uppercase ${badgeColor(m.categorie)}`}>{badgeLabel(m.categorie)}</span>
-              </div>
+              {m.img ? (<img src={m.img} alt={m.titre} className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-700" />
+              ) : (<div className="absolute inset-0 flex flex-col items-center justify-center gap-3"><Camera size={32} className="text-brand-muted/30" /><p className="font-body text-xs tracking-widest uppercase text-brand-muted/40">Photos à venir</p></div>)}
+              <div className="absolute top-4 right-4"><span className={`px-3 py-1 font-body text-xs font-medium tracking-widest uppercase ${badgeColor(m.categorie)}`}>{badgeLabel(m.categorie)}</span></div>
+              {m.photos.length > 0 && (<div className="absolute bottom-4 left-4 flex items-center gap-1.5 bg-black/50 backdrop-blur-sm px-2.5 py-1"><Camera size={12} className="text-white/80" /><span className="font-body text-xs text-white/80">{m.photos.length}</span></div>)}
               <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-brand-card to-transparent" />
             </div>
             <div className="p-6">
               <p className="font-body text-xs tracking-widest uppercase text-brand-gold mb-2">{m.lieu}</p>
               <h3 className="font-display text-2xl text-white mb-3">{m.titre}</h3>
-              <div className="flex items-baseline gap-1 mb-4">
-                <span className="font-body text-sm text-brand-muted">CHF</span>
-                <span className="font-display text-xl text-white">{m.prix}.-</span>
-              </div>
+              <div className="flex items-baseline gap-1 mb-4"><span className="font-body text-sm text-brand-muted">CHF</span><span className="font-display text-xl text-white">{m.prix}.-</span></div>
               <div className="flex gap-4 text-brand-muted font-body text-sm">
                 {m.pieces !== '-' && <span>{m.pieces} pièces</span>}
                 {m.surface !== '-' && <span>{m.surface}</span>}
                 {m.terrain !== '-' && <span>Terrain {m.terrain}</span>}
               </div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </section>
   )
 }
 
-// ─── CONTACT ────────────────────────────────────────────────────────────────
-function Contact() {
+function EstimationForm() {
+  const [sent, setSent] = useState(false)
   return (
-    <section id="contact" className="bg-brand-card/50 border-y border-brand-border">
+    <section id="estimation" className="bg-brand-card/50 border-y border-brand-border">
       <div className="max-w-7xl mx-auto px-6 py-24 md:py-32">
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <div>
-            <p className="font-body text-sm tracking-[0.3em] uppercase text-brand-gold mb-4">Contact</p>
-            <h2 className="font-display text-4xl md:text-5xl font-light text-white mb-8 leading-tight">
-              Parlons de<br />
-              <span className="italic text-brand-gold">votre projet.</span>
-            </h2>
-            <p className="font-body text-brand-muted leading-relaxed mb-10">
-              Que vous souhaitiez vendre, obtenir une estimation ou simplement un avis sur votre situation immobilière,
-              je suis à votre disposition pour un premier échange sans engagement.
-            </p>
-            <div className="space-y-6">
-              <a href="tel:+41799690191" className="flex items-center gap-4 group">
-                <div className="w-12 h-12 border border-brand-border flex items-center justify-center group-hover:border-brand-gold transition-colors">
-                  <Phone size={18} className="text-brand-gold" />
-                </div>
-                <div>
-                  <p className="font-body text-xs tracking-widest uppercase text-brand-muted">Téléphone</p>
-                  <p className="font-body text-white group-hover:text-brand-gold transition-colors">+41 79 969 01 91</p>
-                </div>
-              </a>
-              <a href="mailto:thomas@maisonpraet.ch" className="flex items-center gap-4 group">
-                <div className="w-12 h-12 border border-brand-border flex items-center justify-center group-hover:border-brand-gold transition-colors">
-                  <Mail size={18} className="text-brand-gold" />
-                </div>
-                <div>
-                  <p className="font-body text-xs tracking-widest uppercase text-brand-muted">Email</p>
-                  <p className="font-body text-white group-hover:text-brand-gold transition-colors">thomas@maisonpraet.ch</p>
-                </div>
-              </a>
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 border border-brand-border flex items-center justify-center">
-                  <MapPin size={18} className="text-brand-gold" />
-                </div>
-                <div>
-                  <p className="font-body text-xs tracking-widest uppercase text-brand-muted">Bureau</p>
-                  <p className="font-body text-white">Golay Immobilier SA · Lausanne</p>
-                </div>
-              </div>
+            <p className="font-body text-sm tracking-[0.3em] uppercase text-brand-gold mb-4">Estimation gratuite</p>
+            <h2 className="font-display text-4xl md:text-5xl font-light text-white mb-8 leading-tight">Quelle est la valeur<br /><span className="italic text-brand-gold">de votre bien ?</span></h2>
+            <p className="font-body text-brand-text leading-relaxed mb-6">Recevez une estimation professionnelle, fondée sur les données du marché vaudois et une analyse rigoureuse de votre bien. Sans engagement, en toute confidentialité.</p>
+            <div className="space-y-4 font-body text-brand-muted text-sm">
+              <div className="flex items-start gap-3"><div className="w-1 h-1 rounded-full bg-brand-gold mt-2 shrink-0" /><span>Analyse complète en 3 méthodes (intrinsèque, rendement, vénale)</span></div>
+              <div className="flex items-start gap-3"><div className="w-1 h-1 rounded-full bg-brand-gold mt-2 shrink-0" /><span>Rapport PDF structuré remis sous 48h</span></div>
+              <div className="flex items-start gap-3"><div className="w-1 h-1 rounded-full bg-brand-gold mt-2 shrink-0" /><span>Recommandation de prix honnête, pas une promesse gonflée</span></div>
             </div>
           </div>
-          <div className="relative aspect-square bg-brand-dark border border-brand-border overflow-hidden">
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="text-center">
-                <MapPin size={32} className="text-brand-gold mx-auto mb-4" />
-                <p className="font-body text-sm tracking-widest uppercase text-brand-muted">Arc lémanique</p>
-                <p className="font-body text-xs text-brand-muted/60 mt-1">Gros-de-Vaud</p>
+          <div className="bg-brand-dark border border-brand-border p-8">
+            {sent ? (
+              <div className="text-center py-12"><div className="w-16 h-16 border-2 border-brand-gold rounded-full flex items-center justify-center mx-auto mb-6"><Send size={24} className="text-brand-gold" /></div><h3 className="font-display text-2xl text-white mb-3">Demande envoyée</h3><p className="font-body text-brand-muted">Je vous recontacte dans les 24 heures.</p></div>
+            ) : (
+              <div className="space-y-5">
+                <h3 className="font-display text-xl text-white mb-2">Demander une estimation</h3>
+                <div><label className="font-body text-xs tracking-widest uppercase text-brand-muted block mb-2">Nom</label><input type="text" className="w-full bg-transparent border border-brand-border px-4 py-3 font-body text-white text-sm focus:outline-none focus:border-brand-gold/50 transition-colors" placeholder="Votre nom" /></div>
+                <div><label className="font-body text-xs tracking-widest uppercase text-brand-muted block mb-2">Email ou téléphone</label><input type="text" className="w-full bg-transparent border border-brand-border px-4 py-3 font-body text-white text-sm focus:outline-none focus:border-brand-gold/50 transition-colors" placeholder="Pour vous recontacter" /></div>
+                <div><label className="font-body text-xs tracking-widest uppercase text-brand-muted block mb-2">Type de bien</label><select className="w-full bg-brand-dark border border-brand-border px-4 py-3 font-body text-brand-muted text-sm focus:outline-none focus:border-brand-gold/50 transition-colors"><option value="">Sélectionnez</option><option value="villa">Villa / Maison individuelle</option><option value="appartement">Appartement / PPE</option><option value="immeuble">Immeuble de rendement</option><option value="terrain">Terrain</option><option value="autre">Autre</option></select></div>
+                <div><label className="font-body text-xs tracking-widest uppercase text-brand-muted block mb-2">Localisation</label><input type="text" className="w-full bg-transparent border border-brand-border px-4 py-3 font-body text-white text-sm focus:outline-none focus:border-brand-gold/50 transition-colors" placeholder="Commune ou adresse" /></div>
+                <div><label className="font-body text-xs tracking-widest uppercase text-brand-muted block mb-2">Message (optionnel)</label><textarea rows={3} className="w-full bg-transparent border border-brand-border px-4 py-3 font-body text-white text-sm focus:outline-none focus:border-brand-gold/50 transition-colors resize-none" placeholder="Précisions sur votre projet" /></div>
+                <button onClick={() => setSent(true)} className="w-full bg-brand-gold text-brand-dark py-4 font-body text-sm font-medium tracking-widest uppercase hover:bg-brand-goldLight transition-colors">Envoyer ma demande</button>
+                <p className="font-body text-xs text-brand-muted/60 text-center">Sans engagement · Réponse sous 24h</p>
               </div>
-            </div>
+            )}
           </div>
         </div>
       </div>
@@ -351,32 +200,66 @@ function Contact() {
   )
 }
 
-// ─── FOOTER ─────────────────────────────────────────────────────────────────
+function JournalPreview() {
+  const recent = ARTICLES.slice(0, 3)
+  return (
+    <section id="journal" className="max-w-7xl mx-auto px-6 py-24 md:py-32">
+      <div className="text-center mb-16">
+        <p className="font-body text-sm tracking-[0.3em] uppercase text-brand-gold mb-4">Journal</p>
+        <h2 className="font-display text-4xl md:text-5xl font-light text-white">Conseils & <span className="italic text-brand-gold">analyses</span></h2>
+      </div>
+      <div className="grid md:grid-cols-3 gap-8">
+        {recent.map(a => (
+          <Link href={`/journal/${a.slug}`} key={a.slug} className="group bg-brand-card border border-brand-border p-8 hover:border-brand-gold/30 transition-all duration-500 block">
+            <div className="flex items-center gap-3 mb-6">
+              <span className="font-body text-xs tracking-widest uppercase text-brand-gold">{a.categorie}</span>
+              <span className="w-1 h-1 rounded-full bg-brand-border" />
+              <span className="font-body text-xs text-brand-muted">{new Date(a.date).toLocaleDateString('fr-CH', { day: 'numeric', month: 'long', year: 'numeric' })}</span>
+            </div>
+            <h3 className="font-display text-xl text-white mb-4 group-hover:text-brand-gold transition-colors leading-snug">{a.titre}</h3>
+            <p className="font-body text-sm text-brand-muted leading-relaxed line-clamp-3">{a.chapeau}</p>
+            <div className="flex items-center gap-2 mt-6 font-body text-sm text-brand-gold"><span>Lire</span><ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" /></div>
+          </Link>
+        ))}
+      </div>
+      <div className="text-center mt-12">
+        <Link href="/journal" className="inline-flex items-center gap-3 border border-brand-border text-brand-text px-8 py-4 font-body text-sm tracking-widest uppercase hover:border-brand-gold hover:text-brand-gold transition-all duration-300"><BookOpen size={16} />Tous les articles</Link>
+      </div>
+    </section>
+  )
+}
+
+function Contact() {
+  return (
+    <section id="contact" className="bg-brand-card/50 border-y border-brand-border">
+      <div className="max-w-7xl mx-auto px-6 py-24 md:py-32">
+        <div className="grid md:grid-cols-2 gap-16 items-center">
+          <div>
+            <p className="font-body text-sm tracking-[0.3em] uppercase text-brand-gold mb-4">Contact</p>
+            <h2 className="font-display text-4xl md:text-5xl font-light text-white mb-8 leading-tight">Parlons de<br /><span className="italic text-brand-gold">votre projet.</span></h2>
+            <p className="font-body text-brand-muted leading-relaxed mb-10">Que vous souhaitiez vendre, obtenir une estimation ou simplement un avis sur votre situation immobilière, je suis à votre disposition pour un premier échange sans engagement.</p>
+            <div className="space-y-6">
+              <a href="tel:+41799690191" className="flex items-center gap-4 group"><div className="w-12 h-12 border border-brand-border flex items-center justify-center group-hover:border-brand-gold transition-colors"><Phone size={18} className="text-brand-gold" /></div><div><p className="font-body text-xs tracking-widest uppercase text-brand-muted">Téléphone</p><p className="font-body text-white group-hover:text-brand-gold transition-colors">+41 79 969 01 91</p></div></a>
+              <a href="mailto:thomas@maisonpraet.ch" className="flex items-center gap-4 group"><div className="w-12 h-12 border border-brand-border flex items-center justify-center group-hover:border-brand-gold transition-colors"><Mail size={18} className="text-brand-gold" /></div><div><p className="font-body text-xs tracking-widest uppercase text-brand-muted">Email</p><p className="font-body text-white group-hover:text-brand-gold transition-colors">thomas@maisonpraet.ch</p></div></a>
+              <div className="flex items-center gap-4"><div className="w-12 h-12 border border-brand-border flex items-center justify-center"><MapPin size={18} className="text-brand-gold" /></div><div><p className="font-body text-xs tracking-widest uppercase text-brand-muted">Bureau</p><p className="font-body text-white">Golay Immobilier SA · Lausanne</p></div></div>
+            </div>
+          </div>
+          <div className="relative aspect-square bg-brand-dark border border-brand-border overflow-hidden"><div className="absolute inset-0 flex items-center justify-center"><div className="text-center"><MapPin size={32} className="text-brand-gold mx-auto mb-4" /><p className="font-body text-sm tracking-widest uppercase text-brand-muted">Arc lémanique</p><p className="font-body text-xs text-brand-muted/60 mt-1">Gros-de-Vaud</p></div></div></div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
 function Footer() {
   return (
     <footer className="max-w-7xl mx-auto px-6 py-10 flex flex-col sm:flex-row items-center justify-between gap-4">
-      <p className="font-display text-lg text-white">
-        Maison <span className="text-brand-gold">Praet</span>
-      </p>
-      <p className="font-body text-xs text-brand-muted tracking-wider">
-        © {new Date().getFullYear()} Thomas Praet · Golay Immobilier SA · Tous droits réservés
-      </p>
+      <p className="font-display text-lg text-white">Maison <span className="text-brand-gold">Praet</span></p>
+      <p className="font-body text-xs text-brand-muted tracking-wider">© {new Date().getFullYear()} Thomas Praet · Golay Immobilier SA · Tous droits réservés</p>
     </footer>
   )
 }
 
-// ─── PAGE ───────────────────────────────────────────────────────────────────
 export default function Home() {
-  return (
-    <main>
-      <Nav />
-      <Hero />
-      <StatsBar />
-      <About />
-      <Approach />
-      <Mandats />
-      <Contact />
-      <Footer />
-    </main>
-  )
+  return (<main><Nav /><Hero /><StatsBar /><About /><Approach /><MandatsSection /><EstimationForm /><JournalPreview /><Contact /><Footer /></main>)
 }
