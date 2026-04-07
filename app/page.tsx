@@ -133,6 +133,21 @@ function MandatsSection() {
 
 function EstimationForm() {
   const [sent, setSent] = useState(false)
+  const [sending, setSending] = useState(false)
+  const [error, setError] = useState(false)
+  const [form, setForm] = useState({ nom: '', contact: '', type: '', localisation: '', message: '' })
+  const set = (k: string) => (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => setForm(f => ({ ...f, [k]: e.target.value }))
+  const submit = async () => {
+    if (!form.nom || !form.contact) return
+    setSending(true)
+    setError(false)
+    try {
+      const res = await fetch('/api/estimation', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(form) })
+      if (res.ok) setSent(true)
+      else setError(true)
+    } catch { setError(true) }
+    setSending(false)
+  }
   return (
     <section id="estimation" className="bg-brand-card/50 border-y border-brand-border">
       <div className="max-w-7xl mx-auto px-6 py-24 md:py-32">
@@ -153,12 +168,13 @@ function EstimationForm() {
             ) : (
               <div className="space-y-5">
                 <h3 className="font-display text-xl text-white mb-2">Demander une estimation</h3>
-                <div><label className="font-body text-xs tracking-widest uppercase text-brand-muted block mb-2">Nom</label><input type="text" className="w-full bg-transparent border border-brand-border px-4 py-3 font-body text-white text-sm focus:outline-none focus:border-brand-gold/50 transition-colors" placeholder="Votre nom" /></div>
-                <div><label className="font-body text-xs tracking-widest uppercase text-brand-muted block mb-2">Email ou téléphone</label><input type="text" className="w-full bg-transparent border border-brand-border px-4 py-3 font-body text-white text-sm focus:outline-none focus:border-brand-gold/50 transition-colors" placeholder="Pour vous recontacter" /></div>
-                <div><label className="font-body text-xs tracking-widest uppercase text-brand-muted block mb-2">Type de bien</label><select className="w-full bg-brand-dark border border-brand-border px-4 py-3 font-body text-brand-muted text-sm focus:outline-none focus:border-brand-gold/50 transition-colors"><option value="">Sélectionnez</option><option value="villa">Villa / Maison individuelle</option><option value="appartement">Appartement / PPE</option><option value="immeuble">Immeuble de rendement</option><option value="terrain">Terrain</option><option value="autre">Autre</option></select></div>
-                <div><label className="font-body text-xs tracking-widest uppercase text-brand-muted block mb-2">Localisation</label><input type="text" className="w-full bg-transparent border border-brand-border px-4 py-3 font-body text-white text-sm focus:outline-none focus:border-brand-gold/50 transition-colors" placeholder="Commune ou adresse" /></div>
-                <div><label className="font-body text-xs tracking-widest uppercase text-brand-muted block mb-2">Message (optionnel)</label><textarea rows={3} className="w-full bg-transparent border border-brand-border px-4 py-3 font-body text-white text-sm focus:outline-none focus:border-brand-gold/50 transition-colors resize-none" placeholder="Précisions sur votre projet" /></div>
-                <button onClick={() => setSent(true)} className="w-full bg-brand-gold text-brand-dark py-4 font-body text-sm font-medium tracking-widest uppercase hover:bg-brand-goldLight transition-colors">Envoyer ma demande</button>
+                <div><label className="font-body text-xs tracking-widest uppercase text-brand-muted block mb-2">Nom</label><input type="text" value={form.nom} onChange={set('nom')} className="w-full bg-transparent border border-brand-border px-4 py-3 font-body text-white text-sm focus:outline-none focus:border-brand-gold/50 transition-colors" placeholder="Votre nom" /></div>
+                <div><label className="font-body text-xs tracking-widest uppercase text-brand-muted block mb-2">Email ou téléphone</label><input type="text" value={form.contact} onChange={set('contact')} className="w-full bg-transparent border border-brand-border px-4 py-3 font-body text-white text-sm focus:outline-none focus:border-brand-gold/50 transition-colors" placeholder="Pour vous recontacter" /></div>
+                <div><label className="font-body text-xs tracking-widest uppercase text-brand-muted block mb-2">Type de bien</label><select value={form.type} onChange={set('type')} className="w-full bg-brand-dark border border-brand-border px-4 py-3 font-body text-brand-muted text-sm focus:outline-none focus:border-brand-gold/50 transition-colors"><option value="">Sélectionnez</option><option value="villa">Villa / Maison individuelle</option><option value="appartement">Appartement / PPE</option><option value="immeuble">Immeuble de rendement</option><option value="terrain">Terrain</option><option value="autre">Autre</option></select></div>
+                <div><label className="font-body text-xs tracking-widest uppercase text-brand-muted block mb-2">Localisation</label><input type="text" value={form.localisation} onChange={set('localisation')} className="w-full bg-transparent border border-brand-border px-4 py-3 font-body text-white text-sm focus:outline-none focus:border-brand-gold/50 transition-colors" placeholder="Commune ou adresse" /></div>
+                <div><label className="font-body text-xs tracking-widest uppercase text-brand-muted block mb-2">Message (optionnel)</label><textarea rows={3} value={form.message} onChange={set('message')} className="w-full bg-transparent border border-brand-border px-4 py-3 font-body text-white text-sm focus:outline-none focus:border-brand-gold/50 transition-colors resize-none" placeholder="Précisions sur votre projet" /></div>
+                {error && <p className="font-body text-xs text-red-400 text-center">Une erreur est survenue. Réessayez ou contactez-moi directement.</p>}
+                <button onClick={submit} disabled={sending || !form.nom || !form.contact} className="w-full bg-brand-gold text-brand-dark py-4 font-body text-sm font-medium tracking-widest uppercase hover:bg-brand-goldLight transition-colors disabled:opacity-50 disabled:cursor-not-allowed">{sending ? 'Envoi en cours...' : 'Envoyer ma demande'}</button>
                 <p className="font-body text-xs text-brand-muted/60 text-center">Sans engagement · Réponse sous 24h</p>
               </div>
             )}
