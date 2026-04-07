@@ -91,7 +91,8 @@ export const MANDATS: Mandat[] = [
   {
     id: 10, slug: 'maison-dully', titre: 'Maison mitoyenne', lieu: 'Dully',
     prix: "1'590'000", pieces: '-', surface: '-', terrain: '-', categorie: 'vendu',
-    img: '', photos: [],
+    img: '/photos/dully/1775578068436_photo1.jpg',
+    photos: ['/photos/dully/1775578068436_photo1.jpg','/photos/dully/1775578068436_IMG_5408.jpg','/photos/dully/1775578068437_IMG_5410.jpg','/photos/dully/1775578068437_IMG_5412.jpg','/photos/dully/1775578068432_IMG_5414.jpg','/photos/dully/1775578068432_IMG_5415.jpg','/photos/dully/1775578068433_IMG_5417.jpg','/photos/dully/1775578068433_IMG_5418.jpg','/photos/dully/1775578068434_IMG_5420.jpg','/photos/dully/1775578068434_IMG_5422.jpg','/photos/dully/1775578068434_IMG_5423.jpg','/photos/dully/1775578068434_IMG_5426.jpg','/photos/dully/1775578068435_IMG_5431.jpg','/photos/dully/1775578068435_IMG_5432.jpg','/photos/dully/1775578068435_IMG_5434.jpg','/photos/dully/1775578068436_IMG_5435.jpg','/photos/dully/1775578068436_Bathroom_resized_5712x4284__1_.png'],
     description: "Maison mitoyenne à Dully, village prisé de La Côte. Détails et photos à venir."
   },
   {
