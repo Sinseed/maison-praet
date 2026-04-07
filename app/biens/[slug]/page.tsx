@@ -26,6 +26,10 @@ export default function BienPage() {
   return (
     <div className="min-h-screen bg-brand-dark pt-24">
       <div className="max-w-7xl mx-auto px-6 py-12">
+        {/* Back button */}
+        <Link href="/#nosbiens" className="inline-flex items-center gap-2 font-body text-sm tracking-widest uppercase text-brand-muted hover:text-brand-gold transition-colors mb-8">
+          <ArrowLeft size={16} /> Retour aux biens
+        </Link>
         {/* Photo gallery */}
         {bien.photos.length > 0 ? (
           <div className="mb-12">
