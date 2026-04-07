@@ -24,17 +24,7 @@ export default function BienPage() {
   const badgeColor = bien.categorie === 'en_vente' ? 'bg-brand-gold text-brand-dark' : bien.categorie === 'reserve' ? 'bg-amber-700/60 text-amber-200' : 'bg-green-800/60 text-green-200'
 
   return (
-    <div className="min-h-screen bg-brand-dark">
-      {/* Nav bar */}
-      <nav className="bg-brand-dark/95 backdrop-blur-md border-b border-brand-border sticky top-0 z-40">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-          <Link href="/" className="font-display text-xl text-white">Maison <span className="text-brand-gold">Praet</span></Link>
-          <Link href="/#nosbiens" className="flex items-center gap-2 font-body text-sm text-brand-muted hover:text-brand-gold transition-colors">
-            <ArrowLeft size={16} /> Retour aux biens
-          </Link>
-        </div>
-      </nav>
-
+    <div className="min-h-screen bg-brand-dark pt-24">
       <div className="max-w-7xl mx-auto px-6 py-12">
         {/* Photo gallery */}
         {bien.photos.length > 0 ? (

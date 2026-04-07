@@ -4,13 +4,7 @@ import { ARTICLES } from '../data'
 
 export default function JournalPage() {
   return (
-    <div className="min-h-screen bg-brand-dark">
-      <nav className="bg-brand-dark/95 backdrop-blur-md border-b border-brand-border sticky top-0 z-40">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-          <Link href="/" className="font-display text-xl text-white">Maison <span className="text-brand-gold">Praet</span></Link>
-          <Link href="/" className="flex items-center gap-2 font-body text-sm text-brand-muted hover:text-brand-gold transition-colors"><ArrowLeft size={16} /> Accueil</Link>
-        </div>
-      </nav>
+    <div className="min-h-screen bg-brand-dark pt-24">
       <div className="max-w-4xl mx-auto px-6 py-16">
         <p className="font-body text-sm tracking-[0.3em] uppercase text-brand-gold mb-4">Journal</p>
         <h1 className="font-display text-4xl md:text-5xl font-light text-white mb-4">Conseils & <span className="italic text-brand-gold">analyses</span></h1>
