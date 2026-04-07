@@ -67,10 +67,10 @@ function Nav() {
           Maison <span className="text-brand-gold">Praet</span>
         </a>
         <div className="hidden md:flex items-center gap-10">
-          {['À propos', 'Mandats', 'Approche', 'Contact'].map(item => (
-            <a key={item} href={`#${item.toLowerCase().replace(/\s/g, '').replace('à', 'a')}`}
+          {[{label: 'À propos', href: '#apropos'}, {label: 'Nos biens', href: '#nosbiens'}, {label: 'Approche', href: '#approche'}, {label: 'Contact', href: '#contact'}].map(item => (
+            <a key={item.label} href={item.href}
                className="font-body text-sm tracking-widest uppercase text-brand-muted hover:text-brand-gold transition-colors duration-300">
-              {item}
+              {item.label}
             </a>
           ))}
           <Link href="/crm" className="font-body text-xs tracking-widest uppercase text-brand-border hover:text-brand-muted transition-colors duration-300">
@@ -83,11 +83,11 @@ function Nav() {
       </div>
       {open && (
         <div className="md:hidden bg-brand-dark/98 backdrop-blur-lg border-t border-brand-border px-6 pb-6 space-y-4">
-          {['À propos', 'Mandats', 'Approche', 'Contact'].map(item => (
-            <a key={item} href={`#${item.toLowerCase().replace(/\s/g, '').replace('à', 'a')}`}
+          {[{label: 'À propos', href: '#apropos'}, {label: 'Nos biens', href: '#nosbiens'}, {label: 'Approche', href: '#approche'}, {label: 'Contact', href: '#contact'}].map(item => (
+            <a key={item.label} href={item.href}
                onClick={() => setOpen(false)}
                className="block font-body text-sm tracking-widest uppercase text-brand-muted hover:text-brand-gold transition-colors">
-              {item}
+              {item.label}
             </a>
           ))}
         </div>
@@ -123,9 +123,9 @@ function Hero() {
             Prendre contact
             <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
           </a>
-          <a href="#mandats"
+          <a href="#nosbiens"
              className="inline-flex items-center gap-3 border border-brand-border text-brand-text px-8 py-4 font-body text-sm tracking-widest uppercase hover:border-brand-gold hover:text-brand-gold transition-all duration-300">
-            Voir les mandats
+            Voir nos biens
           </a>
         </div>
       </div>
@@ -243,11 +243,11 @@ function Mandats() {
   }
 
   return (
-    <section id="mandats" className="max-w-7xl mx-auto px-6 py-24 md:py-32">
+    <section id="nosbiens" className="max-w-7xl mx-auto px-6 py-24 md:py-32">
       <div className="text-center mb-12">
         <p className="font-body text-sm tracking-[0.3em] uppercase text-brand-gold mb-4">Portefeuille</p>
         <h2 className="font-display text-4xl md:text-5xl font-light text-white">
-          Mandats <span className="italic text-brand-gold">en cours</span>
+          Nos biens <span className="italic text-brand-gold">en cours</span>
         </h2>
       </div>
       <div className="flex justify-center gap-3 mb-12 flex-wrap">
