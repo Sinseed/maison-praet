@@ -89,7 +89,7 @@ export const MANDATS: Mandat[] = [
   },
   {
     id: 10, slug: 'maison-dully', titre: 'Maison mitoyenne', lieu: 'Dully',
-    prix: "1'590'000", pieces: '-', surface: '-', terrain: '-', categorie: 'en_vente',
+    prix: "1'590'000", pieces: '-', surface: '-', terrain: '-', categorie: 'vendu',
     img: '', photos: [],
     description: "Maison mitoyenne à Dully, village prisé de La Côte. Détails et photos à venir."
   },
