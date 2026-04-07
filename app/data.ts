@@ -202,7 +202,7 @@ Beaucoup de visites mais aucune offre. Votre bien plaît, mais pas à ce prix. L
 
 Peu de visites et peu de clics sur les portails. Votre bien est invisible ou mal présenté. Deux causes possibles : le prix est tellement au-dessus du marché que les acquéreurs ne le regardent même pas, ou les photos et la description ne rendent pas justice au bien. Parfois les deux à la fois.
 
-Des offres, mais toutes nettement en dessous du prix affiché. Le marché vous envoie un message clair. Quand trois acquéreurs indépendants arrivent au même chiffre, ce n'est pas eux qui se trompent.
+Des offres, mais toutes nettement en dessous du prix affiché. Le marché vous envoie un message clair. Quand trois acquéreurs indépendants arrivent au même chiffre, ce ne sont pas eux qui se trompent.
 
 Votre bien est en ligne depuis plus de 60 jours. C'est un signal que beaucoup de vendeurs sous-estiment. Les portails immobiliers affichent la durée de publication. Un acquéreur qui voit un bien en ligne depuis trois mois se pose immédiatement la question : qu'est-ce qui ne va pas ? Chaque semaine supplémentaire érode la crédibilité du prix. C'est un cercle vicieux : plus le bien stagne, plus l'acquéreur se sent en position de force pour négocier.
 
