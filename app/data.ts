@@ -206,7 +206,7 @@ Des offres, mais toutes en dessous de 10% du prix affiché. Le marché vous envo
 
 Le piège du courtier complaisant. Certains courtiers gonflent leur estimation pour décrocher le mandat, puis proposent des baisses de prix successives. Résultat : le bien reste des mois en ligne, accumule les jours de publication, et chaque acquéreur potentiel se demande "qu'est-ce qui ne va pas avec ce bien ?". C'est exactement la spirale que j'essaie d'éviter avec mes clients.
 
-Ma méthode : je préfère perdre un mandat en donnant un prix honnête que de le gagner avec un prix irréaliste. Si mon estimation ne vous convient pas, je vous le dis et je vous laisse le choix. Mais je ne vous ferai pas perdre six mois.`,
+Ma méthode : je préfère perdre un mandat en donnant un prix honnête que de le gagner avec un prix irréaliste. Si mon estimation ne correspond pas à vos attentes, je vous l'explique et je vous laisse le choix. Mais je ne vous ferai pas perdre six mois.`,
     cta: "Votre bien est en vente depuis trop longtemps ? Contactez-moi pour un deuxième avis, franc et sans engagement."
   },
   {
