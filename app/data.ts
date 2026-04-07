@@ -123,6 +123,13 @@ export const MANDATS: Mandat[] = [
     photos: ['/photos/lausanne-monttendre/IMG_6530.jpg','/photos/lausanne-monttendre/IMG_6650.jpg','/photos/lausanne-monttendre/IMG_6655.jpg','/photos/lausanne-monttendre/IMG_6656.jpg','/photos/lausanne-monttendre/IMG_6657.jpg','/photos/lausanne-monttendre/IMG_6658.jpg','/photos/lausanne-monttendre/IMG_6659.jpg','/photos/lausanne-monttendre/IMG_6660.jpg','/photos/lausanne-monttendre/IMG_6662.jpg','/photos/lausanne-monttendre/IMG_6663.jpg'],
     description: "Immeuble de 3 logements à Lausanne, chemin du Mont-Tendre. Transaction conclue avec succès."
   },
+  {
+    id: 15, slug: 'villa-crissier', titre: 'Villa individuelle', lieu: 'Crissier',
+    prix: '-', pieces: '-', surface: '-', terrain: '-', categorie: 'vendu',
+    img: '/photos/crissier/P1010660.jpg',
+    photos: ['/photos/crissier/P1010660.jpg','/photos/crissier/P1010664.jpg','/photos/crissier/IMG_4063.jpg','/photos/crissier/IMG_4068.jpg','/photos/crissier/sejour-piscine.png','/photos/crissier/cuisine.jpg','/photos/crissier/chambre-lumineuse.jpg','/photos/crissier/chambre-combles.jpg','/photos/crissier/chambre-ado.jpg','/photos/crissier/chambre-enfant.jpg','/photos/crissier/sdb-baignoire.jpg','/photos/crissier/sdb-douche.jpg','/photos/crissier/dressing.png'],
+    description: "Villa individuelle avec piscine à Crissier. Pièces de réception lumineuses avec cheminée, cuisine équipée, plusieurs chambres et salles de bains rénovées. Jardin arboré et piscine. Transaction conclue avec succès."
+  },
 ]
 
 // ─── ARTICLES ───────────────────────────────────────────────────────────────
