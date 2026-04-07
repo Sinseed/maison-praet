@@ -20,7 +20,7 @@ export async function POST(req: Request) {
     }
 
     await resend.emails.send({
-      from: 'Maison Praet <noreply@maisonpraet.ch>',
+      from: 'Maison Praet <onboarding@resend.dev>',
       to: 'tpraet@golay-immobilier.ch',
       subject: `Nouvelle demande d'estimation – ${nom}`,
       html: `
