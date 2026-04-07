@@ -137,6 +137,13 @@ export const MANDATS: Mandat[] = [
     photos: ['/photos/gilly/IMG_4158__1_.jpg','/photos/gilly/IMG_4162.jpg','/photos/gilly/IMG_4165.jpg','/photos/gilly/IMG_4169.jpg','/photos/gilly/IMG_4170.jpg','/photos/gilly/IMG_4173.jpg','/photos/gilly/IMG_4174.jpg','/photos/gilly/IMG_4176.jpg','/photos/gilly/IMG_4177.jpg','/photos/gilly/IMG_4179.jpg','/photos/gilly/IMG_4180.jpg','/photos/gilly/IMG_4183.jpg'],
     description: "Maison villageoise de caractère à Gilly, au coeur du vignoble de La Côte. Murs crépis, tomettes, poutres apparentes et poêle à bois. Terrasse sur les toits et volumes atypiques. Transaction conclue avec succès."
   },
+  {
+    id: 17, slug: 'maison-jouxtens', titre: 'Maison individuelle', lieu: 'Jouxtens-Mézery',
+    prix: '-', pieces: '-', surface: '-', terrain: '-', categorie: 'vendu',
+    img: '/photos/jouxtens/IMG_4469.jpg',
+    photos: ['/photos/jouxtens/IMG_4469.jpg','/photos/jouxtens/IMG_4471.jpg','/photos/jouxtens/IMG_4480.jpg','/photos/jouxtens/IMG_4481.jpg','/photos/jouxtens/IMG_4491.jpg','/photos/jouxtens/IMG_4492.jpg','/photos/jouxtens/IMG_4494.jpg','/photos/jouxtens/IMG_4502.jpg','/photos/jouxtens/IMG_4503.jpg','/photos/jouxtens/IMG_4504.jpg','/photos/jouxtens/IMG_4507.jpg'],
+    description: "Maison individuelle à Jouxtens-Mézery, commune résidentielle prisée aux portes de Lausanne. Transaction conclue avec succès."
+  },
 ]
 
 // ─── ARTICLES ───────────────────────────────────────────────────────────────
