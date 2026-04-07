@@ -92,7 +92,7 @@ export default function BienPage() {
                 <a href="tel:+41799690191" className="flex items-center gap-3 w-full bg-brand-gold text-brand-dark px-6 py-4 font-body text-sm font-medium tracking-widest uppercase hover:bg-brand-goldLight transition-colors justify-center">
                   <Phone size={16} /> Appeler
                 </a>
-                <a href={`mailto:thomas@maisonpraet.ch?subject=Demande - ${bien.titre} ${bien.lieu}`} className="flex items-center gap-3 w-full border border-brand-border text-brand-text px-6 py-4 font-body text-sm tracking-widest uppercase hover:border-brand-gold hover:text-brand-gold transition-colors justify-center">
+                <a href={`mailto:tpraet@golay-immobilier.ch?subject=Demande - ${bien.titre} ${bien.lieu}`} className="flex items-center gap-3 w-full border border-brand-border text-brand-text px-6 py-4 font-body text-sm tracking-widest uppercase hover:border-brand-gold hover:text-brand-gold transition-colors justify-center">
                   <Mail size={16} /> Écrire
                 </a>
               </div>

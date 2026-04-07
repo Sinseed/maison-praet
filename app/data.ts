@@ -169,7 +169,7 @@ Mon conseil : faites le calcul complet avant de fixer votre prix minimum. Je pro
   },
   {
     slug: 'marche-immobilier-vaudois-2026',
-    titre: 'Marché immobilier vaudois en 2026 : ce qu'il faut savoir',
+    titre: "Marché immobilier vaudois en 2026 : ce qu'il faut savoir",
     chapeau: "Entre stabilisation des taux, rareté de l'offre et pression démographique, le marché vaudois reste un marché de vendeurs. Mais pas à n'importe quel prix.",
     date: '2026-03-25',
     categorie: 'Marché',
