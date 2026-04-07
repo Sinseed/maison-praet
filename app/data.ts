@@ -154,18 +154,18 @@ Mon conseil : méfiez-vous des estimations en ligne. Elles se basent sur des alg
     categorie: 'Guide pratique',
     contenu: `Quand un propriétaire me demande "combien va me rester après la vente ?", la réponse n'est jamais simplement le prix de vente moins l'hypothèque. Voici les postes à connaître.
 
-La commission de courtage se situe généralement entre 2 et 3% du prix de vente, plus TVA, dans le Canton de Vaud. Elle est négociable et dépend du type de mandat (exclusif ou partagé) et de la complexité du dossier.
+La commission de courtage se situe généralement entre 2 et 3% du prix de vente, plus TVA, dans le Canton de Vaud. Elle est négociable et dépend du type de mandat (exclusif ou partagé) et de la complexité du dossier. Point important : la commission est intégralement déductible de l'impôt sur le gain immobilier. Ce n'est donc pas une charge sèche.
 
-L'impôt sur le gain immobilier est calculé sur la différence entre le prix de vente et le prix d'acquisition (plus les investissements à plus-value). Dans le Canton de Vaud, le taux est dégressif selon la durée de détention. Après 24 ans de propriété, le taux de base est au minimum. C'est un impôt cantonal et communal, donc le montant exact dépend de votre commune.
+L'impôt sur le gain immobilier est calculé sur la différence entre le prix de vente et le prix d'acquisition. Dans le Canton de Vaud, le taux est dégressif selon la durée de détention. Après 24 ans de propriété, le taux de base est au minimum. C'est un impôt cantonal et communal, donc le montant exact dépend de votre commune. Ce que beaucoup de vendeurs ignorent : les frais d'acquisition d'origine (droits de mutation, frais de notaire payés à l'achat), les investissements à plus-value, la commission de courtage, l'indemnité de remboursement hypothécaire et même le coût du CECB sont tous déductibles du gain imposable. En d'autres termes, plus vos frais de vente sont élevés, moins vous payez d'impôt. C'est un calcul global qu'il faut faire.
 
 Les frais de notaire pour l'acte de vente sont à la charge de l'acquéreur dans le Canton de Vaud (environ 5% du prix). En tant que vendeur, vous n'avez normalement pas de frais notariaux, sauf cas particulier (radiation de servitudes, par exemple).
 
-Le remboursement anticipé de l'hypothèque peut coûter cher si vous avez un taux fixe en cours. La banque facture une indemnité de sortie calculée sur le différentiel de taux et la durée restante. Demandez un chiffrage précis à votre banque avant de mettre en vente.
+Le remboursement anticipé de l'hypothèque peut coûter cher si vous avez un taux fixe en cours. La banque facture une indemnité de sortie calculée sur le différentiel de taux et la durée restante. Bonne nouvelle : cette pénalité est déductible du gain immobilier. Demandez tout de même un chiffrage précis à votre banque avant de mettre en vente.
 
-Les diagnostics et certificats ne sont pas obligatoires pour vendre dans le Canton de Vaud, mais un CECB (Certificat énergétique cantonal des bâtiments) est de plus en plus demandé par les acquéreurs et leurs banques. Comptez entre CHF 1'000.- et CHF 3'000.- selon la taille du bâtiment.
+Les diagnostics et certificats ne sont pas obligatoires pour vendre dans le Canton de Vaud, mais un CECB (Certificat énergétique cantonal des bâtiments) est de plus en plus demandé par les acquéreurs et leurs banques. Comptez entre CHF 1'000.- et CHF 3'000.- selon la taille du bâtiment. Là aussi, le coût est déductible du gain immobilier.
 
-Mon conseil : faites le calcul complet avant de fixer votre prix minimum. Je propose systématiquement à mes clients un décompte vendeur prévisionnel qui liste tous ces postes.`,
-    cta: "Besoin d'y voir clair sur ce qu'il vous restera après la vente ? Contactez-moi pour un décompte personnalisé."
+Mon conseil : faites le calcul complet avant de fixer votre prix minimum. J'accompagne systématiquement mes clients dans ces démarches pour leur simplifier la vie au maximum. Entre la banque, le notaire, l'administration fiscale et les diagnostics, la vente d'un bien peut vite devenir un parcours administratif. Mon rôle, c'est aussi de vous guider là-dedans.`,
+    cta: "Besoin d'y voir clair sur ce qu'il vous restera après la vente ? Contactez-moi, je vous accompagne de A à Z."
   },
   {
     slug: 'marche-immobilier-vaudois-2026',
