@@ -30,7 +30,7 @@ const MANDATS: Mandat[] = [
   { id: 9, titre: 'Maison villageoise', lieu: 'Tartegnin', prix: "1'660'000", pieces: '-', surface: '-', terrain: '-', categorie: 'partage', img: '' },
   { id: 10, titre: 'Maison mitoyenne', lieu: 'Dully', prix: "1'590'000", pieces: '-', surface: '-', terrain: '-', categorie: 'partage', img: '' },
   { id: 11, titre: 'Appartement', lieu: 'Gland', prix: "1'250'000", pieces: '-', surface: '-', terrain: '-', categorie: 'partage', img: '/photos/gland-aubepine/DJI_20260115163614_0002_D.jpg' },
-  { id: 12, titre: 'Appartement', lieu: 'Longirod', prix: "795'000", pieces: '-', surface: '-', terrain: '-', categorie: 'partage', img: '' },
+  { id: 12, titre: 'Appartement', lieu: 'Longirod', prix: "795'000", pieces: '-', surface: '-', terrain: '-', categorie: 'partage', img: '/photos/longirod/DJI_20260119103256_0010_D.jpg' },
   // Ventes conclues
   { id: 13, titre: 'Maison individuelle', lieu: 'Senarclens', prix: "1'500'000", pieces: '-', surface: '-', terrain: '-', categorie: 'vendu', img: '' },
   { id: 14, titre: 'Immeuble 3 logements', lieu: 'Lausanne', prix: "1'480'000", pieces: '-', surface: '-', terrain: '-', categorie: 'vendu', img: '/photos/lausanne-monttendre/IMG_6530.jpg' },
