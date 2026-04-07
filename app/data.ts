@@ -154,7 +154,7 @@ Mon conseil : méfiez-vous des estimations en ligne. Elles se basent sur des alg
     categorie: 'Guide pratique',
     contenu: `Quand un propriétaire me demande "combien va me rester après la vente ?", la réponse n'est jamais simplement le prix de vente moins l'hypothèque. Voici les postes à connaître.
 
-La commission de courtage se situe généralement entre 2 et 3% du prix de vente, plus TVA, dans le Canton de Vaud. Elle est négociable et dépend du type de mandat (exclusif ou partagé) et de la complexité du dossier. Point important : la commission est intégralement déductible de l'impôt sur le gain immobilier. Ce n'est donc pas une charge sèche.
+La commission de courtage se situe généralement entre 2 et 3% du prix de vente, plus TVA, dans le Canton de Vaud. Point important : la commission est intégralement déductible de l'impôt sur le gain immobilier. Ce n'est donc pas une charge sèche.
 
 L'impôt sur le gain immobilier est calculé sur la différence entre le prix de vente et le prix d'acquisition. Dans le Canton de Vaud, le taux est dégressif selon la durée de détention. Après 24 ans de propriété, le taux de base est au minimum. C'est un impôt cantonal et communal, donc le montant exact dépend de votre commune. Ce que beaucoup de vendeurs ignorent : les frais d'acquisition d'origine (droits de mutation, frais de notaire payés à l'achat), les investissements à plus-value, la commission de courtage, l'indemnité de remboursement hypothécaire et même le coût du CECB sont tous déductibles du gain imposable. En d'autres termes, plus vos frais de vente sont élevés, moins vous payez d'impôt. C'est un calcul global qu'il faut faire.
 
@@ -223,7 +223,7 @@ La méthode d'estimation doit être transparente. Fuyez les courtiers qui vous d
 
 Le mandat exclusif n'est pas un piège. Beaucoup de vendeurs hésitent à signer un mandat exclusif par peur d'être "coincés". En réalité, un mandat exclusif permet au courtier d'investir davantage dans la commercialisation (drone, brochure premium, stratégie de prix) parce qu'il sait que son travail sera rémunéré. Un mandat partagé entre 3 courtiers donne souvent 3 annonces différentes avec 3 prix différents, ce qui nuit à la crédibilité du bien.
 
-La commission se négocie, mais pas au détriment du service. Dans le Canton de Vaud, les commissions se situent entre 2 et 3% du prix de vente plus TVA. Un courtier à 1.5% fera-t-il le même travail qu'un courtier à 2.5% ? Pas toujours. Posez la question : qu'est-ce qui est inclus exactement ? Shooting professionnel ? Drone ? Brochure ? Diffusion sur quels portails ?
+La commission reflète le niveau de service. Dans le Canton de Vaud, les commissions se situent entre 2 et 3% du prix de vente plus TVA. Un courtier à 1.5% fera-t-il le même travail qu'un courtier à 2.5% ? Rarement. Posez la question : qu'est-ce qui est inclus exactement ? Shooting professionnel ? Drone ? Brochure ? Diffusion sur quels portails ? Et surtout : n'oubliez pas que la commission est intégralement déductible de l'impôt sur le gain immobilier.
 
 La certification USPI est un gage de professionnalisme. L'Union suisse des professionnels de l'immobilier impose à ses membres une formation continue et un code déontologique. Ce n'est pas une garantie absolue, mais c'est un filtre utile.
 
