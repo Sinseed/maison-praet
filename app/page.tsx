@@ -12,25 +12,24 @@ type Mandat = {
   pieces: string
   surface: string
   terrain: string
-  categorie: 'exclusif' | 'partage' | 'vendu' | 'reserve'
+  categorie: 'en_vente' | 'vendu' | 'reserve'
   img: string
 }
 
 const MANDATS: Mandat[] = [
-  // Mandats exclusifs
-  { id: 1, titre: 'Maison individuelle', lieu: 'Yverdon-les-Bains', prix: "2'290'000", pieces: '8.5', surface: '240 m²', terrain: "1'260 m²", categorie: 'exclusif', img: '/photos/yverdon/IMG_5987.jpg' },
-  { id: 2, titre: 'Immeuble de rendement', lieu: 'Lausanne', prix: "6'000'000", pieces: '-', surface: '520 m²', terrain: '-', categorie: 'exclusif', img: '' },
-  { id: 3, titre: 'Immeuble locatif', lieu: 'Glion', prix: "2'420'000", pieces: '-', surface: '-', terrain: '-', categorie: 'exclusif', img: '/photos/glion/dji_fly_20260305_135802_0017_1772715631429_photo.jpg' },
+  // En vente
+  { id: 1, titre: 'Maison individuelle', lieu: 'Yverdon-les-Bains', prix: "2'290'000", pieces: '8.5', surface: '240 m²', terrain: "1'260 m²", categorie: 'en_vente', img: '/photos/yverdon/IMG_5987.jpg' },
+  { id: 2, titre: 'Immeuble de rendement', lieu: 'Lausanne', prix: "6'000'000", pieces: '-', surface: '520 m²', terrain: '-', categorie: 'en_vente', img: '' },
+  { id: 3, titre: 'Immeuble locatif', lieu: 'Glion', prix: "2'420'000", pieces: '-', surface: '-', terrain: '-', categorie: 'en_vente', img: '/photos/glion/dji_fly_20260305_135802_0017_1772715631429_photo.jpg' },
   { id: 4, titre: 'Immeuble locatif', lieu: 'Lausanne', prix: "1'790'000", pieces: '-', surface: '-', terrain: '-', categorie: 'reserve', img: '/photos/lausanne-levant/IMG_6321.jpg' },
-  { id: 5, titre: 'Villa jumelée', lieu: 'Cossonay-Ville', prix: "1'450'000", pieces: '5.5', surface: '-', terrain: '-', categorie: 'exclusif', img: '' },
-  { id: 6, titre: 'Appartement PPE', lieu: 'Epalinges', prix: "1'090'000", pieces: '4', surface: '-', terrain: '-', categorie: 'exclusif', img: '' },
-  { id: 7, titre: 'Appartement PPE', lieu: 'Le Mont-sur-Lausanne', prix: "930'000", pieces: '-', surface: '-', terrain: '-', categorie: 'exclusif', img: '/photos/lemont/IMG_4544.jpg' },
-  // Mandats partagés
-  { id: 8, titre: 'Maison jumelée', lieu: 'Gland', prix: "2'750'000", pieces: '-', surface: '-', terrain: '-', categorie: 'partage', img: '/photos/gland-buis/DJI_20260115164414_0005_D.jpg' },
-  { id: 9, titre: 'Maison villageoise', lieu: 'Tartegnin', prix: "1'660'000", pieces: '-', surface: '-', terrain: '-', categorie: 'partage', img: '' },
-  { id: 10, titre: 'Maison mitoyenne', lieu: 'Dully', prix: "1'590'000", pieces: '-', surface: '-', terrain: '-', categorie: 'partage', img: '' },
-  { id: 11, titre: 'Appartement', lieu: 'Gland', prix: "1'250'000", pieces: '-', surface: '-', terrain: '-', categorie: 'partage', img: '/photos/gland-aubepine/DJI_20260115163614_0002_D.jpg' },
-  { id: 12, titre: 'Appartement', lieu: 'Longirod', prix: "795'000", pieces: '-', surface: '-', terrain: '-', categorie: 'partage', img: '/photos/longirod/DJI_20260119103256_0010_D.jpg' },
+  { id: 5, titre: 'Villa jumelée', lieu: 'Cossonay-Ville', prix: "1'450'000", pieces: '5.5', surface: '-', terrain: '-', categorie: 'en_vente', img: '' },
+  { id: 6, titre: 'Appartement PPE', lieu: 'Epalinges', prix: "1'090'000", pieces: '4', surface: '-', terrain: '-', categorie: 'en_vente', img: '' },
+  { id: 7, titre: 'Appartement PPE', lieu: 'Le Mont-sur-Lausanne', prix: "930'000", pieces: '-', surface: '-', terrain: '-', categorie: 'en_vente', img: '/photos/lemont/IMG_4544.jpg' },
+  { id: 8, titre: 'Maison jumelée', lieu: 'Gland', prix: "2'750'000", pieces: '-', surface: '-', terrain: '-', categorie: 'en_vente', img: '/photos/gland-buis/DJI_20260115164414_0005_D.jpg' },
+  { id: 9, titre: 'Maison villageoise', lieu: 'Tartegnin', prix: "1'660'000", pieces: '-', surface: '-', terrain: '-', categorie: 'en_vente', img: '/photos/tartegnin/Retouchées__1_.jpg' },
+  { id: 10, titre: 'Maison mitoyenne', lieu: 'Dully', prix: "1'590'000", pieces: '-', surface: '-', terrain: '-', categorie: 'en_vente', img: '' },
+  { id: 11, titre: 'Appartement', lieu: 'Gland', prix: "1'250'000", pieces: '-', surface: '-', terrain: '-', categorie: 'en_vente', img: '/photos/gland-aubepine/DJI_20260115163614_0002_D.jpg' },
+  { id: 12, titre: 'Appartement', lieu: 'Longirod', prix: "795'000", pieces: '-', surface: '-', terrain: '-', categorie: 'en_vente', img: '/photos/longirod/DJI_20260119103256_0010_D.jpg' },
   // Ventes conclues
   { id: 13, titre: 'Maison individuelle', lieu: 'Senarclens', prix: "1'500'000", pieces: '-', surface: '-', terrain: '-', categorie: 'vendu', img: '/photos/senarclens/1775570719205_IMG_5840.jpg' },
   { id: 14, titre: 'Immeuble 3 logements', lieu: 'Lausanne', prix: "1'480'000", pieces: '-', surface: '-', terrain: '-', categorie: 'vendu', img: '/photos/lausanne-monttendre/IMG_6530.jpg' },
@@ -44,8 +43,7 @@ const STATS = [
 
 const FILTRES = [
   { key: 'all', label: 'Tous' },
-  { key: 'exclusif', label: 'Exclusifs' },
-  { key: 'partage', label: 'Partagés' },
+  { key: 'en_vente', label: 'En vente' },
   { key: 'vendu', label: 'Vendus' },
 ] as const
 
@@ -230,14 +228,12 @@ function Mandats() {
   const filtered = filtre === 'all' ? MANDATS : MANDATS.filter(m => m.categorie === filtre)
 
   const badgeLabel = (cat: string) => {
-    if (cat === 'exclusif') return 'Exclusif'
-    if (cat === 'partage') return 'Partagé'
+    if (cat === 'en_vente') return 'En vente'
     if (cat === 'reserve') return 'Réservé'
     return 'Vendu'
   }
   const badgeColor = (cat: string) => {
-    if (cat === 'exclusif') return 'bg-brand-gold text-brand-dark'
-    if (cat === 'partage') return 'bg-brand-border text-brand-text'
+    if (cat === 'en_vente') return 'bg-brand-gold text-brand-dark'
     if (cat === 'reserve') return 'bg-amber-700/60 text-amber-200'
     return 'bg-green-800/60 text-green-200'
   }
