@@ -33,7 +33,7 @@ const MANDATS: Mandat[] = [
   { id: 12, titre: 'Appartement', lieu: 'Longirod', prix: "795'000", pieces: '-', surface: '-', terrain: '-', categorie: 'partage', img: '' },
   // Ventes conclues
   { id: 13, titre: 'Maison individuelle', lieu: 'Senarclens', prix: "1'500'000", pieces: '-', surface: '-', terrain: '-', categorie: 'vendu', img: '' },
-  { id: 14, titre: 'Immeuble 3 logements', lieu: 'Lausanne', prix: "1'480'000", pieces: '-', surface: '-', terrain: '-', categorie: 'vendu', img: '' },
+  { id: 14, titre: 'Immeuble 3 logements', lieu: 'Lausanne', prix: "1'480'000", pieces: '-', surface: '-', terrain: '-', categorie: 'vendu', img: '/photos/lausanne-monttendre/IMG_6530.jpg' },
 ]
 
 const STATS = [
