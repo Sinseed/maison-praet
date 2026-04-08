@@ -151,6 +151,13 @@ export const MANDATS: Mandat[] = [
     photos: ['/photos/jouxtens/jouxtens_10.jpg','/photos/jouxtens/jouxtens_09.jpg','/photos/jouxtens/jouxtens_12.jpg','/photos/jouxtens/jouxtens_01.jpg','/photos/jouxtens/jouxtens_05.jpg','/photos/jouxtens/jouxtens_04.jpg','/photos/jouxtens/jouxtens_03.jpg','/photos/jouxtens/jouxtens_07.jpg','/photos/jouxtens/jouxtens_11.jpg','/photos/jouxtens/jouxtens_08.jpg','/photos/jouxtens/jouxtens_06.jpg','/photos/jouxtens/jouxtens_02.jpg'],
     description: "Maison individuelle à Jouxtens-Mézery, commune résidentielle prisée aux portes de Lausanne. Transaction conclue avec succès."
   },
+  {
+    id: 19, slug: 'maison-riex', titre: 'Maison vigneronne', lieu: 'Riex, Lavaux',
+    prix: "1'450'000", pieces: '2.5', surface: '100 m²', terrain: '39 m²', categorie: 'en_vente',
+    img: '/photos/riex/drone-facade.jpg',
+    photos: ['/photos/riex/drone-facade.jpg','/photos/riex/drone-lac-panorama.jpg','/photos/riex/drone-lac-alpes.jpg','/photos/riex/drone-village.jpg','/photos/riex/salon.jpg','/photos/riex/cuisine.jpg','/photos/riex/salle-de-bains.jpg','/photos/riex/sauna.jpg','/photos/riex/sauna-douche.jpg'],
+    description: "Au coeur du village de Riex, dans le périmètre UNESCO de Lavaux, cette maison vigneronne de 1680 entièrement rénovée en 1989 déploie ses 100 m² habitables sur quatre niveaux. Séjour lumineux avec double hauteur, cuisine ouverte avec accès balcon, chambre sous combles avec vide sur séjour et salle de bains moderne sous vélux. Sauna privatif au sous-sol, deux places de parking couvert. La porte de la façade sud est classée monument historique. Vue sur les toits, le lac Léman et les Alpes savoyardes."
+  },
 ]
 
 // ─── ARTICLES ───────────────────────────────────────────────────────────────
