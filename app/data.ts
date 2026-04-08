@@ -156,7 +156,7 @@ export const MANDATS: Mandat[] = [
     prix: "1'450'000", pieces: '2.5', surface: '100 m²', terrain: '39 m²', categorie: 'en_vente',
     img: '/photos/riex/drone-facade.jpg',
     photos: ['/photos/riex/drone-facade.jpg','/photos/riex/drone-lac-panorama.jpg','/photos/riex/drone-lac-alpes.jpg','/photos/riex/drone-village.jpg','/photos/riex/salon.jpg','/photos/riex/cuisine.jpg','/photos/riex/salle-de-bains.jpg','/photos/riex/sauna.jpg','/photos/riex/sauna-douche.jpg'],
-    description: "Au coeur du village de Riex, dans le périmètre UNESCO de Lavaux, cette maison vigneronne de 1680 entièrement rénovée en 1989 déploie ses 100 m² habitables sur quatre niveaux. Séjour lumineux avec double hauteur, cuisine ouverte avec accès balcon, chambre sous combles avec vide sur séjour et salle de bains moderne sous vélux. Sauna privatif au sous-sol, deux places de parking couvert. La porte de la façade sud est classée monument historique. Vue sur les toits, le lac Léman et les Alpes savoyardes."
+    description: "Au coeur du village de Riex, dans le périmètre UNESCO de Lavaux, cette maison vigneronne de 1680 entièrement rénovée en 1989 déploie ses 100 m² habitables sur quatre niveaux. Séjour lumineux avec double hauteur, cuisine ouverte avec accès balcon, chambre au dernier étage avec vide sur séjour et salle de bains moderne sous vélux. Sauna privatif au sous-sol, deux places de parking couvert. La porte de la façade sud est classée monument historique. Vue sur les toits, le lac Léman et les Alpes savoyardes."
   },
 ]
 
