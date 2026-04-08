@@ -218,19 +218,14 @@ function JournalPreview() {
 function Contact() {
   return (
     <section id="contact" className="bg-brand-card/50 border-y border-brand-border">
-      <div className="max-w-7xl mx-auto px-6 py-24 md:py-32">
-        <div className="grid md:grid-cols-2 gap-16 items-center">
-          <div>
-            <p className="font-body text-sm tracking-[0.3em] uppercase text-brand-gold mb-4">Contact</p>
-            <h2 className="font-display text-4xl md:text-5xl font-light text-white mb-8 leading-tight">Parlons de<br /><span className="italic text-brand-gold">votre projet.</span></h2>
-            <p className="font-body text-brand-muted leading-relaxed mb-10">Que vous souhaitiez vendre, obtenir une estimation ou simplement un avis sur votre situation immobilière, je suis à votre disposition pour un premier échange sans engagement.</p>
-            <div className="space-y-6">
-              <a href="tel:+41799690191" className="flex items-center gap-4 group"><div className="w-12 h-12 border border-brand-border flex items-center justify-center group-hover:border-brand-gold transition-colors"><Phone size={18} className="text-brand-gold" /></div><div><p className="font-body text-xs tracking-widest uppercase text-brand-muted">Téléphone</p><p className="font-body text-white group-hover:text-brand-gold transition-colors">+41 79 969 01 91</p></div></a>
-              <a href="mailto:tpraet@golay-immobilier.ch" className="flex items-center gap-4 group"><div className="w-12 h-12 border border-brand-border flex items-center justify-center group-hover:border-brand-gold transition-colors"><Mail size={18} className="text-brand-gold" /></div><div><p className="font-body text-xs tracking-widest uppercase text-brand-muted">Email</p><p className="font-body text-white group-hover:text-brand-gold transition-colors">tpraet@golay-immobilier.ch</p></div></a>
-              <div className="flex items-center gap-4"><div className="w-12 h-12 border border-brand-border flex items-center justify-center"><MapPin size={18} className="text-brand-gold" /></div><div><p className="font-body text-xs tracking-widest uppercase text-brand-muted">Bureau</p><p className="font-body text-white">Golay Immobilier SA · Lausanne</p></div></div>
-            </div>
-          </div>
-          <div className="relative aspect-square bg-brand-dark border border-brand-border overflow-hidden"><div className="absolute inset-0 flex items-center justify-center"><div className="text-center"><MapPin size={32} className="text-brand-gold mx-auto mb-4" /><p className="font-body text-sm tracking-widest uppercase text-brand-muted">Arc lémanique</p><p className="font-body text-xs text-brand-muted/60 mt-1">Gros-de-Vaud</p></div></div></div>
+      <div className="max-w-3xl mx-auto px-6 py-24 md:py-32 text-center">
+        <p className="font-body text-sm tracking-[0.3em] uppercase text-brand-gold mb-4">Contact</p>
+        <h2 className="font-display text-4xl md:text-5xl font-light text-white mb-8 leading-tight">Parlons de<br /><span className="italic text-brand-gold">votre projet.</span></h2>
+        <p className="font-body text-brand-muted leading-relaxed mb-12">Que vous souhaitiez vendre, obtenir une estimation ou simplement un avis sur votre situation immobilière, je suis à votre disposition pour un premier échange sans engagement.</p>
+        <div className="flex flex-col sm:flex-row justify-center gap-8 sm:gap-12">
+          <a href="tel:+41799690191" className="flex items-center gap-4 group"><div className="w-12 h-12 border border-brand-border flex items-center justify-center group-hover:border-brand-gold transition-colors"><Phone size={18} className="text-brand-gold" /></div><div className="text-left"><p className="font-body text-xs tracking-widest uppercase text-brand-muted">Téléphone</p><p className="font-body text-white group-hover:text-brand-gold transition-colors">+41 79 969 01 91</p></div></a>
+          <a href="mailto:tpraet@golay-immobilier.ch" className="flex items-center gap-4 group"><div className="w-12 h-12 border border-brand-border flex items-center justify-center group-hover:border-brand-gold transition-colors"><Mail size={18} className="text-brand-gold" /></div><div className="text-left"><p className="font-body text-xs tracking-widest uppercase text-brand-muted">Email</p><p className="font-body text-white group-hover:text-brand-gold transition-colors">tpraet@golay-immobilier.ch</p></div></a>
+          <div className="flex items-center gap-4"><div className="w-12 h-12 border border-brand-border flex items-center justify-center"><MapPin size={18} className="text-brand-gold" /></div><div className="text-left"><p className="font-body text-xs tracking-widest uppercase text-brand-muted">Bureau</p><p className="font-body text-white">Golay Immobilier SA · Lausanne</p></div></div>
         </div>
       </div>
     </section>
