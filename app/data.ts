@@ -27,11 +27,33 @@ export type Article = {
 // ─── MANDATS ────────────────────────────────────────────────────────────────
 export const MANDATS: Mandat[] = [
   {
+    id: 18, slug: 'villa-morges', titre: 'Villa familiale', lieu: 'Morges',
+    prix: "1'790'000", pieces: '5.5', surface: '148 m²', terrain: '808 m²', categorie: 'en_vente',
+    img: '/photos/morges-fauvette/drone_facade.jpg',
+    photos: ['/photos/morges-fauvette/drone_facade.jpg','/photos/morges-fauvette/drone_lac.jpg','/photos/morges-fauvette/drone_quartier.jpg','/photos/morges-fauvette/salon.jpg','/photos/morges-fauvette/cuisine.jpg','/photos/morges-fauvette/chambre_combles1.jpg','/photos/morges-fauvette/chambre_combles2.jpg','/photos/morges-fauvette/sdb.jpg','/photos/morges-fauvette/chambre_rez.jpg','/photos/morges-fauvette/bureau.jpg','/photos/morges-fauvette/jardin.jpg'],
+    description: "Villa familiale de 5.5 pièces au chemin de la Fauvette à Morges, sur une parcelle arborée de 808 m². Triple orientation sud, est et ouest. Quatre chambres, trois salles d'eau, double garage. CHF 380'800.- de travaux documentés depuis l'acquisition. Vue sur le lac Léman depuis l'étage."
+  },
+]
+  {
+    id: 5, slug: 'villa-cossonay', titre: 'Villa jumelée', lieu: 'Cossonay-Ville',
+    prix: "1'450'000", pieces: '5.5', surface: '-', terrain: '-', categorie: 'en_vente',
+    img: '/photos/cossonay/DJI_20260304145633_0009_D.jpg',
+    photos: ['/photos/cossonay/DJI_20260304145633_0009_D.jpg','/photos/cossonay/DJI_20260304150013_0015_D.jpg','/photos/cossonay/IMG_7366.jpg','/photos/cossonay/Cuisine_lumineuse_avec_vue_sur_le_jardin.png','/photos/cossonay/Chambre_d_attic_chaleureuse_et_lumineuse.png','/photos/cossonay/Salle_de_bains_sous_les_combles.png','/photos/cossonay/ChatGPT_Image_19_mars_2026__10_29_05.png'],
+    description: "Villa jumelée de 5.5 pièces à Cossonay-Ville, avec vue dégagée sur le Jura et les Alpes. Jardin plat, véranda, calme absolu en bordure de campagne. Brochure et visite sur demande."
+  },
+  {
     id: 1, slug: 'maison-yverdon', titre: 'Maison individuelle', lieu: 'Yverdon-les-Bains',
     prix: "2'290'000", pieces: '8.5', surface: '240 m²', terrain: "1'260 m²", categorie: 'en_vente',
     img: '/photos/yverdon/IMG_5987.jpg',
     photos: ['/photos/yverdon/IMG_5987.jpg','/photos/yverdon/IMG_5989.jpg','/photos/yverdon/IMG_5990.jpg','/photos/yverdon/IMG_5993.jpg','/photos/yverdon/IMG_5994.jpg','/photos/yverdon/IMG_6001.jpg','/photos/yverdon/IMG_6002.jpg','/photos/yverdon/IMG_6003.jpg','/photos/yverdon/IMG_6006.jpg','/photos/yverdon/IMG_6010.jpg','/photos/yverdon/IMG_6012.jpg','/photos/yverdon/IMG_6013.jpg','/photos/yverdon/IMG_6014.jpg','/photos/yverdon/IMG_6017.jpg','/photos/yverdon/IMG_6019.jpg','/photos/yverdon/IMG_6022.jpg','/photos/yverdon/IMG_6025.jpg'],
     description: "Implantée sur une parcelle de plus de 1'260 m² à Yverdon-les-Bains, cette maison individuelle de 8.5 pièces offre 240 m² habitables. Volumes généreux, jardin arboré et potentiel d'agrandissement d'environ 524 m². Proximité immédiate des thermes et de toutes les commodités."
+  },
+  {
+    id: 8, slug: 'maison-gland-buis', titre: 'Maison jumelée', lieu: 'Gland',
+    prix: "2'750'000", pieces: '-', surface: '-', terrain: '-', categorie: 'en_vente',
+    img: '/photos/gland-buis/DJI_20260115164414_0005_D.jpg',
+    photos: ['/photos/gland-buis/DJI_20260115164414_0005_D.jpg','/photos/gland-buis/IMG_6123.jpg','/photos/gland-buis/IMG_6129.jpg','/photos/gland-buis/IMG_6134.jpg','/photos/gland-buis/IMG_6137.jpg','/photos/gland-buis/IMG_6140.jpg','/photos/gland-buis/IMG_6141.jpg','/photos/gland-buis/IMG_6143.jpg','/photos/gland-buis/IMG_6147.jpg','/photos/gland-buis/IMG_6148.jpg','/photos/gland-buis/IMG_6150.jpg','/photos/gland-buis/IMG_6151.jpg','/photos/gland-buis/IMG_6152.jpg','/photos/gland-buis/IMG_6153.jpg','/photos/gland-buis/IMG_6154.jpg','/photos/gland-buis/IMG_6155.jpg'],
+    description: "Maison jumelée d'exception à Gland, au chemin du Buis. Architecture contemporaine, volumes généreux et finitions soignées. Terrasse, jardin privatif et vue dégagée."
   },
   {
     id: 2, slug: 'immeuble-lausanne-vallon', titre: 'Immeuble de rendement', lieu: 'Lausanne',
@@ -55,13 +77,6 @@ export const MANDATS: Mandat[] = [
     description: "Immeuble de trois logements au Levant 117 à Lausanne. Bien réservé, signature notariale en cours."
   },
   {
-    id: 5, slug: 'villa-cossonay', titre: 'Villa jumelée', lieu: 'Cossonay-Ville',
-    prix: "1'450'000", pieces: '5.5', surface: '-', terrain: '-', categorie: 'en_vente',
-    img: '/photos/cossonay/DJI_20260304145633_0009_D.jpg',
-    photos: ['/photos/cossonay/DJI_20260304145633_0009_D.jpg','/photos/cossonay/DJI_20260304150013_0015_D.jpg','/photos/cossonay/IMG_7366.jpg','/photos/cossonay/Cuisine_lumineuse_avec_vue_sur_le_jardin.png','/photos/cossonay/Chambre_d_attic_chaleureuse_et_lumineuse.png','/photos/cossonay/Salle_de_bains_sous_les_combles.png','/photos/cossonay/ChatGPT_Image_19_mars_2026__10_29_05.png'],
-    description: "Villa jumelée de 5.5 pièces à Cossonay-Ville, avec vue dégagée sur le Jura et les Alpes. Jardin plat, véranda, calme absolu en bordure de campagne. Brochure et visite sur demande."
-  },
-  {
     id: 6, slug: 'appartement-epalinges', titre: 'Appartement PPE', lieu: 'Epalinges',
     prix: "1'090'000", pieces: '4', surface: '-', terrain: '-', categorie: 'en_vente',
     img: '', photos: [],
@@ -73,13 +88,6 @@ export const MANDATS: Mandat[] = [
     img: '/photos/lemont/IMG_4544.jpg',
     photos: ['/photos/lemont/IMG_4542.jpg','/photos/lemont/IMG_4543.jpg','/photos/lemont/IMG_4544.jpg','/photos/lemont/IMG_4545.jpg','/photos/lemont/IMG_4547.jpg','/photos/lemont/IMG_4550.jpg','/photos/lemont/IMG_4552.jpg','/photos/lemont/IMG_4557.jpg','/photos/lemont/IMG_4559.jpg'],
     description: "Appartement PPE au Mont-sur-Lausanne, dans un cadre résidentiel prisé. Lumineux et fonctionnel, avec vue dégagée sur la campagne environnante."
-  },
-  {
-    id: 8, slug: 'maison-gland-buis', titre: 'Maison jumelée', lieu: 'Gland',
-    prix: "2'750'000", pieces: '-', surface: '-', terrain: '-', categorie: 'en_vente',
-    img: '/photos/gland-buis/DJI_20260115164414_0005_D.jpg',
-    photos: ['/photos/gland-buis/DJI_20260115164414_0005_D.jpg','/photos/gland-buis/IMG_6123.jpg','/photos/gland-buis/IMG_6129.jpg','/photos/gland-buis/IMG_6134.jpg','/photos/gland-buis/IMG_6137.jpg','/photos/gland-buis/IMG_6140.jpg','/photos/gland-buis/IMG_6141.jpg','/photos/gland-buis/IMG_6143.jpg','/photos/gland-buis/IMG_6147.jpg','/photos/gland-buis/IMG_6148.jpg','/photos/gland-buis/IMG_6150.jpg','/photos/gland-buis/IMG_6151.jpg','/photos/gland-buis/IMG_6152.jpg','/photos/gland-buis/IMG_6153.jpg','/photos/gland-buis/IMG_6154.jpg','/photos/gland-buis/IMG_6155.jpg'],
-    description: "Maison jumelée d'exception à Gland, au chemin du Buis. Architecture contemporaine, volumes généreux et finitions soignées. Terrasse, jardin privatif et vue dégagée."
   },
   {
     id: 9, slug: 'maison-tartegnin', titre: 'Maison villageoise', lieu: 'Tartegnin',
@@ -144,14 +152,6 @@ export const MANDATS: Mandat[] = [
     photos: ['/photos/jouxtens/jouxtens_10.jpg','/photos/jouxtens/jouxtens_09.jpg','/photos/jouxtens/jouxtens_12.jpg','/photos/jouxtens/jouxtens_01.jpg','/photos/jouxtens/jouxtens_05.jpg','/photos/jouxtens/jouxtens_04.jpg','/photos/jouxtens/jouxtens_03.jpg','/photos/jouxtens/jouxtens_07.jpg','/photos/jouxtens/jouxtens_11.jpg','/photos/jouxtens/jouxtens_08.jpg','/photos/jouxtens/jouxtens_06.jpg','/photos/jouxtens/jouxtens_02.jpg'],
     description: "Maison individuelle à Jouxtens-Mézery, commune résidentielle prisée aux portes de Lausanne. Transaction conclue avec succès."
   },
-  {
-    id: 18, slug: 'villa-morges', titre: 'Villa familiale', lieu: 'Morges',
-    prix: "1'790'000", pieces: '5.5', surface: '148 m²', terrain: '808 m²', categorie: 'en_vente',
-    img: '/photos/morges-fauvette/drone_facade.jpg',
-    photos: ['/photos/morges-fauvette/drone_facade.jpg','/photos/morges-fauvette/drone_lac.jpg','/photos/morges-fauvette/drone_quartier.jpg','/photos/morges-fauvette/salon.jpg','/photos/morges-fauvette/cuisine.jpg','/photos/morges-fauvette/chambre_combles1.jpg','/photos/morges-fauvette/chambre_combles2.jpg','/photos/morges-fauvette/sdb.jpg','/photos/morges-fauvette/chambre_rez.jpg','/photos/morges-fauvette/bureau.jpg','/photos/morges-fauvette/jardin.jpg'],
-    description: "Villa familiale de 5.5 pièces au chemin de la Fauvette à Morges, sur une parcelle arborée de 808 m². Triple orientation sud, est et ouest. Quatre chambres, trois salles d'eau, double garage. CHF 380'800.- de travaux documentés depuis l'acquisition. Vue sur le lac Léman depuis l'étage."
-  },
-]
 
 // ─── ARTICLES ───────────────────────────────────────────────────────────────
 export const ARTICLES: Article[] = [
