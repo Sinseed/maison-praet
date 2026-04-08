@@ -31,7 +31,7 @@ export const MANDATS: Mandat[] = [
     prix: "1'790'000", pieces: '5', surface: '148 m²', terrain: '808 m²', categorie: 'en_vente',
     img: '/photos/morges-fauvette/drone_facade.jpg',
     photos: ['/photos/morges-fauvette/drone_facade.jpg','/photos/morges-fauvette/drone_lac.jpg','/photos/morges-fauvette/drone_quartier.jpg','/photos/morges-fauvette/salon.jpg','/photos/morges-fauvette/cuisine.jpg','/photos/morges-fauvette/chambre_combles1.jpg','/photos/morges-fauvette/chambre_combles2.jpg','/photos/morges-fauvette/sdb.jpg','/photos/morges-fauvette/chambre_rez.jpg','/photos/morges-fauvette/bureau.jpg','/photos/morges-fauvette/jardin.jpg'],
-    description: "Villa familiale de 5 pièces au chemin de la Fauvette à Morges, sur une parcelle arborée de 808 m². Triple orientation sud, est et ouest. Quatre chambres, trois salles d'eau, double garage. CHF 380'800.- de travaux documentés depuis l'acquisition. Vue sur le lac Léman depuis l'étage."
+    description: "Villa familiale de 5 pièces au chemin de la Fauvette à Morges, sur une parcelle arborée de 808 m². Quatre chambres, trois salles d'eau, double garage. Triple orientation sud, est et ouest. CHF 380'800.- de travaux documentés depuis l'acquisition. Vue sur le lac Léman depuis l'étage."
   },
   {
     id: 5, slug: 'villa-cossonay', titre: 'Villa jumelée', lieu: 'Cossonay-Ville',
