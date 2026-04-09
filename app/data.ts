@@ -400,7 +400,7 @@ C'est le type d'analyse qu'un courtier expérimenté intègre systématiquement 
     chapeau: "Extrait du registre foncier, police ECA, CECB, plans, servitudes : la liste complète des documents à réunir avant de mettre votre bien en vente, avec les adresses pour les obtenir.",
     date: '2026-04-09',
     categorie: 'Guide pratique',
-    contenu: `Pour vendre un bien immobilier dans le canton de Vaud, vous devez réunir une dizaine de documents administratifs et techniques. Certains sont obligatoires (CECB, extrait du registre foncier), d'autres sont indispensables pour que la vente se déroule sans accroc (police ECA, plans, attestation OIBT). Un dossier complet accélère la vente et rassure les acquéreurs comme leur banque.
+    contenu: `Pour vendre un bien immobilier dans le canton de Vaud, vous devez réunir une dizaine de documents administratifs et techniques. Certains sont obligatoires (CECB, extrait du registre foncier), d'autres sont indispensables pour que la vente se déroule sans accroc (police ECA, plans, factures de travaux). Un dossier complet accélère la vente et rassure les acquéreurs comme leur banque.
 
 Voici la liste détaillée, organisée par catégorie, avec les démarches pour obtenir chaque document.
 
@@ -408,7 +408,7 @@ Voici la liste détaillée, organisée par catégorie, avec les démarches pour 
 
 Dans le canton de Vaud, deux documents sont strictement obligatoires pour toute vente immobilière :
 
-- **L'extrait du registre foncier** : c'est la carte d'identité juridique de votre bien. Il indique le propriétaire, la surface de la parcelle, les servitudes (droits de passage, canalisations, hypothèques) et les charges foncières. À commander auprès de l'Office du registre foncier de votre district. Attention : l'extrait "public" est une version allégée. Demandez l'extrait complet en tant que propriétaire. Validité recommandée : moins de 3 mois avant la vente.
+- **L'extrait du registre foncier** : c'est la carte d'identité juridique de votre bien. Il indique le propriétaire, la surface de la parcelle, les servitudes (droits de passage, canalisations, hypothèques) et les charges foncières. En pratique, c'est souvent votre courtier qui le commande pour vous auprès de l'Office du registre foncier de votre district. Attention : l'extrait "public" est une version allégée. Il faut l'extrait complet, accessible uniquement au propriétaire ou à son mandataire. Validité recommandée : moins de 3 mois avant la vente.
 - **Le CECB (Certificat énergétique cantonal des bâtiments)** : obligatoire dans le canton de Vaud depuis 2017 lors de toute vente immobilière. Il évalue la performance énergétique du bâtiment sur une échelle de A (excellent) à G (mauvais). Valable 10 ans. À faire établir par un expert agréé CECB (liste disponible sur le site de la Conférence des directeurs cantonaux de l'énergie). Coût : entre CHF 1'000.- et CHF 3'000.- selon la taille du bâtiment. Déductible de l'impôt sur le gain immobilier.
 
 ## Quels documents techniques faut-il fournir ?
@@ -417,7 +417,6 @@ Au-delà des obligations légales, un dossier de vente complet dans le canton de
 
 - **La police d'assurance incendie (ECA)** : délivrée gratuitement par l'Etablissement cantonal d'assurance (ECA Vaud, tél. +41 58 721 21 21). Elle indique la valeur assurée à neuf, le volume en m3 et les caractéristiques du bâtiment. Document essentiel pour l'estimation et pour le notaire.
 - **Les plans d'architecte** : plans des étages et de distribution, idéalement à l'échelle. Ils permettent de vérifier les surfaces et le nombre de pièces. Si vous ne les avez plus, contactez l'architecte d'origine ou l'autorité communale des constructions.
-- **L'attestation OIBT** : le contrôle de conformité des installations électriques basse tension. Obligatoire périodiquement, ce document rassure l'acquéreur sur la sécurité électrique. À obtenir auprès d'un organisme de contrôle agréé.
 - **Les factures de rénovation** : toutes les factures de travaux effectués depuis l'achat (cuisine, salle de bains, toiture, chauffage, etc.). Elles servent à la fois à justifier le prix de vente et à réduire l'impôt sur le gain immobilier (impenses déductibles).
 - **Les relevés de consommation** : électricité et chauffage des 3 dernières années. À demander auprès de Romande Energie ou de votre fournisseur.
 - **Les contrats d'entretien en cours** : chauffage, ascenseur, jardin, alarme, etc.
@@ -444,13 +443,12 @@ Ces documents sont disponibles auprès de l'administrateur de la PPE. Demandez-l
 | CECB | Expert agréé CECB (liste sur cecb.ch) | CHF 1'000.- à 3'000.- | 2 à 4 semaines |
 | Police ECA | ECA Vaud (tél. 058 721 21 21) | Gratuit | Quelques jours |
 | Plans d'architecte | Architecte d'origine ou commune | Variable | Variable |
-| Attestation OIBT | Organisme de contrôle agréé | CHF 300.- à 800.- | 2 à 3 semaines |
 | Estimation fiscale | Administration cantonale des impôts | Gratuit | Quelques jours |
 | Documents PPE | Administrateur de la copropriété | Souvent inclus dans les charges | 1 à 3 semaines |
 
 ## Faut-il tout réunir avant de contacter un courtier ?
 
-Non. En pratique, un courtier expérimenté vous accompagne dans la collecte de ces documents. Dès la première rencontre, il identifie ce que vous avez déjà et ce qu'il faut commander. Certains documents (extrait RF, police ECA) sont nécessaires dès l'estimation. D'autres (OIBT, relevés de consommation) peuvent être réunis pendant la phase de commercialisation.
+Non. En pratique, un courtier expérimenté vous accompagne dans la collecte de ces documents. Dès la première rencontre, il identifie ce que vous avez déjà et ce qu'il faut commander. Certains documents (extrait RF, police ECA) sont nécessaires dès l'estimation, et c'est généralement le courtier qui se charge de les obtenir. D'autres (relevés de consommation, contrats d'entretien) peuvent être réunis pendant la phase de commercialisation.
 
 Ce qui compte, c'est de ne pas attendre qu'un acquéreur sérieux se manifeste pour commencer les démarches. Un dossier incomplet ralentit la vente et peut faire capoter une transaction : la banque de l'acquéreur exige un dossier complet pour valider le financement.
 
