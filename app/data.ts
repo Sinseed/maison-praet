@@ -271,6 +271,129 @@ La certification USPI est un gage de professionnalisme. L'Union suisse des profe
 Mon conseil : rencontrez au moins deux courtiers avant de choisir. Posez-leur les mêmes questions et comparez les réponses. Le meilleur courtier n'est pas celui qui vous promet le prix le plus élevé. C'est celui qui vous explique comment il va défendre ce prix, qui a les preuves qu'il l'a déjà fait, et dont la franchise vous inspire confiance.`,
     cta: "Vous cherchez un courtier pour votre bien dans le Canton de Vaud ? Prenons 30 minutes pour en parler."
   },
+  {
+    slug: 'impot-gain-immobilier-vaud',
+    titre: "Impôt sur le gain immobilier dans le canton de Vaud : comment ça marche ?",
+    chapeau: "Taux de 30 % à 7 % selon la durée de détention, années d'occupation comptées double, déductions possibles : tout ce qu'un propriétaire vaudois doit savoir avant de vendre.",
+    date: '2026-04-09',
+    categorie: 'Fiscalité',
+    contenu: `Dans le canton de Vaud, toute vente immobilière générant une plus-value est soumise à un impôt sur le gain immobilier. Le taux varie de 30 % (bien détenu moins d'un an) à 7 % (bien détenu plus de 24 ans). Les années d'occupation comme résidence principale comptent double dans le calcul de la durée de détention.
+
+Cet impôt concerne tous les propriétaires privés qui vendent un bien dans le canton de Vaud, qu'il s'agisse d'une villa, d'un appartement en PPE ou d'un immeuble locatif. Il est prélevé par le canton (qui en reverse 5/12 à la commune du lieu du bien) et retenu directement par le notaire sur le prix de vente au moment de la signature de l'acte. Base légale : articles 57 à 75 de la loi du 4 juillet 2000 sur les impôts directs cantonaux (LI).
+
+## Comment se calcule le gain immobilier ?
+
+Le gain imposable correspond à la différence entre le prix de vente et le prix de revient du bien. Le prix de revient inclut le prix d'achat initial, les droits de mutation payés à l'acquisition, les frais de notaire, ainsi que les impenses (travaux ayant augmenté la valeur du bien, à condition qu'ils soient documentés par des factures).
+
+**Formule :** Gain imposable = Prix de vente - Prix d'achat - Frais d'acquisition - Impenses - Commission de courtage
+
+La commission de courtage payée lors de la vente est déductible du gain imposable.
+
+## Quel est le barème d'imposition dans le canton de Vaud ?
+
+Le canton de Vaud applique un taux proportionnel dégressif selon la durée de détention du bien (article 72 LI). Le taux diminue d'un point de pourcentage par année de détention, de 30 % (moins d'un an) à 7 % (24 ans et plus).
+
+| Durée de détention | Taux d'imposition |
+|---|---|
+| Moins de 1 an | 30 % |
+| 2 ans | 29 % |
+| 3 ans | 28 % |
+| 4 ans | 27 % |
+| 5 ans | 26 % |
+| 6 ans | 25 % |
+| 7 ans | 24 % |
+| 8 ans | 23 % |
+| 9 ans | 22 % |
+| 10 ans | 21 % |
+| 11 ans | 20 % |
+| 12 ans | 19 % |
+| 13 ans | 18 % |
+| 14 ans | 17 % |
+| 15 ans | 16 % |
+| 16 ans | 15 % |
+| 17 ans | 14 % |
+| 18 ans | 13 % |
+| 19 ans | 12 % |
+| 20 ans | 11 % |
+| 21 ans | 10 % |
+| 22 ans | 9 % |
+| 23 ans | 8 % |
+| 24 ans et plus | 7 % |
+
+## Les années d'occupation comptent-elles double ?
+
+Oui. Dans le canton de Vaud, les années durant lesquelles le propriétaire a occupé le bien comme résidence principale comptent double dans le calcul de la durée de détention. C'est un avantage fiscal significatif.
+
+Concrètement : si vous avez acheté votre maison il y a 10 ans et que vous y avez habité durant ces 10 années, votre durée de détention fiscale est de 20 ans. Le taux applicable passe alors de 21 % (10 ans réels) à 11 % (20 ans fiscaux). Sur un gain de CHF 300'000.-, cela représente une économie d'impôt de CHF 30'000.-.
+
+## Quelles sont les déductions admises ?
+
+L'administration fiscale vaudoise admet plusieurs types de déductions sur le gain imposable :
+
+- **Les impenses** : tous les travaux ayant augmenté la valeur du bien (transformation, agrandissement, rénovation énergétique). Les travaux d'entretien courant ne sont pas déductibles dans ce cadre.
+- **Les frais d'acquisition** : droits de mutation payés à l'achat, frais de notaire, émoluments du registre foncier.
+- **Les frais de vente** : commission de courtage, frais de publicité, frais de notaire liés à la vente.
+- **L'estimation fiscale historique** : si le bien a été acquis il y a plus de 10 ans, l'estimation fiscale de l'immeuble 10 ans avant le transfert peut remplacer le prix de revient, si cela est plus avantageux pour le vendeur.
+
+Il est essentiel de conserver toutes les factures de travaux. Sans justificatifs, aucune déduction n'est possible.
+
+## Existe-t-il des exonérations ou des reports d'imposition ?
+
+Plusieurs situations permettent d'éviter ou de reporter l'impôt :
+
+- **Gains inférieurs à CHF 5'000.-** : exonérés d'impôt.
+- **Vente à perte** : si le prix de vente est inférieur au prix de revient, aucun impôt n'est dû.
+- **Réinvestissement** : si le produit de la vente est réinvesti dans l'achat d'un autre bien immobilier en Suisse dans un délai de 2 ans, l'impôt peut être reporté (exonération différée). Le montant réinvesti doit être au moins équivalent au produit de la vente.
+- **Succession et donation** : le transfert par héritage ou donation ne déclenche pas l'imposition. L'impôt sera dû lors de la vente ultérieure par l'héritier ou le donataire.
+- **Partage entre époux** : en cas de divorce, le transfert du bien au conjoint peut bénéficier d'un report d'imposition.
+
+## Exemple concret : vente d'une villa à Lausanne
+
+Madame Dupont a acheté une villa à Lausanne en 2012 pour CHF 1'200'000.-, avec CHF 39'600.- de droits de mutation (3.3 %). Elle y a habité comme résidence principale pendant 12 ans. Elle a investi CHF 80'000.- en rénovation de la cuisine et de la salle de bains (factures conservées). Elle vend en 2026 pour CHF 1'650'000.-, avec une commission de courtage de CHF 41'250.-.
+
+**Calcul du gain imposable :**
+
+| Élément | Montant |
+|---|---|
+| Prix de vente | CHF 1'650'000.- |
+| Prix d'achat | - CHF 1'200'000.- |
+| Droits de mutation à l'achat | - CHF 39'600.- |
+| Impenses (rénovations) | - CHF 80'000.- |
+| Commission de courtage | - CHF 41'250.- |
+| **Gain imposable** | **CHF 289'150.-** |
+
+**Durée de détention fiscale :** 14 ans réels, dont 12 ans d'occupation principale comptés double = 24 ans fiscaux.
+
+**Taux applicable :** 7 % (24 ans et plus).
+
+**Impôt sur le gain immobilier :** CHF 289'150.- x 7 % = **CHF 20'240.-**
+
+Sans le doublement des années d'occupation, le taux aurait été de 17 % (14 ans), soit CHF 49'155.-. L'économie liée à l'occupation personnelle est de CHF 28'915.-.
+
+## Quand et comment déclarer le gain immobilier ?
+
+La déclaration doit être déposée auprès de l'Administration cantonale des impôts dans les 30 jours suivant la vente (article 198 LI). En pratique, c'est le notaire qui se charge de la plupart des démarches :
+
+1. Il calcule le gain estimé en coordination avec l'administration fiscale.
+2. Il retient le montant de l'impôt sur le prix de vente.
+3. Il verse l'impôt à l'administration fiscale.
+4. Le solde du prix de vente est versé au vendeur.
+
+Le vendeur reçoit ensuite un bordereau d'impôt définitif. En l'absence de réclamation, le montant doit être acquitté dans les 30 jours suivant la notification.
+
+## Ce que cela signifie pour votre projet de vente
+
+L'impôt sur le gain immobilier est rarement un obstacle à la vente, mais il peut représenter un montant significatif si la plus-value est importante et la durée de détention courte. Anticiper ce calcul dès la phase d'estimation permet de fixer un prix de vente réaliste et d'éviter les mauvaises surprises à la signature chez le notaire.
+
+Trois points à retenir :
+
+1. Conservez toutes vos factures de travaux, dès le premier jour de propriété.
+2. Si vous habitez le bien, chaque année d'occupation réduit mécaniquement l'impôt.
+3. Si vous envisagez un réinvestissement, planifiez-le avant la vente pour bénéficier du report.
+
+C'est le type d'analyse qu'un courtier expérimenté intègre systématiquement dans son estimation, bien avant la mise en vente.`,
+    cta: "Vous souhaitez connaître le montant net que vous percevrez après la vente de votre bien ? Contactez-moi pour une analyse complète."
+  },
 ]
 
 // ─── HELPERS ────────────────────────────────────────────────────────────────

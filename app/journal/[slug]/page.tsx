@@ -1,12 +1,111 @@
 'use client'
 import { useParams } from 'next/navigation'
 import Link from 'next/link'
-import { ArrowLeft, Phone } from 'lucide-react'
+import { Phone } from 'lucide-react'
 import { ARTICLES } from '../../data'
+import ArticleRenderer from '../../components/ArticleRenderer'
+import { useEffect } from 'react'
+
+function extractFAQ(contenu: string): { question: string; answer: string }[] {
+  const faq: { question: string; answer: string }[] = []
+  const lines = contenu.split('\n')
+  let i = 0
+  while (i < lines.length) {
+    if (lines[i].startsWith('## ') && lines[i].includes('?')) {
+      const question = lines[i].slice(3).trim()
+      const answerLines: string[] = []
+      i++
+      while (i < lines.length && !lines[i].startsWith('## ') && lines[i].trim() !== '---') {
+        if (lines[i].trim()) answerLines.push(lines[i].trim())
+        i++
+        if (answerLines.length >= 3) break
+      }
+      if (answerLines.length > 0) {
+        faq.push({ question, answer: answerLines.join(' ') })
+      }
+    } else {
+      i++
+    }
+  }
+  return faq
+}
 
 export default function ArticlePage() {
   const params = useParams()
   const article = ARTICLES.find(a => a.slug === params.slug)
+
+  useEffect(() => {
+    if (!article) return
+
+    const faqItems = extractFAQ(article.contenu)
+
+    const articleSchema = {
+      '@context': 'https://schema.org',
+      '@type': 'Article',
+      headline: article.titre,
+      description: article.chapeau,
+      datePublished: article.date,
+      dateModified: article.date,
+      author: {
+        '@type': 'Person',
+        name: 'Thomas Praet',
+        jobTitle: 'Courtier immobilier',
+        worksFor: {
+          '@type': 'RealEstateAgent',
+          name: 'Golay Immobilier SA',
+          address: {
+            '@type': 'PostalAddress',
+            streetAddress: 'Grand-Chêne 2',
+            addressLocality: 'Lausanne',
+            postalCode: '1003',
+            addressCountry: 'CH'
+          }
+        }
+      },
+      publisher: {
+        '@type': 'Organization',
+        name: 'Maison Praet',
+        url: 'https://maisonpraet.ch'
+      },
+      mainEntityOfPage: `https://maisonpraet.ch/journal/${article.slug}`
+    }
+
+    const faqSchema = faqItems.length > 0 ? {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: faqItems.map(item => ({
+        '@type': 'Question',
+        name: item.question,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: item.answer
+        }
+      }))
+    } : null
+
+    const articleEl = document.createElement('script')
+    articleEl.type = 'application/ld+json'
+    articleEl.textContent = JSON.stringify(articleSchema)
+    articleEl.id = 'schema-article'
+    document.head.appendChild(articleEl)
+
+    if (faqSchema) {
+      const faqEl = document.createElement('script')
+      faqEl.type = 'application/ld+json'
+      faqEl.textContent = JSON.stringify(faqSchema)
+      faqEl.id = 'schema-faq'
+      document.head.appendChild(faqEl)
+    }
+
+    document.title = `${article.titre} | Maison Praet`
+    const metaDesc = document.querySelector('meta[name="description"]')
+    if (metaDesc) metaDesc.setAttribute('content', article.chapeau)
+
+    return () => {
+      document.getElementById('schema-article')?.remove()
+      document.getElementById('schema-faq')?.remove()
+    }
+  }, [article])
 
   if (!article) return (
     <div className="min-h-screen bg-brand-dark flex items-center justify-center">
@@ -27,11 +126,8 @@ export default function ArticlePage() {
         </div>
         <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-light text-white mb-6 leading-tight">{article.titre}</h1>
         <p className="font-body text-lg text-brand-goldLight leading-relaxed mb-12 italic">{article.chapeau}</p>
-        <div className="font-body text-brand-text leading-relaxed text-[17px] space-y-6">
-          {article.contenu.split('\n\n').map((p, i) => (
-            <p key={i}>{p}</p>
-          ))}
-        </div>
+
+        <ArticleRenderer contenu={article.contenu} />
 
         {/* CTA */}
         <div className="mt-16 bg-brand-card border border-brand-gold/20 p-8">
