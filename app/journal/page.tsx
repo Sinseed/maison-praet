@@ -10,7 +10,7 @@ export default function JournalPage() {
         <h1 className="font-display text-4xl md:text-5xl font-light text-white mb-4">Conseils & <span className="italic text-brand-gold">analyses</span></h1>
         <p className="font-body text-brand-muted mb-16 max-w-2xl">Marché immobilier vaudois, conseils vendeurs, guides pratiques. Des articles concrets pour prendre les bonnes décisions.</p>
         <div className="space-y-8">
-          {ARTICLES.map(a => (
+          {[...ARTICLES].sort((a, b) => b.date.localeCompare(a.date)).map(a => (
             <Link href={`/journal/${a.slug}`} key={a.slug} className="group block bg-brand-card border border-brand-border p-8 hover:border-brand-gold/30 transition-all duration-500">
               <div className="flex items-center gap-3 mb-4">
                 <span className="font-body text-xs tracking-widest uppercase text-brand-gold">{a.categorie}</span>
