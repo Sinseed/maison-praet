@@ -166,7 +166,7 @@ export const ARTICLES: Article[] = [
     slug: 'estimer-son-bien-canton-de-vaud',
     titre: 'Comment estimer la valeur de votre bien dans le Canton de Vaud',
     chapeau: "Valeur intrinsèque, valeur de rendement, valeur vénale : trois approches complémentaires pour fixer un prix juste. Voici comment un courtier professionnel procède.",
-    date: '2026-04-07',
+    date: '2026-01-15',
     categorie: 'Estimation',
     contenu: `Fixer le bon prix de vente, c'est probablement la décision la plus importante de tout le processus. Trop haut, votre bien reste sur le marché et perd en attractivité. Trop bas, vous laissez de l'argent sur la table.
 
@@ -187,7 +187,7 @@ Mon conseil : méfiez-vous des estimations en ligne. Elles se basent sur des alg
     slug: 'frais-vente-immobiliere-suisse',
     titre: 'Vendre en Suisse : tous les frais à anticiper',
     chapeau: "Commission, impôt sur le gain immobilier, frais de notaire, remboursement hypothécaire... Le montant qu'il vous reste après la vente réserve parfois des surprises. Tour d'horizon.",
-    date: '2026-04-01',
+    date: '2026-01-29',
     categorie: 'Guide pratique',
     contenu: `Quand un propriétaire me demande "combien va me rester après la vente ?", la réponse n'est jamais simplement le prix de vente moins l'hypothèque. Voici les postes à connaître.
 
@@ -208,7 +208,7 @@ Mon conseil : faites le calcul complet avant de fixer votre prix minimum. J'acco
     slug: 'marche-immobilier-vaudois-2026',
     titre: "Marché immobilier vaudois en 2026 : ce qu'il faut savoir",
     chapeau: "Entre stabilisation des taux, rareté de l'offre et pression démographique, le marché vaudois reste un marché de vendeurs. Mais pas à n'importe quel prix.",
-    date: '2026-03-25',
+    date: '2026-02-26',
     categorie: 'Marché',
     contenu: `Le marché immobilier du Canton de Vaud continue de surprendre. Malgré les hausses de taux de 2023-2024, les prix n'ont pas corrigé significativement. Voici pourquoi, et ce que cela signifie si vous envisagez de vendre.
 
@@ -229,7 +229,7 @@ Mon analyse : c'est un bon moment pour vendre si votre bien est en bon état et 
     slug: 'pourquoi-votre-bien-ne-se-vend-pas',
     titre: 'Pourquoi votre bien ne se vend pas (et comment y remédier)',
     chapeau: "Trois mois sur le marché sans offre sérieuse ? Le problème est presque toujours le même. Et la solution aussi.",
-    date: '2026-03-18',
+    date: '2026-03-12',
     categorie: 'Conseils vendeurs',
     contenu: `Après six ans de courtage dans le Canton de Vaud, je peux affirmer ceci : quand un bien ne se vend pas, la cause est dans la grande majorité des cas liée au prix ou à la présentation. Pas à la localisation, pas au marché, pas à la saison.
 
@@ -252,7 +252,7 @@ Ma méthode : je préfère perdre un mandat en donnant un prix honnête que de l
     slug: 'choisir-son-courtier-suisse-romande',
     titre: 'Comment choisir son courtier immobilier en Suisse romande',
     chapeau: "Mandat exclusif ou non-exclusif ? Commission fixe ou au pourcentage ? Au-delà de ces questions, la seule qui compte vraiment : ce courtier va-t-il défendre votre prix comme si c'était le sien ?",
-    date: '2026-03-10',
+    date: '2026-02-12',
     categorie: 'Guide pratique',
     contenu: `Choisir un courtier, c'est confier un actif de plusieurs centaines de milliers de francs à quelqu'un. Pas à un algorithme. Pas à une plateforme. À une personne qui va défendre vos intérêts face à des acquéreurs bien informés et souvent bien accompagnés.
 
@@ -275,7 +275,7 @@ Mon conseil : rencontrez au moins deux courtiers avant de choisir. Posez-leur le
     slug: 'impot-gain-immobilier-vaud',
     titre: "Impôt sur le gain immobilier dans le canton de Vaud : comment ça marche ?",
     chapeau: "Taux de 30 % à 7 % selon la durée de détention, années d'occupation comptées double, déductions possibles : tout ce qu'un propriétaire vaudois doit savoir avant de vendre.",
-    date: '2026-04-09',
+    date: '2026-03-26',
     categorie: 'Fiscalité',
     contenu: `Dans le canton de Vaud, toute vente immobilière générant une plus-value est soumise à un impôt sur le gain immobilier. Le taux varie de 30 % (bien détenu moins d'un an) à 7 % (bien détenu plus de 24 ans). Les années d'occupation comme résidence principale comptent double dans le calcul de la durée de détention.
 
