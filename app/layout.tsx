@@ -30,6 +30,7 @@ export const metadata: Metadata = {
     images: ['https://maisonpraet.ch/og-image.jpg'],
   },
   robots: { index: true, follow: true },
+  verification: { google: 'r4ZOgCsUY1UNRLgf7Ou5n7qblp_kFhSmDfikxDEsXdw' },
   alternates: { canonical: 'https://maisonpraet.ch' },
 }
 
