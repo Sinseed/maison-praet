@@ -461,6 +461,110 @@ Comptez 2 à 4 semaines pour réunir l'ensemble des documents, en parallèle de 
 Mon conseil : commencez par les deux documents les plus rapides à obtenir (police ECA et extrait RF), puis enchaînez avec le CECB. C'est l'ordre que je recommande systématiquement à mes clients.`,
     cta: "Vous préparez la vente de votre bien dans le canton de Vaud ? Contactez-moi, je vous guide dans chaque étape."
   },
+  {
+    slug: 'cecb-obligatoire-vente-vaud',
+    titre: "CECB obligatoire dans le canton de Vaud : ce que tout propriétaire doit savoir",
+    chapeau: "Obligatoire depuis 2017 pour toute vente d'un bâtiment d'habitation dans le canton de Vaud, le CECB est bien plus qu'une formalité administrative. Il influence le prix, la négociation et la stratégie de vente.",
+    date: '2026-04-02',
+    categorie: 'Énergie',
+    contenu: `Le CECB (Certificat énergétique cantonal des bâtiments) est obligatoire dans le canton de Vaud lors de toute vente d'un bâtiment d'habitation existant. Cette obligation est en vigueur depuis le 1er janvier 2017 (règlement cantonal 730.01.4). Le certificat évalue la performance énergétique du bâtiment sur une échelle de A (excellent) à G (très énergivore), coûte entre CHF 450.- et CHF 800.- selon le type de bien, et est valable 10 ans.
+
+Le CECB n'entraîne aucune obligation de travaux. Mais il donne à l'acquéreur une vision claire des coûts énergétiques et du potentiel d'amélioration du bâtiment, ce qui en fait un levier de négociation important.
+
+## Quand le CECB est-il obligatoire dans le canton de Vaud ?
+
+Le CECB doit être établi dans deux situations précises :
+
+- **Vente d'un bâtiment d'habitation existant** : villa, immeuble locatif, appartement en PPE. Le CECB doit être établi avant la mise en vente et communiqué à l'acquéreur au plus tard lors de la signature de l'acte notarié.
+- **Remplacement d'une installation de chauffage** par une nouvelle installation fonctionnant au gaz, au mazout ou au charbon. Le CECB doit être réalisé avant les travaux.
+
+Le CECB doit correspondre à l'état actuel du bâtiment au moment de la vente. S'il date de moins de 10 ans et que ni le chauffage ni l'enveloppe n'ont été modifiés, il reste valable.
+
+## Quelles sont les exceptions ?
+
+Le CECB n'est pas obligatoire dans les cas suivants :
+
+- Donation ou donation mixte
+- Transfert de propriété par succession
+- Transfert entre époux (régime matrimonial, divorce)
+- Vente de bâtiments non encore construits (vente sur plan)
+- Cession en lieu de partage
+
+En revanche, un transfert entre concubins nécessite un CECB.
+
+## Que mesure exactement le CECB ?
+
+Le certificat évalue trois dimensions :
+
+- **L'efficacité de l'enveloppe du bâtiment** : qualité de l'isolation thermique (murs, toiture, fenêtres, planchers). Classement de A à G.
+- **L'efficacité énergétique globale** : énergie nécessaire pour le chauffage, l'eau chaude et les installations techniques. Classement de A à G.
+- **Les émissions directes de CO2** : quantité de CO2 émise par le bâtiment.
+
+Un bâtiment neuf conforme aux normes actuelles se situe généralement en classe B. Les constructions d'avant 1980 sans rénovation sont souvent classées E, F ou G. Les classes A sont rares et correspondent à des standards Minergie-P ou passifs.
+
+## Quelle est la différence entre CECB et CECB Plus ?
+
+| Caractéristique | CECB simple | CECB Plus |
+|---|---|---|
+| Contenu | Étiquette énergie (classes A-G) | Étiquette + rapport de conseil détaillé |
+| Recommandations de travaux | Non | Oui, avec variantes chiffrées |
+| Estimation des coûts de rénovation | Non | Oui |
+| Subventions identifiées | Non | Oui |
+| Coût indicatif (villa) | CHF 450.- à 650.- | CHF 1'000.- à 2'500.- |
+| Coût indicatif (immeuble) | CHF 500.- à 800.- | CHF 1'500.- à 3'500.- |
+| Subventionné par le canton | Non | Oui, pour les bâtiments construits avant 2000 |
+
+Le CECB Plus est obligatoire pour obtenir des subventions du Programme Bâtiments supérieures à CHF 10'000.-. Le canton de Vaud double les subventions fédérales pour la rénovation énergétique, ce qui rend le CECB Plus particulièrement intéressant avant des travaux.
+
+## Comment le CECB influence-t-il le prix de vente ?
+
+C'est un point que beaucoup de propriétaires sous-estiment. Le CECB a un impact direct sur la négociation :
+
+Un bien classé A ou B rassure l'acquéreur : charges prévisibles, pas de gros investissements à court terme. C'est un argument de vente. Un bien classé F ou G donne à l'acquéreur un levier de négociation : il chiffrera les travaux nécessaires et les déduira mentalement du prix demandé.
+
+Dans ma pratique, je constate que les acquéreurs sont de plus en plus informés sur le sujet. Les banques aussi : certains établissements intègrent la classe CECB dans leur évaluation du bien. Un mauvais classement peut influencer le montant du prêt accordé.
+
+C'est pourquoi je recommande systématiquement de faire établir le CECB dès le début du processus de vente, pas à la dernière minute. Il permet d'anticiper les objections et de positionner le prix en connaissance de cause.
+
+## Que se passe-t-il en PPE ?
+
+Pour un appartement en propriété par étages, le CECB porte sur l'ensemble du bâtiment, pas sur le lot individuel. C'est logique : le chauffage, l'enveloppe et les émissions concernent l'immeuble entier.
+
+Concrètement :
+
+- Lors de la vente du premier lot, le CECB doit être établi pour tout l'immeuble.
+- C'est à l'administrateur de la PPE de faire établir le document.
+- Les coûts sont supportés par la copropriété (fonds de rénovation ou charges communes).
+- L'accord de tous les copropriétaires est nécessaire.
+
+Si vous êtes copropriétaire et que vous envisagez de vendre, vérifiez auprès de votre administrateur si un CECB existe déjà et s'il est encore valide.
+
+## Comment obtenir un CECB dans le canton de Vaud ?
+
+1. Trouvez un expert agréé sur le site cecb.ch (recherche par code postal).
+2. L'expert visite le bâtiment et collecte les données techniques.
+3. Il établit le certificat à l'aide du logiciel officiel CECB.
+4. Le certificat est publié et reste valable 10 ans.
+
+Délai moyen : 2 à 4 semaines entre la prise de contact et la réception du certificat. En période de forte demande, ce délai peut s'allonger. Anticipez.
+
+## Le CECB est-il déductible fiscalement ?
+
+Oui. Le coût du CECB (simple ou Plus) est déductible de l'impôt sur le gain immobilier lors de la vente. C'est un frais de vente au même titre que la commission de courtage.
+
+Pour les propriétaires qui ne vendent pas mais qui font établir un CECB en vue de travaux de rénovation, le coût peut être déduit des impôts sur le revenu au titre de frais d'entretien du bien immobilier.
+
+## Ce que je recommande à mes clients
+
+Le CECB est une obligation légale, pas une option. Mais au-delà de la conformité, c'est un outil stratégique :
+
+1. Faites-le établir dès que vous envisagez la vente, pas quand l'acquéreur le demande.
+2. Si votre bien est classé E, F ou G, demandez un CECB Plus : il vous donne des arguments pour contextualiser le classement et montrer le potentiel d'amélioration.
+3. Si votre bien est classé A, B ou C, mettez-le en avant dans le dossier de vente. C'est un différenciateur réel sur le marché vaudois actuel.
+
+Le CECB ne fait pas vendre un bien. Mais un CECB bien utilisé dans la stratégie de commercialisation peut faire la différence entre une négociation subie et une négociation maîtrisée.`,
+    cta: "Vous souhaitez vendre et vous avez des questions sur le CECB ? Contactez-moi, je vous oriente vers les bons interlocuteurs."
+  },
 ]
 
 // ─── HELPERS ────────────────────────────────────────────────────────────────
