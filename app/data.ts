@@ -649,6 +649,96 @@ Si la réponse n'est pas clairement oui, ne faites rien de lourd. Concentrez-vou
 Un acquéreur qui comprend ce qu'il achète négocie moins qu'un acquéreur qui a des doutes.`,
     cta: "Vous hésitez entre rénover et vendre en l'état ? Contactez-moi pour une analyse objective, adaptée à votre bien et à votre marché."
   },
+  {
+    slug: 'l3pl-vaud-autorisation-vente-logement-loue',
+    titre: "L3PL dans le canton de Vaud : faut-il une autorisation pour vendre un logement loué ?",
+    chapeau: "Si votre bien est ou a été loué et qu'il se situe dans un district à pénurie, vous devez peut-être obtenir une autorisation avant de vendre. Mais de nombreuses exceptions existent.",
+    date: '2026-03-19',
+    categorie: 'Juridique',
+    contenu: `Dans le canton de Vaud, la vente d'un logement qui est ou a été loué peut nécessiter une autorisation de la Direction du logement (DIL), en vertu de la loi sur la préservation et la promotion du parc locatif (LPPPL, dite L3PL). Cette obligation ne concerne que les biens situés dans un district déclaré en pénurie de logements. En 2026, seul le district d'Aigle n'est pas concerné. Mais de nombreuses exceptions permettent de vendre sans autorisation, même dans un district à pénurie.
+
+La L3PL est entrée en vigueur le 1er janvier 2018. Son objectif : lutter contre la pénurie de logements en conservant sur le marché locatif les biens qui y sont déjà.
+
+## Quels sont les districts concernés en 2026 ?
+
+La liste des districts à pénurie est publiée chaque année par l'État de Vaud. En 2026 :
+
+**Pénurie prononcée (taux de vacance < 1 %, L3PL pleinement applicable) :**
+
+- Lausanne
+- Morges
+- Gros-de-Vaud
+- Lavaux-Oron
+- Ouest lausannois
+- Riviera-Pays-d'Enhaut (nouveau en 2026)
+
+**Pénurie modérée (taux entre 1 % et 1,5 %, L3PL allégée) :**
+
+- Broye-Vully
+- Jura-Nord vaudois
+- Nyon
+
+**Pas de pénurie (L3PL non applicable) :**
+
+- Aigle
+
+Si votre bien se situe dans le district d'Aigle, la L3PL ne vous concerne pas. Pour tous les autres districts, il faut vérifier si votre bien entre dans le champ d'application de la loi.
+
+## Quels biens sont soumis à autorisation ?
+
+La L3PL s'applique à la vente de tout logement qui a été occupé en dernier lieu par un locataire, y compris si le logement est actuellement vacant. C'est la dernière occupation qui compte, pas la situation au moment de la vente.
+
+Par "vente", la loi entend tout transfert de propriété à titre onéreux : vente classique, vente de certificats d'actions donnant droit à la jouissance d'un logement, donation mixte.
+
+## Quelles sont les exceptions ?
+
+C'est là que ça devient intéressant pour les propriétaires. La liste des exceptions est longue et couvre beaucoup de situations courantes :
+
+- **Bâtiment de 2 logements ou moins** : exclu du champ d'application. Une villa divisée en deux appartements n'est pas soumise à la L3PL.
+- **Bâtiment de 3 logements maximum**, si l'un d'eux a été occupé en dernier lieu par le propriétaire, un proche parent, un allié ou un partenaire enregistré.
+- **Logement occupé en dernier lieu par le propriétaire** ou un proche parent.
+- **Logement de 150 m² nets habitables ou plus** : exclu du champ d'application.
+- **Valeur ECA supérieure à CHF 750.-/m3** (à l'indice 117, base 100 = 1990) : exclu.
+- **L'acquéreur conserve le bien en location** avec le locataire actuel en place.
+- **PPE constituée dès la construction** ou depuis le 7 octobre 1989 au moins.
+- **Vente au locataire en place** ou à un membre de la famille du propriétaire.
+
+Si vous pensez entrer dans une de ces exceptions, je recommande toujours de demander confirmation écrite à la Direction du logement avant de mettre en vente. C'est gratuit et ça évite les mauvaises surprises chez le notaire.
+
+## Que se passe-t-il si une autorisation est nécessaire ?
+
+La demande d'autorisation d'aliénation se fait auprès de la commune du lieu du bien, qui transmet son préavis à la Direction cantonale du logement. L'autorisation peut être :
+
+- **Accordée sans conditions** : vous pouvez vendre librement.
+- **Accordée avec conditions** : maintien en location à loyer contrôlé, contrôle du prix de vente, relogement du locataire. Ces conditions peuvent durer jusqu'à 10 ans (5 ans dans les districts à pénurie modérée).
+- **Refusée** : dans certains cas, notamment si le logement entre dans une catégorie à pénurie.
+
+L'autorisation peut être accordée pour motif exceptionnel si des circonstances financières ou familiales le justifient. La garantie constitutionnelle de la propriété (article 26 de la Constitution) est prise en compte dans la décision.
+
+Délai moyen : comptez 4 à 8 semaines pour obtenir une réponse, selon la commune et la complexité du dossier.
+
+## Et le droit de préemption des communes ?
+
+Depuis le 1er janvier 2020, les communes situées dans un district à pénurie disposent d'un droit de préemption sur certaines ventes. Ce droit ne peut s'exercer que si :
+
+- La parcelle fait au moins 1'500 m² (sauf si elle est attenante à un terrain communal)
+- L'objectif est de construire des logements d'utilité publique
+- Le bien est situé dans un district à pénurie
+
+En pratique, ce droit de préemption ne s'applique pas à la vente d'un lot PPE individuel, ni aux ventes entre proches parents, ni aux biens situés en zone à faible densité. Il concerne surtout les grandes parcelles constructibles.
+
+## Comment anticiper la L3PL dans votre projet de vente ?
+
+La L3PL n'empêche pas de vendre. Elle ajoute une étape administrative qui peut prendre du temps si elle n'est pas anticipée. Voici ce que je recommande :
+
+1. Vérifiez si votre district est à pénurie (liste publiée chaque année sur vd.ch).
+2. Vérifiez si votre bien entre dans une exception (2 logements ou moins, 150 m², propriétaire occupant, etc.).
+3. En cas de doute, écrivez à la Direction du logement avant de mettre en vente. L'adresse : Direction générale du territoire et du logement, Direction du logement, Rue Caroline 11 bis, 1014 Lausanne.
+4. Si une autorisation est nécessaire, lancez la démarche en parallèle de la mise en vente, pas après avoir trouvé un acquéreur. Attendre le passage chez le notaire pour s'en occuper, c'est prendre le risque de perdre l'acquéreur.
+
+Un dossier bien préparé et soumis tôt dans le processus permet d'éviter que la L3PL ne devienne un frein à la vente.`,
+    cta: "Votre bien est loué et vous envisagez de le vendre ? Contactez-moi, je vérifie votre situation au regard de la L3PL."
+  },
 ]
 
 // ─── HELPERS ────────────────────────────────────────────────────────────────
