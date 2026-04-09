@@ -563,6 +563,90 @@ Le CECB est une obligation légale, pas une option. Mais au-delà de la conformi
 Le CECB ne fait pas vendre un bien. Mais un CECB bien utilisé dans la stratégie de commercialisation peut faire la différence entre une négociation subie et une négociation maîtrisée.`,
     cta: "Vous souhaitez vendre et vous avez des questions sur le CECB ? Contactez-moi, je vous oriente vers les bons interlocuteurs."
   },
+  {
+    slug: 'faut-il-renover-avant-de-vendre',
+    titre: "Faut-il rénover avant de vendre son bien immobilier ?",
+    chapeau: "Refaire la cuisine pour vendre plus cher ? Remplacer le chauffage ? La réponse est rarement celle que les propriétaires attendent. Voici comment décider, chiffres à l'appui.",
+    date: '2026-02-19',
+    categorie: 'Conseil vendeur',
+    contenu: `Dans la plupart des cas, non. Les grandes rénovations avant la vente coûtent plus cher qu'elles ne rapportent. En revanche, certaines interventions ciblées, souvent peu coûteuses, peuvent accélérer la vente et limiter la négociation. La clé, c'est de distinguer ce qui crée de la valeur de ce qui crée du confort pour un acquéreur qui voudra de toute façon refaire les choses à son goût.
+
+## Pourquoi les grandes rénovations ne sont-elles pas rentables avant une vente ?
+
+Le principe est simple : un acquéreur ne paie jamais le prix des travaux au franc près. Une cuisine à CHF 40'000.- n'augmente pas le prix de vente de CHF 40'000.-. Elle l'augmente de CHF 15'000.- à CHF 25'000.- au mieux, parce que l'acquéreur ne l'aurait pas choisie ainsi, ou parce qu'il aurait négocié différemment sans elle.
+
+C'est ce qu'on appelle le décalage entre le coût des travaux et la plus-value perçue. Ce décalage est systématique sur les rénovations lourdes :
+
+| Type de travaux | Coût indicatif | Plus-value estimée à la vente | Rapport |
+|---|---|---|---|
+| Cuisine complète | CHF 30'000.- à 50'000.- | CHF 15'000.- à 25'000.- | 50 à 60 % |
+| Salle de bains complète | CHF 20'000.- à 35'000.- | CHF 10'000.- à 18'000.- | 50 à 55 % |
+| Remplacement chauffage (PAC) | CHF 25'000.- à 45'000.- | CHF 15'000.- à 25'000.- | 55 à 65 % |
+| Isolation façade | CHF 40'000.- à 80'000.- | CHF 20'000.- à 35'000.- | 45 à 50 % |
+| Peinture intérieure complète | CHF 5'000.- à 12'000.- | CHF 8'000.- à 15'000.- | 120 à 150 % |
+| Nettoyage, désencombrement, jardin | CHF 1'000.- à 3'000.- | CHF 5'000.- à 15'000.- | 300 à 500 % |
+
+La dernière ligne dit tout : les interventions les moins chères sont celles qui rapportent le plus en proportion.
+
+## Quels travaux valent la peine avant une vente ?
+
+Les interventions qui fonctionnent sont celles qui permettent à l'acquéreur de se projeter, pas celles qui transforment le bien.
+
+**Ce qui fonctionne :**
+
+- Peinture fraîche dans les pièces défraîchies (teintes neutres, claires)
+- Nettoyage en profondeur, y compris les joints, les fenêtres, les extérieurs
+- Désencombrement des pièces, des caves, des garages
+- Entretien du jardin (tonte, taille, propreté)
+- Réparation des petits défauts visibles : poignée cassée, robinet qui goutte, interrupteur abîmé, volet qui ferme mal
+- Remplacement des luminaires datés par des modèles neutres et modernes
+
+**Ce qui ne fonctionne pas :**
+
+- Refaire une cuisine que l'acquéreur voudra choisir lui-même
+- Refaire une salle de bains pour "moderniser" un bien des années 80
+- Remplacer le chauffage si le bien est vendu au prix du marché "en l'état"
+- Poser un nouveau revêtement de sol sur un existant en bon état
+
+## Et le chauffage, faut-il le remplacer ?
+
+C'est la question que me posent le plus souvent les vendeurs de villas construites avant 2000. Le chauffage au mazout ou électrique fait peur aux acquéreurs, et le CECB classé F ou G n'aide pas.
+
+Ma recommandation : ne remplacez pas le chauffage avant de vendre, sauf si l'installation est en panne ou en fin de vie imminente. Voici pourquoi :
+
+1. Le coût d'une pompe à chaleur (CHF 25'000.- à 45'000.-) n'est jamais intégralement récupéré dans le prix de vente.
+2. L'acquéreur préfère souvent choisir lui-même le système et le prestataire.
+3. En revanche, un devis détaillé pour le remplacement, joint au dossier de vente, rassure l'acquéreur et cadre la négociation. Il sait exactement ce que ça coûte. Pas de mauvaise surprise, pas de marge de négociation excessive.
+
+C'est une approche que j'utilise régulièrement : plutôt que d'investir CHF 35'000.- dans un nouveau chauffage, je recommande au vendeur de faire établir un CECB Plus (qui inclut des variantes de rénovation chiffrées) et de joindre un ou deux devis au dossier. Coût total : CHF 2'000.- à 3'000.-, pour un effet bien supérieur sur la confiance de l'acquéreur.
+
+## Comment l'acquéreur calcule-t-il la valeur d'un bien à rénover ?
+
+Un acquéreur informé, et sa banque, raisonnent ainsi : valeur du bien rénové, moins le coût estimé des travaux. Si votre villa vaut CHF 1'200'000.- une fois rénovée et que les travaux nécessaires sont estimés à CHF 150'000.-, l'offre se situera autour de CHF 1'000'000.- à CHF 1'050'000.-.
+
+Le problème : si les travaux ne sont pas chiffrés dans le dossier de vente, l'acquéreur surévalue systématiquement le budget nécessaire. Il arrondit vers le haut, par précaution. C'est pour cela qu'un dossier de vente transparent, avec un CECB et des devis, limite la décote.
+
+## Et les travaux déjà réalisés, sont-ils déductibles ?
+
+Oui. Les travaux qui augmentent la valeur du bien (impenses) sont déductibles de l'impôt sur le gain immobilier lors de la vente. Cela concerne les transformations, les agrandissements et les rénovations importantes, à condition de disposer des factures.
+
+Les travaux d'entretien courant (peinture, réparation, nettoyage) ne sont pas déductibles du gain immobilier, mais ils peuvent être déduits de l'impôt sur le revenu l'année où ils sont effectués.
+
+En pratique, si vous avez rénové la salle de bains il y a 5 ans pour CHF 25'000.-, cette somme viendra réduire votre gain imposable au moment de la vente. Ce n'est pas un argument pour rénover avant de vendre, mais c'est un argument pour conserver précieusement toutes vos factures.
+
+## Ce que je recommande à mes clients
+
+Avant toute décision de travaux, posez-vous une seule question : est-ce que cet investissement va me rapporter plus que ce qu'il me coûte, en tenant compte du prix du marché actuel ?
+
+Si la réponse n'est pas clairement oui, ne faites rien de lourd. Concentrez-vous sur trois choses :
+
+1. Un bien propre, rangé, lumineux. C'est gratuit ou presque, et c'est ce qui fait la meilleure impression en visite.
+2. Un dossier de vente transparent, avec le CECB, les devis pour les travaux que l'acquéreur devra faire, et l'historique des entretiens réalisés.
+3. Un prix juste, qui tient compte de l'état réel du bien.
+
+Un acquéreur qui comprend ce qu'il achète négocie moins qu'un acquéreur qui a des doutes.`,
+    cta: "Vous hésitez entre rénover et vendre en l'état ? Contactez-moi pour une analyse objective, adaptée à votre bien et à votre marché."
+  },
 ]
 
 // ─── HELPERS ────────────────────────────────────────────────────────────────
