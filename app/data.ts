@@ -394,6 +394,73 @@ Trois points à retenir :
 C'est le type d'analyse qu'un courtier expérimenté intègre systématiquement dans son estimation, bien avant la mise en vente.`,
     cta: "Vous souhaitez connaître le montant net que vous percevrez après la vente de votre bien ? Contactez-moi pour une analyse complète."
   },
+  {
+    slug: 'documents-vente-immobiliere-vaud',
+    titre: "Quels documents faut-il pour vendre un bien immobilier dans le canton de Vaud ?",
+    chapeau: "Extrait du registre foncier, police ECA, CECB, plans, servitudes : la liste complète des documents à réunir avant de mettre votre bien en vente, avec les adresses pour les obtenir.",
+    date: '2026-04-09',
+    categorie: 'Guide pratique',
+    contenu: `Pour vendre un bien immobilier dans le canton de Vaud, vous devez réunir une dizaine de documents administratifs et techniques. Certains sont obligatoires (CECB, extrait du registre foncier), d'autres sont indispensables pour que la vente se déroule sans accroc (police ECA, plans, attestation OIBT). Un dossier complet accélère la vente et rassure les acquéreurs comme leur banque.
+
+Voici la liste détaillée, organisée par catégorie, avec les démarches pour obtenir chaque document.
+
+## Quels sont les documents obligatoires ?
+
+Dans le canton de Vaud, deux documents sont strictement obligatoires pour toute vente immobilière :
+
+- **L'extrait du registre foncier** : c'est la carte d'identité juridique de votre bien. Il indique le propriétaire, la surface de la parcelle, les servitudes (droits de passage, canalisations, hypothèques) et les charges foncières. À commander auprès de l'Office du registre foncier de votre district. Attention : l'extrait "public" est une version allégée. Demandez l'extrait complet en tant que propriétaire. Validité recommandée : moins de 3 mois avant la vente.
+- **Le CECB (Certificat énergétique cantonal des bâtiments)** : obligatoire dans le canton de Vaud depuis 2017 lors de toute vente immobilière. Il évalue la performance énergétique du bâtiment sur une échelle de A (excellent) à G (mauvais). Valable 10 ans. À faire établir par un expert agréé CECB (liste disponible sur le site de la Conférence des directeurs cantonaux de l'énergie). Coût : entre CHF 1'000.- et CHF 3'000.- selon la taille du bâtiment. Déductible de l'impôt sur le gain immobilier.
+
+## Quels documents techniques faut-il fournir ?
+
+Au-delà des obligations légales, un dossier de vente complet dans le canton de Vaud inclut les documents suivants :
+
+- **La police d'assurance incendie (ECA)** : délivrée gratuitement par l'Etablissement cantonal d'assurance (ECA Vaud, tél. +41 58 721 21 21). Elle indique la valeur assurée à neuf, le volume en m3 et les caractéristiques du bâtiment. Document essentiel pour l'estimation et pour le notaire.
+- **Les plans d'architecte** : plans des étages et de distribution, idéalement à l'échelle. Ils permettent de vérifier les surfaces et le nombre de pièces. Si vous ne les avez plus, contactez l'architecte d'origine ou l'autorité communale des constructions.
+- **L'attestation OIBT** : le contrôle de conformité des installations électriques basse tension. Obligatoire périodiquement, ce document rassure l'acquéreur sur la sécurité électrique. À obtenir auprès d'un organisme de contrôle agréé.
+- **Les factures de rénovation** : toutes les factures de travaux effectués depuis l'achat (cuisine, salle de bains, toiture, chauffage, etc.). Elles servent à la fois à justifier le prix de vente et à réduire l'impôt sur le gain immobilier (impenses déductibles).
+- **Les relevés de consommation** : électricité et chauffage des 3 dernières années. À demander auprès de Romande Energie ou de votre fournisseur.
+- **Les contrats d'entretien en cours** : chauffage, ascenseur, jardin, alarme, etc.
+- **Le permis d'habiter** : à demander auprès de la commune si vous ne l'avez plus.
+- **L'estimation fiscale** : la valeur fiscale du bien, utile à l'acquéreur pour estimer ses impôts futurs. À obtenir auprès du service cantonal des impôts.
+
+## Quels documents supplémentaires pour un appartement en PPE ?
+
+Si vous vendez un appartement en propriété par étages, des documents spécifiques à la copropriété sont indispensables :
+
+- **Le règlement de copropriété** et le règlement d'utilisation et d'administration
+- **Les procès-verbaux des 3 dernières assemblées générales** (ordinaires et extraordinaires)
+- **Le dernier décompte de charges** et le budget prévisionnel
+- **Le solde du fonds de rénovation** et les travaux votés ou prévus
+- **L'acte constitutif de la PPE** avec les quotes-parts
+
+Ces documents sont disponibles auprès de l'administrateur de la PPE. Demandez-les dès que vous envisagez la vente : certains administrateurs mettent plusieurs semaines à les fournir.
+
+## Où obtenir chaque document dans le canton de Vaud ?
+
+| Document | Où l'obtenir | Coût | Délai |
+|---|---|---|---|
+| Extrait du registre foncier | Office du RF de votre district (en ligne ou au guichet) | CHF 50.- à 150.- | Quelques jours |
+| CECB | Expert agréé CECB (liste sur cecb.ch) | CHF 1'000.- à 3'000.- | 2 à 4 semaines |
+| Police ECA | ECA Vaud (tél. 058 721 21 21) | Gratuit | Quelques jours |
+| Plans d'architecte | Architecte d'origine ou commune | Variable | Variable |
+| Attestation OIBT | Organisme de contrôle agréé | CHF 300.- à 800.- | 2 à 3 semaines |
+| Estimation fiscale | Administration cantonale des impôts | Gratuit | Quelques jours |
+| Documents PPE | Administrateur de la copropriété | Souvent inclus dans les charges | 1 à 3 semaines |
+
+## Faut-il tout réunir avant de contacter un courtier ?
+
+Non. En pratique, un courtier expérimenté vous accompagne dans la collecte de ces documents. Dès la première rencontre, il identifie ce que vous avez déjà et ce qu'il faut commander. Certains documents (extrait RF, police ECA) sont nécessaires dès l'estimation. D'autres (OIBT, relevés de consommation) peuvent être réunis pendant la phase de commercialisation.
+
+Ce qui compte, c'est de ne pas attendre qu'un acquéreur sérieux se manifeste pour commencer les démarches. Un dossier incomplet ralentit la vente et peut faire capoter une transaction : la banque de l'acquéreur exige un dossier complet pour valider le financement.
+
+## Combien de temps faut-il pour constituer le dossier ?
+
+Comptez 2 à 4 semaines pour réunir l'ensemble des documents, en parallèle de la préparation de la mise en vente. Le CECB est généralement le document qui prend le plus de temps, surtout en période de forte demande.
+
+Mon conseil : commencez par les deux documents les plus rapides à obtenir (police ECA et extrait RF), puis enchaînez avec le CECB. C'est l'ordre que je recommande systématiquement à mes clients.`,
+    cta: "Vous préparez la vente de votre bien dans le canton de Vaud ? Contactez-moi, je vous guide dans chaque étape."
+  },
 ]
 
 // ─── HELPERS ────────────────────────────────────────────────────────────────
