@@ -628,11 +628,13 @@ Le problème : si les travaux ne sont pas chiffrés dans le dossier de vente, l'
 
 ## Et les travaux déjà réalisés, sont-ils déductibles ?
 
-Oui. Les travaux qui augmentent la valeur du bien (impenses) sont déductibles de l'impôt sur le gain immobilier lors de la vente. Cela concerne les transformations, les agrandissements et les rénovations importantes, à condition de disposer des factures.
+Oui, mais il faut distinguer deux mécanismes différents :
 
-Les travaux d'entretien courant (peinture, réparation, nettoyage) ne sont pas déductibles du gain immobilier, mais ils peuvent être déduits de l'impôt sur le revenu l'année où ils sont effectués.
+**Les travaux à plus-value (impenses)** : nouvelle cuisine, transformation salle de bains, agrandissement, pompe à chaleur. Ces dépenses sont déductibles de l'impôt sur le gain immobilier lors de la vente (article 70 LI). Elles augmentent le prix de revient et réduisent donc le gain taxable. Condition : disposer des factures et des preuves de paiement. Ce mécanisme n'est pas affecté par la réforme de la valeur locative.
 
-En pratique, si vous avez rénové la salle de bains il y a 5 ans pour CHF 25'000.-, cette somme viendra réduire votre gain imposable au moment de la vente. Ce n'est pas un argument pour rénover avant de vendre, mais c'est un argument pour conserver précieusement toutes vos factures.
+**Les travaux d'entretien courant** : peinture, réparation, remplacement à l'identique. Ces frais ne sont pas déductibles du gain immobilier, mais ils sont déductibles de l'impôt sur le revenu l'année où ils sont effectués.
+
+**Attention, changement majeur à venir :** le 28 septembre 2025, le peuple suisse a voté la suppression de la valeur locative. La réforme entrera en vigueur au 1er janvier 2029 (période transitoire jusqu'à fin 2028). À partir de cette date, les frais d'entretien et de rénovation ne seront plus déductibles de l'impôt sur le revenu pour les biens à usage propre. Concrètement, si vous avez des travaux d'entretien à faire sur votre bien, il est fiscalement avantageux de les réaliser avant fin 2028. Après cette date, seuls les propriétaires de biens loués conserveront cette déduction.
 
 ## Ce que je recommande à mes clients
 
