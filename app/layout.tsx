@@ -14,6 +14,20 @@ export const metadata: Metadata = {
     locale: 'fr_CH',
     url: 'https://maisonpraet.ch',
     siteName: 'Maison Praet',
+    images: [
+      {
+        url: 'https://maisonpraet.ch/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Thomas Praet - Courtier immobilier, Canton de Vaud',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Maison Praet | Courtier immobilier – Canton de Vaud',
+    description: "Thomas Praet – courtier certifié USPI. Estimation et vente immobilière sur l'arc lémanique.",
+    images: ['https://maisonpraet.ch/og-image.jpg'],
   },
   robots: { index: true, follow: true },
   alternates: { canonical: 'https://maisonpraet.ch' },
