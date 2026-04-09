@@ -557,7 +557,7 @@ Pour les propriétaires qui ne vendent pas mais qui font établir un CECB en vue
 Le CECB est une obligation légale, pas une option. Mais au-delà de la conformité, c'est un outil stratégique :
 
 1. Faites-le établir dès que vous envisagez la vente, pas quand l'acquéreur le demande.
-2. Si votre bien est classé E, F ou G, demandez un CECB Plus : il vous donne des arguments pour contextualiser le classement et montrer le potentiel d'amélioration.
+2. Si votre bien est classé E, F ou G, intégrez cette réalité dans le prix de vente. Un prix juste qui tient compte de l'état énergétique se défend beaucoup mieux qu'un prix gonflé que l'acquéreur va attaquer en négociation.
 3. Si votre bien est classé A, B ou C, mettez-le en avant dans le dossier de vente. C'est un différenciateur réel sur le marché vaudois actuel.
 
 Le CECB ne fait pas vendre un bien. Mais un CECB bien utilisé dans la stratégie de commercialisation peut faire la différence entre une négociation subie et une négociation maîtrisée.`,
@@ -605,20 +605,20 @@ Les interventions qui fonctionnent sont celles qui permettent à l'acquéreur de
 
 - Refaire une cuisine que l'acquéreur voudra choisir lui-même
 - Refaire une salle de bains pour "moderniser" un bien des années 80
-- Remplacer le chauffage si le bien est vendu au prix du marché "en l'état"
 - Poser un nouveau revêtement de sol sur un existant en bon état
+- Faire des travaux cosmétiques pour masquer un problème structurel
 
 ## Et le chauffage, faut-il le remplacer ?
 
 C'est la question que me posent le plus souvent les vendeurs de villas construites avant 2000. Le chauffage au mazout ou électrique fait peur aux acquéreurs, et le CECB classé F ou G n'aide pas.
 
-Ma recommandation : ne remplacez pas le chauffage avant de vendre, sauf si l'installation est en panne ou en fin de vie imminente. Voici pourquoi :
+Ma recommandation : c'est l'un ou l'autre. Soit vous remplacez le chauffage avant la vente, soit vous en tenez compte dans le prix. Pas de demi-mesure.
 
-1. Le coût d'une pompe à chaleur (CHF 25'000.- à 45'000.-) n'est jamais intégralement récupéré dans le prix de vente.
-2. L'acquéreur préfère souvent choisir lui-même le système et le prestataire.
-3. En revanche, un devis détaillé pour le remplacement, joint au dossier de vente, rassure l'acquéreur et cadre la négociation. Il sait exactement ce que ça coûte. Pas de mauvaise surprise, pas de marge de négociation excessive.
+**Option 1 : remplacer avant de vendre.** Si votre chauffage est en fin de vie et que le bien est par ailleurs en bon état, le remplacement par une pompe à chaleur peut se justifier. Un bien avec un CECB amélioré se vend plus vite et avec moins de négociation. C'est un investissement que vous ne récupérerez pas intégralement, mais qui supprime le principal frein à l'achat.
 
-C'est une approche que j'utilise régulièrement : plutôt que d'investir CHF 35'000.- dans un nouveau chauffage, je recommande au vendeur de faire établir un CECB Plus (qui inclut des variantes de rénovation chiffrées) et de joindre un ou deux devis au dossier. Coût total : CHF 2'000.- à 3'000.-, pour un effet bien supérieur sur la confiance de l'acquéreur.
+**Option 2 : ajuster le prix de vente.** C'est souvent la solution la plus pragmatique. Vous fixez un prix qui tient compte de l'état du chauffage, et l'acquéreur sait exactement ce qu'il achète. Pas de surprise, pas de négociation interminable sur le sujet. Dans ma pratique, c'est l'option que je recommande le plus souvent : elle est transparente, rapide, et évite au vendeur de gérer un chantier avant la vente.
+
+Ce qui ne fonctionne jamais : vendre au prix d'un bien rénové avec un chauffage à remplacer. L'acquéreur et sa banque feront le calcul, et la négociation sera rude.
 
 ## Comment l'acquéreur calcule-t-il la valeur d'un bien à rénover ?
 
