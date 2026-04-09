@@ -66,7 +66,7 @@ export const MANDATS: Mandat[] = [
     prix: "2'420'000", pieces: '-', surface: '-', terrain: '-', categorie: 'en_vente',
     img: '/photos/glion/dji_fly_20260305_135802_0017_1772715631429_photo.jpg',
     photos: ['/photos/glion/dji_fly_20260305_135802_0017_1772715631429_photo.jpg','/photos/glion/IMG_6931.jpg','/photos/glion/20250319_144034_resized.jpg','/photos/glion/20250319_144052_resized.jpg','/photos/glion/20250319_144202_resized.jpg','/photos/glion/20250319_144211_resized.jpg','/photos/glion/20250319_144301_resized.jpg','/photos/glion/20250319_144317_resized.jpg','/photos/glion/20250319_144326_resized.jpg','/photos/glion/20250319_144336_resized.jpg','/photos/glion/20250319_144425_resized.jpg','/photos/glion/20250319_144456_resized.jpg','/photos/glion/Salle_de_bains_moderne_et_\u00e9pur\u00e9e.png'],
-    description: "Immeuble locatif situé sur la Route de Caux à Glion, dans un cadre exceptionnel surplombant le Léman. Vue panoramique sur le lac et les Alpes."
+    description: "Immeuble locatif situé à Glion, dans un cadre exceptionnel surplombant le Léman. Vue panoramique sur le lac et les Alpes."
   },
   {
     id: 4, slug: 'immeuble-lausanne-levant', titre: 'Immeuble locatif', lieu: 'Lausanne',
