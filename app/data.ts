@@ -31,7 +31,7 @@ export const MANDATS: Mandat[] = [
     prix: "1'790'000", pieces: '5', surface: '148 m²', terrain: '808 m²', categorie: 'en_vente',
     img: '/photos/morges-fauvette/drone_facade.jpg',
     photos: ['/photos/morges-fauvette/drone_facade.jpg','/photos/morges-fauvette/drone_lac.jpg','/photos/morges-fauvette/drone_quartier.jpg','/photos/morges-fauvette/salon.jpg','/photos/morges-fauvette/cuisine.jpg','/photos/morges-fauvette/chambre_combles1.jpg','/photos/morges-fauvette/chambre_combles2.jpg','/photos/morges-fauvette/sdb.jpg','/photos/morges-fauvette/chambre_rez.jpg','/photos/morges-fauvette/bureau.jpg','/photos/morges-fauvette/jardin.jpg'],
-    description: "Villa familiale de 5 pièces au chemin de la Fauvette à Morges, sur une parcelle arborée de 808 m². Quatre chambres, trois salles d'eau, double garage. Triple orientation sud, est et ouest. CHF 380'800.- de travaux documentés depuis l'acquisition. Vue sur le lac Léman depuis l'étage."
+    description: "Villa familiale de 5 pièces à Morges, sur une parcelle arborée de 808 m². Quatre chambres, trois salles d'eau, double garage. Triple orientation sud, est et ouest. CHF 380'800.- de travaux documentés depuis l'acquisition. Vue sur le lac Léman depuis l'étage."
   },
   {
     id: 5, slug: 'villa-cossonay', titre: 'Villa jumelée', lieu: 'Cossonay-Ville',
@@ -52,7 +52,7 @@ export const MANDATS: Mandat[] = [
     prix: "2'750'000", pieces: '-', surface: '-', terrain: '-', categorie: 'en_vente',
     img: '/photos/gland-buis/DJI_20260115164414_0005_D.jpg',
     photos: ['/photos/gland-buis/DJI_20260115164414_0005_D.jpg','/photos/gland-buis/IMG_6123.jpg','/photos/gland-buis/IMG_6129.jpg','/photos/gland-buis/IMG_6134.jpg','/photos/gland-buis/IMG_6137.jpg','/photos/gland-buis/IMG_6140.jpg','/photos/gland-buis/IMG_6141.jpg','/photos/gland-buis/IMG_6143.jpg','/photos/gland-buis/IMG_6147.jpg','/photos/gland-buis/IMG_6148.jpg','/photos/gland-buis/IMG_6150.jpg','/photos/gland-buis/IMG_6151.jpg','/photos/gland-buis/IMG_6152.jpg','/photos/gland-buis/IMG_6153.jpg','/photos/gland-buis/IMG_6154.jpg','/photos/gland-buis/IMG_6155.jpg'],
-    description: "Maison jumelée d'exception à Gland, au chemin du Buis. Architecture contemporaine, volumes généreux et finitions soignées. Terrasse, jardin privatif et vue dégagée."
+    description: "Maison jumelée d'exception à Gland. Architecture contemporaine, volumes généreux et finitions soignées. Terrasse, jardin privatif et vue dégagée."
   },
   {
     id: 2, slug: 'immeuble-lausanne-vallon', titre: 'Immeuble de rendement', lieu: 'Lausanne',
@@ -73,7 +73,7 @@ export const MANDATS: Mandat[] = [
     prix: "1'790'000", pieces: '-', surface: '-', terrain: '-', categorie: 'reserve',
     img: '/photos/lausanne-levant/IMG_6321.jpg',
     photos: ['/photos/lausanne-levant/IMG_6321.jpg','/photos/lausanne-levant/IMG_6329.jpg','/photos/lausanne-levant/IMG_6331.jpg','/photos/lausanne-levant/IMG_6332.jpg','/photos/lausanne-levant/IMG_6341.jpg','/photos/lausanne-levant/IMG_6342.jpg','/photos/lausanne-levant/IMG_6343.jpg','/photos/lausanne-levant/IMG_6346.jpg','/photos/lausanne-levant/IMG_6349.jpg','/photos/lausanne-levant/IMG_6356.jpg','/photos/lausanne-levant/IMG_6357.jpg','/photos/lausanne-levant/IMG_6528.jpg'],
-    description: "Immeuble de trois logements au Levant 117 à Lausanne. Bien réservé, signature notariale en cours."
+    description: "Immeuble de trois logements à Lausanne. Bien réservé, signature notariale en cours."
   },
   {
     id: 6, slug: 'appartement-epalinges', titre: 'Appartement PPE', lieu: 'Epalinges',
@@ -107,7 +107,7 @@ export const MANDATS: Mandat[] = [
     prix: "1'250'000", pieces: '-', surface: '-', terrain: '-', categorie: 'en_vente',
     img: '/photos/gland-aubepine/DJI_20260115163614_0002_D.jpg',
     photos: ['/photos/gland-aubepine/DJI_20260115163614_0002_D.jpg','/photos/gland-aubepine/IMG_5513.jpg','/photos/gland-aubepine/IMG_5514.jpg','/photos/gland-aubepine/IMG_5515.jpg','/photos/gland-aubepine/IMG_5517.jpg','/photos/gland-aubepine/IMG_5518.jpg','/photos/gland-aubepine/IMG_5520.jpg','/photos/gland-aubepine/IMG_5523.jpg','/photos/gland-aubepine/IMG_5524.jpg','/photos/gland-aubepine/IMG_5526.jpg','/photos/gland-aubepine/IMG_5527.jpg','/photos/gland-aubepine/IMG_5531.jpg','/photos/gland-aubepine/IMG_5532.jpg'],
-    description: "Appartement spacieux à Gland, chemin de l'Aubépine. Terrasse, vue dégagée et prestations de qualité dans un quartier résidentiel calme."
+    description: "Appartement spacieux à Gland. Terrasse, vue dégagée et prestations de qualité dans un quartier résidentiel calme."
   },
   {
     id: 12, slug: 'appartement-longirod', titre: 'Appartement', lieu: 'Longirod',
@@ -128,7 +128,7 @@ export const MANDATS: Mandat[] = [
     prix: "1'480'000", pieces: '-', surface: '-', terrain: '-', categorie: 'vendu',
     img: '/photos/lausanne-monttendre/IMG_6530.jpg',
     photos: ['/photos/lausanne-monttendre/IMG_6530.jpg','/photos/lausanne-monttendre/IMG_6650.jpg','/photos/lausanne-monttendre/IMG_6655.jpg','/photos/lausanne-monttendre/IMG_6656.jpg','/photos/lausanne-monttendre/IMG_6657.jpg','/photos/lausanne-monttendre/IMG_6658.jpg','/photos/lausanne-monttendre/IMG_6659.jpg','/photos/lausanne-monttendre/IMG_6660.jpg','/photos/lausanne-monttendre/IMG_6662.jpg','/photos/lausanne-monttendre/IMG_6663.jpg'],
-    description: "Immeuble de 3 logements à Lausanne, chemin du Mont-Tendre. Transaction conclue avec succès."
+    description: "Immeuble de 3 logements à Lausanne. Transaction conclue avec succès."
   },
   {
     id: 15, slug: 'villa-crissier', titre: 'Villa individuelle', lieu: 'Crissier',
