@@ -234,9 +234,14 @@ function Contact() {
 
 function Footer() {
   return (
-    <footer className="max-w-7xl mx-auto px-6 py-10 flex flex-col sm:flex-row items-center justify-between gap-4">
-      <p className="font-display text-lg text-white">Maison <span className="text-brand-gold">Praet</span></p>
-      <p className="font-body text-xs text-brand-muted tracking-wider">© {new Date().getFullYear()} Thomas Praet · Golay Immobilier SA · Tous droits réservés</p>
+    <footer className="max-w-7xl mx-auto px-6 py-10 flex flex-col items-center gap-6">
+      <a href="https://www.golay-immobilier.ch" target="_blank" rel="noopener noreferrer" className="opacity-70 hover:opacity-100 transition-opacity">
+        <img src="/photos/logo-golay.jpg" alt="Golay Immobilier SA" className="h-12 object-contain" />
+      </a>
+      <div className="flex flex-col sm:flex-row items-center justify-between w-full gap-4">
+        <p className="font-display text-lg text-white">Maison <span className="text-brand-gold">Praet</span></p>
+        <p className="font-body text-xs text-brand-muted tracking-wider">© {new Date().getFullYear()} Thomas Praet · Golay Immobilier SA · Tous droits réservés</p>
+      </div>
     </footer>
   )
 }
