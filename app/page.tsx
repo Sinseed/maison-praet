@@ -55,6 +55,9 @@ function About() {
             <p>Depuis plus de six ans, j&apos;accompagne des propriétaires sur l&apos;ensemble de l&apos;arc lémanique et du Gros-de-Vaud. Chaque mandat est traité avec la même rigueur : estimation fondée, stratégie de prix réaliste, suivi transparent jusqu&apos;à la signature chez le notaire.</p>
             <p>Certifié USPI, rattaché à Golay Immobilier SA, une régie lausannoise de référence.</p>
           </div>
+          <a href="https://www.golay-immobilier.ch" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 mt-8 px-4 py-2.5 bg-white/95 rounded hover:bg-white transition-colors">
+            <img src="/photos/logo-golay.jpg" alt="Golay Immobilier SA" className="h-7 object-contain" />
+          </a>
           <blockquote className="mt-10 pl-6 border-l-2 border-brand-gold/40"><p className="font-display text-xl italic text-brand-goldLight leading-relaxed">&laquo;&nbsp;Si je n&apos;en suis pas convaincu, je vous le dis.&nbsp;&raquo;</p></blockquote>
         </div>
       </div>
@@ -234,14 +237,9 @@ function Contact() {
 
 function Footer() {
   return (
-    <footer className="max-w-7xl mx-auto px-6 py-10 flex flex-col items-center gap-6">
-      <a href="https://www.golay-immobilier.ch" target="_blank" rel="noopener noreferrer" className="opacity-70 hover:opacity-100 transition-opacity">
-        <img src="/photos/logo-golay.jpg" alt="Golay Immobilier SA" className="h-12 object-contain" />
-      </a>
-      <div className="flex flex-col sm:flex-row items-center justify-between w-full gap-4">
-        <p className="font-display text-lg text-white">Maison <span className="text-brand-gold">Praet</span></p>
-        <p className="font-body text-xs text-brand-muted tracking-wider">© {new Date().getFullYear()} Thomas Praet · Golay Immobilier SA · Tous droits réservés</p>
-      </div>
+    <footer className="max-w-7xl mx-auto px-6 py-10 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p className="font-display text-lg text-white">Maison <span className="text-brand-gold">Praet</span></p>
+      <p className="font-body text-xs text-brand-muted tracking-wider">© {new Date().getFullYear()} Thomas Praet · Golay Immobilier SA · Tous droits réservés</p>
     </footer>
   )
 }
