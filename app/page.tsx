@@ -55,9 +55,7 @@ function About() {
             <p>Depuis plus de six ans, j&apos;accompagne des propriétaires sur l&apos;ensemble de l&apos;arc lémanique et du Gros-de-Vaud. Chaque mandat est traité avec la même rigueur : estimation fondée, stratégie de prix réaliste, suivi transparent jusqu&apos;à la signature chez le notaire.</p>
             <p>Certifié USPI, rattaché à Golay Immobilier SA, une régie lausannoise de référence.</p>
           </div>
-          <a href="https://www.golay-immobilier.ch" target="_blank" rel="noopener noreferrer" className="inline-block mt-8 opacity-60 hover:opacity-90 transition-opacity">
-            <img src="/photos/logo-golay.jpg" alt="Golay Immobilier SA" className="h-9 object-contain mix-blend-screen" />
-          </a>
+          <a href="https://www.golay-immobilier.ch" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 mt-6 font-body text-sm text-brand-muted hover:text-brand-gold transition-colors tracking-wider uppercase">Golay Immobilier SA <span className="text-brand-gold">↗</span></a>
           <blockquote className="mt-10 pl-6 border-l-2 border-brand-gold/40"><p className="font-display text-xl italic text-brand-goldLight leading-relaxed">&laquo;&nbsp;Si je n&apos;en suis pas convaincu, je vous le dis.&nbsp;&raquo;</p></blockquote>
         </div>
       </div>
