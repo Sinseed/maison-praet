@@ -744,7 +744,7 @@ Un dossier bien préparé et soumis tôt dans le processus permet d'éviter que 
 // ─── HELPERS ────────────────────────────────────────────────────────────────
 export const STATS = [
   { value: '6+', label: "Années d'expérience" },
-  { value: '40+', label: 'Transactions réalisées' },
+  { value: '60+', label: 'Transactions réalisées' },
   { value: '96.8%', label: 'Vendus au prix estimé' },
 ]
 
