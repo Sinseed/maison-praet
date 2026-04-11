@@ -48,6 +48,13 @@ export const MANDATS: Mandat[] = [
     description: "Implantée sur une parcelle de plus de 1'260 m² à Yverdon-les-Bains, cette maison individuelle de 8.5 pièces offre 240 m² habitables. Volumes généreux, jardin arboré et potentiel d'agrandissement d'environ 524 m². Proximité immédiate des thermes et de toutes les commodités."
   },
   {
+    id: 19, slug: 'maison-riex', titre: 'Maison vigneronne', lieu: 'Riex, Lavaux',
+    prix: "1'450'000", pieces: '2.5', surface: '100 m²', terrain: '39 m²', categorie: 'en_vente',
+    img: '/photos/riex/drone-facade.jpg',
+    photos: ['/photos/riex/drone-facade.jpg','/photos/riex/drone-lac-panorama.jpg','/photos/riex/drone-lac-alpes.jpg','/photos/riex/drone-village.jpg','/photos/riex/salon.jpg','/photos/riex/cuisine.jpg','/photos/riex/salle-de-bains.jpg','/photos/riex/sauna.jpg','/photos/riex/sauna-douche.jpg'],
+    description: "Au coeur du village de Riex, dans le périmètre UNESCO de Lavaux, cette maison vigneronne de 1680 entièrement rénovée en 1989 déploie ses 100 m² habitables sur quatre niveaux. Séjour lumineux avec double hauteur, cuisine ouverte avec accès balcon, chambre au dernier étage avec vide sur séjour et salle de bains moderne sous vélux. Sauna privatif au sous-sol, deux places de parking couvert. La porte de la façade sud est classée monument historique. Vue sur les toits, le lac Léman et les Alpes."
+  },
+  {
     id: 8, slug: 'maison-gland-buis', titre: 'Maison jumelée', lieu: 'Gland',
     prix: "2'750'000", pieces: '-', surface: '-', terrain: '-', categorie: 'en_vente',
     img: '/photos/gland-buis/DJI_20260115164414_0005_D.jpg',
@@ -150,13 +157,6 @@ export const MANDATS: Mandat[] = [
     img: '/photos/jouxtens/jouxtens_10.jpg',
     photos: ['/photos/jouxtens/jouxtens_10.jpg','/photos/jouxtens/jouxtens_09.jpg','/photos/jouxtens/jouxtens_12.jpg','/photos/jouxtens/jouxtens_01.jpg','/photos/jouxtens/jouxtens_05.jpg','/photos/jouxtens/jouxtens_04.jpg','/photos/jouxtens/jouxtens_03.jpg','/photos/jouxtens/jouxtens_07.jpg','/photos/jouxtens/jouxtens_11.jpg','/photos/jouxtens/jouxtens_08.jpg','/photos/jouxtens/jouxtens_06.jpg','/photos/jouxtens/jouxtens_02.jpg'],
     description: "Maison individuelle à Jouxtens-Mézery, commune résidentielle prisée aux portes de Lausanne. Transaction conclue avec succès."
-  },
-  {
-    id: 19, slug: 'maison-riex', titre: 'Maison vigneronne', lieu: 'Riex, Lavaux',
-    prix: "1'450'000", pieces: '2.5', surface: '100 m²', terrain: '39 m²', categorie: 'en_vente',
-    img: '/photos/riex/drone-facade.jpg',
-    photos: ['/photos/riex/drone-facade.jpg','/photos/riex/drone-lac-panorama.jpg','/photos/riex/drone-lac-alpes.jpg','/photos/riex/drone-village.jpg','/photos/riex/salon.jpg','/photos/riex/cuisine.jpg','/photos/riex/salle-de-bains.jpg','/photos/riex/sauna.jpg','/photos/riex/sauna-douche.jpg'],
-    description: "Au coeur du village de Riex, dans le périmètre UNESCO de Lavaux, cette maison vigneronne de 1680 entièrement rénovée en 1989 déploie ses 100 m² habitables sur quatre niveaux. Séjour lumineux avec double hauteur, cuisine ouverte avec accès balcon, chambre au dernier étage avec vide sur séjour et salle de bains moderne sous vélux. Sauna privatif au sous-sol, deux places de parking couvert. La porte de la façade sud est classée monument historique. Vue sur les toits, le lac Léman et les Alpes."
   },
 ]
 
