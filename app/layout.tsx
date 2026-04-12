@@ -38,7 +38,30 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="fr">
-      <body><Nav />{children}<Analytics /></body>
+      <head>
+  <script
+    type="application/ld+json"
+    dangerouslySetInnerHTML={{__html: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "RealEstateAgent",
+      "name": "Maison Praet",
+      "url": "https://maisonpraet.ch",
+      "logo": "https://maisonpraet.ch/logo-maison-praet.png",
+      "image": "https://maisonpraet.ch/og-image.jpg",
+      "description": "Courtier immobilier certifié USPI, actif sur l'arc lémanique et le canton de Vaud depuis plus de 6 ans.",
+      "telephone": "+41799690191",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Lausanne",
+        "addressRegion": "Vaud",
+        "addressCountry": "CH"
+      },
+      "areaServed": "Canton de Vaud, Suisse Romande",
+      "sameAs": ["https://maisonpraet.com"]
+    })}}
+  />
+</head>
+<body><Nav />{children}<Analytics /></body>
     </html>
   )
 }
