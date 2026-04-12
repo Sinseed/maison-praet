@@ -46,7 +46,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       "@type": "RealEstateAgent",
       "name": "Maison Praet",
       "url": "https://maisonpraet.ch",
-      "logo": "https://maisonpraet.ch/logo-maison-praet.png",
+      "logo": "https://maisonpraet.ch/og-image.jpg",
       "image": "https://maisonpraet.ch/og-image.jpg",
       "description": "Courtier immobilier certifié USPI, actif sur l'arc lémanique et le canton de Vaud depuis plus de 6 ans.",
       "telephone": "+41799690191",
