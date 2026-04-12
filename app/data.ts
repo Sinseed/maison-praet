@@ -72,7 +72,7 @@ export const MANDATS: Mandat[] = [
     id: 3, slug: 'immeuble-glion', titre: 'Immeuble locatif', lieu: 'Glion',
     prix: "2'420'000", pieces: '-', surface: '-', terrain: '-', categorie: 'en_vente',
     img: '/photos/glion/dji_fly_20260305_135802_0017_1772715631429_photo.jpg',
-    photos: ['/photos/glion/dji_fly_20260305_135802_0017_1772715631429_photo.jpg','/photos/glion/IMG_6931.jpg','/photos/glion/20250319_144034_resized.jpg','/photos/glion/20250319_144052_resized.jpg','/photos/glion/20250319_144202_resized.jpg','/photos/glion/20250319_144211_resized.jpg','/photos/glion/20250319_144301_resized.jpg','/photos/glion/20250319_144317_resized.jpg','/photos/glion/20250319_144326_resized.jpg','/photos/glion/20250319_144336_resized.jpg','/photos/glion/20250319_144425_resized.jpg','/photos/glion/20250319_144456_resized.jpg','/photos/glion/Salle_de_bains_moderne_et_\u00e9pur\u00e9e.png'],
+    photos: ['/photos/glion/dji_fly_20260305_135802_0017_1772715631429_photo.jpg','/photos/glion/IMG_6931.jpg','/photos/glion/20250319_144034_resized.jpg','/photos/glion/20250319_144052_resized.jpg','/photos/glion/20250319_144202_resized.jpg','/photos/glion/20250319_144211_resized.jpg','/photos/glion/20250319_144301_resized.jpg','/photos/glion/20250319_144317_resized.jpg','/photos/glion/20250319_144326_resized.jpg','/photos/glion/20250319_144336_resized.jpg','/photos/glion/20250319_144425_resized.jpg','/photos/glion/20250319_144456_resized.jpg','/photos/glion/Salle_de_bains_moderne_et_épurée.png'],
     description: "Immeuble locatif situé à Glion, dans un cadre exceptionnel surplombant le Léman. Vue panoramique sur le lac et les Alpes."
   },
   {
@@ -98,8 +98,8 @@ export const MANDATS: Mandat[] = [
   {
     id: 9, slug: 'maison-tartegnin', titre: 'Maison villageoise', lieu: 'Tartegnin',
     prix: "1'660'000", pieces: '-', surface: '-', terrain: '-', categorie: 'en_vente',
-    img: '/photos/tartegnin/Retouch\u00e9es__1_.jpg',
-    photos: ['/photos/tartegnin/Retouch\u00e9es__1_.jpg','/photos/tartegnin/IMG_5604.jpg','/photos/tartegnin/IMG_5745.jpg','/photos/tartegnin/IMG_5746.jpg','/photos/tartegnin/IMG_5747.jpg','/photos/tartegnin/IMG_5748.jpg','/photos/tartegnin/IMG_5749.jpg','/photos/tartegnin/IMG_5750.jpg','/photos/tartegnin/IMG_5752.jpg','/photos/tartegnin/IMG_5755.jpg'],
+    img: '/photos/tartegnin/Retouchées__1_.jpg',
+    photos: ['/photos/tartegnin/Retouchées__1_.jpg','/photos/tartegnin/IMG_5604.jpg','/photos/tartegnin/IMG_5745.jpg','/photos/tartegnin/IMG_5746.jpg','/photos/tartegnin/IMG_5747.jpg','/photos/tartegnin/IMG_5748.jpg','/photos/tartegnin/IMG_5749.jpg','/photos/tartegnin/IMG_5750.jpg','/photos/tartegnin/IMG_5752.jpg','/photos/tartegnin/IMG_5755.jpg'],
     description: "Maison villageoise de charme à Tartegnin, au coeur du vignoble de La Côte. Vue lac, piscine, jardin généreux et combles aménagés avec goût. Un cadre de vie rare entre village et nature."
   },
   {
@@ -738,6 +738,105 @@ La L3PL n'empêche pas de vendre. Elle ajoute une étape administrative qui peut
 
 Un dossier bien préparé et soumis tôt dans le processus permet d'éviter que la L3PL ne devienne un frein à la vente.`,
     cta: "Votre bien est loué et vous envisagez de le vendre ? Contactez-moi, je vérifie votre situation au regard de la L3PL."
+  },
+  {
+    slug: 'vendre-bien-succession-vaud',
+    titre: "Vendre un bien immobilier en succession dans le canton de Vaud : ce que les héritiers doivent savoir",
+    chapeau: "Indivision, impôt sur les successions, délai de vente, partage du produit : la vente d'un bien hérité obéit à des règles précises. Voici comment s'y prendre pour éviter les blocages et vendre dans les meilleures conditions.",
+    date: '2026-04-12',
+    categorie: 'Juridique',
+    contenu: `La mort d'un proche laisse rarement le temps de planifier sereinement la suite. Et pourtant, la vente d'un bien immobilier en succession exige une organisation rigoureuse. Entre les démarches administratives, les décisions collectives à prendre entre héritiers et les enjeux fiscaux, le processus peut vite devenir une source de tension. Voici ce que vous devez savoir, étape par étape.
+
+## Qui peut vendre un bien en succession ?
+
+Dès le décès, les héritiers forment une communauté héréditaire (article 602 du Code civil suisse). Le bien immobilier appartient à tous les héritiers ensemble, dans l'indivision. Personne ne peut en disposer seul : ni le vendre, ni le louer, ni même le modifier sans l'accord de tous.
+
+Cette règle a une conséquence pratique immédiate : si un héritier refuse de vendre, il bloque la transaction. La seule solution légale dans ce cas est de demander le partage judiciaire, ce qui peut prendre des années et coûter cher. Autant prévoir une discussion sérieuse entre héritiers avant de contacter un courtier.
+
+La bonne pratique : désigner un représentant de la communauté héréditaire (souvent le conjoint survivant ou l'aîné) pour centraliser les décisions et signer les documents. Cela simplifie considérablement le processus.
+
+## Faut-il attendre le partage successoral pour vendre ?
+
+Non. La communauté héréditaire peut vendre le bien avant le partage successoral. C'est même souvent recommandé : cela permet de liquider l'actif immobilier, de répartir le produit en espèces, et d'éviter des discussions interminables sur qui garde quoi.
+
+La vente avant partage nécessite l'accord unanime des héritiers. L'acte de vente est signé par tous (ou par leur représentant dûment mandaté) devant le notaire.
+
+Si le bien est vendu après le partage, chaque héritier reçoit sa quote-part de la parcelle. Il peut alors la vendre individuellement. Mais cette approche est plus complexe et alourdit les frais notariaux.
+
+## Quels sont les documents à réunir ?
+
+Outre les documents habituels pour toute vente immobilière dans le canton de Vaud (extrait du registre foncier, CECB, police ECA, plans), la vente en succession nécessite des documents spécifiques :
+
+- **Le certificat d'héritiers** : c'est la pièce centrale. Il atteste de la qualité d'héritier et permet d'agir au nom de la communauté héréditaire. Dans le canton de Vaud, il est établi par le juge de paix du district du dernier domicile du défunt. Délai : de quelques semaines à plusieurs mois selon la complexité de la succession. Ne sous-estimez pas ce délai.
+- **Le testament ou le pacte successoral** (si existant), déposé auprès des autorités compétentes.
+- **La liste des dettes de la succession** : hypothèques, charges fiscales, factures en cours. Le notaire en aura besoin pour calculer le produit net.
+- **Les documents habituels** : CECB, extrait RF, police ECA, plans, factures de travaux.
+
+## Quelle est la fiscalité applicable dans le canton de Vaud ?
+
+Deux impôts distincts s'appliquent lors d'une vente en succession.
+
+**L'impôt sur les successions** est prélevé par le canton et la commune sur la valeur transmise par le défunt. Dans le canton de Vaud, les héritiers directs (enfants, conjoints, partenaires enregistrés) sont exonérés. Les autres héritiers (frères, soeurs, neveux, amis) paient un impôt dont le taux varie selon le degré de parenté et la valeur des actifs transmis.
+
+Point important : l'impôt sur les successions est calculé sur la valeur vénale du bien au moment du décès, pas sur le prix de vente. Si le bien prend de la valeur entre le décès et la vente, seul l'impôt sur le gain immobilier sera dû sur la différence.
+
+**L'impôt sur le gain immobilier** est dû sur la plus-value réalisée entre le prix de revient du défunt et le prix de vente. La durée de détention compte depuis la date d'acquisition originelle par le défunt, pas depuis le décès. Ce point est souvent mal compris : si le défunt a acheté le bien en 1995 et qu'il est vendu en 2026, la durée de détention est de 31 ans. Le taux applicable sera de 7 % (plancher dans le canton de Vaud).
+
+Bonne nouvelle : les années d'occupation du défunt comme résidence principale comptent double dans le calcul de la durée de détention fiscale. Et les impenses réalisées par le défunt sont déductibles du gain imposable, à condition de retrouver les factures.
+
+## La vente en succession est-elle soumise à la L3PL ?
+
+En règle générale, non. Le transfert de propriété par succession (héritage) n'est pas soumis à la loi sur la préservation et la promotion du parc locatif (L3PL). Ce transfert n'est pas à titre onéreux et échappe donc au champ d'application de la loi.
+
+En revanche, dès lors que les héritiers souhaitent vendre le bien hérité (même s'il est ou a été loué), la L3PL s'applique à nouveau. Les héritiers doivent alors vérifier si une autorisation d'aliénation est nécessaire, selon les mêmes règles qu'une vente classique.
+
+## Comment fixer le prix de vente ?
+
+La tentation est souvent de fixer un prix sentimental, lié à ce que valait le bien "du temps du défunt" ou à ce que les héritiers imaginent qu'il vaut. Cette approche mène presque toujours à un prix trop élevé ou trop bas.
+
+La bonne démarche : faire réaliser une estimation professionnelle par un courtier local, fondée sur les transactions récentes dans le secteur, l'état réel du bien et une analyse des trois valeurs (intrinsèque, de rendement, vénale). Cette estimation sert ensuite de base aux discussions entre héritiers et protège tout le monde d'un accord pris sous l'émotion.
+
+Dans les successions complexes (plusieurs héritiers, bien loué, désaccord sur le prix), il est possible de demander une expertise judiciaire. C'est plus lourd et plus coûteux, mais c'est parfois la seule solution pour débloquer une situation.
+
+## Quels sont les blocages les plus fréquents ?
+
+Dans ma pratique, les successions qui traînent ont presque toujours la même origine : un héritier qui veut garder le bien, un autre qui veut vendre, et personne pour trancher.
+
+Quelques situations typiques :
+
+- Un enfant veut racheter le bien à ses cohéritiers à un prix inférieur à la valeur du marché. Les autres refusent. La vente est bloquée.
+- Le bien est loué. Le locataire a un droit de préemption dans certaines conditions (article 681b CO). Il peut compliquer ou retarder la vente.
+- Les héritiers sont dans plusieurs pays. Les délais de signature s'allongent, les procurations compliquent la gestion.
+- Le bien a des travaux à réaliser. Qui les finance ? Sur quel budget ?
+
+La meilleure façon d'éviter ces blocages : nommer un représentant unique dès le début, mandater un courtier expérimenté pour objectiver la valeur du bien, et ne pas attendre que la tension monte entre héritiers pour organiser une réunion commune.
+
+## Quel est le rôle du courtier dans une vente en succession ?
+
+Au-delà de la commercialisation classique, le courtier joue un rôle de facilitateur entre les héritiers. Il est le tiers neutre qui apporte des chiffres là où les émotions prennent parfois le dessus.
+
+Concrètement, il peut :
+
+- Réaliser l'estimation et la présenter à l'ensemble des héritiers
+- Coordonner la collecte des documents (certificat d'héritiers, CECB, extrait RF)
+- Gérer la relation avec le notaire chargé de la succession
+- Organiser les visites et filtrer les acquéreurs
+- Accompagner les héritiers jusqu'à la signature de l'acte notarié
+
+Dans les successions complexes, je recommande systématiquement une réunion initiale avec tous les héritiers, physiquement ou en visioconférence. Poser les règles du jeu dès le début évite beaucoup de malentendus par la suite.
+
+## Ce que je retiens après six ans de courtage dans le canton de Vaud
+
+La vente en succession est l'une des transactions les plus délicates à gérer. Pas parce qu'elle est techniquement complexe, mais parce qu'elle se déroule dans un contexte émotionnel particulier. Le deuil n'est pas toujours fait. Les relations familiales sont parfois tendues. Et le bien immobilier devient un objet de projection pour tout le monde.
+
+Trois principes que j'applique systématiquement dans ces situations :
+
+1. Objectiver la valeur du bien dès le départ, avec une estimation écrite et argumentée. C'est le seul moyen de sortir des discussions basées sur des impressions.
+2. Identifier qui décide. Si personne n'a l'autorité pour trancher, la vente ne se fera pas.
+3. Anticiper les délais administratifs. Le certificat d'héritiers peut prendre trois mois. La L3PL peut ajouter six à huit semaines. Un acquéreur motivé ne patientera pas indéfiniment.
+
+Une succession bien gérée peut se conclure en trois à cinq mois. Mal gérée, elle peut s'étirer sur des années, au détriment de tout le monde.`,
+    cta: "Vous êtes héritier d'un bien immobilier dans le canton de Vaud et vous ne savez pas par où commencer ? Contactez-moi, je vous accompagne de l'estimation jusqu'à la signature."
   },
 ]
 
