@@ -55,6 +55,13 @@ export const MANDATS: Mandat[] = [
     description: "Au coeur du village de Riex, dans le périmètre UNESCO de Lavaux, cette maison vigneronne de 1680 entièrement rénovée en 1989 déploie ses 100 m² habitables sur quatre niveaux. Séjour lumineux avec double hauteur, cuisine ouverte avec accès balcon, chambre au dernier étage avec vide sur séjour et salle de bains moderne sous vélux. Sauna privatif au sous-sol, deux places de parking couvert. La porte de la façade sud est classée monument historique. Vue sur les toits, le lac Léman et les Alpes."
   },
   {
+    id: 20, slug: 'villa-granges-veveyse', titre: 'Villa individuelle', lieu: 'Granges (Veveyse)',
+    prix: "1'230'000", pieces: '4.5', surface: '~150 m²', terrain: '955 m²', categorie: 'en_vente',
+    img: '/photos/granges/drone_aerial.jpg',
+    photos: ['/photos/granges/drone_aerial.jpg','/photos/granges/drone_rear.jpg','/photos/granges/terrasse.jpg','/photos/granges/salon.jpg','/photos/granges/cuisine.jpg','/photos/granges/mezzanine.jpg','/photos/granges/chambre.jpg','/photos/granges/sdd.jpg','/photos/granges/carnotzet.jpg','/photos/granges/drone_panorama.jpg'],
+    description: "Perchée à 730 mètres d'altitude à Granges (Veveyse), cette villa de 2007 offre un panorama exceptionnel sur les Préalpes fribourgeoises. Séjour avec cheminée, cuisine ouverte sur terrasse de plus de 100 m², suite parentale avec dressing et sauna. Carnotzet au sous-sol, jacuzzi, PAC géothermique. Parcelle de 955 m²."
+  },
+  {
     id: 8, slug: 'maison-gland-buis', titre: 'Maison jumelée', lieu: 'Gland',
     prix: "2'750'000", pieces: '-', surface: '-', terrain: '-', categorie: 'en_vente',
     img: '/photos/gland-buis/DJI_20260115164414_0005_D.jpg',
