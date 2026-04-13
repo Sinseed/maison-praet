@@ -59,7 +59,7 @@ export const MANDATS: Mandat[] = [
     prix: "1'230'000", pieces: '4.5', surface: '~150 m²', terrain: '955 m²', categorie: 'en_vente',
     img: '/photos/granges/drone_aerial.jpg',
     photos: ['/photos/granges/drone_aerial.jpg','/photos/granges/drone_rear.jpg','/photos/granges/terrasse.jpg','/photos/granges/salon.jpg','/photos/granges/cuisine.jpg','/photos/granges/mezzanine.jpg','/photos/granges/chambre.jpg','/photos/granges/sdd.jpg','/photos/granges/carnotzet.jpg','/photos/granges/drone_panorama.jpg'],
-    description: "Perchée à 730 mètres d'altitude à Granges (Veveyse), cette villa de 2007 offre un panorama exceptionnel sur les Préalpes fribourgeoises. Séjour avec cheminée, cuisine ouverte sur terrasse de plus de 100 m², suite parentale avec dressing et sauna. Carnotzet au sous-sol, jacuzzi, PAC géothermique. Parcelle de 955 m²."
+    description: "A Granges (Veveyse), cette villa individuelle de 2007 offre un panorama exceptionnel sur les Préalpes fribourgeoises. Séjour avec cheminée, cuisine ouverte sur terrasse de plus de 100 m², suite parentale avec dressing et sauna. Carnotzet au sous-sol, jacuzzi, PAC géothermique. Parcelle de 955 m²."
   },
   {
     id: 8, slug: 'maison-gland-buis', titre: 'Maison jumelée', lieu: 'Gland',
