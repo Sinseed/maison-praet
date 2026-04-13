@@ -84,7 +84,7 @@ export const MANDATS: Mandat[] = [
   },
   {
     id: 4, slug: 'immeuble-lausanne-levant', titre: 'Immeuble locatif', lieu: 'Lausanne',
-    prix: "1'790'000", pieces: '-', surface: '-', terrain: '-', categorie: 'reserve',
+    prix: "1'590'000", pieces: '-', surface: '-', terrain: '-', categorie: 'reserve',
     img: '/photos/lausanne-levant/IMG_6321.jpg',
     photos: ['/photos/lausanne-levant/IMG_6321.jpg','/photos/lausanne-levant/IMG_6329.jpg','/photos/lausanne-levant/IMG_6331.jpg','/photos/lausanne-levant/IMG_6332.jpg','/photos/lausanne-levant/IMG_6341.jpg','/photos/lausanne-levant/IMG_6342.jpg','/photos/lausanne-levant/IMG_6343.jpg','/photos/lausanne-levant/IMG_6346.jpg','/photos/lausanne-levant/IMG_6349.jpg','/photos/lausanne-levant/IMG_6356.jpg','/photos/lausanne-levant/IMG_6357.jpg','/photos/lausanne-levant/IMG_6528.jpg'],
     description: "Immeuble de trois logements à Lausanne. Bien réservé, signature notariale en cours."
