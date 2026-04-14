@@ -125,7 +125,7 @@ export const MANDATS: Mandat[] = [
   },
   {
     id: 12, slug: 'appartement-longirod', titre: 'Appartement', lieu: 'Longirod',
-    prix: "750'000", pieces: '-', surface: '-', terrain: '-', categorie: 'reserve',
+    prix: "795'000", pieces: '-', surface: '-', terrain: '-', categorie: 'en_vente',
     img: '/photos/longirod/DJI_20260119103256_0010_D.jpg',
     photos: ['/photos/longirod/DJI_20260119103256_0010_D.jpg','/photos/longirod/DJI_20260119103443_0013_D.jpg','/photos/longirod/IMG_4968.jpg','/photos/longirod/IMG_4970.jpg','/photos/longirod/IMG_4971.jpg','/photos/longirod/IMG_4972.jpg','/photos/longirod/IMG_4974.jpg','/photos/longirod/IMG_4975.jpg','/photos/longirod/IMG_4976.jpg','/photos/longirod/IMG_4980.jpg','/photos/longirod/IMG_4983.jpg'],
     description: "Appartement lumineux à Longirod, au pied du Jura. Cadre verdoyant, vue sur la campagne et les Alpes. Cheminée, balcon et ambiance chaleureuse."
