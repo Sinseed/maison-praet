@@ -80,16 +80,33 @@ export default function BienPage() {
           {/* Sidebar contact */}
           <div>
             <div className="bg-brand-card border border-brand-border p-8 sticky top-24">
-              <h3 className="font-display text-xl text-white mb-6">Intéressé par ce bien ?</h3>
-              <p className="font-body text-sm text-brand-muted mb-8">Contactez-moi pour organiser une visite ou obtenir le dossier complet.</p>
-              <div className="space-y-4">
-                <a href="tel:+41799690191" className="flex items-center gap-3 w-full bg-brand-gold text-brand-dark px-6 py-4 font-body text-sm font-medium tracking-widest uppercase hover:bg-brand-goldLight transition-colors justify-center">
-                  <Phone size={16} /> Appeler
-                </a>
-                <a href={`mailto:tpraet@golay-immobilier.ch?subject=Demande - ${bien.titre} ${bien.lieu}`} className="flex items-center gap-3 w-full border border-brand-border text-brand-text px-6 py-4 font-body text-sm tracking-widest uppercase hover:border-brand-gold hover:text-brand-gold transition-colors justify-center">
-                  <Mail size={16} /> Écrire
-                </a>
-              </div>
+              {bien.categorie === 'vendu' ? (
+                <>
+                  <h3 className="font-display text-xl text-white mb-6">Vous possédez un bien similaire ?</h3>
+                  <p className="font-body text-sm text-brand-muted mb-8">Découvrez sa valeur sur le marché actuel. Estimation professionnelle, fondée et sans engagement.</p>
+                  <div className="space-y-4">
+                    <a href="tel:+41799690191" className="flex items-center gap-3 w-full bg-brand-gold text-brand-dark px-6 py-4 font-body text-sm font-medium tracking-widest uppercase hover:bg-brand-goldLight transition-colors justify-center">
+                      <Phone size={16} /> Appeler
+                    </a>
+                    <a href="/#estimation" className="flex items-center gap-3 w-full border border-brand-border text-brand-text px-6 py-4 font-body text-sm tracking-widest uppercase hover:border-brand-gold hover:text-brand-gold transition-colors justify-center">
+                      Demander une estimation
+                    </a>
+                  </div>
+                </>
+              ) : (
+                <>
+                  <h3 className="font-display text-xl text-white mb-6">Intéressé par ce bien ?</h3>
+                  <p className="font-body text-sm text-brand-muted mb-8">Contactez-moi pour organiser une visite ou obtenir le dossier complet.</p>
+                  <div className="space-y-4">
+                    <a href="tel:+41799690191" className="flex items-center gap-3 w-full bg-brand-gold text-brand-dark px-6 py-4 font-body text-sm font-medium tracking-widest uppercase hover:bg-brand-goldLight transition-colors justify-center">
+                      <Phone size={16} /> Appeler
+                    </a>
+                    <a href={`mailto:tpraet@golay-immobilier.ch?subject=Demande - ${bien.titre} ${bien.lieu}`} className="flex items-center gap-3 w-full border border-brand-border text-brand-text px-6 py-4 font-body text-sm tracking-widest uppercase hover:border-brand-gold hover:text-brand-gold transition-colors justify-center">
+                      <Mail size={16} /> Écrire
+                    </a>
+                  </div>
+                </>
+              )}
               <div className="mt-8 pt-6 border-t border-brand-border">
                 <p className="font-body text-xs text-brand-muted">Thomas Praet</p>
                 <p className="font-body text-xs text-brand-muted">Golay Immobilier SA · Lausanne</p>
