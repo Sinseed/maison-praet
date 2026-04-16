@@ -84,10 +84,10 @@ export const MANDATS: Mandat[] = [
   },
   {
     id: 4, slug: 'immeuble-lausanne-levant', titre: 'Immeuble locatif', lieu: 'Lausanne',
-    prix: "1'590'000", pieces: '-', surface: '-', terrain: '-', categorie: 'reserve',
+    prix: "1'590'000", pieces: '-', surface: '-', terrain: '-', categorie: 'vendu',
     img: '/photos/lausanne-levant/IMG_6321.jpg',
-    photos: ['/photos/lausanne-levant/IMG_6321.jpg','/photos/lausanne-levant/IMG_6329.jpg','/photos/lausanne-levant/IMG_6331.jpg','/photos/lausanne-levant/IMG_6332.jpg','/photos/lausanne-levant/IMG_6341.jpg','/photos/lausanne-levant/IMG_6342.jpg','/photos/lausanne-levant/IMG_6343.jpg','/photos/lausanne-levant/IMG_6346.jpg','/photos/lausanne-levant/IMG_6349.jpg','/photos/lausanne-levant/IMG_6356.jpg','/photos/lausanne-levant/IMG_6357.jpg','/photos/lausanne-levant/IMG_6528.jpg'],
-    description: "Immeuble de trois logements à Lausanne. Bien réservé, signature notariale en cours."
+    photos: ['/photos/lausanne-levant/IMG_6321.jpg'],
+    description: "Immeuble de trois logements à Lausanne. Transaction conclue avec succès."
   },
   {
     id: 6, slug: 'appartement-epalinges', titre: 'Appartement PPE', lieu: 'Epalinges',
@@ -113,7 +113,7 @@ export const MANDATS: Mandat[] = [
     id: 10, slug: 'maison-dully', titre: 'Maison mitoyenne', lieu: 'Dully',
     prix: "1'590'000", pieces: '-', surface: '-', terrain: '-', categorie: 'vendu',
     img: '/photos/dully/1775578068436_photo1.jpg',
-    photos: ['/photos/dully/1775578068436_photo1.jpg','/photos/dully/1775578068436_IMG_5408.jpg','/photos/dully/1775578068437_IMG_5410.jpg','/photos/dully/1775578068437_IMG_5412.jpg','/photos/dully/1775578068432_IMG_5414.jpg','/photos/dully/1775578068432_IMG_5415.jpg','/photos/dully/1775578068433_IMG_5417.jpg','/photos/dully/1775578068433_IMG_5418.jpg','/photos/dully/1775578068434_IMG_5420.jpg','/photos/dully/1775578068434_IMG_5422.jpg','/photos/dully/1775578068434_IMG_5423.jpg','/photos/dully/1775578068434_IMG_5426.jpg','/photos/dully/1775578068435_IMG_5431.jpg','/photos/dully/1775578068435_IMG_5432.jpg','/photos/dully/1775578068435_IMG_5434.jpg','/photos/dully/1775578068436_IMG_5435.jpg','/photos/dully/1775578068436_Bathroom_resized_5712x4284__1_.png'],
+    photos: ['/photos/dully/1775578068436_photo1.jpg'],
     description: "Maison mitoyenne à Dully, village prisé de La Côte. Détails et photos à venir."
   },
   {
@@ -134,35 +134,35 @@ export const MANDATS: Mandat[] = [
     id: 13, slug: 'maison-senarclens', titre: 'Maison individuelle', lieu: 'Senarclens',
     prix: "1'500'000", pieces: '-', surface: '-', terrain: '-', categorie: 'vendu',
     img: '/photos/senarclens/1775570719205_IMG_5840.jpg',
-    photos: ['/photos/senarclens/1775570719205_IMG_5840.jpg','/photos/senarclens/1775570719205_IMG_5837.jpg','/photos/senarclens/1775570719213_IMG_5843.jpg','/photos/senarclens/1775570719213_IMG_5844.jpg','/photos/senarclens/1775570719215_IMG_5846.jpg','/photos/senarclens/1775570719216_IMG_5847.jpg','/photos/senarclens/1775570719216_IMG_5848.jpg','/photos/senarclens/1775570719217_IMG_5849.jpg','/photos/senarclens/1775570719217_IMG_5850.jpg','/photos/senarclens/1775570719218_IMG_5851.jpg','/photos/senarclens/1775570719218_IMG_5852.jpg','/photos/senarclens/1775570719219_IMG_5853.jpg','/photos/senarclens/1775570719219_IMG_5854.jpg'],
+    photos: ['/photos/senarclens/1775570719205_IMG_5840.jpg'],
     description: "Maison individuelle vendue à Senarclens. Piscine, grand jardin et vue panoramique sur le Gros-de-Vaud. Transaction conclue avec succès."
   },
   {
     id: 14, slug: 'immeuble-lausanne-monttendre', titre: 'Immeuble 3 logements', lieu: 'Lausanne',
     prix: "1'480'000", pieces: '-', surface: '-', terrain: '-', categorie: 'vendu',
     img: '/photos/lausanne-monttendre/IMG_6530.jpg',
-    photos: ['/photos/lausanne-monttendre/IMG_6530.jpg','/photos/lausanne-monttendre/IMG_6650.jpg','/photos/lausanne-monttendre/IMG_6655.jpg','/photos/lausanne-monttendre/IMG_6656.jpg','/photos/lausanne-monttendre/IMG_6657.jpg','/photos/lausanne-monttendre/IMG_6658.jpg','/photos/lausanne-monttendre/IMG_6659.jpg','/photos/lausanne-monttendre/IMG_6660.jpg','/photos/lausanne-monttendre/IMG_6662.jpg','/photos/lausanne-monttendre/IMG_6663.jpg'],
+    photos: ['/photos/lausanne-monttendre/IMG_6530.jpg'],
     description: "Immeuble de 3 logements à Lausanne. Transaction conclue avec succès."
   },
   {
     id: 15, slug: 'villa-crissier', titre: 'Villa individuelle', lieu: 'Crissier',
     prix: '-', pieces: '-', surface: '-', terrain: '-', categorie: 'vendu',
     img: '/photos/crissier/P1010660.jpg',
-    photos: ['/photos/crissier/P1010660.jpg','/photos/crissier/P1010664.jpg','/photos/crissier/IMG_4063.jpg','/photos/crissier/IMG_4068.jpg','/photos/crissier/sejour-piscine.png','/photos/crissier/cuisine.jpg','/photos/crissier/chambre-lumineuse.jpg','/photos/crissier/chambre-combles.jpg','/photos/crissier/chambre-ado.jpg','/photos/crissier/chambre-enfant.jpg','/photos/crissier/sdb-baignoire.jpg','/photos/crissier/sdb-douche.jpg','/photos/crissier/dressing.png'],
+    photos: ['/photos/crissier/P1010660.jpg'],
     description: "Villa individuelle avec piscine à Crissier. Pièces de réception lumineuses avec cheminée, cuisine équipée, plusieurs chambres et salles de bains rénovées. Jardin arboré et piscine. Transaction conclue avec succès."
   },
   {
     id: 16, slug: 'maison-gilly', titre: 'Maison villageoise', lieu: 'Gilly',
     prix: '-', pieces: '-', surface: '-', terrain: '-', categorie: 'vendu',
     img: '/photos/gilly/IMG_4158__1_.jpg',
-    photos: ['/photos/gilly/IMG_4158__1_.jpg','/photos/gilly/IMG_4162.jpg','/photos/gilly/IMG_4165.jpg','/photos/gilly/IMG_4169.jpg','/photos/gilly/IMG_4170.jpg','/photos/gilly/IMG_4173.jpg','/photos/gilly/IMG_4174.jpg','/photos/gilly/IMG_4176.jpg','/photos/gilly/IMG_4177.jpg','/photos/gilly/IMG_4179.jpg','/photos/gilly/IMG_4180.jpg','/photos/gilly/IMG_4183.jpg'],
+    photos: ['/photos/gilly/IMG_4158__1_.jpg'],
     description: "Maison villageoise de caractère à Gilly, au coeur du vignoble de La Côte. Murs crépis, tomettes, poutres apparentes et poêle à bois. Terrasse sur les toits et volumes atypiques. Transaction conclue avec succès."
   },
   {
     id: 17, slug: 'maison-jouxtens', titre: 'Maison individuelle', lieu: 'Jouxtens-Mézery',
     prix: '-', pieces: '-', surface: '-', terrain: '-', categorie: 'vendu',
     img: '/photos/jouxtens/jouxtens_10.jpg',
-    photos: ['/photos/jouxtens/jouxtens_10.jpg','/photos/jouxtens/jouxtens_09.jpg','/photos/jouxtens/jouxtens_12.jpg','/photos/jouxtens/jouxtens_01.jpg','/photos/jouxtens/jouxtens_05.jpg','/photos/jouxtens/jouxtens_04.jpg','/photos/jouxtens/jouxtens_03.jpg','/photos/jouxtens/jouxtens_07.jpg','/photos/jouxtens/jouxtens_11.jpg','/photos/jouxtens/jouxtens_08.jpg','/photos/jouxtens/jouxtens_06.jpg','/photos/jouxtens/jouxtens_02.jpg'],
+    photos: ['/photos/jouxtens/jouxtens_10.jpg'],
     description: "Maison individuelle à Jouxtens-Mézery, commune résidentielle prisée aux portes de Lausanne. Transaction conclue avec succès."
   },
 ]
