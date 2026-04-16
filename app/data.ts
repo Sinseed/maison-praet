@@ -87,7 +87,7 @@ export const MANDATS: Mandat[] = [
     prix: "1'590'000", pieces: '-', surface: '-', terrain: '-', categorie: 'vendu',
     img: '/photos/lausanne-levant/IMG_6321.jpg',
     photos: ['/photos/lausanne-levant/IMG_6321.jpg'],
-    description: "Immeuble de trois logements à Lausanne. Transaction conclue avec succès."
+    description: "Immeuble de trois logements à Lausanne. Vente conclue avec succès."
   },
   {
     id: 6, slug: 'appartement-epalinges', titre: 'Appartement PPE', lieu: 'Epalinges',
@@ -114,7 +114,7 @@ export const MANDATS: Mandat[] = [
     prix: "1'590'000", pieces: '-', surface: '-', terrain: '-', categorie: 'vendu',
     img: '/photos/dully/1775578068436_photo1.jpg',
     photos: ['/photos/dully/1775578068436_photo1.jpg'],
-    description: "Maison mitoyenne à Dully, village prisé de La Côte. Détails et photos à venir."
+    description: "Maison mitoyenne à Dully, village prisé de La Côte. Vente conclue avec succès."
   },
   {
     id: 11, slug: 'appartement-gland-aubepine', titre: 'Appartement', lieu: 'Gland',
@@ -135,35 +135,35 @@ export const MANDATS: Mandat[] = [
     prix: "1'500'000", pieces: '-', surface: '-', terrain: '-', categorie: 'vendu',
     img: '/photos/senarclens/1775570719205_IMG_5840.jpg',
     photos: ['/photos/senarclens/1775570719205_IMG_5840.jpg'],
-    description: "Maison individuelle vendue à Senarclens. Piscine, grand jardin et vue panoramique sur le Gros-de-Vaud. Transaction conclue avec succès."
+    description: "Maison individuelle à Senarclens. Piscine, grand jardin et vue panoramique sur le Gros-de-Vaud. Vente conclue avec succès."
   },
   {
     id: 14, slug: 'immeuble-lausanne-monttendre', titre: 'Immeuble 3 logements', lieu: 'Lausanne',
     prix: "1'480'000", pieces: '-', surface: '-', terrain: '-', categorie: 'vendu',
     img: '/photos/lausanne-monttendre/IMG_6530.jpg',
     photos: ['/photos/lausanne-monttendre/IMG_6530.jpg'],
-    description: "Immeuble de 3 logements à Lausanne. Transaction conclue avec succès."
+    description: "Immeuble de 3 logements à Lausanne. Vente conclue avec succès."
   },
   {
     id: 15, slug: 'villa-crissier', titre: 'Villa individuelle', lieu: 'Crissier',
     prix: '-', pieces: '-', surface: '-', terrain: '-', categorie: 'vendu',
     img: '/photos/crissier/P1010660.jpg',
     photos: ['/photos/crissier/P1010660.jpg'],
-    description: "Villa individuelle avec piscine à Crissier. Pièces de réception lumineuses avec cheminée, cuisine équipée, plusieurs chambres et salles de bains rénovées. Jardin arboré et piscine. Transaction conclue avec succès."
+    description: "Villa individuelle avec piscine à Crissier. Pièces de réception lumineuses avec cheminée, cuisine équipée, plusieurs chambres et salles de bains rénovées. Jardin arboré et piscine. Vente conclue avec succès."
   },
   {
     id: 16, slug: 'maison-gilly', titre: 'Maison villageoise', lieu: 'Gilly',
     prix: '-', pieces: '-', surface: '-', terrain: '-', categorie: 'vendu',
     img: '/photos/gilly/IMG_4158__1_.jpg',
     photos: ['/photos/gilly/IMG_4158__1_.jpg'],
-    description: "Maison villageoise de caractère à Gilly, au coeur du vignoble de La Côte. Murs crépis, tomettes, poutres apparentes et poêle à bois. Terrasse sur les toits et volumes atypiques. Transaction conclue avec succès."
+    description: "Maison villageoise de caractère à Gilly, au coeur du vignoble de La Côte. Murs crépis, tomettes, poutres apparentes et poêle à bois. Terrasse sur les toits et volumes atypiques. Vente conclue avec succès."
   },
   {
     id: 17, slug: 'maison-jouxtens', titre: 'Maison individuelle', lieu: 'Jouxtens-Mézery',
     prix: '-', pieces: '-', surface: '-', terrain: '-', categorie: 'vendu',
     img: '/photos/jouxtens/jouxtens_10.jpg',
     photos: ['/photos/jouxtens/jouxtens_10.jpg'],
-    description: "Maison individuelle à Jouxtens-Mézery, commune résidentielle prisée aux portes de Lausanne. Transaction conclue avec succès."
+    description: "Maison individuelle à Jouxtens-Mézery, commune résidentielle prisée aux portes de Lausanne. Vente conclue avec succès."
   },
 ]
 
