@@ -146,21 +146,21 @@ export const MANDATS: Mandat[] = [
   },
   {
     id: 15, slug: 'villa-crissier', titre: 'Villa individuelle', lieu: 'Crissier',
-    prix: '-', pieces: '-', surface: '-', terrain: '-', categorie: 'vendu',
+    prix: "2'350'000", pieces: '-', surface: '-', terrain: '-', categorie: 'vendu',
     img: '/photos/crissier/P1010660.jpg',
     photos: ['/photos/crissier/P1010660.jpg'],
     description: "Villa individuelle avec piscine à Crissier. Pièces de réception lumineuses avec cheminée, cuisine équipée, plusieurs chambres et salles de bains rénovées. Jardin arboré et piscine. Vente conclue avec succès."
   },
   {
     id: 16, slug: 'maison-gilly', titre: 'Maison villageoise', lieu: 'Gilly',
-    prix: '-', pieces: '-', surface: '-', terrain: '-', categorie: 'vendu',
+    prix: "890'000", pieces: '-', surface: '-', terrain: '-', categorie: 'vendu',
     img: '/photos/gilly/IMG_4158__1_.jpg',
     photos: ['/photos/gilly/IMG_4158__1_.jpg'],
     description: "Maison villageoise de caractère à Gilly, au coeur du vignoble de La Côte. Murs crépis, tomettes, poutres apparentes et poêle à bois. Terrasse sur les toits et volumes atypiques. Vente conclue avec succès."
   },
   {
     id: 17, slug: 'maison-jouxtens', titre: 'Maison individuelle', lieu: 'Jouxtens-Mézery',
-    prix: '-', pieces: '-', surface: '-', terrain: '-', categorie: 'vendu',
+    prix: "1'990'000", pieces: '-', surface: '-', terrain: '-', categorie: 'vendu',
     img: '/photos/jouxtens/jouxtens_10.jpg',
     photos: ['/photos/jouxtens/jouxtens_10.jpg'],
     description: "Maison individuelle à Jouxtens-Mézery, commune résidentielle prisée aux portes de Lausanne. Vente conclue avec succès."
