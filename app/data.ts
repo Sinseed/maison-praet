@@ -126,8 +126,7 @@ export const MANDATS: Mandat[] = [
   {
     id: 12, slug: 'appartement-longirod', titre: 'Appartement', lieu: 'Longirod',
     prix: "-", pieces: '-', surface: '-', terrain: '-', categorie: 'vendu',
-    img: '/photos/longirod/DJI_20260119103256_0010_D.jpg',
-    photos: ['/photos/longirod/DJI_20260119103256_0010_D.jpg'],
+    img: '', photos: [],
     description: "Appartement lumineux à Longirod, au pied du Jura. Vente conclue avec succès."
   },
   {
