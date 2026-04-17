@@ -845,6 +845,87 @@ Trois principes que j'applique systématiquement dans ces situations :
 Une succession bien gérée peut se conclure en trois à cinq mois. Mal gérée, elle peut s'étirer sur des années, au détriment de tout le monde.`,
     cta: "Vous êtes héritier d'un bien immobilier dans le canton de Vaud et vous ne savez pas par où commencer ? Contactez-moi, je vous accompagne de l'estimation jusqu'à la signature."
   },
+  {
+    slug: 'droits-mutation-frais-notaire-vaud',
+    titre: "Droits de mutation et frais de notaire dans le canton de Vaud : combien ça coûte ?",
+    chapeau: "3,3 % de droits de mutation, 0,3 % de registre foncier, 0,5 à 0,7 % d'émoluments notariaux : au total, comptez environ 4 % du prix d'achat. Voici le détail, avec un exemple chiffré.",
+    date: '2026-04-17',
+    categorie: 'Guide pratique',
+    contenu: `Dans le canton de Vaud, les frais liés à l'achat d'un bien immobilier s'élèvent à environ 4 % du prix de vente. Ce montant, souvent appelé "frais de notaire", ne rémunère en réalité le notaire que pour une faible part. L'essentiel va à l'État sous forme de droits de mutation. Ces frais sont à la charge de l'acquéreur. En contrepartie, c'est lui qui choisit le notaire.
+
+## Comment se décomposent les frais de notaire dans le canton de Vaud ?
+
+Le montant total se répartit en trois postes principaux :
+
+| Poste | Taux | Bénéficiaire |
+|---|---|---|
+| Droits de mutation | 3,3 % du prix de vente | Canton (2,2 %) + Commune (max 1,1 %) |
+| Inscription au Registre foncier | ~0,3 % | Registre foncier |
+| Émoluments du notaire | 0,5 % à 0,7 % | Notaire |
+| **Total estimé** | **~4 %** | |
+
+Les droits de mutation représentent de loin la part la plus importante. Le notaire n'est qu'un intermédiaire : il perçoit l'ensemble des frais et reverse les droits de mutation au canton et à la commune.
+
+## Que sont exactement les droits de mutation ?
+
+Les droits de mutation sont un impôt prélevé sur tout transfert de propriété immobilière à titre onéreux dans le canton de Vaud (article 10 LMSD). Le taux cantonal est fixe à 2,2 %, quel que soit le montant du bien. Les communes sont autorisées à percevoir un supplément communal pouvant aller jusqu'à la moitié du taux cantonal, soit 1,1 %. Dans la grande majorité des communes vaudoises, le taux communal est appliqué au maximum, ce qui donne un total de 3,3 %.
+
+Certaines communes accordent des exonérations partielles sur la part communale pour les primo-acquéreurs ou pour l'achat d'une résidence principale. Renseignez-vous auprès de votre commune ou de votre notaire.
+
+## Qui paie quoi dans le canton de Vaud ?
+
+La répartition est claire :
+
+- **L'acquéreur** paie l'intégralité des frais de notaire : droits de mutation, inscription au registre foncier et émoluments du notaire.
+- **Le vendeur** ne paie en principe aucun frais notarial lié à la vente, sauf cas particulier (radiation de servitudes, par exemple).
+- **Le vendeur** paie l'impôt sur le gain immobilier, la commission de courtage et le remboursement anticipé éventuel de l'hypothèque.
+
+C'est pour cette raison que le choix du notaire revient à l'acquéreur : c'est lui qui paie.
+
+## Faut-il prévoir des frais supplémentaires en cas d'hypothèque ?
+
+Oui. Si l'acquéreur finance son achat par un prêt hypothécaire, des frais supplémentaires s'appliquent pour la constitution de la cédule hypothécaire. Comptez environ 1,5 à 2,5 % du montant du prêt. Ces frais incluent les droits de timbre, les émoluments du registre foncier et les honoraires du notaire pour la rédaction de l'acte de gage.
+
+Si une cédule hypothécaire existe déjà et peut être cédée par le vendeur, ces frais sont considérablement réduits.
+
+## Exemple concret : achat d'un appartement à CHF 900'000.-
+
+| Poste | Calcul | Montant |
+|---|---|---|
+| Droits de mutation (3,3 %) | 900'000 x 3,3 % | CHF 29'700.- |
+| Inscription Registre foncier (~0,3 %) | 900'000 x 0,3 % | CHF 2'700.- |
+| Émoluments du notaire (~0,6 %) | 900'000 x 0,6 % | CHF 5'400.- |
+| **Total frais de notaire** | | **CHF 37'800.-** |
+| Cédule hypothécaire (prêt de CHF 720'000.-, ~2 %) | 720'000 x 2 % | CHF 14'400.- |
+| **Total frais d'acquisition** | | **CHF 52'200.-** |
+
+Ces CHF 52'200.- doivent être financés par les fonds propres de l'acquéreur, en plus des 20 % d'apport minimum exigés par les banques. C'est un point que beaucoup de primo-acquéreurs sous-estiment.
+
+## Les droits de mutation sont-ils déductibles ?
+
+Oui, mais pas de l'impôt sur le revenu. Les droits de mutation payés à l'achat constituent une impense déductible de l'impôt sur le gain immobilier au moment de la revente du bien. Plus vos frais d'acquisition sont élevés et documentés, plus votre gain imposable sera réduit lors de la revente.
+
+Depuis le 1er janvier 2026, le canton de Vaud a supprimé le forfait de 4,5 % qui permettait de déduire les frais d'acquisition sans justificatif. Il est désormais indispensable de conserver l'acte d'achat original avec le décompte du notaire. Si vous ne l'avez plus, contactez votre notaire ou le Registre foncier pour en obtenir une copie.
+
+## Peut-on réduire les frais de notaire ?
+
+Les droits de mutation et les frais de registre foncier sont fixés par la loi et ne sont pas négociables. En revanche, les émoluments du notaire peuvent varier. Dans le canton de Vaud, le système de notariat est libre : les notaires fixent leurs honoraires selon un barème dégressif. Il est tout à fait possible de demander des devis à plusieurs études pour comparer.
+
+En pratique, l'économie potentielle sur les émoluments reste modeste (quelques centaines de francs sur une transaction standard). La vraie économie se fait sur le taux hypothécaire et les conditions de financement, pas sur le choix du notaire.
+
+Un cas particulier intéressant : l'achat sur plan. Les droits de mutation ne s'appliquent que sur la valeur du terrain, pas sur la construction à venir. Les frais d'acquisition sont donc nettement inférieurs à ceux d'un achat dans l'existant.
+
+## Ce que cela signifie pour votre projet d'achat
+
+Les frais de notaire représentent un poste incompressible de votre budget. Sur un bien à CHF 1'000'000.-, comptez CHF 40'000.- à 50'000.- de frais d'acquisition, à financer entièrement sur fonds propres. C'est un montant que votre banque ne financera pas.
+
+Trois réflexes à adopter :
+
+1. Intégrez ces frais dès le calcul de votre budget, pas après avoir trouvé le bien.
+2. Conservez précieusement votre acte d'achat et le décompte du notaire. Ces documents vaudront de l'argent le jour où vous revendrez.
+3. Si vous achetez dans une commune qui exonère partiellement les droits de mutation pour les résidences principales, faites-le valoir auprès du notaire.`,
+    cta: "Vous avez un projet d'achat dans le canton de Vaud ? Contactez-moi pour une vision claire de tous les frais à anticiper."
+  },
 ]
 
 // ─── HELPERS ────────────────────────────────────────────────────────────────
