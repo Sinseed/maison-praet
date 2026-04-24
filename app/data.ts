@@ -27,6 +27,13 @@ export type Article = {
 // ─── MANDATS ────────────────────────────────────────────────────────────────
 export const MANDATS: Mandat[] = [
   {
+    id: 6, slug: 'appartement-epalinges', titre: 'Appartement PPE', lieu: 'Epalinges',
+    prix: "1'090'000", pieces: '3.5', surface: '109 m²', terrain: '-', categorie: 'en_vente',
+    img: '/photos/epalinges/epalinges_1_0.jpeg',
+    photos: ['/photos/epalinges/epalinges_1_0.jpeg','/photos/epalinges/epalinges_3_0.jpeg','/photos/epalinges/epalinges_3_1.jpeg','/photos/epalinges/epalinges_4_0.jpeg','/photos/epalinges/epalinges_4_1.jpeg','/photos/epalinges/epalinges_4_2.jpeg','/photos/epalinges/epalinges_5_0.jpeg','/photos/epalinges/epalinges_10_0.jpeg'],
+    description: "Sur les hauts d'Epalinges, à deux pas du terminus M2 Les Croisettes, ce rez-de-chaussée supérieur de 3.5 pièces s'ouvre sur l'un des plus beaux panoramas de la région. Le regard file sur le Léman et les Alpes, la lumière traverse l'appartement jusqu'à la terrasse de 160 m² qui prolonge naturellement les pièces de vie. Parquet en chêne, cuisine ouverte face au paysage, deux chambres paisibles. Jardin privatif en jouissance exclusive, chauffage à pellets et solaire, CECB classe A. Un bien rare, à la fois retiré et à quelques minutes du centre de Lausanne."
+  },
+  {
     id: 18, slug: 'villa-morges', titre: 'Villa familiale', lieu: 'Morges',
     prix: "1'790'000", pieces: '5', surface: '148 m²', terrain: '808 m²', categorie: 'en_vente',
     img: '/photos/morges-fauvette/drone_facade.jpg',
@@ -88,13 +95,6 @@ export const MANDATS: Mandat[] = [
     img: '/photos/lausanne-levant/IMG_6321.jpg',
     photos: ['/photos/lausanne-levant/IMG_6321.jpg'],
     description: "Immeuble de trois logements à Lausanne. Vente conclue avec succès."
-  },
-  {
-    id: 6, slug: 'appartement-epalinges', titre: 'Appartement PPE', lieu: 'Epalinges',
-    prix: "1'090'000", pieces: '3.5', surface: '109 m²', terrain: '-', categorie: 'en_vente',
-    img: '/photos/epalinges/epalinges_1_0.jpeg',
-    photos: ['/photos/epalinges/epalinges_1_0.jpeg','/photos/epalinges/epalinges_3_0.jpeg','/photos/epalinges/epalinges_3_1.jpeg','/photos/epalinges/epalinges_4_0.jpeg','/photos/epalinges/epalinges_4_1.jpeg','/photos/epalinges/epalinges_4_2.jpeg','/photos/epalinges/epalinges_5_0.jpeg','/photos/epalinges/epalinges_10_0.jpeg'],
-    description: "Sur les hauts d'Epalinges, à deux pas du terminus M2 Les Croisettes, ce rez-de-chaussée supérieur de 3.5 pièces s'ouvre sur l'un des plus beaux panoramas de la région. Le regard file sur le Léman et les Alpes, la lumière traverse l'appartement jusqu'à la terrasse de 160 m² qui prolonge naturellement les pièces de vie. Parquet en chêne, cuisine ouverte face au paysage, deux chambres paisibles. Jardin privatif en jouissance exclusive, chauffage à pellets et solaire, CECB classe A. Un bien rare, à la fois retiré et à quelques minutes du centre de Lausanne."
   },
   {
     id: 7, slug: 'appartement-lemont', titre: 'Appartement PPE', lieu: 'Le Mont-sur-Lausanne',
