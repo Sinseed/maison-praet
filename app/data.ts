@@ -926,6 +926,123 @@ Trois réflexes à adopter :
 3. Si vous achetez dans une commune qui exonère partiellement les droits de mutation pour les résidences principales, faites-le valoir auprès du notaire.`,
     cta: "Vous avez un projet d'achat dans le canton de Vaud ? Contactez-moi pour une vision claire de tous les frais à anticiper."
   },
+  {
+    slug: 'fonds-propres-achat-immobilier-suisse',
+    titre: "Combien de fonds propres faut-il pour acheter un bien immobilier en Suisse ?",
+    chapeau: "20 % du prix d'achat, dont au moins 10 % hors prévoyance professionnelle. Voici d'où peuvent provenir vos fonds propres, comment utiliser votre 2e et 3e pilier, et ce que les banques exigent réellement.",
+    date: '2026-04-24',
+    categorie: 'Guide acquéreur',
+    contenu: `Pour acheter un bien immobilier en Suisse, vous devez apporter au minimum 20 % du prix d'achat en fonds propres. Sur ces 20 %, au moins 10 % doivent provenir de sources hors prévoyance professionnelle (épargne, 3e pilier, donation, héritage). Les 10 % restants peuvent être constitués par un retrait ou un nantissement de votre 2e pilier. À cela s'ajoutent les frais d'acquisition (environ 4 % dans le canton de Vaud), eux aussi à financer sur fonds propres.
+
+## Quelle est la règle des 20 % en Suisse ?
+
+La FINMA (Autorité fédérale de surveillance des marchés financiers) impose aux banques de n'accorder un prêt hypothécaire qu'à hauteur de 80 % de la valeur du bien. Les 20 % restants doivent être apportés par l'acquéreur sous forme de fonds propres.
+
+Ces 20 % se décomposent en deux tranches :
+
+| Tranche | Source | Obligation |
+|---|---|---|
+| 10 % minimum | Épargne personnelle, 3e pilier, donation, héritage, vente d'un autre bien | Obligatoire hors prévoyance LPP |
+| 10 % complémentaires | 2e pilier (retrait ou nantissement), épargne, 3e pilier | Flexible |
+
+Concrètement, pour un bien à CHF 1'000'000.-, il faut apporter CHF 200'000.- de fonds propres, dont au minimum CHF 100'000.- qui ne proviennent pas du 2e pilier.
+
+## D'où peuvent provenir les fonds propres ?
+
+Voici les sources acceptées par les banques suisses :
+
+- **Épargne personnelle** : comptes bancaires, placements, titres. C'est la source la plus simple et la plus appréciée par les banques.
+- **3e pilier (pilier 3a)** : retirable pour l'achat d'une résidence principale. L'impôt sur le retrait est prélevé à un taux réduit (variable selon le canton). Le 3e pilier compte comme fonds propres "durs" (hors LPP), ce qui en fait un levier particulièrement intéressant.
+- **2e pilier (LPP)** : retrait ou nantissement, uniquement pour la résidence principale. Voir la section dédiée ci-dessous.
+- **Donation ou avance sur héritage** : de plus en plus fréquent en Suisse, où les prix élevés rendent l'accession difficile sans aide familiale. La banque demandera une attestation écrite confirmant qu'il s'agit d'un don et non d'un prêt.
+- **Vente d'un autre bien immobilier** : le produit de la vente peut être réinvesti comme fonds propres.
+- **Crédit lombard** : nantissement d'un portefeuille de titres. La banque prête en contrepartie de la mise en gage de vos placements. Solution réservée aux patrimoines financiers importants.
+
+## Comment utiliser son 2e pilier pour acheter ?
+
+Le 2e pilier peut être mobilisé de deux façons pour financer l'achat d'une résidence principale :
+
+**Le retrait anticipé (EPL)**
+
+Vous retirez une partie ou la totalité de votre avoir LPP. L'argent est versé directement au notaire ou au créancier hypothécaire.
+
+Conditions :
+- Résidence principale uniquement (pas de résidence secondaire ni de bien locatif)
+- Montant minimum de retrait : CHF 20'000.-
+- Accord écrit du conjoint obligatoire
+- Dès 50 ans : retrait limité au montant disponible à vos 50 ans, ou à 50 % de l'avoir actuel (le plus élevé des deux)
+- Un retrait tous les 5 ans maximum
+- Remboursement obligatoire en cas de revente avant la retraite
+
+L'impôt sur le retrait est prélevé à un taux réduit, variable selon le canton. Dans le canton de Vaud, comptez environ 5 à 8 % du montant retiré.
+
+**Le nantissement (mise en gage)**
+
+Vous ne retirez pas l'argent. Votre avoir LPP sert de garantie à la banque, qui accepte alors de vous prêter jusqu'à 90 % de la valeur du bien au lieu de 80 %.
+
+Avantages : pas d'impôt immédiat, votre capital retraite continue de produire des intérêts, les rachats restent possibles.
+
+Inconvénients : dette hypothécaire plus élevée, charges mensuelles plus lourdes (amortissement obligatoire à 2/3 de la valeur en 15 ans), revenus nécessaires plus importants pour satisfaire le calcul de tenue des charges.
+
+## Retrait ou nantissement du 2e pilier : que choisir ?
+
+| Critère | Retrait | Nantissement |
+|---|---|---|
+| Impact sur la dette | Réduit l'hypothèque | L'hypothèque reste plus élevée |
+| Impôt | Oui, taux réduit au moment du retrait | Non (reporté à la retraite) |
+| Capital retraite | Diminué | Préservé |
+| Charges mensuelles | Plus basses | Plus élevées |
+| Déduction fiscale des intérêts | Moins élevée (dette plus faible) | Plus élevée (dette plus importante) |
+| Rachats LPP possibles | Pas avant remboursement du retrait | Oui |
+
+En pratique, le choix dépend de votre âge, de vos revenus et de votre stratégie fiscale. Pour un acquéreur de moins de 40 ans avec des revenus confortables, le nantissement est souvent plus avantageux à long terme. Pour un acquéreur de plus de 50 ans, le retrait est souvent la seule option réaliste. Faites-vous accompagner par un conseiller financier, ce choix a des conséquences sur 20 à 30 ans.
+
+## Que vérifie la banque au-delà des fonds propres ?
+
+Les 20 % de fonds propres sont une condition nécessaire, mais pas suffisante. La banque vérifie aussi la tenue des charges, c'est-à-dire votre capacité à assumer les coûts du bien sur le long terme.
+
+Le calcul standard en Suisse :
+
+| Poste | Taux théorique |
+|---|---|
+| Intérêts hypothécaires | 5 % (taux théorique, pas le taux réel) |
+| Amortissement | 1 % de la valeur du bien |
+| Frais d'entretien | 1 % de la valeur du bien |
+| **Total des charges théoriques** | **~7 % de la valeur du bien** |
+
+Les charges théoriques ne doivent pas dépasser un tiers de votre revenu brut annuel.
+
+Exemple : pour un bien à CHF 1'000'000.- avec 20 % de fonds propres, les charges théoriques sont d'environ CHF 56'000.- par an (5 % de CHF 800'000.- + 1 % + 1 % de CHF 1'000'000.-). Votre revenu brut annuel doit donc être d'au moins CHF 168'000.-, soit CHF 14'000.- par mois.
+
+## Exemple concret : achat d'un appartement à CHF 800'000.-
+
+| Élément | Montant |
+|---|---|
+| Prix d'achat | CHF 800'000.- |
+| Fonds propres nécessaires (20 %) | CHF 160'000.- |
+| dont minimum hors LPP (10 %) | CHF 80'000.- |
+| dont 2e pilier possible (10 %) | CHF 80'000.- |
+| Frais d'acquisition (~4 %) | CHF 32'000.- |
+| **Total à financer sur fonds propres** | **CHF 192'000.-** |
+| Hypothèque (80 %) | CHF 640'000.- |
+| Revenu brut annuel minimum requis | ~CHF 135'000.- |
+
+C'est un montant que beaucoup de primo-acquéreurs découvrent tardivement. CHF 192'000.- de fonds propres pour un appartement à CHF 800'000.-, c'est la réalité du marché suisse.
+
+## Ce que cela signifie pour votre projet d'achat
+
+L'accession à la propriété en Suisse est exigeante en fonds propres. C'est la raison pour laquelle le taux de propriétaires reste l'un des plus bas d'Europe (environ 36 %).
+
+Quatre réflexes pour préparer votre achat :
+
+1. Commencez à épargner tôt, et alimentez systématiquement votre 3e pilier (plafond 2026 : CHF 7'258.- par an pour les salariés).
+2. Demandez votre certificat de prévoyance LPP à votre caisse de pension pour connaître votre avoir disponible.
+3. Intégrez les frais d'acquisition (~4 %) dans votre calcul, pas uniquement les 20 % de fonds propres.
+4. Faites un premier rendez-vous avec votre banque ou un courtier financier avant de chercher un bien. Vous connaîtrez votre capacité d'achat réelle, et vous éviterez les déceptions.
+
+Un acquéreur qui connaît précisément son budget avant la première visite gagne du temps, de l'énergie, et de la crédibilité auprès du vendeur.`,
+    cta: "Vous préparez un achat immobilier dans le canton de Vaud ? Contactez-moi, je vous aide à structurer votre recherche."
+  },
 ]
 
 // ─── HELPERS ────────────────────────────────────────────────────────────────
