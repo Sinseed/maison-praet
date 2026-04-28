@@ -194,6 +194,13 @@ export const MANDATS: Mandat[] = [
     photos: ['/photos/pully/facade.jpeg'],
     description: "Appartement de 4.5 pièces à Pully, vue lac et balcon plein sud. Vente conclue avec succès."
   },
+  {
+    id: 25, slug: 'appartement-lausanne-centre', titre: 'Appartement PPE', lieu: 'Lausanne',
+    prix: "795'000", pieces: '1.5', surface: '-', terrain: '-', categorie: 'vendu',
+    img: '/photos/lausanne-centre/facade.png',
+    photos: ['/photos/lausanne-centre/facade.png'],
+    description: "Appartement de 1.5 pièces au coeur du centre-ville de Lausanne. Vente conclue avec succès."
+  },
 ]
 
 // ─── ARTICLES ───────────────────────────────────────────────────────────────
