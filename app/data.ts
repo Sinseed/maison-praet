@@ -180,6 +180,13 @@ export const MANDATS: Mandat[] = [
     photos: ['/photos/echallens/facade.jpg'],
     description: "Maison individuelle à Echallens, au coeur du Gros-de-Vaud. Vente conclue avec succès."
   },
+  {
+    id: 23, slug: 'appartement-lausanne-chailly', titre: 'Appartement PPE', lieu: 'Lausanne',
+    prix: "1'080'000", pieces: '4.5', surface: '-', terrain: '-', categorie: 'vendu',
+    img: '/photos/lausanne-chailly/facade.png',
+    photos: ['/photos/lausanne-chailly/facade.png'],
+    description: "Appartement de 4.5 pièces dans les hauts de Chailly, quartier résidentiel prisé de Lausanne. Vente conclue avec succès."
+  },
 ]
 
 // ─── ARTICLES ───────────────────────────────────────────────────────────────
