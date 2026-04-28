@@ -187,6 +187,13 @@ export const MANDATS: Mandat[] = [
     photos: ['/photos/lausanne-chailly/facade.png'],
     description: "Appartement de 4.5 pièces dans les hauts de Chailly, quartier résidentiel prisé de Lausanne. Vente conclue avec succès."
   },
+  {
+    id: 24, slug: 'appartement-pully', titre: 'Appartement PPE', lieu: 'Pully',
+    prix: "890'000", pieces: '4.5', surface: '93 m²', terrain: '-', categorie: 'vendu',
+    img: '/photos/pully/facade.jpeg',
+    photos: ['/photos/pully/facade.jpeg'],
+    description: "Appartement de 4.5 pièces à Pully, vue lac et balcon plein sud. Vente conclue avec succès."
+  },
 ]
 
 // ─── ARTICLES ───────────────────────────────────────────────────────────────
