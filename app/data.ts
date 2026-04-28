@@ -27,6 +27,13 @@ export type Article = {
 // ─── MANDATS ────────────────────────────────────────────────────────────────
 export const MANDATS: Mandat[] = [
   {
+    id: 21, slug: 'villa-lemont-saux', titre: 'Villa mitoyenne', lieu: 'Le Mont-sur-Lausanne',
+    prix: "1'470'000", pieces: '5.5', surface: '135 m²', terrain: '706 m²', categorie: 'en_vente',
+    img: '/photos/lemont-saux/drone1.jpg',
+    photos: ['/photos/lemont-saux/drone1.jpg','/photos/lemont-saux/drone2.jpg','/photos/lemont-saux/salon.jpg','/photos/lemont-saux/salle-a-manger.jpg','/photos/lemont-saux/cuisine.jpg','/photos/lemont-saux/chambre1.jpg','/photos/lemont-saux/chambre2.jpg','/photos/lemont-saux/bureau.jpg','/photos/lemont-saux/sdb1.jpg','/photos/lemont-saux/sdb2.jpg','/photos/lemont-saux/sdb3.jpg','/photos/lemont-saux/sous-sol.jpg'],
+    description: "Au Mont-sur-Lausanne, dans un quartier résidentiel établi, cette villa mitoyenne de 1987 déploie 135 m² habitables sur deux niveaux. Poutres apparentes, cheminée ouverte, grandes baies coulissantes sur le jardin privatif de 706 m². Trois chambres à l'étage, salle de bains double vasque avec baignoire, salle de loisirs au sous-sol. Garage indépendant et quatre places de stationnement. Chauffage électrique, remplacement par pompe à chaleur faisable (permis voisin obtenu 2021). À 8 minutes du centre de Lausanne et à 5 minutes de l'ISL."
+  },
+  {
     id: 6, slug: 'appartement-epalinges', titre: 'Appartement PPE', lieu: 'Epalinges',
     prix: "1'090'000", pieces: '3.5', surface: '109 m²', terrain: '-', categorie: 'en_vente',
     img: '/photos/epalinges/epalinges_5_0.jpeg',
