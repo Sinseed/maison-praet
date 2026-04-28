@@ -127,8 +127,8 @@ export const MANDATS: Mandat[] = [
   {
     id: 11, slug: 'appartement-gland-aubepine', titre: 'Appartement', lieu: 'Gland',
     prix: "1'250'000", pieces: '-', surface: '-', terrain: '-', categorie: 'en_vente',
-    img: '/photos/gland-aubepine/DJI_20260115163614_0002_D.jpg',
-    photos: ['/photos/gland-aubepine/DJI_20260115163614_0002_D.jpg','/photos/gland-aubepine/IMG_5513.jpg','/photos/gland-aubepine/IMG_5514.jpg','/photos/gland-aubepine/IMG_5515.jpg','/photos/gland-aubepine/IMG_5517.jpg','/photos/gland-aubepine/IMG_5518.jpg','/photos/gland-aubepine/IMG_5520.jpg','/photos/gland-aubepine/IMG_5523.jpg','/photos/gland-aubepine/IMG_5524.jpg','/photos/gland-aubepine/IMG_5526.jpg','/photos/gland-aubepine/IMG_5527.jpg','/photos/gland-aubepine/IMG_5531.jpg','/photos/gland-aubepine/IMG_5532.jpg'],
+    img: '/photos/gland-aubepine/IMG_5515.jpg',
+    photos: ['/photos/gland-aubepine/IMG_5515.jpg','/photos/gland-aubepine/IMG_5514.jpg','/photos/gland-aubepine/IMG_5518.jpg','/photos/gland-aubepine/IMG_5520.jpg','/photos/gland-aubepine/IMG_5524.jpg','/photos/gland-aubepine/IMG_5526.jpg','/photos/gland-aubepine/IMG_5523.jpg','/photos/gland-aubepine/IMG_5517.jpg','/photos/gland-aubepine/IMG_5513.jpg','/photos/gland-aubepine/IMG_5527.jpg','/photos/gland-aubepine/IMG_5531.jpg','/photos/gland-aubepine/IMG_5532.jpg'],
     description: "Appartement spacieux à Gland. Terrasse, vue dégagée et prestations de qualité dans un quartier résidentiel calme."
   },
   {
