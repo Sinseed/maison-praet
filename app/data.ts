@@ -173,6 +173,13 @@ export const MANDATS: Mandat[] = [
     photos: ['/photos/jouxtens/jouxtens_10.jpg'],
     description: "Maison individuelle à Jouxtens-Mézery, commune résidentielle prisée aux portes de Lausanne. Vente conclue avec succès."
   },
+  {
+    id: 22, slug: 'maison-echallens', titre: 'Maison individuelle', lieu: 'Echallens',
+    prix: "1'070'000", pieces: '-', surface: '-', terrain: '-', categorie: 'vendu',
+    img: '/photos/echallens/facade.jpg',
+    photos: ['/photos/echallens/facade.jpg'],
+    description: "Maison individuelle à Echallens, au coeur du Gros-de-Vaud. Vente conclue avec succès."
+  },
 ]
 
 // ─── ARTICLES ───────────────────────────────────────────────────────────────
