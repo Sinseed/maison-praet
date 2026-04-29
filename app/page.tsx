@@ -241,6 +241,55 @@ function Footer() {
   )
 }
 
+const TEMOIGNAGES = [
+  {
+    nom: 'Francis Reymond',
+    texte: "Vendre un bien à Lausanne en pilotant l'opération depuis l'Australie aurait pu être un casse-tête. Avec Thomas Praet, tout a été fluide, du premier rendez-vous à la signature chez le notaire. Disponible malgré le décalage, franc dans ses conseils, efficace dans l'exécution.",
+    etoiles: 5,
+  },
+  {
+    nom: 'Pascal Périllard',
+    texte: "J'ai eu à faire avec M. Thomas Praet, courtier immobilier, chargé de la vente d'un appartement appartenant à ma famille. Toujours courtois, à l'écoute, prêt à aider en cas de besoin, même des mois après l'aboutissement du projet. Un vrai plaisir de traiter avec M. Praet.",
+    etoiles: 5,
+  },
+  {
+    nom: 'Aurélien Despland',
+    texte: "Une belle expérience lors de l'achat de notre bien, grâce au professionnalisme de M. Praet. Un grand merci pour le suivi et la bonne humeur tout au long des négociations. À recommander !",
+    etoiles: 5,
+  },
+  {
+    nom: 'Nadine Thévoz',
+    texte: "Je recommande Monsieur Praet pour son professionnalisme. Il a su mettre notre bien en valeur. Je le remercie pour sa patience et son écoute.",
+    etoiles: 5,
+  },
+]
+
+function Testimonials() {
+  return (
+    <section className="py-24 bg-brand-dark relative overflow-hidden">
+      <div className="absolute top-0 left-1/3 w-80 h-80 rounded-full bg-brand-gold/3 blur-[120px]" />
+      <div className="max-w-6xl mx-auto px-6 relative z-10">
+        <p className="font-body text-xs tracking-[0.3em] uppercase text-brand-gold mb-4">Témoignages</p>
+        <h2 className="font-display text-3xl md:text-4xl font-light text-white mb-16">Ce qu'ils en disent.</h2>
+        <div className="grid md:grid-cols-2 gap-6">
+          {TEMOIGNAGES.map((t, i) => (
+            <div key={i} className="bg-brand-card/50 border border-brand-border/50 p-8 hover:border-brand-gold/30 transition-colors">
+              <div className="flex gap-1 mb-6">
+                {Array.from({ length: t.etoiles }).map((_, j) => (
+                  <svg key={j} className="w-4 h-4 text-brand-gold" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+                ))}
+              </div>
+              <p className="font-body text-brand-text text-[15px] leading-relaxed mb-8 italic">&ldquo;{t.texte}&rdquo;</p>
+              <p className="font-body text-sm text-white font-medium">{t.nom}</p>
+              <p className="font-body text-xs text-brand-muted mt-1">Avis Google</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
 export default function Home() {
-  return (<main><Hero /><StatsBar /><About /><Approach /><MandatsSection /><EstimationForm /><JournalPreview /><Contact /><Footer /></main>)
+  return (<main><Hero /><StatsBar /><About /><Approach /><MandatsSection /><Testimonials /><EstimationForm /><JournalPreview /><Contact /><Footer /></main>)
 }
