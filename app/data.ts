@@ -42,7 +42,7 @@ export const MANDATS: Mandat[] = [
   },
   {
     id: 18, slug: 'villa-morges', titre: 'Villa familiale', lieu: 'Morges',
-    prix: "1'790'000", pieces: '5', surface: '148 m²', terrain: '808 m²', categorie: 'en_vente',
+    prix: "1'790'000", pieces: '5', surface: '148 m²', terrain: '808 m²', categorie: 'reserve',
     img: '/photos/morges-fauvette/drone_facade.jpg',
     photos: ['/photos/morges-fauvette/drone_facade.jpg','/photos/morges-fauvette/drone_lac.jpg','/photos/morges-fauvette/drone_quartier.jpg','/photos/morges-fauvette/salon.jpg','/photos/morges-fauvette/cuisine.jpg','/photos/morges-fauvette/chambre_combles1.jpg','/photos/morges-fauvette/chambre_combles2.jpg','/photos/morges-fauvette/sdb.jpg','/photos/morges-fauvette/chambre_rez.jpg','/photos/morges-fauvette/bureau.jpg','/photos/morges-fauvette/jardin.jpg'],
     description: "Villa familiale de 5 pièces à Morges, sur une parcelle arborée de 808 m². Quatre chambres, trois salles d'eau, double garage. Triple orientation sud, est et ouest. CHF 380'800.- de travaux documentés depuis l'acquisition. Vue sur le lac Léman depuis l'étage."
@@ -70,7 +70,7 @@ export const MANDATS: Mandat[] = [
   },
   {
     id: 20, slug: 'villa-granges-veveyse', titre: 'Villa individuelle', lieu: 'Granges (Veveyse)',
-    prix: "1'230'000", pieces: '4.5', surface: '~150 m²', terrain: '955 m²', categorie: 'en_vente',
+    prix: "1'230'000", pieces: '4.5', surface: '~150 m²', terrain: '955 m²', categorie: 'reserve',
     img: '/photos/granges/drone_aerial.jpg',
     photos: ['/photos/granges/drone_aerial.jpg','/photos/granges/drone_rear.jpg','/photos/granges/terrasse.jpg','/photos/granges/salon.jpg','/photos/granges/cuisine.jpg','/photos/granges/mezzanine.jpg','/photos/granges/chambre.jpg','/photos/granges/sdd.jpg','/photos/granges/carnotzet.jpg','/photos/granges/drone_panorama.jpg'],
     description: "A Granges (Veveyse), cette villa individuelle de 2007 offre un panorama exceptionnel sur les Préalpes fribourgeoises. Séjour avec cheminée, cuisine ouverte sur terrasse de plus de 100 m², suite parentale avec dressing et sauna. Carnotzet au sous-sol, jacuzzi, PAC géothermique. Parcelle de 955 m²."
@@ -84,7 +84,7 @@ export const MANDATS: Mandat[] = [
   },
   {
     id: 2, slug: 'immeuble-lausanne-vallon', titre: 'Immeuble de rendement', lieu: 'Lausanne',
-    prix: "6'000'000", pieces: '-', surface: '520 m²', terrain: '-', categorie: 'en_vente',
+    prix: "6'000'000", pieces: '-', surface: '520 m²', terrain: '-', categorie: 'reserve',
     img: '/photos/lausanne-vallon/DJI_20260116105551_0007_D.jpg',
     photos: ['/photos/lausanne-vallon/DJI_20260116105551_0007_D.jpg','/photos/lausanne-vallon/IMG_6521.jpg','/photos/lausanne-vallon/IMG_6523.jpg','/photos/lausanne-vallon/IMG_6524.jpg','/photos/lausanne-vallon/IMG_6525.jpg','/photos/lausanne-vallon/IMG_6526.jpg'],
     description: "Immeuble de rendement idéalement situé à Lausanne. Surface locative d'environ 520 m². Revenus locatifs stables. Détails sur demande."
@@ -112,7 +112,7 @@ export const MANDATS: Mandat[] = [
   },
   {
     id: 9, slug: 'maison-tartegnin', titre: 'Maison villageoise', lieu: 'Tartegnin',
-    prix: "1'660'000", pieces: '-', surface: '-', terrain: '-', categorie: 'en_vente',
+    prix: "1'660'000", pieces: '-', surface: '-', terrain: '-', categorie: 'reserve',
     img: '/photos/tartegnin/Retouchées__1_.jpg',
     photos: ['/photos/tartegnin/Retouchées__1_.jpg','/photos/tartegnin/IMG_5604.jpg','/photos/tartegnin/IMG_5745.jpg','/photos/tartegnin/IMG_5746.jpg','/photos/tartegnin/IMG_5747.jpg','/photos/tartegnin/IMG_5748.jpg','/photos/tartegnin/IMG_5749.jpg','/photos/tartegnin/IMG_5750.jpg','/photos/tartegnin/IMG_5752.jpg','/photos/tartegnin/IMG_5755.jpg'],
     description: "Maison villageoise de charme à Tartegnin, au coeur du vignoble de La Côte. Vue lac, piscine, jardin généreux et combles aménagés avec goût. Un cadre de vie rare entre village et nature."
@@ -126,7 +126,7 @@ export const MANDATS: Mandat[] = [
   },
   {
     id: 11, slug: 'appartement-gland-aubepine', titre: 'Appartement', lieu: 'Gland',
-    prix: "1'250'000", pieces: '-', surface: '-', terrain: '-', categorie: 'en_vente',
+    prix: "1'250'000", pieces: '-', surface: '-', terrain: '-', categorie: 'reserve',
     img: '/photos/gland-aubepine/IMG_5515.jpg',
     photos: ['/photos/gland-aubepine/IMG_5515.jpg','/photos/gland-aubepine/IMG_5514.jpg','/photos/gland-aubepine/IMG_5518.jpg','/photos/gland-aubepine/IMG_5520.jpg','/photos/gland-aubepine/IMG_5524.jpg','/photos/gland-aubepine/IMG_5526.jpg','/photos/gland-aubepine/IMG_5523.jpg','/photos/gland-aubepine/IMG_5517.jpg','/photos/gland-aubepine/IMG_5513.jpg','/photos/gland-aubepine/IMG_5527.jpg','/photos/gland-aubepine/IMG_5531.jpg','/photos/gland-aubepine/IMG_5532.jpg'],
     description: "Appartement spacieux à Gland. Terrasse, vue dégagée et prestations de qualité dans un quartier résidentiel calme."
