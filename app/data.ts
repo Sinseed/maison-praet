@@ -49,7 +49,7 @@ export const MANDATS: Mandat[] = [
   },
   {
     id: 5, slug: 'villa-cossonay', titre: 'Villa jumelée', lieu: 'Cossonay-Ville',
-    prix: "1'450'000", pieces: '5.5', surface: '-', terrain: '-', categorie: 'en_vente',
+    prix: "1'450'000", pieces: '5.5', surface: '-', terrain: '-', categorie: 'reserve',
     img: '/photos/cossonay/DJI_20260304145633_0009_D.jpg',
     photos: ['/photos/cossonay/DJI_20260304145633_0009_D.jpg','/photos/cossonay/DJI_20260304150013_0015_D.jpg','/photos/cossonay/IMG_7366.jpg','/photos/cossonay/Cuisine_lumineuse_avec_vue_sur_le_jardin.png','/photos/cossonay/Chambre_d_attic_chaleureuse_et_lumineuse.png','/photos/cossonay/Salle_de_bains_sous_les_combles.png','/photos/cossonay/ChatGPT_Image_19_mars_2026__10_29_05.png'],
     description: "Villa jumelée de 5.5 pièces à Cossonay-Ville, avec vue dégagée sur le Jura et les Alpes. Jardin plat, véranda, calme absolu en bordure de campagne. Brochure et visite sur demande."
