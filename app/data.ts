@@ -34,6 +34,13 @@ export const MANDATS: Mandat[] = [
     description: "Au Mont-sur-Lausanne, dans un quartier résidentiel établi, cette villa mitoyenne de 1987 déploie 135 m² habitables sur deux niveaux. Poutres apparentes, cheminée ouverte, grandes baies coulissantes sur le jardin privatif de 706 m². Trois chambres à l'étage, salle de bains double vasque avec baignoire, salle de loisirs au sous-sol. Garage indépendant et quatre places de stationnement. Chauffage électrique, remplacement par pompe à chaleur faisable (permis voisin obtenu 2021). À 8 minutes du centre de Lausanne et à 5 minutes de l'ISL."
   },
   {
+    id: 26, slug: 'appartement-lausanne-maupas', titre: 'Appartement PPE', lieu: 'Lausanne',
+    prix: "750'000", pieces: '3.5', surface: '80 m²', terrain: '-', categorie: 'en_vente',
+    img: '/photos/lausanne-maupas/drone.jpg',
+    photos: ['/photos/lausanne-maupas/drone.jpg','/photos/lausanne-maupas/parc.jpg','/photos/lausanne-maupas/sejour.jpg','/photos/lausanne-maupas/chambre.jpg','/photos/lausanne-maupas/volumes.jpg','/photos/lausanne-maupas/cuisine.jpg','/photos/lausanne-maupas/sdb.jpg'],
+    description: "Face au parc de Valency, cet appartement de 3.5 pièces au rez-de-chaussée inférieur d'un immeuble de 1905 offre des volumes d'époque, un parquet chevrons remarquable et une luminosité rare. Livré en état brut, il attend son projet. Cinq places de parc en pleine propriété et un cabanon cadastré de 13 m² complètent un ensemble peu courant à Lausanne. Immeuble récemment rénové : toiture et façade 2016, chaudière neuve 2025."
+  },
+  {
     id: 6, slug: 'appartement-epalinges', titre: 'Appartement PPE', lieu: 'Epalinges',
     prix: "1'090'000", pieces: '3.5', surface: '109 m²', terrain: '-', categorie: 'en_vente',
     img: '/photos/epalinges/epalinges_5_0.jpeg',
@@ -92,8 +99,7 @@ export const MANDATS: Mandat[] = [
   {
     id: 3, slug: 'immeuble-glion', titre: 'Immeuble locatif', lieu: 'Glion',
     prix: "2'420'000", pieces: '-', surface: '-', terrain: '-', categorie: 'en_vente',
-    img: '/photos/glion/dji_fly_20260305_135802_0017_1772715631429_photo.jpg',
-    photos: ['/photos/glion/dji_fly_20260305_135802_0017_1772715631429_photo.jpg','/photos/glion/IMG_6931.jpg','/photos/glion/20250319_144034_resized.jpg','/photos/glion/20250319_144052_resized.jpg','/photos/glion/20250319_144202_resized.jpg','/photos/glion/20250319_144211_resized.jpg','/photos/glion/20250319_144301_resized.jpg','/photos/glion/20250319_144317_resized.jpg','/photos/glion/20250319_144326_resized.jpg','/photos/glion/20250319_144336_resized.jpg','/photos/glion/20250319_144425_resized.jpg','/photos/glion/20250319_144456_resized.jpg','/photos/glion/Salle_de_bains_moderne_et_épurée.png'],
+    img: '', photos: [],
     description: "Immeuble locatif situé à Glion, dans un cadre exceptionnel surplombant le Léman. Vue panoramique sur le lac et les Alpes."
   },
   {
