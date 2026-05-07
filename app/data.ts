@@ -1085,6 +1085,132 @@ Quatre réflexes pour préparer votre achat :
 Un acquéreur qui connaît précisément son budget avant la première visite gagne du temps, de l'énergie, et de la crédibilité auprès du vendeur.`,
     cta: "Vous préparez un achat immobilier dans le canton de Vaud ? Contactez-moi, je vous aide à structurer votre recherche."
   },
+  {
+    slug: 'etapes-achat-immobilier-vaud',
+    titre: "Les étapes d'un achat immobilier dans le canton de Vaud",
+    chapeau: "Du budget à la remise des clés : les 8 étapes concrètes d'un achat immobilier dans le canton de Vaud, avec les délais, les pièges à éviter et le rôle de chaque intervenant.",
+    date: '2026-05-01',
+    categorie: 'Guide acquéreur',
+    contenu: `Un achat immobilier dans le canton de Vaud prend en moyenne 3 à 6 mois, de la première recherche à la signature chez le notaire. Le processus suit 8 étapes principales. Les connaître à l'avance évite les erreurs coûteuses et les pertes de temps.
+
+## Étape 1 : définir son budget réel
+
+Avant de visiter le moindre bien, vous devez connaître votre capacité d'achat. Deux critères la déterminent :
+
+- **Les fonds propres** : 20 % du prix d'achat minimum, dont 10 % hors prévoyance professionnelle. À cela s'ajoutent environ 4 % de frais d'acquisition (droits de mutation, notaire, registre foncier).
+- **La tenue des charges** : les charges théoriques du logement (intérêts à 5 %, amortissement 1 %, entretien 1 %) ne doivent pas dépasser un tiers de votre revenu brut.
+
+Concrètement, pour un bien à CHF 1'000'000.-, il faut environ CHF 240'000.- de fonds propres (20 % + frais) et un revenu brut annuel d'au moins CHF 168'000.-.
+
+Le réflexe à adopter : prenez rendez-vous avec votre banque ou un courtier financier avant de chercher un bien. Vous connaîtrez votre plafond et vous éviterez de vous projeter sur des biens hors de portée.
+
+## Étape 2 : chercher et comparer
+
+La recherche commence sur les portails (Immoscout24, Homegate, Acheter-Louer) et les sites des courtiers. Dans le canton de Vaud, le marché est tendu sur les segments les plus recherchés (PPE 3-4 pièces à Lausanne, villas familiales de la première couronne). Les biens au juste prix partent vite.
+
+Trois conseils pour gagner en efficacité :
+
+1. Activez les alertes sur les portails avec des critères précis (commune, nombre de pièces, budget).
+2. Inscrivez-vous directement auprès des courtiers actifs dans votre zone. Certains biens sont proposés en avant-première à leur réseau avant d'être publiés.
+3. Visitez suffisamment pour calibrer votre regard. Les 3-4 premières visites servent à comprendre le marché. Les suivantes à identifier le bon bien.
+
+## Étape 3 : visiter et analyser
+
+La visite est un moment clé. Au-delà de l'impression générale, vérifiez les points suivants :
+
+- L'état réel du bien : toiture, façade, fenêtres, installation électrique, sanitaires, chauffage. Demandez l'année de la dernière rénovation pour chaque poste.
+- Le CECB : il vous indique la classe énergétique du bâtiment et les éventuels travaux à prévoir.
+- Pour un appartement en PPE : les procès-verbaux des assemblées générales, le fonds de rénovation, les travaux votés ou à venir. C'est là que se cachent les mauvaises surprises.
+- L'environnement : bruit, orientation, voisinage, transports, écoles. Revenez à un moment différent de la journée pour vérifier.
+
+N'hésitez pas à demander une deuxième visite. Un acquéreur sérieux ne se décide pas sur une seule impression.
+
+## Étape 4 : formuler une offre
+
+Quand vous avez trouvé le bien, vous formulez une offre par écrit. Dans le canton de Vaud, il n'existe pas de "promesse de vente" comme en France. L'offre est un engagement moral, pas juridique, tant que l'acte notarié n'est pas signé.
+
+Votre offre doit préciser :
+
+- Le prix proposé
+- Le mode de financement (fonds propres + hypothèque, avec attestation bancaire)
+- Le calendrier souhaité (date d'entrée en jouissance)
+- Toute condition particulière (sous réserve de financement, par exemple)
+
+Le vendeur peut accepter, refuser ou faire une contre-offre. En cas de plusieurs offres simultanées, c'est le vendeur qui décide, pas nécessairement au plus offrant : la solidité du financement et la simplicité du dossier comptent autant que le prix.
+
+## Étape 5 : obtenir le financement
+
+Une fois l'offre acceptée, vous avez généralement 2 à 4 semaines pour obtenir la confirmation définitive de votre banque. Le dossier bancaire comprend :
+
+- Fiches de salaire des 3 derniers mois
+- Dernière déclaration fiscale
+- Attestation de fortune (relevés bancaires, titres)
+- Certificat de prévoyance LPP (2e pilier)
+- Relevés 3e pilier
+- Documentation du bien (dossier acquéreur, extrait RF, CECB)
+
+Comparez les offres de plusieurs banques. Un écart de 0,1 % sur le taux hypothécaire représente plusieurs milliers de francs sur la durée du prêt. Les courtiers en hypothèques peuvent vous faire gagner du temps et de l'argent sur cette étape.
+
+## Étape 6 : choisir le notaire et préparer l'acte
+
+Dans le canton de Vaud, c'est l'acquéreur qui choisit et paie le notaire. Le notaire rédige l'acte de vente, vérifie la situation juridique du bien (registre foncier, servitudes, hypothèques en cours) et coordonne les aspects financiers.
+
+Le processus notarial se déroule en trois temps :
+
+1. **Le projet d'acte** : le notaire envoie un projet aux deux parties pour relecture, généralement 1 à 2 semaines avant la signature. Lisez-le attentivement et posez toutes vos questions avant le jour J.
+2. **La signature** : le notaire lit l'acte intégralement devant les deux parties, explique chaque clause, puis fait signer. Comptez 1 à 2 heures.
+3. **L'inscription au registre foncier** : le notaire procède à l'inscription du transfert de propriété. Le délai est de quelques jours à quelques semaines selon le district.
+
+Dans le canton de Vaud, la forme de vente la plus courante est la vente à terme : l'acte est signé, un acompte de 10 % est versé sur le compte du notaire, et le solde est payé à la date convenue pour l'entrée en jouissance.
+
+## Étape 7 : le jour de la signature
+
+Le jour de la signature chez le notaire, prévoyez :
+
+- Une pièce d'identité valide
+- La confirmation du versement des fonds par votre banque
+- La preuve de l'assurance du bien (ECA dans le canton de Vaud, automatiquement transférée)
+
+Le notaire retient sur le prix de vente les montants dus : remboursement de l'hypothèque du vendeur, impôt sur le gain immobilier (consigné), commission de courtage le cas échéant, et frais de notaire. Le solde est versé au vendeur.
+
+À la signature, vous n'êtes pas encore propriétaire au sens strict : c'est l'inscription au registre foncier qui officialise le transfert. Mais dès la signature, vous avez un droit acquis sur le bien.
+
+## Étape 8 : la remise des clés et l'installation
+
+La remise des clés a lieu à la date convenue dans l'acte. En pratique, elle se fait souvent sur place, avec un état des lieux contradictoire entre vendeur et acquéreur. C'est le moment de vérifier que le bien est conforme à ce qui a été convenu et de relever les compteurs.
+
+Pensez à :
+
+- Informer votre commune de votre arrivée (si changement de domicile)
+- Transférer les contrats d'énergie (électricité, gaz) à votre nom
+- Souscrire une assurance ménage et responsabilité civile
+- Conserver précieusement votre acte de vente et le décompte du notaire (ils serviront pour l'impôt sur le gain immobilier lors de la revente)
+
+## Quel est le calendrier type d'un achat dans le canton de Vaud ?
+
+| Étape | Durée indicative |
+|---|---|
+| Définition du budget | 1 à 2 semaines |
+| Recherche et visites | 1 à 3 mois |
+| Offre et négociation | 1 à 2 semaines |
+| Financement bancaire | 2 à 4 semaines |
+| Préparation de l'acte notarial | 2 à 4 semaines |
+| Signature et inscription RF | 1 à 3 semaines |
+| **Total** | **3 à 6 mois** |
+
+Ce calendrier suppose un dossier bien préparé. Un financement non anticipé ou un dossier PPE incomplet peut ajouter plusieurs semaines.
+
+## Ce que cela signifie pour votre projet
+
+Un achat immobilier est un projet qui se prépare. Les acquéreurs qui arrivent avec un budget validé, une attestation bancaire et une vision claire de leurs critères sont ceux qui obtiennent les meilleurs biens, parce qu'ils inspirent confiance au vendeur et à son courtier.
+
+Trois erreurs à éviter :
+
+1. Visiter des biens avant d'avoir validé son financement. C'est la première cause de déception.
+2. Sous-estimer les frais d'acquisition. Dans le canton de Vaud, comptez 4 % en plus du prix d'achat.
+3. Attendre d'avoir trouvé le bien parfait. Il n'existe pas. Le bon bien, c'est celui qui coche 80 % de vos critères à un prix que vous pouvez assumer.`,
+    cta: "Vous cherchez un bien dans le canton de Vaud ? Contactez-moi pour un premier échange sur votre projet."
+  },
 ]
 
 // ─── HELPERS ────────────────────────────────────────────────────────────────
