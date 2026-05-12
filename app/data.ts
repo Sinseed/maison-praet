@@ -84,10 +84,10 @@ export const MANDATS: Mandat[] = [
   },
   {
     id: 8, slug: 'maison-gland-buis', titre: 'Maison jumelée', lieu: 'Gland',
-    prix: "2'750'000", pieces: '-', surface: '-', terrain: '-', categorie: 'vendu',
+    prix: "2'750'000", pieces: '-', surface: '-', terrain: '-', categorie: 'en_vente',
     img: '/photos/gland-buis/DJI_20260115164414_0005_D.jpg',
-    photos: ['/photos/gland-buis/DJI_20260115164414_0005_D.jpg'],
-    description: "Maison jumelée d'exception à Gland. Vente conclue avec succès."
+    photos: ['/photos/gland-buis/DJI_20260115164414_0005_D.jpg','/photos/gland-buis/IMG_6123.jpg','/photos/gland-buis/IMG_6129.jpg','/photos/gland-buis/IMG_6134.jpg','/photos/gland-buis/IMG_6137.jpg','/photos/gland-buis/IMG_6140.jpg','/photos/gland-buis/IMG_6141.jpg','/photos/gland-buis/IMG_6143.jpg','/photos/gland-buis/IMG_6147.jpg','/photos/gland-buis/IMG_6148.jpg','/photos/gland-buis/IMG_6150.jpg','/photos/gland-buis/IMG_6151.jpg','/photos/gland-buis/IMG_6152.jpg','/photos/gland-buis/IMG_6153.jpg','/photos/gland-buis/IMG_6154.jpg','/photos/gland-buis/IMG_6155.jpg'],
+    description: "Maison jumelée d'exception à Gland. Architecture contemporaine, volumes généreux et finitions soignées. Terrasse, jardin privatif et vue dégagée."
   },
   {
     id: 2, slug: 'immeuble-lausanne-vallon', titre: 'Immeuble de rendement', lieu: 'Lausanne',
@@ -132,10 +132,10 @@ export const MANDATS: Mandat[] = [
   },
   {
     id: 11, slug: 'appartement-gland-aubepine', titre: 'Appartement', lieu: 'Gland',
-    prix: "1'250'000", pieces: '-', surface: '-', terrain: '-', categorie: 'reserve',
+    prix: "1'250'000", pieces: '-', surface: '-', terrain: '-', categorie: 'vendu',
     img: '/photos/gland-aubepine/IMG_5515.jpg',
-    photos: ['/photos/gland-aubepine/IMG_5515.jpg','/photos/gland-aubepine/IMG_5514.jpg','/photos/gland-aubepine/IMG_5518.jpg','/photos/gland-aubepine/IMG_5520.jpg','/photos/gland-aubepine/IMG_5524.jpg','/photos/gland-aubepine/IMG_5526.jpg','/photos/gland-aubepine/IMG_5523.jpg','/photos/gland-aubepine/IMG_5517.jpg','/photos/gland-aubepine/IMG_5513.jpg','/photos/gland-aubepine/IMG_5527.jpg','/photos/gland-aubepine/IMG_5531.jpg','/photos/gland-aubepine/IMG_5532.jpg'],
-    description: "Appartement spacieux à Gland. Terrasse, vue dégagée et prestations de qualité dans un quartier résidentiel calme."
+    photos: ['/photos/gland-aubepine/IMG_5515.jpg'],
+    description: "Appartement spacieux à Gland. Vente conclue avec succès."
   },
   {
     id: 12, slug: 'appartement-longirod', titre: 'Appartement', lieu: 'Longirod',
@@ -749,8 +749,6 @@ C'est là que ça devient intéressant pour les propriétaires. La liste des exc
 - **Logement de 150 m² nets habitables ou plus** : exclu du champ d'application.
 - **Valeur ECA supérieure à CHF 750.-/m3** (à l'indice 117, base 100 = 1990) : exclu.
 - **L'acquéreur conserve le bien en location** avec le locataire actuel en place.
-- **PPE constituée dès la construction** ou depuis le 7 octobre 1989 au moins.
-- **Vente au locataire en place** ou à un membre de la famille du propriétaire.
 
 Si vous pensez entrer dans une de ces exceptions, je recommande toujours de demander confirmation écrite à la Direction du logement avant de mettre en vente. C'est gratuit et ça évite les mauvaises surprises chez le notaire.
 
