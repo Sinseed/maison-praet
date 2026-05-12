@@ -1209,6 +1209,87 @@ Trois erreurs à éviter :
 3. Attendre d'avoir trouvé le bien parfait. Il n'existe pas. Le bon bien, c'est celui qui coche 80 % de vos critères à un prix que vous pouvez assumer.`,
     cta: "Vous cherchez un bien dans le canton de Vaud ? Contactez-moi pour un premier échange sur votre projet."
   },
+  {
+    slug: 'etranger-permis-b-acheter-immobilier-vaud',
+    titre: "Étranger avec un permis B : puis-je acheter un bien immobilier dans le canton de Vaud ?",
+    chapeau: "Oui, dans la plupart des cas. Mais les règles diffèrent selon votre nationalité, votre permis et l'usage du bien. Voici ce que la Lex Koller autorise et interdit dans le canton de Vaud en 2026.",
+    date: '2026-05-08',
+    categorie: 'Guide acquéreur',
+    contenu: `Si vous êtes ressortissant de l'UE ou de l'AELE et que vous résidez en Suisse avec un permis B, vous pouvez acheter un bien immobilier dans le canton de Vaud aux mêmes conditions qu'un citoyen suisse. Aucune autorisation n'est requise, aucune restriction de surface. Cette liberté couvre la résidence principale, les résidences secondaires et les biens de rendement. Pour les ressortissants hors UE/AELE avec permis B, l'achat est possible mais limité à la résidence principale.
+
+La base légale est la loi fédérale sur l'acquisition d'immeubles par des personnes à l'étranger (LFAIE), communément appelée Lex Koller.
+
+## Qui peut acheter librement dans le canton de Vaud ?
+
+Les personnes suivantes ne sont pas considérées comme "personnes à l'étranger" au sens de la LFAIE et peuvent acheter sans restriction :
+
+| Profil | Restrictions |
+|---|---|
+| Citoyen suisse | Aucune |
+| Double national (dont suisse) | Aucune |
+| Ressortissant UE/AELE avec permis B, domicilié en Suisse | Aucune |
+| Ressortissant UE/AELE avec permis C | Aucune |
+| Tout étranger avec permis C, domicilié en Suisse | Aucune |
+
+Concrètement, un Français, un Belge, un Allemand ou un Italien titulaire d'un permis B et domicilié dans le canton de Vaud peut acheter un appartement, une villa, un immeuble locatif ou un terrain exactement comme un Suisse. Pas de formulaire, pas d'autorisation, pas de restriction de surface.
+
+## Et si je suis hors UE/AELE avec un permis B ?
+
+C'est ici que la Lex Koller s'applique. Un ressortissant d'un pays hors UE/AELE (par exemple américain, canadien, brésilien, indien) avec un permis B peut acheter un bien immobilier, mais uniquement sa résidence principale. La surface du terrain ne doit pas dépasser 3'000 m².
+
+Il ne peut pas acheter :
+- Une résidence secondaire (sauf dans le cadre du contingent cantonal pour logements de vacances)
+- Un bien de rendement (immeuble locatif)
+- Un terrain non bâti à des fins résidentielles
+
+Pour tout achat qui sort du cadre de la résidence principale, une autorisation de la Commission foncière est nécessaire. Dans le canton de Vaud, le contingent annuel de logements de vacances autorisés aux étrangers est de 175 (sur 1'500 au niveau fédéral).
+
+## Et le permis C ?
+
+Un titulaire de permis C (établissement), quelle que soit sa nationalité, a les mêmes droits qu'un citoyen suisse. Pas de restriction, pas d'autorisation. C'est la seule condition : avoir le permis C et être domicilié en Suisse.
+
+## Et les frontaliers (permis G) ?
+
+Les frontaliers ne peuvent pas acheter de résidence principale en Suisse (leur domicile est à l'étranger). Ils peuvent en revanche acheter des biens commerciaux sans autorisation. L'achat d'un logement de vacances est soumis à autorisation et au contingent cantonal.
+
+## Qu'est-ce que la Lex Koller va changer en 2026-2027 ?
+
+Le 15 avril 2026, le Conseil fédéral a annoncé un durcissement de la Lex Koller. L'avant-projet est en consultation jusqu'au 15 juillet 2026, avec une entrée en vigueur visée pour 2027. Les principales mesures proposées :
+
+- **Ressortissants hors UE/AELE** : l'achat de résidence principale serait soumis à autorisation préalable (actuellement il est libre pour les détenteurs de permis B).
+- **Obligation de revente** : un propriétaire étranger qui quitte la Suisse devrait revendre sa résidence principale dans un délai de deux ans.
+- **Logements de vacances** : les contingents cantonaux seraient réduits, et les ventes entre étrangers nécessiteraient une autorisation.
+- **Fonds immobiliers** : les parts de fonds immobiliers suisses cotés en bourse ne seraient plus librement accessibles aux investisseurs étrangers non-résidents.
+
+Pour les ressortissants UE/AELE domiciliés en Suisse, l'impact serait limité : les accords bilatéraux leur garantissent l'accès à la résidence principale dans les mêmes conditions qu'aujourd'hui.
+
+Ces mesures ne sont pas encore en vigueur. Elles font l'objet d'une consultation publique. Mais elles indiquent une tendance claire au durcissement, dans un contexte de pénurie de logements.
+
+## Quels documents préparer pour un achat en tant qu'étranger ?
+
+En plus des documents habituels pour tout achat immobilier, un acquéreur étranger doit fournir :
+
+- Son permis de séjour valide (B ou C)
+- Une preuve de domicile en Suisse (attestation de la commune)
+- Pour les hors UE/AELE : une déclaration d'usage (résidence principale) et, le cas échéant, la demande d'autorisation auprès de la Commission foncière
+
+Le notaire vérifie systématiquement le statut LFAIE de l'acquéreur avant d'instrumenter l'acte. Si un doute subsiste, il demande une constatation de non-assujettissement à l'autorité cantonale compétente. C'est une formalité, mais elle est obligatoire.
+
+## Peut-on acheter avant d'avoir son permis B ?
+
+En théorie, non. La LFAIE exige que l'acquéreur ait son domicile légal et effectif en Suisse au moment de la transaction. En pratique, dans le canton de Vaud, il est possible de signer une vente à terme avec une condition suspensive liée à l'obtention du permis de séjour. C'est une solution qui fonctionne, mais elle doit être encadrée par un notaire qui maîtrise la LFAIE.
+
+Attention : d'autres cantons sont plus restrictifs. Le Valais a durci sa pratique en janvier 2026 et n'accepte plus de signer d'acte sans permis de séjour effectif. Dans le canton de Vaud, la pratique reste plus souple, mais il est impératif de vérifier avec le notaire avant de s'engager.
+
+## Ce que cela signifie pour votre projet
+
+Si vous êtes ressortissant UE/AELE avec un permis B ou C dans le canton de Vaud, vous n'avez aucune restriction. Achetez comme un Suisse.
+
+Si vous êtes hors UE/AELE, le cadre est plus contraint mais l'achat reste possible pour votre résidence principale. Anticipez les démarches : la LFAIE ajoute une couche administrative que votre notaire et votre courtier doivent maîtriser. Un dossier bien monté en amont évite les retards et les mauvaises surprises.
+
+Et avec le durcissement annoncé pour 2027, agir maintenant plutôt qu'attendre peut faire la différence.`,
+    cta: "Vous êtes étranger et vous souhaitez acheter dans le canton de Vaud ? Contactez-moi, je connais les règles et les démarches."
+  },
 ]
 
 // ─── HELPERS ────────────────────────────────────────────────────────────────
