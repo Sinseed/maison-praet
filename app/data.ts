@@ -1235,14 +1235,14 @@ Concrètement, un Français, un Belge, un Allemand ou un Italien titulaire d'un 
 
 ## Et si je suis hors UE/AELE avec un permis B ?
 
-C'est ici que la Lex Koller s'applique. Un ressortissant d'un pays hors UE/AELE (par exemple américain, canadien, brésilien, indien) avec un permis B peut acheter un bien immobilier, mais uniquement sa résidence principale. La surface du terrain ne doit pas dépasser 3'000 m².
+C'est ici que la Lex Koller s'applique. Un ressortissant d'un pays hors UE/AELE (par exemple américain, canadien, brésilien, indien) avec un permis B peut acheter un bien immobilier, mais uniquement sa résidence principale.
 
 Il ne peut pas acheter :
-- Une résidence secondaire (sauf dans le cadre du contingent cantonal pour logements de vacances)
+- Une résidence secondaire (sauf dans le cadre du contingent cantonal pour logements de vacances, soumis à autorisation)
 - Un bien de rendement (immeuble locatif)
 - Un terrain non bâti à des fins résidentielles
 
-Pour tout achat qui sort du cadre de la résidence principale, une autorisation de la Commission foncière est nécessaire. Dans le canton de Vaud, le contingent annuel de logements de vacances autorisés aux étrangers est de 175 (sur 1'500 au niveau fédéral).
+Pour tout achat qui sort du cadre de la résidence principale, une autorisation de la Commission foncière est nécessaire. Les contingents sont limités et varient d'une année à l'autre.
 
 ## Et le permis C ?
 
