@@ -84,10 +84,10 @@ export const MANDATS: Mandat[] = [
   },
   {
     id: 8, slug: 'maison-gland-buis', titre: 'Maison jumelée', lieu: 'Gland',
-    prix: "2'750'000", pieces: '-', surface: '-', terrain: '-', categorie: 'en_vente',
+    prix: "2'750'000", pieces: '-', surface: '-', terrain: '-', categorie: 'vendu',
     img: '/photos/gland-buis/DJI_20260115164414_0005_D.jpg',
-    photos: ['/photos/gland-buis/DJI_20260115164414_0005_D.jpg','/photos/gland-buis/IMG_6123.jpg','/photos/gland-buis/IMG_6129.jpg','/photos/gland-buis/IMG_6134.jpg','/photos/gland-buis/IMG_6137.jpg','/photos/gland-buis/IMG_6140.jpg','/photos/gland-buis/IMG_6141.jpg','/photos/gland-buis/IMG_6143.jpg','/photos/gland-buis/IMG_6147.jpg','/photos/gland-buis/IMG_6148.jpg','/photos/gland-buis/IMG_6150.jpg','/photos/gland-buis/IMG_6151.jpg','/photos/gland-buis/IMG_6152.jpg','/photos/gland-buis/IMG_6153.jpg','/photos/gland-buis/IMG_6154.jpg','/photos/gland-buis/IMG_6155.jpg'],
-    description: "Maison jumelée d'exception à Gland. Architecture contemporaine, volumes généreux et finitions soignées. Terrasse, jardin privatif et vue dégagée."
+    photos: ['/photos/gland-buis/DJI_20260115164414_0005_D.jpg'],
+    description: "Maison jumelée d'exception à Gland. Vente conclue avec succès."
   },
   {
     id: 2, slug: 'immeuble-lausanne-vallon', titre: 'Immeuble de rendement', lieu: 'Lausanne',
