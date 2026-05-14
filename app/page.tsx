@@ -113,15 +113,9 @@ function Approach() {
   return (
     <section id="approche" className="bg-brand-card/50 border-y border-brand-border">
       <div className="max-w-7xl mx-auto px-6 py-24 md:py-32">
-        <div className="grid md:grid-cols-2 gap-16 items-center mb-16">
-          <div>
-            <p className="font-body text-sm tracking-[0.3em] uppercase text-brand-gold mb-4">Mon approche</p>
-            <h2 className="font-display text-4xl md:text-5xl font-light text-white leading-tight">Ce qui me différencie<br /><span className="italic text-brand-gold">de tous les autres.</span></h2>
-          </div>
-          <div className="relative aspect-[4/3] overflow-hidden hidden md:block">
-            <img src="/photos/thomas-terrain.jpg" alt="Thomas Praet en visite" className="object-cover object-top w-full h-full" />
-            <div className="absolute inset-0 bg-gradient-to-l from-transparent to-brand-card/20" />
-          </div>
+        <div className="mb-16">
+          <p className="font-body text-sm tracking-[0.3em] uppercase text-brand-gold mb-4">Mon approche</p>
+          <h2 className="font-display text-4xl md:text-5xl font-light text-white leading-tight">Ce qui me différencie<br /><span className="italic text-brand-gold">de tous les autres.</span></h2>
         </div>
         <div className="grid md:grid-cols-3 gap-8">
           {pillars.map((s, i) => (
