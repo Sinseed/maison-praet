@@ -41,6 +41,20 @@ export const MANDATS: Mandat[] = [
     description: "Face au parc de Valency, cet appartement de 3.5 pièces au rez-de-chaussée inférieur d'un immeuble de 1905 offre des volumes d'époque, un parquet chevrons remarquable et une luminosité rare. Livré en état brut, il attend son projet. Cinq places de parc en pleine propriété et un cabanon cadastré de 13 m² complètent un ensemble peu courant à Lausanne. Immeuble récemment rénové : toiture et façade 2016, chaudière neuve 2025."
   },
   {
+    id: 27, slug: 'appartement-lausanne-centre-1p5', titre: 'Appartement PPE', lieu: 'Lausanne',
+    prix: "360'000", pieces: '1.5', surface: '41 m²', terrain: '-', categorie: 'en_vente',
+    img: '/photos/closdebulle-15p/cuisine.jpg',
+    photos: ['/photos/closdebulle-15p/cuisine.jpg','/photos/closdebulle-15p/salle-de-bain.jpg','/photos/closdebulle-15p/chambre.jpg'],
+    description: "Dans un immeuble de 1939 au coeur de Lausanne, ce 1.5 pièce de 41 m² profite d'un détail rare : son balcon donne sur la cour intérieure arborée, face à un jardin d'agrément. Pas de vis-à-vis frontal, une vraie bulle de calme à deux pas de la Riponne et du Flon. Parquets à chevrons d'origine, double porte vitrée vers la chambre, salle de bain habillée d'une mosaïque hexagonale bleu nuit qui signe l'intérieur. Cave attribuée. Le bien est actuellement loué (CHF 850.- hors charges). Pour un investisseur urbain ou un acquéreur en quête d'un pied-à-terre central."
+  },
+  {
+    id: 28, slug: 'appartement-lausanne-centre-2p5', titre: 'Appartement PPE', lieu: 'Lausanne',
+    prix: "550'000", pieces: '2.5', surface: '57 m²', terrain: '-', categorie: 'en_vente',
+    img: '/photos/closdebulle-25p/sejour.jpg',
+    photos: ['/photos/closdebulle-25p/sejour.jpg','/photos/closdebulle-25p/entree-salon.jpg','/photos/closdebulle-25p/hall.jpg','/photos/closdebulle-25p/cuisine.jpg','/photos/closdebulle-25p/chambre.jpg','/photos/closdebulle-25p/salle-de-douche.jpg'],
+    description: "Au 3e étage d'un immeuble de 1939 en plein centre de Lausanne, ce 2.5 pièces traversant rassemble ce que peu de biens proposent à ce prix : un vrai séjour séparé, une cuisine indépendante, une chambre dédiée, deux balcons distincts. Parquets à chevrons remis à neuf en 2024, murs repeints. Ascenseur dans l'immeuble, cave attribuée. Le quartier vit à pied : Riponne, Flon, gare CFF à moins d'un kilomètre, m1 et m2 à portée. Le bien est actuellement loué (CHF 1'380.- hors charges). Idéal pour un investisseur ou un acquéreur en quête d'un appartement central et indépendant."
+  },
+  {
     id: 6, slug: 'appartement-epalinges', titre: 'Appartement PPE', lieu: 'Epalinges',
     prix: "1'090'000", pieces: '3.5', surface: '109 m²', terrain: '-', categorie: 'en_vente',
     img: '/photos/epalinges/epalinges_5_0.jpeg',
