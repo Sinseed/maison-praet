@@ -43,8 +43,8 @@ export const MANDATS: Mandat[] = [
   {
     id: 27, slug: 'appartement-lausanne-centre-1p5', titre: 'Appartement PPE', lieu: 'Lausanne',
     prix: "360'000", pieces: '1.5', surface: '41 m²', terrain: '-', categorie: 'en_vente',
-    img: '/photos/closdebulle-15p/cuisine.jpg',
-    photos: ['/photos/closdebulle-15p/cuisine.jpg','/photos/closdebulle-15p/salle-de-bain.jpg','/photos/closdebulle-15p/chambre.jpg'],
+    img: '/photos/closdebulle-15p/balcon.jpg',
+    photos: ['/photos/closdebulle-15p/balcon.jpg','/photos/closdebulle-15p/cuisine.jpg','/photos/closdebulle-15p/salle-de-bain.jpg','/photos/closdebulle-15p/chambre.jpg'],
     description: "Dans un immeuble de 1939 au coeur de Lausanne, ce 1.5 pièce de 41 m² profite d'un détail rare : son balcon donne sur la cour intérieure arborée, face à un jardin d'agrément. Pas de vis-à-vis frontal, une vraie bulle de calme à deux pas de la Riponne et du Flon. Parquets à chevrons d'origine, double porte vitrée vers la chambre, salle de bain habillée d'une mosaïque hexagonale bleu nuit qui signe l'intérieur. Cave attribuée. Le bien est actuellement loué (CHF 850.- hors charges). Pour un investisseur urbain ou un acquéreur en quête d'un pied-à-terre central."
   },
   {
