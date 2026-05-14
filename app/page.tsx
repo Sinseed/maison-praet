@@ -7,36 +7,34 @@ import { MANDATS, ARTICLES, STATS, FILTRES } from './data'
 function Hero() {
   return (
     <section className="relative min-h-screen overflow-hidden bg-brand-dark">
-      {/* Background gradient */}
+      {/* Photo background - visible on all screens */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-r from-brand-dark via-brand-dark/95 to-brand-dark/40 z-10" />
-        <div className="absolute right-0 top-0 bottom-0 w-full md:w-[55%]">
+        <div className="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/80 to-brand-dark/30 md:bg-gradient-to-r md:from-brand-dark md:via-brand-dark/95 md:to-brand-dark/40 z-10" />
+        <div className="absolute inset-0 md:left-auto md:w-[55%]">
           <img src="/photos/portrait.jpg" alt="Thomas Praet" className="object-cover object-top w-full h-full" />
         </div>
       </div>
 
       {/* Content */}
-      <div className="relative z-20 min-h-screen flex flex-col justify-center max-w-7xl mx-auto px-6">
+      <div className="relative z-20 min-h-screen flex flex-col justify-end md:justify-center pb-12 md:pb-0 max-w-7xl mx-auto px-6">
         <div className="max-w-2xl">
-          <div className="mb-8">
-            <p className="font-body text-xs tracking-[0.4em] uppercase text-brand-gold">Canton de Vaud · Suisse</p>
-          </div>
+          <p className="font-body text-xs tracking-[0.4em] uppercase text-brand-gold mb-6">Canton de Vaud · Suisse</p>
 
           <h1 className="font-display text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-light text-white leading-[0.95] mb-2">
             Thomas
           </h1>
-          <h1 className="font-display text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-light italic text-brand-gold leading-[0.95] mb-10">
+          <h1 className="font-display text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-light italic text-brand-gold leading-[0.95] mb-8 md:mb-10">
             Praet
           </h1>
 
           <p className="font-body text-lg md:text-xl text-brand-text leading-relaxed mb-3 max-w-lg">
             Je défends votre bien comme si c&apos;était le mien.
           </p>
-          <p className="font-body text-sm text-brand-muted mb-12 max-w-lg">
+          <p className="font-body text-sm text-brand-muted mb-10 md:mb-12 max-w-lg">
             Courtier certifié USPI · Plus de 60 transactions · Arc lémanique et canton de Vaud
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 mb-16">
+          <div className="flex flex-col sm:flex-row gap-4 mb-10 md:mb-16">
             <a href="#estimation" className="group inline-flex items-center gap-3 bg-brand-gold text-brand-dark px-8 py-4 font-body text-sm font-medium tracking-widest uppercase hover:bg-brand-goldLight transition-all duration-300 justify-center">
               Estimer mon bien<ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
             </a>
@@ -53,7 +51,7 @@ function Hero() {
         </div>
       </div>
 
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce z-20"><ChevronDown size={20} className="text-brand-muted" /></div>
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce z-20 hidden md:block"><ChevronDown size={20} className="text-brand-muted" /></div>
     </section>
   )
 }
@@ -61,8 +59,23 @@ function Hero() {
 function StatsBar() {
   return (
     <section className="border-y border-brand-border">
-      <div className="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 sm:grid-cols-3 gap-8">
-        {STATS.map(s => (<div key={s.label} className="text-center"><p className="font-display text-4xl md:text-5xl font-light text-brand-gold">{s.value}</p><p className="font-body text-sm tracking-widest uppercase text-brand-muted mt-2">{s.label}</p></div>))}
+      <div className="max-w-7xl mx-auto px-6 py-10 grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4">
+        <div className="text-center">
+          <p className="font-display text-3xl md:text-4xl font-light text-brand-gold">60+</p>
+          <p className="font-body text-xs tracking-widest uppercase text-brand-muted mt-2">Transactions</p>
+        </div>
+        <div className="text-center">
+          <p className="font-display text-3xl md:text-4xl font-light text-brand-gold">9</p>
+          <p className="font-body text-xs tracking-widest uppercase text-brand-muted mt-2">Années en Suisse</p>
+        </div>
+        <div className="text-center">
+          <p className="font-display text-3xl md:text-4xl font-light text-brand-gold">5/5</p>
+          <p className="font-body text-xs tracking-widest uppercase text-brand-muted mt-2">Avis Google</p>
+        </div>
+        <div className="text-center">
+          <p className="font-display text-3xl md:text-4xl font-light text-brand-gold">USPI</p>
+          <p className="font-body text-xs tracking-widest uppercase text-brand-muted mt-2">Certifié</p>
+        </div>
       </div>
     </section>
   )
@@ -92,24 +105,30 @@ function About() {
 }
 
 function Approach() {
-  const services = [
-    { icon: <TrendingUp size={28} />, title: 'Estimation & stratégie de prix', desc: "Analyse complète : valeur intrinsèque, valeur de rendement, valeur vénale. Un rapport structuré qui vous donne les clés pour décider en connaissance de cause." },
-    { icon: <Shield size={28} />, title: 'Mise en vente & commercialisation', desc: "Dossier acquéreur premium, shooting professionnel, diffusion ciblée sur les portails et dans mon réseau. Chaque bien mérite une présentation à sa hauteur." },
-    { icon: <Users size={28} />, title: 'Négociation & closing', desc: "Sélection des acquéreurs, accompagnement de la négociation, coordination notariale. Vous êtes informé à chaque étape, sans surprise." },
+  const pillars = [
+    { icon: <Shield size={28} />, title: 'Je refuse les mandats auxquels je ne crois pas', desc: "Si votre bien ne peut pas se vendre au prix que vous espérez, je vous le dis avant de signer. Pas après trois mois de silence et une baisse de prix." },
+    { icon: <TrendingUp size={28} />, title: 'Un prix juste, pas un prix flatteur', desc: "Mon estimation repose sur trois méthodes, des données réelles et une connaissance du terrain. 96.8 % de mes biens sont vendus au prix estimé. Ce chiffre n'est pas un hasard." },
+    { icon: <Users size={28} />, title: 'Un seul interlocuteur, du premier appel au notaire', desc: "Pas d'assistante, pas de call center. Vous traitez avec moi de l'estimation à la remise des clés. Votre bien n'est pas un numéro dans un portefeuille." },
   ]
   return (
     <section id="approche" className="bg-brand-card/50 border-y border-brand-border">
       <div className="max-w-7xl mx-auto px-6 py-24 md:py-32">
-        <div className="text-center mb-16">
-          <p className="font-body text-sm tracking-[0.3em] uppercase text-brand-gold mb-4">Mon approche</p>
-          <h2 className="font-display text-4xl md:text-5xl font-light text-white">Trois étapes,<br /><span className="italic text-brand-gold">un seul objectif.</span></h2>
+        <div className="grid md:grid-cols-2 gap-16 items-center mb-16">
+          <div>
+            <p className="font-body text-sm tracking-[0.3em] uppercase text-brand-gold mb-4">Mon approche</p>
+            <h2 className="font-display text-4xl md:text-5xl font-light text-white leading-tight">Ce qui me différencie<br /><span className="italic text-brand-gold">de tous les autres.</span></h2>
+          </div>
+          <div className="relative aspect-[4/3] overflow-hidden hidden md:block">
+            <img src="/photos/thomas-terrain.jpg" alt="Thomas Praet en visite" className="object-cover object-top w-full h-full" />
+            <div className="absolute inset-0 bg-gradient-to-l from-transparent to-brand-card/20" />
+          </div>
         </div>
         <div className="grid md:grid-cols-3 gap-8">
-          {services.map((s, i) => (
+          {pillars.map((s, i) => (
             <div key={i} className="group bg-brand-dark border border-brand-border p-8 hover:border-brand-gold/30 transition-all duration-500">
               <div className="text-brand-gold mb-6 group-hover:scale-110 transition-transform duration-300">{s.icon}</div>
-              <h3 className="font-display text-2xl font-medium text-white mb-4">{s.title}</h3>
-              <p className="font-body text-brand-muted leading-relaxed">{s.desc}</p>
+              <h3 className="font-display text-lg text-white mb-4 leading-snug">{s.title}</h3>
+              <p className="font-body text-sm text-brand-muted leading-relaxed">{s.desc}</p>
               <div className="w-12 h-px bg-brand-gold/30 mt-6 group-hover:w-full transition-all duration-700" />
             </div>
           ))}
