@@ -86,7 +86,7 @@ function About() {
     <section id="apropos" className="max-w-7xl mx-auto px-6 py-24 md:py-32">
       <div className="grid md:grid-cols-2 gap-16 items-center">
         <div className="relative aspect-[3/4] bg-brand-card border border-brand-border overflow-hidden group">
-          <img src="/photos/thomas-terrain.jpg" alt="Thomas Praet sur le terrain" className="object-cover object-[50%_85%] w-full h-full group-hover:scale-[1.02] transition-transform duration-700" />
+          <img src="/photos/thomas-terrain.jpg" alt="Thomas Praet sur le terrain" className="object-cover object-bottom w-full h-full group-hover:scale-[1.02] transition-transform duration-700" />
           <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-brand-dark/80 to-transparent" />
         </div>
         <div>
