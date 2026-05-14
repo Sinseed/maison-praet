@@ -6,39 +6,55 @@ import { MANDATS, ARTICLES, STATS, FILTRES } from './data'
 
 function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden">
+    <section className="relative min-h-screen overflow-hidden bg-brand-dark">
+      {/* Background gradient */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-brand-dark via-[#0E1219] to-[#111620]" />
-        <div className="absolute top-1/4 right-1/4 w-96 h-96 rounded-full bg-brand-gold/5 blur-[120px]" />
+        <div className="absolute inset-0 bg-gradient-to-r from-brand-dark via-brand-dark/95 to-brand-dark/40 z-10" />
+        <div className="absolute right-0 top-0 bottom-0 w-full md:w-[55%]">
+          <img src="/photos/portrait.jpg" alt="Thomas Praet" className="object-cover object-top w-full h-full" />
+        </div>
       </div>
-      <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
-        <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
-          <div className="order-2 md:order-1">
-            <p className="font-body text-sm tracking-[0.35em] uppercase text-brand-gold mb-6">Courtage immobilier · Canton de Vaud</p>
-            <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light text-white leading-[1.1] mb-6">
-              Thomas<span className="block italic text-brand-gold font-normal">Praet</span>
-            </h1>
-            <p className="font-body text-lg text-brand-muted max-w-lg leading-relaxed mb-4">Courtier certifié USPI · Plus de 60 transactions sur l&apos;arc lémanique et le canton de Vaud.</p>
-            <p className="font-display text-xl italic text-brand-goldLight mb-10">&laquo;&nbsp;Je défends votre bien comme si c&apos;était le mien.&nbsp;&raquo;</p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <a href="#estimation" className="group inline-flex items-center gap-3 bg-brand-gold text-brand-dark px-8 py-4 font-body text-sm font-medium tracking-widest uppercase hover:bg-brand-goldLight transition-all duration-300 justify-center">Estimer mon bien<ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" /></a>
-              <a href="#nosbiens" className="inline-flex items-center gap-3 border border-brand-border text-brand-text px-8 py-4 font-body text-sm tracking-widest uppercase hover:border-brand-gold hover:text-brand-gold transition-all duration-300 justify-center">Voir nos biens</a>
-            </div>
+
+      {/* Content */}
+      <div className="relative z-20 min-h-screen flex flex-col justify-center max-w-7xl mx-auto px-6">
+        <div className="max-w-2xl">
+          <div className="flex items-center gap-4 mb-8">
+            <div className="w-12 h-px bg-brand-gold" />
+            <p className="font-body text-xs tracking-[0.4em] uppercase text-brand-gold">Canton de Vaud · Suisse</p>
           </div>
-          <div className="order-1 md:order-2 relative">
-            <div className="relative aspect-[3/4] max-h-[80vh] overflow-hidden">
-              <img src="/photos/portrait.jpg" alt="Thomas Praet, courtier immobilier" className="object-cover object-top w-full h-full" />
-              <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-brand-dark to-transparent" />
-              <div className="absolute top-0 left-0 bottom-0 w-1/6 bg-gradient-to-r from-brand-dark/50 to-transparent hidden md:block" />
-            </div>
-            <div className="absolute -bottom-4 -left-4 bg-brand-dark border border-brand-gold/30 px-6 py-4 hidden md:block">
-              <p className="font-display text-3xl text-brand-gold font-light">96.8%</p>
-              <p className="font-body text-xs text-brand-muted tracking-wider uppercase mt-1">vendus au prix estimé</p>
-            </div>
+
+          <h1 className="font-display text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-light text-white leading-[0.95] mb-2">
+            Thomas
+          </h1>
+          <h1 className="font-display text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-light italic text-brand-gold leading-[0.95] mb-10">
+            Praet
+          </h1>
+
+          <p className="font-body text-lg md:text-xl text-brand-text leading-relaxed mb-3 max-w-lg">
+            Je défends votre bien comme si c&apos;était le mien.
+          </p>
+          <p className="font-body text-sm text-brand-muted mb-12 max-w-lg">
+            Courtier certifié USPI · Plus de 60 transactions · Arc lémanique et canton de Vaud
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-4 mb-16">
+            <a href="#estimation" className="group inline-flex items-center gap-3 bg-brand-gold text-brand-dark px-8 py-4 font-body text-sm font-medium tracking-widest uppercase hover:bg-brand-goldLight transition-all duration-300 justify-center">
+              Estimer mon bien<ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+            </a>
+            <a href="tel:+41799690191" className="inline-flex items-center gap-3 border border-brand-border text-brand-text px-8 py-4 font-body text-sm tracking-widest uppercase hover:border-brand-gold hover:text-brand-gold transition-all duration-300 justify-center">
+              <Phone size={16} /> 079 969 01 91
+            </a>
+          </div>
+
+          {/* Killer stat */}
+          <div className="flex items-end gap-4">
+            <p className="font-display text-5xl md:text-6xl font-light text-brand-gold leading-none">96.8<span className="text-3xl">%</span></p>
+            <p className="font-body text-sm text-brand-muted uppercase tracking-wider pb-1">de mes biens vendus<br />au prix estimé</p>
           </div>
         </div>
       </div>
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce"><ChevronDown size={20} className="text-brand-muted" /></div>
+
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce z-20"><ChevronDown size={20} className="text-brand-muted" /></div>
     </section>
   )
 }
