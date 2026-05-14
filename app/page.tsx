@@ -6,22 +6,36 @@ import { MANDATS, ARTICLES, STATS, FILTRES } from './data'
 
 function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center overflow-hidden">
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-br from-brand-dark via-[#0E1219] to-[#111620]" />
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-brand-gold/5 blur-[120px]" />
-        <div className="absolute bottom-1/4 right-1/3 w-64 h-64 rounded-full bg-brand-gold/3 blur-[100px]" />
+        <div className="absolute top-1/4 right-1/4 w-96 h-96 rounded-full bg-brand-gold/5 blur-[120px]" />
       </div>
-      <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
-        <div className="w-px h-20 bg-gradient-to-b from-transparent via-brand-gold to-transparent mx-auto mb-10 opacity-40" />
-        <p className="font-body text-sm tracking-[0.35em] uppercase text-brand-gold mb-8">Courtage immobilier · Canton de Vaud</p>
-        <h1 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-light text-white leading-[1.1] mb-8 text-balance">
-          L&apos;immobilier, c&apos;est avant tout<span className="block italic text-brand-gold font-normal mt-2">une relation.</span>
-        </h1>
-        <p className="font-body text-lg sm:text-xl text-brand-muted max-w-2xl mx-auto mb-12 leading-relaxed">Thomas Praet · Courtier certifié USPI · Plus de 6 ans sur le terrain, de Morges à Yverdon-les-Bains.</p>
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a href="#estimation" className="group inline-flex items-center gap-3 bg-brand-gold text-brand-dark px-8 py-4 font-body text-sm font-medium tracking-widest uppercase hover:bg-brand-goldLight transition-all duration-300">Estimer mon bien<ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" /></a>
-          <a href="#nosbiens" className="inline-flex items-center gap-3 border border-brand-border text-brand-text px-8 py-4 font-body text-sm tracking-widest uppercase hover:border-brand-gold hover:text-brand-gold transition-all duration-300">Voir nos biens</a>
+      <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
+        <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
+          <div className="order-2 md:order-1">
+            <p className="font-body text-sm tracking-[0.35em] uppercase text-brand-gold mb-6">Courtage immobilier · Canton de Vaud</p>
+            <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light text-white leading-[1.1] mb-6">
+              Thomas<span className="block italic text-brand-gold font-normal">Praet</span>
+            </h1>
+            <p className="font-body text-lg text-brand-muted max-w-lg leading-relaxed mb-4">Courtier certifié USPI · Plus de 60 transactions sur l&apos;arc lémanique et le canton de Vaud.</p>
+            <p className="font-display text-xl italic text-brand-goldLight mb-10">&laquo;&nbsp;Je défends votre bien comme si c&apos;était le mien.&nbsp;&raquo;</p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <a href="#estimation" className="group inline-flex items-center gap-3 bg-brand-gold text-brand-dark px-8 py-4 font-body text-sm font-medium tracking-widest uppercase hover:bg-brand-goldLight transition-all duration-300 justify-center">Estimer mon bien<ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" /></a>
+              <a href="#nosbiens" className="inline-flex items-center gap-3 border border-brand-border text-brand-text px-8 py-4 font-body text-sm tracking-widest uppercase hover:border-brand-gold hover:text-brand-gold transition-all duration-300 justify-center">Voir nos biens</a>
+            </div>
+          </div>
+          <div className="order-1 md:order-2 relative">
+            <div className="relative aspect-[3/4] max-h-[80vh] overflow-hidden">
+              <img src="/photos/thomas-terrain.jpg" alt="Thomas Praet, courtier immobilier" className="object-cover object-top w-full h-full" />
+              <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-brand-dark to-transparent" />
+              <div className="absolute top-0 left-0 bottom-0 w-1/6 bg-gradient-to-r from-brand-dark/50 to-transparent hidden md:block" />
+            </div>
+            <div className="absolute -bottom-4 -left-4 bg-brand-dark border border-brand-gold/30 px-6 py-4 hidden md:block">
+              <p className="font-display text-3xl text-brand-gold font-light">96.8%</p>
+              <p className="font-body text-xs text-brand-muted tracking-wider uppercase mt-1">vendus au prix estimé</p>
+            </div>
+          </div>
         </div>
       </div>
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce"><ChevronDown size={20} className="text-brand-muted" /></div>
@@ -54,8 +68,8 @@ function About() {
             <p>Je ne suis pas un courtier qui promet un prix pour obtenir un mandat, puis le baisse trois mois plus tard. Si je ne suis pas convaincu de pouvoir vendre votre bien dans de bonnes conditions, je vous le dis.</p>
             <p>Depuis plus de six ans, j&apos;accompagne des propriétaires sur l&apos;ensemble de l&apos;arc lémanique et du Gros-de-Vaud. Chaque mandat est traité avec la même rigueur : estimation fondée, stratégie de prix réaliste, suivi transparent jusqu&apos;à la signature chez le notaire.</p>
             <p>Certifié USPI, rattaché à <a href="https://www.golay-immobilier.ch" target="_blank" rel="noopener noreferrer" className="text-brand-gold hover:underline">Golay Immobilier SA</a>, une régie lausannoise de référence.</p>
+            <p className="text-brand-muted text-sm italic">Arrivé de Belgique il y a 9 ans. Formé sur le terrain, pas dans un bureau.</p>
           </div>
-          <blockquote className="mt-10 pl-6 border-l-2 border-brand-gold/40"><p className="font-display text-xl italic text-brand-goldLight leading-relaxed">&laquo;&nbsp;Je défends votre bien comme si c&apos;était le mien.&nbsp;&raquo;</p></blockquote>
         </div>
       </div>
     </section>
