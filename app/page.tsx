@@ -27,7 +27,7 @@ function Hero() {
           </div>
           <div className="order-1 md:order-2 relative">
             <div className="relative aspect-[3/4] max-h-[80vh] overflow-hidden">
-              <img src="/photos/thomas-terrain.jpg" alt="Thomas Praet, courtier immobilier" className="object-cover object-top w-full h-full" />
+              <img src="/photos/portrait.jpg" alt="Thomas Praet, courtier immobilier" className="object-cover object-top w-full h-full" />
               <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-brand-dark to-transparent" />
               <div className="absolute top-0 left-0 bottom-0 w-1/6 bg-gradient-to-r from-brand-dark/50 to-transparent hidden md:block" />
             </div>
@@ -58,7 +58,7 @@ function About() {
     <section id="apropos" className="max-w-7xl mx-auto px-6 py-24 md:py-32">
       <div className="grid md:grid-cols-2 gap-16 items-center">
         <div className="relative aspect-[3/4] bg-brand-card border border-brand-border overflow-hidden group">
-          <img src="/photos/portrait.jpg" alt="Thomas Praet" className="object-cover object-top w-full h-full group-hover:scale-[1.02] transition-transform duration-700" />
+          <img src="/photos/thomas-terrain.jpg" alt="Thomas Praet sur le terrain" className="object-cover object-top w-full h-full group-hover:scale-[1.02] transition-transform duration-700" />
           <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-brand-dark/80 to-transparent" />
         </div>
         <div>
