@@ -370,9 +370,9 @@ Les frais de notaire pour l'acte de vente sont à la charge de l'acquéreur dans
 
 Le remboursement anticipé de l'hypothèque peut coûter cher si vous avez un taux fixe en cours. La banque facture une indemnité de sortie calculée sur le différentiel de taux et la durée restante. Bonne nouvelle : cette pénalité est déductible du gain immobilier. Demandez tout de même un chiffrage précis à votre banque avant de mettre en vente.
 
-Les diagnostics et certificats ne sont pas obligatoires pour vendre dans le Canton de Vaud, mais un CECB (Certificat énergétique cantonal des bâtiments) est de plus en plus demandé par les acquéreurs et leurs banques. Comptez entre CHF 1'000.- et CHF 3'000.- selon la taille du bâtiment. Là aussi, le coût est déductible du gain immobilier.
+Les certificats énergétiques ne sont pas obligatoires pour vendre dans le Canton de Vaud, mais un CECB (Certificat énergétique cantonal des bâtiments) est de plus en plus demandé par les acquéreurs et leurs banques. Comptez entre CHF 1'000.- et CHF 3'000.- selon la taille du bâtiment. Là aussi, le coût est déductible du gain immobilier.
 
-Mon conseil : faites le calcul complet avant de fixer votre prix minimum. J'accompagne systématiquement mes clients dans ces démarches pour leur simplifier la vie au maximum. Entre la banque, le notaire, l'administration fiscale et les diagnostics, la vente d'un bien peut vite devenir un parcours administratif. Mon rôle, c'est aussi de vous guider là-dedans.`,
+Mon conseil : faites le calcul complet avant de fixer votre prix minimum. J'accompagne systématiquement mes clients dans ces démarches pour leur simplifier la vie au maximum. Entre la banque, le notaire, l'administration fiscale et les certificats à fournir, la vente d'un bien peut vite devenir un parcours administratif. Mon rôle, c'est aussi de vous guider là-dedans.`,
     cta: "Besoin d'y voir clair sur ce qu'il vous restera après la vente ? Contactez-moi, je vous accompagne de A à Z."
   },
   {
@@ -596,9 +596,9 @@ Au-delà des obligations légales, un dossier de vente complet dans le canton de
 
 ## Quels documents supplémentaires pour un appartement en PPE ?
 
-Si vous vendez un appartement en propriété par étages, des documents spécifiques à la copropriété sont indispensables :
+Si vous vendez un appartement en propriété par étages, des documents spécifiques à la PPE sont indispensables :
 
-- **Le règlement de copropriété** et le règlement d'utilisation et d'administration
+- **Le règlement d'administration et d'utilisation de la PPE**
 - **Les procès-verbaux des 3 dernières assemblées générales** (ordinaires et extraordinaires)
 - **Le dernier décompte de charges** et le budget prévisionnel
 - **Le solde du fonds de rénovation** et les travaux votés ou prévus
@@ -615,7 +615,7 @@ Ces documents sont disponibles auprès de l'administrateur de la PPE. Demandez-l
 | Police ECA | ECA Vaud (tél. 058 721 21 21) | Gratuit | Quelques jours |
 | Plans d'architecte | Architecte d'origine ou commune | Variable | Variable |
 | Estimation fiscale | Administration cantonale des impôts | Gratuit | Quelques jours |
-| Documents PPE | Administrateur de la copropriété | Souvent inclus dans les charges | 1 à 3 semaines |
+| Documents PPE | Administrateur de la PPE | Souvent inclus dans les charges | 1 à 3 semaines |
 
 ## Faut-il tout réunir avant de contacter un courtier ?
 
@@ -703,7 +703,7 @@ Concrètement :
 
 - Lors de la vente du premier lot, le CECB doit être établi pour tout l'immeuble.
 - C'est à l'administrateur de la PPE de faire établir le document.
-- Les coûts sont supportés par la copropriété (fonds de rénovation ou charges communes).
+- Les coûts sont supportés par la PPE (fonds de rénovation ou charges communes).
 - L'accord de tous les copropriétaires est nécessaire.
 
 Si vous êtes copropriétaire et que vous envisagez de vendre, vérifiez auprès de votre administrateur si un CECB existe déjà et s'il est encore valide.
