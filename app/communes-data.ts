@@ -34,6 +34,7 @@ export const COMMUNES_COORDS: Record<string, { lat: number; lng: number; region:
   'Crans-près-Céligny': { lat: 46.3539, lng: 6.2106, region: 'La Côte' },
   'Begnins': { lat: 46.4357, lng: 6.2580, region: 'La Côte' },
   'Trélex': { lat: 46.4111, lng: 6.2050, region: 'La Côte' },
+  'Golion': { lat: 46.6739, lng: 6.5106, region: 'Gros-de-Vaud' },
 }
 
 // Helper : convertit lat/lng en x/y pour le SVG (viewBox 0 0 1000 700)

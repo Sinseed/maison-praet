@@ -347,6 +347,18 @@ export const MANDATS: Mandat[] = [
     img: '', photos: [],
     description: "Vente d'un chalet en droit distinct et permanent (DDP) à Trélex, période Cogestim. Détails conservés confidentiels par respect des anciens clients."
   },
+  {
+    id: 212, slug: 'cog-golion', titre: 'Appartement PPE 4.5 pièces, rez-de-chaussée', lieu: 'Golion',
+    prix: '-', pieces: '4.5', surface: '-', terrain: '-', categorie: 'vendu', annee_vente: '2020-2023',
+    img: '', photos: [],
+    description: "Vente d'un appartement PPE 4.5 pièces au rez-de-chaussée à Golion, période Cogestim. Détails conservés confidentiels par respect des anciens clients."
+  },
+  {
+    id: 213, slug: 'cog-crissier-promotion', titre: 'Promotion mixte (17 appartements + 2 surfaces commerciales)', lieu: 'Crissier',
+    prix: '-', pieces: '-', surface: '-', terrain: '-', categorie: 'vendu', annee_vente: '2020-2023', nb_lots: 19,
+    img: '', photos: [],
+    description: "Commercialisation complète d'une promotion mixte à Crissier : 17 appartements et 2 surfaces commerciales, période Cogestim. Détails conservés confidentiels par respect des anciens clients."
+  },
 ]
 
 // ─── ARTICLES ───────────────────────────────────────────────────────────────
