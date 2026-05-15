@@ -100,7 +100,7 @@ export const MANDATS: Mandat[] = [
   },
   {
     id: 8, slug: 'maison-gland-buis', titre: 'Maison jumelée', lieu: 'Gland',
-    prix: "2'750'000", pieces: '-', surface: '-', terrain: '-', categorie: 'en_vente',
+    prix: "2'750'000", pieces: '6.5', surface: '230 m²', terrain: '-', categorie: 'en_vente',
     img: '/photos/gland-buis/DJI_20260115164414_0005_D.jpg',
     photos: ['/photos/gland-buis/DJI_20260115164414_0005_D.jpg','/photos/gland-buis/IMG_6123.jpg','/photos/gland-buis/IMG_6129.jpg','/photos/gland-buis/IMG_6134.jpg','/photos/gland-buis/IMG_6137.jpg','/photos/gland-buis/IMG_6140.jpg','/photos/gland-buis/IMG_6141.jpg','/photos/gland-buis/IMG_6143.jpg','/photos/gland-buis/IMG_6147.jpg','/photos/gland-buis/IMG_6148.jpg','/photos/gland-buis/IMG_6150.jpg','/photos/gland-buis/IMG_6151.jpg','/photos/gland-buis/IMG_6152.jpg','/photos/gland-buis/IMG_6153.jpg','/photos/gland-buis/IMG_6154.jpg','/photos/gland-buis/IMG_6155.jpg'],
     description: "Maison jumelée d'exception à Gland. Architecture contemporaine, volumes généreux et finitions soignées. Terrasse, jardin privatif et vue dégagée."
@@ -127,7 +127,7 @@ export const MANDATS: Mandat[] = [
   },
   {
     id: 7, slug: 'appartement-lemont', titre: 'Appartement PPE', lieu: 'Le Mont-sur-Lausanne',
-    prix: "930'000", pieces: '-', surface: '-', terrain: '-', categorie: 'en_vente',
+    prix: "930'000", pieces: '3.5', surface: '110 m²', terrain: '-', categorie: 'en_vente',
     img: '/photos/lemont/IMG_4544.jpg',
     photos: ['/photos/lemont/IMG_4542.jpg','/photos/lemont/IMG_4543.jpg','/photos/lemont/IMG_4544.jpg','/photos/lemont/IMG_4545.jpg','/photos/lemont/IMG_4547.jpg','/photos/lemont/IMG_4550.jpg','/photos/lemont/IMG_4552.jpg','/photos/lemont/IMG_4557.jpg','/photos/lemont/IMG_4559.jpg'],
     description: "Appartement PPE au Mont-sur-Lausanne, dans un cadre résidentiel prisé. Lumineux et fonctionnel, avec vue dégagée sur la campagne environnante."
