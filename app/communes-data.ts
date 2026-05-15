@@ -40,6 +40,7 @@ export const COMMUNES_COORDS: Record<string, { lat: number; lng: number; region:
   'Montheron': { lat: 46.5872, lng: 6.6700, region: 'Arc lémanique' },
   'Vers-chez-les-Blancs': { lat: 46.5556, lng: 6.6694, region: 'Arc lémanique' },
   'Prilly': { lat: 46.5378, lng: 6.6033, region: 'Arc lémanique' },
+  'Préverenges': { lat: 46.5108, lng: 6.5306, region: 'Arc lémanique' },
 }
 
 // Helper : convertit lat/lng en x/y pour le SVG (viewBox 0 0 1000 700)

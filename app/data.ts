@@ -437,6 +437,12 @@ export const MANDATS: Mandat[] = [
     img: '', photos: [],
     description: "Vente d'un immeuble locatif de 3 appartements à Prilly, période Cogestim. Détails conservés confidentiels par respect des anciens clients."
   },
+  {
+    id: 227, slug: 'cog-preverenges', titre: 'Appartement PPE 4.5 pièces', lieu: 'Préverenges',
+    prix: "1'480'000", pieces: '4.5', surface: '-', terrain: '-', categorie: 'vendu', annee_vente: '2020-2023',
+    img: '', photos: [],
+    description: "Vente d'un appartement PPE 4.5 pièces à Préverenges, période Cogestim. Détails conservés confidentiels par respect des anciens clients."
+  },
 ]
 
 // ─── ARTICLES ───────────────────────────────────────────────────────────────
