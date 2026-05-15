@@ -1,9 +1,19 @@
 'use client'
 import { useState, useMemo } from 'react'
+import dynamic from 'next/dynamic'
 import Link from 'next/link'
 import { ArrowRight, MapPin, TrendingUp, Building2, Calendar } from 'lucide-react'
 import { MANDATS } from '../data'
 import { COMMUNES_COORDS } from '../communes-data'
+
+const TrackMap = dynamic(() => import('../components/TrackMap'), {
+  ssr: false,
+  loading: () => (
+    <div className="aspect-[16/10] bg-brand-card/40 border border-brand-border flex items-center justify-center">
+      <p className="font-body text-sm text-brand-muted tracking-wider uppercase">Chargement de la carte…</p>
+    </div>
+  ),
+})
 
 // ─── HERO ───────────────────────────────────────────────────────────────────
 function Hero() {
@@ -62,72 +72,7 @@ function Stats() {
 }
 
 // ─── CARTE INTERACTIVE ──────────────────────────────────────────────────────
-// Offsets manuels des labels pour éviter les chevauchements
-const LABEL_OFFSET: Record<string, { x: number; y: number; anchor?: 'start' | 'middle' | 'end' }> = {
-  'Lausanne': { x: 12, y: 4, anchor: 'start' },
-  'Le Mont-sur-Lausanne': { x: 14, y: -10, anchor: 'start' },
-  'Pully': { x: 12, y: 18, anchor: 'start' },
-  'Epalinges': { x: 14, y: 4, anchor: 'start' },
-  'Crissier': { x: -14, y: 4, anchor: 'end' },
-  'Jouxtens-Mézery': { x: -14, y: -10, anchor: 'end' },
-  'Morges': { x: 0, y: -16, anchor: 'middle' },
-  'Cossonay-Ville': { x: 0, y: -16, anchor: 'middle' },
-  'Senarclens': { x: -14, y: 4, anchor: 'end' },
-  'Echallens': { x: 0, y: -16, anchor: 'middle' },
-  'Yverdon-les-Bains': { x: 0, y: 22, anchor: 'middle' },
-  'Riex, Lavaux': { x: 0, y: -16, anchor: 'middle' },
-  'Granges (Veveyse)': { x: -14, y: 4, anchor: 'end' },
-  'Glion': { x: 14, y: 4, anchor: 'start' },
-  'Gland': { x: -14, y: -2, anchor: 'end' },
-  'Dully': { x: 14, y: 4, anchor: 'start' },
-  'Gilly': { x: 0, y: 22, anchor: 'middle' },
-  'Tartegnin': { x: 14, y: 4, anchor: 'start' },
-  'Longirod': { x: 0, y: -16, anchor: 'middle' },
-}
-
-// Projection ajustée avec offsets pour éviter les bords
-function project(lat: number, lng: number): { x: number; y: number } {
-  const x = (lng - 6.18) * 1140 + 60
-  const y = (46.82 - lat) * 1280 + 50
-  return { x, y }
-}
-
 function MapSection() {
-  const [hover, setHover] = useState<string | null>(null)
-
-  // Groupe les mandats par commune
-  const parCommune = useMemo(() => {
-    const map: Record<string, typeof MANDATS> = {}
-    MANDATS.filter(m => m.photos.length > 0).forEach(m => {
-      if (!map[m.lieu]) map[m.lieu] = []
-      map[m.lieu].push(m)
-    })
-    return map
-  }, [])
-
-  // Tracé du lac Léman (rive nord puis sud), coordonnées GPS converties
-  // Rive nord : Genève → Villeneuve | Rive sud : Saint-Gingolph → Hermance
-  const lacPath = useMemo(() => {
-    const ptsNord = [
-      [46.207, 6.146], [46.272, 6.180], [46.320, 6.197], [46.383, 6.235],
-      [46.418, 6.276], [46.452, 6.341], [46.480, 6.412], [46.500, 6.490],
-      [46.508, 6.575], [46.508, 6.628], [46.503, 6.687], [46.488, 6.747],
-      [46.475, 6.795], [46.461, 6.842], [46.444, 6.880], [46.434, 6.911],
-      [46.405, 6.926], [46.380, 6.910],
-    ]
-    const ptsSud = [
-      [46.391, 6.802], [46.380, 6.700], [46.391, 6.587], [46.370, 6.476],
-      [46.355, 6.380], [46.371, 6.327], [46.345, 6.260], [46.302, 6.245],
-      [46.247, 6.190], [46.207, 6.146],
-    ]
-    const all = [...ptsNord, ...ptsSud]
-    const cmds = all.map(([lat, lng], i) => {
-      const { x, y } = project(lat, lng)
-      return `${i === 0 ? 'M' : 'L'} ${x.toFixed(1)} ${y.toFixed(1)}`
-    })
-    return cmds.join(' ') + ' Z'
-  }, [])
-
   return (
     <section className="max-w-7xl mx-auto px-6 py-20 md:py-28">
       <div className="mb-12 md:mb-16 max-w-2xl">
@@ -137,97 +82,11 @@ function MapSection() {
         </h2>
       </div>
 
-      <div className="relative bg-brand-card/40 border border-brand-border rounded-sm overflow-hidden">
-        <div className="relative w-full" style={{ aspectRatio: '1000 / 580' }}>
-          <svg viewBox="0 0 1000 580" className="w-full h-full" preserveAspectRatio="xMidYMid meet">
-            <defs>
-              <linearGradient id="lacGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#0e1c2a" stopOpacity="0.95" />
-                <stop offset="100%" stopColor="#050a12" stopOpacity="0.85" />
-              </linearGradient>
-              <radialGradient id="bgGlow" cx="50%" cy="50%" r="60%">
-                <stop offset="0%" stopColor="#C9A96E" stopOpacity="0.04" />
-                <stop offset="100%" stopColor="#C9A96E" stopOpacity="0" />
-              </radialGradient>
-            </defs>
+      <TrackMap />
 
-            {/* Halo central léger pour habiller le fond */}
-            <rect x="0" y="0" width="1000" height="580" fill="url(#bgGlow)" />
-
-            {/* Lac Léman */}
-            <path d={lacPath} fill="url(#lacGradient)" stroke="#C9A96E" strokeWidth="0.8" strokeOpacity="0.25" />
-            <text x="640" y="555" className="fill-brand-muted" fontSize="11" fontFamily="Outfit" letterSpacing="6" opacity="0.45">LAC LÉMAN</text>
-
-            {/* Étiquettes régions en watermark */}
-            <text x="500" y="100" className="fill-brand-gold" fontSize="10" fontFamily="Outfit" letterSpacing="5" opacity="0.18" textAnchor="middle">NORD VAUDOIS</text>
-            <text x="500" y="265" className="fill-brand-gold" fontSize="10" fontFamily="Outfit" letterSpacing="5" opacity="0.18" textAnchor="middle">GROS-DE-VAUD</text>
-            <text x="180" y="430" className="fill-brand-gold" fontSize="10" fontFamily="Outfit" letterSpacing="5" opacity="0.18" textAnchor="middle">LA CÔTE</text>
-            <text x="820" y="430" className="fill-brand-gold" fontSize="10" fontFamily="Outfit" letterSpacing="5" opacity="0.18" textAnchor="middle">LAVAUX · RIVIERA</text>
-
-            {/* Pins */}
-            {Object.entries(parCommune).map(([commune, biens]) => {
-              const coords = COMMUNES_COORDS[commune]
-              if (!coords) return null
-              const { x, y } = project(coords.lat, coords.lng)
-              const isHover = hover === commune
-              const r = 6 + Math.min(biens.length, 5) * 1.2
-              const offset = LABEL_OFFSET[commune] || { x: 0, y: -14, anchor: 'middle' as const }
-
-              return (
-                <g
-                  key={commune}
-                  onMouseEnter={() => setHover(commune)}
-                  onMouseLeave={() => setHover(null)}
-                  className="cursor-pointer"
-                >
-                  {/* Halo animé */}
-                  <circle cx={x} cy={y} r={r + 3} fill="#C9A96E" opacity={isHover ? 0.3 : 0.12}>
-                    <animate attributeName="r" values={`${r + 1};${r + 7};${r + 1}`} dur="2.8s" repeatCount="indefinite" />
-                    <animate attributeName="opacity" values="0.18;0;0.18" dur="2.8s" repeatCount="indefinite" />
-                  </circle>
-                  <circle cx={x} cy={y} r={r} fill={isHover ? '#E2CFA5' : '#C9A96E'} stroke="#0C0F14" strokeWidth="2" className="transition-all" />
-                  {biens.length > 1 && (
-                    <text x={x} y={y + 3} textAnchor="middle" fill="#0C0F14" fontSize="9" fontFamily="Outfit" fontWeight="700" className="pointer-events-none">
-                      {biens.length}
-                    </text>
-                  )}
-                  <text
-                    x={x + offset.x}
-                    y={y + offset.y}
-                    textAnchor={offset.anchor || 'middle'}
-                    fill={isHover ? '#E2CFA5' : '#C8CDD8'}
-                    fontSize={isHover ? 13 : 11}
-                    fontFamily="Outfit"
-                    fontWeight={isHover ? 600 : 400}
-                    className="pointer-events-none transition-all"
-                  >
-                    {commune.split(',')[0].replace('-sur-Lausanne', '').replace('-les-Bains', '').replace('-Ville', '').replace('-Mézery', '').replace(' (Veveyse)', '')}
-                  </text>
-                </g>
-              )
-            })}
-          </svg>
-        </div>
-
-        {/* Détails au survol */}
-        {hover && parCommune[hover] && (
-          <div className="absolute bottom-4 left-4 right-4 md:right-auto md:max-w-md bg-brand-dark/95 backdrop-blur-md border border-brand-gold/40 p-5">
-            <p className="font-display text-2xl text-white mb-1">{hover}</p>
-            <p className="font-body text-xs text-brand-muted tracking-wider mb-3">
-              {COMMUNES_COORDS[hover]?.region} · {parCommune[hover].length} {parCommune[hover].length > 1 ? 'mandats' : 'mandat'}
-            </p>
-            <div className="space-y-1.5">
-              {parCommune[hover].slice(0, 4).map(b => (
-                <p key={b.id} className="font-body text-sm text-brand-text">
-                  <span className="text-brand-gold">·</span> {b.titre} <span className="text-brand-muted text-xs">({b.categorie === 'en_vente' ? 'En vente' : b.categorie === 'reserve' ? 'Réservé' : 'Vendu'})</span>
-                </p>
-              ))}
-            </div>
-          </div>
-        )}
-      </div>
-
-      <p className="font-body text-xs text-brand-muted mt-4 italic">Survolez les points pour voir le détail. Localisation au niveau communal uniquement, par respect de la confidentialité des transactions.</p>
+      <p className="font-body text-xs text-brand-muted mt-4 italic">
+        Cliquez sur un point pour voir le détail des mandats. Localisation au niveau communal uniquement, par respect de la confidentialité des transactions.
+      </p>
     </section>
   )
 }
