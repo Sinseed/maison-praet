@@ -56,13 +56,12 @@ function Stats() {
     { label: 'Transactions documentées', value: `${stats.total}`, sub: 'Plus de 60 au total depuis 2020' },
     { label: 'Volume cumulé sous mandat', value: `CHF ${formatChf(stats.volume)}`, sub: 'Valeur des biens confiés' },
     { label: 'Communes traitées', value: `${stats.communes}`, sub: 'Arc lémanique et Vaud' },
-    { label: 'Biens vendus', value: `${stats.vendus}`, sub: 'Hors mandats actifs' },
   ]
 
   return (
     <section className="border-y border-brand-border bg-brand-card/30">
       <div className="max-w-7xl mx-auto px-6 py-16 md:py-20">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-10 md:gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
           {items.map((it, i) => (
             <div key={i} className="text-center md:text-left">
               <p className="font-display text-4xl md:text-5xl font-light text-brand-gold leading-none mb-3">{it.value}</p>
