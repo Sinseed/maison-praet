@@ -162,7 +162,7 @@ function MandatsSection() {
               <h3 className="font-display text-2xl text-white mb-3">{m.titre}</h3>
               <div className="flex items-baseline gap-1 mb-4"><span className="font-body text-sm text-brand-muted">CHF</span><span className="font-display text-xl text-white">{m.prix}.-</span></div>
               <div className="flex gap-4 text-brand-muted font-body text-sm">
-                {m.pieces !== '-' && <span>{m.pieces} pièces</span>}
+                {m.composition ? <span>{m.composition}</span> : m.pieces !== '-' && <span>{m.pieces} pièces</span>}
                 {m.surface !== '-' && <span>{m.surface}</span>}
                 {m.terrain !== '-' && <span>Terrain {m.terrain}</span>}
               </div>

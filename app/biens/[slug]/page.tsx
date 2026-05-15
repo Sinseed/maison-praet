@@ -70,7 +70,7 @@ export default function BienPage() {
               <span className="font-display text-3xl text-brand-gold">{bien.prix}.-</span>
             </div>
             <div className="flex flex-wrap gap-6 mb-10 pb-10 border-b border-brand-border">
-              {bien.pieces !== '-' && <div><p className="font-body text-xs tracking-widest uppercase text-brand-muted mb-1">Pièces</p><p className="font-display text-2xl text-white">{bien.pieces}</p></div>}
+              {bien.composition ? <div><p className="font-body text-xs tracking-widest uppercase text-brand-muted mb-1">Composition</p><p className="font-display text-xl text-white">{bien.composition}</p></div> : bien.pieces !== '-' && <div><p className="font-body text-xs tracking-widest uppercase text-brand-muted mb-1">Pièces</p><p className="font-display text-2xl text-white">{bien.pieces}</p></div>}
               {bien.surface !== '-' && <div><p className="font-body text-xs tracking-widest uppercase text-brand-muted mb-1">Surface</p><p className="font-display text-2xl text-white">{bien.surface}</p></div>}
               {bien.terrain !== '-' && <div><p className="font-body text-xs tracking-widest uppercase text-brand-muted mb-1">Terrain</p><p className="font-display text-2xl text-white">{bien.terrain}</p></div>}
             </div>

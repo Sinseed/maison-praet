@@ -204,7 +204,7 @@ function ListeSection() {
                   {COMMUNES_COORDS[m.lieu]?.region || '—'}
                 </div>
                 <div className="col-span-1 md:col-span-2 font-body text-xs text-brand-muted">
-                  {m.annee_vente ? `Vendu · ${m.annee_vente}` : `${m.pieces !== '-' ? `${m.pieces} pièces` : ''}${m.surface !== '-' ? ` · ${m.surface}` : ''}`}
+                  {m.annee_vente ? `Vendu · ${m.annee_vente}` : m.composition ? m.composition : `${m.pieces !== '-' ? `${m.pieces} pièces` : ''}${m.surface !== '-' ? ` · ${m.surface}` : ''}`}
                 </div>
                 <div className="col-span-2 md:col-span-1 md:text-right">
                   <span className={`inline-block font-body text-[10px] tracking-widest uppercase px-2 py-1 ${badgeColor(m.categorie)}`}>
