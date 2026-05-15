@@ -72,7 +72,7 @@ export const MANDATS: Mandat[] = [
   },
   {
     id: 5, slug: 'villa-cossonay', titre: 'Villa jumelée', lieu: 'Cossonay-Ville',
-    prix: "1'450'000", pieces: '5.5', surface: '-', terrain: '-', categorie: 'reserve',
+    prix: "1'450'000", pieces: '5', surface: '150 m²', terrain: '-', categorie: 'reserve',
     img: '/photos/cossonay/DJI_20260304145633_0009_D.jpg',
     photos: ['/photos/cossonay/DJI_20260304145633_0009_D.jpg','/photos/cossonay/DJI_20260304150013_0015_D.jpg','/photos/cossonay/IMG_7366.jpg','/photos/cossonay/Cuisine_lumineuse_avec_vue_sur_le_jardin.png','/photos/cossonay/Chambre_d_attic_chaleureuse_et_lumineuse.png','/photos/cossonay/Salle_de_bains_sous_les_combles.png','/photos/cossonay/ChatGPT_Image_19_mars_2026__10_29_05.png'],
     description: "Villa jumelée de 5.5 pièces à Cossonay-Ville, avec vue dégagée sur le Jura et les Alpes. Jardin plat, véranda, calme absolu en bordure de campagne. Brochure et visite sur demande."
@@ -107,10 +107,10 @@ export const MANDATS: Mandat[] = [
   },
   {
     id: 2, slug: 'immeuble-lausanne-vallon', titre: 'Immeuble de rendement', lieu: 'Lausanne',
-    prix: "6'000'000", pieces: '-', surface: '520 m²', terrain: '-', categorie: 'reserve',
+    prix: "6'000'000", pieces: '-', surface: "1'015 m²", terrain: '-', categorie: 'reserve',
     img: '/photos/lausanne-vallon/DJI_20260116105551_0007_D.jpg',
     photos: ['/photos/lausanne-vallon/DJI_20260116105551_0007_D.jpg','/photos/lausanne-vallon/IMG_6521.jpg','/photos/lausanne-vallon/IMG_6523.jpg','/photos/lausanne-vallon/IMG_6524.jpg','/photos/lausanne-vallon/IMG_6525.jpg','/photos/lausanne-vallon/IMG_6526.jpg'],
-    description: "Immeuble de rendement idéalement situé à Lausanne. Surface locative d'environ 520 m². Revenus locatifs stables. Détails sur demande."
+    description: "Immeuble de rendement à Lausanne, 1'015 m² de surface locative répartis entre 20 appartements et 1 local commercial. Revenus locatifs stables, emplacement urbain recherché. Détails financiers sur demande."
   },
   {
     id: 3, slug: 'immeuble-glion', titre: 'Immeuble locatif', lieu: 'Glion',
@@ -134,7 +134,7 @@ export const MANDATS: Mandat[] = [
   },
   {
     id: 9, slug: 'maison-tartegnin', titre: 'Maison villageoise', lieu: 'Tartegnin',
-    prix: "1'660'000", pieces: '-', surface: '-', terrain: '-', categorie: 'reserve',
+    prix: "1'660'000", pieces: '3.5', surface: '141 m²', terrain: '-', categorie: 'reserve',
     img: '/photos/tartegnin/Retouchées__1_.jpg',
     photos: ['/photos/tartegnin/Retouchées__1_.jpg','/photos/tartegnin/IMG_5604.jpg','/photos/tartegnin/IMG_5745.jpg','/photos/tartegnin/IMG_5746.jpg','/photos/tartegnin/IMG_5747.jpg','/photos/tartegnin/IMG_5748.jpg','/photos/tartegnin/IMG_5749.jpg','/photos/tartegnin/IMG_5750.jpg','/photos/tartegnin/IMG_5752.jpg','/photos/tartegnin/IMG_5755.jpg'],
     description: "Maison villageoise de charme à Tartegnin, au coeur du vignoble de La Côte. Vue lac, piscine, jardin généreux et combles aménagés avec goût. Un cadre de vie rare entre village et nature."
@@ -148,7 +148,7 @@ export const MANDATS: Mandat[] = [
   },
   {
     id: 11, slug: 'appartement-gland-aubepine', titre: 'Appartement', lieu: 'Gland',
-    prix: "1'250'000", pieces: '-', surface: '-', terrain: '-', categorie: 'vendu',
+    prix: "1'250'000", pieces: '5.5', surface: '150 m²', terrain: '-', categorie: 'vendu',
     img: '/photos/gland-aubepine/IMG_5515.jpg',
     photos: ['/photos/gland-aubepine/IMG_5515.jpg'],
     description: "Appartement spacieux à Gland. Vente conclue avec succès."
