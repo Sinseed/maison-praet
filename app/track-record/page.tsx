@@ -61,7 +61,7 @@ function Stats() {
   }
 
   const items = [
-    { label: 'Mandats documentés', value: `${stats.total}`, sub: 'Plus de 60 au total depuis 2020' },
+    { label: 'Mandats documentés', value: `${stats.total}`, sub: 'Plus de 90 transactions au total depuis 2020' },
     { label: 'Volume cumulé sous mandat', value: `CHF ${formatChf(stats.volume)}`, sub: 'Actes notariés générés' },
     { label: 'Communes traitées', value: `${stats.communes}`, sub: 'Arc lémanique et Vaud' },
   ]
