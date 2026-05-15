@@ -22,6 +22,7 @@ export default function Nav() {
   const links = [
     { label: 'À propos', href: sectionLink('#apropos') },
     { label: 'Nos biens', href: sectionLink('#nosbiens') },
+    { label: 'Track Record', href: '/track-record' },
     { label: 'Approche', href: sectionLink('#approche') },
     { label: 'Guides', href: '/journal' },
     { label: 'Contact', href: sectionLink('#contact') },
