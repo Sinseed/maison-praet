@@ -32,19 +32,26 @@ function Hero() {
 }
 
 // ─── STATS AGRÉGÉES ─────────────────────────────────────────────────────────
+// Médiane forfaitaire utilisée pour estimer le volume des transactions historiques
+// dont le prix exact reste confidentiel. Volontairement prudente (en dessous de
+// la médiane réelle du marché vaudois 2020-2023) pour rester défensive.
+const MEDIANE_HISTORIQUE = 900_000
+
 function Stats() {
   const stats = useMemo(() => {
     // Toutes les transactions documentées : mandats actuels (avec photos) + historique (sans photos mais avec annee_vente)
     const valides = MANDATS.filter(m => m.photos.length > 0 || m.annee_vente)
     // Compte total de transactions, en tenant compte du nombre de lots vendus
     const totalTransactions = valides.reduce((sum, m) => sum + (m.nb_lots || 1), 0)
+    // Volume cumulé : prix réels + estimation forfaitaire pour les transactions sans prix
     const volume = valides.reduce((sum, m) => {
       const n = parseInt(m.prix.replace(/'/g, '').replace(/[^\d]/g, ''))
-      return sum + (isNaN(n) ? 0 : n)
+      if (!isNaN(n) && n > 0) return sum + n
+      // Pas de prix réel : on multiplie la médiane par le nombre de lots
+      return sum + ((m.nb_lots || 1) * MEDIANE_HISTORIQUE)
     }, 0)
     const communes = new Set(valides.map(m => m.lieu)).size
-    const vendus = valides.filter(m => m.categorie === 'vendu').reduce((s, m) => s + (m.nb_lots || 1), 0)
-    return { total: totalTransactions, volume, communes, vendus }
+    return { total: totalTransactions, volume, communes }
   }, [])
 
   const formatChf = (n: number) => {
@@ -71,7 +78,7 @@ function Stats() {
           ))}
         </div>
         <p className="font-body text-xs text-brand-muted italic mt-12 md:mt-16 max-w-3xl leading-relaxed">
-          Mes transactions antérieures à 2024 sont conservées confidentielles par respect de mes anciens clients. Seules les communes où j'ai opéré apparaissent sur la carte, sans détail individuel.
+          Mes transactions antérieures à 2024 sont conservées confidentielles par respect de mes anciens clients : les communes apparaissent sur la carte, mais sans détail individuel. Le volume cumulé intègre une estimation prudente pour ces transactions, en dessous des médianes observées sur le marché vaudois.
         </p>
       </div>
     </section>
