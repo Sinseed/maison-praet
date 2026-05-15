@@ -40,7 +40,7 @@ function Stats() {
   }
 
   const items = [
-    { label: 'Transactions documentées', value: `${stats.total}`, sub: '60+ au total depuis 2017' },
+    { label: 'Transactions documentées', value: `${stats.total}`, sub: '60+ au total depuis 2020' },
     { label: 'Volume cumulé sous mandat', value: `CHF ${formatChf(stats.volume)}`, sub: 'Valeur des biens confiés' },
     { label: 'Communes traitées', value: `${stats.communes}`, sub: 'Arc lémanique et Vaud' },
     { label: 'Biens vendus', value: `${stats.vendus}`, sub: 'Hors mandats actifs' },
