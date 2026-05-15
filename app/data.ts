@@ -299,6 +299,30 @@ export const MANDATS: Mandat[] = [
     img: '', photos: [],
     description: "Transaction supplémentaire à Yverdon-les-Bains, période Cogestim. Détails conservés confidentiels par respect des anciens clients."
   },
+  {
+    id: 205, slug: 'cog-bourg-en-lavaux', titre: 'Bien immobilier', lieu: 'Bourg-en-Lavaux',
+    prix: '-', pieces: '-', surface: '-', terrain: '-', categorie: 'vendu', annee_vente: '2020-2023',
+    img: '', photos: [],
+    description: "Transaction à Bourg-en-Lavaux, période Cogestim. Détails conservés confidentiels par respect des anciens clients."
+  },
+  {
+    id: 206, slug: 'cog-puidoux', titre: 'Bien immobilier', lieu: 'Puidoux',
+    prix: '-', pieces: '-', surface: '-', terrain: '-', categorie: 'vendu', annee_vente: '2020-2023',
+    img: '', photos: [],
+    description: "Transaction à Puidoux, période Cogestim. Détails conservés confidentiels par respect des anciens clients."
+  },
+  {
+    id: 207, slug: 'cog-savigny', titre: 'Bien immobilier', lieu: 'Savigny',
+    prix: '-', pieces: '-', surface: '-', terrain: '-', categorie: 'vendu', annee_vente: '2020-2023',
+    img: '', photos: [],
+    description: "Transaction à Savigny, période Cogestim. Détails conservés confidentiels par respect des anciens clients."
+  },
+  {
+    id: 208, slug: 'cog-belmont', titre: 'Bien immobilier', lieu: 'Belmont-sur-Lausanne',
+    prix: '-', pieces: '-', surface: '-', terrain: '-', categorie: 'vendu', annee_vente: '2020-2023',
+    img: '', photos: [],
+    description: "Transaction à Belmont-sur-Lausanne, période Cogestim. Détails conservés confidentiels par respect des anciens clients."
+  },
 ]
 
 // ─── ARTICLES ───────────────────────────────────────────────────────────────

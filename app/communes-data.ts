@@ -26,6 +26,10 @@ export const COMMUNES_COORDS: Record<string, { lat: number; lng: number; region:
   'Lutry': { lat: 46.5037, lng: 6.6869, region: 'Lavaux' },
   'Cheseaux-sur-Lausanne': { lat: 46.5836, lng: 6.6058, region: 'Arc lémanique' },
   'Rolle': { lat: 46.4592, lng: 6.3322, region: 'La Côte' },
+  'Bourg-en-Lavaux': { lat: 46.4878, lng: 6.7437, region: 'Lavaux' },
+  'Puidoux': { lat: 46.5092, lng: 6.7889, region: 'Lavaux' },
+  'Savigny': { lat: 46.5478, lng: 6.7186, region: 'Arc lémanique' },
+  'Belmont-sur-Lausanne': { lat: 46.5236, lng: 6.6781, region: 'Arc lémanique' },
 }
 
 // Helper : convertit lat/lng en x/y pour le SVG (viewBox 0 0 1000 700)
