@@ -35,6 +35,11 @@ export const COMMUNES_COORDS: Record<string, { lat: number; lng: number; region:
   'Begnins': { lat: 46.4357, lng: 6.2580, region: 'La Côte' },
   'Trélex': { lat: 46.4111, lng: 6.2050, region: 'La Côte' },
   'Golion': { lat: 46.6739, lng: 6.5106, region: 'Gros-de-Vaud' },
+  'Vufflens-la-Ville': { lat: 46.5825, lng: 6.5253, region: 'Gros-de-Vaud' },
+  'Bougy-Villars': { lat: 46.4744, lng: 6.3578, region: 'La Côte' },
+  'Montheron': { lat: 46.5872, lng: 6.6700, region: 'Arc lémanique' },
+  'Vers-chez-les-Blancs': { lat: 46.5556, lng: 6.6694, region: 'Arc lémanique' },
+  'Prilly': { lat: 46.5378, lng: 6.6033, region: 'Arc lémanique' },
 }
 
 // Helper : convertit lat/lng en x/y pour le SVG (viewBox 0 0 1000 700)

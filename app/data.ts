@@ -359,6 +359,84 @@ export const MANDATS: Mandat[] = [
     img: '', photos: [],
     description: "Commercialisation complète d'une promotion mixte à Crissier : 17 appartements et 2 surfaces commerciales, période Cogestim. Détails conservés confidentiels par respect des anciens clients."
   },
+  {
+    id: 214, slug: 'cog-lausanne-chailly', titre: 'Appartement PPE 4.5 pièces', lieu: 'Lausanne',
+    prix: '-', pieces: '4.5', surface: '-', terrain: '-', categorie: 'vendu', annee_vente: '2020-2023',
+    img: '', photos: [],
+    description: "Vente d'un appartement PPE 4.5 pièces à Lausanne (secteur Chailly), période Cogestim. Détails conservés confidentiels par respect des anciens clients."
+  },
+  {
+    id: 215, slug: 'cog-lausanne-centre-anterieur', titre: 'Appartement PPE 3.5 pièces', lieu: 'Lausanne',
+    prix: '-', pieces: '3.5', surface: '-', terrain: '-', categorie: 'vendu', annee_vente: '2020-2023',
+    img: '', photos: [],
+    description: "Vente d'un appartement 3.5 pièces au centre-ville de Lausanne, période Cogestim. Détails conservés confidentiels par respect des anciens clients."
+  },
+  {
+    id: 216, slug: 'cog-lemont-25', titre: 'Appartement PPE 2.5 pièces', lieu: 'Le Mont-sur-Lausanne',
+    prix: '-', pieces: '2.5', surface: '-', terrain: '-', categorie: 'vendu', annee_vente: '2020-2023',
+    img: '', photos: [],
+    description: "Vente d'un appartement PPE 2.5 pièces au Mont-sur-Lausanne, période Cogestim. Détails conservés confidentiels par respect des anciens clients."
+  },
+  {
+    id: 217, slug: 'cog-lemont-35', titre: 'Appartement PPE 3.5 pièces', lieu: 'Le Mont-sur-Lausanne',
+    prix: '-', pieces: '3.5', surface: '-', terrain: '-', categorie: 'vendu', annee_vente: '2020-2023',
+    img: '', photos: [],
+    description: "Vente d'un appartement PPE 3.5 pièces au Mont-sur-Lausanne, période Cogestim. Détails conservés confidentiels par respect des anciens clients."
+  },
+  {
+    id: 218, slug: 'cog-lemont-villa', titre: 'Villa individuelle', lieu: 'Le Mont-sur-Lausanne',
+    prix: "1'800'000", pieces: '-', surface: '-', terrain: '-', categorie: 'vendu', annee_vente: '2020-2023',
+    img: '', photos: [],
+    description: "Vente d'une villa individuelle au Mont-sur-Lausanne, période Cogestim. Détails conservés confidentiels par respect des anciens clients."
+  },
+  {
+    id: 219, slug: 'cog-epalinges-mitoyenne', titre: 'Villa mitoyenne', lieu: 'Epalinges',
+    prix: '-', pieces: '-', surface: '-', terrain: '-', categorie: 'vendu', annee_vente: '2020-2023',
+    img: '', photos: [],
+    description: "Vente d'une villa mitoyenne à Epalinges, période Cogestim. Détails conservés confidentiels par respect des anciens clients."
+  },
+  {
+    id: 220, slug: 'cog-epalinges-individuelle', titre: 'Villa individuelle', lieu: 'Epalinges',
+    prix: '-', pieces: '-', surface: '-', terrain: '-', categorie: 'vendu', annee_vente: '2020-2023',
+    img: '', photos: [],
+    description: "Vente d'une villa individuelle à Epalinges, période Cogestim. Détails conservés confidentiels par respect des anciens clients."
+  },
+  {
+    id: 221, slug: 'cog-vufflens', titre: 'Villa individuelle', lieu: 'Vufflens-la-Ville',
+    prix: "1'850'000", pieces: '-', surface: '-', terrain: '-', categorie: 'vendu', annee_vente: '2020-2023',
+    img: '', photos: [],
+    description: "Vente d'une villa individuelle à Vufflens-la-Ville, période Cogestim. Détails conservés confidentiels par respect des anciens clients."
+  },
+  {
+    id: 222, slug: 'cog-echallens-piscine', titre: 'Villa individuelle avec piscine', lieu: 'Echallens',
+    prix: "1'500'000", pieces: '-', surface: '-', terrain: '-', categorie: 'vendu', annee_vente: '2020-2023',
+    img: '', photos: [],
+    description: "Vente d'une villa individuelle avec piscine à Echallens, période Cogestim. Détails conservés confidentiels par respect des anciens clients."
+  },
+  {
+    id: 223, slug: 'cog-bougy-villars', titre: 'Maison villageoise', lieu: 'Bougy-Villars',
+    prix: '-', pieces: '-', surface: '-', terrain: '-', categorie: 'vendu', annee_vente: '2020-2023',
+    img: '', photos: [],
+    description: "Vente d'une maison villageoise à Bougy-Villars, période Cogestim. Détails conservés confidentiels par respect des anciens clients."
+  },
+  {
+    id: 224, slug: 'cog-montheron', titre: 'Ancienne ferme', lieu: 'Montheron',
+    prix: '-', pieces: '-', surface: '-', terrain: '-', categorie: 'vendu', annee_vente: '2020-2023',
+    img: '', photos: [],
+    description: "Vente d'une ancienne ferme à Montheron (commune de Lausanne), période Cogestim. Détails conservés confidentiels par respect des anciens clients."
+  },
+  {
+    id: 225, slug: 'cog-vers-chez-blancs', titre: 'Villa individuelle avec piscine', lieu: 'Vers-chez-les-Blancs',
+    prix: '-', pieces: '-', surface: '-', terrain: '-', categorie: 'vendu', annee_vente: '2020-2023',
+    img: '', photos: [],
+    description: "Vente d'une villa individuelle avec piscine à Vers-chez-les-Blancs, période Cogestim. Détails conservés confidentiels par respect des anciens clients."
+  },
+  {
+    id: 226, slug: 'cog-prilly-immeuble', titre: 'Immeuble locatif (3 appartements)', lieu: 'Prilly',
+    prix: "1'400'000", pieces: '-', surface: '-', terrain: '-', categorie: 'vendu', annee_vente: '2020-2023', nb_lots: 3,
+    img: '', photos: [],
+    description: "Vente d'un immeuble locatif de 3 appartements à Prilly, période Cogestim. Détails conservés confidentiels par respect des anciens clients."
+  },
 ]
 
 // ─── ARTICLES ───────────────────────────────────────────────────────────────
