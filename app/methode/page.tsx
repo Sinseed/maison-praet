@@ -41,8 +41,8 @@ const ETAPES = [
     num: '04',
     icon: Megaphone,
     titre: 'La mise en marché',
-    desc: "Reportage photo professionnel sur place, descriptif rédigé avec soin, prises de vue par drone quand le bien le justifie. Diffusion immédiate sur les portails majeurs (Immoscout24, Homegate, SMG) et sur ce site. Mise en avant via mon réseau et mes contacts personnels. La visibilité est maximale dès le premier jour.",
-    valeur: "Pas de photos prises au smartphone trois jours après la signature.",
+    desc: "Reportage photo réalisé sur place, descriptif rédigé avec soin, prises de vue par drone quand le bien le justifie. Diffusion immédiate sur les portails majeurs (Immoscout24, Homegate, SMG) et sur ce site. Mise en avant via mon réseau et mes contacts personnels. La visibilité est maximale dès le premier jour.",
+    valeur: "Je prends les photos moi-même. Je connais le bien mieux qu'un photographe extérieur.",
   },
   {
     num: '05',

@@ -25,7 +25,6 @@ export default function Nav() {
     { label: 'Track Record', href: '/track-record' },
     { label: 'Méthode', href: '/methode' },
     { label: 'Guides', href: '/journal' },
-    { label: 'Contact', href: sectionLink('#contact') },
   ]
 
   // Hide on CRM page
