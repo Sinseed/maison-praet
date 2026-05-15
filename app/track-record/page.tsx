@@ -41,13 +41,14 @@ function Stats() {
   const stats = useMemo(() => {
     // Toutes les transactions documentées : mandats actuels (avec photos) + historique (sans photos mais avec annee_vente)
     const valides = MANDATS.filter(m => m.photos.length > 0 || m.annee_vente)
-    // Compte total de transactions, en tenant compte du nombre de lots vendus
-    const totalTransactions = valides.reduce((sum, m) => sum + (m.nb_lots || 1), 0)
-    // Volume cumulé : prix réels + estimation forfaitaire pour les transactions sans prix
+    // Compteur de transactions : 1 par mandat, indépendamment du nombre de lots vendus
+    // (mode "mandats décrochés", plus modeste et lisible que "lots individuels vendus")
+    const totalTransactions = valides.length
+    // Volume cumulé : prix réels + estimation forfaitaire * nb_lots pour les sans-prix
+    // (mode "actes notariés générés", qui reflète la réalité économique des promotions)
     const volume = valides.reduce((sum, m) => {
       const n = parseInt(m.prix.replace(/'/g, '').replace(/[^\d]/g, ''))
       if (!isNaN(n) && n > 0) return sum + n
-      // Pas de prix réel : on multiplie la médiane par le nombre de lots
       return sum + ((m.nb_lots || 1) * MEDIANE_HISTORIQUE)
     }, 0)
     const communes = new Set(valides.map(m => m.lieu)).size
@@ -60,8 +61,8 @@ function Stats() {
   }
 
   const items = [
-    { label: 'Transactions documentées', value: `${stats.total}`, sub: 'Plus de 60 au total depuis 2020' },
-    { label: 'Volume cumulé sous mandat', value: `CHF ${formatChf(stats.volume)}`, sub: 'Valeur des biens confiés' },
+    { label: 'Mandats documentés', value: `${stats.total}`, sub: 'Plus de 60 au total depuis 2020' },
+    { label: 'Volume cumulé sous mandat', value: `CHF ${formatChf(stats.volume)}`, sub: 'Actes notariés générés' },
     { label: 'Communes traitées', value: `${stats.communes}`, sub: 'Arc lémanique et Vaud' },
   ]
 
