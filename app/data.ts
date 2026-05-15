@@ -329,6 +329,24 @@ export const MANDATS: Mandat[] = [
     img: '', photos: [],
     description: "Vente d'un appartement 4.5 pièces en rez-de-jardin à Belmont-sur-Lausanne, période Cogestim. Détails conservés confidentiels par respect des anciens clients."
   },
+  {
+    id: 209, slug: 'cog-crans', titre: 'Maison villageoise, vue lac', lieu: 'Crans-près-Céligny',
+    prix: '-', pieces: '-', surface: '-', terrain: '-', categorie: 'vendu', annee_vente: '2020-2023',
+    img: '', photos: [],
+    description: "Vente d'une maison villageoise avec vue sur le lac Léman à Crans-près-Céligny, période Cogestim. Détails conservés confidentiels par respect des anciens clients."
+  },
+  {
+    id: 210, slug: 'cog-begnins', titre: 'Appartement PPE 3.5 pièces', lieu: 'Begnins',
+    prix: '-', pieces: '3.5', surface: '-', terrain: '-', categorie: 'vendu', annee_vente: '2020-2023',
+    img: '', photos: [],
+    description: "Vente d'un appartement PPE 3.5 pièces à Begnins, période Cogestim. Détails conservés confidentiels par respect des anciens clients."
+  },
+  {
+    id: 211, slug: 'cog-trelex', titre: 'Chalet en DDP', lieu: 'Trélex',
+    prix: '-', pieces: '-', surface: '-', terrain: '-', categorie: 'vendu', annee_vente: '2020-2023',
+    img: '', photos: [],
+    description: "Vente d'un chalet en droit distinct et permanent (DDP) à Trélex, période Cogestim. Détails conservés confidentiels par respect des anciens clients."
+  },
 ]
 
 // ─── ARTICLES ───────────────────────────────────────────────────────────────

@@ -31,6 +31,9 @@ export const COMMUNES_COORDS: Record<string, { lat: number; lng: number; region:
   'Savigny': { lat: 46.5478, lng: 6.7186, region: 'Arc lémanique' },
   'Belmont-sur-Lausanne': { lat: 46.5236, lng: 6.6781, region: 'Arc lémanique' },
   'Forel (Lavaux)': { lat: 46.5378, lng: 6.8056, region: 'Lavaux' },
+  'Crans-près-Céligny': { lat: 46.3539, lng: 6.2106, region: 'La Côte' },
+  'Begnins': { lat: 46.4357, lng: 6.2580, region: 'La Côte' },
+  'Trélex': { lat: 46.4111, lng: 6.2050, region: 'La Côte' },
 }
 
 // Helper : convertit lat/lng en x/y pour le SVG (viewBox 0 0 1000 700)
