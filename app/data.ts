@@ -117,12 +117,14 @@ export const MANDATS: Mandat[] = [
   {
     id: 3, slug: 'immeuble-glion', titre: 'Immeuble locatif', lieu: 'Glion',
     prix: "2'420'000", pieces: '-', surface: '-', terrain: '-', categorie: 'en_vente',
+    composition: '4 appartements',
     img: '', photos: [],
     description: "Immeuble locatif situé à Glion, dans un cadre exceptionnel surplombant le Léman. Vue panoramique sur le lac et les Alpes."
   },
   {
     id: 4, slug: 'immeuble-lausanne-levant', titre: 'Immeuble locatif', lieu: 'Lausanne',
     prix: "1'590'000", pieces: '-', surface: '-', terrain: '-', categorie: 'vendu',
+    composition: '3 appartements',
     img: '/photos/lausanne-levant/IMG_6321.jpg',
     photos: ['/photos/lausanne-levant/IMG_6321.jpg'],
     description: "Immeuble de trois logements à Lausanne. Vente conclue avec succès."
@@ -170,11 +172,12 @@ export const MANDATS: Mandat[] = [
     description: "Maison individuelle à Senarclens. Piscine, grand jardin et vue panoramique sur le Gros-de-Vaud. Vente conclue avec succès."
   },
   {
-    id: 14, slug: 'immeuble-lausanne-monttendre', titre: 'Immeuble 3 logements', lieu: 'Lausanne',
+    id: 14, slug: 'immeuble-lausanne-monttendre', titre: 'Immeuble locatif', lieu: 'Lausanne',
     prix: "1'480'000", pieces: '-', surface: '-', terrain: '-', categorie: 'vendu',
+    composition: '3 appartements',
     img: '/photos/lausanne-monttendre/IMG_6530.jpg',
     photos: ['/photos/lausanne-monttendre/IMG_6530.jpg'],
-    description: "Immeuble de 3 logements à Lausanne. Vente conclue avec succès."
+    description: "Immeuble locatif de 3 appartements à Lausanne, secteur Sous-Gare. Vente conclue avec succès."
   },
   {
     id: 15, slug: 'villa-crissier', titre: 'Villa individuelle', lieu: 'Crissier',
@@ -436,6 +439,7 @@ export const MANDATS: Mandat[] = [
   {
     id: 226, slug: 'cog-prilly-immeuble', titre: 'Immeuble locatif (3 appartements)', lieu: 'Prilly',
     prix: "1'400'000", pieces: '-', surface: '-', terrain: '-', categorie: 'vendu', annee_vente: '2020-2023', nb_lots: 3,
+    composition: '3 appartements',
     img: '', photos: [],
     description: "Vente d'un immeuble locatif de 3 appartements à Prilly, période Cogestim. Détails conservés confidentiels par respect des anciens clients."
   },
