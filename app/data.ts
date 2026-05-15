@@ -274,6 +274,31 @@ export const MANDATS: Mandat[] = [
     img: '', photos: [],
     description: "Vente d'un bien-fonds à Mex (VD). Mandat conclu en 2024."
   },
+  // ─── Ventes plus anciennes (Cogestim 2020-2023, détails confidentiels) ────
+  {
+    id: 201, slug: 'cog-lutry', titre: 'Bien immobilier', lieu: 'Lutry',
+    prix: '-', pieces: '-', surface: '-', terrain: '-', categorie: 'vendu', annee_vente: '2020-2023',
+    img: '', photos: [],
+    description: "Transaction à Lutry, période Cogestim. Détails conservés confidentiels par respect des anciens clients."
+  },
+  {
+    id: 202, slug: 'cog-cheseaux', titre: 'Bien immobilier', lieu: 'Cheseaux-sur-Lausanne',
+    prix: '-', pieces: '-', surface: '-', terrain: '-', categorie: 'vendu', annee_vente: '2020-2023',
+    img: '', photos: [],
+    description: "Transaction à Cheseaux-sur-Lausanne, période Cogestim. Détails conservés confidentiels par respect des anciens clients."
+  },
+  {
+    id: 203, slug: 'cog-rolle', titre: 'Bien immobilier', lieu: 'Rolle',
+    prix: '-', pieces: '-', surface: '-', terrain: '-', categorie: 'vendu', annee_vente: '2020-2023',
+    img: '', photos: [],
+    description: "Transaction à Rolle, période Cogestim. Détails conservés confidentiels par respect des anciens clients."
+  },
+  {
+    id: 204, slug: 'cog-yverdon-anterieur', titre: 'Bien immobilier', lieu: 'Yverdon-les-Bains',
+    prix: '-', pieces: '-', surface: '-', terrain: '-', categorie: 'vendu', annee_vente: '2020-2023',
+    img: '', photos: [],
+    description: "Transaction supplémentaire à Yverdon-les-Bains, période Cogestim. Détails conservés confidentiels par respect des anciens clients."
+  },
 ]
 
 // ─── ARTICLES ───────────────────────────────────────────────────────────────

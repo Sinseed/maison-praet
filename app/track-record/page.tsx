@@ -53,7 +53,7 @@ function Stats() {
   }
 
   const items = [
-    { label: 'Transactions documentées', value: `${stats.total}`, sub: '60+ au total depuis 2020' },
+    { label: 'Transactions documentées', value: `${stats.total}`, sub: 'Plus de 60 au total depuis 2020' },
     { label: 'Volume cumulé sous mandat', value: `CHF ${formatChf(stats.volume)}`, sub: 'Valeur des biens confiés' },
     { label: 'Communes traitées', value: `${stats.communes}`, sub: 'Arc lémanique et Vaud' },
     { label: 'Biens vendus', value: `${stats.vendus}`, sub: 'Hors mandats actifs' },
@@ -61,14 +61,19 @@ function Stats() {
 
   return (
     <section className="border-y border-brand-border bg-brand-card/30">
-      <div className="max-w-7xl mx-auto px-6 py-16 md:py-20 grid grid-cols-2 md:grid-cols-4 gap-10 md:gap-6">
-        {items.map((it, i) => (
-          <div key={i} className="text-center md:text-left">
-            <p className="font-display text-4xl md:text-5xl font-light text-brand-gold leading-none mb-3">{it.value}</p>
-            <p className="font-body text-xs tracking-widest uppercase text-white mb-1">{it.label}</p>
-            <p className="font-body text-xs text-brand-muted">{it.sub}</p>
-          </div>
-        ))}
+      <div className="max-w-7xl mx-auto px-6 py-16 md:py-20">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-10 md:gap-6">
+          {items.map((it, i) => (
+            <div key={i} className="text-center md:text-left">
+              <p className="font-display text-4xl md:text-5xl font-light text-brand-gold leading-none mb-3">{it.value}</p>
+              <p className="font-body text-xs tracking-widest uppercase text-white mb-1">{it.label}</p>
+              <p className="font-body text-xs text-brand-muted">{it.sub}</p>
+            </div>
+          ))}
+        </div>
+        <p className="font-body text-xs text-brand-muted italic mt-12 md:mt-16 max-w-3xl leading-relaxed">
+          Mes transactions antérieures à 2024 sont conservées confidentielles par respect de mes anciens clients. Seules les communes où j'ai opéré apparaissent sur la carte, sans détail individuel.
+        </p>
       </div>
     </section>
   )
@@ -192,7 +197,7 @@ function ListeSection() {
                   {COMMUNES_COORDS[m.lieu]?.region || '—'}
                 </div>
                 <div className="col-span-1 md:col-span-2 font-body text-xs text-brand-muted">
-                  {m.annee_vente ? `Vendu en ${m.annee_vente}` : `${m.pieces !== '-' ? `${m.pieces} pièces` : ''}${m.surface !== '-' ? ` · ${m.surface}` : ''}`}
+                  {m.annee_vente ? `Vendu · ${m.annee_vente}` : `${m.pieces !== '-' ? `${m.pieces} pièces` : ''}${m.surface !== '-' ? ` · ${m.surface}` : ''}`}
                 </div>
                 <div className="col-span-2 md:col-span-1 md:text-right">
                   <span className={`inline-block font-body text-[10px] tracking-widest uppercase px-2 py-1 ${badgeColor(m.categorie)}`}>
