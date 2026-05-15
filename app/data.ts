@@ -274,6 +274,12 @@ export const MANDATS: Mandat[] = [
     img: '', photos: [],
     description: "Vente d'un bien-fonds à Mex (VD). Mandat conclu en 2024."
   },
+  {
+    id: 109, slug: 'cog-forel-terrain', titre: 'Terrain', lieu: 'Forel (Lavaux)',
+    prix: "1'500'000", pieces: '-', surface: '-', terrain: '-', categorie: 'vendu', annee_vente: '2024',
+    img: '', photos: [],
+    description: "Vente d'un terrain à Forel (Lavaux) en 2024. Mandat Cogestim."
+  },
   // ─── Ventes plus anciennes (Cogestim 2020-2023, détails confidentiels) ────
   {
     id: 201, slug: 'cog-lutry', titre: 'Bien immobilier', lieu: 'Lutry',
