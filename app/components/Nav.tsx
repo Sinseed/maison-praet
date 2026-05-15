@@ -23,7 +23,7 @@ export default function Nav() {
     { label: 'À propos', href: sectionLink('#apropos') },
     { label: 'Nos biens', href: sectionLink('#nosbiens') },
     { label: 'Track Record', href: '/track-record' },
-    { label: 'Approche', href: sectionLink('#approche') },
+    { label: 'Méthode', href: '/methode' },
     { label: 'Guides', href: '/journal' },
     { label: 'Contact', href: sectionLink('#contact') },
   ]
