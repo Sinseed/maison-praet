@@ -68,8 +68,8 @@ export default function TrackMap() {
               <Tooltip
                 direction="top"
                 offset={[0, -radius - 2]}
-                permanent
                 className="track-tooltip"
+                sticky
               >
                 <span style={{ fontFamily: 'Outfit, sans-serif', fontSize: '11px', color: '#C8CDD8', fontWeight: 500, letterSpacing: '0.5px' }}>
                   {commune.split(',')[0].replace('-sur-Lausanne', '').replace('-les-Bains', '').replace('-Ville', '').replace('-Mézery', '').replace(' (Veveyse)', '')}

@@ -269,10 +269,10 @@ export const MANDATS: Mandat[] = [
     description: "Vente d'un appartement 3.5 pièces à Pully (secteur Lisieron). Mandat conclu en 2024."
   },
   {
-    id: 108, slug: 'cog-mex-bienfonds', titre: 'Bien-fonds', lieu: 'Mex',
+    id: 108, slug: 'cog-mex-bienfonds', titre: 'Maison villageoise', lieu: 'Mex',
     prix: '-', pieces: '-', surface: '-', terrain: '-', categorie: 'vendu', annee_vente: '2024',
     img: '', photos: [],
-    description: "Vente d'un bien-fonds à Mex (VD). Mandat conclu en 2024."
+    description: "Vente d'une maison villageoise à Mex (VD). Mandat conclu en 2024."
   },
   {
     id: 109, slug: 'cog-forel-terrain', titre: 'Terrain', lieu: 'Forel (Lavaux)',
@@ -282,52 +282,52 @@ export const MANDATS: Mandat[] = [
   },
   // ─── Ventes plus anciennes (Cogestim 2020-2023, détails confidentiels) ────
   {
-    id: 201, slug: 'cog-lutry', titre: 'Bien immobilier', lieu: 'Lutry',
+    id: 201, slug: 'cog-lutry', titre: 'Villa jumelée', lieu: 'Lutry',
     prix: '-', pieces: '-', surface: '-', terrain: '-', categorie: 'vendu', annee_vente: '2020-2023',
     img: '', photos: [],
-    description: "Transaction à Lutry, période Cogestim. Détails conservés confidentiels par respect des anciens clients."
+    description: "Vente d'une villa jumelée à Lutry, période Cogestim. Détails conservés confidentiels par respect des anciens clients."
   },
   {
-    id: 202, slug: 'cog-cheseaux', titre: 'Bien immobilier', lieu: 'Cheseaux-sur-Lausanne',
-    prix: '-', pieces: '-', surface: '-', terrain: '-', categorie: 'vendu', annee_vente: '2020-2023',
+    id: 202, slug: 'cog-cheseaux', titre: 'Appartement PPE 4.5 pièces', lieu: 'Cheseaux-sur-Lausanne',
+    prix: '-', pieces: '4.5', surface: '-', terrain: '-', categorie: 'vendu', annee_vente: '2020-2023',
     img: '', photos: [],
-    description: "Transaction à Cheseaux-sur-Lausanne, période Cogestim. Détails conservés confidentiels par respect des anciens clients."
+    description: "Vente d'un appartement PPE 4.5 pièces à Cheseaux-sur-Lausanne, période Cogestim. Détails conservés confidentiels par respect des anciens clients."
   },
   {
-    id: 203, slug: 'cog-rolle', titre: 'Bien immobilier', lieu: 'Rolle',
-    prix: '-', pieces: '-', surface: '-', terrain: '-', categorie: 'vendu', annee_vente: '2020-2023',
+    id: 203, slug: 'cog-rolle', titre: 'Appartement PPE 4.5 pièces', lieu: 'Rolle',
+    prix: '-', pieces: '4.5', surface: '-', terrain: '-', categorie: 'vendu', annee_vente: '2020-2023',
     img: '', photos: [],
-    description: "Transaction à Rolle, période Cogestim. Détails conservés confidentiels par respect des anciens clients."
+    description: "Vente d'un appartement PPE 4.5 pièces à Rolle, période Cogestim. Détails conservés confidentiels par respect des anciens clients."
   },
   {
-    id: 204, slug: 'cog-yverdon-anterieur', titre: 'Bien immobilier', lieu: 'Yverdon-les-Bains',
+    id: 204, slug: 'cog-yverdon-anterieur', titre: 'Villa individuelle', lieu: 'Yverdon-les-Bains',
     prix: '-', pieces: '-', surface: '-', terrain: '-', categorie: 'vendu', annee_vente: '2020-2023',
     img: '', photos: [],
-    description: "Transaction supplémentaire à Yverdon-les-Bains, période Cogestim. Détails conservés confidentiels par respect des anciens clients."
+    description: "Vente d'une villa individuelle à Yverdon-les-Bains, période Cogestim. Détails conservés confidentiels par respect des anciens clients."
   },
   {
-    id: 205, slug: 'cog-bourg-en-lavaux', titre: 'Bien immobilier', lieu: 'Bourg-en-Lavaux',
+    id: 205, slug: 'cog-bourg-en-lavaux', titre: 'Maison vigneronne', lieu: 'Bourg-en-Lavaux',
     prix: '-', pieces: '-', surface: '-', terrain: '-', categorie: 'vendu', annee_vente: '2020-2023',
     img: '', photos: [],
-    description: "Transaction à Bourg-en-Lavaux, période Cogestim. Détails conservés confidentiels par respect des anciens clients."
+    description: "Vente d'une maison vigneronne à Bourg-en-Lavaux, période Cogestim. Détails conservés confidentiels par respect des anciens clients."
   },
   {
-    id: 206, slug: 'cog-puidoux', titre: 'Bien immobilier', lieu: 'Puidoux',
+    id: 206, slug: 'cog-puidoux', titre: 'Villa individuelle', lieu: 'Puidoux',
     prix: '-', pieces: '-', surface: '-', terrain: '-', categorie: 'vendu', annee_vente: '2020-2023',
     img: '', photos: [],
-    description: "Transaction à Puidoux, période Cogestim. Détails conservés confidentiels par respect des anciens clients."
+    description: "Vente d'une villa individuelle à Puidoux, période Cogestim. Détails conservés confidentiels par respect des anciens clients."
   },
   {
-    id: 207, slug: 'cog-savigny', titre: 'Bien immobilier', lieu: 'Savigny',
-    prix: '-', pieces: '-', surface: '-', terrain: '-', categorie: 'vendu', annee_vente: '2020-2023',
+    id: 207, slug: 'cog-savigny', titre: 'Promotion d\'appartements (6 lots)', lieu: 'Savigny',
+    prix: '-', pieces: '-', surface: '-', terrain: '-', categorie: 'vendu', annee_vente: '2020-2023', nb_lots: 6,
     img: '', photos: [],
-    description: "Transaction à Savigny, période Cogestim. Détails conservés confidentiels par respect des anciens clients."
+    description: "Commercialisation de 6 appartements d'une promotion à Savigny, période Cogestim. Détails conservés confidentiels par respect des anciens clients."
   },
   {
-    id: 208, slug: 'cog-belmont', titre: 'Bien immobilier', lieu: 'Belmont-sur-Lausanne',
-    prix: '-', pieces: '-', surface: '-', terrain: '-', categorie: 'vendu', annee_vente: '2020-2023',
+    id: 208, slug: 'cog-belmont', titre: 'Appartement 4.5 pièces, rez-de-jardin', lieu: 'Belmont-sur-Lausanne',
+    prix: '-', pieces: '4.5', surface: '-', terrain: '-', categorie: 'vendu', annee_vente: '2020-2023',
     img: '', photos: [],
-    description: "Transaction à Belmont-sur-Lausanne, période Cogestim. Détails conservés confidentiels par respect des anciens clients."
+    description: "Vente d'un appartement 4.5 pièces en rez-de-jardin à Belmont-sur-Lausanne, période Cogestim. Détails conservés confidentiels par respect des anciens clients."
   },
 ]
 

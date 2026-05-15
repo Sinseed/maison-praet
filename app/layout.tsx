@@ -44,19 +44,73 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     dangerouslySetInnerHTML={{__html: JSON.stringify({
       "@context": "https://schema.org",
       "@type": "RealEstateAgent",
+      "@id": "https://maisonpraet.ch/#agent",
       "name": "Maison Praet",
+      "alternateName": "Thomas Praet, courtier immobilier",
       "url": "https://maisonpraet.ch",
       "logo": "https://maisonpraet.ch/og-image.jpg",
-      "image": "https://maisonpraet.ch/og-image.jpg",
-      "description": "Courtier immobilier certifié USPI, actif sur l'arc lémanique et le canton de Vaud depuis plus de 6 ans.",
+      "image": "https://maisonpraet.ch/photos/portrait.jpg",
+      "description": "Thomas Praet, courtier immobilier certifié USPI chez Golay Immobilier SA. Estimation, vente et conseil sur l'arc lémanique et le canton de Vaud. Plus de 60 transactions documentées depuis 2020.",
+      "founder": {
+        "@type": "Person",
+        "name": "Thomas Praet",
+        "jobTitle": "Courtier immobilier diplômé USPI",
+        "telephone": "+41799690191",
+        "email": "tpraet@golay-immobilier.ch",
+        "image": "https://maisonpraet.ch/photos/portrait.jpg"
+      },
+      "foundingDate": "2020",
       "telephone": "+41799690191",
+      "email": "tpraet@golay-immobilier.ch",
+      "priceRange": "CHF 300'000 - CHF 6'000'000",
       "address": {
         "@type": "PostalAddress",
+        "streetAddress": "Grand-Chêne 2",
+        "postalCode": "1003",
         "addressLocality": "Lausanne",
         "addressRegion": "Vaud",
         "addressCountry": "CH"
       },
-      "areaServed": "Canton de Vaud, Suisse Romande",
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 46.5197,
+        "longitude": 6.6323
+      },
+      "areaServed": [
+        { "@type": "AdministrativeArea", "name": "Canton de Vaud" },
+        { "@type": "City", "name": "Lausanne" },
+        { "@type": "City", "name": "Morges" },
+        { "@type": "City", "name": "Pully" },
+        { "@type": "City", "name": "Gland" },
+        { "@type": "City", "name": "Nyon" },
+        { "@type": "City", "name": "Yverdon-les-Bains" }
+      ],
+      "knowsAbout": [
+        "Estimation immobilière",
+        "Vente immobilière",
+        "Mandat de courtage exclusif",
+        "Marché immobilier vaudois",
+        "PPE et propriétés par étages",
+        "Investissement locatif",
+        "CECB et performance énergétique",
+        "Droit de mutation Canton de Vaud"
+      ],
+      "hasCredential": {
+        "@type": "EducationalOccupationalCredential",
+        "credentialCategory": "professional license",
+        "name": "Courtier diplômé USPI"
+      },
+      "memberOf": {
+        "@type": "Organization",
+        "name": "Golay Immobilier SA",
+        "url": "https://www.golay-immobilier.ch"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "reviewCount": "4",
+        "bestRating": "5"
+      },
       "sameAs": ["https://maisonpraet.com"]
     })}}
   />
