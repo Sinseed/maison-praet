@@ -20,6 +20,9 @@ export const COMMUNES_COORDS: Record<string, { lat: number; lng: number; region:
   'Gilly': { lat: 46.4488, lng: 6.2858, region: 'La Côte' },
   'Jouxtens-Mézery': { lat: 46.5450, lng: 6.5933, region: 'Arc lémanique' },
   'Echallens': { lat: 46.6406, lng: 6.6336, region: 'Gros-de-Vaud' },
+  'Bussigny': { lat: 46.5497, lng: 6.5557, region: 'Arc lémanique' },
+  'Allens': { lat: 46.6650, lng: 6.5550, region: 'Gros-de-Vaud' },
+  'Mex': { lat: 46.5650, lng: 6.5300, region: 'Gros-de-Vaud' },
 }
 
 // Helper : convertit lat/lng en x/y pour le SVG (viewBox 0 0 1000 700)

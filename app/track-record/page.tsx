@@ -34,14 +34,17 @@ function Hero() {
 // ─── STATS AGRÉGÉES ─────────────────────────────────────────────────────────
 function Stats() {
   const stats = useMemo(() => {
-    const valides = MANDATS.filter(m => m.photos.length > 0)
+    // Toutes les transactions documentées : mandats actuels (avec photos) + historique (sans photos mais avec annee_vente)
+    const valides = MANDATS.filter(m => m.photos.length > 0 || m.annee_vente)
+    // Compte total de transactions, en tenant compte du nombre de lots vendus
+    const totalTransactions = valides.reduce((sum, m) => sum + (m.nb_lots || 1), 0)
     const volume = valides.reduce((sum, m) => {
       const n = parseInt(m.prix.replace(/'/g, '').replace(/[^\d]/g, ''))
       return sum + (isNaN(n) ? 0 : n)
     }, 0)
     const communes = new Set(valides.map(m => m.lieu)).size
-    const vendus = valides.filter(m => m.categorie === 'vendu').length
-    return { total: valides.length, volume, communes, vendus }
+    const vendus = valides.filter(m => m.categorie === 'vendu').reduce((s, m) => s + (m.nb_lots || 1), 0)
+    return { total: totalTransactions, volume, communes, vendus }
   }, [])
 
   const formatChf = (n: number) => {
@@ -97,7 +100,7 @@ function ListeSection() {
   const [region, setRegion] = useState<string>('all')
 
   const filtered = useMemo(() => {
-    return MANDATS.filter(m => m.photos.length > 0)
+    return MANDATS.filter(m => m.photos.length > 0 || m.annee_vente)
       .filter(m => filtre === 'all' || m.categorie === filtre)
       .filter(m => {
         if (region === 'all') return true
@@ -164,37 +167,45 @@ function ListeSection() {
           <div className="col-span-1 text-right">Statut</div>
           <div className="col-span-1 text-right"></div>
         </div>
-        {filtered.map((m, i) => (
-          <Link
-            key={m.id}
-            href={`/biens/${m.slug}`}
-            className={`block group hover:bg-brand-card/30 transition-colors ${i < filtered.length - 1 ? 'border-b border-brand-border' : ''}`}
-          >
-            <div className="grid grid-cols-2 md:grid-cols-12 gap-4 px-6 py-5 items-center">
-              <div className="col-span-2 md:col-span-3">
-                <p className="font-display text-lg text-white group-hover:text-brand-gold transition-colors">{m.titre}</p>
+        {filtered.map((m, i) => {
+          const isHistorique = m.photos.length === 0 && m.annee_vente
+          const RowWrapper: any = isHistorique ? 'div' : Link
+          const wrapperProps = isHistorique ? {} : { href: `/biens/${m.slug}` }
+          return (
+            <RowWrapper
+              key={m.id}
+              {...wrapperProps}
+              className={`block ${isHistorique ? '' : 'group hover:bg-brand-card/30'} transition-colors ${i < filtered.length - 1 ? 'border-b border-brand-border' : ''}`}
+            >
+              <div className="grid grid-cols-2 md:grid-cols-12 gap-4 px-6 py-5 items-center">
+                <div className="col-span-2 md:col-span-3">
+                  <p className={`font-display text-lg text-white ${!isHistorique && 'group-hover:text-brand-gold'} transition-colors`}>
+                    {m.titre}
+                    {m.nb_lots && m.nb_lots > 1 && <span className="text-brand-gold text-sm font-body ml-2">· {m.nb_lots} lots</span>}
+                  </p>
+                </div>
+                <div className="col-span-1 md:col-span-3 flex items-center gap-2">
+                  <MapPin size={14} className="text-brand-muted shrink-0" />
+                  <p className="font-body text-sm text-brand-text">{m.lieu}</p>
+                </div>
+                <div className="hidden md:block md:col-span-2 font-body text-sm text-brand-muted">
+                  {COMMUNES_COORDS[m.lieu]?.region || '—'}
+                </div>
+                <div className="col-span-1 md:col-span-2 font-body text-xs text-brand-muted">
+                  {m.annee_vente ? `Vendu en ${m.annee_vente}` : `${m.pieces !== '-' ? `${m.pieces} pièces` : ''}${m.surface !== '-' ? ` · ${m.surface}` : ''}`}
+                </div>
+                <div className="col-span-2 md:col-span-1 md:text-right">
+                  <span className={`inline-block font-body text-[10px] tracking-widest uppercase px-2 py-1 ${badgeColor(m.categorie)}`}>
+                    {badgeLabel(m.categorie)}
+                  </span>
+                </div>
+                <div className="hidden md:flex md:col-span-1 justify-end">
+                  {!isHistorique && <ArrowRight size={16} className="text-brand-border group-hover:text-brand-gold group-hover:translate-x-1 transition-all" />}
+                </div>
               </div>
-              <div className="col-span-1 md:col-span-3 flex items-center gap-2">
-                <MapPin size={14} className="text-brand-muted shrink-0" />
-                <p className="font-body text-sm text-brand-text">{m.lieu}</p>
-              </div>
-              <div className="hidden md:block md:col-span-2 font-body text-sm text-brand-muted">
-                {COMMUNES_COORDS[m.lieu]?.region || '—'}
-              </div>
-              <div className="col-span-1 md:col-span-2 font-body text-xs text-brand-muted">
-                {m.pieces !== '-' && `${m.pieces} pièces`}{m.surface !== '-' && ` · ${m.surface}`}
-              </div>
-              <div className="col-span-2 md:col-span-1 md:text-right">
-                <span className={`inline-block font-body text-[10px] tracking-widest uppercase px-2 py-1 ${badgeColor(m.categorie)}`}>
-                  {badgeLabel(m.categorie)}
-                </span>
-              </div>
-              <div className="hidden md:flex md:col-span-1 justify-end">
-                <ArrowRight size={16} className="text-brand-border group-hover:text-brand-gold group-hover:translate-x-1 transition-all" />
-              </div>
-            </div>
-          </Link>
-        ))}
+            </RowWrapper>
+          )
+        })}
       </div>
     </section>
   )

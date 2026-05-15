@@ -12,6 +12,8 @@ export type Mandat = {
   img: string
   photos: string[]
   description: string
+  annee_vente?: string // Année de la vente (pour les transactions historiques sans photos)
+  nb_lots?: number     // Nombre de lots vendus dans la transaction (PPE, promotion)
 }
 
 export type Article = {
@@ -220,6 +222,57 @@ export const MANDATS: Mandat[] = [
     img: '/photos/lausanne-centre/facade.png',
     photos: ['/photos/lausanne-centre/facade.png'],
     description: "Appartement de 1.5 pièces au coeur du centre-ville de Lausanne. Vente conclue avec succès."
+  },
+  // ─── Transactions historiques (Cogestim 2024) ─────────────────────────────
+  // Ces entrées sont sans photos pour ne pas apparaître dans la section "Nos biens"
+  // mais alimentent la carte et la liste du Track Record.
+  {
+    id: 101, slug: 'cog-bussigny-2024', titre: 'Bien-fonds résidentiel', lieu: 'Bussigny',
+    prix: '-', pieces: '-', surface: '-', terrain: '-', categorie: 'vendu', annee_vente: '2024',
+    img: '', photos: [],
+    description: "Vente d'un bien-fonds résidentiel à Bussigny. Mandat conclu en 2024."
+  },
+  {
+    id: 102, slug: 'cog-allens-pre-aube', titre: 'Promotion Pré de l\'Aube (7 lots)', lieu: 'Allens',
+    prix: '-', pieces: '-', surface: '-', terrain: '-', categorie: 'vendu', annee_vente: '2024', nb_lots: 7,
+    img: '', photos: [],
+    description: "Commercialisation de 7 lots de la promotion Pré de l'Aube à Allens. Mandat conclu en 2024."
+  },
+  {
+    id: 103, slug: 'cog-lausanne-risoux', titre: 'Appartement PPE', lieu: 'Lausanne',
+    prix: '-', pieces: '-', surface: '-', terrain: '-', categorie: 'vendu', annee_vente: '2024',
+    img: '', photos: [],
+    description: "Vente d'un appartement à Lausanne (secteur Risoux). Mandat conclu en 2024."
+  },
+  {
+    id: 104, slug: 'cog-lausanne-grey', titre: 'PPE Avenue du Grey (4 lots)', lieu: 'Lausanne',
+    prix: '-', pieces: '-', surface: '-', terrain: '-', categorie: 'vendu', annee_vente: '2024', nb_lots: 4,
+    img: '', photos: [],
+    description: "Commercialisation de 4 lots PPE Avenue du Grey à Lausanne. Mandat conclu en 2024."
+  },
+  {
+    id: 105, slug: 'cog-pully-chateausec', titre: 'Bien-fonds', lieu: 'Pully',
+    prix: '-', pieces: '-', surface: '-', terrain: '-', categorie: 'vendu', annee_vente: '2024',
+    img: '', photos: [],
+    description: "Vente d'un bien-fonds à Pully (secteur Château-Sec). Mandat conclu en 2024."
+  },
+  {
+    id: 106, slug: 'cog-pully-osches', titre: 'Appartement PPE', lieu: 'Pully',
+    prix: '-', pieces: '-', surface: '-', terrain: '-', categorie: 'vendu', annee_vente: '2024',
+    img: '', photos: [],
+    description: "Vente d'un appartement à Pully (secteur Osches). Mandat conclu en 2024."
+  },
+  {
+    id: 107, slug: 'cog-pully-lisieron', titre: 'Appartement PPE 3.5 pièces', lieu: 'Pully',
+    prix: '-', pieces: '3.5', surface: '-', terrain: '-', categorie: 'vendu', annee_vente: '2024',
+    img: '', photos: [],
+    description: "Vente d'un appartement 3.5 pièces à Pully (secteur Lisieron). Mandat conclu en 2024."
+  },
+  {
+    id: 108, slug: 'cog-mex-bienfonds', titre: 'Bien-fonds', lieu: 'Mex',
+    prix: '-', pieces: '-', surface: '-', terrain: '-', categorie: 'vendu', annee_vente: '2024',
+    img: '', photos: [],
+    description: "Vente d'un bien-fonds à Mex (VD). Mandat conclu en 2024."
   },
 ]
 

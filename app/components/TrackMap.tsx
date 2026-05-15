@@ -15,7 +15,7 @@ export default function TrackMap() {
   // Groupement par commune
   const parCommune = useMemo(() => {
     const map: Record<string, typeof MANDATS> = {}
-    MANDATS.filter(m => m.photos.length > 0).forEach(m => {
+    MANDATS.filter(m => m.photos.length > 0 || m.annee_vente).forEach(m => {
       if (!map[m.lieu]) map[m.lieu] = []
       map[m.lieu].push(m)
     })
