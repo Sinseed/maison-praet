@@ -95,7 +95,7 @@ function About() {
           <div className="space-y-5 font-body text-brand-text leading-relaxed">
             <p>Je ne suis pas un courtier qui promet un prix pour obtenir un mandat, puis le baisse trois mois plus tard. Si je ne suis pas convaincu de pouvoir vendre votre bien dans de bonnes conditions, je vous le dis.</p>
             <p>Depuis plus de six ans, j&apos;accompagne des propriétaires sur l&apos;ensemble de l&apos;arc lémanique et du Gros-de-Vaud. Chaque mandat est traité avec la même rigueur : estimation fondée, stratégie de prix réaliste, suivi transparent jusqu&apos;à la signature chez le notaire.</p>
-            <p>Certifié USPI, rattaché à <a href="https://www.golay-immobilier.ch" target="_blank" rel="noopener noreferrer" className="text-brand-gold hover:underline">Golay Immobilier SA</a>, une régie lausannoise de référence.</p>
+            <p>Je suis courtier diplômé USPI au sein de <a href="https://www.golay-immobilier.ch" target="_blank" rel="noopener noreferrer" className="text-brand-gold hover:underline">Golay Immobilier SA</a>, maison vaudoise établie à Lausanne. <strong className="text-white font-normal">Maison Praet est mon identité personnelle de courtier</strong> : un espace pour partager mon approche, mes mandats et ma méthode. Toutes mes transactions sont réalisées sous mandat Golay Immobilier.</p>
             <p className="text-brand-muted text-sm italic">Arrivé de Belgique il y a 9 ans. Formé sur le terrain, pas dans un bureau.</p>
           </div>
         </div>
