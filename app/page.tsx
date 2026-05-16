@@ -82,42 +82,12 @@ function StatsBar() {
 }
 
 function About() {
-  const [videoOpen, setVideoOpen] = useState(false)
-
-  // Bloque le scroll quand le modal est ouvert
-  useEffect(() => {
-    if (videoOpen) {
-      document.body.style.overflow = 'hidden'
-    } else {
-      document.body.style.overflow = ''
-    }
-    return () => { document.body.style.overflow = '' }
-  }, [videoOpen])
-
   return (
     <section id="apropos" className="max-w-7xl mx-auto px-6 py-24 md:py-32">
       <div className="grid md:grid-cols-2 gap-16 items-center">
         <div className="relative aspect-[3/4] bg-brand-card border border-brand-border overflow-hidden group">
           <img src="/photos/thomas-terrain.jpg" alt="Thomas Praet sur le terrain" className="object-cover object-bottom w-full h-full group-hover:scale-[1.02] transition-transform duration-700" />
           <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-brand-dark/80 to-transparent" />
-
-          {/* Vignette vidéo discrète, coin haut-droit */}
-          <button
-            onClick={() => setVideoOpen(true)}
-            aria-label="Voir la vidéo de présentation"
-            className="absolute top-4 right-4 group/video flex items-center gap-2.5 bg-brand-dark/85 backdrop-blur-md border border-brand-gold/40 hover:border-brand-gold transition-all duration-300 p-2 pr-4"
-          >
-            <div className="relative w-12 h-12 overflow-hidden">
-              <img src="/videos/thomas-apropos-poster.jpg" alt="" className="object-cover w-full h-full" />
-              <div className="absolute inset-0 flex items-center justify-center bg-brand-dark/30 group-hover/video:bg-brand-dark/10 transition-colors">
-                <Play size={14} fill="#C9A96E" className="text-brand-gold translate-x-[1px]" />
-              </div>
-            </div>
-            <div className="text-left">
-              <p className="font-body text-[9px] tracking-widest uppercase text-brand-gold leading-tight">Vidéo · 40s</p>
-              <p className="font-body text-xs text-white leading-tight mt-0.5">Une matinée<br/>sur le terrain</p>
-            </div>
-          </button>
         </div>
         <div>
           <p className="font-body text-sm tracking-[0.3em] uppercase text-brand-gold mb-4">À propos</p>
@@ -130,37 +100,6 @@ function About() {
           </div>
         </div>
       </div>
-
-      {/* Modal vidéo */}
-      {videoOpen && (
-        <div
-          className="fixed inset-0 z-[100] bg-brand-dark/95 backdrop-blur-lg flex items-center justify-center p-4 md:p-8"
-          onClick={() => setVideoOpen(false)}
-        >
-          <button
-            onClick={() => setVideoOpen(false)}
-            aria-label="Fermer la vidéo"
-            className="absolute top-6 right-6 w-12 h-12 flex items-center justify-center border border-brand-border hover:border-brand-gold text-brand-muted hover:text-brand-gold transition-all"
-          >
-            <X size={20} />
-          </button>
-          <div
-            className="relative w-full max-w-md aspect-[9/16] bg-black"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <video
-              controls
-              autoPlay
-              playsInline
-              poster="/videos/thomas-apropos-poster.jpg"
-              className="w-full h-full object-contain"
-            >
-              <source src="/videos/thomas-apropos.mp4" type="video/mp4" />
-              Votre navigateur ne prend pas en charge la lecture vidéo.
-            </video>
-          </div>
-        </div>
-      )}
     </section>
   )
 }
