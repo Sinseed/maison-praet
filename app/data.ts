@@ -73,7 +73,7 @@ export const MANDATS: Mandat[] = [
   },
   {
     id: 5, slug: 'villa-cossonay', titre: 'Villa jumelée', lieu: 'Cossonay-Ville',
-    prix: "1'450'000", pieces: '5', surface: '150 m²', terrain: '-', categorie: 'reserve',
+    prix: "1'450'000", pieces: '5', surface: '150 m²', terrain: '-', categorie: 'vendu',
     img: '/photos/cossonay/DJI_20260304145633_0009_D.jpg',
     photos: ['/photos/cossonay/DJI_20260304145633_0009_D.jpg','/photos/cossonay/DJI_20260304150013_0015_D.jpg','/photos/cossonay/IMG_7366.jpg','/photos/cossonay/Cuisine_lumineuse_avec_vue_sur_le_jardin.png','/photos/cossonay/Chambre_d_attic_chaleureuse_et_lumineuse.png','/photos/cossonay/Salle_de_bains_sous_les_combles.png','/photos/cossonay/ChatGPT_Image_19_mars_2026__10_29_05.png'],
     description: "Villa jumelée de 5.5 pièces à Cossonay-Ville, avec vue dégagée sur le Jura et les Alpes. Jardin plat, véranda, calme absolu en bordure de campagne. Brochure et visite sur demande."
@@ -94,7 +94,7 @@ export const MANDATS: Mandat[] = [
   },
   {
     id: 20, slug: 'villa-granges-veveyse', titre: 'Villa individuelle', lieu: 'Granges (Veveyse)',
-    prix: "1'230'000", pieces: '4.5', surface: '~150 m²', terrain: '955 m²', categorie: 'reserve',
+    prix: "1'230'000", pieces: '4.5', surface: '~150 m²', terrain: '955 m²', categorie: 'vendu',
     img: '/photos/granges/drone_aerial.jpg',
     photos: ['/photos/granges/drone_aerial.jpg','/photos/granges/drone_rear.jpg','/photos/granges/terrasse.jpg','/photos/granges/salon.jpg','/photos/granges/cuisine.jpg','/photos/granges/mezzanine.jpg','/photos/granges/chambre.jpg','/photos/granges/sdd.jpg','/photos/granges/carnotzet.jpg','/photos/granges/drone_panorama.jpg'],
     description: "A Granges (Veveyse), cette villa individuelle de 2007 offre un panorama exceptionnel sur les Préalpes fribourgeoises. Séjour avec cheminée, cuisine ouverte sur terrasse de plus de 100 m², suite parentale avec dressing et sauna. Carnotzet au sous-sol, jacuzzi, PAC géothermique. Parcelle de 955 m²."
