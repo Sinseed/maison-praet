@@ -228,6 +228,27 @@ export const MANDATS: Mandat[] = [
     photos: ['/photos/lausanne-centre/facade.png'],
     description: "Appartement de 1.5 pièces au coeur du centre-ville de Lausanne. Vente conclue avec succès."
   },
+  {
+    id: 29, slug: 'appartement-cossonay-eolia', titre: 'Appartement PPE 4.5 pièces neuf', lieu: 'Cossonay-Ville',
+    prix: "1'195'000", pieces: '4.5', surface: '100 m²', terrain: '-', categorie: 'en_vente',
+    img: '/photos/cossonay-eolia/01-balcon-vue.jpg',
+    photos: [
+      '/photos/cossonay-eolia/01-balcon-vue.jpg',
+      '/photos/cossonay-eolia/02-sejour-cuisine.jpg',
+      '/photos/cossonay-eolia/03-cuisine.jpg',
+      '/photos/cossonay-eolia/04-salon.jpg',
+      '/photos/cossonay-eolia/05-chambre-1.jpg',
+      '/photos/cossonay-eolia/06-chambre-2.jpg',
+      '/photos/cossonay-eolia/07-salle-douche.jpg',
+      '/photos/cossonay-eolia/08-salle-bains.jpg',
+      '/photos/cossonay-eolia/09-vue-campagne.jpg',
+      '/photos/cossonay-eolia/10-vue-jura.jpg',
+      '/photos/cossonay-eolia/11-aerienne-1.jpg',
+      '/photos/cossonay-eolia/12-aerienne-2.jpg',
+      '/photos/cossonay-eolia/13-aerienne-3.jpg',
+    ],
+    description: "Au troisième étage d'un immeuble Minergie livré en 2024, cet appartement de 4.5 pièces s'ouvre côté champs sur un panorama dégagé : les blés, les collines, le Jura à l'horizon. La pièce de vie traverse l'appartement sur une trentaine de mètres carrés en continu, prolongée par un balcon de onze mètres carrés. Cuisine ouverte équipée granit, induction, four, chauffe-plat et lave-vaisselle. Trois chambres, dont la parentale avec dressing sur mesure et salle de douche à l'italienne attenante. Salle de bains avec baignoire séparée. Triple vitrage, stores à toile motorisés, bandeau LED intégré. PAC géothermique sur sondes verticales, ventilation contrôlée avec récupération de chaleur, photovoltaïque en toiture pour les communs. Au sous-sol, un local annexe de treize mètres carrés et une cave individuelle. Deux places intérieures dont l'une équipée d'une borne de recharge, une place moto extérieure. Le centre de Cossonay et la gare CFF sont accessibles à pied, l'autoroute A1 à six minutes, le centre de Lausanne à vingt minutes."
+  },
   // ─── Transactions historiques (Cogestim 2024) ─────────────────────────────
   // Ces entrées sont sans photos pour ne pas apparaître dans la section "Nos biens"
   // mais alimentent la carte et la liste du Track Record.
