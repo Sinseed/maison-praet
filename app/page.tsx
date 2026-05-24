@@ -134,10 +134,10 @@ function Approach() {
 
 function MandatsSection() {
   const [filtre, setFiltre] = useState<string>('all')
-  const catOrder = { en_vente: 0, reserve: 1, vendu: 2 } as Record<string, number>
+  const catOrder = { bientot: 0, en_vente: 1, reserve: 2, vendu: 3 } as Record<string, number>
   const filtered = (filtre === 'all' ? MANDATS : MANDATS.filter(m => m.categorie === filtre)).filter(m => m.photos.length > 0).sort((a, b) => (catOrder[a.categorie] ?? 9) - (catOrder[b.categorie] ?? 9))
-  const badgeLabel = (cat: string) => cat === 'en_vente' ? 'En vente' : cat === 'reserve' ? 'Réservé' : 'Vendu'
-  const badgeColor = (cat: string) => cat === 'en_vente' ? 'bg-brand-gold text-brand-dark' : cat === 'reserve' ? 'bg-amber-700/60 text-amber-200' : 'bg-green-800/60 text-green-200'
+  const badgeLabel = (cat: string) => cat === 'bientot' ? 'Bientôt disponible' : cat === 'en_vente' ? 'En vente' : cat === 'reserve' ? 'Réservé' : 'Vendu'
+  const badgeColor = (cat: string) => cat === 'bientot' ? 'bg-sky-900/70 text-sky-200' : cat === 'en_vente' ? 'bg-brand-gold text-brand-dark' : cat === 'reserve' ? 'bg-amber-700/60 text-amber-200' : 'bg-green-800/60 text-green-200'
   return (
     <section id="nosbiens" className="max-w-7xl mx-auto px-6 py-24 md:py-32">
       <div className="text-center mb-12">
@@ -160,7 +160,8 @@ function MandatsSection() {
             <div className="p-6">
               <p className="font-body text-xs tracking-widest uppercase text-brand-gold mb-2">{m.lieu}</p>
               <h3 className="font-display text-2xl text-white mb-3">{m.titre}</h3>
-              <div className="flex items-baseline gap-1 mb-4"><span className="font-body text-sm text-brand-muted">CHF</span><span className="font-display text-xl text-white">{m.prix}.-</span></div>
+              {m.categorie !== 'bientot' && <div className="flex items-baseline gap-1 mb-4"><span className="font-body text-sm text-brand-muted">CHF</span><span className="font-display text-xl text-white">{m.prix}.-</span></div>}
+              {m.categorie === 'bientot' && <div className="mb-4"><span className="font-body text-sm text-sky-300 italic">Prix sur demande</span></div>}
               <div className="flex gap-4 text-brand-muted font-body text-sm">
                 {m.composition ? <span>{m.composition}</span> : m.pieces !== '-' && <span>{m.pieces} pièces</span>}
                 {m.surface !== '-' && <span>{m.surface}</span>}
