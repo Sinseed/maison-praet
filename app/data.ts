@@ -8,7 +8,7 @@ export type Mandat = {
   pieces: string
   surface: string
   terrain: string
-  categorie: 'en_vente' | 'vendu' | 'reserve' | 'bientot'
+  categorie: 'en_vente' | 'vendu' | 'reserve'
   img: string
   photos: string[]
   description: string
@@ -29,13 +29,6 @@ export type Article = {
 
 // ─── MANDATS ────────────────────────────────────────────────────────────────
 export const MANDATS: Mandat[] = [
-  {
-    id: 30, slug: 'appartement-lausanne-mousquines', titre: 'Appartement avec terrasse et vue lac', lieu: 'Lausanne, Mousquines',
-    prix: '-', pieces: '-', surface: '-', terrain: '-', categorie: 'bientot',
-    img: '/photos/lausanne-mousquines/terrasse-lac.jpg',
-    photos: ['/photos/lausanne-mousquines/terrasse-lac.jpg'],
-    description: "Dans l'un des quartiers les plus prisés de Lausanne, un appartement rare avec grande terrasse et vue dégagée sur le Léman et les Alpes. Bientôt disponible. Informations sur demande."
-  },
   {
     id: 29, slug: 'appartement-cossonay-eolia', titre: 'Appartement PPE 4.5 pièces neuf', lieu: 'Cossonay-Ville',
     prix: "1'195'000", pieces: '4.5', surface: '100 m²', terrain: '-', categorie: 'en_vente',
