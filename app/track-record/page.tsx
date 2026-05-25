@@ -2,7 +2,7 @@
 import { useState, useMemo } from 'react'
 import dynamic from 'next/dynamic'
 import Link from 'next/link'
-import { ArrowRight, MapPin, TrendingUp, Building2, Calendar } from 'lucide-react'
+import { ArrowRight, MapPin, TrendingUp, Building2, Calendar, Home, Building, Layers, Trees, Mountain } from 'lucide-react'
 import { MANDATS } from '../data'
 import { COMMUNES_COORDS } from '../communes-data'
 
@@ -102,6 +102,82 @@ function MapSection() {
       <p className="font-body text-xs text-brand-muted mt-4 italic">
         Cliquez sur un point pour voir le détail des mandats. Localisation au niveau communal uniquement, par respect de la confidentialité des transactions.
       </p>
+    </section>
+  )
+}
+
+// ─── ANATOMIE (typologies, gammes, statuts) ────────────────────────────────
+type Typologie = 'appartement' | 'villa' | 'maison' | 'immeuble' | 'promotion' | 'terrain'
+
+function classifier(m: typeof MANDATS[number]): Typologie {
+  const t = m.titre.toLowerCase()
+  if (t.includes('promotion') || t.includes('ppe avenue') || (m.nb_lots && m.nb_lots > 1 && !t.startsWith('immeuble'))) return 'promotion'
+  if (t.startsWith('immeuble')) return 'immeuble'
+  if (t.includes('terrain') || t.includes('bien-fonds')) return 'terrain'
+  if (t.startsWith('villa')) return 'villa'
+  if (t.startsWith('maison') || t.includes('chalet') || t.includes('ferme')) return 'maison'
+  if (t.includes('appartement') || t.includes('ppe')) return 'appartement'
+  return 'maison'
+}
+
+function AnatomieSection() {
+  const breakdown = useMemo(() => {
+    const valides = MANDATS.filter(m => m.photos.length > 0 || m.annee_vente)
+    const total = valides.length
+    const counts: Record<Typologie, number> = {
+      appartement: 0, villa: 0, maison: 0, immeuble: 0, promotion: 0, terrain: 0,
+    }
+    valides.forEach(m => { counts[classifier(m)]++ })
+    return { counts, total }
+  }, [])
+
+  const typologies: { key: Typologie; label: string; sub: string; icon: any }[] = [
+    { key: 'appartement', label: 'Appartements PPE', sub: 'Du 1.5 au 5.5 pièces', icon: Building },
+    { key: 'villa',       label: 'Villas',           sub: 'Individuelles, mitoyennes, jumelées', icon: Home },
+    { key: 'maison',      label: 'Maisons',          sub: 'Villageoises, vigneronnes, fermes', icon: Mountain },
+    { key: 'immeuble',    label: 'Immeubles',        sub: 'Locatifs et de rendement', icon: Building2 },
+    { key: 'promotion',   label: 'Promotions',       sub: 'Multi-lots résidentielles et mixtes', icon: Layers },
+    { key: 'terrain',     label: 'Terrains',         sub: 'Bien-fonds et parcelles', icon: Trees },
+  ]
+
+  return (
+    <section className="max-w-7xl mx-auto px-6 py-20 md:py-28 border-t border-brand-border">
+      <div className="mb-12 md:mb-16 max-w-2xl">
+        <p className="font-body text-sm tracking-[0.3em] uppercase text-brand-gold mb-4">Anatomie de mes mandats</p>
+        <h2 className="font-display text-3xl md:text-4xl font-light text-white leading-tight mb-6">
+          Une polyvalence<br /><span className="italic text-brand-gold">éprouvée.</span>
+        </h2>
+        <p className="font-body text-base text-brand-text leading-relaxed">
+          Du studio en ville à l&apos;immeuble de rapport, du terrain à bâtir à la promotion mixte. J&apos;ai traité tous les types de biens que l&apos;arc lémanique propose, à toutes les gammes.
+        </p>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-brand-border">
+        {typologies.map(t => {
+          const count = breakdown.counts[t.key]
+          const pct = breakdown.total > 0 ? (count / breakdown.total) * 100 : 0
+          const Icon = t.icon
+          return (
+            <div key={t.key} className="bg-brand-dark p-8 md:p-10">
+              <div className="flex items-start justify-between mb-6">
+                <Icon size={28} className="text-brand-gold" strokeWidth={1.2} />
+                <p className="font-display text-5xl font-light text-white leading-none">{count}</p>
+              </div>
+              <p className="font-body text-sm tracking-widest uppercase text-white mb-1">{t.label}</p>
+              <p className="font-body text-xs text-brand-muted mb-5">{t.sub}</p>
+              <div className="h-px w-full bg-brand-border relative">
+                <div
+                  className="absolute inset-y-0 left-0 bg-brand-gold transition-all"
+                  style={{ width: `${pct}%`, height: '1px' }}
+                />
+              </div>
+              <p className="font-body text-[10px] tracking-widest uppercase text-brand-muted mt-2">
+                {pct.toFixed(0)}% des mandats
+              </p>
+            </div>
+          )
+        })}
+      </div>
     </section>
   )
 }
@@ -254,6 +330,7 @@ export default function TrackRecordPage() {
       <Hero />
       <Stats />
       <MapSection />
+      <AnatomieSection />
       <ListeSection />
       <CTA />
     </div>
