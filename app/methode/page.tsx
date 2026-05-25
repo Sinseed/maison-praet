@@ -74,7 +74,7 @@ export default function MethodePage() {
       <section className="relative pt-32 pb-16 md:pt-40 md:pb-20 max-w-7xl mx-auto px-6">
         <p className="font-body text-sm tracking-[0.3em] uppercase text-brand-gold mb-6">Ma méthode</p>
         <h1 className="font-display text-5xl md:text-7xl font-light text-white leading-[1.05] mb-8 max-w-4xl">
-          Du premier rendez-vous<br /><span className="italic text-brand-gold">à la signature.</span>
+          Du premier rendez-vous<br /><span className="italic text-brand-gold">à la remise des clés.</span>
         </h1>
         <p className="font-body text-lg text-brand-text leading-relaxed max-w-2xl">
           Vendre un bien immobilier ne se résume pas à mettre une annonce en ligne. Voici comment je travaille concrètement, étape par étape, sans raccourci ni zone d'ombre.
