@@ -172,7 +172,7 @@ function TypologiesSection() {
           Une polyvalence<br /><span className="italic text-brand-gold">éprouvée.</span>
         </h2>
         <p className="font-body text-base text-brand-text leading-relaxed">
-          Du studio en ville à l&apos;immeuble de rapport, du terrain à bâtir à la promotion mixte. J&apos;ai traité tous les types de biens que l&apos;arc lémanique propose, à toutes les gammes. Cliquez sur une catégorie pour voir le détail.
+          Du studio en ville à l&apos;immeuble de rendement, du terrain à bâtir à la promotion mixte. J&apos;ai traité tous les types de biens que l&apos;arc lémanique propose, à toutes les gammes. Cliquez sur une catégorie pour voir le détail.
         </p>
       </div>
 
