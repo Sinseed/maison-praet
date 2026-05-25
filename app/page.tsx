@@ -69,8 +69,8 @@ function StatsBar() {
           <p className="font-body text-xs tracking-widest uppercase text-brand-muted mt-2">Courtier depuis</p>
         </div>
         <div className="text-center">
-          <p className="font-display text-3xl md:text-4xl font-light text-brand-gold">5/5</p>
-          <p className="font-body text-xs tracking-widest uppercase text-brand-muted mt-2">Avis Google</p>
+          <p className="font-display text-3xl md:text-4xl font-light text-brand-gold">39</p>
+          <p className="font-body text-xs tracking-widest uppercase text-brand-muted mt-2">Communes couvertes</p>
         </div>
         <div className="text-center">
           <p className="font-display text-3xl md:text-4xl font-light text-brand-gold">USPI</p>
