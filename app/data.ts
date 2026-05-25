@@ -380,10 +380,10 @@ export const MANDATS: Mandat[] = [
     description: "Vente d'un appartement PPE 4.5 pièces au rez-de-chaussée à Golion, période Cogestim. Détails conservés confidentiels par respect des anciens clients."
   },
   {
-    id: 213, slug: 'cog-crissier-promotion', titre: 'Promotion mixte (17 appartements + 2 surfaces commerciales)', lieu: 'Crissier',
+    id: 213, slug: 'cog-crissier-fermedutilleul', titre: 'Promotion Ferme du Tilleul (17 appartements + 2 surfaces commerciales)', lieu: 'Crissier',
     prix: '-', pieces: '-', surface: '-', terrain: '-', categorie: 'vendu', annee_vente: '2020-2023', nb_lots: 19,
     img: '', photos: [],
-    description: "Commercialisation complète d'une promotion mixte à Crissier : 17 appartements et 2 surfaces commerciales, période Cogestim. Détails conservés confidentiels par respect des anciens clients."
+    description: "Commercialisation complète de la Promotion Ferme du Tilleul à Crissier : 17 appartements et 2 surfaces commerciales. Mandat conduit chez Cogestim."
   },
   {
     id: 214, slug: 'cog-lausanne-chailly', titre: 'Appartement PPE 4.5 pièces', lieu: 'Lausanne',
