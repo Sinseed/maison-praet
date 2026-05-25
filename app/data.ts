@@ -253,7 +253,7 @@ export const MANDATS: Mandat[] = [
   // Ces entrées sont sans photos pour ne pas apparaître dans la section "Nos biens"
   // mais alimentent la carte et la liste du Track Record.
   {
-    id: 101, slug: 'cog-bussigny-2024', titre: 'Bien-fonds résidentiel', lieu: 'Bussigny',
+    id: 101, slug: 'cog-bussigny-2024', titre: 'Appartement PPE', lieu: 'Bussigny',
     prix: '-', pieces: '-', surface: '-', terrain: '-', categorie: 'vendu', annee_vente: '2024',
     img: '', photos: [],
     description: "Vente d'un bien-fonds résidentiel à Bussigny. Mandat conclu en 2024."
@@ -277,7 +277,7 @@ export const MANDATS: Mandat[] = [
     description: "Commercialisation de 4 lots PPE Avenue du Grey à Lausanne. Mandat conclu en 2024."
   },
   {
-    id: 105, slug: 'cog-pully-chateausec', titre: 'Bien-fonds', lieu: 'Pully',
+    id: 105, slug: 'cog-pully-chateausec', titre: 'Appartement PPE', lieu: 'Pully',
     prix: '-', pieces: '-', surface: '-', terrain: '-', categorie: 'vendu', annee_vente: '2024',
     img: '', photos: [],
     description: "Vente d'un bien-fonds à Pully (secteur Château-Sec). Mandat conclu en 2024."
