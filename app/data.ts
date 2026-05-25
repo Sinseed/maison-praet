@@ -271,10 +271,10 @@ export const MANDATS: Mandat[] = [
     description: "Vente d'un appartement à Lausanne (secteur Risoux). Mandat conclu en 2024."
   },
   {
-    id: 104, slug: 'cog-lausanne-grey', titre: 'PPE Avenue du Grey (4 lots)', lieu: 'Lausanne',
+    id: 104, slug: 'cog-pully-grey', titre: 'PPE Avenue du Grey (4 lots)', lieu: 'Pully',
     prix: '-', pieces: '-', surface: '-', terrain: '-', categorie: 'vendu', annee_vente: '2024', nb_lots: 4,
     img: '', photos: [],
-    description: "Commercialisation de 4 lots PPE Avenue du Grey à Lausanne. Mandat conclu en 2024."
+    description: "Commercialisation de 4 lots PPE Avenue du Grey à Pully. Mandat conclu en 2024."
   },
   {
     id: 105, slug: 'cog-pully-chateausec', titre: 'Appartement PPE', lieu: 'Pully',
