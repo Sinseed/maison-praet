@@ -2,7 +2,7 @@
 import { useState, useMemo } from 'react'
 import dynamic from 'next/dynamic'
 import Link from 'next/link'
-import { ArrowRight, MapPin, TrendingUp, Building2, Calendar, Home, Building, Layers, Trees, Mountain, ChevronDown } from 'lucide-react'
+import { ArrowRight, MapPin, Building2, Home, Building, Layers, Trees, Mountain } from 'lucide-react'
 import { MANDATS } from '../data'
 import { COMMUNES_COORDS } from '../communes-data'
 
@@ -106,7 +106,7 @@ function MapSection() {
   )
 }
 
-// ─── ANATOMIE (typologies, gammes, statuts) ────────────────────────────────
+// ─── TYPOLOGIES (tuiles cliquables + liste filtrée) ────────────────────────
 type Typologie = 'appartement' | 'villa' | 'maison' | 'immeuble' | 'promotion' | 'terrain'
 
 function classifier(m: typeof MANDATS[number]): Typologie {
@@ -120,16 +120,32 @@ function classifier(m: typeof MANDATS[number]): Typologie {
   return 'maison'
 }
 
-function AnatomieSection() {
+type Selection = Typologie | 'all' | null
+
+function TypologiesSection() {
+  const [selected, setSelected] = useState<Selection>(null)
+
+  const valides = useMemo(
+    () => MANDATS.filter(m => m.photos.length > 0 || m.annee_vente),
+    []
+  )
+
   const breakdown = useMemo(() => {
-    const valides = MANDATS.filter(m => m.photos.length > 0 || m.annee_vente)
-    const total = valides.length
     const counts: Record<Typologie, number> = {
       appartement: 0, villa: 0, maison: 0, immeuble: 0, promotion: 0, terrain: 0,
     }
     valides.forEach(m => { counts[classifier(m)]++ })
-    return { counts, total }
-  }, [])
+    return { counts, total: valides.length }
+  }, [valides])
+
+  const filtered = useMemo(() => {
+    if (selected === null) return []
+    const list = selected === 'all' ? valides : valides.filter(m => classifier(m) === selected)
+    return list.sort((a, b) => {
+      const order = { en_vente: 0, reserve: 1, vendu: 2 }
+      return (order[a.categorie] ?? 9) - (order[b.categorie] ?? 9)
+    })
+  }, [selected, valides])
 
   const typologies: { key: Typologie; label: string; sub: string; icon: any }[] = [
     { key: 'appartement', label: 'Appartements PPE', sub: 'Du 1.5 au 5.5 pièces', icon: Building },
@@ -140,30 +156,50 @@ function AnatomieSection() {
     { key: 'terrain',     label: 'Terrains',         sub: 'Bien-fonds et parcelles', icon: Trees },
   ]
 
+  const badgeLabel = (cat: string) => cat === 'en_vente' ? 'En vente' : cat === 'reserve' ? 'Réservé' : 'Vendu'
+  const badgeColor = (cat: string) => cat === 'en_vente' ? 'bg-brand-gold text-brand-dark' : cat === 'reserve' ? 'bg-amber-700/60 text-amber-200' : 'bg-green-800/60 text-green-200'
+
+  const handleClick = (key: Typologie | 'all') => {
+    setSelected(prev => prev === key ? null : key)
+  }
+
   return (
     <section className="max-w-7xl mx-auto px-6 py-20 md:py-28 border-t border-brand-border">
+      {/* Header */}
       <div className="mb-12 md:mb-16 max-w-2xl">
         <p className="font-body text-sm tracking-[0.3em] uppercase text-brand-gold mb-4">Anatomie de mes mandats</p>
         <h2 className="font-display text-3xl md:text-4xl font-light text-white leading-tight mb-6">
           Une polyvalence<br /><span className="italic text-brand-gold">éprouvée.</span>
         </h2>
         <p className="font-body text-base text-brand-text leading-relaxed">
-          Du studio en ville à l&apos;immeuble de rapport, du terrain à bâtir à la promotion mixte. J&apos;ai traité tous les types de biens que l&apos;arc lémanique propose, à toutes les gammes.
+          Du studio en ville à l&apos;immeuble de rapport, du terrain à bâtir à la promotion mixte. J&apos;ai traité tous les types de biens que l&apos;arc lémanique propose, à toutes les gammes. Cliquez sur une catégorie pour voir le détail.
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-brand-border">
+      {/* Grille tuiles cliquables */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-brand-border mb-6">
         {typologies.map(t => {
           const count = breakdown.counts[t.key]
           const pct = breakdown.total > 0 ? (count / breakdown.total) * 100 : 0
           const Icon = t.icon
+          const isActive = selected === t.key
           return (
-            <div key={t.key} className="bg-brand-dark p-8 md:p-10">
+            <button
+              key={t.key}
+              onClick={() => handleClick(t.key)}
+              className={`text-left p-8 md:p-10 transition-all ${
+                isActive
+                  ? 'bg-brand-gold/10 ring-1 ring-brand-gold ring-inset'
+                  : 'bg-brand-dark hover:bg-brand-card/40'
+              }`}
+            >
               <div className="flex items-start justify-between mb-6">
                 <Icon size={28} className="text-brand-gold" strokeWidth={1.2} />
                 <p className="font-display text-5xl font-light text-white leading-none">{count}</p>
               </div>
-              <p className="font-body text-sm tracking-widest uppercase text-white mb-1">{t.label}</p>
+              <p className={`font-body text-sm tracking-widest uppercase mb-1 transition-colors ${isActive ? 'text-brand-gold' : 'text-white'}`}>
+                {t.label}
+              </p>
               <p className="font-body text-xs text-brand-muted mb-5">{t.sub}</p>
               <div className="h-px w-full bg-brand-border relative">
                 <div
@@ -174,107 +210,44 @@ function AnatomieSection() {
               <p className="font-body text-[10px] tracking-widest uppercase text-brand-muted mt-2">
                 {pct.toFixed(0)}% des mandats
               </p>
-            </div>
+            </button>
           )
         })}
       </div>
-    </section>
-  )
-}
 
-// ─── LISTE FILTRABLE (repliée par défaut) ──────────────────────────────────
-function ListeSection() {
-  const [expanded, setExpanded] = useState(false)
-  const [filtre, setFiltre] = useState<'all' | 'en_vente' | 'reserve' | 'vendu'>('all')
-  const [region, setRegion] = useState<string>('all')
+      {/* Bouton Tous voir l'ensemble */}
+      <button
+        onClick={() => handleClick('all')}
+        className={`font-body text-xs tracking-widest uppercase px-5 py-3 border transition-all inline-flex items-center gap-2 ${
+          selected === 'all'
+            ? 'border-brand-gold text-brand-gold bg-brand-gold/10'
+            : 'border-brand-border text-brand-muted hover:text-brand-text hover:border-brand-text'
+        }`}
+      >
+        {selected === 'all' ? 'Masquer la liste' : `Voir l'ensemble des ${breakdown.total} mandats`}
+      </button>
 
-  const totalValides = useMemo(
-    () => MANDATS.filter(m => m.photos.length > 0 || m.annee_vente).length,
-    []
-  )
-
-  const filtered = useMemo(() => {
-    return MANDATS.filter(m => m.photos.length > 0 || m.annee_vente)
-      .filter(m => filtre === 'all' || m.categorie === filtre)
-      .filter(m => {
-        if (region === 'all') return true
-        const coords = COMMUNES_COORDS[m.lieu]
-        return coords?.region === region
-      })
-      .sort((a, b) => {
-        const order = { en_vente: 0, reserve: 1, vendu: 2 }
-        return (order[a.categorie] ?? 9) - (order[b.categorie] ?? 9)
-      })
-  }, [filtre, region])
-
-  const regions = useMemo(() => {
-    return Array.from(new Set(Object.values(COMMUNES_COORDS).map(c => c.region))).sort()
-  }, [])
-
-  const badgeLabel = (cat: string) => cat === 'en_vente' ? 'En vente' : cat === 'reserve' ? 'Réservé' : 'Vendu'
-  const badgeColor = (cat: string) => cat === 'en_vente' ? 'bg-brand-gold text-brand-dark' : cat === 'reserve' ? 'bg-amber-700/60 text-amber-200' : 'bg-green-800/60 text-green-200'
-
-  return (
-    <section className="max-w-7xl mx-auto px-6 py-20 md:py-28 border-t border-brand-border">
-      <div className="mb-10 max-w-2xl">
-        <p className="font-body text-sm tracking-[0.3em] uppercase text-brand-gold mb-4">Détail des transactions</p>
-        <h2 className="font-display text-3xl md:text-4xl font-light text-white leading-tight mb-6">
-          Chaque bien,<br /><span className="italic text-brand-gold">son histoire.</span>
-        </h2>
-        <p className="font-body text-base text-brand-text leading-relaxed">
-          {expanded
-            ? `Le détail intégral de mes ${totalValides} mandats documentés, filtrable par statut et par région.`
-            : `Pour les visiteurs qui souhaitent vérifier chaque transaction, le détail complet de mes ${totalValides} mandats reste disponible.`}
-        </p>
-      </div>
-
-      {!expanded && (
-        <button
-          onClick={() => setExpanded(true)}
-          className="group inline-flex items-center gap-3 border border-brand-border text-brand-text hover:border-brand-gold hover:text-brand-gold px-6 py-4 font-body text-xs tracking-widest uppercase transition-all"
-        >
-          Voir le détail des {totalValides} mandats
-          <ChevronDown size={16} className="group-hover:translate-y-0.5 transition-transform" />
-        </button>
-      )}
-
-      {expanded && (
-        <>
-          {/* Filtres */}
-          <div className="flex flex-wrap gap-3 mb-10 mt-4">
-            {[
-              { key: 'all', label: 'Tous' },
-              { key: 'en_vente', label: 'En vente' },
-              { key: 'reserve', label: 'Réservés' },
-              { key: 'vendu', label: 'Vendus' },
-            ].map(f => (
-              <button
-                key={f.key}
-                onClick={() => setFiltre(f.key as any)}
-                className={`font-body text-xs tracking-widest uppercase px-4 py-2 border transition-all ${filtre === f.key ? 'border-brand-gold text-brand-gold' : 'border-brand-border text-brand-muted hover:text-brand-text'}`}
-              >
-                {f.label}
-              </button>
-            ))}
-            <div className="hidden md:block w-px bg-brand-border mx-2" />
-            <select
-              value={region}
-              onChange={e => setRegion(e.target.value)}
-              className="font-body text-xs tracking-widest uppercase px-4 py-2 bg-brand-dark border border-brand-border text-brand-muted hover:text-brand-text focus:border-brand-gold focus:text-brand-text outline-none"
+      {/* Liste filtrée */}
+      {selected !== null && filtered.length > 0 && (
+        <div className="mt-10">
+          <div className="flex items-center justify-between mb-6">
+            <p className="font-body text-xs tracking-widest uppercase text-brand-muted">
+              {filtered.length} {filtered.length > 1 ? 'mandats' : 'mandat'}
+              {selected !== 'all' && ` · ${typologies.find(t => t.key === selected)?.label}`}
+            </p>
+            <button
+              onClick={() => setSelected(null)}
+              className="font-body text-xs tracking-widest uppercase text-brand-muted hover:text-brand-gold transition-colors"
             >
-              <option value="all">Toutes régions</option>
-              {regions.map(r => <option key={r} value={r}>{r}</option>)}
-            </select>
-            <p className="ml-auto font-body text-xs text-brand-muted self-center">{filtered.length} {filtered.length > 1 ? 'résultats' : 'résultat'}</p>
+              Réinitialiser
+            </button>
           </div>
 
-          {/* Table */}
           <div className="border border-brand-border overflow-hidden">
             <div className="hidden md:grid grid-cols-12 gap-4 px-6 py-4 border-b border-brand-border bg-brand-card/40 font-body text-xs tracking-widest uppercase text-brand-muted">
-              <div className="col-span-3">Bien</div>
+              <div className="col-span-4">Bien</div>
               <div className="col-span-3">Commune</div>
-              <div className="col-span-2">Région</div>
-              <div className="col-span-2">Caractéristiques</div>
+              <div className="col-span-3">Caractéristiques</div>
               <div className="col-span-1 text-right">Statut</div>
               <div className="col-span-1 text-right"></div>
             </div>
@@ -289,7 +262,7 @@ function ListeSection() {
                   className={`block ${isHistorique ? '' : 'group hover:bg-brand-card/30'} transition-colors ${i < filtered.length - 1 ? 'border-b border-brand-border' : ''}`}
                 >
                   <div className="grid grid-cols-2 md:grid-cols-12 gap-4 px-6 py-5 items-center">
-                    <div className="col-span-2 md:col-span-3">
+                    <div className="col-span-2 md:col-span-4">
                       <p className={`font-display text-lg text-white ${!isHistorique && 'group-hover:text-brand-gold'} transition-colors`}>
                         {m.titre}
                         {m.nb_lots && m.nb_lots > 1 && <span className="text-brand-gold text-sm font-body ml-2">· {m.nb_lots} lots</span>}
@@ -299,10 +272,7 @@ function ListeSection() {
                       <MapPin size={14} className="text-brand-muted shrink-0" />
                       <p className="font-body text-sm text-brand-text">{m.lieu}</p>
                     </div>
-                    <div className="hidden md:block md:col-span-2 font-body text-sm text-brand-muted">
-                      {COMMUNES_COORDS[m.lieu]?.region || '—'}
-                    </div>
-                    <div className="col-span-1 md:col-span-2 font-body text-xs text-brand-muted">
+                    <div className="col-span-1 md:col-span-3 font-body text-xs text-brand-muted">
                       {m.annee_vente ? `Vendu · ${m.annee_vente}` : m.composition ? m.composition : `${m.pieces !== '-' ? `${m.pieces} pièces` : ''}${m.surface !== '-' ? ` · ${m.surface}` : ''}`}
                     </div>
                     <div className="col-span-2 md:col-span-1 md:text-right">
@@ -318,15 +288,7 @@ function ListeSection() {
               )
             })}
           </div>
-
-          <button
-            onClick={() => setExpanded(false)}
-            className="mt-8 font-body text-xs tracking-widest uppercase text-brand-muted hover:text-brand-gold transition-colors inline-flex items-center gap-2"
-          >
-            <ChevronDown size={14} className="rotate-180" />
-            Masquer le détail
-          </button>
-        </>
+        </div>
       )}
     </section>
   )
@@ -363,8 +325,7 @@ export default function TrackRecordPage() {
       <Hero />
       <Stats />
       <MapSection />
-      <AnatomieSection />
-      <ListeSection />
+      <TypologiesSection />
       <CTA />
     </div>
   )
