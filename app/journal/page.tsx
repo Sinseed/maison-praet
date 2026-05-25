@@ -7,7 +7,7 @@ export default function JournalPage() {
     <div className="min-h-screen bg-brand-dark pt-24">
       <div className="max-w-4xl mx-auto px-6 py-16">
         <p className="font-body text-sm tracking-[0.3em] uppercase text-brand-gold mb-4">Journal</p>
-        <h1 className="font-display text-4xl md:text-5xl font-light text-white mb-4">Conseils & <span className="italic text-brand-gold">analyses</span></h1>
+        <h1 className="font-display text-4xl md:text-5xl font-light text-white mb-4">Entre <span className="italic text-brand-gold">deux mandats.</span></h1>
         <p className="font-body text-brand-muted mb-16 max-w-2xl">Marché immobilier vaudois, conseils vendeurs, guides pratiques. Des articles concrets pour prendre les bonnes décisions.</p>
         <div className="space-y-8">
           {[...ARTICLES].sort((a, b) => b.date.localeCompare(a.date)).map(a => (

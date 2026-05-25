@@ -115,7 +115,7 @@ function Approach() {
       <div className="max-w-7xl mx-auto px-6 py-24 md:py-32">
         <div className="mb-16">
           <p className="font-body text-sm tracking-[0.3em] uppercase text-brand-gold mb-4">Mon approche</p>
-          <h2 className="font-display text-4xl md:text-5xl font-light text-white leading-tight">Ce qui me différencie<br /><span className="italic text-brand-gold">de tous les autres.</span></h2>
+          <h2 className="font-display text-4xl md:text-5xl font-light text-white leading-tight">Ce qui change<br /><span className="italic text-brand-gold">avec moi.</span></h2>
         </div>
         <div className="grid md:grid-cols-3 gap-8">
           {pillars.map((s, i) => (
@@ -142,7 +142,7 @@ function MandatsSection() {
     <section id="nosbiens" className="max-w-7xl mx-auto px-6 py-24 md:py-32">
       <div className="text-center mb-12">
         <p className="font-body text-sm tracking-[0.3em] uppercase text-brand-gold mb-4">Portefeuille</p>
-        <h2 className="font-display text-4xl md:text-5xl font-light text-white">Nos biens <span className="italic text-brand-gold">en cours</span></h2>
+        <h2 className="font-display text-4xl md:text-5xl font-light text-white">Sur le marché <span className="italic text-brand-gold">aujourd&apos;hui</span></h2>
       </div>
       <div className="flex justify-center gap-3 mb-12 flex-wrap">
         {FILTRES.map(f => (<button key={f.key} onClick={() => setFiltre(f.key)} className={`font-body text-xs tracking-widest uppercase px-5 py-2.5 border transition-all duration-300 ${filtre === f.key ? 'border-brand-gold text-brand-gold bg-brand-gold/10' : 'border-brand-border text-brand-muted hover:border-brand-gold/50 hover:text-brand-gold'}`}>{f.label}</button>))}
@@ -234,7 +234,7 @@ function JournalPreview() {
     <section id="journal" className="max-w-7xl mx-auto px-6 py-24 md:py-32">
       <div className="text-center mb-16">
         <p className="font-body text-sm tracking-[0.3em] uppercase text-brand-gold mb-4">Journal</p>
-        <h2 className="font-display text-4xl md:text-5xl font-light text-white">Conseils & <span className="italic text-brand-gold">analyses</span></h2>
+        <h2 className="font-display text-4xl md:text-5xl font-light text-white">Entre <span className="italic text-brand-gold">deux mandats.</span></h2>
       </div>
       <div className="grid md:grid-cols-3 gap-8">
         {recent.map(a => (
@@ -315,7 +315,7 @@ function Testimonials() {
       <div className="absolute top-0 left-1/3 w-80 h-80 rounded-full bg-brand-gold/3 blur-[120px]" />
       <div className="max-w-6xl mx-auto px-6 relative z-10">
         <p className="font-body text-xs tracking-[0.3em] uppercase text-brand-gold mb-4">Témoignages</p>
-        <h2 className="font-display text-3xl md:text-4xl font-light text-white mb-16">Ce qu'ils en disent.</h2>
+        <h2 className="font-display text-3xl md:text-4xl font-light text-white mb-16">Leurs <span className="italic text-brand-gold">mots.</span></h2>
         <div className="grid md:grid-cols-2 gap-6">
           {TEMOIGNAGES.map((t, i) => (
             <div key={i} className="bg-brand-card/50 border border-brand-border/50 p-8 hover:border-brand-gold/30 transition-colors">

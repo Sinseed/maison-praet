@@ -93,7 +93,7 @@ function MapSection() {
       <div className="mb-12 md:mb-16 max-w-2xl">
         <p className="font-body text-sm tracking-[0.3em] uppercase text-brand-gold mb-4">Couverture géographique</p>
         <h2 className="font-display text-3xl md:text-4xl font-light text-white leading-tight">
-          Mes mandats sur<br /><span className="italic text-brand-gold">l'arc lémanique.</span>
+          Du Léman<br /><span className="italic text-brand-gold">au Jura.</span>
         </h2>
       </div>
 
@@ -169,7 +169,7 @@ function TypologiesSection() {
       <div className="mb-12 md:mb-16 max-w-2xl">
         <p className="font-body text-sm tracking-[0.3em] uppercase text-brand-gold mb-4">Anatomie de mes mandats</p>
         <h2 className="font-display text-3xl md:text-4xl font-light text-white leading-tight mb-6">
-          Une polyvalence<br /><span className="italic text-brand-gold">éprouvée.</span>
+          Aucune typologie<br /><span className="italic text-brand-gold">à part.</span>
         </h2>
         <p className="font-body text-base text-brand-text leading-relaxed">
           Du studio en ville à l&apos;immeuble de rendement, du terrain à bâtir à la promotion mixte. J&apos;ai traité tous les types de biens que l&apos;arc lémanique propose, à toutes les gammes. Cliquez sur une catégorie pour voir le détail.
