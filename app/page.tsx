@@ -31,7 +31,7 @@ function Hero() {
             Je défends votre bien comme si c&apos;était le mien.
           </p>
           <p className="font-body text-sm text-brand-muted mb-10 md:mb-12 max-w-lg">
-            Courtier certifié USPI · Plus de 60 transactions · Arc lémanique et canton de Vaud
+            Courtier certifié USPI · Plus de 90 transactions · Arc lémanique et canton de Vaud
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 mb-10 md:mb-16">
@@ -61,12 +61,12 @@ function StatsBar() {
     <section className="border-y border-brand-border">
       <div className="max-w-7xl mx-auto px-6 py-10 grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4">
         <div className="text-center">
-          <p className="font-display text-3xl md:text-4xl font-light text-brand-gold">60+</p>
+          <p className="font-display text-3xl md:text-4xl font-light text-brand-gold">90+</p>
           <p className="font-body text-xs tracking-widest uppercase text-brand-muted mt-2">Transactions</p>
         </div>
         <div className="text-center">
-          <p className="font-display text-3xl md:text-4xl font-light text-brand-gold">9</p>
-          <p className="font-body text-xs tracking-widest uppercase text-brand-muted mt-2">Années en Suisse</p>
+          <p className="font-display text-3xl md:text-4xl font-light text-brand-gold">2020</p>
+          <p className="font-body text-xs tracking-widest uppercase text-brand-muted mt-2">Courtier depuis</p>
         </div>
         <div className="text-center">
           <p className="font-display text-3xl md:text-4xl font-light text-brand-gold">5/5</p>
@@ -94,9 +94,9 @@ function About() {
           <h2 className="font-display text-4xl md:text-5xl font-light text-white mb-8 leading-tight">Un courtier qui vous dit<br /><span className="italic text-brand-gold">la vérité.</span></h2>
           <div className="space-y-5 font-body text-brand-text leading-relaxed">
             <p>Je ne suis pas un courtier qui promet un prix pour obtenir un mandat, puis le baisse trois mois plus tard. Si je ne suis pas convaincu de pouvoir vendre votre bien dans de bonnes conditions, je vous le dis.</p>
-            <p>Depuis plus de six ans, j&apos;accompagne des propriétaires sur l&apos;ensemble de l&apos;arc lémanique et du Gros-de-Vaud. Chaque mandat est traité avec la même rigueur : estimation fondée, stratégie de prix réaliste, suivi transparent jusqu&apos;à la signature chez le notaire.</p>
+            <p>Depuis 2020, j&apos;accompagne des propriétaires sur l&apos;ensemble de l&apos;arc lémanique et du Gros-de-Vaud. Chaque mandat est traité avec la même rigueur : estimation fondée, stratégie de prix réaliste, suivi transparent jusqu&apos;à la signature chez le notaire.</p>
             <p>Je suis courtier diplômé USPI au sein de <a href="https://www.golay-immobilier.ch" target="_blank" rel="noopener noreferrer" className="text-brand-gold hover:underline">Golay Immobilier SA</a>, maison vaudoise établie à Lausanne. <strong className="text-white font-normal">Maison Praet est mon identité personnelle de courtier</strong> : un espace pour partager mon approche, mes mandats et ma méthode. Toutes mes transactions sont réalisées sous mandat Golay Immobilier.</p>
-            <p className="text-brand-muted text-sm italic">Arrivé de Belgique il y a 9 ans. Formé sur le terrain, pas dans un bureau.</p>
+            <p className="text-brand-muted text-sm italic">Arrivé de Belgique en 2017. Formé sur le terrain, pas dans un bureau.</p>
           </div>
         </div>
       </div>

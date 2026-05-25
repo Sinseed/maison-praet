@@ -1558,7 +1558,7 @@ Et avec le durcissement annoncé pour 2027, agir maintenant plutôt qu'attendre 
 // ─── HELPERS ────────────────────────────────────────────────────────────────
 export const STATS = [
   { value: '6+', label: "Années d'expérience" },
-  { value: '60+', label: 'Transactions réalisées' },
+  { value: '90+', label: 'Transactions réalisées' },
   { value: '96.8%', label: 'Vendus au prix estimé' },
 ]
 
