@@ -108,7 +108,7 @@ function Approach() {
   const pillars = [
     { icon: <Shield size={28} />, title: 'Je refuse les mandats auxquels je ne crois pas', desc: "Si votre bien ne peut pas se vendre au prix que vous espérez, je vous le dis avant de signer. Pas après trois mois de silence et une baisse de prix." },
     { icon: <TrendingUp size={28} />, title: 'Un prix juste, pas un prix flatteur', desc: "Mon estimation repose sur trois méthodes, des données réelles et une connaissance du terrain. 96.8 % de mes biens sont vendus au prix estimé. Ce chiffre n'est pas un hasard." },
-    { icon: <Users size={28} />, title: 'Un seul interlocuteur, du premier appel au notaire', desc: "Pas d'assistante, pas de call center. Vous traitez avec moi de l'estimation à la remise des clés. Votre bien n'est pas un numéro dans un portefeuille." },
+    { icon: <Users size={28} />, title: 'Un seul interlocuteur, du premier appel au notaire', desc: "Pas d'assistante, pas de call center. Vous traitez avec moi de l'estimation à la signature notariale. Votre bien n'est pas un numéro dans un portefeuille." },
   ]
   return (
     <section id="approche" className="bg-brand-card/50 border-y border-brand-border">

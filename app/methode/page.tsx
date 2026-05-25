@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: "La méthode complète de Thomas Praet pour vendre votre bien immobilier dans le canton de Vaud : du premier rendez-vous à la signature chez le notaire. 7 étapes, un seul interlocuteur.",
   openGraph: {
     title: 'Ma méthode de courtage | Maison Praet',
-    description: "Du premier rendez-vous à la remise des clés. La méthode complète, en 7 étapes claires.",
+    description: "Du premier rendez-vous à la signature chez le notaire. La méthode complète, en 7 étapes claires.",
     type: 'website',
     locale: 'fr_CH',
     url: 'https://maisonpraet.ch/methode',
@@ -62,8 +62,8 @@ const ETAPES = [
     num: '07',
     icon: Key,
     titre: 'La signature chez le notaire',
-    desc: "Je coordonne l'ensemble du dossier avec le notaire, les banques, les administrations cantonales. Préparation de l'acte, transmission des pièces, suivi des conditions suspensives le cas échéant. Vous arrivez à la signature en sachant que chaque détail a été vérifié. Je reste présent jusqu'à la remise des clés.",
-    valeur: "Un seul interlocuteur, du premier rendez-vous à la remise des clés.",
+    desc: "Je coordonne l'ensemble du dossier avec le notaire, les banques, les administrations cantonales. Préparation de l'acte, transmission des pièces, suivi des conditions suspensives le cas échéant. Vous arrivez à la signature en sachant que chaque détail a été vérifié. Pour la remise des clés, je suis disponible si vous le souhaitez.",
+    valeur: "Un seul interlocuteur, du premier rendez-vous à la signature.",
   },
 ]
 
@@ -74,7 +74,7 @@ export default function MethodePage() {
       <section className="relative pt-32 pb-16 md:pt-40 md:pb-20 max-w-7xl mx-auto px-6">
         <p className="font-body text-sm tracking-[0.3em] uppercase text-brand-gold mb-6">Ma méthode</p>
         <h1 className="font-display text-5xl md:text-7xl font-light text-white leading-[1.05] mb-8 max-w-4xl">
-          Du premier rendez-vous<br /><span className="italic text-brand-gold">à la remise des clés.</span>
+          Du premier rendez-vous<br /><span className="italic text-brand-gold">à la signature.</span>
         </h1>
         <p className="font-body text-lg text-brand-text leading-relaxed max-w-2xl">
           Vendre un bien immobilier ne se résume pas à mettre une annonce en ligne. Voici comment je travaille concrètement, étape par étape, sans raccourci ni zone d'ombre.
