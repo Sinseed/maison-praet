@@ -2,7 +2,7 @@
 import { useState, useMemo } from 'react'
 import dynamic from 'next/dynamic'
 import Link from 'next/link'
-import { ArrowRight, MapPin, TrendingUp, Building2, Calendar, Home, Building, Layers, Trees, Mountain } from 'lucide-react'
+import { ArrowRight, MapPin, TrendingUp, Building2, Calendar, Home, Building, Layers, Trees, Mountain, ChevronDown } from 'lucide-react'
 import { MANDATS } from '../data'
 import { COMMUNES_COORDS } from '../communes-data'
 
@@ -182,10 +182,16 @@ function AnatomieSection() {
   )
 }
 
-// ─── LISTE FILTRABLE ────────────────────────────────────────────────────────
+// ─── LISTE FILTRABLE (repliée par défaut) ──────────────────────────────────
 function ListeSection() {
+  const [expanded, setExpanded] = useState(false)
   const [filtre, setFiltre] = useState<'all' | 'en_vente' | 'reserve' | 'vendu'>('all')
   const [region, setRegion] = useState<string>('all')
+
+  const totalValides = useMemo(
+    () => MANDATS.filter(m => m.photos.length > 0 || m.annee_vente).length,
+    []
+  )
 
   const filtered = useMemo(() => {
     return MANDATS.filter(m => m.photos.length > 0 || m.annee_vente)
@@ -210,91 +216,118 @@ function ListeSection() {
 
   return (
     <section className="max-w-7xl mx-auto px-6 py-20 md:py-28 border-t border-brand-border">
-      <div className="mb-12 max-w-2xl">
+      <div className="mb-10 max-w-2xl">
         <p className="font-body text-sm tracking-[0.3em] uppercase text-brand-gold mb-4">Détail des transactions</p>
-        <h2 className="font-display text-3xl md:text-4xl font-light text-white leading-tight">
+        <h2 className="font-display text-3xl md:text-4xl font-light text-white leading-tight mb-6">
           Chaque bien,<br /><span className="italic text-brand-gold">son histoire.</span>
         </h2>
+        <p className="font-body text-base text-brand-text leading-relaxed">
+          {expanded
+            ? `Le détail intégral de mes ${totalValides} mandats documentés, filtrable par statut et par région.`
+            : `Pour les visiteurs qui souhaitent vérifier chaque transaction, le détail complet de mes ${totalValides} mandats reste disponible.`}
+        </p>
       </div>
 
-      {/* Filtres */}
-      <div className="flex flex-wrap gap-3 mb-10">
-        {[
-          { key: 'all', label: 'Tous' },
-          { key: 'en_vente', label: 'En vente' },
-          { key: 'reserve', label: 'Réservés' },
-          { key: 'vendu', label: 'Vendus' },
-        ].map(f => (
-          <button
-            key={f.key}
-            onClick={() => setFiltre(f.key as any)}
-            className={`font-body text-xs tracking-widest uppercase px-4 py-2 border transition-all ${filtre === f.key ? 'border-brand-gold text-brand-gold' : 'border-brand-border text-brand-muted hover:text-brand-text'}`}
-          >
-            {f.label}
-          </button>
-        ))}
-        <div className="hidden md:block w-px bg-brand-border mx-2" />
-        <select
-          value={region}
-          onChange={e => setRegion(e.target.value)}
-          className="font-body text-xs tracking-widest uppercase px-4 py-2 bg-brand-dark border border-brand-border text-brand-muted hover:text-brand-text focus:border-brand-gold focus:text-brand-text outline-none"
+      {!expanded && (
+        <button
+          onClick={() => setExpanded(true)}
+          className="group inline-flex items-center gap-3 border border-brand-border text-brand-text hover:border-brand-gold hover:text-brand-gold px-6 py-4 font-body text-xs tracking-widest uppercase transition-all"
         >
-          <option value="all">Toutes régions</option>
-          {regions.map(r => <option key={r} value={r}>{r}</option>)}
-        </select>
-        <p className="ml-auto font-body text-xs text-brand-muted self-center">{filtered.length} {filtered.length > 1 ? 'résultats' : 'résultat'}</p>
-      </div>
+          Voir le détail des {totalValides} mandats
+          <ChevronDown size={16} className="group-hover:translate-y-0.5 transition-transform" />
+        </button>
+      )}
 
-      {/* Table */}
-      <div className="border border-brand-border overflow-hidden">
-        <div className="hidden md:grid grid-cols-12 gap-4 px-6 py-4 border-b border-brand-border bg-brand-card/40 font-body text-xs tracking-widest uppercase text-brand-muted">
-          <div className="col-span-3">Bien</div>
-          <div className="col-span-3">Commune</div>
-          <div className="col-span-2">Région</div>
-          <div className="col-span-2">Caractéristiques</div>
-          <div className="col-span-1 text-right">Statut</div>
-          <div className="col-span-1 text-right"></div>
-        </div>
-        {filtered.map((m, i) => {
-          const isHistorique = m.photos.length === 0 && m.annee_vente
-          const RowWrapper: any = isHistorique ? 'div' : Link
-          const wrapperProps = isHistorique ? {} : { href: `/biens/${m.slug}` }
-          return (
-            <RowWrapper
-              key={m.id}
-              {...wrapperProps}
-              className={`block ${isHistorique ? '' : 'group hover:bg-brand-card/30'} transition-colors ${i < filtered.length - 1 ? 'border-b border-brand-border' : ''}`}
+      {expanded && (
+        <>
+          {/* Filtres */}
+          <div className="flex flex-wrap gap-3 mb-10 mt-4">
+            {[
+              { key: 'all', label: 'Tous' },
+              { key: 'en_vente', label: 'En vente' },
+              { key: 'reserve', label: 'Réservés' },
+              { key: 'vendu', label: 'Vendus' },
+            ].map(f => (
+              <button
+                key={f.key}
+                onClick={() => setFiltre(f.key as any)}
+                className={`font-body text-xs tracking-widest uppercase px-4 py-2 border transition-all ${filtre === f.key ? 'border-brand-gold text-brand-gold' : 'border-brand-border text-brand-muted hover:text-brand-text'}`}
+              >
+                {f.label}
+              </button>
+            ))}
+            <div className="hidden md:block w-px bg-brand-border mx-2" />
+            <select
+              value={region}
+              onChange={e => setRegion(e.target.value)}
+              className="font-body text-xs tracking-widest uppercase px-4 py-2 bg-brand-dark border border-brand-border text-brand-muted hover:text-brand-text focus:border-brand-gold focus:text-brand-text outline-none"
             >
-              <div className="grid grid-cols-2 md:grid-cols-12 gap-4 px-6 py-5 items-center">
-                <div className="col-span-2 md:col-span-3">
-                  <p className={`font-display text-lg text-white ${!isHistorique && 'group-hover:text-brand-gold'} transition-colors`}>
-                    {m.titre}
-                    {m.nb_lots && m.nb_lots > 1 && <span className="text-brand-gold text-sm font-body ml-2">· {m.nb_lots} lots</span>}
-                  </p>
-                </div>
-                <div className="col-span-1 md:col-span-3 flex items-center gap-2">
-                  <MapPin size={14} className="text-brand-muted shrink-0" />
-                  <p className="font-body text-sm text-brand-text">{m.lieu}</p>
-                </div>
-                <div className="hidden md:block md:col-span-2 font-body text-sm text-brand-muted">
-                  {COMMUNES_COORDS[m.lieu]?.region || '—'}
-                </div>
-                <div className="col-span-1 md:col-span-2 font-body text-xs text-brand-muted">
-                  {m.annee_vente ? `Vendu · ${m.annee_vente}` : m.composition ? m.composition : `${m.pieces !== '-' ? `${m.pieces} pièces` : ''}${m.surface !== '-' ? ` · ${m.surface}` : ''}`}
-                </div>
-                <div className="col-span-2 md:col-span-1 md:text-right">
-                  <span className={`inline-block font-body text-[10px] tracking-widest uppercase px-2 py-1 ${badgeColor(m.categorie)}`}>
-                    {badgeLabel(m.categorie)}
-                  </span>
-                </div>
-                <div className="hidden md:flex md:col-span-1 justify-end">
-                  {!isHistorique && <ArrowRight size={16} className="text-brand-border group-hover:text-brand-gold group-hover:translate-x-1 transition-all" />}
-                </div>
-              </div>
-            </RowWrapper>
-          )
-        })}
-      </div>
+              <option value="all">Toutes régions</option>
+              {regions.map(r => <option key={r} value={r}>{r}</option>)}
+            </select>
+            <p className="ml-auto font-body text-xs text-brand-muted self-center">{filtered.length} {filtered.length > 1 ? 'résultats' : 'résultat'}</p>
+          </div>
+
+          {/* Table */}
+          <div className="border border-brand-border overflow-hidden">
+            <div className="hidden md:grid grid-cols-12 gap-4 px-6 py-4 border-b border-brand-border bg-brand-card/40 font-body text-xs tracking-widest uppercase text-brand-muted">
+              <div className="col-span-3">Bien</div>
+              <div className="col-span-3">Commune</div>
+              <div className="col-span-2">Région</div>
+              <div className="col-span-2">Caractéristiques</div>
+              <div className="col-span-1 text-right">Statut</div>
+              <div className="col-span-1 text-right"></div>
+            </div>
+            {filtered.map((m, i) => {
+              const isHistorique = m.photos.length === 0 && m.annee_vente
+              const RowWrapper: any = isHistorique ? 'div' : Link
+              const wrapperProps = isHistorique ? {} : { href: `/biens/${m.slug}` }
+              return (
+                <RowWrapper
+                  key={m.id}
+                  {...wrapperProps}
+                  className={`block ${isHistorique ? '' : 'group hover:bg-brand-card/30'} transition-colors ${i < filtered.length - 1 ? 'border-b border-brand-border' : ''}`}
+                >
+                  <div className="grid grid-cols-2 md:grid-cols-12 gap-4 px-6 py-5 items-center">
+                    <div className="col-span-2 md:col-span-3">
+                      <p className={`font-display text-lg text-white ${!isHistorique && 'group-hover:text-brand-gold'} transition-colors`}>
+                        {m.titre}
+                        {m.nb_lots && m.nb_lots > 1 && <span className="text-brand-gold text-sm font-body ml-2">· {m.nb_lots} lots</span>}
+                      </p>
+                    </div>
+                    <div className="col-span-1 md:col-span-3 flex items-center gap-2">
+                      <MapPin size={14} className="text-brand-muted shrink-0" />
+                      <p className="font-body text-sm text-brand-text">{m.lieu}</p>
+                    </div>
+                    <div className="hidden md:block md:col-span-2 font-body text-sm text-brand-muted">
+                      {COMMUNES_COORDS[m.lieu]?.region || '—'}
+                    </div>
+                    <div className="col-span-1 md:col-span-2 font-body text-xs text-brand-muted">
+                      {m.annee_vente ? `Vendu · ${m.annee_vente}` : m.composition ? m.composition : `${m.pieces !== '-' ? `${m.pieces} pièces` : ''}${m.surface !== '-' ? ` · ${m.surface}` : ''}`}
+                    </div>
+                    <div className="col-span-2 md:col-span-1 md:text-right">
+                      <span className={`inline-block font-body text-[10px] tracking-widest uppercase px-2 py-1 ${badgeColor(m.categorie)}`}>
+                        {badgeLabel(m.categorie)}
+                      </span>
+                    </div>
+                    <div className="hidden md:flex md:col-span-1 justify-end">
+                      {!isHistorique && <ArrowRight size={16} className="text-brand-border group-hover:text-brand-gold group-hover:translate-x-1 transition-all" />}
+                    </div>
+                  </div>
+                </RowWrapper>
+              )
+            })}
+          </div>
+
+          <button
+            onClick={() => setExpanded(false)}
+            className="mt-8 font-body text-xs tracking-widest uppercase text-brand-muted hover:text-brand-gold transition-colors inline-flex items-center gap-2"
+          >
+            <ChevronDown size={14} className="rotate-180" />
+            Masquer le détail
+          </button>
+        </>
+      )}
     </section>
   )
 }
