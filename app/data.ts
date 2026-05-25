@@ -470,6 +470,12 @@ export const MANDATS: Mandat[] = [
     img: '', photos: [],
     description: "Vente d'un appartement PPE 4.5 pièces à Préverenges, période Cogestim. Détails conservés confidentiels par respect des anciens clients."
   },
+  {
+    id: 228, slug: 'cog-echallens-promo', titre: 'Promotion 3 lots Echallens (2 lots vendus)', lieu: 'Echallens',
+    prix: '-', pieces: '-', surface: '-', terrain: '-', categorie: 'vendu', annee_vente: '2020-2023', nb_lots: 2,
+    img: '', photos: [],
+    description: "Mandat de commercialisation portant sur 2 lots d'une petite promotion résidentielle de 3 appartements à Echallens. Mandat conduit chez Cogestim."
+  },
 ]
 
 // ─── ARTICLES ───────────────────────────────────────────────────────────────
