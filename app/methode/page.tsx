@@ -48,8 +48,8 @@ const ETAPES = [
     num: '05',
     icon: Users,
     titre: 'Les visites',
-    desc: "Je qualifie chaque acquéreur avant de fixer une visite : capacité de financement, profil, projet. Je vous épargne les curieux et les acheteurs non solvables. Après chaque visite, vous recevez un retour systématique : impressions, questions posées, niveau d'intérêt, suite envisagée. Vous savez tout, en temps réel.",
-    valeur: "Pas de listing aveugle. Chaque visiteur est qualifié, chaque retour vous est transmis.",
+    desc: "J'ouvre largement les visites. Le sérieux d'un acquéreur ne se reconnaît pas au téléphone : il se révèle dans le processus, à la visite, dans les questions posées, à l'offre, lors de la vérification du financement. Filtrer trop tôt, c'est passer à côté de profils solides. Après chaque visite, vous recevez un retour : impressions, questions, niveau d'intérêt, suite envisagée.",
+    valeur: "Le bon acquéreur sort de la masse. Pas l'inverse.",
   },
   {
     num: '06',
