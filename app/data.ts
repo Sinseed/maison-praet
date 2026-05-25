@@ -271,10 +271,10 @@ export const MANDATS: Mandat[] = [
     description: "Vente d'un appartement à Lausanne (secteur Risoux). Mandat conclu en 2024."
   },
   {
-    id: 104, slug: 'cog-pully-peupliers35', titre: 'Promotion Peupliers 35 (4 lots)', lieu: 'Pully',
+    id: 104, slug: 'cog-pully-peupliers35', titre: 'Promotion Peupliers 35 (4 lots vendus)', lieu: 'Pully',
     prix: '-', pieces: '-', surface: '-', terrain: '-', categorie: 'vendu', annee_vente: '2024', nb_lots: 4,
     img: '', photos: [],
-    description: "Commercialisation de 4 lots de la Promotion Peupliers 35 à Pully. Mandat conclu en 2024."
+    description: "Mandat de commercialisation portant sur 4 lots de la Promotion Peupliers 35 à Pully. Mandat conclu en 2024."
   },
   {
     id: 105, slug: 'cog-pully-chateausec', titre: 'Appartement PPE', lieu: 'Pully',
