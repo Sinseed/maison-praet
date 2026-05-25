@@ -62,8 +62,8 @@ const ETAPES = [
     num: '07',
     icon: Key,
     titre: 'La signature chez le notaire',
-    desc: "Je coordonne l'ensemble du dossier avec le notaire, les banques, les administrations cantonales. Préparation de l'acte, transmission des pièces, suivi des conditions suspensives le cas échéant. Vous arrivez à la signature en sachant que chaque détail a été vérifié. Pour la remise des clés, je suis disponible si vous le souhaitez.",
-    valeur: "Un seul interlocuteur, du premier rendez-vous à la signature.",
+    desc: "Je coordonne l'ensemble du dossier avec le notaire, les banques, les administrations cantonales. Préparation de l'acte, transmission des pièces, suivi des conditions suspensives le cas échéant. Vous arrivez à la signature en sachant que chaque détail a été vérifié.",
+    valeur: "Un seul interlocuteur, du premier rendez-vous à la remise des clés.",
   },
 ]
 
