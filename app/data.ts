@@ -30,6 +30,26 @@ export type Article = {
 // ─── MANDATS ────────────────────────────────────────────────────────────────
 export const MANDATS: Mandat[] = [
   {
+    id: 30, slug: 'immeuble-lausanne-tour', titre: 'Immeuble de rendement', lieu: 'Lausanne',
+    prix: "4'300'000", pieces: '-', surface: '231 m²', terrain: '-', categorie: 'en_vente',
+    composition: '14 logements + 1 café-bar',
+    img: '/photos/lausanne-tour/01-facade.jpg',
+    photos: [
+      '/photos/lausanne-tour/01-facade.jpg',
+      '/photos/lausanne-tour/02-loft-attique.jpg',
+      '/photos/lausanne-tour/03-sejour.jpg',
+      '/photos/lausanne-tour/04-sejour-2.jpg',
+      '/photos/lausanne-tour/05-cuisine.jpg',
+      '/photos/lausanne-tour/06-chambre.jpg',
+      '/photos/lausanne-tour/07-salle-bains.jpg',
+      '/photos/lausanne-tour/08-salle-douche.jpg',
+      '/photos/lausanne-tour/09-salle-eau.jpg',
+      '/photos/lausanne-tour/10-cafe-bar.jpg',
+      '/photos/lausanne-tour/11-comptoir.jpg',
+    ],
+    description: "Au cœur de la vieille ville de Lausanne, à deux pas de la Riponne et du métro M2, un immeuble de rendement à affectation mixte. Édifié en 1870 et transformé en 2017, il conjugue le caractère de la pierre ancienne et la régularité d'un revenu sécurisé. Quatorze logements, du studio au vaste attique de 3,5 pièces couronné de charpente apparente, et un café-bar emblématique exploité sur deux niveaux au rez. L'ensemble est entièrement loué, avec un taux d'occupation de 100% maintenu sur les trois derniers exercices. Parcelle de 231 m² entièrement bâtie, propriété individuelle. État locatif net de CHF 204'960.- par an, soit un rendement brut de 4,77%. Immeuble vendu avec ses locataires en place. Détails financiers, baux et comptes de gérance disponibles dans le cadre de la due diligence."
+  },
+  {
     id: 29, slug: 'appartement-cossonay-eolia', titre: 'Appartement PPE 4.5 pièces neuf', lieu: 'Cossonay-Ville',
     prix: "1'195'000", pieces: '4.5', surface: '100 m²', terrain: '-', categorie: 'en_vente',
     img: '/photos/cossonay-eolia/01-balcon-vue.jpg',
