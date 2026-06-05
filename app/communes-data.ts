@@ -8,6 +8,7 @@ export const COMMUNES_COORDS: Record<string, { lat: number; lng: number; region:
   'Morges': { lat: 46.5074, lng: 6.4977, region: 'Arc lémanique' },
   'Cossonay-Ville': { lat: 46.6131, lng: 6.5076, region: 'Gros-de-Vaud' },
   'Yverdon-les-Bains': { lat: 46.7785, lng: 6.6411, region: 'Nord vaudois' },
+  'Yvonand': { lat: 46.8092, lng: 6.7461, region: 'Nord vaudois' },
   'Riex, Lavaux': { lat: 46.4830, lng: 6.7460, region: 'Lavaux' },
   'Granges (Veveyse)': { lat: 46.5450, lng: 6.8920, region: 'Veveyse' },
   'Gland': { lat: 46.4204, lng: 6.2697, region: 'La Côte' },

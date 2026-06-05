@@ -30,6 +30,29 @@ export type Article = {
 // ─── MANDATS ────────────────────────────────────────────────────────────────
 export const MANDATS: Mandat[] = [
   {
+    id: 31, slug: 'maison-yvonand', titre: 'Maison de caractère', lieu: 'Yvonand',
+    prix: "1'350'000", pieces: '6.5', surface: '190 m²', terrain: "1'804 m²", categorie: 'en_vente',
+    img: '/photos/maison-yvonand/01-vue-aerienne.jpg',
+    photos: [
+      '/photos/maison-yvonand/01-vue-aerienne.jpg',
+      '/photos/maison-yvonand/02-maison-jardin.jpg',
+      '/photos/maison-yvonand/03-jardin-potager.jpg',
+      '/photos/maison-yvonand/04-facade.jpg',
+      '/photos/maison-yvonand/05-sejour.jpg',
+      '/photos/maison-yvonand/06-veranda.jpg',
+      '/photos/maison-yvonand/07-vue-aerienne-2.jpg',
+      '/photos/maison-yvonand/08-hall-escalier.jpg',
+      '/photos/maison-yvonand/09-chambre-verte.jpg',
+      '/photos/maison-yvonand/10-chambre-orange.jpg',
+      '/photos/maison-yvonand/11-chambre-rose.jpg',
+      '/photos/maison-yvonand/12-chambre-fleurs.jpg',
+      '/photos/maison-yvonand/13-vue-lac.jpg',
+      '/photos/maison-yvonand/14-vue-lac-2.jpg',
+      '/photos/maison-yvonand/15-vue-large.jpg',
+    ],
+    description: "Sur l'une des plus belles rives du lac de Neuchâtel, à quelques minutes à pied des plages des Pins, du Port et de la Petite Amérique, cette maison de caractère a été construite en 1905. Trois niveaux habitables : un sous-sol abritant la cave, la chaufferie et un garage, un rez-de-chaussée articulé autour d'un grand séjour aux poutres apparentes, un étage de nuit qui distribue plusieurs chambres lumineuses ouvertes sur le jardin. Un jardin d'hiver vitré prolonge naturellement les pièces de vie. Boiseries d'origine, ferrures, huisseries, escalier à main courante en fer forgé : le décor a traversé le temps. Le terrain de 1'804 m² d'un seul tenant, plat et bien orienté, accueille le bâtiment principal, deux dépendances anciennes, une serre, un potager structuré et un verger arboré. Une superficie deux à quatre fois supérieure à celle d'une villa contemporaine du village. Chauffage gaz avec chaudière récente, clos couvert sain, structure porteuse en bon état. Une rénovation personnelle des seconds œuvres est à prévoir pour composer un intérieur à votre image. Le règlement communal admet une construction complémentaire à hauteur de 300 m² bruts, ce qui ouvre un potentiel d'évolution rare. La mise en séparatif des évacuations sera également à anticiper. Visites exclusivement sur rendez-vous."
+  },
+  {
     id: 30, slug: 'immeuble-lausanne-tour', titre: 'Immeuble de rendement', lieu: 'Lausanne',
     prix: "4'300'000", pieces: '-', surface: '231 m²', terrain: '-', categorie: 'en_vente',
     composition: '14 logements + 1 café-bar',
