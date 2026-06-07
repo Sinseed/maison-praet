@@ -1602,6 +1602,115 @@ Si vous êtes hors UE/AELE, le cadre est plus contraint mais l'achat reste possi
 Et avec le durcissement annoncé pour 2027, agir maintenant plutôt qu'attendre peut faire la différence.`,
     cta: "Vous êtes étranger et vous souhaitez acheter dans le canton de Vaud ? Contactez-moi, je connais les règles et les démarches."
   },
+  {
+    slug: 'retrait-2e-pilier-achat-immobilier-suisse',
+    titre: "2e pilier et achat immobilier en Suisse : retrait ou nantissement ?",
+    chapeau: "Votre avoir LPP peut financer une partie de votre achat immobilier. Mais les règles sont strictes, la fiscalité est souvent sous-estimée, et le choix entre retrait et nantissement n'est pas anodin. Ce que vous devez savoir avant de décider.",
+    date: '2026-06-12',
+    categorie: 'Guide acquéreur',
+    contenu: `En Suisse, la loi autorise les assurés à mobiliser leur prévoyance professionnelle (2e pilier ou LPP) pour financer l'achat de leur résidence principale. C'est un levier puissant, surtout dans un marché où les prix vaudois nécessitent souvent des fonds propres importants. Mais ce mécanisme obéit à des règles précises, et les conséquences à long terme méritent d'être pesées sérieusement.
+
+## Comment fonctionne l'encouragement à la propriété du logement (EPL) ?
+
+La loi fédérale sur la prévoyance professionnelle (LPP) prévoit un mécanisme appelé encouragement à la propriété du logement, ou EPL. Il permet à un assuré de débloquer tout ou partie de son avoir LPP pour :
+
+- Acquérir sa résidence principale
+- Financer des travaux importants sur sa résidence principale (rénovation énergétique, extension)
+- Rembourser un prêt hypothécaire existant lié à sa résidence principale
+
+Une règle fondamentale s'applique dans tous les cas : le bien doit être votre résidence principale et vous devez l'occuper vous-même. L'utilisation du 2e pilier pour une résidence secondaire ou un bien locatif est strictement interdite.
+
+## Deux mécanismes possibles : retrait anticipé ou nantissement
+
+### Le retrait anticipé
+
+Vous retirez directement une partie ou la totalité de votre avoir LPP. Les fonds sont versés à votre notaire ou à votre banque comme apport en fonds propres.
+
+**Conditions légales :**
+- Montant minimum : CHF 20'000.-
+- Accord écrit du conjoint ou du partenaire enregistré obligatoire
+- Un seul retrait possible tous les 5 ans
+- Dès 50 ans : le retrait est plafonné au montant le plus élevé entre votre avoir à vos 50 ans et la moitié de votre avoir actuel
+- Le retrait doit intervenir au plus tard 6 mois avant l'âge légal de la retraite AVS
+
+**Remboursement :** si vous revendez le bien avant la retraite, vous devez rembourser les sommes retirées, sauf si vous réinvestissez le produit de la vente dans une nouvelle résidence principale dans un délai de 2 ans. Le montant minimal de remboursement est de CHF 10'000.-.
+
+**Restriction au registre foncier :** le logement financé avec le 2e pilier fait l'objet d'une restriction du droit d'aliéner inscrite au registre foncier. Concrètement, vous ne pouvez pas vendre, mettre en gage ou louer le bien sans l'accord de votre caisse de pension.
+
+### Le nantissement (mise en gage)
+
+Plutôt que de retirer l'argent, vous mettez votre avoir LPP en garantie auprès de la banque. Votre capital reste dans la caisse de pension et continue de produire des intérêts. La banque, en contrepartie, accepte de financer jusqu'à 90 % du bien au lieu de 80 %.
+
+Avantages : pas d'impôt immédiat, le capital retraite n'est pas entamé, les rachats LPP restent possibles.
+
+Inconvénients : la dette hypothécaire est plus élevée, les charges mensuelles (amortissement et intérêts) sont donc plus lourdes, et les exigences de revenus pour satisfaire le calcul de tenue des charges sont plus importantes.
+
+## Retrait ou nantissement : que choisir ?
+
+| Critère | Retrait anticipé | Nantissement |
+|---|---|---|
+| Impact fiscal immédiat | Oui, impôt sur le capital | Non |
+| Capital retraite | Réduit définitivement | Préservé |
+| Charge hypothécaire | Plus faible | Plus élevée |
+| Revenus nécessaires | Moins élevés | Plus élevés |
+| Rachats LPP futurs | Possibles, mais le montant retiré est fiscalement déductible | Possibles sans restriction |
+| Remboursement en cas de vente | Obligatoire | Non applicable |
+
+En règle générale, le retrait est intéressant si vous souhaitez réduire votre dette et vos charges mensuelles, et si votre situation fiscale permet de minimiser l'impact du retrait. Le nantissement est souvent préférable si vous êtes encore loin de la retraite et que vous souhaitez préserver votre capital prévoyance.
+
+## Quelle est la fiscalité d'un retrait du 2e pilier ?
+
+C'est le point que beaucoup d'acquéreurs sous-estiment. Le montant retiré est imposé séparément du revenu ordinaire, à un taux réduit correspondant environ à un cinquième du barème normal. Ce taux varie selon le canton et le montant prélevé.
+
+Dans le canton de Vaud, comptez approximativement entre 5 et 10 % du montant retiré, selon le niveau de l'avoir. Sur un retrait de CHF 100'000.-, l'impôt peut atteindre CHF 7'000 à 10'000.-. Cet impôt doit être financé par des fonds propres supplémentaires : il ne peut pas être prélevé sur le montant retiré lui-même.
+
+Une stratégie courante consiste à échelonner les retraits sur deux années civiles distinctes pour réduire la progressivité de l'impôt. Cela suppose de planifier en amont et de vérifier avec votre caisse de pension si votre avoir le permet.
+
+## Le 2e pilier dans le calcul des fonds propres
+
+Pour rappel, les banques suisses exigent un minimum de 20 % du prix d'achat en fonds propres. Sur ces 20 % :
+
+- Au moins 10 % doivent provenir de sources hors prévoyance professionnelle (épargne, 3e pilier, donation, héritage)
+- Les 10 % restants peuvent être constitués par le 2e pilier, en retrait ou en nantissement
+
+Le 2e pilier couvre donc au maximum la moitié de l'apport exigé. Il ne peut pas remplacer l'épargne personnelle ou le 3e pilier.
+
+À cela s'ajoutent les frais d'acquisition, soit environ 4 % du prix dans le canton de Vaud (droits de mutation, frais de notaire, registre foncier). Ces frais doivent eux aussi être financés sur fonds propres, en dehors du 2e pilier.
+
+## Ce que cela signifie concrètement
+
+Pour un bien à CHF 900'000.- dans le canton de Vaud :
+
+| Poste | Montant |
+|---|---|
+| Prix d'achat | CHF 900'000.- |
+| Prêt hypothécaire (80 %) | CHF 720'000.- |
+| Fonds propres totaux requis (20 %) | CHF 180'000.- |
+| Dont minimum hors LPP (10 %) | CHF 90'000.- |
+| Dont maximum 2e pilier (10 %) | CHF 90'000.- |
+| Frais d'acquisition (~4 %) | CHF 36'000.- |
+| **Total à financer sur fonds propres** | **CHF 216'000.-** |
+
+Si vous retirez CHF 90'000.- de votre 2e pilier, l'impôt cantonal vaudois (approximatif) sera d'environ CHF 6'000 à 8'000.-. Ce montant s'ajoute à votre besoin de liquidités.
+
+## Avant de retirer : les questions à poser à votre caisse de pension
+
+Chaque caisse de pension applique ses propres règles dans les limites fixées par la LPP. Avant toute démarche, renseignez-vous sur :
+
+- Le montant exact disponible pour un retrait EPL (qui peut différer de votre avoir total)
+- Les délais de traitement (souvent 4 à 6 semaines)
+- Les conditions de remboursement anticipé
+- L'impact sur vos prestations d'assurance (invalidité, décès) en cas de retrait
+
+Un retrait réduit votre capital retraite, mais aussi, dans certaines caisses, votre couverture en cas d'invalidité ou de décès. Vérifiez si votre caisse propose une assurance complémentaire pour couvrir ce risque, ou si vous devez souscrire une couverture privée.
+
+## Ce que cela change pour votre projet immobilier
+
+Le 2e pilier est un levier utile, parfois déterminant pour boucler un financement dans le canton de Vaud. Mais ce n'est pas une solution sans coût. L'impôt sur le retrait, la réduction du capital retraite et les contraintes au registre foncier sont des réalités qu'il faut intégrer dès le départ.
+
+La bonne approche : calculer votre plan de financement global en amont, avec votre banquier, votre conseiller en prévoyance et votre courtier. Pas en découvrant les règles le jour de la signature.`,
+    cta: "Vous préparez un achat immobilier dans le canton de Vaud ? Parlons de votre financement avant de visiter."
+  },
 ]
 
 // ─── HELPERS ────────────────────────────────────────────────────────────────
