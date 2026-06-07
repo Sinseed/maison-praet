@@ -1664,6 +1664,8 @@ C'est le point que beaucoup d'acquéreurs sous-estiment. Le montant retiré est 
 
 Dans le canton de Vaud, la fourchette est large : environ 6 % pour des retraits modestes (autour de CHF 90'000.-), jusqu'à 12 % ou plus pour des montants importants. À titre d'exemple, sur un retrait de CHF 150'000.- à Lausanne en 2026, l'impôt total (cantonal, communal et fédéral) ressort à environ CHF 8'400.-, soit environ 5.6 % du montant retiré. Sur CHF 300'000.-, le taux effectif peut dépasser 12 %. Cet impôt doit être financé par des fonds propres supplémentaires : il ne peut pas être prélevé sur le montant retiré lui-même.
 
+Un point que beaucoup ignorent : si vous remboursez volontairement votre versement anticipé avant la retraite, l'impôt payé au moment du retrait vous est restitué. Ce remboursement peut donc être une stratégie intéressante si votre situation financière évolue favorablement après l'achat.
+
 Une stratégie courante consiste à échelonner les versements sur deux années civiles distinctes pour réduire la progressivité de l'impôt. Cela suppose de planifier en amont et de vérifier avec votre caisse de pension si votre avoir le permet.
 
 ## Le 2e pilier dans le calcul des fonds propres
