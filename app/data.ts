@@ -1620,18 +1620,18 @@ La loi fédérale sur la prévoyance professionnelle (LPP) prévoit un mécanism
 
 Une règle fondamentale s'applique dans tous les cas : le bien doit être votre résidence principale et vous devez l'occuper vous-même. L'utilisation du 2e pilier pour une résidence secondaire ou un bien locatif est strictement interdite.
 
-## Deux mécanismes possibles : retrait anticipé ou nantissement
+## Deux mécanismes possibles : versement anticipé ou nantissement
 
-### Le retrait anticipé
+### Le versement anticipé
 
 Vous retirez directement une partie ou la totalité de votre avoir LPP. Les fonds sont versés à votre notaire ou à votre banque comme apport en fonds propres.
 
 **Conditions légales :**
 - Montant minimum : CHF 20'000.-
 - Accord écrit du conjoint ou du partenaire enregistré obligatoire
-- Un seul retrait possible tous les 5 ans
-- Dès 50 ans : le retrait est plafonné au montant le plus élevé entre votre avoir à vos 50 ans et la moitié de votre avoir actuel
-- Le retrait doit intervenir au plus tard 6 mois avant l'âge légal de la retraite AVS
+- Un seul versement anticipé possible tous les 5 ans
+- Dès 50 ans : le versement est plafonné au montant le plus élevé entre votre avoir à vos 50 ans et la moitié de votre avoir actuel
+- Le versement anticipé doit être demandé au plus tard 3 ans avant la naissance du droit aux prestations de vieillesse (sous réserve d'une disposition plus favorable du règlement de votre caisse)
 
 **Remboursement :** si vous revendez le bien avant la retraite, vous devez rembourser les sommes retirées, sauf si vous réinvestissez le produit de la vente dans une nouvelle résidence principale dans un délai de 2 ans. Le montant minimal de remboursement est de CHF 10'000.-.
 
@@ -1647,24 +1647,24 @@ Inconvénients : la dette hypothécaire est plus élevée, les charges mensuelle
 
 ## Retrait ou nantissement : que choisir ?
 
-| Critère | Retrait anticipé | Nantissement |
+| Critère | Versement anticipé | Nantissement |
 |---|---|---|
 | Impact fiscal immédiat | Oui, impôt sur le capital | Non |
-| Capital retraite | Réduit définitivement | Préservé |
+| Capital retraite | Réduit | Préservé |
 | Charge hypothécaire | Plus faible | Plus élevée |
 | Revenus nécessaires | Moins élevés | Plus élevés |
-| Rachats LPP futurs | Possibles, mais le montant retiré est fiscalement déductible | Possibles sans restriction |
+| Rachats LPP futurs | Possibles (délai de 3 ans à respecter après tout rachat) | Possibles sans restriction |
 | Remboursement en cas de vente | Obligatoire | Non applicable |
 
-En règle générale, le retrait est intéressant si vous souhaitez réduire votre dette et vos charges mensuelles, et si votre situation fiscale permet de minimiser l'impact du retrait. Le nantissement est souvent préférable si vous êtes encore loin de la retraite et que vous souhaitez préserver votre capital prévoyance.
+En règle générale, le versement anticipé est intéressant si vous souhaitez réduire votre dette et vos charges mensuelles, et si votre situation fiscale permet de minimiser l'impact du versement. Le nantissement est souvent préférable si vous êtes encore loin de la retraite et que vous souhaitez préserver votre capital prévoyance.
 
-## Quelle est la fiscalité d'un retrait du 2e pilier ?
+## Quelle est la fiscalité d'un versement anticipé du 2e pilier ?
 
-C'est le point que beaucoup d'acquéreurs sous-estiment. Le montant retiré est imposé séparément du revenu ordinaire, à un taux réduit correspondant environ à un cinquième du barème normal. Ce taux varie selon le canton et le montant prélevé.
+C'est le point que beaucoup d'acquéreurs sous-estiment. Le montant retiré est imposé séparément du revenu ordinaire, à un taux réduit correspondant à un cinquième du barème ordinaire (art. 38 LIFD). Ce taux varie selon le canton, la commune et le montant prélevé.
 
-Dans le canton de Vaud, comptez approximativement entre 5 et 10 % du montant retiré, selon le niveau de l'avoir. Sur un retrait de CHF 100'000.-, l'impôt peut atteindre CHF 7'000 à 10'000.-. Cet impôt doit être financé par des fonds propres supplémentaires : il ne peut pas être prélevé sur le montant retiré lui-même.
+Dans le canton de Vaud, la fourchette est large : environ 6 % pour des retraits modestes (autour de CHF 90'000.-), jusqu'à 12 % ou plus pour des montants importants. À titre d'exemple, sur un retrait de CHF 150'000.- à Lausanne en 2026, l'impôt total (cantonal, communal et fédéral) ressort à environ CHF 8'400.-, soit environ 5.6 % du montant retiré. Sur CHF 300'000.-, le taux effectif peut dépasser 12 %. Cet impôt doit être financé par des fonds propres supplémentaires : il ne peut pas être prélevé sur le montant retiré lui-même.
 
-Une stratégie courante consiste à échelonner les retraits sur deux années civiles distinctes pour réduire la progressivité de l'impôt. Cela suppose de planifier en amont et de vérifier avec votre caisse de pension si votre avoir le permet.
+Une stratégie courante consiste à échelonner les versements sur deux années civiles distinctes pour réduire la progressivité de l'impôt. Cela suppose de planifier en amont et de vérifier avec votre caisse de pension si votre avoir le permet.
 
 ## Le 2e pilier dans le calcul des fonds propres
 
@@ -1691,22 +1691,22 @@ Pour un bien à CHF 900'000.- dans le canton de Vaud :
 | Frais d'acquisition (~4 %) | CHF 36'000.- |
 | **Total à financer sur fonds propres** | **CHF 216'000.-** |
 
-Si vous retirez CHF 90'000.- de votre 2e pilier, l'impôt cantonal vaudois (approximatif) sera d'environ CHF 6'000 à 8'000.-. Ce montant s'ajoute à votre besoin de liquidités.
+Si vous effectuez un versement anticipé de CHF 90'000.- de votre 2e pilier, l'impôt cantonal vaudois (approximatif) sera d'environ CHF 5'000 à 6'000.-. Ce montant s'ajoute à votre besoin de liquidités.
 
-## Avant de retirer : les questions à poser à votre caisse de pension
+## Avant de faire un versement anticipé : les questions à poser à votre caisse de pension
 
 Chaque caisse de pension applique ses propres règles dans les limites fixées par la LPP. Avant toute démarche, renseignez-vous sur :
 
-- Le montant exact disponible pour un retrait EPL (qui peut différer de votre avoir total)
+- Le montant exact disponible pour un versement anticipé EPL (qui peut différer de votre avoir total)
 - Les délais de traitement (souvent 4 à 6 semaines)
 - Les conditions de remboursement anticipé
-- L'impact sur vos prestations d'assurance (invalidité, décès) en cas de retrait
+- L'impact sur vos prestations d'assurance (invalidité, décès) en cas de versement anticipé
 
-Un retrait réduit votre capital retraite, mais aussi, dans certaines caisses, votre couverture en cas d'invalidité ou de décès. Vérifiez si votre caisse propose une assurance complémentaire pour couvrir ce risque, ou si vous devez souscrire une couverture privée.
+Un versement anticipé réduit votre capital retraite, mais aussi, dans certaines caisses, votre couverture en cas d'invalidité ou de décès. Vérifiez si votre caisse propose une assurance complémentaire pour couvrir ce risque, ou si vous devez souscrire une couverture privée.
 
 ## Ce que cela change pour votre projet immobilier
 
-Le 2e pilier est un levier utile, parfois déterminant pour boucler un financement dans le canton de Vaud. Mais ce n'est pas une solution sans coût. L'impôt sur le retrait, la réduction du capital retraite et les contraintes au registre foncier sont des réalités qu'il faut intégrer dès le départ.
+Le 2e pilier est un levier utile, parfois déterminant pour boucler un financement dans le canton de Vaud. Mais ce n'est pas une solution sans coût. L'impôt sur le versement anticipé, la réduction du capital retraite et les contraintes au registre foncier sont des réalités qu'il faut intégrer dès le départ.
 
 La bonne approche : calculer votre plan de financement global en amont, avec votre banquier, votre conseiller en prévoyance et votre courtier. Pas en découvrant les règles le jour de la signature.`,
     cta: "Vous préparez un achat immobilier dans le canton de Vaud ? Parlons de votre financement avant de visiter."
