@@ -102,7 +102,7 @@ export const MANDATS: Mandat[] = [
   },
   {
     id: 26, slug: 'appartement-lausanne-maupas', titre: 'Appartement PPE', lieu: 'Lausanne',
-    prix: "750'000", pieces: '3.5', surface: '80 m²', terrain: '-', categorie: 'en_vente',
+    prix: "750'000", pieces: '3.5', surface: '80 m²', terrain: '-', categorie: 'reserve',
     img: '/photos/lausanne-maupas/drone.jpg',
     photos: ['/photos/lausanne-maupas/drone.jpg','/photos/lausanne-maupas/parc.jpg','/photos/lausanne-maupas/sejour.jpg','/photos/lausanne-maupas/chambre.jpg','/photos/lausanne-maupas/volumes.jpg','/photos/lausanne-maupas/cuisine.jpg','/photos/lausanne-maupas/sdb.jpg'],
     description: "Face au parc de Valency, cet appartement de 3.5 pièces au rez-de-chaussée inférieur d'un immeuble de 1905 offre des volumes d'époque, un parquet chevrons remarquable et une luminosité rare. Livré en état brut, il attend son projet. Cinq places de parc en pleine propriété et un cabanon cadastré de 13 m² complètent un ensemble peu courant à Lausanne. Immeuble récemment rénové : toiture et façade 2016, chaudière neuve 2025."
