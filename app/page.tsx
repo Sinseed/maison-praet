@@ -18,6 +18,11 @@ function Hero() {
       {/* Content */}
       <div className="relative z-20 min-h-screen flex flex-col justify-end md:justify-center pb-12 md:pb-0 max-w-7xl mx-auto px-6">
         <div className="max-w-2xl">
+          {/* Logo sceau */}
+          <div className="mb-8">
+            <img src="/logo-mp.png" alt="Maison Praet" className="h-16 md:h-20 w-auto" />
+          </div>
+
           <p className="font-body text-xs tracking-[0.4em] uppercase text-brand-gold mb-6">Canton de Vaud · Suisse</p>
 
           <h1 className="font-display text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-light text-white leading-[0.95] mb-2">
