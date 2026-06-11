@@ -16,7 +16,7 @@ function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-20 min-h-screen flex flex-col justify-end md:justify-center pb-12 md:pb-0 max-w-7xl mx-auto px-6">
+      <div className="relative z-20 min-h-screen flex flex-col justify-end md:justify-center pb-12 md:pb-0 pt-32 md:pt-0 max-w-7xl mx-auto px-6">
         <div className="max-w-2xl">
           <p className="font-body text-xs tracking-[0.4em] uppercase text-brand-gold mb-6">Canton de Vaud · Suisse</p>
 
