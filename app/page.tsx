@@ -20,10 +20,10 @@ function Hero() {
         <div className="max-w-2xl">
           <p className="hidden md:block font-body text-xs tracking-[0.4em] uppercase text-brand-gold mb-6">Canton de Vaud · Suisse</p>
 
-          <h1 style={{fontSize: 'clamp(2.8rem, 12vw, 9rem)'}} className="font-display font-light text-white leading-[0.95] mb-2">
+          <h1 style={{fontSize: 'clamp(2.2rem, 10vw, 9rem)'}} className="font-display font-light text-white leading-[0.95] mb-2">
             Thomas
           </h1>
-          <h1 style={{fontSize: 'clamp(2.8rem, 12vw, 9rem)'}} className="font-display font-light italic text-brand-gold leading-[0.95] mb-8 md:mb-10">
+          <h1 style={{fontSize: 'clamp(2.2rem, 10vw, 9rem)'}} className="font-display font-light italic text-brand-gold leading-[0.95] mb-8 md:mb-10">
             Praet
           </h1>
 
