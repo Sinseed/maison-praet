@@ -33,6 +33,13 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
   verification: { google: 'r4ZOgCsUY1UNRLgf7Ou5n7qblp_kFhSmDfikxDEsXdw' },
   alternates: { canonical: 'https://maisonpraet.ch' },
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: '32x32' },
+      { url: '/favicon-512.png', sizes: '512x512', type: 'image/png' },
+    ],
+    apple: { url: '/apple-touch-icon.png', sizes: '180x180' },
+  },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
