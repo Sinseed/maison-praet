@@ -16,9 +16,9 @@ function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-20 min-h-screen flex flex-col justify-end md:justify-center pb-12 md:pb-0 pt-32 md:pt-0 max-w-7xl mx-auto px-6">
+      <div className="relative z-20 min-h-screen flex flex-col justify-end pb-12 md:justify-center md:pb-0 max-w-7xl mx-auto px-6">
         <div className="max-w-2xl">
-          <p className="font-body text-xs tracking-[0.4em] uppercase text-brand-gold mb-6">Canton de Vaud · Suisse</p>
+          <p className="hidden md:block font-body text-xs tracking-[0.4em] uppercase text-brand-gold mb-6">Canton de Vaud · Suisse</p>
 
           <h1 style={{fontSize: 'clamp(2.8rem, 12vw, 9rem)'}} className="font-display font-light text-white leading-[0.95] mb-2">
             Thomas
