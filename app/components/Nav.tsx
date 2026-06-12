@@ -31,7 +31,7 @@ export default function Nav() {
   if (pathname.startsWith('/crm')) return null
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled || !isHome ? 'bg-brand-dark/95 backdrop-blur-md border-b border-brand-border' : ''}`}>
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-brand-dark/95 backdrop-blur-md border-b border-brand-border transition-all duration-500">
       <div className="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
         <Link href="/" className="flex items-center">
           <img src="/logo-maison-praet.png" alt="Maison Praet" style={{width: 'clamp(90px, 12vw, 160px)', height: 'auto'}} />
