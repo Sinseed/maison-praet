@@ -307,6 +307,21 @@ const TEMOIGNAGES = [
     texte: "Je recommande Monsieur Praet pour son professionnalisme. Il a su mettre notre bien en valeur. Je le remercie pour sa patience et son écoute.",
     etoiles: 5,
   },
+  {
+    nom: 'Granny G',
+    texte: "Enthousiasme, efficacité, disponibilité et professionnalisme : voici quelques unes des qualités faisant de Thomas Praet le courtier à qui confier votre projet immobilier les yeux fermés ! Son écoute, ses conseils avisés et son empathie ont été tellement précieux au moment de nous séparer de la maison familiale et d'aborder un grand tournant de notre existence.",
+    etoiles: 5,
+  },
+  {
+    nom: 'Alejandra García Rojas Martínez',
+    texte: "Nous remercions chaleureusement M. Praet pour son accompagnement lors de l'achat de notre maison. Nous avons particulièrement apprécié la qualité de ses conseils, la clarté de ses explications et sa grande transparence tout au long du processus. Nous le recommandons vivement à toute personne souhaitant bénéficier d'un accompagnement de qualité pour un achat immobilier.",
+    etoiles: 5,
+  },
+  {
+    nom: 'Sophie Suys',
+    texte: "Nous avons eu le plaisir d'être accompagnés par M. Praet lors de l'achat de notre maison. Son professionnalisme, sa disponibilité et ses précieux conseils nous ont permis de vivre cette étape importante avec sérénité. Toujours à l'écoute et réactif, il a su nous accompagner efficacement tout au long du processus. Un grand merci pour son engagement et sa sympathie.",
+    etoiles: 5,
+  },
 ]
 
 function Testimonials() {
