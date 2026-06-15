@@ -44,7 +44,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="fr">
+    <html lang="fr-CH">
       <head>
   <script
     type="application/ld+json"
@@ -112,11 +112,71 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         "name": "Golay Immobilier SA",
         "url": "https://www.golay-immobilier.ch"
       },
-      "aggregateRating": {
+     "aggregateRating": {
         "@type": "AggregateRating",
-        "ratingValue": "5.0",
-        "reviewCount": "4",
-        "bestRating": "5"
+        "ratingValue": "4.9",
+        "reviewCount": "8",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "review": [
+        {
+          "@type": "Review",
+          "author": { "@type": "Person", "name": "Alejandra García Rojas Martínez" },
+          "datePublished": "2026-06-10",
+          "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+          "reviewBody": "Nous remercions chaleureusement M. Praet pour son accompagnement lors de l'achat de notre maison. Qualité des conseils, clarté des explications et grande transparence tout au long du processus."
+        },
+        {
+          "@type": "Review",
+          "author": { "@type": "Person", "name": "Sophie Suys" },
+          "datePublished": "2026-06-09",
+          "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+          "reviewBody": "Son professionnalisme, sa disponibilité et ses précieux conseils nous ont permis de vivre cette étape importante avec sérénité. Nous le recommandons sans hésitation."
+        },
+        {
+          "@type": "Review",
+          "author": { "@type": "Person", "name": "Granny G" },
+          "datePublished": "2026-06-12",
+          "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+          "reviewBody": "Enthousiasme, efficacité, disponibilité et professionnalisme : le courtier à qui confier votre projet immobilier les yeux fermés. Son écoute et son empathie ont été précieux."
+        },
+        {
+          "@type": "Review",
+          "author": { "@type": "Person", "name": "Leshenzerd" },
+          "datePublished": "2026-06-01",
+          "reviewRating": { "@type": "Rating", "ratingValue": "4", "bestRating": "5" },
+          "reviewBody": "Une personne très compétente et d'un abord convivial. Le courant a passé dès le premier contact. Nous sommes heureux d'avoir trouvé en lui la bonne personne."
+        },
+        {
+          "@type": "Review",
+          "author": { "@type": "Person", "name": "Francis Reymond" },
+          "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+          "reviewBody": "Vendre un bien à Lausanne en pilotant l'opération depuis l'Australie aurait pu être un casse-tête. Avec Thomas Praet, tout a été fluide, du premier rendez-vous à la signature chez le notaire."
+        },
+        {
+          "@type": "Review",
+          "author": { "@type": "Person", "name": "Pascal Périllard" },
+          "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+          "reviewBody": "Toujours courtois, à l'écoute, prêt à aider en cas de besoin, même des mois après l'aboutissement du projet. Un vrai plaisir de traiter avec M. Praet."
+        },
+        {
+          "@type": "Review",
+          "author": { "@type": "Person", "name": "Aurélien Despland" },
+          "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+          "reviewBody": "Une belle expérience lors de l'achat de notre bien, grâce au professionnalisme de M. Praet. Un grand merci pour le suivi et la bonne humeur tout au long des négociations."
+        },
+        {
+          "@type": "Review",
+          "author": { "@type": "Person", "name": "Nadine Thévoz" },
+          "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+          "reviewBody": "Je recommande Monsieur Praet pour son professionnalisme. Il a su mettre notre bien en valeur. Je le remercie pour sa patience et son écoute."
+        }
+      ],
+      "sameAs": [
+        "https://maisonpraet.com",
+        "https://ch.linkedin.com/in/thomas-praet"
+      ]
       },
       "sameAs": ["https://maisonpraet.com"]
     })}}
