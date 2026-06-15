@@ -1713,6 +1713,33 @@ Le 2e pilier est un levier utile, parfois déterminant pour boucler un financeme
 La bonne approche : calculer votre plan de financement global en amont, avec votre banquier, votre conseiller en prévoyance et votre courtier. Pas en découvrant les règles le jour de la signature.`,
     cta: "Vous préparez un achat immobilier dans le canton de Vaud ? Parlons de votre financement avant de visiter."
   },
+  {
+    slug: 'etude-cas-vente-morges-2026',
+    titre: "Une vente, un achat, et quatre personnes qui n'y croyaient plus",
+    chapeau: "Mes clients vendaient leur maison à Morges. En parallèle, ils achetaient via une plateforme en ligne. Deux dossiers menés de front, pour les mêmes personnes. Ce que cette transaction m'a appris sur ce que signifie vraiment accompagner des gens.",
+    date: '2026-06-11',
+    categorie: 'Coulisses',
+    contenu: `Il y a des mandats où l'on vend un bien. Et il y a des mandats où l'on accompagne des gens. Celui-ci était les deux à la fois.
+
+Mes clients vendaient leur maison à Morges. En parallèle, ils achetaient leur futur logement par l'intermédiaire d'une plateforme en ligne. Deux dossiers, menés de front, pour les mêmes personnes. La vente, je la tenais. L'achat, lui, partait dans tous les sens.
+
+Personne ne répondait vraiment de l'autre côté. Les interlocuteurs changeaient, les délais s'étiraient, et mes clients se retrouvaient seuls face à des documents qu'ils signaient sans toujours comprendre ce qu'ils engageaient. Un process sans visage. J'ai passé du temps à les aider à se défendre, à relire, à poser les bonnes questions, à ne pas se laisser embarquer. Ce n'était pas mon mandat. C'était juste nécessaire.
+
+De l'autre côté de la vente, il y avait un couple d'acquéreurs. Ils cherchaient depuis longtemps. Trop longtemps. Ils avaient visité cette maison comme ils en avaient visité tant d'autres, sans plus vraiment y croire. La lassitude de ceux qui ont espéré une fois de trop.
+
+Ce que je retiens de cette transaction n'a rien à voir avec les mètres carrés ni avec le prix. Derrière chaque échange, il y avait des personnes sincères, patientes, qui avaient simplement besoin qu'on leur dise la vérité et qu'on tienne parole. Je leur avais dit que je ferais tout pour que les choses soient claires et justes. Ils n'osaient pas vraiment y croire.
+
+Cinq pièces, 148 m² habitables, un terrain de 808 m² au calme. Affichée à CHF 1'790'000.-, la maison s'est finalement vendue à CHF 1'825'000.-. Un prix posé avec justesse trouve son acquéreur, et parfois le dépasse. Mais ce sont les chiffres, et ils ne disent pas l'essentiel.
+
+L'essentiel, c'était l'autre jour, dans le jardin de Morges. Les vendeurs, les acheteurs, la notaire et moi, réunis pour fêter une vente devenue, en cours de route, bien plus qu'une vente. Deux familles qui ne se connaissaient pas, rassurées chacune à sa manière, autour de la même table.
+
+Ils y croient, maintenant.
+
+C'est, je crois, la meilleure définition de mon métier. Pas vendre au prix le plus haut en promettant n'importe quoi pour décrocher un mandat. Accompagner des gens, de la première visite à la signature, et leur rendre la confiance que d'autres process leur avaient retirée. Un seul interlocuteur, un seul visage, du début à la fin.
+
+C'est ce que je fais à Morges, sur l'arc lémanique et dans le canton de Vaud. Et c'est ce que je continuerai de faire.`,
+    cta: "Vous avez un projet immobilier sur l'arc lémanique ? Parlons-en."
+  },
 ]
 
 // ─── HELPERS ────────────────────────────────────────────────────────────────
