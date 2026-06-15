@@ -107,17 +107,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         "credentialCategory": "professional license",
         "name": "Courtier diplômé USPI"
       },
-      "memberOf": {
+"memberOf": {
         "@type": "Organization",
         "name": "Golay Immobilier SA",
         "url": "https://www.golay-immobilier.ch"
-      },
-"aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "8",
-        "bestRating": "5",
-        "worstRating": "1"
       },
       "sameAs": [
         "https://maisonpraet.com",
