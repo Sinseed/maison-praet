@@ -1717,7 +1717,7 @@ La bonne approche : calculer votre plan de financement global en amont, avec vot
     slug: 'etude-cas-vente-morges-2026',
     titre: "Une vente, un achat, et quatre personnes qui n'y croyaient plus",
     chapeau: "Mes clients vendaient leur maison à Morges. En parallèle, ils achetaient via une plateforme en ligne. Deux dossiers menés de front, pour les mêmes personnes. Ce que cette transaction m'a appris sur ce que signifie vraiment accompagner des gens.",
-    date: '2026-06-11',
+    date: '2026-06-15',
     categorie: 'Coulisses',
     contenu: `Il y a des mandats où l'on vend un bien. Et il y a des mandats où l'on accompagne des gens. Celui-ci était les deux à la fois.
 
