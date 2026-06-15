@@ -173,12 +173,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           "reviewBody": "Je recommande Monsieur Praet pour son professionnalisme. Il a su mettre notre bien en valeur. Je le remercie pour sa patience et son écoute."
         }
       ],
-      "sameAs": [
+       "sameAs": [
         "https://maisonpraet.com",
         "https://ch.linkedin.com/in/thomas-praet"
       ]
-      },
-      "sameAs": ["https://maisonpraet.com"]
     })}}
   />
 </head>
