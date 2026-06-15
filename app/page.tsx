@@ -322,6 +322,11 @@ const TEMOIGNAGES = [
     texte: "Nous avons eu le plaisir d'être accompagnés par M. Praet lors de l'achat de notre maison. Son professionnalisme, sa disponibilité et ses précieux conseils nous ont permis de vivre cette étape importante avec sérénité. Toujours à l'écoute et réactif, il a su nous accompagner efficacement tout au long du processus. Un grand merci pour son engagement et sa sympathie.",
     etoiles: 5,
   },
+  {
+    nom: 'Leshenzerd',
+    texte: "Nous sommes en affaire avec Thomas Praet depuis quelques mois. C'est une personne très compétente et d'un abord convivial. Le courant a passé dès le premier contact. Nous sommes heureux d'avoir trouvé en lui la bonne personne. Nous pouvons sans autre le recommander.",
+    etoiles: 4,
+  },
 ]
 
 function Testimonials() {
