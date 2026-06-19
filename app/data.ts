@@ -1779,7 +1779,7 @@ Pour un investisseur bien préparé, c'est néanmoins un contexte favorable. L'e
 ## Investir locatif en 2026 : oui, mais avec les bons calculs
 
 L'immobilier locatif dans le canton de Vaud reste une stratégie patrimoniale solide. La demande locative ne faiblit pas, l'offre reste insuffisante dans les zones urbaines, et le franc suisse protège la valeur réelle des actifs. Mais un bon investissement ne se trouve pas sur une annonce. Il se construit sur une analyse précise du bien, de son emplacement, de son financement et de sa fiscalité.`,
-    cta: "Vous cherchez un investissement locatif dans le canton de Vaud ? Je serais heureux d'en discuter avec vous."
+    cta: "Vous envisagez de mettre un bien locatif en vente ? Contactez-moi pour en discuter."
   },
 ]
 
