@@ -1744,7 +1744,7 @@ C'est ce que je fais à Morges, sur l'arc lémanique et dans le canton de Vaud. 
     slug: 'investir-locatif-vaud-2026',
     titre: 'Investir dans l\'immobilier locatif en 2026 : ce que les chiffres ne disent pas',
     chapeau: "L'immobilier locatif attire à nouveau. Les taux se sont stabilisés, le marché vaudois reste sous tension, et les discussions sur la valeur locative fiscale relancent les arbitrages patrimoniaux. Mais entre un rendement brut affiché et un investissement réellement rentable, il y a souvent plusieurs dizaines de milliers de francs d'écart.",
-    date: '2026-06-26',
+    date: '2026-06-20',
     categorie: 'Investissement',
     contenu: `## Le rendement brut est un chiffre de vitrine
 
