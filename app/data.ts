@@ -1740,6 +1740,47 @@ C'est, je crois, la meilleure définition de mon métier. Pas vendre au prix le 
 C'est ce que je fais à Morges, sur l'arc lémanique et dans le canton de Vaud. Et c'est ce que je continuerai de faire.`,
     cta: "Vous avez un projet immobilier sur l'arc lémanique ? Parlons-en."
   },
+  {
+    slug: 'investir-locatif-vaud-2026',
+    titre: 'Investir dans l\'immobilier locatif en 2026 : ce que les chiffres ne disent pas',
+    chapeau: "L'immobilier locatif attire à nouveau. Les taux se sont stabilisés, le marché vaudois reste sous tension, et les discussions sur la valeur locative fiscale relancent les arbitrages patrimoniaux. Mais entre un rendement brut affiché et un investissement réellement rentable, il y a souvent plusieurs dizaines de milliers de francs d'écart.",
+    date: '2026-06-26',
+    categorie: 'Investissement',
+    contenu: `## Le rendement brut est un chiffre de vitrine
+
+C'est le premier réflexe de tout acheteur : diviser le loyer annuel par le prix d'achat. Résultat en quelques secondes. Problème : ce calcul ignore tout ce qui fait la réalité d'un bien locatif.
+
+Sur l'arc lémanique, les rendements bruts affichés se situent généralement entre 3 et 4,5% selon la commune. Le rendement net, après charges de PPE, entretien, assurances, impôts sur le revenu locatif et taux de vacance, descend souvent sous les 2,5%. Ce n'est pas nécessairement une mauvaise affaire. Mais c'est une réalité différente. Avant de vous projeter sur un bien, demandez systématiquement l'état locatif certifié, le décompte de charges des trois dernières années, et la liste des travaux planifiés.
+
+## Les fonds propres exigés sont plus élevés que pour une résidence principale
+
+Beaucoup d'investisseurs découvrent cette règle trop tard : pour un bien locatif, les banques suisses exigent en général 25% de fonds propres, contre 20% pour une résidence principale. Et le calcul de la capacité de remboursement se fait sur la base d'un taux théorique d'environ 5%, indépendamment du taux réel que vous obtiendrez.
+
+Concrètement, pour un appartement de CHF 800'000.- à Renens ou Prilly, il faut mobiliser CHF 200'000.- de fonds propres au minimum, et démontrer une capacité financière qui supporte des mensualités fictives bien supérieures à celles que vous paierez réellement. Ce filtre bancaire est sain. Il protège les investisseurs contre une exposition excessive. Mais il faut l'anticiper dès la phase de réflexion, pas le jour de la signature de la promesse d'achat.
+
+## L'emplacement prime sur le rendement facial
+
+Un appartement à Yverdon-les-Bains affichant 5% brut peut sembler plus attractif qu'un studio à Lausanne-Sévelin à 3,2%. En apparence seulement. Ce qui compte, c'est la liquidité du bien dans dix ans, la facilité à le relouer entre deux locataires, et sa résistance aux corrections de prix.
+
+Lausanne reste portée par une demande structurelle : ville universitaire, olympique, pôle de services internationaux. Le taux de vacance y est structurellement bas. Dans les communes du Gros-de-Vaud ou du Chablais vaudois, les rendements sont plus élevés, mais le profil de risque l'est aussi. Ce n'est pas un mauvais choix, c'est un choix différent, qui demande une analyse différente.
+
+## La fiscalité change la donne en 2029 : anticipez maintenant
+
+Un élément trop souvent négligé dans les calculs d'investissement actuels : la suppression programmée de la valeur locative au 1er janvier 2029. Cette réforme modifiera l'équilibre fiscal entre propriétaires-habitants et investisseurs locatifs. Les revenus locatifs resteront imposables, mais les déductions liées à l'entretien et aux intérêts hypothécaires seront reconfigurées.
+
+Ce n'est pas une raison d'attendre. C'est une raison de structurer son investissement avec un horizon clair et un conseiller fiscal qui connaît les spécificités vaudoises. L'immobilier se gagne à l'achat, pas à la revente.
+
+## Ce que les taux actuels changent vraiment
+
+La BNS maintient son taux directeur à 0% depuis mi-2025. Les taux hypothécaires fixes à long terme évoluent actuellement entre 1,2% et 1,8% selon les profils et les durées. C'est historiquement bas. Cela ne signifie pas que l'accès au crédit est facile : les banques se montrent plus sélectives sur les dossiers, et les critères de capacité restent stricts.
+
+Pour un investisseur bien préparé, c'est néanmoins un contexte favorable. L'effet de levier du financement hypothécaire reste l'un des atouts majeurs de l'immobilier suisse par rapport à d'autres classes d'actifs. Un bien financé à 75% avec un taux à 1,5% génère une rentabilité sur fonds propres bien supérieure au rendement brut apparent.
+
+## Investir locatif en 2026 : oui, mais avec les bons calculs
+
+L'immobilier locatif dans le canton de Vaud reste une stratégie patrimoniale solide. La demande locative ne faiblit pas, l'offre reste insuffisante dans les zones urbaines, et le franc suisse protège la valeur réelle des actifs. Mais un bon investissement ne se trouve pas sur une annonce. Il se construit sur une analyse précise du bien, de son emplacement, de son financement et de sa fiscalité.`,
+    cta: "Vous cherchez un investissement locatif dans le canton de Vaud, ou vous envisagez de mettre un bien en location ? Je serais heureux d'en discuter avec vous."
+  },
 ]
 
 // ─── HELPERS ────────────────────────────────────────────────────────────────
