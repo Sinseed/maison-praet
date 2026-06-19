@@ -1756,7 +1756,7 @@ Sur l'arc lémanique, les rendements bruts affichés se situent généralement e
 
 Beaucoup d'investisseurs découvrent cette règle trop tard : pour un bien locatif, les banques suisses exigent en général 25% de fonds propres, contre 20% pour une résidence principale. Et le calcul de la capacité de remboursement se fait sur la base d'un taux théorique d'environ 5%, indépendamment du taux réel que vous obtiendrez.
 
-Concrètement, pour un appartement de CHF 800'000.- à Renens ou Prilly, il faut mobiliser CHF 200'000.- de fonds propres au minimum, et démontrer une capacité financière qui supporte des mensualités fictives bien supérieures à celles que vous paierez réellement. Ce filtre bancaire est sain. Il protège les investisseurs contre une exposition excessive. Mais il faut l'anticiper dès la phase de réflexion, pas le jour de la signature de la promesse d'achat.
+Concrètement, pour un appartement de CHF 800'000.- à Renens ou Prilly, il faut mobiliser CHF 200'000.- de fonds propres au minimum, et démontrer une capacité financière qui supporte des mensualités fictives bien supérieures à celles que vous paierez réellement. Ce filtre bancaire est sain. Il protège les investisseurs contre une exposition excessive. Mais il faut l'anticiper dès la phase de réflexion, pas le jour de la signature de l'acte authentique.
 
 ## L'emplacement prime sur le rendement facial
 
