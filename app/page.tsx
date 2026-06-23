@@ -85,7 +85,7 @@ function DerniereVente() {
   const [visible, setVisible] = useState(false)
 
   useEffect(() => {
-    const t = setTimeout(() => setVisible(true), 300)
+    const t = setTimeout(() => setVisible(true), 200)
     return () => clearTimeout(t)
   }, [])
 
@@ -95,45 +95,48 @@ function DerniereVente() {
 
   if (!vendu) return null
 
+  const details = [vendu.titre, vendu.pieces !== '-' ? `${vendu.pieces} pièces` : null, vendu.surface !== '-' ? vendu.surface : null].filter(Boolean)
+
   return (
     <div
       style={{
         opacity: visible ? 1 : 0,
-        transform: visible ? 'translateY(0)' : 'translateY(6px)',
-        transition: 'opacity 0.8s ease, transform 0.8s ease',
+        transform: visible ? 'translateY(0)' : 'translateY(10px)',
+        transition: 'opacity 1s ease, transform 1s ease',
       }}
-      className="border-b border-brand-border bg-brand-dark"
+      className="bg-brand-card border-y border-brand-border"
     >
-      <div className="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between gap-6">
-        {/* Badge + commune */}
-        <div className="flex items-center gap-5 min-w-0">
-          <span className="shrink-0 font-body text-[0.6rem] tracking-[0.25em] uppercase text-brand-dark bg-brand-gold px-2.5 py-1">
-            Vendu
-          </span>
-          <p className="font-display text-xl md:text-2xl font-light text-white italic truncate">
+      <div className="max-w-7xl mx-auto px-6 py-10 md:py-12">
+        {/* Eyebrow */}
+        <p className="font-body text-[0.6rem] tracking-[0.35em] uppercase text-brand-gold mb-4">
+          Dernière vente
+        </p>
+
+        {/* Commune grande */}
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+          <h2
+            style={{ fontSize: 'clamp(2.8rem, 8vw, 6rem)', lineHeight: 1 }}
+            className="font-display font-light text-white"
+          >
             {vendu.lieu}
-          </p>
+          </h2>
+
+          {/* Détails à droite */}
+          <div className="flex items-center gap-4 pb-1">
+            {details.map((d, i) => (
+              <span key={i} className="flex items-center gap-4">
+                {i > 0 && <span className="w-px h-3 bg-brand-border block" />}
+                <span className="font-body text-xs tracking-widest uppercase text-brand-muted">{d}</span>
+              </span>
+            ))}
+            <span className="ml-2 font-body text-[0.6rem] tracking-[0.25em] uppercase text-brand-dark bg-brand-gold px-3 py-1.5">
+              Vendu
+            </span>
+          </div>
         </div>
 
-        {/* Détails */}
-        <div className="hidden sm:flex items-center gap-6 shrink-0">
-          <span className="font-body text-xs tracking-widest uppercase text-brand-muted">{vendu.titre}</span>
-          {vendu.surface && vendu.surface !== '-' && (
-            <>
-              <span className="text-brand-border">·</span>
-              <span className="font-body text-xs tracking-widest uppercase text-brand-muted">{vendu.surface}</span>
-            </>
-          )}
-          {vendu.pieces && vendu.pieces !== '-' && (
-            <>
-              <span className="text-brand-border">·</span>
-              <span className="font-body text-xs tracking-widest uppercase text-brand-muted">{vendu.pieces} p.</span>
-            </>
-          )}
-        </div>
-
-        {/* Trait décoratif doré */}
-        <div className="hidden md:block h-px flex-1 max-w-[80px] bg-brand-gold opacity-30" />
+        {/* Ligne dorée décorative */}
+        <div className="mt-8 h-px w-full bg-gradient-to-r from-brand-gold via-brand-gold/20 to-transparent" />
       </div>
     </div>
   )
