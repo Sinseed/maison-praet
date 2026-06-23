@@ -32,9 +32,12 @@ export default function DerniereVente() {
 
         {/* Texte */}
         <div className="flex-1 min-w-0">
-          <p className="font-body text-[0.6rem] tracking-[0.35em] uppercase text-brand-gold mb-4">
-            Dernière vente
-          </p>
+          <div className="flex items-center gap-4 mb-6">
+            <div className="h-px w-8 bg-brand-gold" />
+            <p className="font-body text-xs tracking-[0.3em] uppercase text-brand-gold">
+              Dernière vente
+            </p>
+          </div>
 
           <h2
             style={{ fontSize: 'clamp(2.4rem, 6vw, 5rem)', lineHeight: 1 }}
