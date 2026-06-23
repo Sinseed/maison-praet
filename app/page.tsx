@@ -90,8 +90,9 @@ function DerniereVente() {
   }, [])
 
   const vendu = MANDATS
-    .filter(m => m.categorie === 'vendu')
-    .slice(-1)[0]
+    .filter(m => m.categorie === 'vendu' && m.datevente)
+    .sort((a, b) => (b.datevente! > a.datevente! ? 1 : -1))
+    [0]
 
   if (!vendu) return null
 
@@ -106,38 +107,46 @@ function DerniereVente() {
       }}
       className="bg-brand-card border-y border-brand-border"
     >
-      <div className="max-w-7xl mx-auto px-6 py-10 md:py-12">
-        {/* Eyebrow */}
-        <p className="font-body text-[0.6rem] tracking-[0.35em] uppercase text-brand-gold mb-4">
-          Dernière vente
-        </p>
+      <div className="max-w-7xl mx-auto px-6 py-10 md:py-12 flex flex-col md:flex-row gap-8 md:gap-16 items-start md:items-center">
 
-        {/* Commune grande */}
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+        {/* Photo */}
+        <div className="w-full md:w-72 md:shrink-0 aspect-[4/3] overflow-hidden">
+          <img
+            src={vendu.img}
+            alt={vendu.lieu}
+            className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+          />
+        </div>
+
+        {/* Texte */}
+        <div className="flex-1 min-w-0">
+          <p className="font-body text-[0.6rem] tracking-[0.35em] uppercase text-brand-gold mb-4">
+            Dernière vente
+          </p>
+
           <h2
-            style={{ fontSize: 'clamp(2.8rem, 8vw, 6rem)', lineHeight: 1 }}
-            className="font-display font-light text-white"
+            style={{ fontSize: 'clamp(2.4rem, 6vw, 5rem)', lineHeight: 1 }}
+            className="font-display font-light text-white mb-6"
           >
             {vendu.lieu}
           </h2>
 
-          {/* Détails à droite */}
-          <div className="flex items-center gap-4 pb-1">
+          <div className="flex flex-wrap items-center gap-3 mb-8">
             {details.map((d, i) => (
-              <span key={i} className="flex items-center gap-4">
+              <span key={i} className="flex items-center gap-3">
                 {i > 0 && <span className="w-px h-3 bg-brand-border block" />}
                 <span className="font-body text-xs tracking-widest uppercase text-brand-muted">{d}</span>
               </span>
             ))}
-            <span className="ml-2 font-body text-[0.6rem] tracking-[0.25em] uppercase text-brand-dark bg-brand-gold px-3 py-1.5">
-              Vendu
-            </span>
           </div>
-        </div>
 
-        {/* Ligne dorée décorative */}
-        <div className="mt-8 h-px w-full bg-gradient-to-r from-brand-gold via-brand-gold/20 to-transparent" />
+          <span className="font-body text-[0.6rem] tracking-[0.25em] uppercase text-brand-dark bg-brand-gold px-3 py-1.5">
+            Vendu
+          </span>
+        </div>
       </div>
+
+      <div className="h-px w-full bg-gradient-to-r from-brand-gold via-brand-gold/20 to-transparent" />
     </div>
   )
 }
