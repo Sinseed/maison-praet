@@ -1,6 +1,6 @@
 'use client'
 import { useState, useEffect } from 'react'
-import { Phone, Mail, MapPin, ChevronDown, ArrowRight, Shield, TrendingUp, Users, Menu, X, Camera, BookOpen, Send, Play } from 'lucide-react'
+import { Phone, Mail, MapPin, ChevronDown, ArrowRight, Shield, TrendingUp, Users, Menu, X, Camera, BookOpen, Play } from 'lucide-react'
 import Link from 'next/link'
 import { MANDATS, ARTICLES, STATS, FILTRES } from './data'
 import DerniereVente from './components/DerniereVente'
@@ -170,54 +170,24 @@ function MandatsSection() {
   )
 }
 
-function EstimationForm() {
-  const [sent, setSent] = useState(false)
-  const [sending, setSending] = useState(false)
-  const [error, setError] = useState(false)
-  const [form, setForm] = useState({ nom: '', contact: '', type: '', localisation: '', message: '' })
-  const set = (k: string) => (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => setForm(f => ({ ...f, [k]: e.target.value }))
-  const submit = async () => {
-    if (!form.nom || !form.contact) return
-    setSending(true)
-    setError(false)
-    try {
-      const res = await fetch('/api/estimation', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(form) })
-      if (res.ok) setSent(true)
-      else setError(true)
-    } catch { setError(true) }
-    setSending(false)
-  }
+function EstimationCTA() {
   return (
-    <section id="estimation" className="bg-brand-card/50 border-y border-brand-border">
-      <div className="max-w-7xl mx-auto px-6 py-24 md:py-32">
-        <div className="grid md:grid-cols-2 gap-16 items-center">
-          <div>
-            <p className="font-body text-sm tracking-[0.3em] uppercase text-brand-gold mb-4">Estimation gratuite</p>
-            <h2 className="font-display text-4xl md:text-5xl font-light text-white mb-8 leading-tight">Quelle est la valeur<br /><span className="italic text-brand-gold">de votre bien ?</span></h2>
-            <p className="font-body text-brand-text leading-relaxed mb-6">Recevez une estimation professionnelle, fondée sur les données du marché vaudois et une analyse rigoureuse de votre bien. Sans engagement, en toute confidentialité.</p>
-            <div className="space-y-4 font-body text-brand-muted text-sm">
-              <div className="flex items-start gap-3"><div className="w-1 h-1 rounded-full bg-brand-gold mt-2 shrink-0" /><span>Analyse complète en 3 méthodes (intrinsèque, rendement, vénale)</span></div>
-              <div className="flex items-start gap-3"><div className="w-1 h-1 rounded-full bg-brand-gold mt-2 shrink-0" /><span>Rapport PDF structuré remis sous 48h</span></div>
-              <div className="flex items-start gap-3"><div className="w-1 h-1 rounded-full bg-brand-gold mt-2 shrink-0" /><span>Recommandation de prix honnête, pas une promesse gonflée</span></div>
-            </div>
-          </div>
-          <div className="bg-brand-dark border border-brand-border p-8">
-            {sent ? (
-              <div className="text-center py-12"><div className="w-16 h-16 border-2 border-brand-gold rounded-full flex items-center justify-center mx-auto mb-6"><Send size={24} className="text-brand-gold" /></div><h3 className="font-display text-2xl text-white mb-3">Demande envoyée</h3><p className="font-body text-brand-muted">Je vous recontacte dans les 24 heures.</p></div>
-            ) : (
-              <div className="space-y-5">
-                <h3 className="font-display text-xl text-white mb-2">Demander une estimation</h3>
-                <div><label className="font-body text-xs tracking-widest uppercase text-brand-muted block mb-2">Nom</label><input type="text" value={form.nom} onChange={set('nom')} className="w-full bg-transparent border border-brand-border px-4 py-3 font-body text-white text-sm focus:outline-none focus:border-brand-gold/50 transition-colors" placeholder="Votre nom" /></div>
-                <div><label className="font-body text-xs tracking-widest uppercase text-brand-muted block mb-2">Email ou téléphone</label><input type="text" value={form.contact} onChange={set('contact')} className="w-full bg-transparent border border-brand-border px-4 py-3 font-body text-white text-sm focus:outline-none focus:border-brand-gold/50 transition-colors" placeholder="Pour vous recontacter" /></div>
-                <div><label className="font-body text-xs tracking-widest uppercase text-brand-muted block mb-2">Type de bien</label><select value={form.type} onChange={set('type')} className="w-full bg-brand-dark border border-brand-border px-4 py-3 font-body text-brand-muted text-sm focus:outline-none focus:border-brand-gold/50 transition-colors"><option value="">Sélectionnez</option><option value="villa">Villa / Maison individuelle</option><option value="appartement">Appartement / PPE</option><option value="immeuble">Immeuble de rendement</option><option value="terrain">Terrain</option><option value="autre">Autre</option></select></div>
-                <div><label className="font-body text-xs tracking-widest uppercase text-brand-muted block mb-2">Localisation</label><input type="text" value={form.localisation} onChange={set('localisation')} className="w-full bg-transparent border border-brand-border px-4 py-3 font-body text-white text-sm focus:outline-none focus:border-brand-gold/50 transition-colors" placeholder="Commune ou adresse" /></div>
-                <div><label className="font-body text-xs tracking-widest uppercase text-brand-muted block mb-2">Message (optionnel)</label><textarea rows={3} value={form.message} onChange={set('message')} className="w-full bg-transparent border border-brand-border px-4 py-3 font-body text-white text-sm focus:outline-none focus:border-brand-gold/50 transition-colors resize-none" placeholder="Précisions sur votre projet" /></div>
-                {error && <p className="font-body text-xs text-red-400 text-center">Une erreur est survenue. Réessayez ou contactez-moi directement.</p>}
-                <button onClick={submit} disabled={sending || !form.nom || !form.contact} className="w-full bg-brand-gold text-brand-dark py-4 font-body text-sm font-medium tracking-widest uppercase hover:bg-brand-goldLight transition-colors disabled:opacity-50 disabled:cursor-not-allowed">{sending ? 'Envoi en cours...' : 'Envoyer ma demande'}</button>
-                <p className="font-body text-xs text-brand-muted/60 text-center">Sans engagement · Réponse sous 24h</p>
-              </div>
-            )}
-          </div>
+    <section className="bg-brand-card/50 border-y border-brand-border">
+      <div className="max-w-7xl mx-auto px-6 py-20 md:py-24 flex flex-col md:flex-row md:items-center md:justify-between gap-10">
+        <div className="max-w-xl">
+          <p className="font-body text-xs tracking-[0.35em] uppercase text-brand-gold mb-4">Estimation gratuite</p>
+          <h2 className="font-display text-4xl md:text-5xl font-light text-white leading-tight">
+            Quelle est la valeur<br />
+            <span className="italic text-brand-gold">de votre bien ?</span>
+          </h2>
+          <p className="font-body text-brand-muted mt-5 leading-relaxed">
+            Rapport PDF en 48h. Fondé sur les données réelles du marché vaudois. Sans engagement.
+          </p>
+        </div>
+        <div className="shrink-0">
+          <Link href="/estimation" className="group inline-flex items-center gap-3 bg-brand-gold text-brand-dark px-10 py-5 font-body text-sm font-medium tracking-widest uppercase hover:bg-brand-goldLight transition-all duration-300">
+            Estimer mon bien <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+          </Link>
         </div>
       </div>
     </section>
@@ -352,5 +322,5 @@ function Testimonials() {
 }
 
 export default function Home() {
-  return (<main><Hero /><StatsBar /><DerniereVente /><Approach /><EstimationForm /><Testimonials /><MandatsSection /><JournalPreview /><Contact /><Footer /></main>)
+  return (<main><Hero /><StatsBar /><DerniereVente /><Approach /><EstimationCTA /><Testimonials /><MandatsSection /><JournalPreview /><Contact /><Footer /></main>)
 }
