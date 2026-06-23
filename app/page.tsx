@@ -81,6 +81,64 @@ function StatsBar() {
   )
 }
 
+function DerniereVente() {
+  const [visible, setVisible] = useState(false)
+
+  useEffect(() => {
+    const t = setTimeout(() => setVisible(true), 300)
+    return () => clearTimeout(t)
+  }, [])
+
+  const vendu = MANDATS
+    .filter(m => m.categorie === 'vendu')
+    .slice(-1)[0]
+
+  if (!vendu) return null
+
+  return (
+    <div
+      style={{
+        opacity: visible ? 1 : 0,
+        transform: visible ? 'translateY(0)' : 'translateY(6px)',
+        transition: 'opacity 0.8s ease, transform 0.8s ease',
+      }}
+      className="border-b border-brand-border bg-brand-dark"
+    >
+      <div className="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between gap-6">
+        {/* Badge + commune */}
+        <div className="flex items-center gap-5 min-w-0">
+          <span className="shrink-0 font-body text-[0.6rem] tracking-[0.25em] uppercase text-brand-dark bg-brand-gold px-2.5 py-1">
+            Vendu
+          </span>
+          <p className="font-display text-xl md:text-2xl font-light text-white italic truncate">
+            {vendu.lieu}
+          </p>
+        </div>
+
+        {/* Détails */}
+        <div className="hidden sm:flex items-center gap-6 shrink-0">
+          <span className="font-body text-xs tracking-widest uppercase text-brand-muted">{vendu.titre}</span>
+          {vendu.surface && vendu.surface !== '-' && (
+            <>
+              <span className="text-brand-border">·</span>
+              <span className="font-body text-xs tracking-widest uppercase text-brand-muted">{vendu.surface}</span>
+            </>
+          )}
+          {vendu.pieces && vendu.pieces !== '-' && (
+            <>
+              <span className="text-brand-border">·</span>
+              <span className="font-body text-xs tracking-widest uppercase text-brand-muted">{vendu.pieces} p.</span>
+            </>
+          )}
+        </div>
+
+        {/* Trait décoratif doré */}
+        <div className="hidden md:block h-px flex-1 max-w-[80px] bg-brand-gold opacity-30" />
+      </div>
+    </div>
+  )
+}
+
 function About() {
   return (
     <section id="apropos" className="max-w-7xl mx-auto px-6 py-24 md:py-32">
@@ -356,5 +414,5 @@ function Testimonials() {
 }
 
 export default function Home() {
-  return (<main><Hero /><StatsBar /><About /><Approach /><MandatsSection /><Testimonials /><EstimationForm /><JournalPreview /><Contact /><Footer /></main>)
+  return (<main><Hero /><StatsBar /><DerniereVente /><About /><Approach /><MandatsSection /><Testimonials /><EstimationForm /><JournalPreview /><Contact /><Footer /></main>)
 }
