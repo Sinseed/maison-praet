@@ -60,20 +60,16 @@ function Hero() {
 function StatsBar() {
   return (
     <section className="border-y border-brand-border">
-      <div className="max-w-7xl mx-auto px-6 py-10 grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4">
+      <div className="max-w-7xl mx-auto px-6 py-10 grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-4">
         <div className="text-center">
-          <p className="font-display text-3xl md:text-4xl font-light text-brand-gold">90+</p>
-          <p className="font-body text-xs tracking-widest uppercase text-brand-muted mt-2">Transactions</p>
-        </div>
-        <div className="text-center">
-          <p className="font-display text-3xl md:text-4xl font-light text-brand-gold">2020</p>
-          <p className="font-body text-xs tracking-widest uppercase text-brand-muted mt-2">Courtier depuis</p>
+          <p className="font-display text-3xl md:text-4xl font-light text-brand-gold">6+</p>
+          <p className="font-body text-xs tracking-widest uppercase text-brand-muted mt-2">Années d&apos;expérience</p>
         </div>
         <div className="text-center">
           <p className="font-display text-3xl md:text-4xl font-light text-brand-gold">39</p>
           <p className="font-body text-xs tracking-widest uppercase text-brand-muted mt-2">Communes couvertes</p>
         </div>
-        <div className="text-center">
+        <div className="text-center col-span-2 md:col-span-1">
           <p className="font-display text-3xl md:text-4xl font-light text-brand-gold">USPI</p>
           <p className="font-body text-xs tracking-widest uppercase text-brand-muted mt-2">Certifié</p>
         </div>
@@ -96,7 +92,6 @@ function About() {
           <div className="space-y-5 font-body text-brand-text leading-relaxed">
             <p>Je ne suis pas un courtier qui promet un prix pour obtenir un mandat, puis le baisse trois mois plus tard. Si je ne suis pas convaincu de pouvoir vendre votre bien dans de bonnes conditions, je vous le dis.</p>
             <p>Depuis 2020, j&apos;accompagne des propriétaires sur l&apos;ensemble de l&apos;arc lémanique et du Gros-de-Vaud. Chaque mandat est traité avec la même rigueur : estimation fondée, stratégie de prix réaliste, suivi transparent jusqu&apos;à la signature chez le notaire.</p>
-            <p>Je suis courtier diplômé USPI au sein de <a href="https://www.golay-immobilier.ch" target="_blank" rel="noopener noreferrer" className="text-brand-gold hover:underline">Golay Immobilier SA</a>, maison vaudoise établie à Lausanne. <strong className="text-white font-normal">Maison Praet est mon identité personnelle de courtier</strong> : un espace pour partager mon approche, mes mandats et ma méthode. Toutes mes transactions sont réalisées sous mandat Golay Immobilier.</p>
             <p className="text-brand-muted text-sm italic">Arrivé de Belgique en 2017. Formé sur le terrain, pas dans un bureau.</p>
           </div>
         </div>
@@ -108,7 +103,7 @@ function About() {
 function Approach() {
   const pillars = [
     { icon: <Shield size={28} />, title: 'Je refuse les mandats auxquels je ne crois pas', desc: "Si votre bien ne peut pas se vendre au prix que vous espérez, je vous le dis avant de signer. Pas après trois mois de silence et une baisse de prix." },
-    { icon: <TrendingUp size={28} />, title: 'Un prix juste, pas un prix flatteur', desc: "Mon estimation repose sur trois méthodes, des données réelles et une connaissance du terrain. 96.8 % de mes biens sont vendus au prix estimé. Ce chiffre n'est pas un hasard." },
+    { icon: <TrendingUp size={28} />, title: 'Un prix juste, pas un prix flatteur', desc: "Mon estimation repose sur trois méthodes et des données réelles du marché vaudois. Je vous dis ce que vaut votre bien, pas ce que vous voulez entendre." },
     { icon: <Users size={28} />, title: 'Un seul interlocuteur, du premier appel au notaire', desc: "Pas d'assistante, pas de call center. Vous traitez avec moi de l'estimation à la signature notariale. Votre bien n'est pas un numéro dans un portefeuille." },
   ]
   return (
@@ -357,5 +352,5 @@ function Testimonials() {
 }
 
 export default function Home() {
-  return (<main><Hero /><StatsBar /><DerniereVente /><About /><Approach /><MandatsSection /><Testimonials /><EstimationForm /><JournalPreview /><Contact /><Footer /></main>)
+  return (<main><Hero /><StatsBar /><DerniereVente /><Approach /><EstimationForm /><Testimonials /><MandatsSection /><JournalPreview /><Contact /><Footer /></main>)
 }
