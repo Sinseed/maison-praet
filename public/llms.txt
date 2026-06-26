@@ -26,6 +26,8 @@
 
 ## Pages principales
 
+- [À propos de Thomas Praet](https://maisonpraet.ch/a-propos): Parcours, chiffres clés, philosophie et zone d'activité. Courtier diplômé USPI, plus de 90 transactions depuis 2020 sur l'arc lémanique et le canton de Vaud.
+
 - [Méthode de courtage](https://maisonpraet.ch/methode): Du premier rendez-vous à la remise des clés, les 7 étapes de la méthode Thomas Praet.
 - [Track Record](https://maisonpraet.ch/track-record): 64 mandats documentés, CHF 107.5M sous gestion, 39 communes couvertes.
 - [Estimation gratuite](https://maisonpraet.ch/estimation): Rapport PDF en 48h, fondé sur trois méthodes d'évaluation. Sans engagement.
