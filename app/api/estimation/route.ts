@@ -5,7 +5,7 @@ const resend = new Resend(process.env.RESEND_API_KEY)
 
 export async function POST(req: Request) {
   try {
-    const { nom, contact, type, localisation, message } = await req.json()
+    const { nom, contact, type, localisation, surface, pieces, message } = await req.json()
 
     if (!nom || !contact) {
       return NextResponse.json({ error: 'Champs requis manquants' }, { status: 400 })
@@ -30,6 +30,8 @@ export async function POST(req: Request) {
           <tr><td style="padding:8px 16px 8px 0;font-weight:bold;color:#666;">Contact</td><td style="padding:8px 0;">${contact}</td></tr>
           <tr><td style="padding:8px 16px 8px 0;font-weight:bold;color:#666;">Type de bien</td><td style="padding:8px 0;">${typeLabels[type] || type || 'Non précisé'}</td></tr>
           <tr><td style="padding:8px 16px 8px 0;font-weight:bold;color:#666;">Localisation</td><td style="padding:8px 0;">${localisation || 'Non précisée'}</td></tr>
+          ${surface ? `<tr><td style="padding:8px 16px 8px 0;font-weight:bold;color:#666;">Surface</td><td style="padding:8px 0;">${surface}</td></tr>` : ''}
+          ${pieces ? `<tr><td style="padding:8px 16px 8px 0;font-weight:bold;color:#666;">Pièces</td><td style="padding:8px 0;">${pieces}</td></tr>` : ''}
           ${message ? `<tr><td style="padding:8px 16px 8px 0;font-weight:bold;color:#666;vertical-align:top;">Message</td><td style="padding:8px 0;">${message}</td></tr>` : ''}
         </table>
       `,
