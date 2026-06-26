@@ -336,7 +336,7 @@ function Testimonials() {
             ))}
           </div>
           <p className="font-body text-sm text-brand-muted">
-            <span className="font-display text-xl text-white">{noteMoyenne}</span> / 5 · d&apos;après les avis Google de mes clients vendeurs
+            <span className="font-display text-xl text-white">{noteMoyenne}</span> / 5 · d&apos;après les avis Google de mes clients
           </p>
         </div>
       </Reveal>
