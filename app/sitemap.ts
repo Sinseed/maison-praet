@@ -1,6 +1,6 @@
 import { MetadataRoute } from 'next'
 import { MANDATS, ARTICLES } from './data'
-import { COMMUNES_SEO } from './courtier/communes-seo'
+import { COMMUNES_SEO_ALL as COMMUNES_SEO } from './courtier/communes-seo'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://maisonpraet.ch'

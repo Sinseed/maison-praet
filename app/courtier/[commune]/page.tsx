@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowLeft, Phone, Mail, ArrowRight } from 'lucide-react'
-import { COMMUNES_SEO } from '../communes-seo'
+import { COMMUNES_SEO_ALL as COMMUNES_SEO } from '../communes-seo'
 import { MANDATS, ARTICLES } from '../../data'
 
 // ─── Static params ────────────────────────────────────────────────────────────
