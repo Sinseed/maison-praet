@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Cormorant_Garamond, Outfit } from 'next/font/google'
 import './globals.css'
 import Nav from './components/Nav'
+import MobileCTA from './components/MobileCTA'
 import { Analytics } from '@vercel/analytics/react'
 
 const cormorant = Cormorant_Garamond({
@@ -135,7 +136,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     })}}
   />
 </head>
-<body><Nav />{children}<Analytics /></body>
+<body><Nav />{children}<MobileCTA /><Analytics /></body>
     </html>
   )
 }

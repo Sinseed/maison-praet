@@ -1,5 +1,5 @@
 'use client'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { Phone, Mail, MapPin, ChevronDown, ArrowRight, Shield, TrendingUp, Users, Menu, X, Camera, BookOpen, Play } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -9,12 +9,32 @@ import Reveal from './components/Reveal'
 import AnimatedNumber from './components/AnimatedNumber'
 
 function Hero() {
+  const portraitRef = useRef<HTMLDivElement>(null)
+
+  // Subtle parallax: the portrait drifts slower than the scroll within the hero.
+  // Container is oversized (-inset-y) so the drift never reveals an edge.
+  useEffect(() => {
+    const el = portraitRef.current
+    if (!el || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+    let raf = 0
+    const onScroll = () => {
+      cancelAnimationFrame(raf)
+      raf = requestAnimationFrame(() => {
+        const y = window.scrollY
+        if (y > window.innerHeight) return
+        el.style.transform = `translate3d(0, ${y * 0.06}px, 0)`
+      })
+    }
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => { window.removeEventListener('scroll', onScroll); cancelAnimationFrame(raf) }
+  }, [])
+
   return (
     <section className="relative min-h-screen overflow-hidden bg-brand-dark">
       {/* Photo background - visible on all screens */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/80 to-brand-dark/30 md:bg-gradient-to-r md:from-brand-dark md:via-brand-dark/95 md:to-brand-dark/40 z-10" />
-        <div className="absolute inset-0 md:left-auto md:w-[55%]">
+        <div ref={portraitRef} className="absolute -inset-y-[6%] inset-x-0 md:left-auto md:w-[55%] will-change-transform">
           <Image src="/photos/portrait.jpg" alt="Thomas Praet" fill priority sizes="(max-width: 768px) 100vw, 55vw" className="object-cover object-top" />
         </div>
       </div>
