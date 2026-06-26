@@ -118,7 +118,6 @@ function About() {
           <div className="space-y-5 font-body text-brand-text leading-relaxed">
             <p>Je ne suis pas un courtier qui promet un prix pour obtenir un mandat, puis le baisse trois mois plus tard. Si je ne suis pas convaincu de pouvoir vendre votre bien dans de bonnes conditions, je vous le dis.</p>
             <p>Depuis 2020, j&apos;accompagne des propriétaires sur l&apos;ensemble de l&apos;arc lémanique et du Gros-de-Vaud. Chaque mandat est traité avec la même rigueur : estimation fondée, stratégie de prix réaliste, suivi transparent jusqu&apos;à la signature chez le notaire.</p>
-            <p className="text-brand-muted text-sm italic">Arrivé de Belgique en 2017. Formé sur le terrain, pas dans un bureau.</p>
           </div>
         </Reveal>
       </div>
