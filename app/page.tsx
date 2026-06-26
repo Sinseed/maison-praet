@@ -22,8 +22,8 @@ function Hero() {
       <div className="float-glow absolute -top-20 left-[20%] w-[420px] h-[420px] rounded-full bg-brand-gold/10 blur-[130px] z-[5] pointer-events-none" />
 
       {/* Content */}
-      <div className="relative z-20 min-h-screen flex flex-col justify-end pb-12 md:justify-center md:pb-0 max-w-7xl mx-auto px-6">
-        <div className="max-w-2xl">
+      <div className="relative z-20 min-h-screen flex flex-col pt-28 pb-12 md:pt-48 md:pb-20 max-w-7xl mx-auto px-6">
+        <div className="max-w-2xl mt-auto md:my-auto">
           <p className="hero-in hidden md:block font-body text-xs tracking-[0.4em] uppercase text-brand-gold mb-6" style={{animationDelay: '0.1s'}}>Canton de Vaud · Suisse</p>
 
           <h1 style={{fontSize: 'clamp(2.2rem, 10vw, 9rem)', animationDelay: '0.2s'}} className="hero-in font-display font-light text-white leading-[0.95] mb-2">
