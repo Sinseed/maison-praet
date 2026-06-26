@@ -195,7 +195,7 @@ function EstimationCTA() {
 }
 
 function JournalPreview() {
-  const recent = ARTICLES.slice(0, 3)
+  const recent = [...ARTICLES].sort((a, b) => b.date.localeCompare(a.date)).slice(0, 3)
   return (
     <section id="journal" className="max-w-7xl mx-auto px-6 py-24 md:py-32">
       <div className="text-center mb-16">
