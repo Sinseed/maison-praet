@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowRight, Home, Calculator, FileSignature, Megaphone, Users, Handshake, Key } from 'lucide-react'
+import Reveal from '../components/Reveal'
 
 export const metadata: Metadata = {
   title: 'Ma méthode | Maison Praet',
@@ -91,7 +92,7 @@ export default function MethodePage() {
             {ETAPES.map((e, i) => {
               const Icon = e.icon
               return (
-                <div key={e.num} className="relative pl-20 md:pl-28">
+                <Reveal key={e.num} as="div" className="relative pl-20 md:pl-28">
                   {/* Cercle de l'étape */}
                   <div className="absolute left-0 top-0 w-12 h-12 md:w-20 md:h-20 rounded-full bg-brand-card border border-brand-gold/40 flex items-center justify-center">
                     <Icon size={20} className="text-brand-gold md:hidden" />
@@ -108,7 +109,7 @@ export default function MethodePage() {
                       {e.valeur}
                     </p>
                   </div>
-                </div>
+                </Reveal>
               )
             })}
           </div>
@@ -117,7 +118,7 @@ export default function MethodePage() {
 
       {/* CTA */}
       <section className="bg-brand-card/50 border-y border-brand-border">
-        <div className="max-w-3xl mx-auto px-6 py-24 md:py-32 text-center">
+        <Reveal className="max-w-3xl mx-auto px-6 py-24 md:py-32 text-center">
           <p className="font-body text-sm tracking-[0.3em] uppercase text-brand-gold mb-4">Et maintenant ?</p>
           <h2 className="font-display text-4xl md:text-5xl font-light text-white mb-8 leading-tight">
             Commençons par<br /><span className="italic text-brand-gold">l'étape 01.</span>
@@ -132,7 +133,7 @@ export default function MethodePage() {
             Prendre rendez-vous
             <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
           </Link>
-        </div>
+        </Reveal>
       </section>
     </div>
   )

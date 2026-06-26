@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { ArrowRight, MapPin, Building2, Home, Building, Layers, Trees, Mountain } from 'lucide-react'
 import { MANDATS } from '../data'
 import { COMMUNES_COORDS } from '../communes-data'
+import Reveal from '../components/Reveal'
 
 const TrackMap = dynamic(() => import('../components/TrackMap'), {
   ssr: false,
@@ -71,11 +72,11 @@ function Stats() {
       <div className="max-w-7xl mx-auto px-6 py-16 md:py-20">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
           {items.map((it, i) => (
-            <div key={i} className="text-center md:text-left">
+            <Reveal key={i} delay={i * 120} className="text-center md:text-left">
               <p className="font-display text-4xl md:text-5xl font-light text-brand-gold leading-none mb-3">{it.value}</p>
               <p className="font-body text-xs tracking-widest uppercase text-white mb-1">{it.label}</p>
               <p className="font-body text-xs text-brand-muted">{it.sub}</p>
-            </div>
+            </Reveal>
           ))}
         </div>
         <p className="font-body text-xs text-brand-muted italic mt-12 md:mt-16 max-w-3xl leading-relaxed">
@@ -90,12 +91,12 @@ function Stats() {
 function MapSection() {
   return (
     <section className="max-w-7xl mx-auto px-6 py-20 md:py-28">
-      <div className="mb-12 md:mb-16 max-w-2xl">
+      <Reveal className="mb-12 md:mb-16 max-w-2xl">
         <p className="font-body text-sm tracking-[0.3em] uppercase text-brand-gold mb-4">Couverture géographique</p>
         <h2 className="font-display text-3xl md:text-4xl font-light text-white leading-tight">
           Du Léman<br /><span className="italic text-brand-gold">au Jura.</span>
         </h2>
-      </div>
+      </Reveal>
 
       <TrackMap />
 
@@ -166,7 +167,7 @@ function TypologiesSection() {
   return (
     <section className="max-w-7xl mx-auto px-6 py-20 md:py-28 border-t border-brand-border">
       {/* Header */}
-      <div className="mb-12 md:mb-16 max-w-2xl">
+      <Reveal className="mb-12 md:mb-16 max-w-2xl">
         <p className="font-body text-sm tracking-[0.3em] uppercase text-brand-gold mb-4">Anatomie de mes mandats</p>
         <h2 className="font-display text-3xl md:text-4xl font-light text-white leading-tight mb-6">
           Aucune typologie<br /><span className="italic text-brand-gold">à part.</span>
@@ -174,7 +175,7 @@ function TypologiesSection() {
         <p className="font-body text-base text-brand-text leading-relaxed">
           Du studio en ville à l&apos;immeuble de rendement, du terrain à bâtir à la promotion mixte. J&apos;ai traité tous les types de biens que l&apos;arc lémanique propose, à toutes les gammes. Cliquez sur une catégorie pour voir le détail.
         </p>
-      </div>
+      </Reveal>
 
       {/* Grille tuiles cliquables */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-brand-border mb-6">
@@ -298,7 +299,7 @@ function TypologiesSection() {
 function CTA() {
   return (
     <section className="bg-brand-card/50 border-y border-brand-border">
-      <div className="max-w-3xl mx-auto px-6 py-24 md:py-32 text-center">
+      <Reveal className="max-w-3xl mx-auto px-6 py-24 md:py-32 text-center">
         <p className="font-body text-sm tracking-[0.3em] uppercase text-brand-gold mb-4">Et le vôtre ?</p>
         <h2 className="font-display text-4xl md:text-5xl font-light text-white mb-8 leading-tight">
           Votre bien aura sa<br /><span className="italic text-brand-gold">place sur cette carte.</span>
@@ -313,7 +314,7 @@ function CTA() {
           Estimer mon bien
           <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
         </Link>
-      </div>
+      </Reveal>
     </section>
   )
 }
