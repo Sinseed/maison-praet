@@ -1,14 +1,15 @@
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 import { ARTICLES } from '../data'
+import Reveal from '../components/Reveal'
 
 export default function JournalPage() {
   const sorted = [...ARTICLES].sort((a, b) => b.date.localeCompare(a.date))
   const guides = sorted.filter(a => a.categorie !== 'Coulisses')
   const coulisses = sorted.filter(a => a.categorie === 'Coulisses')
 
-  const ArticleCard = ({ a }: { a: typeof ARTICLES[0] }) => (
-    <Link href={`/journal/${a.slug}`} key={a.slug} className="group block bg-brand-card border border-brand-border p-8 hover:border-brand-gold/30 transition-all duration-500">
+  const ArticleCard = ({ a, i = 0 }: { a: typeof ARTICLES[0]; i?: number }) => (
+    <Reveal as={Link} href={`/journal/${a.slug}`} delay={i * 80} className="group block bg-brand-card border border-brand-border p-8 hover:border-brand-gold/30 hover:-translate-y-1 transition-all duration-500">
       <div className="flex items-center gap-3 mb-4">
         <span className="font-body text-xs tracking-widest uppercase text-brand-gold">{a.categorie}</span>
         <span className="w-1 h-1 rounded-full bg-brand-border" />
@@ -17,7 +18,7 @@ export default function JournalPage() {
       <h2 className="font-display text-2xl text-white mb-3 group-hover:text-brand-gold transition-colors">{a.titre}</h2>
       <p className="font-body text-brand-muted leading-relaxed mb-4">{a.chapeau}</p>
       <div className="flex items-center gap-2 font-body text-sm text-brand-gold"><span>Lire</span><ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" /></div>
-    </Link>
+    </Reveal>
   )
 
   return (
@@ -35,7 +36,7 @@ export default function JournalPage() {
             </div>
             <p className="font-body text-sm text-brand-muted mb-8">Ce que les plateformes ne montrent pas. Des vraies transactions, des vraies décisions.</p>
             <div className="space-y-6">
-              {coulisses.map(a => <ArticleCard key={a.slug} a={a} />)}
+              {coulisses.map((a, i) => <ArticleCard key={a.slug} a={a} i={i} />)}
             </div>
           </div>
         )}
@@ -54,7 +55,7 @@ export default function JournalPage() {
           </div>
           <p className="font-body text-sm text-brand-muted mb-8">Fiscalité, financement, juridique, marché. Tout ce qu'il faut savoir avant de vendre ou d'acheter dans le canton de Vaud.</p>
           <div className="space-y-6">
-            {guides.map(a => <ArticleCard key={a.slug} a={a} />)}
+            {guides.map((a, i) => <ArticleCard key={a.slug} a={a} i={i} />)}
           </div>
         </div>
       </div>

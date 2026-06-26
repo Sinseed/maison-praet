@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import { Phone } from 'lucide-react'
 import { ARTICLES } from '../../data'
 import ArticleRenderer from '../../components/ArticleRenderer'
@@ -148,8 +149,8 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
 
         {/* Author */}
         <div className="mt-12 pt-8 border-t border-brand-border flex items-center gap-4">
-          <div className="w-12 h-12 bg-brand-card border border-brand-border overflow-hidden">
-            <img src="/photos/portrait.jpg" alt="Thomas Praet" className="object-cover object-top w-full h-full" />
+          <div className="relative w-12 h-12 bg-brand-card border border-brand-border overflow-hidden">
+            <Image src="/photos/portrait.jpg" alt="Thomas Praet" fill sizes="48px" className="object-cover object-top" />
           </div>
           <div>
             <p className="font-body text-sm text-white font-medium">Thomas Praet</p>

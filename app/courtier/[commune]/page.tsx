@@ -1,6 +1,8 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import { ArrowLeft, Phone, Mail, ArrowRight } from 'lucide-react'
+import Reveal from '../../components/Reveal'
 import { COMMUNES_SEO_ALL as COMMUNES_SEO } from '../communes-seo'
 import { MANDATS, ARTICLES } from '../../data'
 
@@ -151,10 +153,10 @@ export default async function CommunePage({ params }: { params: Promise<{ commun
               Biens à <span className="italic text-brand-gold">{c.nom}</span>
             </h2>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {biensCommune.map(m => (
-                <Link href={`/biens/${m.slug}`} key={m.id} className="group bg-brand-dark border border-brand-border overflow-hidden hover:border-brand-gold/30 transition-all duration-500 block">
+              {biensCommune.map((m, i) => (
+                <Reveal key={m.id} as={Link} href={`/biens/${m.slug}`} delay={i * 90} className="group bg-brand-dark border border-brand-border overflow-hidden hover:border-brand-gold/30 hover:-translate-y-1 transition-all duration-500 block">
                   <div className="relative aspect-[4/3] overflow-hidden">
-                    <img src={m.photos[0]} alt={m.titre} className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-700" />
+                    <Image src={m.photos[0]} alt={m.titre} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" className="object-cover group-hover:scale-105 transition-transform duration-700" />
                     <div className="absolute top-3 right-3">
                       <span className={`px-2 py-1 font-body text-xs font-medium tracking-widest uppercase ${m.categorie === 'en_vente' ? 'bg-brand-gold text-brand-dark' : m.categorie === 'reserve' ? 'bg-amber-700/60 text-amber-200' : 'bg-green-800/60 text-green-200'}`}>
                         {m.categorie === 'en_vente' ? 'En vente' : m.categorie === 'reserve' ? 'Réservé' : 'Vendu'}
@@ -165,7 +167,7 @@ export default async function CommunePage({ params }: { params: Promise<{ commun
                     <h3 className="font-display text-lg text-white mb-1">{m.titre}</h3>
                     <p className="font-body text-sm text-brand-gold">CHF {m.prix}.-</p>
                   </div>
-                </Link>
+                </Reveal>
               ))}
             </div>
           </div>
@@ -192,8 +194,8 @@ export default async function CommunePage({ params }: { params: Promise<{ commun
               <a href="tel:+41799690191" className="inline-flex items-center gap-3 border border-brand-border text-brand-text px-8 py-4 font-body text-sm tracking-widest uppercase hover:border-brand-gold hover:text-brand-gold transition-colors w-full justify-center">
                 <Phone size={14} /> 079 969 01 91
               </a>
-              <a href="mailto:tpraet@golay-immobilier.ch" className="inline-flex items-center gap-3 border border-brand-border text-brand-text px-8 py-4 font-body text-sm tracking-widest uppercase hover:border-brand-gold hover:text-brand-gold transition-colors w-full justify-center">
-                <Mail size={14} /> tpraet@golay-immobilier.ch
+              <a href="mailto:tpraet@golay-immobilier.ch" className="inline-flex items-center gap-3 border border-brand-border text-brand-text px-8 py-4 font-body text-sm hover:border-brand-gold hover:text-brand-gold transition-colors w-full justify-center">
+                <Mail size={14} className="shrink-0" /> <span className="lowercase tracking-normal break-all">tpraet@golay-immobilier.ch</span>
               </a>
             </div>
           </div>
@@ -208,14 +210,14 @@ export default async function CommunePage({ params }: { params: Promise<{ commun
             Guides <span className="italic text-brand-gold">& conseils</span>
           </h2>
           <div className="space-y-4">
-            {articlesRecents.map(a => (
-              <Link href={`/journal/${a.slug}`} key={a.slug} className="group flex items-start gap-6 p-6 bg-brand-card border border-brand-border hover:border-brand-gold/30 transition-all duration-300">
+            {articlesRecents.map((a, i) => (
+              <Reveal key={a.slug} as={Link} href={`/journal/${a.slug}`} delay={i * 80} className="group flex items-start gap-6 p-6 bg-brand-card border border-brand-border hover:border-brand-gold/30 transition-all duration-300">
                 <div className="flex-1">
                   <span className="font-body text-xs tracking-widest uppercase text-brand-gold">{a.categorie}</span>
                   <h3 className="font-display text-lg text-white mt-1 group-hover:text-brand-gold transition-colors">{a.titre}</h3>
                 </div>
                 <ArrowRight size={16} className="text-brand-gold shrink-0 mt-2 group-hover:translate-x-1 transition-transform" />
-              </Link>
+              </Reveal>
             ))}
           </div>
           <div className="mt-8">

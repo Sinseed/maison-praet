@@ -18,8 +18,8 @@ module.exports = {
         }
       },
       fontFamily: {
-        display: ['Cormorant Garamond', 'serif'],
-        body: ['Outfit', 'sans-serif'],
+        display: ['var(--font-display)', 'Cormorant Garamond', 'serif'],
+        body: ['var(--font-body)', 'Outfit', 'sans-serif'],
       }
     },
   },
