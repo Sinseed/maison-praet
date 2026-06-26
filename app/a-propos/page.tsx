@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import { ArrowRight, Phone, Mail } from 'lucide-react'
 
 export const metadata: Metadata = {
@@ -83,7 +84,7 @@ export default function AProposPage() {
       <div className="border-t border-brand-border">
         <div className="max-w-4xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-16 items-start">
           <div className="relative aspect-[3/4] bg-brand-card border border-brand-border overflow-hidden">
-            <img src="/photos/thomas-terrain.jpg" alt="Thomas Praet, courtier immobilier à Lausanne" className="object-cover object-bottom w-full h-full" />
+            <Image src="/photos/thomas-terrain.jpg" alt="Thomas Praet, courtier immobilier à Lausanne" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover object-bottom" />
           </div>
           <div className="space-y-10">
             <div>

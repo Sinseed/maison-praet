@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import { ArrowLeft, Phone, Mail, ArrowRight } from 'lucide-react'
 import { COMMUNES_SEO_ALL as COMMUNES_SEO } from '../communes-seo'
 import { MANDATS, ARTICLES } from '../../data'
@@ -154,7 +155,7 @@ export default async function CommunePage({ params }: { params: Promise<{ commun
               {biensCommune.map(m => (
                 <Link href={`/biens/${m.slug}`} key={m.id} className="group bg-brand-dark border border-brand-border overflow-hidden hover:border-brand-gold/30 transition-all duration-500 block">
                   <div className="relative aspect-[4/3] overflow-hidden">
-                    <img src={m.photos[0]} alt={m.titre} className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-700" />
+                    <Image src={m.photos[0]} alt={m.titre} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" className="object-cover group-hover:scale-105 transition-transform duration-700" />
                     <div className="absolute top-3 right-3">
                       <span className={`px-2 py-1 font-body text-xs font-medium tracking-widest uppercase ${m.categorie === 'en_vente' ? 'bg-brand-gold text-brand-dark' : m.categorie === 'reserve' ? 'bg-amber-700/60 text-amber-200' : 'bg-green-800/60 text-green-200'}`}>
                         {m.categorie === 'en_vente' ? 'En vente' : m.categorie === 'reserve' ? 'Réservé' : 'Vendu'}
