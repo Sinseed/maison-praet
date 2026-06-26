@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react'
 import { Phone, Mail, MapPin, ChevronDown, ArrowRight, Shield, TrendingUp, Users, Menu, X, Camera, BookOpen, Play } from 'lucide-react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { MANDATS, ARTICLES, STATS, FILTRES } from './data'
 import DerniereVente from './components/DerniereVente'
 import Reveal from './components/Reveal'
@@ -14,7 +15,7 @@ function Hero() {
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/80 to-brand-dark/30 md:bg-gradient-to-r md:from-brand-dark md:via-brand-dark/95 md:to-brand-dark/40 z-10" />
         <div className="absolute inset-0 md:left-auto md:w-[55%]">
-          <img src="/photos/portrait.jpg" alt="Thomas Praet" className="object-cover object-top w-full h-full" />
+          <Image src="/photos/portrait.jpg" alt="Thomas Praet" fill priority sizes="(max-width: 768px) 100vw, 55vw" className="object-cover object-top" />
         </div>
       </div>
 
@@ -88,7 +89,7 @@ function About() {
     <section id="apropos" className="max-w-7xl mx-auto px-6 py-24 md:py-32">
       <div className="grid md:grid-cols-2 gap-16 items-center">
         <Reveal className="relative aspect-[3/4] bg-brand-card border border-brand-border overflow-hidden group">
-          <img src="/photos/thomas-terrain.jpg" alt="Thomas Praet sur le terrain" className="object-cover object-bottom w-full h-full group-hover:scale-[1.03] transition-transform duration-[1200ms]" />
+          <Image src="/photos/thomas-terrain.jpg" alt="Thomas Praet sur le terrain" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover object-bottom group-hover:scale-[1.03] transition-transform duration-[1200ms]" />
           <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-brand-dark/80 to-transparent" />
         </Reveal>
         <Reveal delay={120}>
@@ -152,7 +153,7 @@ function MandatsSection() {
         {filtered.map((m, i) => (
           <Reveal key={m.id} delay={Math.min(i, 5) * 90} as={Link} href={`/biens/${m.slug}`} className="group bg-brand-card border border-brand-border overflow-hidden hover:border-brand-gold/30 hover:-translate-y-1 transition-all duration-500 block">
             <div className="relative aspect-[4/3] bg-brand-dark overflow-hidden">
-              {m.img ? (<img src={m.img} alt={m.titre} className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-700" />
+              {m.img ? (<Image src={m.img} alt={m.titre} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" className="object-cover group-hover:scale-105 transition-transform duration-700" />
               ) : (<div className="absolute inset-0 flex flex-col items-center justify-center gap-3"><Camera size={32} className="text-brand-muted/30" /><p className="font-body text-xs tracking-widest uppercase text-brand-muted/40">Photos à venir</p></div>)}
               <div className="absolute top-4 right-4"><span className={`px-3 py-1 font-body text-xs font-medium tracking-widest uppercase ${badgeColor(m.categorie)}`}>{badgeLabel(m.categorie)}</span></div>
               {m.photos.length > 0 && (<div className="absolute bottom-4 left-4 flex items-center gap-1.5 bg-black/50 backdrop-blur-sm px-2.5 py-1"><Camera size={12} className="text-white/80" /><span className="font-body text-xs text-white/80">{m.photos.length}</span></div>)}

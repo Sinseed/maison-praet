@@ -192,8 +192,8 @@ export default async function CommunePage({ params }: { params: Promise<{ commun
               <a href="tel:+41799690191" className="inline-flex items-center gap-3 border border-brand-border text-brand-text px-8 py-4 font-body text-sm tracking-widest uppercase hover:border-brand-gold hover:text-brand-gold transition-colors w-full justify-center">
                 <Phone size={14} /> 079 969 01 91
               </a>
-              <a href="mailto:tpraet@golay-immobilier.ch" className="inline-flex items-center gap-3 border border-brand-border text-brand-text px-8 py-4 font-body text-sm tracking-widest uppercase hover:border-brand-gold hover:text-brand-gold transition-colors w-full justify-center">
-                <Mail size={14} /> tpraet@golay-immobilier.ch
+              <a href="mailto:tpraet@golay-immobilier.ch" className="inline-flex items-center gap-3 border border-brand-border text-brand-text px-8 py-4 font-body text-sm hover:border-brand-gold hover:text-brand-gold transition-colors w-full justify-center">
+                <Mail size={14} className="shrink-0" /> <span className="lowercase tracking-normal break-all">tpraet@golay-immobilier.ch</span>
               </a>
             </div>
           </div>
