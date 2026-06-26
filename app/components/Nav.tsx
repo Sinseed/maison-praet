@@ -27,9 +27,6 @@ export default function Nav() {
     { label: 'Guides', href: '/journal' },
   ]
 
-  // Hide on CRM page
-  if (pathname.startsWith('/crm')) return null
-
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled || !isHome ? 'bg-brand-dark/95 backdrop-blur-md border-b border-brand-border' : 'border-b border-transparent'}`}>
       <div className="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
@@ -44,7 +41,6 @@ export default function Nav() {
               <Link key={item.label} href={item.href} className="font-body text-sm tracking-widest uppercase text-brand-muted hover:text-brand-gold transition-colors duration-300">{item.label}</Link>
             )
           ))}
-          <Link href="/crm" className="font-body text-xs tracking-widest uppercase text-brand-border hover:text-brand-muted transition-colors duration-300">CRM</Link>
         </div>
         <button onClick={() => setOpen(!open)} className="md:hidden text-white">
           {open ? <X size={24} /> : <Menu size={24} />}
