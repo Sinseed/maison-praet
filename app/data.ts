@@ -1742,6 +1742,45 @@ C'est ce que je fais à Morges, sur l'arc lémanique et dans le canton de Vaud. 
     cta: "Vous avez un projet immobilier sur l'arc lémanique ? Parlons-en."
   },
   {
+    slug: 'servitudes-charges-foncieres-vente-vaud',
+    titre: "Servitudes et charges foncières : ce qu'elles changent vraiment quand vous vendez",
+    chapeau: "Un droit de passage, un droit de superficie, une restriction de droit public : l'extrait du registre foncier peut réserver des surprises. Voici ce que ces inscriptions signifient concrètement pour une vente dans le canton de Vaud.",
+    date: '2026-06-19',
+    categorie: 'Juridique',
+    contenu: `Quand je remets un dossier de vente à un acquéreur, l'une des premières questions qui revient est toujours la même : "Et ces servitudes, c'est grave ?" La réponse dépend entièrement de ce qu'il y a inscrit, et de ce que l'acquéreur a prévu d'en faire.
+
+## Ce que l'extrait du registre foncier vous dit
+
+Le registre foncier vaudois recense, pour chaque parcelle, l'ensemble des droits et obligations qui y sont attachés. Ces inscriptions sont publiques, opposables aux tiers, et transmises automatiquement lors de toute vente. Autrement dit : l'acquéreur reprend le bien avec tout ce qui figure sur la feuille, qu'il en soit informé ou non.
+
+On distingue deux catégories principales. Les servitudes foncières grèvent une parcelle au bénéfice d'une autre : c'est le cas du droit de passage, du droit de vue, ou d'une restriction de construction. Les charges foncières, elles, imposent au propriétaire une obligation positive : entretenir un chemin, fournir de l'eau à un fonds voisin. Dans les deux cas, l'obligation suit le bien, pas la personne.
+
+## Les servitudes qui n'inquiètent pas et celles qui comptent
+
+Un droit de passage piéton sur le chemin latéral de votre jardin : dans la grande majorité des cas, cela n'inquiète personne et n'affecte pas le prix. Un droit de superficie accordé à un tiers pour 80 ans encore, avec un bâtiment construit dessus : c'est une autre affaire. L'étendue de la servitude, sa localisation précise sur la parcelle, et sa compatibilité avec l'usage prévu par l'acquéreur sont les trois éléments à évaluer systématiquement.
+
+Dans mes mandats sur l'arc lémanique et le Gros-de-Vaud, les servitudes les plus fréquentes sont les droits de passage pour l'accès à une parcelle enclavée, les conduites d'eau ou d'égout qui traversent la propriété, et les restrictions de bâtir liées à des décisions administratives passées. Ces dernières méritent une attention particulière : elles peuvent limiter une extension, empêcher la surélévation d'un bâtiment ou interdire certains usages. Des projets qui, pour certains acquéreurs, étaient le motif principal de leur intérêt pour le bien.
+
+## Les restrictions de droit public à ne pas confondre
+
+Séparées des servitudes foncières, les restrictions de droit public administratif (RDPPF) constituent une couche d'information complémentaire. Elles incluent les zones de protection des eaux, les alignements de construction, les zones inondables, les périmètres de protection des sites et des monuments. Depuis quelques années, un cadastre RDPPF officiel est accessible en ligne dans le canton de Vaud. Il ne remplace pas l'analyse du registre foncier, mais permet de visualiser rapidement les contraintes applicables à une parcelle.
+
+Je vérifie systématiquement ces données avant de fixer le prix d'un bien avec un vendeur. Une villa en zone de protection des eaux souterraines ne peut pas recevoir de citernes ou de chauffage à mazout. Un immeuble en périmètre de protection des sites peut être soumis à des contraintes de façade lors de tout travaux. Ces éléments ne sont pas des vices cachés, ils sont publics. Mais s'ils ne sont pas lus, ils deviennent des surprises.
+
+## L'impact concret sur la négociation
+
+Une servitude n'est pas nécessairement un frein à la vente. C'est souvent un élément d'information qui doit être présenté clairement, contextualisé, et intégré dans le prix si nécessaire. Un droit de passage existant depuis des décennies sans jamais être exercé n'a pas le même poids qu'un droit exercé quotidiennement par le voisin. Un droit de superficie avec 5 ans restants est différent d'un avec 60 ans.
+
+Ce qui crée de la méfiance chez un acquéreur, ce n'est pas la servitude elle-même. C'est de la découvrir tard dans le processus, sans explication. J'ai vu des négociations se tendre inutilement parce que l'information avait été mise de côté plutôt qu'exposée dès le départ. La transparence sur ce point est à la fois une obligation légale et une stratégie commerciale : un acquéreur bien informé avance avec confiance.
+
+## Ce que je fais systématiquement avant de signer un mandat
+
+Avant de recommander un prix à un vendeur, je demande l'extrait du registre foncier et, si le bien a une certaine ancienneté, je vérifie les actes constitutifs des servitudes importantes. Un droit de passage dont le texte original précise les conditions d'exercice peut être très différent de ce que le vendeur imaginait. Ce travail en amont évite de mauvaises surprises lors de la due diligence de l'acquéreur, et il protège le vendeur contre une renégociation tardive du prix.
+
+Dans le canton de Vaud, la consultation du registre foncier pour une parcelle identifiée peut être faite par toute personne justifiant d'un intérêt. Le notaire instrumentant y accède directement. Entre la signature du mandat et la première visite, j'ai généralement le temps de vérifier ces éléments et de les présenter de manière lisible dans le dossier acquéreur.`,
+    cta: "Vous vendez un bien dans le canton de Vaud et souhaitez comprendre ce que l'extrait du registre foncier implique pour votre vente ? Contactez-moi."
+  },
+  {
     slug: 'investir-locatif-vaud-2026',
     titre: 'Investir dans l\'immobilier locatif en 2026 : ce que les chiffres ne disent pas',
     chapeau: "L'immobilier locatif attire à nouveau. Les taux se sont stabilisés, le marché vaudois reste sous tension, et les discussions sur la valeur locative fiscale relancent les arbitrages patrimoniaux. Mais entre un rendement brut affiché et un investissement réellement rentable, il y a souvent plusieurs dizaines de milliers de francs d'écart.",
