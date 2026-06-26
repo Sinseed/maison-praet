@@ -368,5 +368,5 @@ function Testimonials() {
 }
 
 export default function Home() {
-  return (<main><Hero /><StatsBar /><DerniereVente /><Approach /><EstimationCTA /><Testimonials /><MandatsSection /><JournalPreview /><Contact /><Footer /></main>)
+  return (<main><Hero /><StatsBar /><DerniereVente /><Approach /><About /><EstimationCTA /><Testimonials /><MandatsSection /><JournalPreview /><Contact /><Footer /></main>)
 }
