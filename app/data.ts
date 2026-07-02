@@ -15,6 +15,7 @@ export type Mandat = {
   annee_vente?: string // Année de la vente (pour les transactions historiques sans photos)
   nb_lots?: number     // Nombre de lots vendus dans la transaction (PPE, promotion)
   composition?: string // Composition (pour les immeubles : "20 appartements + 1 local commercial")
+  rendement?: string   // Rendement brut affiché sur la fiche (immeubles : "4.77% brut")
   datevente?: string   // Date de vente format YYYY-MM (pour tri homepage dernière vente)
 }
 
@@ -55,8 +56,8 @@ export const MANDATS: Mandat[] = [
   },
   {
     id: 30, slug: 'immeuble-lausanne-tour', titre: 'Immeuble de rendement', lieu: 'Lausanne',
-    prix: "4'300'000", pieces: '-', surface: '231 m²', terrain: '-', categorie: 'en_vente',
-    composition: '14 logements + 1 café-bar',
+    prix: "4'300'000", pieces: '-', surface: '-', terrain: '231 m²', categorie: 'en_vente',
+    composition: '14 logements + 1 café-bar', rendement: '4.77% brut',
     img: '/photos/lausanne-tour/01-facade.jpg',
     photos: [
       '/photos/lausanne-tour/01-facade.jpg',

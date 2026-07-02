@@ -28,6 +28,12 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       url: `https://maisonpraet.ch/biens/${slug}`,
       ...(bien.photos[0] ? { images: [{ url: `https://maisonpraet.ch${bien.photos[0]}`, width: 1200, height: 800, alt: bien.titre }] } : {}),
     },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${bien.titre} – ${bien.lieu} | Maison Praet`,
+      description: desc,
+      ...(bien.photos[0] ? { images: [`https://maisonpraet.ch${bien.photos[0]}`] } : {}),
+    },
   }
 }
 
@@ -109,7 +115,8 @@ export default async function BienPage({ params }: { params: Promise<{ slug: str
                 : bien.pieces !== '-' && <div><p className="font-body text-xs tracking-widest uppercase text-brand-muted mb-1">Pièces</p><p className="font-display text-2xl text-white">{bien.pieces}</p></div>
               }
               {bien.surface !== '-' && <div><p className="font-body text-xs tracking-widest uppercase text-brand-muted mb-1">Surface</p><p className="font-display text-2xl text-white">{bien.surface}</p></div>}
-              {bien.terrain !== '-' && <div><p className="font-body text-xs tracking-widest uppercase text-brand-muted mb-1">Terrain</p><p className="font-display text-2xl text-white">{bien.terrain}</p></div>}
+              {bien.terrain !== '-' && <div><p className="font-body text-xs tracking-widest uppercase text-brand-muted mb-1">{bien.composition ? 'Parcelle' : 'Terrain'}</p><p className="font-display text-2xl text-white">{bien.terrain}</p></div>}
+              {bien.rendement && <div><p className="font-body text-xs tracking-widest uppercase text-brand-muted mb-1">Rendement</p><p className="font-display text-2xl text-white">{bien.rendement}</p></div>}
             </div>
             <div className="font-body text-brand-text leading-relaxed text-lg whitespace-pre-line">{bien.description}</div>
           </div>

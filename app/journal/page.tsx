@@ -1,7 +1,21 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 import { ARTICLES } from '../data'
 import Reveal from '../components/Reveal'
+
+export const metadata: Metadata = {
+  title: 'Journal – Guides immobiliers Canton de Vaud | Maison Praet',
+  description: "Marché immobilier vaudois, conseils aux propriétaires et coulisses du terrain. Les guides de Thomas Praet, courtier diplômé USPI à Lausanne.",
+  alternates: { canonical: 'https://maisonpraet.ch/journal' },
+  openGraph: {
+    title: 'Journal – Guides immobiliers Canton de Vaud | Maison Praet',
+    description: "Marché vaudois, conseils pratiques et coulisses de vraies transactions. Des articles concrets pour prendre les bonnes décisions.",
+    type: 'website',
+    locale: 'fr_CH',
+    url: 'https://maisonpraet.ch/journal',
+  },
+}
 
 export default function JournalPage() {
   const sorted = [...ARTICLES].sort((a, b) => b.date.localeCompare(a.date))

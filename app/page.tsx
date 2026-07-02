@@ -185,7 +185,8 @@ function MandatsSection() {
               <div className="flex gap-4 text-brand-muted font-body text-sm">
                 {m.composition ? <span>{m.composition}</span> : m.pieces !== '-' && <span>{m.pieces} pièces</span>}
                 {m.surface !== '-' && <span>{m.surface}</span>}
-                {m.terrain !== '-' && <span>Terrain {m.terrain}</span>}
+                {m.terrain !== '-' && <span>{m.composition ? 'Parcelle' : 'Terrain'} {m.terrain}</span>}
+                {m.rendement && <span>{m.rendement}</span>}
               </div>
             </div>
           </Reveal>

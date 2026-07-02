@@ -17,7 +17,10 @@ type AnimatedNumberProps = {
  */
 export default function AnimatedNumber({ value, decimals = 0, duration = 1600, className }: AnimatedNumberProps) {
   const ref = useRef<HTMLSpanElement>(null)
-  const [display, setDisplay] = useState(0)
+  // Initialisé à la valeur finale : le HTML rendu côté serveur (Google, moteurs IA,
+  // aperçus sans JS) affiche le vrai chiffre. L'animation démarre à 0 uniquement
+  // au moment où le compteur entre dans le viewport.
+  const [display, setDisplay] = useState(value)
 
   useEffect(() => {
     const el = ref.current
@@ -33,6 +36,7 @@ export default function AnimatedNumber({ value, decimals = 0, duration = 1600, c
           return
         }
 
+        setDisplay(0)
         const start = performance.now()
         const tick = (now: number) => {
           const progress = Math.min((now - start) / duration, 1)

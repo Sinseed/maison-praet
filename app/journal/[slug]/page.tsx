@@ -32,6 +32,12 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       authors: ['Thomas Praet'],
       images: [{ url: 'https://maisonpraet.ch/og-image.jpg', width: 1200, height: 630 }],
     },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: ['https://maisonpraet.ch/og-image.jpg'],
+    },
   }
 }
 

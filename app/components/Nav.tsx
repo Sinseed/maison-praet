@@ -21,7 +21,7 @@ export default function Nav() {
 
   const links = [
     { label: 'À propos', href: sectionLink('#apropos') },
-    { label: 'Nos biens', href: sectionLink('#nosbiens') },
+    { label: 'Biens en vente', href: sectionLink('#nosbiens') },
     { label: 'Track Record', href: '/track-record' },
     { label: 'Méthode', href: '/methode' },
     { label: 'Guides', href: '/journal' },

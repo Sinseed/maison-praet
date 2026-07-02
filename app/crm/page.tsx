@@ -20,18 +20,19 @@ const STATUT_LABELS: Record<Statut, { label: string; color: string }> = {
   perdu: { label: 'Perdu', color: 'bg-red-500/20 text-red-300 border-red-500/30' },
 }
 
-// ─── SAMPLE DATA ────────────────────────────────────────────────────────────
+// ─── SAMPLE DATA (fictives) ─────────────────────────────────────────────────
+// IMPORTANT : cette page est un composant client. Tout ce qui figure ici est
+// livré dans le bundle JavaScript public, lisible par n'importe quel visiteur,
+// PIN ou pas. Ne JAMAIS y mettre de noms de clients, emails, prix ou notes
+// de négociation réels. Données de démonstration uniquement.
 const INITIAL_DATA: Mandat[] = [
-  { id: 1, nom: 'Belfiore / Gianzi', bien: 'Villa individuelle 8.5p', lieu: 'Yverdon-les-Bains', prix: "2'290'000", statut: 'en_vente', date: '2026-03-10', notes: 'Drone photos au printemps. Potentiel agrandissement ~524m².', contact: 'andrea.belfiore@me.com' },
-  { id: 2, nom: 'Kunkler', bien: 'Maison Stettler 6.5p', lieu: 'Riex', prix: "1'450'000", statut: 'en_vente', date: '2026-02-15', notes: 'Bien patrimonial. Zéro CO2 direct (CECB).', contact: '' },
-  { id: 3, nom: 'Haener', bien: 'Appartement 4.5p', lieu: 'Gland', prix: "690'000", statut: 'en_vente', date: '2025-11-01', notes: 'Pas d\'ascenseur, frein principal. Co-courtage déployé.', contact: '' },
-  { id: 4, nom: 'Gesseney', bien: 'Maison de village 5.5p', lieu: 'Morges', prix: "1'750'000", statut: 'mandat', date: '2026-04-03', notes: 'Mandat exclusif 2.5% + TVA. Stratégie prix dégressive.', contact: 'granny.g@sunrise.ch' },
-  { id: 5, nom: 'Sibilla', bien: 'Immeuble de rendement', lieu: 'Lausanne', prix: "6'000'000", statut: 'en_vente', date: '2025-09-01', notes: 'Offre CHF 5.4M refusée. Exposition tierce problématique.', contact: 'raphsibilla@gmail.com' },
-  { id: 6, nom: 'Reymond', bien: 'Appartement 4.5p', lieu: 'Lausanne', prix: "1'590'000", statut: 'vendu', date: '2026-03-20', notes: 'Signing 15 avril, notaire Coveris. Acquéreur Miftari via Ferrys.', contact: '' },
-  { id: 7, nom: 'Lombardi', bien: 'Villa jumelle 5.5p', lieu: 'Tartegnin', prix: "1'110'000", statut: 'offre', date: '2026-03-26', notes: 'Offre acceptée CHF 1.11M. Acte de vente à terme, PPE à créer.', contact: '' },
-  { id: 8, nom: 'Henzer', bien: 'Villa jumelle 5.5p', lieu: 'Cossonay', prix: "1'330'000", statut: 'en_vente', date: '2026-03-18', notes: 'Jardin plat, vue Alpes+Jura. Brochure portails finalisée.', contact: '' },
-  { id: 9, nom: 'Buvelot', bien: 'Maison', lieu: 'Denges', prix: '-', statut: 'prospect', date: '2026-04-02', notes: 'RDV estimation 21 avril 8h.', contact: '' },
-  { id: 10, nom: 'Ström', bien: 'Bien à définir', lieu: 'Glion', prix: '-', statut: 'estimation', date: '2026-04-01', notes: 'CECB Route de Caux 93.', contact: '' },
+  { id: 1, nom: 'Exemple A', bien: 'Villa individuelle 6.5p', lieu: 'Yverdon-les-Bains', prix: "2'100'000", statut: 'en_vente', date: '2026-03-10', notes: 'Exemple de dossier en commercialisation.', contact: '' },
+  { id: 2, nom: 'Exemple B', bien: 'Maison de village 5.5p', lieu: 'Morges', prix: "1'650'000", statut: 'mandat', date: '2026-04-03', notes: 'Exemple de mandat signé.', contact: '' },
+  { id: 3, nom: 'Exemple C', bien: 'Appartement PPE 4.5p', lieu: 'Lausanne', prix: "1'450'000", statut: 'offre', date: '2026-03-26', notes: 'Exemple d\'offre en cours.', contact: '' },
+  { id: 4, nom: 'Exemple D', bien: 'Immeuble de rendement', lieu: 'Vevey', prix: "5'200'000", statut: 'en_vente', date: '2025-09-01', notes: 'Exemple de bien de rendement.', contact: '' },
+  { id: 5, nom: 'Exemple E', bien: 'Appartement 3.5p', lieu: 'Gland', prix: "780'000", statut: 'vendu', date: '2026-03-20', notes: 'Exemple de vente conclue.', contact: '' },
+  { id: 6, nom: 'Exemple F', bien: 'Maison', lieu: 'Denges', prix: '-', statut: 'prospect', date: '2026-04-02', notes: 'Exemple de prospect.', contact: '' },
+  { id: 7, nom: 'Exemple G', bien: 'Bien à définir', lieu: 'Montreux', prix: '-', statut: 'estimation', date: '2026-04-01', notes: 'Exemple d\'estimation en cours.', contact: '' },
 ]
 
 // ─── PIN GATE ───────────────────────────────────────────────────────────────
