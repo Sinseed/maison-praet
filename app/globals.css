@@ -38,6 +38,13 @@ body::before {
   .text-balance { text-wrap: balance; }
 }
 
+/* ---- Keyboard focus: visible gold ring (mouse clicks stay clean) ---- */
+:where(a, button, input, textarea, select, summary, [tabindex]):focus-visible {
+  outline: 2px solid #C9A96E;
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
 /* ---- Scroll reveal ---- */
 .reveal {
   opacity: 0;

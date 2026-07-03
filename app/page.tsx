@@ -327,10 +327,39 @@ const TEMOIGNAGES = [
   },
 ]
 
+// Fiche Google de Golay Immobilier : les avis y sont regroupés (plusieurs citent Thomas).
+// À remplacer par le lien direct de sa fiche Google Business dès qu'elle existe.
+const GOOGLE_REVIEWS_URL = 'https://www.google.com/maps/search/?api=1&query=Golay+Immobilier+SA+Grand-Ch%C3%AAne+2+Lausanne'
+
 function Testimonials() {
   const noteMoyenne = (TEMOIGNAGES.reduce((s, t) => s + t.etoiles, 0) / TEMOIGNAGES.length).toFixed(1)
+
+  // Données structurées (schema.org) : note agrégée + avis réels affichés ci-dessous.
+  // Rattachées au même @id que la fiche RealEstateAgent du layout (Google fusionne les nœuds).
+  // reviewCount reflète EXACTEMENT les avis affichés — aucun chiffre gonflé (règle Google).
+  const reviewsJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'RealEstateAgent',
+    '@id': 'https://maisonpraet.ch/#agent',
+    name: 'Maison Praet',
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: noteMoyenne,
+      reviewCount: TEMOIGNAGES.length,
+      bestRating: 5,
+      worstRating: 1,
+    },
+    review: TEMOIGNAGES.map(t => ({
+      '@type': 'Review',
+      author: { '@type': 'Person', name: t.nom },
+      reviewRating: { '@type': 'Rating', ratingValue: t.etoiles, bestRating: 5, worstRating: 1 },
+      reviewBody: t.texte,
+    })),
+  }
+
   return (
     <section className="py-24 bg-brand-dark relative overflow-hidden">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewsJsonLd) }} />
       <div className="absolute top-0 left-1/3 w-80 h-80 rounded-full bg-brand-gold/3 blur-[120px]" />
       <Reveal className="max-w-6xl mx-auto px-6 relative z-10 mb-12">
         <Eyebrow className="mb-4">Témoignages</Eyebrow>
@@ -342,7 +371,9 @@ function Testimonials() {
             ))}
           </div>
           <p className="font-body text-sm text-brand-muted">
-            <span className="font-display text-xl text-white">{noteMoyenne}</span> / 5 · d&apos;après les avis Google de mes clients
+            <span className="font-display text-xl text-white">{noteMoyenne}</span> / 5 · d&apos;après{' '}
+            <a href={GOOGLE_REVIEWS_URL} target="_blank" rel="noopener noreferrer" className="link-underline text-brand-text hover:text-brand-gold transition-colors">les avis Google</a>{' '}
+            de mes clients
           </p>
         </div>
       </Reveal>
