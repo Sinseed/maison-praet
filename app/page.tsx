@@ -135,7 +135,7 @@ function Approach() {
   const pillars = [
     { icon: <Shield size={28} />, title: 'Seulement les mandats défendables', desc: "Si votre bien ne peut pas se vendre au prix espéré, vous le saurez avant de signer, pas trois mois plus tard." },
     { icon: <TrendingUp size={28} />, title: 'Un prix juste, pas un prix flatteur', desc: "Une estimation fondée sur trois méthodes et des données réelles du marché vaudois. Vous saurez ce que vaut réellement votre bien, pas ce que vous aimeriez entendre." },
-    { icon: <Users size={28} />, title: 'Un seul interlocuteur, du premier appel au notaire', desc: "Le même interlocuteur de l'estimation à la signature notariale. Votre bien n'est jamais un dossier parmi d'autres." },
+    { icon: <Users size={28} />, title: 'Un seul interlocuteur', desc: "De la première rencontre à la signature chez le notaire, vous avez le même interlocuteur. Votre bien n'est jamais un dossier parmi d'autres." },
   ]
   return (
     <section id="approche" className="bg-brand-card/50 border-y border-brand-border">
