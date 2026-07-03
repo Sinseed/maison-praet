@@ -122,7 +122,7 @@ function About() {
           <Eyebrow className="mb-4">À propos</Eyebrow>
           <h2 className="font-display text-4xl md:text-5xl font-light text-white mb-8 leading-tight">L&apos;honnêteté,<br /><span className="italic text-brand-gold">avant le mandat.</span></h2>
           <div className="space-y-5 font-body text-brand-text leading-relaxed">
-            <p>Une estimation doit refléter le marché, pas ce qui ferait plaisir sur le moment. Si votre bien ne peut pas se vendre dans de bonnes conditions, vous le saurez franchement — quitte à ne pas signer le mandat.</p>
+            <p>Une estimation doit refléter le marché, pas ce qui ferait plaisir sur le moment. Si votre bien ne peut pas se vendre dans de bonnes conditions, vous le saurez franchement, quitte à ne pas signer le mandat.</p>
             <p>Depuis 2020, j&apos;accompagne des propriétaires sur l&apos;ensemble de l&apos;arc lémanique et du Gros-de-Vaud. Chaque mandat est traité avec la même rigueur : estimation fondée, stratégie de prix réaliste, suivi transparent jusqu&apos;à la signature chez le notaire.</p>
           </div>
         </Reveal>
@@ -133,7 +133,7 @@ function About() {
 
 function Approach() {
   const pillars = [
-    { icon: <Shield size={28} />, title: 'Seulement les mandats défendables', desc: "Si votre bien ne peut pas se vendre au prix espéré, vous le saurez avant de signer — pas trois mois plus tard." },
+    { icon: <Shield size={28} />, title: 'Seulement les mandats défendables', desc: "Si votre bien ne peut pas se vendre au prix espéré, vous le saurez avant de signer, pas trois mois plus tard." },
     { icon: <TrendingUp size={28} />, title: 'Un prix juste, pas un prix flatteur', desc: "Une estimation fondée sur trois méthodes et des données réelles du marché vaudois. Vous saurez ce que vaut réellement votre bien, pas ce que vous aimeriez entendre." },
     { icon: <Users size={28} />, title: 'Un seul interlocuteur, du premier appel au notaire', desc: "Le même interlocuteur de l'estimation à la signature notariale. Votre bien n'est jamais un dossier parmi d'autres." },
   ]
