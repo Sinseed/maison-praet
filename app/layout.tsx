@@ -3,6 +3,7 @@ import { Cormorant_Garamond, Outfit } from 'next/font/google'
 import './globals.css'
 import Nav from './components/Nav'
 import MobileCTA from './components/MobileCTA'
+import ScrollProgress from './components/ScrollProgress'
 import { Analytics } from '@vercel/analytics/react'
 
 const cormorant = Cormorant_Garamond({
@@ -137,7 +138,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     })}}
   />
 </head>
-<body><Nav />{children}<MobileCTA /><Analytics /></body>
+<body><ScrollProgress /><Nav />{children}<MobileCTA /><Analytics /></body>
     </html>
   )
 }

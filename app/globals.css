@@ -94,6 +94,114 @@ body::before {
   animation: pageFade 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+/* ============================================================
+   Luxe polish layer — micro-interactions & depth
+   ============================================================ */
+
+/* ---- Reading-progress bar (thin golden line, top of viewport) ---- */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  transform: scaleX(var(--sp, 0));
+  transform-origin: 0 50%;
+  background: linear-gradient(90deg, rgba(201, 169, 110, 0), #C9A96E 45%, #E2CFA5 85%);
+  box-shadow: 0 0 12px -2px rgba(201, 169, 110, 0.55);
+  z-index: 60;
+  pointer-events: none;
+}
+
+/* ---- Animated golden underline (nav + inline links) ---- */
+.link-underline { position: relative; }
+.link-underline::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(90deg, #C9A96E, #E2CFA5);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.link-underline:hover::after,
+.link-underline[data-active='true']::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* ---- Golden button with a shine sweep on hover ---- */
+.btn-gold { position: relative; overflow: hidden; }
+.btn-gold::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  transform: translateX(-130%) skewX(-20deg);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transition: transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+  z-index: 3;
+}
+.btn-gold:hover::before { transform: translateX(130%) skewX(-20deg); }
+
+/* ---- Luxe card: gradient border glow + layered shadow on hover ---- */
+.card-luxe { position: relative; }
+.card-luxe::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(201, 169, 110, 0.65), transparent 38%, transparent 62%, rgba(201, 169, 110, 0.4));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+.card-luxe:hover::after { opacity: 1; }
+.card-luxe:hover {
+  box-shadow: 0 24px 48px -24px rgba(0, 0, 0, 0.75), 0 0 34px -12px rgba(201, 169, 110, 0.18);
+}
+
+/* ---- Ken Burns: slow drift-zoom on hero portrait ---- */
+@keyframes kenBurns {
+  from { transform: scale(1); }
+  to { transform: scale(1.09); }
+}
+.ken-burns { animation: kenBurns 22s ease-out forwards; transform-origin: 60% 40%; }
+
+/* ---- Elegant scroll cue (line with a travelling dot) ---- */
+.scroll-cue-line {
+  position: relative;
+  display: block;
+  width: 1px;
+  height: 56px;
+  background: linear-gradient(to bottom, rgba(201, 169, 110, 0.45), rgba(201, 169, 110, 0));
+  overflow: hidden;
+}
+.scroll-cue-dot {
+  position: absolute;
+  top: 0;
+  left: -1px;
+  width: 3px;
+  height: 11px;
+  border-radius: 2px;
+  background: #C9A96E;
+  box-shadow: 0 0 8px -1px rgba(201, 169, 110, 0.8);
+  animation: scrollDot 2.4s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+}
+@keyframes scrollDot {
+  0% { transform: translateY(-14px); opacity: 0; }
+  25% { opacity: 1; }
+  75% { opacity: 1; }
+  100% { transform: translateY(56px); opacity: 0; }
+}
+
 /* ---- Leave room for the fixed mobile CTA bar ---- */
 @media (max-width: 767px) {
   body { padding-bottom: 56px; }
@@ -105,4 +213,7 @@ body::before {
   .float-glow { animation: none; }
   .marquee-track { animation: none; }
   .page-fade { animation: none; }
+  .ken-burns { animation: none; transform: none; }
+  .scroll-cue-dot { animation: none; opacity: 0.7; }
+  .btn-gold::before { transition: none; }
 }

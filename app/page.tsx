@@ -1,12 +1,13 @@
 'use client'
 import { useState, useEffect, useRef } from 'react'
-import { Phone, Mail, MapPin, ChevronDown, ArrowRight, Shield, TrendingUp, Users, Menu, X, Camera, BookOpen, Play } from 'lucide-react'
+import { Phone, Mail, MapPin, ArrowRight, Shield, TrendingUp, Users, Camera, BookOpen } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { MANDATS, ARTICLES, STATS, FILTRES } from './data'
 import DerniereVente from './components/DerniereVente'
 import Reveal from './components/Reveal'
 import AnimatedNumber from './components/AnimatedNumber'
+import Eyebrow from './components/Eyebrow'
 
 function Hero() {
   const portraitRef = useRef<HTMLDivElement>(null)
@@ -35,12 +36,15 @@ function Hero() {
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/80 to-brand-dark/30 md:bg-gradient-to-r md:from-brand-dark md:via-brand-dark/95 md:to-brand-dark/40 z-10" />
         <div ref={portraitRef} className="absolute -inset-y-[6%] inset-x-0 md:left-auto md:w-[55%] will-change-transform">
-          <Image src="/photos/portrait.jpg" alt="Thomas Praet" fill priority sizes="(max-width: 768px) 100vw, 55vw" className="object-cover object-top" />
+          <Image src="/photos/portrait.jpg" alt="Thomas Praet" fill priority sizes="(max-width: 768px) 100vw, 55vw" className="object-cover object-top ken-burns" />
         </div>
+        {/* Vignette — adds depth and keeps the eye on the copy */}
+        <div className="absolute inset-0 z-10 pointer-events-none" style={{ background: 'radial-gradient(120% 95% at 28% 42%, transparent 42%, rgba(12,15,20,0.55) 100%)' }} />
       </div>
 
-      {/* Floating golden glow */}
+      {/* Floating golden glows */}
       <div className="float-glow absolute -top-20 left-[20%] w-[420px] h-[420px] rounded-full bg-brand-gold/10 blur-[130px] z-[5] pointer-events-none" />
+      <div className="float-glow absolute bottom-[8%] right-[6%] w-[360px] h-[360px] rounded-full bg-brand-gold/[0.06] blur-[120px] z-[5] pointer-events-none" style={{ animationDelay: '-7s' }} />
 
       {/* Content */}
       <div className="relative z-20 min-h-screen flex flex-col pt-28 pb-12 md:pt-48 md:pb-20 max-w-7xl mx-auto px-6">
@@ -62,7 +66,7 @@ function Hero() {
           </p>
 
           <div className="hero-in flex flex-col sm:flex-row gap-4 mb-10 md:mb-16" style={{animationDelay: '0.68s'}}>
-            <a href="#estimation" className="group inline-flex items-center gap-3 bg-brand-gold text-brand-dark px-8 py-4 font-body text-sm font-medium tracking-widest uppercase hover:bg-brand-goldLight hover:shadow-[0_0_40px_-8px_rgba(201,169,110,0.6)] transition-all duration-300 justify-center">
+            <a href="#estimation" className="btn-gold group inline-flex items-center gap-3 bg-brand-gold text-brand-dark px-8 py-4 font-body text-sm font-medium tracking-widest uppercase hover:bg-brand-goldLight hover:shadow-[0_0_40px_-8px_rgba(201,169,110,0.6)] transition-all duration-300 justify-center">
               Estimer mon bien<ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
             </a>
             <a href="tel:+41799690191" className="inline-flex items-center gap-3 border border-brand-border text-brand-text px-8 py-4 font-body text-sm tracking-widest uppercase hover:border-brand-gold hover:text-brand-gold transition-all duration-300 justify-center">
@@ -78,7 +82,9 @@ function Hero() {
         </div>
       </div>
 
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce z-20 hidden md:block"><ChevronDown size={20} className="text-brand-muted" /></div>
+      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 hidden md:flex flex-col items-center gap-3" aria-hidden="true">
+        <span className="scroll-cue-line"><span className="scroll-cue-dot" /></span>
+      </div>
     </section>
   )
 }
@@ -113,7 +119,7 @@ function About() {
           <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-brand-dark/80 to-transparent" />
         </Reveal>
         <Reveal delay={120}>
-          <p className="font-body text-sm tracking-[0.3em] uppercase text-brand-gold mb-4">À propos</p>
+          <Eyebrow className="mb-4">À propos</Eyebrow>
           <h2 className="font-display text-4xl md:text-5xl font-light text-white mb-8 leading-tight">Un courtier qui vous dit<br /><span className="italic text-brand-gold">la vérité.</span></h2>
           <div className="space-y-5 font-body text-brand-text leading-relaxed">
             <p>Je ne suis pas un courtier qui promet un prix pour obtenir un mandat, puis le baisse trois mois plus tard. Si je ne suis pas convaincu de pouvoir vendre votre bien dans de bonnes conditions, je vous le dis.</p>
@@ -135,12 +141,12 @@ function Approach() {
     <section id="approche" className="bg-brand-card/50 border-y border-brand-border">
       <div className="max-w-7xl mx-auto px-6 py-24 md:py-32">
         <Reveal className="mb-16">
-          <p className="font-body text-sm tracking-[0.3em] uppercase text-brand-gold mb-4">Mon approche</p>
+          <Eyebrow className="mb-4">Mon approche</Eyebrow>
           <h2 className="font-display text-4xl md:text-5xl font-light text-white leading-tight">Ce qui change<br /><span className="italic text-brand-gold">avec moi.</span></h2>
         </Reveal>
         <div className="grid md:grid-cols-3 gap-8">
           {pillars.map((s, i) => (
-            <Reveal key={i} delay={i * 120} className="group bg-brand-dark border border-brand-border p-8 hover:border-brand-gold/30 hover:-translate-y-1 transition-all duration-500">
+            <Reveal key={i} delay={i * 120} className="card-luxe group bg-brand-dark border border-brand-border p-8 hover:border-brand-gold/30 hover:-translate-y-1 transition-all duration-500">
               <div className="text-brand-gold mb-6 group-hover:scale-110 transition-transform duration-300">{s.icon}</div>
               <h3 className="font-display text-lg text-white mb-4 leading-snug">{s.title}</h3>
               <p className="font-body text-sm text-brand-muted leading-relaxed">{s.desc}</p>
@@ -162,7 +168,7 @@ function MandatsSection() {
   return (
     <section id="nosbiens" className="max-w-7xl mx-auto px-6 py-24 md:py-32">
       <Reveal className="text-center mb-12">
-        <p className="font-body text-sm tracking-[0.3em] uppercase text-brand-gold mb-4">Portefeuille</p>
+        <Eyebrow center className="mb-4">Portefeuille</Eyebrow>
         <h2 className="font-display text-4xl md:text-5xl font-light text-white">Sur le marché <span className="italic text-brand-gold">aujourd&apos;hui</span></h2>
       </Reveal>
       <div className="flex justify-center gap-3 mb-12 flex-wrap">
@@ -170,7 +176,7 @@ function MandatsSection() {
       </div>
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {filtered.map((m, i) => (
-          <Reveal key={m.id} delay={Math.min(i, 5) * 90} as={Link} href={`/biens/${m.slug}`} className="group bg-brand-card border border-brand-border overflow-hidden hover:border-brand-gold/30 hover:-translate-y-1 transition-all duration-500 block">
+          <Reveal key={m.id} delay={Math.min(i, 5) * 90} as={Link} href={`/biens/${m.slug}`} className="card-luxe group bg-brand-card border border-brand-border overflow-hidden hover:border-brand-gold/30 hover:-translate-y-1 transition-all duration-500 block">
             <div className="relative aspect-[4/3] bg-brand-dark overflow-hidden">
               {m.img ? (<Image src={m.img} alt={m.titre} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" className="object-cover group-hover:scale-105 transition-transform duration-700" />
               ) : (<div className="absolute inset-0 flex flex-col items-center justify-center gap-3"><Camera size={32} className="text-brand-muted/30" /><p className="font-body text-xs tracking-widest uppercase text-brand-muted/40">Photos à venir</p></div>)}
@@ -201,7 +207,7 @@ function EstimationCTA() {
     <section className="bg-brand-card/50 border-y border-brand-border">
       <Reveal className="max-w-7xl mx-auto px-6 py-20 md:py-24 flex flex-col md:flex-row md:items-center md:justify-between gap-10">
         <div className="max-w-xl">
-          <p className="font-body text-xs tracking-[0.35em] uppercase text-brand-gold mb-4">Estimation gratuite</p>
+          <Eyebrow className="mb-4">Estimation gratuite</Eyebrow>
           <h2 className="font-display text-4xl md:text-5xl font-light text-white leading-tight">
             Quelle est la valeur<br />
             <span className="italic text-brand-gold">de votre bien ?</span>
@@ -211,7 +217,7 @@ function EstimationCTA() {
           </p>
         </div>
         <div className="shrink-0">
-          <Link href="/estimation" className="group inline-flex items-center gap-3 bg-brand-gold text-brand-dark px-10 py-5 font-body text-sm font-medium tracking-widest uppercase hover:bg-brand-goldLight hover:shadow-[0_0_45px_-8px_rgba(201,169,110,0.65)] transition-all duration-300">
+          <Link href="/estimation" className="btn-gold group inline-flex items-center gap-3 bg-brand-gold text-brand-dark px-10 py-5 font-body text-sm font-medium tracking-widest uppercase hover:bg-brand-goldLight hover:shadow-[0_0_45px_-8px_rgba(201,169,110,0.65)] transition-all duration-300">
             Estimer mon bien <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
           </Link>
         </div>
@@ -225,12 +231,12 @@ function JournalPreview() {
   return (
     <section id="journal" className="max-w-7xl mx-auto px-6 py-24 md:py-32">
       <Reveal className="text-center mb-16">
-        <p className="font-body text-sm tracking-[0.3em] uppercase text-brand-gold mb-4">Journal</p>
+        <Eyebrow center className="mb-4">Journal</Eyebrow>
         <h2 className="font-display text-4xl md:text-5xl font-light text-white">Entre <span className="italic text-brand-gold">deux mandats.</span></h2>
       </Reveal>
       <div className="grid md:grid-cols-3 gap-8">
         {recent.map((a, i) => (
-          <Reveal key={a.slug} delay={i * 110} as={Link} href={`/journal/${a.slug}`} className="group bg-brand-card border border-brand-border p-8 hover:border-brand-gold/30 hover:-translate-y-1 transition-all duration-500 block">
+          <Reveal key={a.slug} delay={i * 110} as={Link} href={`/journal/${a.slug}`} className="card-luxe group bg-brand-card border border-brand-border p-8 hover:border-brand-gold/30 hover:-translate-y-1 transition-all duration-500 block">
             <div className="flex items-center gap-3 mb-6">
               <span className="font-body text-xs tracking-widest uppercase text-brand-gold">{a.categorie}</span>
               <span className="w-1 h-1 rounded-full bg-brand-border" />
@@ -253,7 +259,7 @@ function Contact() {
   return (
     <section id="contact" className="bg-brand-card/50 border-y border-brand-border">
       <Reveal className="max-w-3xl mx-auto px-6 py-24 md:py-32 text-center">
-        <p className="font-body text-sm tracking-[0.3em] uppercase text-brand-gold mb-4">Contact</p>
+        <Eyebrow center className="mb-4">Contact</Eyebrow>
         <h2 className="font-display text-4xl md:text-5xl font-light text-white mb-8 leading-tight">Parlons de<br /><span className="italic text-brand-gold">votre projet.</span></h2>
         <p className="font-body text-brand-muted leading-relaxed mb-12">Que vous souhaitiez vendre, obtenir une estimation ou simplement un avis sur votre situation immobilière, je suis à votre disposition pour un premier échange sans engagement.</p>
         <div className="flex flex-col sm:flex-row justify-center gap-8 sm:gap-12">
@@ -327,7 +333,7 @@ function Testimonials() {
     <section className="py-24 bg-brand-dark relative overflow-hidden">
       <div className="absolute top-0 left-1/3 w-80 h-80 rounded-full bg-brand-gold/3 blur-[120px]" />
       <Reveal className="max-w-6xl mx-auto px-6 relative z-10 mb-12">
-        <p className="font-body text-xs tracking-[0.3em] uppercase text-brand-gold mb-4">Témoignages</p>
+        <Eyebrow className="mb-4">Témoignages</Eyebrow>
         <h2 className="font-display text-3xl md:text-4xl font-light text-white mb-6">Leurs <span className="italic text-brand-gold">mots.</span></h2>
         <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
           <div className="flex gap-1">
@@ -346,7 +352,7 @@ function Testimonials() {
           {[0, 1].map(copy => (
             <div key={copy} className="flex gap-6 pr-6 shrink-0" aria-hidden={copy === 1}>
               {TEMOIGNAGES.map((t, i) => (
-                <figure key={i} className="w-[300px] sm:w-[380px] shrink-0 flex flex-col bg-brand-card/50 border border-brand-border/50 p-8 hover:border-brand-gold/30 transition-colors duration-500">
+                <figure key={i} className="card-luxe w-[300px] sm:w-[380px] shrink-0 flex flex-col bg-brand-card/50 border border-brand-border/50 p-8 hover:border-brand-gold/30 transition-colors duration-500">
                   <div className="flex gap-1 mb-6">
                     {Array.from({ length: t.etoiles }).map((_, j) => (
                       <svg key={j} className="w-4 h-4 text-brand-gold" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>

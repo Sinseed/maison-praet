@@ -28,7 +28,7 @@ export default function Nav() {
   ]
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled || !isHome ? 'bg-brand-dark/95 backdrop-blur-md border-b border-brand-border' : 'border-b border-transparent'}`}>
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled || !isHome ? 'bg-brand-dark/95 backdrop-blur-md border-b border-brand-border shadow-[0_10px_30px_-18px_rgba(0,0,0,0.8)]' : 'border-b border-transparent'}`}>
       <div className="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
         <Link href="/" className="flex items-center">
           <img src="/logo-maison-praet.png" alt="Maison Praet" style={{width: 'clamp(90px, 12vw, 160px)', height: 'auto'}} />
@@ -36,9 +36,9 @@ export default function Nav() {
         <div className="hidden md:flex items-center gap-10">
           {links.map(item => (
             item.href.startsWith('#') ? (
-              <a key={item.label} href={item.href} className="font-body text-sm tracking-widest uppercase text-brand-muted hover:text-brand-gold transition-colors duration-300">{item.label}</a>
+              <a key={item.label} href={item.href} className="link-underline font-body text-sm tracking-widest uppercase text-brand-muted hover:text-brand-gold transition-colors duration-300">{item.label}</a>
             ) : (
-              <Link key={item.label} href={item.href} className="font-body text-sm tracking-widest uppercase text-brand-muted hover:text-brand-gold transition-colors duration-300">{item.label}</Link>
+              <Link key={item.label} href={item.href} data-active={pathname === item.href} className={`link-underline font-body text-sm tracking-widest uppercase transition-colors duration-300 ${pathname === item.href ? 'text-brand-gold' : 'text-brand-muted hover:text-brand-gold'}`}>{item.label}</Link>
             )
           ))}
         </div>
