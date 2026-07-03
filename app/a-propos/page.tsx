@@ -111,7 +111,7 @@ export default function AProposPage() {
             </div>
             <div>
               <Eyebrow className="mb-3">Employeur</Eyebrow>
-              <p className="font-body text-brand-muted text-sm leading-relaxed">Golay Immobilier SA · Grand-Chêne 2 · 1003 Lausanne. Régie fondée en 1932, l'une des plus anciennes de Lausanne.</p>
+              <p className="font-body text-brand-muted text-sm leading-relaxed">Golay Immobilier SA · Grand-Chêne 2 · 1003 Lausanne. L&apos;une des plus anciennes régies de la place lausannoise.</p>
             </div>
           </div>
         </Reveal>
