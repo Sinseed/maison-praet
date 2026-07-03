@@ -274,11 +274,19 @@ function Contact() {
 
 function Footer() {
   return (
-    <footer className="max-w-7xl mx-auto px-6 py-10 flex flex-col sm:flex-row items-center justify-between gap-4">
-      <p className="font-display text-lg text-white">Maison <span className="text-brand-gold">Praet</span></p>
-      <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-6">
+    <footer className="max-w-7xl mx-auto px-6 py-12">
+      <div className="flex flex-col sm:flex-row items-center justify-between gap-6 pb-8 border-b border-brand-border">
+        <p className="font-display text-lg text-white">Maison <span className="text-brand-gold">Praet</span></p>
+        <a href="https://www.golay-immobilier.ch" target="_blank" rel="noopener noreferrer" className="group flex items-center gap-3">
+          <span className="font-body text-[0.62rem] tracking-[0.25em] uppercase text-brand-muted">Membre de la régie</span>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/golay-icon.svg" alt="Golay Immobilier SA" width={22} height={22} className="opacity-90" />
+          <span className="font-body text-sm text-brand-text group-hover:text-brand-gold transition-colors">Golay Immobilier SA</span>
+        </a>
+      </div>
+      <div className="flex flex-col sm:flex-row items-center justify-between gap-2 sm:gap-6 pt-6">
+        <p className="font-body text-xs text-brand-muted tracking-wider">© {new Date().getFullYear()} Thomas Praet · Golay Immobilier SA · Lausanne</p>
         <Link href="/mentions-legales" className="font-body text-xs text-brand-muted tracking-wider hover:text-brand-gold transition-colors">Mentions légales</Link>
-        <p className="font-body text-xs text-brand-muted tracking-wider">© {new Date().getFullYear()} Thomas Praet · Golay Immobilier SA</p>
       </div>
     </footer>
   )
