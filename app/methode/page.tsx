@@ -36,7 +36,7 @@ const ETAPES = [
     num: '03',
     icon: FileSignature,
     titre: 'Le mandat exclusif',
-    desc: "Si vous décidez de me confier votre bien, nous signons un mandat clair : prix de vente fixé ensemble, durée du mandat, conditions de commission. Tout est explicite, sans clauses obscures. Je travaille en exclusivité parce que c'est le format qui me permet d'investir réellement dans la commercialisation.",
+    desc: "Si vous décidez de me confier votre bien, nous signons un mandat clair : prix de vente fixé ensemble, durée du mandat, conditions de commission. Tout est explicite, sans clauses obscures. Le mandat est conclu avec Golay Immobilier, sous la responsabilité de laquelle j'exerce. Vous bénéficiez ainsi de la structure et des garanties d'une régie établie. Je travaille en exclusivité parce que c'est le format qui me permet d'investir réellement dans la commercialisation.",
     valeur: "Pas de petits caractères. Vous savez exactement ce que vous signez.",
   },
   {
