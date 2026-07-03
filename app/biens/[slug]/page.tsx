@@ -153,7 +153,7 @@ export default async function BienPage({ params }: { params: Promise<{ slug: str
               )}
               <div className="mt-8 pt-6 border-t border-brand-border">
                 <p className="font-body text-xs text-brand-muted">Thomas Praet</p>
-                <p className="font-body text-xs text-brand-muted">Golay Immobilier SA · Lausanne</p>
+                <p className="font-body text-xs text-brand-muted">Golay Immobilier · Lausanne</p>
                 <p className="font-body text-xs text-brand-muted">Certifié USPI</p>
               </div>
             </div>

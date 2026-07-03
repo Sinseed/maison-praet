@@ -160,7 +160,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
           </div>
           <div>
             <p className="font-body text-sm text-white font-medium">Thomas Praet</p>
-            <p className="font-body text-xs text-brand-muted">Courtier certifié USPI · Golay Immobilier SA</p>
+            <p className="font-body text-xs text-brand-muted">Courtier certifié USPI · Golay Immobilier</p>
           </div>
         </div>
       </article>

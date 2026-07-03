@@ -233,7 +233,7 @@ export default async function CommunePage({ params }: { params: Promise<{ commun
       <div className="border-t border-brand-border">
         <div className="max-w-4xl mx-auto px-6 py-12">
           <p className="font-body text-xs text-brand-muted text-center">
-            Thomas Praet, courtier immobilier à Lausanne · Certifié USPI · Golay Immobilier SA, Grand-Chêne 2, 1003 Lausanne · 079 969 01 91 · tpraet@golay-immobilier.ch
+            Thomas Praet, courtier immobilier à Lausanne · Certifié USPI · Golay Immobilier, Grand-Chêne 2, 1003 Lausanne · 079 969 01 91 · tpraet@golay-immobilier.ch
           </p>
         </div>
       </div>

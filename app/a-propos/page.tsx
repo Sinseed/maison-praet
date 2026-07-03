@@ -111,7 +111,7 @@ export default function AProposPage() {
             </div>
             <div>
               <Eyebrow className="mb-3">Employeur</Eyebrow>
-              <p className="font-body text-brand-muted text-sm leading-relaxed">Golay Immobilier SA · Grand-Chêne 2 · 1003 Lausanne. L&apos;une des plus anciennes régies de la place lausannoise.</p>
+              <p className="font-body text-brand-muted text-sm leading-relaxed">Golay Immobilier · Grand-Chêne 2 · 1003 Lausanne. L&apos;une des plus anciennes régies de la place lausannoise.</p>
             </div>
           </div>
         </Reveal>
@@ -122,7 +122,7 @@ export default function AProposPage() {
           <Eyebrow className="mb-8">Parcours</Eyebrow>
           <div className="space-y-8">
             {[
-              { periode: 'Depuis 2025', titre: 'Golay Immobilier SA — Lausanne', detail: "Courtier sous mandat. Spécialisation résidentielle et immeubles de rendement sur l'arc lémanique, le Gros-de-Vaud et La Côte." },
+              { periode: 'Depuis 2025', titre: 'Golay Immobilier — Lausanne', detail: "Courtier sous mandat. Spécialisation résidentielle et immeubles de rendement sur l'arc lémanique, le Gros-de-Vaud et La Côte." },
               { periode: '2020 – 2025', titre: 'Cogestim — Lausanne', detail: '15 à 20 transactions par an de 2021 à 2024. Développement d\'un réseau de notaires, géomètres et conseillers hypothécaires sur l\'ensemble du canton.' },
               { periode: 'Avant 2020', titre: 'Arrivée en Suisse', detail: 'Formé en Belgique, installé en Suisse en 2017. La formation USPI et l\'immersion dans le marché vaudois constituent le socle de ma pratique.' },
             ].map((e, i) => (
