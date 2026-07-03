@@ -101,7 +101,7 @@ export default async function CommunePage({ params }: { params: Promise<{ commun
           <span className="italic text-brand-gold">à {c.nom}</span>
         </h1>
         <p className="font-body text-lg text-brand-muted leading-relaxed max-w-2xl mb-12">
-          Estimation, vente et conseil immobilier à {c.nom} et dans la région {c.region}. Thomas Praet, courtier certifié USPI, vous accompagne du premier rendez-vous à la signature chez le notaire.
+          Estimation, vente et conseil immobilier à {c.nom} et dans la région {c.region}. Thomas Praet, courtier certifié USPI, vous accompagne de la première rencontre à la signature chez le notaire.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4">

@@ -79,7 +79,7 @@ export default function AProposPage() {
           Thomas <span className="italic text-brand-gold">Praet</span>
         </h1>
         <p className="font-body text-lg text-brand-muted leading-relaxed max-w-2xl">
-          Courtier immobilier diplômé USPI, actif depuis 2020 sur l'arc lémanique et le canton de Vaud. Plus de 90 transactions documentées, 39 communes couvertes, un seul interlocuteur du premier rendez-vous à la signature chez le notaire.
+          Courtier immobilier diplômé USPI, actif depuis 2020 sur l'arc lémanique et le canton de Vaud. Plus de 90 transactions documentées, 39 communes couvertes, un seul interlocuteur de la première rencontre à la signature chez le notaire.
         </p>
       </div>
 
@@ -117,34 +117,13 @@ export default function AProposPage() {
         </Reveal>
       </div>
 
-      <div className="border-t border-brand-border bg-brand-card/30">
-        <div className="max-w-4xl mx-auto px-6 py-16">
-          <Eyebrow className="mb-8">Parcours</Eyebrow>
-          <div className="space-y-8">
-            {[
-              { periode: 'Depuis 2025', titre: 'Golay Immobilier — Lausanne', detail: "Courtier sous mandat. Spécialisation résidentielle et immeubles de rendement sur l'arc lémanique, le Gros-de-Vaud et La Côte." },
-              { periode: '2020 – 2025', titre: 'Cogestim — Lausanne', detail: '15 à 20 transactions par an de 2021 à 2024. Développement d\'un réseau de notaires, géomètres et conseillers hypothécaires sur l\'ensemble du canton.' },
-              { periode: 'Avant 2020', titre: 'Arrivée en Suisse', detail: 'Formé en Belgique, installé en Suisse en 2017. La formation USPI et l\'immersion dans le marché vaudois constituent le socle de ma pratique.' },
-            ].map((e, i) => (
-              <Reveal key={e.periode} as="div" delay={i * 100} className="grid md:grid-cols-4 gap-4 border-b border-brand-border pb-8">
-                <p className="font-body text-xs tracking-widest uppercase text-brand-gold pt-1">{e.periode}</p>
-                <div className="md:col-span-3">
-                  <p className="font-body text-white font-medium mb-2">{e.titre}</p>
-                  <p className="font-body text-brand-muted leading-relaxed text-sm">{e.detail}</p>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </div>
-
       <div className="border-t border-brand-border">
         <div className="max-w-4xl mx-auto px-6 py-16">
           <Eyebrow className="mb-8">Philosophie</Eyebrow>
           <div className="grid md:grid-cols-2 gap-10">
             {[
-              { titre: 'Un prix juste, pas un prix flatteur', texte: "Je ne signe pas un mandat pour avoir signé un mandat. Si le prix espéré n'est pas atteignable, je le dis avant de signer, pas après trois mois de silence et une première baisse." },
-              { titre: 'Un seul interlocuteur', texte: "Pas d'assistante, pas de call center. Du premier rendez-vous à la remise des clés, vous traitez avec moi. Votre bien n'est pas un dossier parmi d'autres." },
+              { titre: 'Un prix juste, pas un prix flatteur', texte: "Un mandat ne se signe pas pour la signature. Si le prix espéré n'est pas atteignable, vous le saurez avant de signer, pas trois mois plus tard." },
+              { titre: 'Un seul interlocuteur', texte: "De la première rencontre à la signature chez le notaire, vous avez le même interlocuteur. Votre bien n'est jamais un dossier parmi d'autres." },
               { titre: "L'estimation comme outil de confiance", texte: "Mon estimation repose sur trois méthodes croisées et des données réelles du marché vaudois. Elle est remise par écrit, argumentée, et ne change pas entre la visite et la signature." },
               { titre: 'Le refus comme garantie', texte: "Je refuse des mandats. Un bien surestimé ne se vend pas, il se brûle. Et un bien brûlé coûte plus au vendeur que la commission qu'il espérait économiser." },
             ].map((p, i) => (
