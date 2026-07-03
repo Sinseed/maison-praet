@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { ArrowLeft, Phone, Mail, ArrowRight } from 'lucide-react'
 import Reveal from '../../components/Reveal'
+import Eyebrow from '../../components/Eyebrow'
 import { COMMUNES_SEO_ALL as COMMUNES_SEO } from '../communes-seo'
 import { MANDATS, ARTICLES } from '../../data'
 
@@ -94,7 +95,7 @@ export default async function CommunePage({ params }: { params: Promise<{ commun
           <ArrowLeft size={14} /> Maison Praet
         </Link>
 
-        <p className="font-body text-xs tracking-[0.4em] uppercase text-brand-gold mb-4">{c.region} · Canton de Vaud</p>
+        <Eyebrow className="mb-4">{c.region} · Canton de Vaud</Eyebrow>
         <h1 className="font-display text-4xl md:text-6xl font-light text-white leading-tight mb-6">
           Courtier immobilier<br />
           <span className="italic text-brand-gold">à {c.nom}</span>
@@ -104,7 +105,7 @@ export default async function CommunePage({ params }: { params: Promise<{ commun
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4">
-          <Link href="/estimation" className="group inline-flex items-center gap-3 bg-brand-gold text-brand-dark px-8 py-4 font-body text-sm font-medium tracking-widest uppercase hover:bg-brand-goldLight transition-colors justify-center">
+          <Link href="/estimation" className="btn-gold group inline-flex items-center gap-3 bg-brand-gold text-brand-dark px-8 py-4 font-body text-sm font-medium tracking-widest uppercase hover:bg-brand-goldLight transition-colors justify-center">
             Estimer mon bien <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
           </Link>
           <a href="tel:+41799690191" className="inline-flex items-center gap-3 border border-brand-border text-brand-text px-8 py-4 font-body text-sm tracking-widest uppercase hover:border-brand-gold hover:text-brand-gold transition-colors justify-center">
@@ -116,7 +117,7 @@ export default async function CommunePage({ params }: { params: Promise<{ commun
       {/* Marché local */}
       <div className="border-t border-brand-border">
         <div className="max-w-4xl mx-auto px-6 py-16">
-          <p className="font-body text-xs tracking-[0.3em] uppercase text-brand-gold mb-4">Marché immobilier</p>
+          <Eyebrow className="mb-4">Marché immobilier</Eyebrow>
           <h2 className="font-display text-3xl font-light text-white mb-8">
             {c.nom} en 2026
           </h2>
@@ -132,12 +133,12 @@ export default async function CommunePage({ params }: { params: Promise<{ commun
       <div className="border-t border-brand-border bg-brand-card/30">
         <div className="max-w-4xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-12">
           <div>
-            <p className="font-body text-xs tracking-[0.3em] uppercase text-brand-gold mb-4">Atout principal</p>
+            <Eyebrow className="mb-4">Atout principal</Eyebrow>
             <h2 className="font-display text-2xl font-light text-white mb-4">Pourquoi {c.nom} ?</h2>
             <p className="font-body text-brand-text leading-relaxed">{c.pointFort}</p>
           </div>
           <div>
-            <p className="font-body text-xs tracking-[0.3em] uppercase text-brand-gold mb-4">Mon expérience à {c.nom}</p>
+            <Eyebrow className="mb-4">Mon expérience à {c.nom}</Eyebrow>
             <h2 className="font-display text-2xl font-light text-white mb-4">Sur le terrain</h2>
             <p className="font-body text-brand-text leading-relaxed italic">{c.terrain}</p>
           </div>
@@ -148,13 +149,13 @@ export default async function CommunePage({ params }: { params: Promise<{ commun
       {biensCommune.length > 0 && (
         <div className="border-t border-brand-border">
           <div className="max-w-4xl mx-auto px-6 py-16">
-            <p className="font-body text-xs tracking-[0.3em] uppercase text-brand-gold mb-4">Portefeuille</p>
+            <Eyebrow className="mb-4">Portefeuille</Eyebrow>
             <h2 className="font-display text-3xl font-light text-white mb-10">
               Biens à <span className="italic text-brand-gold">{c.nom}</span>
             </h2>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {biensCommune.map((m, i) => (
-                <Reveal key={m.id} as={Link} href={`/biens/${m.slug}`} delay={i * 90} className="group bg-brand-dark border border-brand-border overflow-hidden hover:border-brand-gold/30 hover:-translate-y-1 transition-all duration-500 block">
+                <Reveal key={m.id} as={Link} href={`/biens/${m.slug}`} delay={i * 90} className="card-luxe group bg-brand-dark border border-brand-border overflow-hidden hover:border-brand-gold/30 hover:-translate-y-1 transition-all duration-500 block">
                   <div className="relative aspect-[4/3] overflow-hidden">
                     <Image src={m.photos[0]} alt={m.titre} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" className="object-cover group-hover:scale-105 transition-transform duration-700" />
                     <div className="absolute top-3 right-3">
@@ -179,7 +180,7 @@ export default async function CommunePage({ params }: { params: Promise<{ commun
         <div className="max-w-4xl mx-auto px-6 py-16">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <p className="font-body text-xs tracking-[0.3em] uppercase text-brand-gold mb-4">Estimation gratuite</p>
+              <Eyebrow className="mb-4">Estimation gratuite</Eyebrow>
               <h2 className="font-display text-3xl font-light text-white mb-4">
                 Quelle est la valeur<br /><span className="italic text-brand-gold">de votre bien à {c.nom} ?</span>
               </h2>
@@ -188,7 +189,7 @@ export default async function CommunePage({ params }: { params: Promise<{ commun
               </p>
             </div>
             <div className="space-y-4">
-              <Link href="/estimation" className="group inline-flex items-center gap-3 bg-brand-gold text-brand-dark px-8 py-4 font-body text-sm font-medium tracking-widest uppercase hover:bg-brand-goldLight transition-colors w-full justify-center">
+              <Link href="/estimation" className="btn-gold group inline-flex items-center gap-3 bg-brand-gold text-brand-dark px-8 py-4 font-body text-sm font-medium tracking-widest uppercase hover:bg-brand-goldLight transition-colors w-full justify-center">
                 Demander une estimation <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
               </Link>
               <a href="tel:+41799690191" className="inline-flex items-center gap-3 border border-brand-border text-brand-text px-8 py-4 font-body text-sm tracking-widest uppercase hover:border-brand-gold hover:text-brand-gold transition-colors w-full justify-center">
@@ -205,13 +206,13 @@ export default async function CommunePage({ params }: { params: Promise<{ commun
       {/* Articles récents */}
       <div className="border-t border-brand-border">
         <div className="max-w-4xl mx-auto px-6 py-16">
-          <p className="font-body text-xs tracking-[0.3em] uppercase text-brand-gold mb-4">Ressources</p>
+          <Eyebrow className="mb-4">Ressources</Eyebrow>
           <h2 className="font-display text-3xl font-light text-white mb-10">
             Guides <span className="italic text-brand-gold">& conseils</span>
           </h2>
           <div className="space-y-4">
             {articlesRecents.map((a, i) => (
-              <Reveal key={a.slug} as={Link} href={`/journal/${a.slug}`} delay={i * 80} className="group flex items-start gap-6 p-6 bg-brand-card border border-brand-border hover:border-brand-gold/30 transition-all duration-300">
+              <Reveal key={a.slug} as={Link} href={`/journal/${a.slug}`} delay={i * 80} className="card-luxe group flex items-start gap-6 p-6 bg-brand-card border border-brand-border hover:border-brand-gold/30 transition-all duration-300">
                 <div className="flex-1">
                   <span className="font-body text-xs tracking-widest uppercase text-brand-gold">{a.categorie}</span>
                   <h3 className="font-display text-lg text-white mt-1 group-hover:text-brand-gold transition-colors">{a.titre}</h3>

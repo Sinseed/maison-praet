@@ -65,7 +65,7 @@ function PinGate({ onUnlock }: { onUnlock: () => void }) {
           className="sr-only" autoFocus
         />
         <button onClick={handleSubmit}
-          className="w-full bg-brand-gold text-brand-dark py-3 font-body text-sm font-medium tracking-widest uppercase hover:bg-brand-goldLight transition-colors">
+          className="btn-gold w-full bg-brand-gold text-brand-dark py-3 font-body text-sm font-medium tracking-widest uppercase hover:bg-brand-goldLight transition-colors">
           Accéder
         </button>
         {error && <p className="font-body text-red-400 text-sm mt-4">Code incorrect</p>}

@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 import { ARTICLES } from '../data'
 import Reveal from '../components/Reveal'
+import Eyebrow from '../components/Eyebrow'
 
 export const metadata: Metadata = {
   title: 'Journal – Guides immobiliers Canton de Vaud | Maison Praet',
@@ -23,7 +24,7 @@ export default function JournalPage() {
   const coulisses = sorted.filter(a => a.categorie === 'Coulisses')
 
   const ArticleCard = ({ a, i = 0 }: { a: typeof ARTICLES[0]; i?: number }) => (
-    <Reveal as={Link} href={`/journal/${a.slug}`} delay={i * 80} className="group block bg-brand-card border border-brand-border p-8 hover:border-brand-gold/30 hover:-translate-y-1 transition-all duration-500">
+    <Reveal as={Link} href={`/journal/${a.slug}`} delay={i * 80} className="card-luxe group block bg-brand-card border border-brand-border p-8 hover:border-brand-gold/30 hover:-translate-y-1 transition-all duration-500">
       <div className="flex items-center gap-3 mb-4">
         <span className="font-body text-xs tracking-widest uppercase text-brand-gold">{a.categorie}</span>
         <span className="w-1 h-1 rounded-full bg-brand-border" />
@@ -38,7 +39,7 @@ export default function JournalPage() {
   return (
     <div className="min-h-screen bg-brand-dark pt-24">
       <div className="max-w-4xl mx-auto px-6 py-16">
-        <p className="font-body text-sm tracking-[0.3em] uppercase text-brand-gold mb-4">Journal</p>
+        <Eyebrow className="mb-4">Journal</Eyebrow>
         <h1 className="font-display text-4xl md:text-5xl font-light text-white mb-4">Entre <span className="italic text-brand-gold">deux mandats.</span></h1>
         <p className="font-body text-brand-muted mb-20 max-w-2xl">Marché immobilier vaudois, conseils pratiques et coulisses du terrain. Des articles concrets pour prendre les bonnes décisions.</p>
 

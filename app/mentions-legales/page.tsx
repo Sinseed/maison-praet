@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Eyebrow from '../components/Eyebrow'
 
 export const metadata: Metadata = {
   title: 'Mentions légales | Maison Praet',
@@ -10,7 +11,7 @@ export default function MentionsLegalesPage() {
   return (
     <div className="min-h-screen bg-brand-dark pt-32 pb-20">
       <div className="max-w-3xl mx-auto px-6">
-        <p className="font-body text-sm tracking-[0.3em] uppercase text-brand-gold mb-6">Informations légales</p>
+        <Eyebrow className="mb-6">Informations légales</Eyebrow>
         <h1 className="font-display text-4xl md:text-5xl font-light text-white mb-12 leading-tight">
           Mentions <span className="italic text-brand-gold">légales.</span>
         </h1>

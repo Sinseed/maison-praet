@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowRight, Home, Calculator, FileSignature, Megaphone, Users, Handshake, Key } from 'lucide-react'
 import Reveal from '../components/Reveal'
+import Eyebrow from '../components/Eyebrow'
 
 export const metadata: Metadata = {
   title: 'Ma méthode | Maison Praet',
@@ -73,7 +74,7 @@ export default function MethodePage() {
     <div className="min-h-screen bg-brand-dark">
       {/* HERO */}
       <section className="relative pt-32 pb-16 md:pt-40 md:pb-20 max-w-7xl mx-auto px-6">
-        <p className="font-body text-sm tracking-[0.3em] uppercase text-brand-gold mb-6">Ma méthode</p>
+        <Eyebrow className="mb-6">Ma méthode</Eyebrow>
         <h1 className="font-display text-5xl md:text-7xl font-light text-white leading-[1.05] mb-8 max-w-4xl">
           Du premier rendez-vous<br /><span className="italic text-brand-gold">à la remise des clés.</span>
         </h1>
@@ -119,7 +120,7 @@ export default function MethodePage() {
       {/* CTA */}
       <section className="bg-brand-card/50 border-y border-brand-border">
         <Reveal className="max-w-3xl mx-auto px-6 py-24 md:py-32 text-center">
-          <p className="font-body text-sm tracking-[0.3em] uppercase text-brand-gold mb-4">Et maintenant ?</p>
+          <Eyebrow className="mb-4">Et maintenant ?</Eyebrow>
           <h2 className="font-display text-4xl md:text-5xl font-light text-white mb-8 leading-tight">
             Commençons par<br /><span className="italic text-brand-gold">l'étape 01.</span>
           </h2>
@@ -128,7 +129,7 @@ export default function MethodePage() {
           </p>
           <Link
             href="/#estimation"
-            className="group inline-flex items-center gap-3 bg-brand-gold text-brand-dark px-8 py-4 font-body text-sm font-medium tracking-widest uppercase hover:bg-brand-goldLight transition-all duration-300"
+            className="btn-gold group inline-flex items-center gap-3 bg-brand-gold text-brand-dark px-8 py-4 font-body text-sm font-medium tracking-widest uppercase hover:bg-brand-goldLight transition-all duration-300"
           >
             Prendre rendez-vous
             <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />

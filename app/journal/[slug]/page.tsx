@@ -140,7 +140,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
           <div className="flex flex-col sm:flex-row gap-4">
             <a
               href="tel:+41799690191"
-              className="inline-flex items-center gap-3 bg-brand-gold text-brand-dark px-8 py-4 font-body text-sm font-medium tracking-widest uppercase hover:bg-brand-goldLight transition-colors justify-center"
+              className="btn-gold inline-flex items-center gap-3 bg-brand-gold text-brand-dark px-8 py-4 font-body text-sm font-medium tracking-widest uppercase hover:bg-brand-goldLight transition-colors justify-center"
             >
               <Phone size={16} /> +41 79 969 01 91
             </a>

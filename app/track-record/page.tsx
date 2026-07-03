@@ -4,6 +4,7 @@ import dynamic from 'next/dynamic'
 import Link from 'next/link'
 import { ArrowRight, MapPin, Building2, Home, Building, Layers, Trees, Mountain } from 'lucide-react'
 import { MANDATS } from '../data'
+import Eyebrow from '../components/Eyebrow'
 import { COMMUNES_COORDS } from '../communes-data'
 import Reveal from '../components/Reveal'
 
@@ -20,7 +21,7 @@ const TrackMap = dynamic(() => import('../components/TrackMap'), {
 function Hero() {
   return (
     <section className="relative pt-32 pb-16 md:pt-40 md:pb-20 max-w-7xl mx-auto px-6">
-      <p className="font-body text-sm tracking-[0.3em] uppercase text-brand-gold mb-6">Track Record</p>
+      <Eyebrow className="mb-6">Track Record</Eyebrow>
       <h1 className="font-display text-5xl md:text-7xl font-light text-white leading-[1.05] mb-8 max-w-4xl">
         Les chiffres parlent<br />
         <span className="italic text-brand-gold">avant moi.</span>
@@ -92,7 +93,7 @@ function MapSection() {
   return (
     <section className="max-w-7xl mx-auto px-6 py-20 md:py-28">
       <Reveal className="mb-12 md:mb-16 max-w-2xl">
-        <p className="font-body text-sm tracking-[0.3em] uppercase text-brand-gold mb-4">Couverture géographique</p>
+        <Eyebrow className="mb-4">Couverture géographique</Eyebrow>
         <h2 className="font-display text-3xl md:text-4xl font-light text-white leading-tight">
           Du Léman<br /><span className="italic text-brand-gold">au Jura.</span>
         </h2>
@@ -168,7 +169,7 @@ function TypologiesSection() {
     <section className="max-w-7xl mx-auto px-6 py-20 md:py-28 border-t border-brand-border">
       {/* Header */}
       <Reveal className="mb-12 md:mb-16 max-w-2xl">
-        <p className="font-body text-sm tracking-[0.3em] uppercase text-brand-gold mb-4">Anatomie de mes mandats</p>
+        <Eyebrow className="mb-4">Anatomie de mes mandats</Eyebrow>
         <h2 className="font-display text-3xl md:text-4xl font-light text-white leading-tight mb-6">
           Aucune typologie<br /><span className="italic text-brand-gold">à part.</span>
         </h2>
@@ -300,7 +301,7 @@ function CTA() {
   return (
     <section className="bg-brand-card/50 border-y border-brand-border">
       <Reveal className="max-w-3xl mx-auto px-6 py-24 md:py-32 text-center">
-        <p className="font-body text-sm tracking-[0.3em] uppercase text-brand-gold mb-4">Et le vôtre ?</p>
+        <Eyebrow className="mb-4">Et le vôtre ?</Eyebrow>
         <h2 className="font-display text-4xl md:text-5xl font-light text-white mb-8 leading-tight">
           Votre bien aura sa<br /><span className="italic text-brand-gold">place sur cette carte.</span>
         </h2>
@@ -309,7 +310,7 @@ function CTA() {
         </p>
         <Link
           href="/#estimation"
-          className="group inline-flex items-center gap-3 bg-brand-gold text-brand-dark px-8 py-4 font-body text-sm font-medium tracking-widest uppercase hover:bg-brand-goldLight transition-all duration-300"
+          className="btn-gold group inline-flex items-center gap-3 bg-brand-gold text-brand-dark px-8 py-4 font-body text-sm font-medium tracking-widest uppercase hover:bg-brand-goldLight transition-all duration-300"
         >
           Estimer mon bien
           <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />

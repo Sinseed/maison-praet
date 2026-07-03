@@ -2,6 +2,7 @@
 import { useState } from 'react'
 import { ArrowRight, ArrowLeft, Send, Phone, Home, Building, Building2, Trees, LayoutGrid, Check } from 'lucide-react'
 import Link from 'next/link'
+import Eyebrow from '../components/Eyebrow'
 
 const TYPES = [
   { value: 'villa', label: 'Villa / Maison', icon: Home },
@@ -45,7 +46,7 @@ export default function EstimationPage() {
           <ArrowLeft size={14} /> Retour
         </Link>
 
-        <p className="font-body text-xs tracking-[0.35em] uppercase text-brand-gold mb-4">Estimation gratuite</p>
+        <Eyebrow className="mb-4">Estimation gratuite</Eyebrow>
         <h1 className="font-display text-4xl md:text-6xl font-light text-white leading-tight mb-4">
           Quelle est la valeur<br />
           <span className="italic text-brand-gold">de votre bien ?</span>
@@ -186,7 +187,7 @@ export default function EstimationPage() {
                 <button
                   onClick={next}
                   disabled={!canNext}
-                  className="group inline-flex items-center gap-3 bg-brand-gold text-brand-dark px-8 py-4 font-body text-sm font-medium tracking-widest uppercase hover:bg-brand-goldLight hover:shadow-[0_0_40px_-8px_rgba(201,169,110,0.6)] transition-all disabled:opacity-40 disabled:cursor-not-allowed disabled:shadow-none"
+                  className="btn-gold group inline-flex items-center gap-3 bg-brand-gold text-brand-dark px-8 py-4 font-body text-sm font-medium tracking-widest uppercase hover:bg-brand-goldLight hover:shadow-[0_0_40px_-8px_rgba(201,169,110,0.6)] transition-all disabled:opacity-40 disabled:cursor-not-allowed disabled:shadow-none"
                 >
                   Continuer <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
                 </button>
@@ -194,7 +195,7 @@ export default function EstimationPage() {
                 <button
                   onClick={submit}
                   disabled={sending || !form.nom || !form.contact}
-                  className="group inline-flex items-center gap-3 bg-brand-gold text-brand-dark px-8 py-4 font-body text-sm font-medium tracking-widest uppercase hover:bg-brand-goldLight hover:shadow-[0_0_40px_-8px_rgba(201,169,110,0.6)] transition-all disabled:opacity-40 disabled:cursor-not-allowed disabled:shadow-none"
+                  className="btn-gold group inline-flex items-center gap-3 bg-brand-gold text-brand-dark px-8 py-4 font-body text-sm font-medium tracking-widest uppercase hover:bg-brand-goldLight hover:shadow-[0_0_40px_-8px_rgba(201,169,110,0.6)] transition-all disabled:opacity-40 disabled:cursor-not-allowed disabled:shadow-none"
                 >
                   {sending ? 'Envoi...' : 'Envoyer ma demande'}
                   <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />

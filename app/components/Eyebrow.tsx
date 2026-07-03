@@ -16,9 +16,7 @@ export default function Eyebrow({ children, center = false, className = '' }: Ey
   const line = 'h-px w-8 bg-gradient-to-r from-brand-gold/70 to-transparent'
   return (
     <p
-      className={`flex items-center gap-3 font-body text-xs tracking-[0.3em] uppercase text-brand-gold ${
-        center ? 'justify-center' : ''
-      } ${className}`}
+      className={`inline-flex items-center gap-3 font-body text-xs tracking-[0.3em] uppercase text-brand-gold align-middle ${className}`}
     >
       <span className={line} aria-hidden="true" />
       {children}

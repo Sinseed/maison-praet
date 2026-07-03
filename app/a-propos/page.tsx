@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { ArrowRight, Phone, Mail } from 'lucide-react'
 import Reveal from '../components/Reveal'
+import Eyebrow from '../components/Eyebrow'
 
 export const metadata: Metadata = {
   title: 'À propos de Thomas Praet – Courtier immobilier à Lausanne | Maison Praet',
@@ -73,7 +74,7 @@ export default function AProposPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
 
       <div className="max-w-4xl mx-auto px-6 py-16">
-        <p className="font-body text-xs tracking-[0.4em] uppercase text-brand-gold mb-4">Maison Praet</p>
+        <Eyebrow className="mb-4">Maison Praet</Eyebrow>
         <h1 className="font-display text-4xl md:text-6xl font-light text-white leading-tight mb-8">
           Thomas <span className="italic text-brand-gold">Praet</span>
         </h1>
@@ -89,7 +90,7 @@ export default function AProposPage() {
           </div>
           <div className="space-y-10">
             <div>
-              <p className="font-body text-xs tracking-[0.3em] uppercase text-brand-gold mb-6">En chiffres</p>
+              <Eyebrow className="mb-6">En chiffres</Eyebrow>
               <div className="grid grid-cols-2 gap-4">
                 {[
                   { val: '90+', label: 'Transactions depuis 2020' },
@@ -105,11 +106,11 @@ export default function AProposPage() {
               </div>
             </div>
             <div>
-              <p className="font-body text-xs tracking-[0.3em] uppercase text-brand-gold mb-3">Accréditation</p>
+              <Eyebrow className="mb-3">Accréditation</Eyebrow>
               <p className="font-body text-brand-muted text-sm leading-relaxed">Courtier diplômé USPI — Union Suisse des Professionnels de l'Immobilier. Formation reconnue, exercice réglementé, responsabilité civile professionnelle.</p>
             </div>
             <div>
-              <p className="font-body text-xs tracking-[0.3em] uppercase text-brand-gold mb-3">Employeur</p>
+              <Eyebrow className="mb-3">Employeur</Eyebrow>
               <p className="font-body text-brand-muted text-sm leading-relaxed">Golay Immobilier SA · Grand-Chêne 2 · 1003 Lausanne. Régie fondée en 1932, l'une des plus anciennes de Lausanne.</p>
             </div>
           </div>
@@ -118,7 +119,7 @@ export default function AProposPage() {
 
       <div className="border-t border-brand-border bg-brand-card/30">
         <div className="max-w-4xl mx-auto px-6 py-16">
-          <p className="font-body text-xs tracking-[0.3em] uppercase text-brand-gold mb-8">Parcours</p>
+          <Eyebrow className="mb-8">Parcours</Eyebrow>
           <div className="space-y-8">
             {[
               { periode: 'Depuis 2025', titre: 'Golay Immobilier SA — Lausanne', detail: "Courtier sous mandat. Spécialisation résidentielle et immeubles de rendement sur l'arc lémanique, le Gros-de-Vaud et La Côte." },
@@ -139,7 +140,7 @@ export default function AProposPage() {
 
       <div className="border-t border-brand-border">
         <div className="max-w-4xl mx-auto px-6 py-16">
-          <p className="font-body text-xs tracking-[0.3em] uppercase text-brand-gold mb-8">Philosophie</p>
+          <Eyebrow className="mb-8">Philosophie</Eyebrow>
           <div className="grid md:grid-cols-2 gap-10">
             {[
               { titre: 'Un prix juste, pas un prix flatteur', texte: "Je ne signe pas un mandat pour avoir signé un mandat. Si le prix espéré n'est pas atteignable, je le dis avant de signer, pas après trois mois de silence et une première baisse." },
@@ -158,7 +159,7 @@ export default function AProposPage() {
 
       <div className="border-t border-brand-border bg-brand-card/30">
         <div className="max-w-4xl mx-auto px-6 py-16">
-          <p className="font-body text-xs tracking-[0.3em] uppercase text-brand-gold mb-4">Zone d'activité</p>
+          <Eyebrow className="mb-4">Zone d'activité</Eyebrow>
           <h2 className="font-display text-3xl font-light text-white mb-6">Canton de Vaud <span className="italic text-brand-gold">& arc lémanique</span></h2>
           <p className="font-body text-brand-muted leading-relaxed mb-8 max-w-2xl text-sm">
             Actif principalement sur l'arc lémanique, le Gros-de-Vaud et le Lavaux. Interventions ponctuelles dans le canton de Fribourg sur recommandation.
@@ -174,11 +175,11 @@ export default function AProposPage() {
       <div className="border-t border-brand-border">
         <Reveal className="max-w-4xl mx-auto px-6 py-16 flex flex-col md:flex-row md:items-center md:justify-between gap-8">
           <div>
-            <p className="font-body text-xs tracking-[0.3em] uppercase text-brand-gold mb-3">Premier échange</p>
+            <Eyebrow className="mb-3">Premier échange</Eyebrow>
             <h2 className="font-display text-3xl font-light text-white">Parlons de votre projet.</h2>
           </div>
           <div className="flex flex-col sm:flex-row gap-3">
-            <a href="tel:+41799690191" className="inline-flex items-center gap-3 bg-brand-gold text-brand-dark px-8 py-4 font-body text-sm font-medium tracking-widest uppercase hover:bg-brand-goldLight transition-colors justify-center">
+            <a href="tel:+41799690191" className="btn-gold inline-flex items-center gap-3 bg-brand-gold text-brand-dark px-8 py-4 font-body text-sm font-medium tracking-widest uppercase hover:bg-brand-goldLight transition-colors justify-center">
               <Phone size={14} /> 079 969 01 91
             </a>
             <a href="mailto:tpraet@golay-immobilier.ch" className="inline-flex items-center gap-3 border border-brand-border text-brand-text px-8 py-4 font-body text-sm tracking-widest uppercase hover:border-brand-gold hover:text-brand-gold transition-colors justify-center">
