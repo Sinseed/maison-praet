@@ -1822,6 +1822,55 @@ Pour un investisseur bien préparé, c'est néanmoins un contexte favorable. L'e
 L'immobilier locatif dans le canton de Vaud reste une stratégie patrimoniale solide. La demande locative ne faiblit pas, l'offre reste insuffisante dans les zones urbaines, et le franc suisse protège la valeur réelle des actifs. Mais un bon investissement ne se trouve pas sur une annonce. Il se construit sur une analyse précise du bien, de son emplacement, de son financement et de sa fiscalité.`,
     cta: "Vous envisagez de mettre un bien locatif en vente ? Contactez-moi pour en discuter."
   },
+  {
+    slug: 'vente-a-terme-immobilier-vaud',
+    titre: "La vente à terme : comment fonctionne la forme de vente la plus courante du canton de Vaud",
+    chapeau: "La grande majorité des ventes immobilières vaudoises se signent des mois avant la remise des clés. Ce mécanisme, la vente à terme, protège remarquablement bien les deux parties, à condition d'en comprendre les rouages. Voici ce qui se passe réellement entre la signature et le transfert.",
+    date: '2026-07-08',
+    categorie: 'Juridique',
+    contenu: `## Signer aujourd'hui, transférer plus tard
+
+Dans le canton de Vaud, il est rare qu'un vendeur remette ses clés le jour où il signe chez le notaire. Dans l'immense majorité des dossiers que je traite, l'acte authentique est signé plusieurs mois avant le transfert de propriété. C'est le principe de la vente à terme : les parties s'engagent définitivement aujourd'hui, et la vente s'exécute à une date convenue, le terme.
+
+Attention à une confusion fréquente : la vente à terme n'est pas un précontrat, une réservation ou une promesse. C'est un acte de vente complet, en la forme authentique exigée par l'article 216 du Code des obligations, qui contient tous les éléments de la transaction : prix, date de transfert, répartition des frais, état du bien. Une fois signé, aucune des deux parties ne peut simplement changer d'avis. La seule chose qui est différée, c'est l'inscription au registre foncier, qui marque juridiquement le changement de propriétaire.
+
+La différence avec une vente directe, où signature, paiement et transfert ont lieu le même jour, tient donc à l'échéancier. Et cet échéancier change tout dans l'organisation pratique des deux parties.
+
+## L'acompte de 10%, la vraie poignée de main
+
+Le jour de la signature, l'acquéreur verse un acompte, en principe 10% du prix de vente, sur le compte de consignation du notaire. Pour une villa à CHF 1'500'000.-, cela représente CHF 150'000.- immobilisés avant même d'avoir les clés. Ce montant n'est pas un détail administratif : c'est le cœur de la sécurité du vendeur.
+
+L'acte prévoit en effet une peine conventionnelle, généralement équivalente à l'acompte. Si l'acquéreur ne se présente pas au terme ou ne paie pas le solde, le vendeur conserve ce montant à titre d'indemnité et retrouve sa liberté de vendre. Symétriquement, si le vendeur ne respecte pas ses engagements, il doit restituer l'acompte et verser une indemnité équivalente. Les deux parties ont donc exactement le même intérêt à honorer le contrat.
+
+Un point que les vendeurs ignorent souvent : dans de nombreux dossiers, le notaire peut leur reverser cet acompte peu après la signature, dès qu'il s'est assuré de pouvoir solder les dettes hypothécaires grevant l'immeuble au moment du transfert. Cela peut faciliter le financement d'un nouveau projet sans attendre le terme.
+
+## La promesse de paiement irrévocable, le nerf de l'opération
+
+Comment le vendeur sait-il que le solde, souvent plus d'un million de francs, arrivera bien au terme ? Par un document que j'exige systématiquement avant toute signature : la promesse de paiement irrévocable de la banque de l'acquéreur, adressée directement au notaire.
+
+Par cet engagement, l'établissement financier confirme qu'il versera les fonds au jour convenu, indépendamment de tout événement ultérieur. C'est cette pièce, plus encore que l'acompte, qui rend la vente à terme aussi sûre pour le vendeur. Concrètement, cela signifie que l'acquéreur doit avoir entièrement bouclé son financement avant la signature de l'acte : accord de crédit signé, fonds propres justifiés, éventuel retrait du 2e pilier engagé. Une vente à terme bien préparée est une vente où plus rien ne dépend du hasard le jour du terme.
+
+## Les conditions suspensives, le point de friction
+
+C'est la question qui revient dans presque toutes mes négociations : l'acquéreur peut-il signer sous condition d'obtenir son financement ? Juridiquement, oui. En pratique, sur le marché vaudois actuel, les vendeurs les refusent presque systématiquement, et je les comprends.
+
+Une condition suspensive de financement signifie que le vendeur immobilise son bien pendant des semaines, le retire de la commercialisation, tout en portant le risque que la vente tombe. Dans un marché où la demande dépasse largement l'offre, un vendeur qui a le choix entre deux offres équivalentes prendra toujours celle qui est ferme. Mon conseil aux acquéreurs est donc constant : présentez-vous à la signature avec un financement définitif, pas avec un accord de principe. Et mon conseil aux vendeurs est le miroir exact : n'acceptez une condition suspensive que si le profil de l'acquéreur et le calendrier le justifient réellement, et avec une échéance courte et précise.
+
+## À quoi sert ce délai de plusieurs mois
+
+Dans le canton de Vaud, le terme se situe le plus souvent entre trois et neuf mois après la signature. Ce délai n'est pas une lenteur administrative, c'est précisément ce qui fait la valeur du mécanisme.
+
+Pour le vendeur, il offre le temps de trouver son prochain logement, d'organiser le déménagement, parfois de coordonner la vente avec un achat, tout en ayant la certitude du prix et de la date. Pour l'acquéreur, il permet de résilier son bail au bon moment, de finaliser le retrait des avoirs de prévoyance, de planifier des travaux. Pendant cette période, l'acquéreur est protégé par un droit d'emption annoté au registre foncier : le vendeur ne peut ni vendre à un tiers, ni hypothéquer davantage l'immeuble à son insu. Chacun avance vers le terme en sécurité.
+
+## Les détails qui comptent au jour du transfert
+
+Le terme arrive, le solde du prix est versé chez le notaire, la réquisition de transfert est signée, les clés changent de main. Restent quelques mécanismes que je vérifie systématiquement dans chaque projet d'acte.
+
+La répartition des frais courants d'abord : intérêts hypothécaires, charges de PPE, assurances et impôt foncier se répartissent prorata temporis à la date du transfert de jouissance. L'état du bien ensuite : l'acte précise que l'immeuble est repris dans l'état où il se trouvait lors de la visite, ce qui rend une contre-visite peu avant le terme indispensable. La fiscalité enfin : le notaire consigne 5% du prix de vente en garantie de l'impôt sur le gain immobilier du vendeur, et l'acquéreur s'acquitte des droits de mutation, 3,3% dans le canton de Vaud. Ces montants doivent être anticipés dans les calculs des deux parties, faute de quoi les surprises du jour J gâchent une transaction pourtant réussie.
+
+La vente à terme est un mécanisme remarquablement équilibré : le vendeur obtient la certitude, l'acquéreur obtient le temps. Mais cet équilibre repose entièrement sur la qualité de préparation du dossier avant la signature. Si vous vendez ou achetez un bien dans le canton de Vaud et que vous vous interrogez sur la structure de votre transaction, je serais heureux d'en discuter avec vous.`,
+    cta: "Une vente en préparation ? Parlons de la meilleure façon de la structurer."
+  },
 ]
 
 // ─── HELPERS ────────────────────────────────────────────────────────────────
