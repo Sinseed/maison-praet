@@ -531,17 +531,17 @@ export const ARTICLES: Article[] = [
     chapeau: "Valeur intrinsèque, valeur de rendement, valeur vénale : trois approches complémentaires pour fixer un prix juste. Voici comment un courtier professionnel procède.",
     date: '2026-01-15',
     categorie: 'Estimation',
-    contenu: `Fixer le bon prix de vente, c'est probablement la décision la plus importante de tout le processus. Trop haut, votre bien reste sur le marché et perd en attractivité. Trop bas, vous laissez de l'argent sur la table.
+    contenu: `Fixer le bon prix de vente, c'est probablement la décision la plus importante de tout le processus. Trop haut, [votre bien reste sur le marché et perd en attractivité](/journal/pourquoi-votre-bien-ne-se-vend-pas). Trop bas, vous laissez de l'argent sur la table.
 
 Dans le Canton de Vaud, une estimation sérieuse repose sur trois piliers.
 
 La valeur intrinsèque part de la valeur ECA (Etablissement cantonal d'assurance) de votre bâtiment, à laquelle on applique un facteur de vétusté. On y ajoute la valeur du terrain selon les prix au m² de la commune. C'est le coût de reconstruction, pas le prix du marché.
 
-La valeur de rendement concerne surtout les immeubles locatifs. Elle se calcule en divisant le revenu locatif net par un taux de capitalisation. À Lausanne, ce taux tourne autour de 3.5 à 4.5% selon l'emplacement et l'état du bien. Plus le taux est bas, plus la valeur est élevée.
+La valeur de rendement concerne surtout [les immeubles locatifs](/journal/investir-locatif-vaud-2026). Elle se calcule en divisant le revenu locatif net par un taux de capitalisation. À Lausanne, ce taux tourne autour de 3.5 à 4.5% selon l'emplacement et l'état du bien. Plus le taux est bas, plus la valeur est élevée.
 
 La valeur vénale, c'est la synthèse. Elle pondère les deux approches précédentes en fonction du type de bien et des transactions comparables récentes dans le secteur. C'est elle qui donne le prix de mise en vente recommandé.
 
-Ce que beaucoup de propriétaires ignorent : le prix affiché sur les portails immobiliers n'est pas le prix de vente final. Dans le marché vaudois actuel, la marge de négociation se situe entre 3 et 8% selon le segment. Un courtier expérimenté intègre cette réalité dans sa recommandation de prix.
+Ce que beaucoup de propriétaires ignorent : le prix affiché sur les portails immobiliers n'est pas le prix de vente final. Dans [le marché vaudois actuel](/journal/marche-immobilier-vaudois-2026), la marge de négociation se situe entre 3 et 8% selon le segment. Un courtier expérimenté intègre cette réalité dans sa recommandation de prix.
 
 Mon conseil : méfiez-vous des estimations en ligne. Elles se basent sur des algorithmes qui ne voient ni l'état réel de votre cuisine, ni la nuisance sonore de la route voisine, ni le charme de votre vue sur le lac. Seule une visite sur place permet une estimation fiable.`,
     cta: "Vous souhaitez connaître la valeur réelle de votre bien ? Contactez-moi pour une estimation professionnelle, fondée et sans engagement."
@@ -556,13 +556,13 @@ Mon conseil : méfiez-vous des estimations en ligne. Elles se basent sur des alg
 
 La commission de courtage est généralement calculée au pourcentage du prix de vente, plus TVA. Le taux varie selon le type de bien, la complexité de la vente et le niveau de service convenu. Plutôt que de se focaliser sur le pourcentage, posez-vous la question : est-ce que le courtier va obtenir un prix qui compense largement sa commission ? Point important : la commission est intégralement déductible de l'impôt sur le gain immobilier. Ce n'est donc pas une charge sèche.
 
-L'impôt sur le gain immobilier est calculé sur la différence entre le prix de vente et le prix d'acquisition. Dans le Canton de Vaud, le taux est dégressif selon la durée de détention. Après 24 ans de propriété, le taux de base est au minimum. C'est un impôt cantonal et communal, donc le montant exact dépend de votre commune. Ce que beaucoup de vendeurs ignorent : les frais d'acquisition d'origine (droits de mutation, frais de notaire payés à l'achat), les investissements à plus-value, la commission de courtage, l'indemnité de remboursement hypothécaire et même le coût du CECB sont tous déductibles du gain imposable. En d'autres termes, plus vos frais de vente sont élevés, moins vous payez d'impôt. C'est un calcul global qu'il faut faire.
+[L'impôt sur le gain immobilier](/journal/impot-gain-immobilier-vaud) est calculé sur la différence entre le prix de vente et le prix d'acquisition. Dans le Canton de Vaud, le taux est dégressif selon la durée de détention. Après 24 ans de propriété, le taux de base est au minimum. C'est un impôt cantonal et communal, donc le montant exact dépend de votre commune. Ce que beaucoup de vendeurs ignorent : les frais d'acquisition d'origine ([droits de mutation](/journal/droits-mutation-frais-notaire-vaud), frais de notaire payés à l'achat), les investissements à plus-value, la commission de courtage, l'indemnité de remboursement hypothécaire et même le coût du CECB sont tous déductibles du gain imposable. En d'autres termes, plus vos frais de vente sont élevés, moins vous payez d'impôt. C'est un calcul global qu'il faut faire.
 
-Les frais de notaire pour l'acte de vente sont à la charge de l'acquéreur dans le Canton de Vaud (environ 5% du prix). En tant que vendeur, vous n'avez normalement pas de frais notariaux, sauf cas particulier (radiation de servitudes, par exemple).
+Les frais de notaire pour l'acte de vente sont à la charge de l'acquéreur dans le Canton de Vaud (environ 5% du prix). En tant que vendeur, vous n'avez normalement pas de frais notariaux, sauf cas particulier (radiation de [servitudes](/journal/servitudes-charges-foncieres-vente-vaud), par exemple).
 
 Le remboursement anticipé de l'hypothèque peut coûter cher si vous avez un taux fixe en cours. La banque facture une indemnité de sortie calculée sur le différentiel de taux et la durée restante. Bonne nouvelle : cette pénalité est déductible du gain immobilier. Demandez tout de même un chiffrage précis à votre banque avant de mettre en vente.
 
-Les certificats énergétiques ne sont pas obligatoires pour vendre dans le Canton de Vaud, mais un CECB (Certificat énergétique cantonal des bâtiments) est de plus en plus demandé par les acquéreurs et leurs banques. Comptez entre CHF 1'000.- et CHF 3'000.- selon la taille du bâtiment. Là aussi, le coût est déductible du gain immobilier.
+Les certificats énergétiques ne sont pas obligatoires pour vendre dans le Canton de Vaud, mais un [CECB (Certificat énergétique cantonal des bâtiments)](/journal/cecb-obligatoire-vente-vaud) est de plus en plus demandé par les acquéreurs et leurs banques. Comptez entre CHF 1'000.- et CHF 3'000.- selon la taille du bâtiment. Là aussi, le coût est déductible du gain immobilier.
 
 Mon conseil : faites le calcul complet avant de fixer votre prix minimum. J'accompagne systématiquement mes clients dans ces démarches pour leur simplifier la vie au maximum. Entre la banque, le notaire, l'administration fiscale et les certificats à fournir, la vente d'un bien peut vite devenir un parcours administratif. Mon rôle, c'est aussi de vous guider là-dedans.`,
     cta: "Besoin d'y voir clair sur ce qu'il vous restera après la vente ? Contactez-moi, je vous accompagne de A à Z."
@@ -579,13 +579,13 @@ L'offre reste structurellement insuffisante. La croissance démographique du can
 
 Les taux hypothécaires se sont stabilisés. Après la hausse rapide de 2023, les taux fixes à 10 ans se situent désormais autour de 1.8 à 2.2%. C'est suffisamment bas pour maintenir la demande, mais assez haut pour que les acquéreurs soient plus sélectifs qu'en 2021.
 
-Le segment des villas est le plus tendu. Entre CHF 1'000'000.- et CHF 2'000'000.-, la demande excède largement l'offre. Les maisons individuelles avec jardin, bien entretenues, dans des communes bien desservies, trouvent preneur en quelques semaines si le prix est juste.
+Le segment des villas est le plus tendu. Entre CHF 1'000'000.- et CHF 2'000'000.-, la demande excède largement l'offre. Les maisons individuelles avec jardin, bien entretenues, dans des communes bien desservies, trouvent preneur en quelques semaines si [le prix est juste](/journal/estimer-son-bien-canton-de-vaud).
 
-Les appartements PPE se vendent bien aussi, mais les acquéreurs sont plus attentifs à l'état des charges, au fonds de rénovation et à l'énergie (CECB). Un bien énergivore sans perspective de rénovation se négocie plus durement.
+Les appartements PPE se vendent bien aussi, mais les acquéreurs sont plus attentifs à l'état des charges, au fonds de rénovation et à l'énergie ([CECB](/journal/cecb-obligatoire-vente-vaud)). Un bien énergivore [sans perspective de rénovation](/journal/faut-il-renover-avant-de-vendre) se négocie plus durement.
 
-Les immeubles de rendement attirent toujours les investisseurs, mais les rendements se sont comprimés. À Lausanne, un rendement brut de 4% est devenu la norme pour un bien en bon état. Les acquéreurs cherchent du potentiel de revalorisation : surélévation, rénovation énergétique, optimisation locative.
+[Les immeubles de rendement attirent toujours les investisseurs](/journal/investir-locatif-vaud-2026), mais les rendements se sont comprimés. À Lausanne, un rendement brut de 4% est devenu la norme pour un bien en bon état. Les acquéreurs cherchent du potentiel de revalorisation : surélévation, rénovation énergétique, optimisation locative.
 
-Mon analyse : c'est un bon moment pour vendre si votre bien est en bon état et correctement positionné. Les vendeurs qui surcotent leur bien de 10-15% "pour voir" perdent du temps et de l'argent. Le marché est informé, les acquéreurs comparent, et un bien qui stagne perd en crédibilité.`,
+Mon analyse : c'est un bon moment pour vendre si votre bien est en bon état et correctement positionné. Les vendeurs qui surcotent leur bien de 10-15% "pour voir" perdent du temps et de l'argent. Le marché est informé, les acquéreurs comparent, et un [bien qui stagne perd en crédibilité](/journal/pourquoi-votre-bien-ne-se-vend-pas).`,
     cta: "Vous vous demandez si c'est le bon moment pour vendre ? Parlons-en. Je vous donne mon avis honnête, chiffres à l'appui."
   },
   {
@@ -606,9 +606,9 @@ Des offres, mais toutes nettement en dessous du prix affiché. Le marché vous e
 
 Votre bien est en ligne depuis plus de 60 jours. C'est un signal que beaucoup de vendeurs sous-estiment. Les portails immobiliers affichent la durée de publication. Un acquéreur qui voit un bien en ligne depuis trois mois se pose immédiatement la question : qu'est-ce qui ne va pas ? Chaque semaine supplémentaire érode la crédibilité du prix. C'est un cercle vicieux : plus le bien stagne, plus l'acquéreur se sent en position de force pour négocier.
 
-Le piège du courtier complaisant. Certains courtiers gonflent leur estimation pour décrocher le mandat, puis proposent des baisses de prix successives. Résultat : le bien accumule les jours en ligne, et chaque acquéreur potentiel se demande "qu'est-ce qui ne va pas avec ce bien ?". C'est exactement la spirale que j'essaie d'éviter avec mes clients.
+Le piège du courtier complaisant. Certains [courtiers gonflent leur estimation pour décrocher le mandat](/journal/choisir-son-courtier-suisse-romande), puis proposent des baisses de prix successives. Résultat : le bien accumule les jours en ligne, et chaque acquéreur potentiel se demande "qu'est-ce qui ne va pas avec ce bien ?". C'est exactement la spirale que j'essaie d'éviter avec mes clients.
 
-Ma méthode : je préfère perdre un mandat en donnant un prix honnête que de le gagner avec un prix irréaliste. Si votre attente de prix ne correspond pas à mon estimation, je vous le dis clairement, je vous explique pourquoi, et vous êtes libre de votre décision. Mais je ne vous laisserai pas partir sur un prix que le marché ne validera pas sans vous avoir prévenu.`,
+Ma méthode : je préfère perdre un mandat en donnant un prix honnête que de le gagner avec un prix irréaliste. Si votre attente de prix ne correspond pas à [mon estimation](/journal/estimer-son-bien-canton-de-vaud), je vous le dis clairement, je vous explique pourquoi, et vous êtes libre de votre décision. Mais je ne vous laisserai pas partir sur un prix que le marché ne validera pas sans vous avoir prévenu.`,
     cta: "Votre bien est en vente depuis trop longtemps ? Contactez-moi pour une analyse de votre situation, franche et sans engagement."
   },
   {
@@ -619,11 +619,11 @@ Ma méthode : je préfère perdre un mandat en donnant un prix honnête que de l
     categorie: 'Guide pratique',
     contenu: `Choisir un courtier, c'est confier un actif de plusieurs centaines de milliers de francs à quelqu'un. Pas à un algorithme. Pas à une plateforme. À une personne qui va défendre vos intérêts face à des acquéreurs bien informés et souvent bien accompagnés.
 
-La question centrale : est-ce qu'il va se battre pour moi ? Un bon courtier ne se contente pas de publier une annonce et d'attendre les appels. Il négocie. Il tient le prix. Il filtre les offres opportunistes et sait dire non à un acquéreur qui tente sa chance 15% en dessous. Quand une offre arrive, il l'analyse, la contextualise, et vous conseille avec franchise. Demandez-lui : racontez-moi une négociation où vous avez tenu bon pour votre client. S'il n'a pas de réponse concrète, c'est un signal. Un courtier qui a l'habitude de se battre pour ses vendeurs a toujours une histoire à raconter. Et demandez-lui aussi un chiffre simple : à quel pourcentage du prix estimé vos biens se vendent-ils réellement ? C'est le meilleur indicateur de sa capacité à fixer un prix juste et à le défendre.
+La question centrale : est-ce qu'il va se battre pour moi ? Un bon courtier ne se contente pas de publier une annonce et d'attendre les appels. Il négocie. Il tient le prix. Il filtre les offres opportunistes et sait dire non à un acquéreur qui tente sa chance 15% en dessous. Quand une offre arrive, il l'analyse, la contextualise, et vous conseille avec franchise. Demandez-lui : racontez-moi une négociation où vous avez tenu bon pour votre client. S'il n'a pas de réponse concrète, c'est un signal. Un courtier qui a l'habitude de se battre pour ses vendeurs a toujours une histoire à raconter. Et demandez-lui aussi un chiffre simple : à quel pourcentage du prix estimé vos biens se vendent-ils réellement ? C'est le meilleur indicateur de sa capacité à [fixer un prix juste et à le défendre](/journal/pourquoi-votre-bien-ne-se-vend-pas).
 
-La connaissance du marché local est non négociable. Un courtier qui travaille entre Genève et Zurich ne connaît pas le prix au m² à Cossonay. Demandez des références de ventes récentes dans votre commune ou votre quartier. Un bon courtier les a en tête. Il connaît les acquéreurs actifs, les notaires du coin, les délais réels. C'est cette connaissance fine qui lui permet de défendre votre prix avec des arguments concrets face à un acquéreur qui négocie.
+La connaissance du marché local est non négociable. Un courtier qui travaille entre Genève et Zurich ne connaît pas le prix au m² à Cossonay. Demandez des [références de ventes récentes](/journal/etude-cas-vente-morges-2026) dans votre commune ou votre quartier. Un bon courtier les a en tête. Il connaît les acquéreurs actifs, les notaires du coin, les délais réels. C'est cette connaissance fine qui lui permet de défendre votre prix avec des arguments concrets face à un acquéreur qui négocie.
 
-La méthode d'estimation doit être transparente. Fuyez les courtiers qui vous donnent un prix "au feeling" ou après une visite de 15 minutes. Une estimation sérieuse prend du temps : analyse du terrain, de la construction, des transactions comparables, du potentiel de rendement. Demandez un rapport écrit avec des calculs vérifiables. Et méfiez-vous du piège classique : le courtier qui surestime votre bien pour décrocher le mandat, puis vous propose des baisses de prix successives. Un bien qui stagne sur les portails perd en crédibilité chaque semaine. C'est votre argent qui s'évapore, pas le sien.
+La méthode d'estimation doit être transparente. Fuyez les courtiers qui vous donnent un prix "au feeling" ou après une visite de 15 minutes. [Une estimation sérieuse](/journal/estimer-son-bien-canton-de-vaud) prend du temps : analyse du terrain, de la construction, des transactions comparables, du potentiel de rendement. Demandez un rapport écrit avec des calculs vérifiables. Et méfiez-vous du piège classique : le courtier qui surestime votre bien pour décrocher le mandat, puis vous propose des baisses de prix successives. Un bien qui stagne sur les portails perd en crédibilité chaque semaine. C'est votre argent qui s'évapore, pas le sien.
 
 Le mandat exclusif n'est pas un piège. Beaucoup de vendeurs hésitent par peur d'être "coincés". En réalité, un mandat exclusif aligne vos intérêts et ceux du courtier. Il s'engage pleinement parce qu'il sait que son travail sera rémunéré. Il investit du temps, de l'énergie et des moyens dans votre vente. Un mandat non-exclusif confié à trois courtiers donne souvent trois annonces différentes avec trois prix différents. L'acquéreur ne sait plus à qui s'adresser. Le bien perd en crédibilité, et c'est votre prix qui en souffre. Un bon mandat exclusif, c'est un partenariat. Pas un enfermement.
 
@@ -646,7 +646,7 @@ Cet impôt concerne tous les propriétaires privés qui vendent un bien dans le 
 
 ## Comment se calcule le gain immobilier ?
 
-Le gain imposable correspond à la différence entre le prix de vente et le prix de revient du bien. Le prix de revient inclut le prix d'achat initial, les droits de mutation payés à l'acquisition, les frais de notaire, ainsi que les impenses (travaux ayant augmenté la valeur du bien, à condition qu'ils soient documentés par des factures).
+Le gain imposable correspond à la différence entre le prix de vente et le prix de revient du bien. Le prix de revient inclut le prix d'achat initial, les [droits de mutation](/journal/droits-mutation-frais-notaire-vaud) payés à l'acquisition, les frais de notaire, ainsi que les impenses (travaux ayant augmenté la valeur du bien, à condition qu'ils soient documentés par des factures).
 
 **Formule :** Gain imposable = Prix de vente - Prix d'achat - Frais d'acquisition - Impenses - Commission de courtage
 
@@ -707,7 +707,7 @@ Plusieurs situations permettent d'éviter ou de reporter l'impôt :
 - **Gains inférieurs à CHF 5'000.-** : exonérés d'impôt.
 - **Vente à perte** : si le prix de vente est inférieur au prix de revient, aucun impôt n'est dû.
 - **Réinvestissement** : si le produit de la vente est réinvesti dans l'achat d'un autre bien immobilier en Suisse dans un délai de 2 ans, l'impôt peut être reporté (exonération différée). Le montant réinvesti doit être au moins équivalent au produit de la vente.
-- **Succession et donation** : le transfert par héritage ou donation ne déclenche pas l'imposition. L'impôt sera dû lors de la vente ultérieure par l'héritier ou le donataire.
+- **Succession et donation** : le [transfert par héritage ou donation](/journal/vendre-bien-succession-vaud) ne déclenche pas l'imposition. L'impôt sera dû lors de la vente ultérieure par l'héritier ou le donataire.
 - **Partage entre époux** : en cas de divorce, le transfert du bien au conjoint peut bénéficier d'un report d'imposition.
 
 ## Exemple concret : vente d'une villa à Lausanne
@@ -763,7 +763,7 @@ C'est le type d'analyse qu'un courtier expérimenté intègre systématiquement 
     chapeau: "Extrait du registre foncier, police ECA, CECB, plans, servitudes : la liste complète des documents à réunir avant de mettre votre bien en vente, avec les adresses pour les obtenir.",
     date: '2026-04-09',
     categorie: 'Guide pratique',
-    contenu: `Pour vendre un bien immobilier dans le canton de Vaud, vous devez réunir une dizaine de documents administratifs et techniques. Certains sont obligatoires (CECB, extrait du registre foncier), d'autres sont indispensables pour que la vente se déroule sans accroc (police ECA, plans, factures de travaux). Un dossier complet accélère la vente et rassure les acquéreurs comme leur banque.
+    contenu: `Pour vendre un bien immobilier dans le canton de Vaud, vous devez réunir une dizaine de documents administratifs et techniques. Certains sont obligatoires ([CECB](/journal/cecb-obligatoire-vente-vaud), extrait du registre foncier), d'autres sont indispensables pour que la vente se déroule sans accroc (police ECA, plans, factures de travaux). Un dossier complet accélère la vente et rassure les acquéreurs comme leur banque.
 
 Voici la liste détaillée, organisée par catégorie, avec les démarches pour obtenir chaque document.
 
@@ -771,7 +771,7 @@ Voici la liste détaillée, organisée par catégorie, avec les démarches pour 
 
 Dans le canton de Vaud, deux documents sont strictement obligatoires pour toute vente immobilière :
 
-- **L'extrait du registre foncier** : c'est la carte d'identité juridique de votre bien. Il indique le propriétaire, la surface de la parcelle, les servitudes (droits de passage, canalisations, hypothèques) et les charges foncières. En pratique, c'est souvent votre courtier qui le commande pour vous auprès de l'Office du registre foncier de votre district. Attention : l'extrait "public" est une version allégée. Il faut l'extrait complet, accessible uniquement au propriétaire ou à son mandataire. Validité recommandée : moins de 3 mois avant la vente.
+- **L'extrait du registre foncier** : c'est la carte d'identité juridique de votre bien. Il indique le propriétaire, la surface de la parcelle, les [servitudes](/journal/servitudes-charges-foncieres-vente-vaud) (droits de passage, canalisations, hypothèques) et les charges foncières. En pratique, c'est souvent votre courtier qui le commande pour vous auprès de l'Office du registre foncier de votre district. Attention : l'extrait "public" est une version allégée. Il faut l'extrait complet, accessible uniquement au propriétaire ou à son mandataire. Validité recommandée : moins de 3 mois avant la vente.
 - **Le CECB (Certificat énergétique cantonal des bâtiments)** : obligatoire dans le canton de Vaud depuis 2017 lors de toute vente immobilière. Il évalue la performance énergétique du bâtiment sur une échelle de A (excellent) à G (mauvais). Valable 10 ans. À faire établir par un expert agréé CECB (liste disponible sur le site de la Conférence des directeurs cantonaux de l'énergie). Coût : entre CHF 1'000.- et CHF 3'000.- selon la taille du bâtiment. Déductible de l'impôt sur le gain immobilier.
 
 ## Quels documents techniques faut-il fournir ?
@@ -911,7 +911,7 @@ Délai moyen : 2 à 4 semaines entre la prise de contact et la réception du cer
 
 ## Le CECB est-il déductible fiscalement ?
 
-Oui. Le coût du CECB (simple ou Plus) est déductible de l'impôt sur le gain immobilier lors de la vente. C'est un frais de vente au même titre que la commission de courtage.
+Oui. Le coût du CECB (simple ou Plus) est déductible de [l'impôt sur le gain immobilier](/journal/impot-gain-immobilier-vaud) lors de la vente. C'est un [frais de vente](/journal/frais-vente-immobiliere-suisse) au même titre que la commission de courtage.
 
 Pour les propriétaires qui ne vendent pas mais qui font établir un CECB en vue de travaux de rénovation, le coût peut être déduit des impôts sur le revenu au titre de frais d'entretien du bien immobilier.
 
@@ -977,7 +977,7 @@ C'est la question que me posent le plus souvent les vendeurs de villas construit
 
 Ma recommandation : c'est l'un ou l'autre. Soit vous remplacez le chauffage avant la vente, soit vous en tenez compte dans le prix. Pas de demi-mesure.
 
-**Option 1 : remplacer avant de vendre.** Si votre chauffage est en fin de vie et que le bien est par ailleurs en bon état, le remplacement par une pompe à chaleur peut se justifier. Un bien avec un CECB amélioré se vend plus vite et avec moins de négociation. C'est un investissement que vous ne récupérerez pas intégralement, mais qui supprime le principal frein à l'achat.
+**Option 1 : remplacer avant de vendre.** Si votre chauffage est en fin de vie et que le bien est par ailleurs en bon état, le remplacement par une pompe à chaleur peut se justifier. Un bien avec un [CECB](/journal/cecb-obligatoire-vente-vaud) amélioré se vend plus vite et avec moins de négociation. C'est un investissement que vous ne récupérerez pas intégralement, mais qui supprime le principal frein à l'achat.
 
 **Option 2 : ajuster le prix de vente.** C'est souvent la solution la plus pragmatique. Vous fixez un prix qui tient compte de l'état du chauffage, et l'acquéreur sait exactement ce qu'il achète. Pas de surprise, pas de négociation interminable sur le sujet. Dans ma pratique, c'est l'option que je recommande le plus souvent : elle est transparente, rapide, et évite au vendeur de gérer un chantier avant la vente.
 
@@ -993,7 +993,7 @@ Le problème : si les travaux ne sont pas chiffrés dans le dossier de vente, l'
 
 Oui, mais il faut distinguer deux mécanismes différents :
 
-**Les travaux à plus-value (impenses)** : nouvelle cuisine, transformation salle de bains, agrandissement, pompe à chaleur. Ces dépenses sont déductibles de l'impôt sur le gain immobilier lors de la vente (article 70 LI). Elles augmentent le prix de revient et réduisent donc le gain taxable. Condition : disposer des factures et des preuves de paiement. Ce mécanisme n'est pas affecté par la réforme de la valeur locative.
+**Les travaux à plus-value (impenses)** : nouvelle cuisine, transformation salle de bains, agrandissement, pompe à chaleur. Ces dépenses sont déductibles de [l'impôt sur le gain immobilier](/journal/impot-gain-immobilier-vaud) lors de la vente (article 70 LI). Elles augmentent le prix de revient et réduisent donc le gain taxable. Condition : disposer des factures et des preuves de paiement. Ce mécanisme n'est pas affecté par la réforme de la valeur locative.
 
 **Les travaux d'entretien courant** : peinture, réparation, remplacement à l'identique. Ces frais ne sont pas déductibles du gain immobilier, mais ils sont déductibles de l'impôt sur le revenu l'année où ils sont effectués.
 
@@ -1062,7 +1062,7 @@ C'est là que ça devient intéressant pour les propriétaires. La liste des exc
 - **Logement occupé en dernier lieu par le propriétaire** ou un proche parent.
 - **Logement de 150 m² nets habitables ou plus** : exclu du champ d'application.
 - **Valeur ECA supérieure à CHF 750.-/m3** (à l'indice 117, base 100 = 1990) : exclu.
-- **L'acquéreur conserve le bien en location** avec le locataire actuel en place.
+- **L'acquéreur conserve le bien en location** avec le locataire actuel en place, un cas fréquent lors d'un [achat à but locatif](/journal/investir-locatif-vaud-2026).
 
 Si vous pensez entrer dans une de ces exceptions, je recommande toujours de demander confirmation écrite à la Direction du logement avant de mettre en vente. C'est gratuit et ça évite les mauvaises surprises chez le notaire.
 
@@ -1126,7 +1126,7 @@ Si le bien est vendu après le partage, chaque héritier reçoit sa quote-part d
 
 ## Quels sont les documents à réunir ?
 
-Outre les documents habituels pour toute vente immobilière dans le canton de Vaud (extrait du registre foncier, CECB, police ECA, plans), la vente en succession nécessite des documents spécifiques :
+Outre les documents habituels pour toute vente immobilière dans le canton de Vaud ([extrait du registre foncier, CECB, police ECA, plans](/journal/documents-vente-immobiliere-vaud)), la vente en succession nécessite des documents spécifiques :
 
 - **Le certificat d'héritiers** : c'est la pièce centrale. Il atteste de la qualité d'héritier et permet d'agir au nom de la communauté héréditaire. Dans le canton de Vaud, il est établi par le juge de paix du district du dernier domicile du défunt. Délai : de quelques semaines à plusieurs mois selon la complexité de la succession. Ne sous-estimez pas ce délai.
 - **Le testament ou le pacte successoral** (si existant), déposé auprès des autorités compétentes.
@@ -1139,7 +1139,7 @@ Deux impôts distincts s'appliquent lors d'une vente en succession.
 
 **L'impôt sur les successions** est prélevé par le canton et la commune sur la valeur transmise par le défunt. Dans le canton de Vaud, les héritiers directs (enfants, conjoints, partenaires enregistrés) sont exonérés. Les autres héritiers (frères, soeurs, neveux, amis) paient un impôt dont le taux varie selon le degré de parenté et la valeur des actifs transmis.
 
-Point important : l'impôt sur les successions est calculé sur la valeur vénale du bien au moment du décès, pas sur le prix de vente. Si le bien prend de la valeur entre le décès et la vente, seul l'impôt sur le gain immobilier sera dû sur la différence.
+Point important : l'impôt sur les successions est calculé sur la valeur vénale du bien au moment du décès, pas sur le prix de vente. Si le bien prend de la valeur entre le décès et la vente, seul [l'impôt sur le gain immobilier](/journal/impot-gain-immobilier-vaud) sera dû sur la différence.
 
 **L'impôt sur le gain immobilier** est dû sur la plus-value réalisée entre le prix de revient du défunt et le prix de vente. La durée de détention compte depuis la date d'acquisition originelle par le défunt, pas depuis le décès. Ce point est souvent mal compris : si le défunt a acheté le bien en 1995 et qu'il est vendu en 2026, la durée de détention est de 31 ans. Le taux applicable sera de 7 % (plancher dans le canton de Vaud).
 
@@ -1149,13 +1149,13 @@ Bonne nouvelle : les années d'occupation du défunt comme résidence principale
 
 En règle générale, non. Le transfert de propriété par succession (héritage) n'est pas soumis à la loi sur la préservation et la promotion du parc locatif (L3PL). Ce transfert n'est pas à titre onéreux et échappe donc au champ d'application de la loi.
 
-En revanche, dès lors que les héritiers souhaitent vendre le bien hérité (même s'il est ou a été loué), la L3PL s'applique à nouveau. Les héritiers doivent alors vérifier si une autorisation d'aliénation est nécessaire, selon les mêmes règles qu'une vente classique.
+En revanche, dès lors que les héritiers souhaitent vendre le bien hérité (même s'il est ou a été loué), la [L3PL](/journal/l3pl-vaud-autorisation-vente-logement-loue) s'applique à nouveau. Les héritiers doivent alors vérifier si une autorisation d'aliénation est nécessaire, selon les mêmes règles qu'une vente classique.
 
 ## Comment fixer le prix de vente ?
 
 La tentation est souvent de fixer un prix sentimental, lié à ce que valait le bien "du temps du défunt" ou à ce que les héritiers imaginent qu'il vaut. Cette approche mène presque toujours à un prix trop élevé ou trop bas.
 
-La bonne démarche : faire réaliser une estimation professionnelle par un courtier local, fondée sur les transactions récentes dans le secteur, l'état réel du bien et une analyse des trois valeurs (intrinsèque, de rendement, vénale). Cette estimation sert ensuite de base aux discussions entre héritiers et protège tout le monde d'un accord pris sous l'émotion.
+La bonne démarche : faire réaliser [une estimation professionnelle](/journal/estimer-son-bien-canton-de-vaud) par un courtier local, fondée sur les transactions récentes dans le secteur, l'état réel du bien et une analyse des trois valeurs (intrinsèque, de rendement, vénale). Cette estimation sert ensuite de base aux discussions entre héritiers et protège tout le monde d'un accord pris sous l'émotion.
 
 Dans les successions complexes (plusieurs héritiers, bien loué, désaccord sur le prix), il est possible de demander une expertise judiciaire. C'est plus lourd et plus coûteux, mais c'est parfois la seule solution pour débloquer une situation.
 
@@ -1253,11 +1253,11 @@ Si une cédule hypothécaire existe déjà et peut être cédée par le vendeur,
 | Cédule hypothécaire (prêt de CHF 720'000.-, ~2 %) | 720'000 x 2 % | CHF 14'400.- |
 | **Total frais d'acquisition** | | **CHF 52'200.-** |
 
-Ces CHF 52'200.- doivent être financés par les fonds propres de l'acquéreur, en plus des 20 % d'apport minimum exigés par les banques. C'est un point que beaucoup de primo-acquéreurs sous-estiment.
+Ces CHF 52'200.- doivent être financés par les [fonds propres](/journal/fonds-propres-achat-immobilier-suisse) de l'acquéreur, en plus des 20 % d'apport minimum exigés par les banques. C'est un point que beaucoup de primo-acquéreurs sous-estiment.
 
 ## Les droits de mutation sont-ils déductibles ?
 
-Oui, mais pas de l'impôt sur le revenu. Les droits de mutation payés à l'achat constituent une impense déductible de l'impôt sur le gain immobilier au moment de la revente du bien. Plus vos frais d'acquisition sont élevés et documentés, plus votre gain imposable sera réduit lors de la revente.
+Oui, mais pas de l'impôt sur le revenu. Les droits de mutation payés à l'achat constituent une impense déductible de [l'impôt sur le gain immobilier](/journal/impot-gain-immobilier-vaud) au moment de la revente du bien. Plus vos frais d'acquisition sont élevés et documentés, plus votre gain imposable sera réduit lors de la revente.
 
 Depuis le 1er janvier 2026, le canton de Vaud a supprimé le forfait de 4,5 % qui permettait de déduire les frais d'acquisition sans justificatif. Il est désormais indispensable de conserver l'acte d'achat original avec le décompte du notaire. Si vous ne l'avez plus, contactez votre notaire ou le Registre foncier pour en obtenir une copie.
 
@@ -1286,7 +1286,7 @@ Trois réflexes à adopter :
     chapeau: "20 % du prix d'achat, dont au moins 10 % hors prévoyance professionnelle. Voici d'où peuvent provenir vos fonds propres, comment utiliser votre 2e et 3e pilier, et ce que les banques exigent réellement.",
     date: '2026-04-24',
     categorie: 'Guide acquéreur',
-    contenu: `Pour acheter un bien immobilier en Suisse, vous devez apporter au minimum 20 % du prix d'achat en fonds propres. Sur ces 20 %, au moins 10 % doivent provenir de sources hors prévoyance professionnelle (épargne, 3e pilier, donation, héritage). Les 10 % restants peuvent être constitués par un retrait ou un nantissement de votre 2e pilier. À cela s'ajoutent les frais d'acquisition (environ 4 % dans le canton de Vaud), eux aussi à financer sur fonds propres.
+    contenu: `Pour acheter un bien immobilier en Suisse, vous devez apporter au minimum 20 % du prix d'achat en fonds propres. Sur ces 20 %, au moins 10 % doivent provenir de sources hors prévoyance professionnelle (épargne, 3e pilier, donation, héritage). Les 10 % restants peuvent être constitués par un retrait ou un nantissement de votre 2e pilier. À cela s'ajoutent les frais d'acquisition ([environ 4 % dans le canton de Vaud](/journal/droits-mutation-frais-notaire-vaud)), eux aussi à financer sur fonds propres.
 
 ## Quelle est la règle des 20 % en Suisse ?
 
@@ -1307,7 +1307,7 @@ Voici les sources acceptées par les banques suisses :
 
 - **Épargne personnelle** : comptes bancaires, placements, titres. C'est la source la plus simple et la plus appréciée par les banques.
 - **3e pilier (pilier 3a)** : retirable pour l'achat d'une résidence principale. L'impôt sur le retrait est prélevé à un taux réduit (variable selon le canton). Le 3e pilier compte comme fonds propres "durs" (hors LPP), ce qui en fait un levier particulièrement intéressant.
-- **2e pilier (LPP)** : retrait ou nantissement, uniquement pour la résidence principale. Voir la section dédiée ci-dessous.
+- **2e pilier (LPP)** : [retrait ou nantissement](/journal/retrait-2e-pilier-achat-immobilier-suisse), uniquement pour la résidence principale. Voir la section dédiée ci-dessous.
 - **Donation ou avance sur héritage** : de plus en plus fréquent en Suisse, où les prix élevés rendent l'accession difficile sans aide familiale. La banque demandera une attestation écrite confirmant qu'il s'agit d'un don et non d'un prêt.
 - **Vente d'un autre bien immobilier** : le produit de la vente peut être réinvesti comme fonds propres.
 - **Crédit lombard** : nantissement d'un portefeuille de titres. La banque prête en contrepartie de la mise en gage de vos placements. Solution réservée aux patrimoines financiers importants.
@@ -1321,7 +1321,7 @@ Le 2e pilier peut être mobilisé de deux façons pour financer l'achat d'une r�
 Vous retirez une partie ou la totalité de votre avoir LPP. L'argent est versé directement au notaire ou au créancier hypothécaire.
 
 Conditions :
-- Résidence principale uniquement (pas de résidence secondaire ni de bien locatif)
+- Résidence principale uniquement (pas de résidence secondaire ni de [bien locatif](/journal/investir-locatif-vaud-2026))
 - Montant minimum de retrait : CHF 20'000.-
 - Accord écrit du conjoint obligatoire
 - Dès 50 ans : retrait limité au montant disponible à vos 50 ans, ou à 50 % de l'avoir actuel (le plus élevé des deux)
@@ -1409,7 +1409,7 @@ Un acquéreur qui connaît précisément son budget avant la première visite ga
 
 Avant de visiter le moindre bien, vous devez connaître votre capacité d'achat. Deux critères la déterminent :
 
-- **Les fonds propres** : 20 % du prix d'achat minimum, dont 10 % hors prévoyance professionnelle. À cela s'ajoutent environ 4 % de frais d'acquisition (droits de mutation, notaire, registre foncier).
+- **Les fonds propres** : [20 % du prix d'achat minimum, dont 10 % hors prévoyance professionnelle](/journal/fonds-propres-achat-immobilier-suisse). À cela s'ajoutent environ 4 % de frais d'acquisition ([droits de mutation, notaire, registre foncier](/journal/droits-mutation-frais-notaire-vaud)).
 - **La tenue des charges** : les charges théoriques du logement (intérêts à 5 %, amortissement 1 %, entretien 1 %) ne doivent pas dépasser un tiers de votre revenu brut.
 
 Concrètement, pour un bien à CHF 1'000'000.-, il faut environ CHF 240'000.- de fonds propres (20 % + frais) et un revenu brut annuel d'au moins CHF 168'000.-.
@@ -1465,7 +1465,7 @@ Comparez les offres de plusieurs banques. Un écart de 0,1 % sur le taux hypoth�
 
 ## Étape 6 : choisir le notaire et préparer l'acte
 
-Dans le canton de Vaud, c'est l'acquéreur qui choisit et paie le notaire. Le notaire rédige l'acte de vente, vérifie la situation juridique du bien (registre foncier, servitudes, hypothèques en cours) et coordonne les aspects financiers.
+Dans le canton de Vaud, c'est l'acquéreur qui choisit et paie le notaire. Le notaire rédige l'acte de vente, vérifie la situation juridique du bien (registre foncier, [servitudes](/journal/servitudes-charges-foncieres-vente-vaud), hypothèques en cours) et coordonne les aspects financiers.
 
 Le processus notarial se déroule en trois temps :
 
@@ -1473,7 +1473,7 @@ Le processus notarial se déroule en trois temps :
 2. **La signature** : le notaire lit l'acte intégralement devant les deux parties, explique chaque clause, puis fait signer. Comptez 1 à 2 heures.
 3. **L'inscription au registre foncier** : le notaire procède à l'inscription du transfert de propriété. Le délai est de quelques jours à quelques semaines selon le district.
 
-Dans le canton de Vaud, la forme de vente la plus courante est la vente à terme : l'acte est signé, un acompte de 10 % est versé sur le compte du notaire, et le solde est payé à la date convenue pour l'entrée en jouissance.
+Dans le canton de Vaud, la forme de vente la plus courante est [la vente à terme](/journal/vente-a-terme-immobilier-vaud) : l'acte est signé, un acompte de 10 % est versé sur le compte du notaire, et le solde est payé à la date convenue pour l'entrée en jouissance.
 
 ## Étape 7 : le jour de la signature
 
@@ -1591,7 +1591,7 @@ Le notaire vérifie systématiquement le statut LFAIE de l'acquéreur avant d'in
 
 ## Peut-on acheter avant d'avoir son permis B ?
 
-En théorie, non. La LFAIE exige que l'acquéreur ait son domicile légal et effectif en Suisse au moment de la transaction. En pratique, dans le canton de Vaud, il est possible de signer une vente à terme avec une condition suspensive liée à l'obtention du permis de séjour. C'est une solution qui fonctionne, mais elle doit être encadrée par un notaire qui maîtrise la LFAIE.
+En théorie, non. La LFAIE exige que l'acquéreur ait son domicile légal et effectif en Suisse au moment de la transaction. En pratique, dans le canton de Vaud, il est possible de signer [une vente à terme](/journal/vente-a-terme-immobilier-vaud) avec une condition suspensive liée à l'obtention du permis de séjour. C'est une solution qui fonctionne, mais elle doit être encadrée par un notaire qui maîtrise la LFAIE.
 
 Attention : d'autres cantons sont plus restrictifs. Le Valais a durci sa pratique en janvier 2026 et n'accepte plus de signer d'acte sans permis de séjour effectif. Dans le canton de Vaud, la pratique reste plus souple, mais il est impératif de vérifier avec le notaire avant de s'engager.
 
@@ -1610,7 +1610,7 @@ Et avec le durcissement annoncé pour 2027, agir maintenant plutôt qu'attendre 
     chapeau: "Votre avoir LPP peut financer une partie de votre achat immobilier. Mais les règles sont strictes, la fiscalité est souvent sous-estimée, et le choix entre retrait et nantissement n'est pas anodin. Ce que vous devez savoir avant de décider.",
     date: '2026-06-12',
     categorie: 'Guide acquéreur',
-    contenu: `En Suisse, la loi autorise les assurés à mobiliser leur prévoyance professionnelle (2e pilier ou LPP) pour financer l'achat de leur résidence principale. C'est un levier puissant, surtout dans un marché où les prix vaudois nécessitent souvent des fonds propres importants. Mais ce mécanisme obéit à des règles précises, et les conséquences à long terme méritent d'être pesées sérieusement.
+    contenu: `En Suisse, la loi autorise les assurés à mobiliser leur prévoyance professionnelle (2e pilier ou LPP) pour financer [l'achat de leur résidence principale](/journal/etapes-achat-immobilier-vaud). C'est un levier puissant, surtout dans un marché où les prix vaudois nécessitent souvent des [fonds propres importants](/journal/fonds-propres-achat-immobilier-suisse). Mais ce mécanisme obéit à des règles précises, et les conséquences à long terme méritent d'être pesées sérieusement.
 
 ## Comment fonctionne l'encouragement à la propriété du logement (EPL) ?
 
@@ -1731,7 +1731,7 @@ De l'autre côté de la vente, il y avait un couple d'acquéreurs. Ils cherchaie
 
 Ce que je retiens de cette transaction n'a rien à voir avec les mètres carrés ni avec le prix. Derrière chaque échange, il y avait des personnes sincères, patientes, qui avaient simplement besoin qu'on leur dise la vérité et qu'on tienne parole. Je leur avais dit que je ferais tout pour que les choses soient claires et justes. Ils n'osaient pas vraiment y croire.
 
-Cinq pièces, 148 m² habitables, un terrain de 808 m² au calme. Affichée à CHF 1'790'000.-, la maison s'est finalement vendue à CHF 1'825'000.-. Un prix posé avec justesse trouve son acquéreur, et parfois le dépasse. Mais ce sont les chiffres, et ils ne disent pas l'essentiel.
+Cinq pièces, 148 m² habitables, un terrain de 808 m² au calme. Affichée à CHF 1'790'000.-, la maison s'est finalement vendue à CHF 1'825'000.-. Un [prix posé avec justesse](/journal/estimer-son-bien-canton-de-vaud) trouve son acquéreur, et parfois le dépasse. Mais ce sont les chiffres, et ils ne disent pas l'essentiel.
 
 L'essentiel, c'était l'autre jour, dans le jardin de Morges. Les vendeurs, les acheteurs, la notaire et moi, réunis pour fêter une vente devenue, en cours de route, bien plus qu'une vente. Deux familles qui ne se connaissaient pas, rassurées chacune à sa manière, autour de la même table.
 
@@ -1791,13 +1791,13 @@ Dans le canton de Vaud, la consultation du registre foncier pour une parcelle id
 
 C'est le premier réflexe de tout acheteur : diviser le loyer annuel par le prix d'achat. Résultat en quelques secondes. Problème : ce calcul ignore tout ce qui fait la réalité d'un bien locatif.
 
-Sur l'arc lémanique, les rendements bruts affichés se situent généralement entre 3 et 4,5% selon la commune. Le rendement net, après charges de PPE, entretien, assurances, impôts sur le revenu locatif et taux de vacance, descend souvent sous les 2,5%. Ce n'est pas nécessairement une mauvaise affaire. Mais c'est une réalité différente. Avant de vous projeter sur un bien, demandez systématiquement l'état locatif certifié, le décompte de charges des trois dernières années, et la liste des travaux planifiés.
+Sur l'arc lémanique, les rendements bruts affichés se situent généralement entre 3 et 4,5% selon la commune. Le rendement net, après charges de PPE, entretien, assurances, impôts sur le revenu locatif et taux de vacance, descend souvent sous les 2,5%. Ce n'est pas nécessairement une mauvaise affaire. Mais c'est une réalité différente. Avant de vous projeter sur un bien, demandez systématiquement [l'état locatif certifié](/journal/documents-vente-immobiliere-vaud), le décompte de charges des trois dernières années, et la liste des travaux planifiés.
 
 ## Les fonds propres exigés sont plus élevés que pour une résidence principale
 
-Beaucoup d'investisseurs découvrent cette règle trop tard : pour un bien locatif, les banques suisses exigent en général 25% de fonds propres, contre 20% pour une résidence principale. Et le calcul de la capacité de remboursement se fait sur la base d'un taux théorique d'environ 5%, indépendamment du taux réel que vous obtiendrez.
+Beaucoup d'investisseurs découvrent cette règle trop tard : pour un bien locatif, les banques suisses exigent en général 25% de fonds propres, contre [20% pour une résidence principale](/journal/fonds-propres-achat-immobilier-suisse). Et le calcul de la capacité de remboursement se fait sur la base d'un taux théorique d'environ 5%, indépendamment du taux réel que vous obtiendrez.
 
-Concrètement, pour un appartement de CHF 800'000.- à Renens ou Prilly, il faut mobiliser CHF 200'000.- de fonds propres au minimum, et démontrer une capacité financière qui supporte des mensualités fictives bien supérieures à celles que vous paierez réellement. Ce filtre bancaire est sain. Il protège les investisseurs contre une exposition excessive. Mais il faut l'anticiper dès la phase de réflexion, pas le jour de la signature de l'acte authentique.
+Concrètement, pour un appartement de CHF 800'000.- à Renens ou Prilly, il faut mobiliser CHF 200'000.- de fonds propres au minimum, et démontrer une capacité financière qui supporte des mensualités fictives bien supérieures à celles que vous paierez réellement. Ce filtre bancaire est sain. Il protège les investisseurs contre une exposition excessive. Mais il faut l'anticiper dès la phase de réflexion, pas le jour de [la signature de l'acte authentique](/journal/vente-a-terme-immobilier-vaud).
 
 ## L'emplacement prime sur le rendement facial
 
@@ -1819,7 +1819,7 @@ Pour un investisseur bien préparé, c'est néanmoins un contexte favorable. L'e
 
 ## Investir locatif en 2026 : oui, mais avec les bons calculs
 
-L'immobilier locatif dans le canton de Vaud reste une stratégie patrimoniale solide. La demande locative ne faiblit pas, l'offre reste insuffisante dans les zones urbaines, et le franc suisse protège la valeur réelle des actifs. Mais un bon investissement ne se trouve pas sur une annonce. Il se construit sur une analyse précise du bien, de son emplacement, de son financement et de sa fiscalité.`,
+L'immobilier locatif dans le canton de Vaud reste une stratégie patrimoniale solide. La demande locative ne faiblit pas, l'offre reste insuffisante dans les zones urbaines, et le franc suisse protège la valeur réelle des actifs. Mais un bon investissement ne se trouve pas sur une annonce. Il se construit sur [une analyse précise du bien](/journal/estimer-son-bien-canton-de-vaud), de son emplacement, de son financement et de sa fiscalité.`,
     cta: "Vous envisagez de mettre un bien locatif en vente ? Contactez-moi pour en discuter."
   },
   {
@@ -1848,7 +1848,7 @@ Un point que les vendeurs ignorent souvent : dans de nombreux dossiers, le notai
 
 C'est la question qui revient dans presque toutes mes négociations : l'acquéreur peut-il signer sous condition d'obtenir son financement ? Juridiquement, oui. En pratique, sur le marché vaudois actuel, les vendeurs les refusent presque systématiquement, et je les comprends.
 
-Une condition suspensive de financement signifie que le vendeur immobilise son bien pendant des semaines, le retire de la commercialisation, tout en portant le risque que la vente tombe. Dans un marché où la demande dépasse largement l'offre, un vendeur qui a le choix entre deux offres équivalentes prendra toujours celle qui est ferme. Mon conseil aux acquéreurs est donc constant : présentez-vous à la signature avec un financement définitif, confirmé par votre banque au notaire, pas avec un simple accord de principe. Et mon conseil aux vendeurs est le miroir exact : n'acceptez une condition suspensive que si le profil de l'acquéreur et le calendrier le justifient réellement, et avec une échéance courte et précise.
+Une condition suspensive de financement signifie que le vendeur immobilise son bien pendant des semaines, le retire de la commercialisation, tout en portant le risque que la vente tombe. Dans un marché où la demande dépasse largement l'offre, un vendeur qui a le choix entre deux offres équivalentes prendra toujours celle qui est ferme. Mon conseil aux acquéreurs est donc constant : présentez-vous à la signature avec un financement définitif, confirmé par votre banque au notaire, pas avec un simple accord de principe. Et mon conseil aux vendeurs est le miroir exact : n'acceptez une condition suspensive que si le profil de l'acquéreur et le calendrier le justifient réellement, comme dans le cas d'un [acquéreur étranger en attente d'autorisation](/journal/etranger-permis-b-acheter-immobilier-vaud), et avec une échéance courte et précise.
 
 ## À quoi sert ce délai de plusieurs mois
 
@@ -1860,7 +1860,7 @@ Pour le vendeur, il offre le temps de trouver son prochain logement, d'organiser
 
 Le terme arrive, le solde du prix est versé chez le notaire, la réquisition de transfert est signée, les clés changent de main. Si tout se passe sans accroc ce jour-là, c'est parce que l'acte a tout réglé des mois plus tôt.
 
-La répartition des frais courants d'abord : intérêts hypothécaires, charges PPE, assurances et impôt foncier se répartissent prorata temporis à la date du transfert de jouissance. La fiscalité ensuite : le notaire consigne 5% du prix de vente en garantie de l'impôt sur le gain immobilier du vendeur, et l'acquéreur s'acquitte des droits de mutation, 3,3% dans le canton de Vaud. Ces montants doivent être anticipés dans les calculs des deux parties, faute de quoi les surprises du jour J gâchent une transaction pourtant réussie.
+La répartition des frais courants d'abord : intérêts hypothécaires, charges PPE, assurances et impôt foncier se répartissent prorata temporis à la date du transfert de jouissance. La fiscalité ensuite : le notaire consigne 5% du prix de vente en garantie de [l'impôt sur le gain immobilier](/journal/impot-gain-immobilier-vaud) du vendeur, et l'acquéreur s'acquitte des [droits de mutation, 3,3% dans le canton de Vaud](/journal/droits-mutation-frais-notaire-vaud). Ces montants doivent être anticipés dans les calculs des deux parties, faute de quoi les surprises du jour J gâchent une transaction pourtant réussie.
 
 La vente à terme est un mécanisme équilibré : le vendeur obtient la certitude, l'acquéreur obtient le temps. Mais cet équilibre repose entièrement sur la qualité de préparation du dossier avant la signature. Si vous vendez ou achetez un bien dans le canton de Vaud et que vous vous interrogez sur la structure de votre transaction, je serais heureux d'en discuter avec vous.`,
     cta: "Une vente en préparation ? Parlons de la meilleure façon de la structurer."

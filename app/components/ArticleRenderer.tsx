@@ -13,7 +13,8 @@
 
 function processInline(text: string): React.ReactNode[] {
   const parts: React.ReactNode[] = []
-  const regex = /\*\*(.+?)\*\*/g
+  // Supporte **gras** et [texte](/lien-interne)
+  const regex = /\*\*(.+?)\*\*|\[([^\]]+)\]\((\/[^)\s]+)\)/g
   let lastIndex = 0
   let match
 
@@ -21,7 +22,15 @@ function processInline(text: string): React.ReactNode[] {
     if (match.index > lastIndex) {
       parts.push(text.slice(lastIndex, match.index))
     }
-    parts.push(<strong key={match.index} className="text-white font-medium">{match[1]}</strong>)
+    if (match[1] !== undefined) {
+      parts.push(<strong key={match.index} className="text-white font-medium">{match[1]}</strong>)
+    } else {
+      parts.push(
+        <a key={match.index} href={match[3]} className="text-brand-gold underline decoration-brand-gold/40 underline-offset-4 hover:decoration-brand-gold transition-colors">
+          {match[2]}
+        </a>
+      )
+    }
     lastIndex = regex.lastIndex
   }
 
