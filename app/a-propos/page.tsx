@@ -81,12 +81,17 @@ export default function AProposPage() {
         <p className="font-body text-lg text-brand-muted leading-relaxed max-w-2xl">
           Courtier immobilier diplômé USPI, actif depuis 2020 sur l'arc lémanique et le canton de Vaud. Plus de 90 transactions documentées, 39 communes couvertes, un seul interlocuteur du premier rendez-vous à la signature chez le notaire.
         </p>
+        <div className="mt-12 space-y-5 font-body text-brand-text leading-relaxed max-w-2xl">
+          <p>Je suis arrivé de Belgique en 2017. Sans réseau, sans nom, sans portefeuille de clients. Ce que je savais faire, c'était écouter, apprendre vite, et tenir parole.</p>
+          <p>La formation USPI m'a donné le cadre. Le terrain m'a donné le reste : des centaines de visites, des estimations défendues face à des vendeurs déçus, des ventes conclues là où d'autres avaient renoncé. Chaque transaction m'a appris quelque chose que les chiffres ne montrent pas.</p>
+          <p>Neuf ans plus tard, j'accompagne des propriétaires sur tout l'arc lémanique. Ce parcours construit de zéro, c'est ma garantie la plus solide : je sais ce que vaut la confiance d'un client, parce que j'ai dû gagner chacune d'elles.</p>
+        </div>
       </div>
 
       <div className="border-t border-brand-border">
         <Reveal className="max-w-4xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-16 items-start">
           <div className="relative aspect-[3/4] bg-brand-card border border-brand-border overflow-hidden">
-            <Image src="/photos/thomas-terrain.jpg" alt="Thomas Praet, courtier immobilier à Lausanne" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover object-bottom" />
+            <Image src="/photos/portrait.jpg" alt="Thomas Praet, courtier immobilier à Lausanne" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover object-top" />
           </div>
           <div className="space-y-10">
             <div>
