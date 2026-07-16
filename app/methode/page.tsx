@@ -29,7 +29,7 @@ const ETAPES = [
     num: '02',
     icon: Calculator,
     titre: "L'estimation fondée",
-    desc: "Je vous remets un rapport écrit basé sur trois méthodes croisées (valeur intrinsèque, valeur vénale, et le cas échéant valeur de rendement), des comparables réels que j'ai vendus dans votre quartier, et une analyse à jour du marché vaudois. Si le prix que vous espérez n'est pas atteignable, je vous le dis avant de signer.",
+    desc: "Je vous remets un rapport écrit basé sur trois méthodes croisées (valeur intrinsèque, valeur vénale, et le cas échéant valeur de rendement), des comparables réels issus de mes ventes et du marché local, et une analyse à jour du marché vaudois. Si le prix que vous espérez n'est pas atteignable, je vous le dis avant de signer.",
     valeur: "Un prix juste, pas un prix flatteur pour décrocher le mandat.",
   },
   {
@@ -43,7 +43,7 @@ const ETAPES = [
     num: '04',
     icon: Megaphone,
     titre: 'La commercialisation',
-    desc: "Reportage photo réalisé sur place, descriptif rédigé avec soin, prises de vue par drone quand le bien le justifie. Diffusion immédiate sur les portails majeurs (Immoscout24, Homegate, SMG) et sur ce site. Mise en avant via mon réseau et mes contacts personnels. La visibilité est maximale dès le premier jour.",
+    desc: "Reportage photo réalisé sur place, descriptif rédigé avec soin, prises de vue par drone quand le bien le justifie. Stratégie de diffusion adaptée à chaque bien : portails majeurs (Immoscout24, Homegate, immobilier.ch, etc.), ce site, et mise en avant via mon réseau et mes contacts personnels. Certains biens gagnent à être proposés discrètement avant toute publication.",
     valeur: "Je prends les photos moi-même. Je connais le bien mieux qu'un photographe extérieur.",
   },
   {
