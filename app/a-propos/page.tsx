@@ -111,7 +111,7 @@ export default function AProposPage() {
             </div>
             <div>
               <Eyebrow className="mb-3">Employeur</Eyebrow>
-              <p className="font-body text-brand-muted text-sm leading-relaxed">Golay Immobilier SA · Grand-Chêne 2 · 1003 Lausanne. Régie fondée en 1932, l'une des plus anciennes de Lausanne.</p>
+              <p className="font-body text-brand-muted text-sm leading-relaxed"><a href="https://www.golay-immobilier.ch" target="_blank" rel="noopener noreferrer" className="text-brand-text hover:text-brand-gold transition-colors">Golay Immobilier SA</a> · Grand-Chêne 2 · 1003 Lausanne. Régie fondée en 1932, l&apos;une des plus anciennes de Lausanne. Chaque mandat est signé et exécuté sous Golay Immobilier SA : vous bénéficiez de la solidité d&apos;une régie établie, avec un interlocuteur unique du premier échange à la signature.</p>
             </div>
           </div>
         </Reveal>

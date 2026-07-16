@@ -51,8 +51,11 @@ export default function EstimationPage() {
           Quelle est la valeur<br />
           <span className="italic text-brand-gold">de votre bien ?</span>
         </h1>
-        <p className="font-body text-brand-muted leading-relaxed mb-10 max-w-xl">
+        <p className="font-body text-brand-muted leading-relaxed mb-4 max-w-xl">
           Une estimation professionnelle fondée sur les données réelles du marché vaudois. Sans engagement, en toute confidentialité.
+        </p>
+        <p className="font-body text-xs text-brand-muted/80 tracking-wide mb-10 max-w-xl">
+          Chaque mandat est signé sous Golay Immobilier SA, régie lausannoise fondée en 1932.
         </p>
       </div>
 
