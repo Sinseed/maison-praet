@@ -112,11 +112,11 @@ export default function AProposPage() {
             </div>
             <div>
               <Eyebrow className="mb-3">Accréditation</Eyebrow>
-              <p className="font-body text-brand-muted text-sm leading-relaxed">Courtier diplômé USPI (Union Suisse des Professionnels de l'Immobilier). Formation reconnue, exercice réglementé, responsabilité civile professionnelle.</p>
+              <p className="font-body text-brand-muted text-sm leading-relaxed">Courtier diplômé USPI · Responsabilité civile professionnelle</p>
             </div>
             <div>
               <Eyebrow className="mb-3">Employeur</Eyebrow>
-              <p className="font-body text-brand-muted text-sm leading-relaxed"><a href="https://www.golay-immobilier.ch" target="_blank" rel="noopener noreferrer" className="text-brand-text hover:text-brand-gold transition-colors">Golay Immobilier SA</a> · Grand-Chêne 2 · 1003 Lausanne. Régie lausannoise établie depuis plus de 50 ans. Chaque mandat est signé et exécuté sous Golay Immobilier SA : vous bénéficiez de la solidité d&apos;une régie établie, avec un interlocuteur unique du premier échange à la signature.</p>
+              <p className="font-body text-brand-muted text-sm leading-relaxed"><a href="https://www.golay-immobilier.ch" target="_blank" rel="noopener noreferrer" className="text-brand-text hover:text-brand-gold transition-colors">Golay Immobilier SA</a> · Grand-Chêne 2, Lausanne<br />Chaque mandat est signé sous Golay Immobilier SA.</p>
             </div>
           </div>
         </Reveal>
