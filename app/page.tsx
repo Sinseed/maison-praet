@@ -124,7 +124,9 @@ function About() {
           <div className="space-y-5 font-body text-brand-text leading-relaxed">
             <p>Je ne suis pas un courtier qui promet un prix pour obtenir un mandat, puis le baisse trois mois plus tard. Si je ne suis pas convaincu de pouvoir vendre votre bien dans de bonnes conditions, je vous le dis.</p>
             <p>Depuis 2020, j&apos;accompagne des propriétaires sur l&apos;ensemble de l&apos;arc lémanique et du Gros-de-Vaud. Chaque mandat est traité avec la même rigueur : estimation fondée, stratégie de prix réaliste, suivi transparent jusqu&apos;à la signature chez le notaire.</p>
+            <p>J&apos;exerce au sein de <a href="https://www.golay-immobilier.ch" target="_blank" rel="noopener noreferrer" className="text-white hover:text-brand-gold transition-colors">Golay Immobilier SA</a>, régie lausannoise établie depuis plus de 50 ans. Chaque mandat est signé sous Golay Immobilier SA : vous bénéficiez de la solidité d&apos;une structure reconnue, avec un interlocuteur unique du premier échange à la signature.</p>
           </div>
+          <Link href="/a-propos" className="inline-flex items-center gap-3 mt-8 font-body text-sm tracking-widest uppercase text-brand-gold hover:text-brand-goldLight transition-colors">Mon parcours complet <ArrowRight size={14} /></Link>
         </Reveal>
       </div>
     </section>
