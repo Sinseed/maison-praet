@@ -162,7 +162,13 @@ function Approach() {
 function MandatsSection() {
   const [filtre, setFiltre] = useState<string>('all')
   const catOrder = { en_vente: 0, reserve: 1, vendu: 2 } as Record<string, number>
-  const filtered = (filtre === 'all' ? MANDATS : MANDATS.filter(m => m.categorie === filtre)).filter(m => m.photos.length > 0).sort((a, b) => (catOrder[a.categorie] ?? 9) - (catOrder[b.categorie] ?? 9))
+  const filtered = (filtre === 'all' ? MANDATS : MANDATS.filter(m => m.categorie === filtre)).filter(m => m.photos.length > 0).sort((a, b) => {
+    const catDiff = (catOrder[a.categorie] ?? 9) - (catOrder[b.categorie] ?? 9)
+    if (catDiff !== 0) return catDiff
+    const dateA = a.datereserve ?? a.datevente ?? ''
+    const dateB = b.datereserve ?? b.datevente ?? ''
+    return dateB.localeCompare(dateA)
+  })
   const badgeLabel = (cat: string) => cat === 'en_vente' ? 'En vente' : cat === 'reserve' ? 'Réservé' : 'Vendu'
   const badgeColor = (cat: string) => cat === 'en_vente' ? 'bg-brand-gold text-brand-dark' : cat === 'reserve' ? 'bg-amber-700/60 text-amber-200' : 'bg-green-800/60 text-green-200'
   return (

@@ -17,6 +17,7 @@ export type Mandat = {
   composition?: string // Composition (pour les immeubles : "20 appartements + 1 local commercial")
   rendement?: string   // Rendement brut affiché sur la fiche (immeubles : "4.77% brut")
   datevente?: string   // Date de vente format YYYY-MM (pour tri homepage dernière vente)
+  datereserve?: string // Date de réservation format YYYY-MM (tri : les plus récents en premier)
 }
 
 export type Article = {
@@ -76,7 +77,7 @@ export const MANDATS: Mandat[] = [
   },
   {
     id: 29, slug: 'appartement-cossonay-eolia', titre: 'Appartement PPE 4.5 pièces neuf', lieu: 'Cossonay-Ville',
-    prix: "1'195'000", pieces: '4.5', surface: '100 m²', terrain: '-', categorie: 'reserve',
+    prix: "1'195'000", pieces: '4.5', surface: '100 m²', terrain: '-', categorie: 'reserve', datereserve: '2026-07',
     img: '/photos/cossonay-eolia/01-balcon-vue.jpg',
     photos: [
       '/photos/cossonay-eolia/01-balcon-vue.jpg',
@@ -97,7 +98,7 @@ export const MANDATS: Mandat[] = [
   },
   {
     id: 21, slug: 'villa-lemont-saux', titre: 'Villa mitoyenne', lieu: 'Le Mont-sur-Lausanne',
-    prix: "1'470'000", pieces: '5.5', surface: '135 m²', terrain: '706 m²', categorie: 'reserve',
+    prix: "1'470'000", pieces: '5.5', surface: '135 m²', terrain: '706 m²', categorie: 'reserve', datereserve: '2026-07',
     img: '/photos/lemont-saux/drone1.jpg',
     photos: ['/photos/lemont-saux/drone1.jpg','/photos/lemont-saux/drone2.jpg','/photos/lemont-saux/salon.jpg','/photos/lemont-saux/salle-a-manger.jpg','/photos/lemont-saux/cuisine.jpg','/photos/lemont-saux/chambre1.jpg','/photos/lemont-saux/chambre2.jpg','/photos/lemont-saux/bureau.jpg','/photos/lemont-saux/sdb1.jpg','/photos/lemont-saux/sdb2.jpg','/photos/lemont-saux/sdb3.jpg','/photos/lemont-saux/sous-sol.png'],
     description: "Au Mont-sur-Lausanne, dans un quartier résidentiel établi, cette villa mitoyenne de 1987 déploie 135 m² habitables sur deux niveaux. Poutres apparentes, cheminée ouverte, grandes baies coulissantes sur le jardin privatif de 706 m². Trois chambres à l'étage, salle de bains double vasque avec baignoire, salle de loisirs au sous-sol. Garage indépendant et quatre places de stationnement. Chauffage électrique, remplacement par pompe à chaleur faisable (permis voisin obtenu 2021). À 8 minutes du centre de Lausanne et à 5 minutes de l'ISL."
@@ -225,7 +226,7 @@ export const MANDATS: Mandat[] = [
   },
   {
     id: 12, slug: 'appartement-longirod', titre: 'Appartement', lieu: 'Longirod',
-    prix: "750'000", pieces: '3.5', surface: '99 m²', terrain: '-', categorie: 'reserve',
+    prix: "750'000", pieces: '3.5', surface: '99 m²', terrain: '-', categorie: 'reserve', datereserve: '2026-07',
     img: '/photos/longirod/DJI_20260119103256_0010_D.jpg',
     photos: ['/photos/longirod/DJI_20260119103256_0010_D.jpg','/photos/longirod/DJI_20260119103443_0013_D.jpg','/photos/longirod/IMG_4968.jpg','/photos/longirod/IMG_4970.jpg','/photos/longirod/IMG_4971.jpg','/photos/longirod/IMG_4972.jpg','/photos/longirod/IMG_4974.jpg','/photos/longirod/IMG_4975.jpg','/photos/longirod/IMG_4976.jpg','/photos/longirod/IMG_4980.jpg','/photos/longirod/IMG_4983.jpg'],
     description: "Appartement lumineux à Longirod, au pied du Jura. Cadre verdoyant, vue sur la campagne et les Alpes. Cheminée, balcon et ambiance chaleureuse."
