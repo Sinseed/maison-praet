@@ -128,7 +128,7 @@ export default function AProposPage() {
           <div className="space-y-8">
             {[
               { periode: 'Depuis 2025', titre: 'Golay Immobilier SA · Lausanne', detail: "Courtier de la régie. Spécialisation résidentielle et immeubles de rendement sur l'arc lémanique, le Gros-de-Vaud et La Côte." },
-              { periode: '2020 à 2025', titre: 'Cogestim · Lausanne', detail: '15 à 20 transactions par an. Développement d\'un réseau de notaires, géomètres et conseillers hypothécaires sur l\'ensemble du canton.' },
+              { periode: '2020 à 2025', titre: 'Cogestim · Lausanne', detail: '15 à 20 transactions par an. Développement d\'un réseau de notaires et de conseillers hypothécaires sur l\'ensemble du canton.' },
               { periode: '2017 à 2020', titre: 'Arrivée en Suisse et formation', detail: 'Installé en Suisse en 2017, après une formation en Belgique. Diplôme USPI et immersion dans le marché vaudois : le socle de ma pratique.' },
             ].map((e, i) => (
               <Reveal key={e.periode} as="div" delay={i * 100} className="grid md:grid-cols-4 gap-4 border-b border-brand-border pb-8">
