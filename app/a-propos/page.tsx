@@ -6,11 +6,11 @@ import Reveal from '../components/Reveal'
 import Eyebrow from '../components/Eyebrow'
 
 export const metadata: Metadata = {
-  title: 'À propos de Thomas Praet – Courtier immobilier à Lausanne | Maison Praet',
+  title: 'À propos de Thomas Praet, courtier immobilier à Lausanne | Maison Praet',
   description: "Thomas Praet, courtier diplômé USPI chez Golay Immobilier SA à Lausanne. Plus de 90 transactions depuis 2020, 39 communes couvertes sur l'arc lémanique et le canton de Vaud.",
   alternates: { canonical: 'https://maisonpraet.ch/a-propos' },
   openGraph: {
-    title: 'Thomas Praet – Courtier immobilier à Lausanne',
+    title: 'Thomas Praet, courtier immobilier à Lausanne',
     description: "Courtier diplômé USPI, plus de 90 transactions depuis 2020. Arc lémanique et canton de Vaud.",
     url: 'https://maisonpraet.ch/a-propos',
     images: [{ url: 'https://maisonpraet.ch/photos/portrait.jpg', width: 800, height: 1000, alt: 'Thomas Praet' }],
@@ -112,7 +112,7 @@ export default function AProposPage() {
             </div>
             <div>
               <Eyebrow className="mb-3">Accréditation</Eyebrow>
-              <p className="font-body text-brand-muted text-sm leading-relaxed">Courtier diplômé USPI — Union Suisse des Professionnels de l'Immobilier. Formation reconnue, exercice réglementé, responsabilité civile professionnelle.</p>
+              <p className="font-body text-brand-muted text-sm leading-relaxed">Courtier diplômé USPI (Union Suisse des Professionnels de l'Immobilier). Formation reconnue, exercice réglementé, responsabilité civile professionnelle.</p>
             </div>
             <div>
               <Eyebrow className="mb-3">Employeur</Eyebrow>
@@ -127,8 +127,8 @@ export default function AProposPage() {
           <Eyebrow className="mb-8">Parcours</Eyebrow>
           <div className="space-y-8">
             {[
-              { periode: 'Depuis 2025', titre: 'Golay Immobilier SA — Lausanne', detail: "Courtier sous mandat. Spécialisation résidentielle et immeubles de rendement sur l'arc lémanique, le Gros-de-Vaud et La Côte." },
-              { periode: '2020 – 2025', titre: 'Cogestim — Lausanne', detail: '15 à 20 transactions par an de 2021 à 2024. Développement d\'un réseau de notaires, géomètres et conseillers hypothécaires sur l\'ensemble du canton.' },
+              { periode: 'Depuis 2025', titre: 'Golay Immobilier SA · Lausanne', detail: "Courtier sous mandat. Spécialisation résidentielle et immeubles de rendement sur l'arc lémanique, le Gros-de-Vaud et La Côte." },
+              { periode: '2020 à 2025', titre: 'Cogestim · Lausanne', detail: '15 à 20 transactions par an de 2021 à 2024. Développement d\'un réseau de notaires, géomètres et conseillers hypothécaires sur l\'ensemble du canton.' },
               { periode: 'Avant 2020', titre: 'Arrivée en Suisse', detail: 'Formé en Belgique, installé en Suisse en 2017. La formation USPI et l\'immersion dans le marché vaudois constituent le socle de ma pratique.' },
             ].map((e, i) => (
               <Reveal key={e.periode} as="div" delay={i * 100} className="grid md:grid-cols-4 gap-4 border-b border-brand-border pb-8">
@@ -137,25 +137,6 @@ export default function AProposPage() {
                   <p className="font-body text-white font-medium mb-2">{e.titre}</p>
                   <p className="font-body text-brand-muted leading-relaxed text-sm">{e.detail}</p>
                 </div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      <div className="border-t border-brand-border">
-        <div className="max-w-4xl mx-auto px-6 py-16">
-          <Eyebrow className="mb-8">Philosophie</Eyebrow>
-          <div className="grid md:grid-cols-2 gap-10">
-            {[
-              { titre: 'Un prix juste, pas un prix flatteur', texte: "Je ne signe pas un mandat pour avoir signé un mandat. Si le prix espéré n'est pas atteignable, je le dis avant de signer, pas après trois mois de silence et une première baisse." },
-              { titre: 'Un seul interlocuteur', texte: "Pas d'assistante, pas de call center. Du premier rendez-vous à la remise des clés, vous traitez avec moi. Votre bien n'est pas un dossier parmi d'autres." },
-              { titre: "L'estimation comme outil de confiance", texte: "Mon estimation repose sur trois méthodes croisées et des données réelles du marché vaudois. Elle est remise par écrit, argumentée, et ne change pas entre la visite et la signature." },
-              { titre: 'Le refus comme garantie', texte: "Je refuse des mandats. Un bien surestimé ne se vend pas, il se brûle. Et un bien brûlé coûte plus au vendeur que la commission qu'il espérait économiser." },
-            ].map((p, i) => (
-              <Reveal key={p.titre} as="div" delay={i * 90}>
-                <h2 className="font-display text-xl font-light text-white mb-3">{p.titre}</h2>
-                <p className="font-body text-brand-muted text-sm leading-relaxed">{p.texte}</p>
               </Reveal>
             ))}
           </div>
