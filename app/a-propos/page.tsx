@@ -91,7 +91,7 @@ export default function AProposPage() {
       <div className="border-t border-brand-border">
         <Reveal className="max-w-4xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-16 items-start">
           <div className="relative aspect-[3/4] bg-brand-card border border-brand-border overflow-hidden">
-            <Image src="/photos/portrait.jpg" alt="Thomas Praet, courtier immobilier à Lausanne" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover object-top" />
+            <Image src="/photos/thomas-terrain.jpg" alt="Thomas Praet, courtier immobilier à Lausanne" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover object-bottom" />
           </div>
           <div className="space-y-10">
             <div>
