@@ -55,7 +55,7 @@ export default function EstimationPage() {
           Une estimation professionnelle fondée sur les données réelles du marché vaudois. Sans engagement, en toute confidentialité.
         </p>
         <p className="font-body text-xs text-brand-muted/80 tracking-wide mb-10 max-w-xl">
-          Chaque mandat est signé sous Golay Immobilier SA, régie lausannoise fondée en 1932.
+          Chaque mandat est signé sous Golay Immobilier SA, régie lausannoise établie depuis plus de 50 ans.
         </p>
       </div>
 
