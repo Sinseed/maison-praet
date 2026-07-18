@@ -33,6 +33,13 @@ export type Article = {
 // ─── MANDATS ────────────────────────────────────────────────────────────────
 export const MANDATS: Mandat[] = [
   {
+    id: 229, slug: 'attique-prilly', titre: 'Attique 3.5 pièces', lieu: 'Prilly',
+    prix: "1'350'000", pieces: '3.5', surface: '92 m²', terrain: '-', categorie: 'en_vente',
+    img: '/photos/prilly-attique/01-terrasse-couchant.jpg',
+    photos: ['/photos/prilly-attique/01-terrasse-couchant.jpg','/photos/prilly-attique/02-sejour.jpg','/photos/prilly-attique/03-cuisine.jpg','/photos/prilly-attique/04-terrasse.jpg','/photos/prilly-attique/05-sejour-salle-a-manger.jpg','/photos/prilly-attique/06-chambre.jpg','/photos/prilly-attique/07-bureau.jpg','/photos/prilly-attique/08-salle-de-bains.jpg','/photos/prilly-attique/09-douche.jpg','/photos/prilly-attique/10-douche-wc.jpg'],
+    description: "Au dernier étage d'une résidence de 2020, l'appartement s'ouvre sur le ciel. La lumière entre par de larges baies, court sur le parquet et se prolonge dehors, sur une terrasse de plus de cinquante mètres carrés orientée sud-ouest. On y pose une table, on y reçoit, on y regarde le soir tomber sur l'Ouest lausannois. Deux chambres, deux pièces d'eau, un box intérieur et une place extérieure. Un attique rare, calme et résolument contemporain, à deux pas du centre de Prilly."
+  },
+  {
     id: 31, slug: 'maison-yvonand', titre: 'Maison de caractère', lieu: 'Yvonand',
     prix: "1'350'000", pieces: '8', surface: '190 m²', terrain: "1'804 m²", categorie: 'en_vente',
     img: '/photos/maison-yvonand/01-vue-aerienne.jpg',
