@@ -49,6 +49,9 @@ export const MANDATS: Mandat[] = [
     id: 31, slug: 'maison-yvonand', titre: 'Maison de caractère', lieu: 'Yvonand',
     prix: "1'350'000", pieces: '8', surface: '190 m²', terrain: "1'804 m²", categorie: 'en_vente',
     img: '/photos/maison-yvonand/01-vue-aerienne.jpg',
+    video: '/videos/maison-yvonand.mp4',
+    videoPoster: '/videos/maison-yvonand-poster.jpg',
+    videoDate: '2026-07-26',
     photos: [
       '/photos/maison-yvonand/01-vue-aerienne.jpg',
       '/photos/maison-yvonand/02-maison-jardin.jpg',
@@ -169,6 +172,9 @@ export const MANDATS: Mandat[] = [
     id: 19, slug: 'maison-riex', titre: 'Maison vigneronne', lieu: 'Riex, Lavaux',
     prix: "1'450'000", pieces: '2.5', surface: '100 m²', terrain: '39 m²', categorie: 'en_vente',
     img: '/photos/riex/drone-facade.jpg',
+    video: '/videos/maison-riex.mp4',
+    videoPoster: '/videos/maison-riex-poster.jpg',
+    videoDate: '2026-07-26',
     photos: ['/photos/riex/drone-facade.jpg','/photos/riex/drone-lac-panorama.jpg','/photos/riex/drone-lac-alpes.jpg','/photos/riex/drone-village.jpg','/photos/riex/salon.jpg','/photos/riex/cuisine.jpg','/photos/riex/salle-de-bains.jpg','/photos/riex/sauna.jpg','/photos/riex/sauna-douche.jpg'],
     description: "Au coeur du village de Riex, dans le périmètre UNESCO de Lavaux, cette maison vigneronne de 1680 entièrement rénovée en 1989 déploie ses 100 m² habitables sur quatre niveaux. Séjour lumineux avec double hauteur, cuisine ouverte avec accès balcon, chambre au dernier étage avec vide sur séjour et salle de bains moderne sous vélux. Sauna privatif au sous-sol, deux places de parking couvert. La porte de la façade sud est classée monument historique. Vue sur les toits, le lac Léman et les Alpes."
   },
@@ -183,6 +189,9 @@ export const MANDATS: Mandat[] = [
     id: 8, slug: 'maison-gland-buis', titre: 'Maison jumelée', lieu: 'Gland',
     prix: "2'750'000", pieces: '6.5', surface: '230 m²', terrain: '-', categorie: 'en_vente',
     img: '/photos/gland-buis/DJI_20260115164414_0005_D.jpg',
+    video: '/videos/maison-gland-buis.mp4',
+    videoPoster: '/videos/maison-gland-buis-poster.jpg',
+    videoDate: '2026-07-26',
     photos: ['/photos/gland-buis/DJI_20260115164414_0005_D.jpg','/photos/gland-buis/IMG_6123.jpg','/photos/gland-buis/IMG_6129.jpg','/photos/gland-buis/IMG_6134.jpg','/photos/gland-buis/IMG_6137.jpg','/photos/gland-buis/IMG_6140.jpg','/photos/gland-buis/IMG_6141.jpg','/photos/gland-buis/IMG_6143.jpg','/photos/gland-buis/IMG_6147.jpg','/photos/gland-buis/IMG_6148.jpg','/photos/gland-buis/IMG_6150.jpg','/photos/gland-buis/IMG_6151.jpg','/photos/gland-buis/IMG_6152.jpg','/photos/gland-buis/IMG_6153.jpg','/photos/gland-buis/IMG_6154.jpg','/photos/gland-buis/IMG_6155.jpg'],
     description: "Maison jumelée d'exception à Gland. Architecture contemporaine, volumes généreux et finitions soignées. Terrasse, jardin privatif et vue dégagée."
   },
@@ -213,6 +222,9 @@ export const MANDATS: Mandat[] = [
     id: 7, slug: 'appartement-lemont', titre: 'Appartement PPE', lieu: 'Le Mont-sur-Lausanne',
     prix: "930'000", pieces: '3.5', surface: '110 m²', terrain: '-', categorie: 'en_vente',
     img: '/photos/lemont/IMG_4544.jpg',
+    video: '/videos/appartement-lemont.mp4',
+    videoPoster: '/videos/appartement-lemont-poster.jpg',
+    videoDate: '2026-07-26',
     photos: ['/photos/lemont/IMG_4542.jpg','/photos/lemont/IMG_4543.jpg','/photos/lemont/IMG_4544.jpg','/photos/lemont/IMG_4545.jpg','/photos/lemont/IMG_4547.jpg','/photos/lemont/IMG_4550.jpg','/photos/lemont/IMG_4552.jpg','/photos/lemont/IMG_4557.jpg','/photos/lemont/IMG_4559.jpg'],
     description: "Appartement PPE au Mont-sur-Lausanne, dans un cadre résidentiel prisé. Lumineux et fonctionnel, avec vue dégagée sur la campagne environnante."
   },
