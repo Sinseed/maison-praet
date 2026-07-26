@@ -55,6 +55,25 @@ export default async function BienPage({ params }: { params: Promise<{ slug: str
   const badgeLabel = bien.categorie === 'en_vente' ? 'En vente' : bien.categorie === 'reserve' ? 'Réservé' : 'Vendu'
   const badgeColor = bien.categorie === 'en_vente' ? 'bg-brand-gold text-brand-dark' : bien.categorie === 'reserve' ? 'bg-amber-700/60 text-amber-200' : 'bg-green-800/60 text-green-200'
 
+  // Schema.org VideoObject : permet à Google d'indexer le teaser et d'afficher
+  // une vignette vidéo dans les résultats de recherche.
+  const videoSchema = bien.video && bien.videoPoster ? {
+    '@context': 'https://schema.org',
+    '@type': 'VideoObject',
+    name: `${bien.titre} à ${bien.lieu} : visite en vidéo`,
+    description: bien.description || `${bien.titre} à ${bien.lieu}`,
+    thumbnailUrl: `https://maisonpraet.ch${bien.videoPoster}`,
+    contentUrl: `https://maisonpraet.ch${bien.video}`,
+    uploadDate: bien.videoDate || '2026-07-26',
+    duration: 'PT21S',
+    embedUrl: `https://maisonpraet.ch/biens/${slug}`,
+    publisher: {
+      '@type': 'Organization',
+      name: 'Maison Praet',
+      url: 'https://maisonpraet.ch',
+    },
+  } : null
+
   // Schema.org ListingItem
   const schema = {
     '@context': 'https://schema.org',
@@ -89,6 +108,12 @@ export default async function BienPage({ params }: { params: Promise<{ slug: str
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
+      {videoSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(videoSchema) }}
+        />
+      )}
 
       <div className="max-w-7xl mx-auto px-6 py-12">
         <Link href="/#nosbiens" className="inline-flex items-center gap-2 font-body text-sm tracking-widest uppercase text-brand-muted hover:text-brand-gold transition-colors mb-8">

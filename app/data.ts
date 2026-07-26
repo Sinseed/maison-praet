@@ -20,6 +20,7 @@ export type Mandat = {
   datereserve?: string // Date de réservation format YYYY-MM (tri : les plus récents en premier)
   video?: string       // Teaser vertical (chemin public, ex. '/videos/attique-prilly.mp4')
   videoPoster?: string // Image d'attente du teaser (obligatoire si video est défini)
+  videoDate?: string   // Date de publication du teaser, format YYYY-MM-DD (requis par Google pour VideoObject)
 }
 
 export type Article = {
@@ -40,6 +41,7 @@ export const MANDATS: Mandat[] = [
     img: '/photos/prilly-attique/01-terrasse-couchant.jpg',
     video: '/videos/attique-prilly.mp4',
     videoPoster: '/videos/attique-prilly-poster.jpg',
+    videoDate: '2026-07-26',
     photos: ['/photos/prilly-attique/01-terrasse-couchant.jpg','/photos/prilly-attique/02-sejour.jpg','/photos/prilly-attique/03-cuisine.jpg','/photos/prilly-attique/04-terrasse.jpg','/photos/prilly-attique/05-sejour-salle-a-manger.jpg','/photos/prilly-attique/06-chambre.jpg','/photos/prilly-attique/07-bureau.jpg','/photos/prilly-attique/08-salle-de-bains.jpg','/photos/prilly-attique/09-douche.jpg','/photos/prilly-attique/10-douche-wc.jpg'],
     description: "Au dernier étage d'une résidence de 2020, l'appartement s'ouvre sur le ciel. La lumière entre par de larges baies, court sur le parquet et se prolonge dehors, sur une terrasse de plus de cinquante mètres carrés orientée sud-ouest. On y pose une table, on y reçoit, on y regarde le soir tomber sur l'Ouest lausannois. Deux chambres, deux pièces d'eau, un box intérieur et une place extérieure. Un attique rare, calme et résolument contemporain, à deux pas du centre de Prilly."
   },

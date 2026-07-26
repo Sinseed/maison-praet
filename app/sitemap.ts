@@ -27,6 +27,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: new Date(),
     changeFrequency: 'weekly' as const,
     priority: 0.6,
+    ...(m.video && m.videoPoster ? {
+      videos: [{
+        title: `${m.titre} à ${m.lieu} : visite en vidéo`,
+        thumbnail_loc: `${baseUrl}${m.videoPoster}`,
+        description: (m.description || `${m.titre} à ${m.lieu}`).slice(0, 2048),
+        content_loc: `${baseUrl}${m.video}`,
+      }],
+    } : {}),
   }))
 
   const communePages = COMMUNES_SEO.map(c => ({
