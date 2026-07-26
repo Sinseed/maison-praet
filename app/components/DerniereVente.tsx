@@ -3,7 +3,7 @@ import { MANDATS } from '../data'
 export default function DerniereVente() {
   const vendu = MANDATS
     .filter(m => m.categorie === 'vendu' && m.datevente)
-    .sort((a, b) => (b.datevente! > a.datevente! ? 1 : -1))
+    .sort((a, b) => b.datevente!.localeCompare(a.datevente!))
     [0]
 
   if (!vendu) return null
