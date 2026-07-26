@@ -111,7 +111,7 @@ export const MANDATS: Mandat[] = [
   },
   {
     id: 21, slug: 'villa-lemont-saux', titre: 'Villa mitoyenne', lieu: 'Le Mont-sur-Lausanne',
-    prix: "1'470'000", pieces: '5.5', surface: '135 m²', terrain: '706 m²', categorie: 'vendu', datevente: '2026-07',
+    prix: "1'470'000", pieces: '5.5', surface: '135 m²', terrain: '706 m²', categorie: 'vendu', datevente: '2026-07-23',
     img: '/photos/lemont-saux/drone1.jpg',
     photos: ['/photos/lemont-saux/drone1.jpg','/photos/lemont-saux/drone2.jpg','/photos/lemont-saux/salon.jpg','/photos/lemont-saux/salle-a-manger.jpg','/photos/lemont-saux/cuisine.jpg','/photos/lemont-saux/chambre1.jpg','/photos/lemont-saux/chambre2.jpg','/photos/lemont-saux/bureau.jpg','/photos/lemont-saux/sdb1.jpg','/photos/lemont-saux/sdb2.jpg','/photos/lemont-saux/sdb3.jpg','/photos/lemont-saux/sous-sol.png'],
     description: "Au Mont-sur-Lausanne, dans un quartier résidentiel établi, cette villa mitoyenne de 1987 déploie 135 m² habitables sur deux niveaux. Poutres apparentes, cheminée ouverte, grandes baies coulissantes sur le jardin privatif de 706 m². Trois chambres à l'étage, salle de bains double vasque avec baignoire, salle de loisirs au sous-sol. Garage indépendant et quatre places de stationnement. Chauffage électrique, remplacement par pompe à chaleur faisable (permis voisin obtenu 2021). À 8 minutes du centre de Lausanne et à 5 minutes de l'ISL."
@@ -139,7 +139,7 @@ export const MANDATS: Mandat[] = [
   },
   {
     id: 6, slug: 'appartement-epalinges', titre: 'Appartement PPE', lieu: 'Epalinges',
-    prix: "1'090'000", pieces: '3.5', surface: '109 m²', terrain: '-', categorie: 'vendu', datevente: '2026-07',
+    prix: "1'090'000", pieces: '3.5', surface: '109 m²', terrain: '-', categorie: 'vendu', datevente: '2026-07-10',
     img: '/photos/epalinges/epalinges_5_0.jpeg',
     photos: ['/photos/epalinges/epalinges_5_0.jpeg','/photos/epalinges/epalinges_1_0.jpeg','/photos/epalinges/epalinges_3_0.jpeg','/photos/epalinges/epalinges_3_1.jpeg','/photos/epalinges/epalinges_4_0.jpeg','/photos/epalinges/epalinges_4_1.jpeg','/photos/epalinges/epalinges_4_2.jpeg','/photos/epalinges/epalinges_10_0.jpeg'],
     description: "Sur les hauts d'Epalinges, à deux pas du terminus M2 Les Croisettes, ce rez-de-chaussée supérieur de 3.5 pièces s'ouvre sur l'un des plus beaux panoramas de la région. Le regard file sur le Léman et les Alpes, la lumière traverse l'appartement jusqu'à la terrasse de 160 m² qui prolonge naturellement les pièces de vie. Parquet en chêne, cuisine ouverte face au paysage, deux chambres paisibles. Jardin privatif en jouissance exclusive, chauffage à pellets et solaire, CECB classe A. Un bien rare, à la fois retiré et à quelques minutes du centre de Lausanne."
@@ -239,7 +239,7 @@ export const MANDATS: Mandat[] = [
   },
   {
     id: 12, slug: 'appartement-longirod', titre: 'Appartement', lieu: 'Longirod',
-    prix: "750'000", pieces: '3.5', surface: '99 m²', terrain: '-', categorie: 'vendu', datevente: '2026-07',
+    prix: "750'000", pieces: '3.5', surface: '99 m²', terrain: '-', categorie: 'vendu', datevente: '2026-07-22',
     img: '/photos/longirod/DJI_20260119103256_0010_D.jpg',
     photos: ['/photos/longirod/DJI_20260119103256_0010_D.jpg','/photos/longirod/DJI_20260119103443_0013_D.jpg','/photos/longirod/IMG_4968.jpg','/photos/longirod/IMG_4970.jpg','/photos/longirod/IMG_4971.jpg','/photos/longirod/IMG_4972.jpg','/photos/longirod/IMG_4974.jpg','/photos/longirod/IMG_4975.jpg','/photos/longirod/IMG_4976.jpg','/photos/longirod/IMG_4980.jpg','/photos/longirod/IMG_4983.jpg'],
     description: "Appartement lumineux à Longirod, au pied du Jura. Cadre verdoyant, vue sur la campagne et les Alpes. Cheminée, balcon et ambiance chaleureuse."
