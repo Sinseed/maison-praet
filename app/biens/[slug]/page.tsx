@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { ArrowLeft, Phone, Mail } from 'lucide-react'
 import { MANDATS } from '../../data'
 import BienGallery from '../../components/BienGallery'
+import BienVideo from '../../components/BienVideo'
 
 // ─── Static params ────────────────────────────────────────────────────────────
 export function generateStaticParams() {
@@ -119,6 +120,10 @@ export default async function BienPage({ params }: { params: Promise<{ slug: str
               {bien.rendement && <div><p className="font-body text-xs tracking-widest uppercase text-brand-muted mb-1">Rendement</p><p className="font-display text-2xl text-white">{bien.rendement}</p></div>}
             </div>
             <div className="font-body text-brand-text leading-relaxed text-lg whitespace-pre-line">{bien.description}</div>
+
+            {bien.video && bien.videoPoster && (
+              <BienVideo src={bien.video} poster={bien.videoPoster} titre={bien.titre} />
+            )}
           </div>
 
           {/* Sidebar contact */}
