@@ -121,13 +121,21 @@ function Dashboard() {
             </Link>
             <span className="font-body text-xs tracking-widest uppercase text-brand-muted border border-brand-border px-2 py-0.5">CRM</span>
           </div>
-          <div className="relative">
-            <Search size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-brand-muted" />
-            <input
-              type="text" placeholder="Rechercher..." value={search}
-              onChange={e => setSearch(e.target.value)}
-              className="bg-brand-card border border-brand-border pl-10 pr-4 py-2 font-body text-sm text-white placeholder:text-brand-muted/60 focus:outline-none focus:border-brand-gold/50 w-64 transition-colors"
-            />
+          <div className="flex items-center gap-3">
+            <Link
+              href="/crm/estimation"
+              className="hidden sm:inline-flex items-center gap-2 border border-brand-gold/40 text-brand-goldLight px-3 py-2 font-body text-xs tracking-wider uppercase hover:bg-brand-gold/10 transition-colors"
+            >
+              <TrendingUp size={14} /> Atelier d&apos;estimation
+            </Link>
+            <div className="relative">
+              <Search size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-brand-muted" />
+              <input
+                type="text" placeholder="Rechercher..." value={search}
+                onChange={e => setSearch(e.target.value)}
+                className="bg-brand-card border border-brand-border pl-10 pr-4 py-2 font-body text-sm text-white placeholder:text-brand-muted/60 focus:outline-none focus:border-brand-gold/50 w-64 transition-colors"
+              />
+            </div>
           </div>
         </div>
       </header>
