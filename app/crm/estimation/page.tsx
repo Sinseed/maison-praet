@@ -13,6 +13,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import Link from 'next/link'
 import { ArrowLeft, Download, Plus, Trash2, RefreshCw, AlertTriangle } from 'lucide-react'
+import PinGate from '../PinGate'
 import { estimer } from '@/lib/estimation/moteur'
 import { inputParDefaut } from '@/lib/estimation/defaut'
 import {
@@ -141,7 +142,7 @@ function LigneDetail({ label, montant, total }: { label: string; montant: number
 }
 
 // ─── Page ─────────────────────────────────────────────────────────────────────
-export default function AtelierEstimation() {
+function AtelierEstimation() {
   const [input, setInput] = useState<EstimationInput>(() => inputParDefaut('villa', 'Lausanne'))
   const [charge, setCharge] = useState(false)
   const [genere, setGenere] = useState(false)
@@ -499,5 +500,14 @@ export default function AtelierEstimation() {
         </div>
       </div>
     </div>
+  )
+}
+
+// Accès réservé au courtier : même verrou que le tableau de bord /crm.
+export default function AtelierEstimationPage() {
+  return (
+    <PinGate>
+      <AtelierEstimation />
+    </PinGate>
   )
 }
