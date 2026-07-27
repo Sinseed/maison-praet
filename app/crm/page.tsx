@@ -1,6 +1,6 @@
 'use client'
 import { useState, useMemo } from 'react'
-import { Search, Plus, X, ChevronRight, Home, Users, TrendingUp, Calendar, Filter } from 'lucide-react'
+import { Search, Plus, X, ChevronRight, Home, Users, TrendingUp, Calendar, Filter, ShieldCheck } from 'lucide-react'
 import Link from 'next/link'
 import PinGate from './PinGate'
 
@@ -85,7 +85,13 @@ function Dashboard() {
               href="/crm/estimation"
               className="hidden sm:inline-flex items-center gap-2 border border-brand-gold/40 text-brand-goldLight px-3 py-2 font-body text-xs tracking-wider uppercase hover:bg-brand-gold/10 transition-colors"
             >
-              <TrendingUp size={14} /> Atelier d&apos;estimation
+              <TrendingUp size={14} /> Estimation
+            </Link>
+            <Link
+              href="/crm/conformite"
+              className="hidden sm:inline-flex items-center gap-2 border border-brand-gold/40 text-brand-goldLight px-3 py-2 font-body text-xs tracking-wider uppercase hover:bg-brand-gold/10 transition-colors"
+            >
+              <ShieldCheck size={14} /> Conformité
             </Link>
             <div className="relative">
               <Search size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-brand-muted" />

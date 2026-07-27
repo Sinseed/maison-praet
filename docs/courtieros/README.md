@@ -3,11 +3,11 @@
 Application métier intégrée au projet Maison Praet. Elle couvre le cycle complet
 d'un mandat, de la prospection à la signature chez le notaire.
 
-> **Livraison Phase 1 (en place)** : modèle de données + RLS, module d'estimation
-> multi-méthodes avec export PDF, fichier de constantes réglementaires unique.
-> Les phases 2 à 4 (qualification acquéreur, radar de conformité, simulateur
-> fiscal, pipeline/matching, production documentaire, rendement/PPE, tableau de
-> bord) s'appuient sur le socle ci-dessous.
+> **En place** : modèle de données + RLS, module d'estimation multi-méthodes
+> avec export PDF, **radar de conformité réglementaire**, fichier de constantes
+> réglementaires unique. Les modules suivants (qualification acquéreur,
+> simulateur fiscal, pipeline/matching, production documentaire, rendement/PPE,
+> tableau de bord) s'appuient sur le socle ci-dessous.
 
 ## Stack
 
@@ -43,8 +43,11 @@ maison-praet/
 ├─ app/
 │  ├─ crm/
 │  │  ├─ page.tsx                     # tableau de bord existant (démo)
-│  │  └─ estimation/
-│  │     └─ page.tsx                  # ★ Atelier d'estimation multi-méthodes (UI)
+│  │  ├─ PinGate.tsx                  # verrou d'accès partagé (code PIN, session)
+│  │  ├─ estimation/
+│  │  │  └─ page.tsx                  # ★ Atelier d'estimation multi-méthodes (UI)
+│  │  └─ conformite/
+│  │     └─ page.tsx                  # ★ Radar de conformité réglementaire (UI)
 │  └─ api/
 │     └─ crm/
 │        └─ estimation/
@@ -60,6 +63,10 @@ maison-praet/
 │  │  ├─ defaut.ts                    # Entrée d'estimation par défaut
 │  │  ├─ moteur.ts                    # ★ Moteur de calcul (4 méthodes) — pur
 │  │  └─ pdf-document.tsx             # Rapport PDF (React PDF)
+│  ├─ conformite/
+│  │  ├─ types.ts                     # Types du radar de conformité
+│  │  ├─ defaut.ts                    # Entrée par défaut
+│  │  └─ regles.ts                    # ★ Moteur de règles (LPPPL, LFAIE, LDFR, LAT, LBA, nLPD…)
 │  └─ supabase/
 │     ├─ client.ts                    # Client navigateur (@supabase/ssr)
 │     └─ server.ts                    # Client serveur (cookies)
@@ -82,6 +89,18 @@ maison-praet/
   recalcul en direct ; export PDF en un clic.
 - **PDF** (`/api/crm/estimation/pdf`) : rapport structuré (page de garde,
   description, méthodologie, calculs, synthèse, conclusion signée).
+
+## Radar de conformité — comment ça marche
+
+- **Moteur de règles** (`lib/conformite/regles.ts`) : `evaluerConformite(input)`
+  applique les régimes vaudois/fédéraux (LPPPL, Lex Koller/LFAIE, LDFR, LAT-LATC,
+  servitudes/DDP, LBA, nLPD) et retourne des alertes typées
+  (`bloquant` / `informatif` / `ok`) avec note en langage clair, base légale et
+  délai à provisionner au rétroplanning.
+- **UI** (`/crm/conformite`) : questionnaire déclencheur → alertes triées par
+  gravité, chacune avec un **champ de résolution horodaté**. Le délai
+  réglementaire maximal est mis en avant pour le rétroplanning.
+- Les seuils et bases légales proviennent tous de `lib/config/reglementaire.ts`.
 
 ## Modèle de données
 
