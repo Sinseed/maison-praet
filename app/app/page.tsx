@@ -9,7 +9,7 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
-import { LogOut, Plus, Trash2, Check, Bell, Users, TrendingUp, ShieldCheck, PhoneCall, FolderOpen } from 'lucide-react'
+import { LogOut, Plus, Trash2, Check, Bell, Users, TrendingUp, ShieldCheck, PhoneCall, FolderOpen, Inbox } from 'lucide-react'
 import { createClient } from '@/lib/supabase/client'
 import { formatCHF, formatDate } from '@/lib/format'
 import type { AcquereurRow, ContactRow, TacheRow } from '@/lib/supabase/rows'
@@ -157,6 +157,9 @@ export default function EspaceApp() {
             <p className="font-body text-[10px] tracking-widest uppercase text-brand-muted truncate">{email}</p>
           </div>
           <div className="flex items-center gap-2 shrink-0">
+            <Link href="/app/inbox" className="inline-flex items-center gap-2 border border-brand-gold/40 text-brand-goldLight px-3 py-2 font-body text-xs tracking-wider uppercase hover:bg-brand-gold/10 transition-colors">
+              <Inbox size={14} /> Réception
+            </Link>
             <Link href="/app/biens" className="inline-flex items-center gap-2 border border-brand-gold/40 text-brand-goldLight px-3 py-2 font-body text-xs tracking-wider uppercase hover:bg-brand-gold/10 transition-colors">
               <FolderOpen size={14} /> Dossiers
             </Link>
