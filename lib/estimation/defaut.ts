@@ -37,5 +37,7 @@ export function inputParDefaut(
     comparables: [],
     margeFourchette: MARGE_FOURCHETTE_DEFAUT,
     strategiePrixPct: STRATEGIE_PRIX_DEFAUT,
+    // Appartement : la valeur de marché prime sur l'intrinsèque (plancher).
+    baseValeurRetenue: type === 'ppe' ? 'comparaison' : 'venale',
   };
 }

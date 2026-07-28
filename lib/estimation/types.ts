@@ -73,6 +73,11 @@ export interface EstimationInput {
   // — Stratégie de prix —
   margeFourchette: number; // 0–1, demi-amplitude de la fourchette (ex. 0.05)
   strategiePrixPct: number; // 0–1, écart prix de mise en vente / valeur retenue
+  /** Ce qui pilote la valeur retenue :
+   *  - 'venale'      : valeur vénale pondérée intrinsèque/rendement (défaut villa)
+   *  - 'comparaison' : valeur par comparables de marché (recommandé PPE)
+   *  - 'moyenne'     : moyenne des deux valeurs applicables */
+  baseValeurRetenue?: 'venale' | 'comparaison' | 'moyenne';
 }
 
 /** Une ligne détaillée d'un calcul (pour la transparence & le PDF). */

@@ -215,8 +215,19 @@ export function estimer(input: EstimationInput): EstimationResultat {
     );
   }
 
-  // Valeur retenue = valeur vénale pondérée (arrondie au palier de communication).
-  const valeurRetenue = arrondirAuPalier(venale.valeur, PALIER_ARRONDI_PRIX);
+  // Valeur retenue : selon la base choisie (vénale pondérée, comparaison de
+  // marché, ou moyenne des deux). Pour un appartement, le marché prime.
+  const base = input.baseValeurRetenue ?? 'venale'
+  let valeurBrute = venale.valeur
+  if (base === 'comparaison') {
+    valeurBrute = comparaison.applicable ? comparaison.valeur : venale.valeur
+  } else if (base === 'moyenne') {
+    const vals = [venale.valeur, comparaison.applicable ? comparaison.valeur : null].filter(
+      (x): x is number => x != null && x > 0,
+    )
+    valeurBrute = vals.length ? vals.reduce((a, b) => a + b, 0) / vals.length : venale.valeur
+  }
+  const valeurRetenue = arrondirAuPalier(valeurBrute, PALIER_ARRONDI_PRIX);
   const marge = clamp(nombre(input.margeFourchette), 0, 0.5);
   const fourchetteBasse = arrondirAuPalier(valeurRetenue * (1 - marge), PALIER_ARRONDI_PRIX);
   const fourchetteHaute = arrondirAuPalier(valeurRetenue * (1 + marge), PALIER_ARRONDI_PRIX);

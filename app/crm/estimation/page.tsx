@@ -156,6 +156,12 @@ function AtelierEstimation() {
   // Chargement depuis localStorage (hors ligne dégradé).
   useEffect(() => {
     try {
+      // Lien pré-rempli : ?d=<JSON encodé> a priorité sur le stockage local.
+      const d = new URLSearchParams(window.location.search).get('d')
+      if (d) {
+        setInput({ ...inputParDefaut(), ...JSON.parse(d) })
+        return
+      }
       const brut = localStorage.getItem(STORAGE_KEY)
       if (brut) setInput({ ...inputParDefaut(), ...JSON.parse(brut) })
     } catch {
@@ -494,6 +500,18 @@ function AtelierEstimation() {
           </div>
 
           <Section titre="Stratégie de prix">
+            <label className="block sm:col-span-2">
+              <span className="block font-body text-[11px] tracking-wider uppercase text-brand-muted mb-1">Base de la valeur retenue</span>
+              <select
+                value={input.baseValeurRetenue ?? 'venale'}
+                onChange={(e) => set('baseValeurRetenue', e.target.value as 'venale' | 'comparaison' | 'moyenne')}
+                className="w-full bg-brand-dark border border-brand-border px-3 py-2 font-body text-sm text-white focus:outline-none focus:border-brand-gold/50"
+              >
+                <option value="venale">Valeur vénale pondérée (intrinsèque / rendement)</option>
+                <option value="comparaison">Comparaison de marché (recommandé PPE)</option>
+                <option value="moyenne">Moyenne des deux</option>
+              </select>
+            </label>
             <ChampPct label="Marge de fourchette (±)" value={input.margeFourchette} onChange={(v) => set('margeFourchette', v)} />
             <ChampPct label="Écart prix de mise en vente" value={input.strategiePrixPct} onChange={(v) => set('strategiePrixPct', v)} />
           </Section>
