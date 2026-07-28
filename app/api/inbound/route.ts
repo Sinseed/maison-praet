@@ -55,7 +55,7 @@ export async function POST(req: Request) {
   // Lire un mail reçu nécessite une clé « accès complet » (RESEND_INBOUND_KEY).
   // La clé d'envoi habituelle (RESEND_API_KEY) est « envoi seulement » et sert
   // de repli pour l'accusé. Une clé accès complet couvre lecture ET envoi.
-  const inboundKey = process.env.RESEND_INBOUND_KEY || ''
+  const inboundKey = process.env.RESEND_INBOUND_KEY || process.env.Inbound_read || process.env.INBOUND_READ || ''
   const resend = new Resend(inboundKey || process.env.RESEND_API_KEY)
 
   // 3. Corps du mail : d'abord dans le payload du webhook (si présent), sinon
