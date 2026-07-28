@@ -84,10 +84,29 @@ export async function POST(req: Request) {
 
   // 4. Contexte : courtier + dossiers existants (service_role).
   const supa = createClient(SUPABASE_URL, serviceKey, { auth: { persistSession: false } })
+  // Identifiant du courtier : profil → sinon un bien/tâche existant → sinon le
+  // premier utilisateur Auth. (La table profils peut être vide si la fiche n'a
+  // pas été créée à l'inscription.)
+  let courtierId: string | undefined
+  let destinataire = process.env.RELANCES_EMAIL || 'tpraet@golay-immobilier.ch'
   const { data: profil } = await supa.from('profils').select('id, email').limit(1).maybeSingle()
-  const courtierId = (profil as { id: string } | null)?.id
+  if ((profil as { id?: string } | null)?.id) {
+    courtierId = (profil as { id: string }).id
+    if ((profil as { email?: string | null }).email) destinataire = (profil as { email: string }).email
+  }
+  if (!courtierId) {
+    const { data: b } = await supa.from('biens').select('courtier_id').limit(1).maybeSingle()
+    courtierId = (b as { courtier_id?: string } | null)?.courtier_id
+  }
+  if (!courtierId) {
+    const { data: t } = await supa.from('taches').select('courtier_id').limit(1).maybeSingle()
+    courtierId = (t as { courtier_id?: string } | null)?.courtier_id
+  }
+  if (!courtierId) {
+    const { data: list } = await supa.auth.admin.listUsers()
+    courtierId = list?.users?.[0]?.id
+  }
   if (!courtierId) return NextResponse.json({ error: 'Aucun courtier enregistré.' }, { status: 500 })
-  const destinataire = (profil as { email: string | null } | null)?.email || process.env.RELANCES_EMAIL || 'tpraet@golay-immobilier.ch'
 
   const { data: biens } = await supa.from('biens').select('id, type, commune, adresse').order('created_at', { ascending: false })
   const aujourdhui = new Date().toLocaleDateString('en-CA', { timeZone: 'Europe/Zurich' })
