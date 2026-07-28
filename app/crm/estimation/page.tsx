@@ -12,8 +12,11 @@
 
 import { useEffect, useMemo, useState } from 'react'
 import Link from 'next/link'
-import { ArrowLeft, Download, Plus, Trash2, RefreshCw, AlertTriangle } from 'lucide-react'
+import { useRouter } from 'next/navigation'
+import { ArrowLeft, Download, Plus, Trash2, RefreshCw, AlertTriangle, FolderPlus } from 'lucide-react'
 import PinGate from '../PinGate'
+import { createClient } from '@/lib/supabase/client'
+import { checklistDefaut } from '@/lib/dossier/checklist'
 import { estimer } from '@/lib/estimation/moteur'
 import { inputParDefaut } from '@/lib/estimation/defaut'
 import {
@@ -143,9 +146,11 @@ function LigneDetail({ label, montant, total }: { label: string; montant: number
 
 // ─── Page ─────────────────────────────────────────────────────────────────────
 function AtelierEstimation() {
+  const router = useRouter()
   const [input, setInput] = useState<EstimationInput>(() => inputParDefaut('villa', 'Lausanne'))
   const [charge, setCharge] = useState(false)
   const [genere, setGenere] = useState(false)
+  const [enr, setEnr] = useState(false)
   const [erreur, setErreur] = useState<string | null>(null)
 
   // Chargement depuis localStorage (hors ligne dégradé).
@@ -217,6 +222,69 @@ function AtelierEstimation() {
     }
   }
 
+  const enregistrerDossier = async () => {
+    setEnr(true)
+    setErreur(null)
+    try {
+      const supabase = createClient()
+      const { data: u } = await supabase.auth.getUser()
+      if (!u.user) {
+        setErreur("Connecte-toi d'abord à l'app (/app) pour enregistrer ce dossier.")
+        return
+      }
+      const { data: bien, error: eB } = await supabase
+        .from('biens')
+        .insert({
+          type: input.type,
+          commune: input.commune,
+          adresse: input.adresse || null,
+          statut: 'estimation',
+          annee_construction: input.anneeConstruction || null,
+          surface_habitable: input.surfaceHabitable || null,
+          surface_parcelle: input.surfaceParcelle || null,
+          valeur_eca: input.valeurEca || null,
+        })
+        .select()
+        .single()
+      if (eB || !bien) {
+        setErreur('Enregistrement du bien impossible.')
+        return
+      }
+      const bienId = (bien as { id: string }).id
+      const methodes = [
+        resultat.intrinseque.applicable ? 'intrinseque' : null,
+        resultat.rendement.applicable ? 'rendement' : null,
+        'venale',
+        resultat.comparaison.applicable ? 'comparaison' : null,
+      ].filter(Boolean) as string[]
+      await supabase.from('estimations').insert({
+        bien_id: bienId,
+        version: 1,
+        input,
+        resultat,
+        valeur_intrinseque: resultat.intrinseque.valeur,
+        valeur_rendement: resultat.rendement.valeur,
+        valeur_venale: resultat.venale.valeur,
+        valeur_comparaison: resultat.comparaison.valeur,
+        prix_mise_en_vente: resultat.synthese.prixMiseEnVente,
+        prix_plancher: resultat.synthese.prixPlancher,
+        methodes,
+      })
+      const checklist = checklistDefaut(input.type).map((d) => ({
+        bien_id: bienId,
+        type: d.type,
+        nom: d.nom,
+        statut: 'manquant',
+      }))
+      if (checklist.length) await supabase.from('documents').insert(checklist)
+      router.push(`/app/biens/${bienId}`)
+    } catch {
+      setErreur("Enregistrement impossible. Réessayez.")
+    } finally {
+      setEnr(false)
+    }
+  }
+
   const fourchette = `${formatCHF(resultat.synthese.fourchetteBasse)} – ${formatCHF(resultat.synthese.fourchetteHaute)}`
 
   return (
@@ -243,6 +311,13 @@ function AtelierEstimation() {
               className="hidden sm:inline-flex items-center gap-2 border border-brand-border px-3 py-2 font-body text-xs text-brand-muted hover:text-white hover:border-brand-border/80 transition-colors"
             >
               <RefreshCw size={14} /> Réinitialiser
+            </button>
+            <button
+              onClick={enregistrerDossier}
+              disabled={enr}
+              className="inline-flex items-center gap-2 border border-brand-gold/40 text-brand-goldLight px-3 py-2 font-body text-xs tracking-wider uppercase hover:bg-brand-gold/10 transition-colors disabled:opacity-60"
+            >
+              <FolderPlus size={14} /> {enr ? 'Enregistrement…' : 'Créer le dossier'}
             </button>
             <button
               onClick={telechargerPDF}

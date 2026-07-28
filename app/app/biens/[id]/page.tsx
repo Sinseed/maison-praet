@@ -39,6 +39,7 @@ export default function DossierBien() {
   const [documents, setDocuments] = useState<DocumentRow[]>([])
   const [echanges, setEchanges] = useState<EchangeRow[]>([])
   const [acquereurs, setAcquereurs] = useState<AcquereurRow[]>([])
+  const [estim, setEstim] = useState<{ valeur_venale: number | null; prix_mise_en_vente: number | null; prix_plancher: number | null } | null>(null)
   const [charge, setCharge] = useState(true)
   const [erreur, setErreur] = useState<string | null>(null)
 
@@ -48,13 +49,14 @@ export default function DossierBien() {
 
   const charger = useCallback(async () => {
     setErreur(null)
-    const [b, t, d, e, acq, cts] = await Promise.all([
+    const [b, t, d, e, acq, cts, est] = await Promise.all([
       supabase.from('biens').select('*').eq('id', id).single(),
       supabase.from('taches').select('*').eq('bien_id', id).eq('statut', 'a_faire').order('echeance', { ascending: true, nullsFirst: false }),
       supabase.from('documents').select('*').eq('bien_id', id).order('created_at', { ascending: true }),
       supabase.from('echanges').select('*').eq('bien_id', id).order('date_echange', { ascending: false }),
       supabase.from('acquereurs').select('*'),
       supabase.from('contacts').select('*'),
+      supabase.from('estimations').select('valeur_venale, prix_mise_en_vente, prix_plancher, version').eq('bien_id', id).order('version', { ascending: false }).limit(1),
     ])
     if (b.error) {
       setErreur(`Chargement impossible : ${b.error.message}`)
@@ -72,6 +74,8 @@ export default function DossierBien() {
         contact: a.contact_id ? parId.get(a.contact_id) ?? null : null,
       })),
     )
+    const estRows = (est.data as unknown as Array<{ valeur_venale: number | null; prix_mise_en_vente: number | null; prix_plancher: number | null }>) ?? []
+    setEstim(estRows[0] ?? null)
     setCharge(false)
   }, [id])
 
@@ -185,6 +189,17 @@ export default function DossierBien() {
           </select>
         </div>
       </header>
+
+      {estim && (
+        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 pt-6">
+          <div className="border border-brand-gold/40 bg-brand-gold/5 p-4 flex flex-wrap items-center gap-x-8 gap-y-2">
+            <span className="font-body text-[11px] uppercase tracking-widest text-brand-muted">Estimation</span>
+            <span className="font-body text-sm text-brand-text">Mise en vente&nbsp;: <span className="text-brand-gold font-medium">{formatCHF(estim.prix_mise_en_vente ?? 0)}</span></span>
+            <span className="font-body text-sm text-brand-text">Valeur retenue&nbsp;: <span className="text-white">{formatCHF(estim.valeur_venale ?? 0)}</span></span>
+            <span className="font-body text-sm text-brand-text">Plancher&nbsp;: <span className="text-white">{formatCHF(estim.prix_plancher ?? 0)}</span></span>
+          </div>
+        </div>
+      )}
 
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 py-6 grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Tâches — en premier */}
