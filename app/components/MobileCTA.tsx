@@ -11,6 +11,8 @@ import { Phone, ArrowRight } from 'lucide-react'
 export default function MobileCTA() {
   const pathname = usePathname()
   if (pathname?.startsWith('/estimation')) return null
+  // Espaces privés (app métier) : pas de barre d'appel public.
+  if (pathname?.startsWith('/app') || pathname?.startsWith('/crm')) return null
 
   // Sur une fiche bien, le visiteur est un acquéreur potentiel :
   // on lui propose le dossier du bien plutôt qu'une estimation vendeur.

@@ -12,7 +12,7 @@ import Link from 'next/link'
 import { LogOut, Plus, Trash2, Check, Bell, Users, TrendingUp, ShieldCheck, PhoneCall } from 'lucide-react'
 import { createClient } from '@/lib/supabase/client'
 import { formatCHF, formatDate } from '@/lib/format'
-import type { AcquereurRow, TacheRow } from '@/lib/supabase/rows'
+import type { AcquereurRow, ContactRow, TacheRow } from '@/lib/supabase/rows'
 
 const supabase = createClient()
 
@@ -42,16 +42,29 @@ export default function EspaceApp() {
 
   const charger = useCallback(async () => {
     setErreur(null)
-    const [{ data: acq, error: e1 }, { data: tac, error: e2 }] = await Promise.all([
-      supabase.from('acquereurs').select('*, contact:contacts(*)').order('created_at', { ascending: false }),
+    // Requêtes séparées (pas de jointure imbriquée) : plus robuste.
+    const [
+      { data: acq, error: e1 },
+      { data: cts, error: e2 },
+      { data: tac, error: e3 },
+    ] = await Promise.all([
+      supabase.from('acquereurs').select('*').order('created_at', { ascending: false }),
+      supabase.from('contacts').select('*'),
       supabase.from('taches').select('*').eq('statut', 'a_faire').order('echeance', { ascending: true, nullsFirst: false }),
     ])
-    if (e1 || e2) {
-      setErreur('Chargement impossible. Rafraîchissez la page.')
-    } else {
-      setAcquereurs((acq as unknown as AcquereurRow[]) ?? [])
-      setTaches((tac as unknown as TacheRow[]) ?? [])
+    const err = e1 || e2 || e3
+    if (err) {
+      setErreur(`Chargement impossible : ${err.message}`)
+      setCharge(false)
+      return
     }
+    const parId = new Map(((cts as unknown as ContactRow[]) ?? []).map((c) => [c.id, c]))
+    const fusion = ((acq as unknown as AcquereurRow[]) ?? []).map((a) => ({
+      ...a,
+      contact: a.contact_id ? parId.get(a.contact_id) ?? null : null,
+    }))
+    setAcquereurs(fusion)
+    setTaches((tac as unknown as TacheRow[]) ?? [])
     setCharge(false)
   }, [])
 

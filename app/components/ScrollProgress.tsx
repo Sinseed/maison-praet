@@ -1,5 +1,6 @@
 'use client'
 import { useEffect, useRef } from 'react'
+import { usePathname } from 'next/navigation'
 
 /**
  * Thin golden reading-progress bar pinned to the top of the viewport.
@@ -10,6 +11,8 @@ import { useEffect, useRef } from 'react'
  */
 export default function ScrollProgress() {
   const ref = useRef<HTMLDivElement>(null)
+  const pathname = usePathname()
+  const prive = pathname?.startsWith('/app') || pathname?.startsWith('/crm')
 
   useEffect(() => {
     const el = ref.current
@@ -35,5 +38,6 @@ export default function ScrollProgress() {
     }
   }, [])
 
+  if (prive) return null
   return <div ref={ref} className="scroll-progress" aria-hidden="true" />
 }

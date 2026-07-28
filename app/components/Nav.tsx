@@ -16,6 +16,9 @@ export default function Nav() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
+  // Espaces privés (app métier) : pas de navigation du site public.
+  if (pathname?.startsWith('/app') || pathname?.startsWith('/crm')) return null
+
   // On homepage, use anchor links. On subpages, link back to homepage sections.
   const sectionLink = (hash: string) => isHome ? hash : `/${hash}`
 
