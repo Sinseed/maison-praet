@@ -34,19 +34,6 @@ export async function GET(req: Request) {
     if (!ok) return NextResponse.json({ error: 'Non autorisé.' }, { status: 401 })
   }
 
-  // Témoin de diagnostic : dit quelles clés sont présentes (booléens), jamais leur valeur.
-  // Usage : …?secret=<CRON_SECRET>&debug=1
-  if (url.searchParams.get('debug')) {
-    return NextResponse.json({
-      service_role_presente: Boolean(process.env.SUPABASE_SERVICE_ROLE_KEY),
-      cron_secret_presente: Boolean(process.env.CRON_SECRET),
-      anthropic_presente: Boolean(process.env.ANTHROPIC_API_KEY),
-      resend_presente: Boolean(process.env.RESEND_API_KEY),
-      environnement: process.env.VERCEL_ENV ?? 'inconnu',
-      commit: (process.env.VERCEL_GIT_COMMIT_SHA ?? '').slice(0, 7) || 'inconnu',
-    })
-  }
-
   const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY
   if (!serviceKey) return NextResponse.json({ error: 'SUPABASE_SERVICE_ROLE_KEY manquante côté serveur.' }, { status: 503 })
   if (!process.env.RESEND_API_KEY) return NextResponse.json({ error: 'RESEND_API_KEY manquante côté serveur.' }, { status: 503 })
