@@ -154,6 +154,17 @@ export default function DossierBien() {
     setNouvelEchange('')
     charger()
   }
+  const supprimerDossier = async () => {
+    if (!window.confirm('Supprimer définitivement ce dossier et tout son contenu (documents, tâches, historique) ? Cette action est irréversible.')) return
+    const paths = documents.map((d) => d.storage_path).filter(Boolean) as string[]
+    if (paths.length) await supabase.storage.from('documents').remove(paths)
+    const { error } = await supabase.from('biens').delete().eq('id', id)
+    if (error) {
+      setErreur(`Suppression impossible : ${error.message}`)
+      return
+    }
+    router.push('/app/biens')
+  }
 
   if (charge) {
     return <div className="min-h-screen bg-brand-dark flex items-center justify-center"><p className="font-body text-brand-muted">Chargement…</p></div>
@@ -180,13 +191,22 @@ export default function DossierBien() {
               </p>
             </div>
           </div>
-          <select
-            value={bien.statut}
-            onChange={(e) => changerStatutBien(e.target.value)}
-            className="bg-brand-card border border-brand-gold/40 text-brand-goldLight px-3 py-2 font-body text-xs focus:outline-none shrink-0"
-          >
-            {Object.keys(STATUT_BIEN_LABELS).map((s) => <option key={s} value={s}>{STATUT_BIEN_LABELS[s]}</option>)}
-          </select>
+          <div className="flex items-center gap-2 shrink-0">
+            <select
+              value={bien.statut}
+              onChange={(e) => changerStatutBien(e.target.value)}
+              className="bg-brand-card border border-brand-gold/40 text-brand-goldLight px-3 py-2 font-body text-xs focus:outline-none"
+            >
+              {Object.keys(STATUT_BIEN_LABELS).map((s) => <option key={s} value={s}>{STATUT_BIEN_LABELS[s]}</option>)}
+            </select>
+            <button
+              onClick={supprimerDossier}
+              title="Supprimer le dossier"
+              className="border border-brand-border text-brand-muted hover:text-red-400 hover:border-red-500/40 transition-colors p-2"
+            >
+              <Trash2 size={15} />
+            </button>
+          </div>
         </div>
       </header>
 
