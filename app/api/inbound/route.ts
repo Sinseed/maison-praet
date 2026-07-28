@@ -68,10 +68,7 @@ export async function POST(req: Request) {
     try {
       const { data, error } = await resend.emails.receiving.get(emailId)
       if (error || !data) {
-        return NextResponse.json({
-          error: `Corps indisponible : ${error ? JSON.stringify(error) : 'réponse vide'}`,
-          diag: { cle_inbound_presente: inboundKey.length > 0, longueur: inboundKey.length, debut: inboundKey ? inboundKey.slice(0, 5) : null },
-        }, { status: 502 })
+        return NextResponse.json({ error: `Corps du mail indisponible${error ? ` : ${JSON.stringify(error)}` : ''}` }, { status: 502 })
       }
       sujet = data.subject || sujet
       texte = ((data.text || (data.html ? sansHtml(data.html) : '')) || '').slice(0, 8000)
@@ -94,10 +91,8 @@ export async function POST(req: Request) {
     courtierId = (profil as { id: string }).id
     if ((profil as { email?: string | null }).email) destinataire = (profil as { email: string }).email
   }
-  let biensVus = -1
   if (!courtierId) {
     const { data: bs } = await supa.from('biens').select('courtier_id')
-    biensVus = (bs as { courtier_id?: string }[] | null)?.length ?? 0
     courtierId = (bs as { courtier_id?: string }[] | null)?.find((b) => b.courtier_id)?.courtier_id
   }
   if (!courtierId) {
@@ -108,7 +103,7 @@ export async function POST(req: Request) {
     const { data: list } = await supa.auth.admin.listUsers()
     courtierId = list?.users?.[0]?.id
   }
-  if (!courtierId) return NextResponse.json({ error: 'Aucun courtier enregistré.', diag: { version: 'courtier-v3', biens_vus: biensVus } }, { status: 500 })
+  if (!courtierId) return NextResponse.json({ error: 'Aucun courtier enregistré.' }, { status: 500 })
 
   const { data: biens } = await supa.from('biens').select('id, type, commune, adresse').order('created_at', { ascending: false })
   const aujourdhui = new Date().toLocaleDateString('en-CA', { timeZone: 'Europe/Zurich' })
