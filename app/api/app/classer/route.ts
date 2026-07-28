@@ -127,7 +127,8 @@ export async function POST(req: Request) {
   let plan: Plan
   try {
     const message = await client.messages.create({
-      model: 'claude-opus-5',
+      // Modèle économique : tâche d'extraction simple, coût minimal par analyse.
+      model: 'claude-haiku-4-5',
       max_tokens: 2000,
       system:
         "Tu es l'assistant de classement d'un courtier immobilier vaudois. On te donne un élément brut " +
