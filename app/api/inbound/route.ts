@@ -94,9 +94,11 @@ export async function POST(req: Request) {
     courtierId = (profil as { id: string }).id
     if ((profil as { email?: string | null }).email) destinataire = (profil as { email: string }).email
   }
+  let biensVus = -1
   if (!courtierId) {
-    const { data: b } = await supa.from('biens').select('courtier_id').limit(1).maybeSingle()
-    courtierId = (b as { courtier_id?: string } | null)?.courtier_id
+    const { data: bs } = await supa.from('biens').select('courtier_id')
+    biensVus = (bs as { courtier_id?: string }[] | null)?.length ?? 0
+    courtierId = (bs as { courtier_id?: string }[] | null)?.find((b) => b.courtier_id)?.courtier_id
   }
   if (!courtierId) {
     const { data: t } = await supa.from('taches').select('courtier_id').limit(1).maybeSingle()
@@ -106,7 +108,7 @@ export async function POST(req: Request) {
     const { data: list } = await supa.auth.admin.listUsers()
     courtierId = list?.users?.[0]?.id
   }
-  if (!courtierId) return NextResponse.json({ error: 'Aucun courtier enregistré.' }, { status: 500 })
+  if (!courtierId) return NextResponse.json({ error: 'Aucun courtier enregistré.', diag: { version: 'courtier-v3', biens_vus: biensVus } }, { status: 500 })
 
   const { data: biens } = await supa.from('biens').select('id, type, commune, adresse').order('created_at', { ascending: false })
   const aujourdhui = new Date().toLocaleDateString('en-CA', { timeZone: 'Europe/Zurich' })
