@@ -90,9 +90,12 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: `Classement impossible : ${(e as Error).message}` }, { status: 500 })
   }
 
-  // 6. Accusé de classement au courtier.
-  try {
-    const lignes = actions.length ? actions.map((a) => `<li>${a}</li>`).join('') : '<li>Rien à classer (aucune action détectée).</li>'
+  // 6. Accusé de classement au courtier — seulement s'il y a eu quelque chose à
+  //    classer (un mail sans action ne consomme aucun envoi), et désactivable
+  //    entièrement via INBOUND_CONFIRM=off pour préserver le quota d'envoi.
+  const confirmerActif = process.env.INBOUND_CONFIRM !== 'off' && actions.length > 0
+  if (confirmerActif) try {
+    const lignes = actions.map((a) => `<li>${a}</li>`).join('')
     const lien = bienId ? `https://maisonpraet.ch/app/biens/${bienId}` : 'https://maisonpraet.ch/app'
     await resend.emails.send({
       from: 'Maison Praet <noreply@maisonpraet.ch>',
