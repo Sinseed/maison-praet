@@ -17,6 +17,22 @@ import { TYPE_BIEN_LABELS } from '@/lib/estimation/types'
 export const runtime = 'nodejs'
 export const dynamic = 'force-dynamic'
 
+/**
+ * Témoin de diagnostic : dit UNIQUEMENT si la clé est présente (booléen), jamais
+ * sa valeur. Sert à vérifier depuis le navigateur que la configuration Vercel est
+ * bien prise en compte par le déploiement courant.
+ */
+export async function GET() {
+  const cle = process.env.ANTHROPIC_API_KEY ?? ''
+  return NextResponse.json({
+    cle_presente: cle.length > 0,
+    longueur: cle.length,
+    debut: cle ? cle.slice(0, 7) : null,
+    environnement: process.env.VERCEL_ENV ?? 'inconnu',
+    commit: (process.env.VERCEL_GIT_COMMIT_SHA ?? '').slice(0, 7) || 'inconnu',
+  })
+}
+
 interface Plan {
   resume: string
   bien_id: string
