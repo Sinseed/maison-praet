@@ -4,8 +4,7 @@ import './globals.css'
 import Nav from './components/Nav'
 import MobileCTA from './components/MobileCTA'
 import ScrollProgress from './components/ScrollProgress'
-import { Analytics } from '@vercel/analytics/react'
-import Script from 'next/script'
+import Trackers from './components/Trackers'
 
 const cormorant = Cormorant_Garamond({
   subsets: ['latin'],
@@ -140,7 +139,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     })}}
   />
 </head>
-<body><ScrollProgress /><Nav />{children}<MobileCTA /><Analytics /><Script src="https://cloud.umami.is/script.js" data-website-id="07d9dc44-a171-44a7-a250-040d1f9a22f1" strategy="afterInteractive" /></body>
+<body><ScrollProgress /><Nav />{children}<MobileCTA /><Trackers /></body>
     </html>
   )
 }
