@@ -160,10 +160,10 @@ export default function EspaceApp() {
             <Link href="/app/biens" className="inline-flex items-center gap-2 border border-brand-gold/40 text-brand-goldLight px-3 py-2 font-body text-xs tracking-wider uppercase hover:bg-brand-gold/10 transition-colors">
               <FolderOpen size={14} /> Dossiers
             </Link>
-            <Link href="/crm/estimation" className="hidden sm:inline-flex items-center gap-2 border border-brand-gold/40 text-brand-goldLight px-3 py-2 font-body text-xs tracking-wider uppercase hover:bg-brand-gold/10 transition-colors">
+            <Link href="/app/estimation" className="hidden sm:inline-flex items-center gap-2 border border-brand-gold/40 text-brand-goldLight px-3 py-2 font-body text-xs tracking-wider uppercase hover:bg-brand-gold/10 transition-colors">
               <TrendingUp size={14} /> Estimation
             </Link>
-            <Link href="/crm/conformite" className="hidden sm:inline-flex items-center gap-2 border border-brand-gold/40 text-brand-goldLight px-3 py-2 font-body text-xs tracking-wider uppercase hover:bg-brand-gold/10 transition-colors">
+            <Link href="/app/conformite" className="hidden sm:inline-flex items-center gap-2 border border-brand-gold/40 text-brand-goldLight px-3 py-2 font-body text-xs tracking-wider uppercase hover:bg-brand-gold/10 transition-colors">
               <ShieldCheck size={14} /> Conformité
             </Link>
             <button onClick={deconnexion} className="inline-flex items-center gap-2 border border-brand-border text-brand-muted px-3 py-2 font-body text-xs hover:text-white transition-colors">
