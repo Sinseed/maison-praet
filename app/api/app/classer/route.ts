@@ -149,7 +149,10 @@ export async function POST(req: Request) {
       system:
         "Tu es l'assistant de classement d'un courtier immobilier vaudois. On te donne un élément brut " +
         "(mail transféré, note, appel) et la liste des dossiers (biens) existants. Détermine à quel dossier " +
-        "il se rattache (renvoie son id exact dans `bien_id`) ou s'il faut en créer un nouveau. Extrais, s'il " +
+        "il se rattache (renvoie son id exact dans `bien_id`) ou s'il faut en créer un nouveau. Si l'élément " +
+        "concerne une transaction, une visite, un mandat ou une acquisition portant sur un bien précis qui ne " +
+        "correspond à aucun dossier existant, propose la création d'un nouveau dossier (remplis nouveau_bien_type " +
+        "et nouveau_bien_commune, la commune étant celle du bien concerné). Extrais, s'il " +
         "y a lieu : un échange à consigner, une tâche de suivi, un changement de statut de document " +
         "(ex. CECB demandé/reçu). Laisse vides (chaîne vide) les champs non pertinents.\n\n" +
         'Réponds UNIQUEMENT par un objet JSON valide, sans aucun texte autour, avec exactement ces clés ' +
@@ -181,5 +184,5 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: 'Analyse impossible. Réessayez.' }, { status: 502 })
   }
 
-  return NextResponse.json({ ok: true, plan })
+  return NextResponse.json({ ok: true, plan, biens: biens ?? [] })
 }

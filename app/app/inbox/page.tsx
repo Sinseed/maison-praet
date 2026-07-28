@@ -2,11 +2,11 @@
 
 /**
  * Boîte de réception intelligente : on colle un mail / une note, l'app propose
- * un classement (dossier, échange, tâche, statut de document), on valide.
+ * un classement (dossier, échange, tâche, statut de document). La proposition
+ * est MODIFIABLE — l'IA propose, le courtier corrige puis valide.
  */
 
 import { useState } from 'react'
-import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import { ArrowLeft, Sparkles, Check, X } from 'lucide-react'
 import { TYPE_BIEN_LABELS, type TypeBien } from '@/lib/estimation/types'
@@ -24,15 +24,31 @@ interface Plan {
   document_statut: string
 }
 
+interface BienBref {
+  id: string
+  type: string
+  commune: string
+  adresse: string | null
+}
+
+const DEST_AUCUN = '__aucun__'
+const DEST_NOUVEAU = '__nouveau__'
+
+const TYPES: TypeBien[] = ['villa', 'ppe', 'immeuble', 'terrain']
+const CANAUX = ['note', 'email', 'appel', 'notaire', 'autre']
+
 export default function InboxPage() {
-  const router = useRouter()
   const [texte, setTexte] = useState('')
   const [plan, setPlan] = useState<Plan | null>(null)
+  const [biens, setBiens] = useState<BienBref[]>([])
+  const [dest, setDest] = useState<string>(DEST_AUCUN)
   const [analyse, setAnalyse] = useState(false)
   const [applique, setApplique] = useState(false)
   const [resultat, setResultat] = useState<string[] | null>(null)
   const [bienId, setBienId] = useState<string | null>(null)
   const [erreur, setErreur] = useState<string | null>(null)
+
+  const maj = (patch: Partial<Plan>) => setPlan((p) => (p ? { ...p, ...patch } : p))
 
   const analyser = async () => {
     if (!texte.trim()) return
@@ -51,7 +67,11 @@ export default function InboxPage() {
         setErreur(data.error ?? 'Analyse impossible.')
         return
       }
-      setPlan(data.plan as Plan)
+      const p = data.plan as Plan
+      setPlan(p)
+      setBiens((data.biens as BienBref[]) ?? [])
+      // Destination pré-sélectionnée selon la proposition de l'IA.
+      setDest(p.bien_id ? p.bien_id : p.nouveau_bien_commune ? DEST_NOUVEAU : DEST_AUCUN)
     } catch {
       setErreur('Analyse impossible. Réessayez.')
     } finally {
@@ -61,13 +81,34 @@ export default function InboxPage() {
 
   const appliquer = async () => {
     if (!plan) return
+    // On construit le plan final à partir des choix (éventuellement corrigés).
+    const final: Plan = { ...plan }
+    if (dest === DEST_AUCUN) {
+      final.bien_id = ''
+      final.nouveau_bien_type = ''
+      final.nouveau_bien_commune = ''
+      final.nouveau_bien_adresse = ''
+    } else if (dest === DEST_NOUVEAU) {
+      final.bien_id = ''
+      if (!final.nouveau_bien_type) final.nouveau_bien_type = 'ppe'
+      if (!final.nouveau_bien_commune.trim()) {
+        setErreur('Indique la commune du nouveau dossier avant de classer.')
+        return
+      }
+    } else {
+      final.bien_id = dest
+      final.nouveau_bien_type = ''
+      final.nouveau_bien_commune = ''
+      final.nouveau_bien_adresse = ''
+    }
+
     setApplique(true)
     setErreur(null)
     try {
       const res = await fetch('/api/app/classer', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ plan, appliquer: true }),
+        body: JSON.stringify({ plan: final, appliquer: true }),
       })
       const data = await res.json()
       if (!res.ok) {
@@ -85,11 +126,8 @@ export default function InboxPage() {
     }
   }
 
-  const ligneBien = plan?.bien_id
-    ? 'Dossier existant'
-    : plan?.nouveau_bien_commune
-      ? `Nouveau dossier : ${TYPE_BIEN_LABELS[plan.nouveau_bien_type as TypeBien] ?? plan.nouveau_bien_type} à ${plan.nouveau_bien_commune}`
-      : 'Aucun dossier (sera non rattaché)'
+  const champ = 'w-full bg-brand-card border border-brand-border px-3 py-2 font-body text-sm text-white focus:outline-none focus:border-brand-gold/50'
+  const label = 'block font-body text-[11px] uppercase tracking-widest text-brand-muted mb-1.5'
 
   return (
     <div className="min-h-screen bg-brand-dark">
@@ -102,7 +140,7 @@ export default function InboxPage() {
 
       <div className="max-w-[900px] mx-auto px-4 sm:px-6 py-6 space-y-5">
         <p className="font-body text-sm text-brand-muted">
-          Colle un mail, une note ou un compte-rendu d&apos;appel. L&apos;app repère le dossier concerné et propose de le classer.
+          Colle un mail, une note ou un compte-rendu d&apos;appel. L&apos;app propose un classement — que tu peux corriger avant de valider.
         </p>
 
         <textarea
@@ -123,20 +161,87 @@ export default function InboxPage() {
 
         {erreur && <p className="font-body text-red-400 text-sm">{erreur}</p>}
 
-        {/* Proposition */}
+        {/* Proposition — modifiable */}
         {plan && (
-          <div className="border border-brand-gold/40 bg-brand-gold/5 p-5 space-y-3">
-            <p className="font-display text-lg text-white">Proposition de classement</p>
-            <p className="font-body text-sm text-brand-text">{plan.resume}</p>
-            <ul className="space-y-1.5 font-body text-sm text-brand-text">
-              <li>📁 {ligneBien}</li>
-              {plan.echange && <li>💬 Échange ({plan.canal}) : « {plan.echange} »</li>}
-              {plan.tache && <li>✅ Tâche : {plan.tache}</li>}
-              {plan.document_nom && plan.document_statut && (
-                <li>📄 Document « {plan.document_nom} » → {plan.document_statut === 'recu' ? 'reçu' : 'demandé'}</li>
+          <div className="border border-brand-gold/40 bg-brand-gold/5 p-5 space-y-4">
+            <div>
+              <p className="font-display text-lg text-white">Proposition de classement</p>
+              {plan.resume && <p className="font-body text-sm text-brand-muted mt-1">{plan.resume}</p>}
+              <p className="font-body text-[11px] text-brand-muted/70 italic mt-1">Vérifie et corrige si besoin, puis clique « Classer ».</p>
+            </div>
+
+            {/* Destination */}
+            <div>
+              <span className={label}>📁 Dossier</span>
+              <select value={dest} onChange={(e) => setDest(e.target.value)} className={champ}>
+                <option value={DEST_AUCUN}>Aucun (non rattaché)</option>
+                <option value={DEST_NOUVEAU}>➕ Créer un nouveau dossier</option>
+                {biens.length > 0 && (
+                  <optgroup label="Dossiers existants">
+                    {biens.map((b) => (
+                      <option key={b.id} value={b.id}>
+                        {TYPE_BIEN_LABELS[b.type as TypeBien] ?? b.type} à {b.commune}{b.adresse ? ` — ${b.adresse}` : ''}
+                      </option>
+                    ))}
+                  </optgroup>
+                )}
+              </select>
+            </div>
+
+            {/* Champs du nouveau dossier */}
+            {dest === DEST_NOUVEAU && (
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 border-l-2 border-brand-gold/30 pl-4">
+                <div>
+                  <span className={label}>Type</span>
+                  <select value={plan.nouveau_bien_type || 'ppe'} onChange={(e) => maj({ nouveau_bien_type: e.target.value })} className={champ}>
+                    {TYPES.map((t) => <option key={t} value={t}>{TYPE_BIEN_LABELS[t]}</option>)}
+                  </select>
+                </div>
+                <div>
+                  <span className={label}>Commune</span>
+                  <input value={plan.nouveau_bien_commune} onChange={(e) => maj({ nouveau_bien_commune: e.target.value })} placeholder="Ex. Cossonay" className={champ} />
+                </div>
+                <div>
+                  <span className={label}>Adresse (option.)</span>
+                  <input value={plan.nouveau_bien_adresse} onChange={(e) => maj({ nouveau_bien_adresse: e.target.value })} className={champ} />
+                </div>
+              </div>
+            )}
+
+            {/* Échange */}
+            <div>
+              <span className={label}>💬 Échange à consigner</span>
+              <div className="flex flex-col sm:flex-row gap-2">
+                <select value={plan.canal || 'note'} onChange={(e) => maj({ canal: e.target.value })} className={`${champ} sm:w-40 shrink-0`}>
+                  {CANAUX.map((c) => <option key={c} value={c}>{c}</option>)}
+                </select>
+                <textarea value={plan.echange} onChange={(e) => maj({ echange: e.target.value })} rows={2} placeholder="(rien à consigner)" className={champ} />
+              </div>
+            </div>
+
+            {/* Tâche */}
+            <div>
+              <span className={label}>✅ Tâche de suivi</span>
+              <input value={plan.tache} onChange={(e) => maj({ tache: e.target.value })} placeholder="(aucune tâche)" className={champ} />
+            </div>
+
+            {/* Document */}
+            <div>
+              <span className={label}>📄 Document</span>
+              <div className="flex flex-col sm:flex-row gap-2">
+                <input value={plan.document_nom} onChange={(e) => maj({ document_nom: e.target.value })} placeholder="(aucun document)" className={champ} />
+                <select value={plan.document_statut} onChange={(e) => maj({ document_statut: e.target.value })} className={`${champ} sm:w-44 shrink-0`}>
+                  <option value="">— statut —</option>
+                  <option value="demande">à demander</option>
+                  <option value="recu">reçu</option>
+                </select>
+              </div>
+              {plan.document_nom && (dest === DEST_AUCUN) && (
+                <p className="font-body text-[11px] text-brand-muted/70 italic mt-1">Le document ne sera enregistré que s&apos;il est rattaché à un dossier.</p>
               )}
-            </ul>
-            <div className="flex items-center gap-2 pt-2">
+            </div>
+
+            <div className="flex items-center gap-2 pt-1">
               <button onClick={appliquer} disabled={applique} className="btn-gold inline-flex items-center gap-2 bg-brand-gold text-brand-dark px-4 py-2 font-body text-xs font-medium uppercase tracking-wider hover:bg-brand-goldLight transition-colors disabled:opacity-60">
                 <Check size={14} /> {applique ? 'Classement…' : 'Classer'}
               </button>
