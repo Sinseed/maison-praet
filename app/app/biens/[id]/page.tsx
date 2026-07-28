@@ -46,6 +46,8 @@ export default function DossierBien() {
   const [nouvelleTache, setNouvelleTache] = useState('')
   const [nouveauDoc, setNouveauDoc] = useState('')
   const [nouvelEchange, setNouvelEchange] = useState('')
+  const [dragActif, setDragActif] = useState(false)
+  const [envoi, setEnvoi] = useState(false)
 
   const charger = useCallback(async () => {
     setErreur(null)
@@ -140,6 +142,34 @@ export default function DossierBien() {
       return
     }
     await supabase.from('documents').update({ storage_path: path, statut: 'recu', date_reception: aujourdHui() }).eq('id', doc.id)
+    charger()
+  }
+  // Dépôt direct d'un ou plusieurs fichiers (glisser-déposer ou sélection) :
+  // crée une nouvelle pièce dans le dossier, sans passer par la checklist.
+  const deposerFichiers = async (files: FileList | File[]) => {
+    if (!userId) return
+    const liste = Array.from(files)
+    if (!liste.length) return
+    setErreur(null)
+    setEnvoi(true)
+    for (const file of liste) {
+      const propre = file.name.replace(/[^a-zA-Z0-9.\-_]/g, '_')
+      const path = `${userId}/${id}/${Date.now()}-${propre}`
+      const { error: up } = await supabase.storage.from('documents').upload(path, file, { upsert: false })
+      if (up) {
+        setErreur(`Envoi de « ${file.name} » impossible : ${up.message}`)
+        continue
+      }
+      await supabase.from('documents').insert({
+        bien_id: id,
+        type: 'autre',
+        nom: file.name,
+        statut: 'recu',
+        storage_path: path,
+        date_reception: aujourdHui(),
+      })
+    }
+    setEnvoi(false)
     charger()
   }
   const telecharger = async (doc: DocumentRow) => {
@@ -274,6 +304,25 @@ export default function DossierBien() {
         {/* Documents */}
         <section className="border border-brand-border bg-brand-card p-5">
           <h2 className="flex items-center gap-2 font-display text-xl text-white mb-4"><FileText size={18} className="text-brand-gold" /> Documents</h2>
+
+          {/* Dépôt direct — glisser-déposer ou clic */}
+          <label
+            onDragOver={(e) => { e.preventDefault(); setDragActif(true) }}
+            onDragLeave={() => setDragActif(false)}
+            onDrop={(e) => { e.preventDefault(); setDragActif(false); deposerFichiers(e.dataTransfer.files) }}
+            className={`flex flex-col items-center justify-center gap-1.5 border border-dashed px-4 py-6 mb-4 text-center cursor-pointer transition-colors ${dragActif ? 'border-brand-gold bg-brand-gold/10' : 'border-brand-border hover:border-brand-gold/50 bg-brand-dark'}`}
+          >
+            <Upload size={18} className="text-brand-gold" />
+            <span className="font-body text-sm text-white">{envoi ? 'Envoi en cours…' : 'Glisse un fichier ici, ou clique pour choisir'}</span>
+            <span className="font-body text-[11px] text-brand-muted">PDF, photos… — depuis ton ordinateur ou ton téléphone. Plusieurs fichiers possibles.</span>
+            <input
+              type="file"
+              multiple
+              className="sr-only"
+              onChange={(ev) => { if (ev.target.files) deposerFichiers(ev.target.files); ev.target.value = '' }}
+            />
+          </label>
+
           <div className="space-y-2">
             {documents.map((doc) => {
               const st = STATUT_DOC_LABELS[doc.statut] ?? STATUT_DOC_LABELS.manquant
@@ -304,7 +353,7 @@ export default function DossierBien() {
             })}
           </div>
           <form onSubmit={ajouterDoc} className="mt-4 flex gap-2">
-            <input value={nouveauDoc} onChange={(e) => setNouveauDoc(e.target.value)} placeholder="Ajouter un document…" className="flex-1 bg-brand-dark border border-brand-border px-3 py-2 font-body text-sm text-white focus:outline-none focus:border-brand-gold/50" />
+            <input value={nouveauDoc} onChange={(e) => setNouveauDoc(e.target.value)} placeholder="Ajouter une pièce attendue à la liste (ex. CECB)…" className="flex-1 bg-brand-dark border border-brand-border px-3 py-2 font-body text-sm text-white focus:outline-none focus:border-brand-gold/50" />
             <button type="submit" className="border border-brand-border px-3 text-brand-muted hover:text-white transition-colors"><Plus size={16} /></button>
           </form>
           {erreur && <p className="font-body text-red-400 text-xs mt-3">{erreur}</p>}
