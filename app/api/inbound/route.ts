@@ -52,7 +52,10 @@ export async function POST(req: Request) {
     return NextResponse.json({ ignored: 'sender', from })
   }
 
-  const resend = new Resend(process.env.RESEND_API_KEY)
+  // Lire un mail reçu nécessite une clé « accès complet » (RESEND_INBOUND_KEY).
+  // La clé d'envoi habituelle (RESEND_API_KEY) est « envoi seulement » et sert
+  // de repli pour l'accusé. Une clé accès complet couvre lecture ET envoi.
+  const resend = new Resend(process.env.RESEND_INBOUND_KEY || process.env.RESEND_API_KEY)
 
   // 3. Corps du mail : d'abord dans le payload du webhook (si présent), sinon
   //    on va le chercher via l'API Resend. On fait remonter l'erreur exacte.
