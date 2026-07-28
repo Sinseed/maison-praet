@@ -55,7 +55,8 @@ export async function POST(req: Request) {
   // Lire un mail reçu nécessite une clé « accès complet » (RESEND_INBOUND_KEY).
   // La clé d'envoi habituelle (RESEND_API_KEY) est « envoi seulement » et sert
   // de repli pour l'accusé. Une clé accès complet couvre lecture ET envoi.
-  const resend = new Resend(process.env.RESEND_INBOUND_KEY || process.env.RESEND_API_KEY)
+  const inboundKey = process.env.RESEND_INBOUND_KEY || ''
+  const resend = new Resend(inboundKey || process.env.RESEND_API_KEY)
 
   // 3. Corps du mail : d'abord dans le payload du webhook (si présent), sinon
   //    on va le chercher via l'API Resend. On fait remonter l'erreur exacte.
@@ -67,7 +68,10 @@ export async function POST(req: Request) {
     try {
       const { data, error } = await resend.emails.receiving.get(emailId)
       if (error || !data) {
-        return NextResponse.json({ error: `Corps indisponible : ${error ? JSON.stringify(error) : 'réponse vide'}` }, { status: 502 })
+        return NextResponse.json({
+          error: `Corps indisponible : ${error ? JSON.stringify(error) : 'réponse vide'}`,
+          diag: { cle_inbound_presente: inboundKey.length > 0, longueur: inboundKey.length, debut: inboundKey ? inboundKey.slice(0, 5) : null },
+        }, { status: 502 })
       }
       sujet = data.subject || sujet
       texte = ((data.text || (data.html ? sansHtml(data.html) : '')) || '').slice(0, 8000)
