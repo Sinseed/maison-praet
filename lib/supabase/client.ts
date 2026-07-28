@@ -1,17 +1,12 @@
 /**
  * Client Supabase — contexte navigateur (composants « use client »).
- * Utilise la clé anonyme publique ; la sécurité repose sur la RLS Postgres.
+ * La session est stockée dans les cookies (via @supabase/ssr) afin d'être
+ * lisible côté serveur et par le middleware.
  */
 
 import { createBrowserClient } from '@supabase/ssr'
+import { SUPABASE_URL, SUPABASE_ANON_KEY } from './config'
 
 export function createClient() {
-  const url = process.env.NEXT_PUBLIC_SUPABASE_URL
-  const anonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
-  if (!url || !anonKey) {
-    throw new Error(
-      'Configuration Supabase manquante : définissez NEXT_PUBLIC_SUPABASE_URL et NEXT_PUBLIC_SUPABASE_ANON_KEY.',
-    )
-  }
-  return createBrowserClient(url, anonKey)
+  return createBrowserClient(SUPABASE_URL, SUPABASE_ANON_KEY)
 }
