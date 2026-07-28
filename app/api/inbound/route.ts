@@ -41,9 +41,9 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: 'Configuration serveur incomplète.' }, { status: 503 })
   }
 
-  const emailId = body.data?.email_id as string | undefined
-  const from = adresse((body.data?.from as string) ?? '')
-  if (!emailId) return NextResponse.json({ ignored: 'no-id' })
+  const d = (body.data ?? {}) as Record<string, unknown>
+  const emailId = (d.email_id ?? d.id) as string | undefined
+  const from = adresse((d.from as string) ?? '')
 
   // 2. Liste blanche d'expéditeurs (le courtier).
   const autorises = (process.env.INBOUND_ALLOWED_SENDERS || 'tpraet@golay-immobilier.ch,thom.praet@gmail.com')
@@ -54,16 +54,23 @@ export async function POST(req: Request) {
 
   const resend = new Resend(process.env.RESEND_API_KEY)
 
-  // 3. Récupérer le corps du mail.
-  let texte = ''
-  let sujet = (body.data?.subject as string) ?? ''
-  try {
-    const { data, error } = await resend.emails.receiving.get(emailId)
-    if (error || !data) return NextResponse.json({ error: 'Corps du mail indisponible.' }, { status: 502 })
-    sujet = data.subject || sujet
-    texte = (data.text || (data.html ? sansHtml(data.html) : '')).slice(0, 8000)
-  } catch {
-    return NextResponse.json({ error: 'Lecture du mail impossible.' }, { status: 502 })
+  // 3. Corps du mail : d'abord dans le payload du webhook (si présent), sinon
+  //    on va le chercher via l'API Resend. On fait remonter l'erreur exacte.
+  let sujet = (d.subject as string) ?? ''
+  let texte = ((d.text as string) ?? (d.plain as string) ?? (d.html ? sansHtml(d.html as string) : '') ?? '').slice(0, 8000)
+
+  if (!texte) {
+    if (!emailId) return NextResponse.json({ ignored: 'no-id' })
+    try {
+      const { data, error } = await resend.emails.receiving.get(emailId)
+      if (error || !data) {
+        return NextResponse.json({ error: `Corps indisponible : ${error ? JSON.stringify(error) : 'réponse vide'}` }, { status: 502 })
+      }
+      sujet = data.subject || sujet
+      texte = ((data.text || (data.html ? sansHtml(data.html) : '')) || '').slice(0, 8000)
+    } catch (e) {
+      return NextResponse.json({ error: `Lecture impossible : ${(e as Error).message}` }, { status: 502 })
+    }
   }
   const contenu = `${sujet ? `Objet : ${sujet}\n\n` : ''}${texte}`.trim()
   if (!contenu) return NextResponse.json({ ignored: 'empty' })
