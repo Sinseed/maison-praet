@@ -26,6 +26,7 @@ interface Plan {
   echange: string
   canal: string
   tache: string
+  tache_echeance: string
   document_nom: string
   document_statut: string
 }
@@ -42,12 +43,13 @@ const SCHEMA = {
     echange: { type: 'string', description: "Contenu de l'échange à consigner dans l'historique, ou vide." },
     canal: { type: 'string', enum: ['note', 'email', 'appel', 'notaire', 'autre'], description: "Canal de l'échange." },
     tache: { type: 'string', description: "Tâche à créer (ex. « Relancer le notaire »), ou vide." },
+    tache_echeance: { type: 'string', description: "Date limite de la tâche au format AAAA-MM-JJ si une échéance est mentionnée dans le texte (ex. « pour le 2 août », « d'ici vendredi »), sinon vide." },
     document_nom: { type: 'string', description: "Document concerné (ex. « CECB »), ou vide." },
     document_statut: { type: 'string', enum: ['', 'demande', 'recu'], description: "Nouveau statut du document, ou vide." },
   },
   required: [
     'resume', 'bien_id', 'nouveau_bien_type', 'nouveau_bien_commune', 'nouveau_bien_adresse',
-    'echange', 'canal', 'tache', 'document_nom', 'document_statut',
+    'echange', 'canal', 'tache', 'tache_echeance', 'document_nom', 'document_statut',
   ],
 } as const
 
@@ -87,8 +89,11 @@ export async function POST(req: Request) {
       actions.push('Échange ajouté à l\'historique')
     }
     if (plan.tache) {
-      await supabase.from('taches').insert({ titre: plan.tache, bien_id: bienId, echeance: new Date().toISOString() })
-      actions.push(`Tâche créée : ${plan.tache}`)
+      // Échéance extraite du texte (AAAA-MM-JJ) → rappel daté ; sinon aujourd'hui.
+      const dateOk = /^\d{4}-\d{2}-\d{2}$/.test(plan.tache_echeance || '')
+      const echeance = dateOk ? new Date(`${plan.tache_echeance}T08:00:00`).toISOString() : new Date().toISOString()
+      await supabase.from('taches').insert({ titre: plan.tache, bien_id: bienId, echeance })
+      actions.push(`Tâche créée : ${plan.tache}${dateOk ? ` (rappel le ${plan.tache_echeance})` : ''}`)
     }
     if (plan.document_nom && plan.document_statut && bienId) {
       const { data: docs } = await supabase.from('documents').select('id, nom').eq('bien_id', bienId)
@@ -123,6 +128,8 @@ export async function POST(req: Request) {
     .map((b) => `- id=${b.id} | ${TYPE_BIEN_LABELS[b.type as keyof typeof TYPE_BIEN_LABELS] ?? b.type} à ${b.commune}${b.adresse ? ` (${b.adresse})` : ''}`)
     .join('\n') || '(aucun dossier existant)'
 
+  const aujourdhui = new Date().toLocaleDateString('en-CA', { timeZone: 'Europe/Zurich' })
+
   const client = new Anthropic()
   let plan: Plan
   try {
@@ -139,6 +146,10 @@ export async function POST(req: Request) {
         "et nouveau_bien_commune, la commune étant celle du bien concerné). Extrais, s'il " +
         "y a lieu : un échange à consigner, une tâche de suivi, un changement de statut de document " +
         "(ex. CECB demandé/reçu). Laisse vides (chaîne vide) les champs non pertinents.\n\n" +
+        `Nous sommes le ${aujourdhui}. IMPORTANT : si le texte mentionne une date limite ou une échéance ` +
+        "(« pour le 2 août », « d'ici vendredi », « avant la fin du mois »…), déduis la date correspondante et " +
+        "mets-la dans tache_echeance au format AAAA-MM-JJ (année à venir si le mois est déjà passé). Crée alors " +
+        "une tâche claire décrivant l'action attendue. Sans date explicite, laisse tache_echeance vide.\n\n" +
         'Réponds UNIQUEMENT par un objet JSON valide, sans aucun texte autour, avec exactement ces clés ' +
         '(toutes des chaînes de caractères) : ' +
         JSON.stringify(SCHEMA.required) +
@@ -161,6 +172,7 @@ export async function POST(req: Request) {
       echange: parsed.echange ?? '',
       canal: parsed.canal ?? 'note',
       tache: parsed.tache ?? '',
+      tache_echeance: parsed.tache_echeance ?? '',
       document_nom: parsed.document_nom ?? '',
       document_statut: parsed.document_statut ?? '',
     }

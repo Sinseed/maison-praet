@@ -20,6 +20,7 @@ interface Plan {
   echange: string
   canal: string
   tache: string
+  tache_echeance: string
   document_nom: string
   document_statut: string
 }
@@ -219,10 +220,19 @@ export default function InboxPage() {
               </div>
             </div>
 
-            {/* Tâche */}
+            {/* Tâche + rappel daté */}
             <div>
-              <span className={label}>✅ Tâche de suivi</span>
-              <input value={plan.tache} onChange={(e) => maj({ tache: e.target.value })} placeholder="(aucune tâche)" className={champ} />
+              <span className={label}>✅ Tâche de suivi {plan.tache_echeance && <span className="text-brand-gold normal-case tracking-normal">· rappel détecté</span>}</span>
+              <div className="flex flex-col sm:flex-row gap-2">
+                <input value={plan.tache} onChange={(e) => maj({ tache: e.target.value })} placeholder="(aucune tâche)" className={champ} />
+                <input
+                  type="date" value={plan.tache_echeance}
+                  onChange={(e) => maj({ tache_echeance: e.target.value })}
+                  title="Date du rappel (déduite du texte, modifiable)"
+                  className={`${champ} sm:w-44 shrink-0 [color-scheme:dark]`}
+                />
+              </div>
+              <p className="font-body text-[11px] text-brand-muted/70 mt-1">Une date mentionnée dans le mail (« pour le 2 août ») devient un rappel automatique ce jour-là.</p>
             </div>
 
             {/* Document */}
