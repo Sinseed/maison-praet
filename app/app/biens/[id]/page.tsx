@@ -192,11 +192,19 @@ export default function DossierBien() {
   }
   const supprimerDossier = async () => {
     if (!window.confirm('Supprimer définitivement ce dossier et tout son contenu (documents, tâches, historique) ? Cette action est irréversible.')) return
+    setErreur(null)
     const paths = documents.map((d) => d.storage_path).filter(Boolean) as string[]
     if (paths.length) await supabase.storage.from('documents').remove(paths)
-    const { error } = await supabase.from('biens').delete().eq('id', id)
+    // .select() renvoie les lignes réellement supprimées : si RLS/propriété
+    // bloque la suppression, l'appel réussit mais ne supprime rien (0 ligne).
+    // On détecte ce cas au lieu de rediriger vers une liste inchangée.
+    const { data, error } = await supabase.from('biens').delete().eq('id', id).select('id')
     if (error) {
       setErreur(`Suppression impossible : ${error.message}`)
+      return
+    }
+    if (!data || data.length === 0) {
+      setErreur('Suppression impossible : ce dossier ne vous appartient pas, ou votre session a expiré. Reconnectez-vous puis réessayez.')
       return
     }
     router.push('/app/biens')
@@ -252,6 +260,12 @@ export default function DossierBien() {
           </div>
         </div>
       </header>
+
+      {erreur && !edition && (
+        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 pt-6">
+          <p className="border border-red-500/40 bg-red-500/10 text-red-300 font-body text-sm px-4 py-3">{erreur}</p>
+        </div>
+      )}
 
       {edition && (
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 pt-6">
@@ -384,7 +398,6 @@ export default function DossierBien() {
             <input value={nouveauDoc} onChange={(e) => setNouveauDoc(e.target.value)} placeholder="Ajouter un document…" className="flex-1 bg-brand-dark border border-brand-border px-3 py-2 font-body text-sm text-white focus:outline-none focus:border-brand-gold/50" />
             <button type="submit" className="border border-brand-border px-3 text-brand-muted hover:text-white transition-colors"><Plus size={16} /></button>
           </form>
-          {erreur && <p className="font-body text-red-400 text-xs mt-3">{erreur}</p>}
         </section>
 
         {/* Historique / échanges */}
