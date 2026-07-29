@@ -9,7 +9,7 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
-import { LogOut, Plus, Trash2, Check, Bell, Users, TrendingUp, ShieldCheck, PhoneCall, FolderOpen } from 'lucide-react'
+import { LogOut, Plus, Trash2, Check, Bell, Users, TrendingUp, ShieldCheck, PhoneCall, FolderOpen, Inbox, Sparkles } from 'lucide-react'
 import { createClient } from '@/lib/supabase/client'
 import { formatCHF, formatDate } from '@/lib/format'
 import type { AcquereurRow, ContactRow, TacheRow } from '@/lib/supabase/rows'
@@ -39,6 +39,12 @@ export default function EspaceApp() {
   // Formulaire nouvel acquéreur
   const [f, setF] = useState({ prenom: '', nom: '', telephone: '', cherche: '', budget: '', communes: '' })
   const [nouvelleTache, setNouvelleTache] = useState('')
+  const [dateTache, setDateTache] = useState('')
+
+  // « Demander à l'app »
+  const [question, setQuestion] = useState('')
+  const [reponse, setReponse] = useState<string | null>(null)
+  const [demande, setDemande] = useState(false)
 
   const charger = useCallback(async () => {
     setErreur(null)
@@ -126,9 +132,32 @@ export default function EspaceApp() {
   const ajouterTache = async (e: React.FormEvent) => {
     e.preventDefault()
     if (!nouvelleTache.trim()) return
-    await supabase.from('taches').insert({ titre: nouvelleTache.trim(), echeance: new Date().toISOString() })
+    // Date choisie → rappel ce jour-là (à 8h). Sinon : aujourd'hui.
+    const echeance = dateTache ? new Date(`${dateTache}T08:00:00`).toISOString() : new Date().toISOString()
+    await supabase.from('taches').insert({ titre: nouvelleTache.trim(), echeance })
     setNouvelleTache('')
+    setDateTache('')
     charger()
+  }
+
+  const demanderAssistant = async (e: React.FormEvent) => {
+    e.preventDefault()
+    if (!question.trim()) return
+    setDemande(true)
+    setReponse(null)
+    try {
+      const res = await fetch('/api/app/demander', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ question }),
+      })
+      const data = await res.json()
+      setReponse(res.ok ? (data.reponse ?? '—') : (data.error ?? 'Réponse impossible.'))
+    } catch {
+      setReponse('Réponse impossible. Réessayez.')
+    } finally {
+      setDemande(false)
+    }
   }
 
   const terminerTache = async (id: string) => {
@@ -157,6 +186,9 @@ export default function EspaceApp() {
             <p className="font-body text-[10px] tracking-widest uppercase text-brand-muted truncate">{email}</p>
           </div>
           <div className="flex items-center gap-2 shrink-0">
+            <Link href="/app/inbox" className="inline-flex items-center gap-2 border border-brand-gold/40 text-brand-goldLight px-3 py-2 font-body text-xs tracking-wider uppercase hover:bg-brand-gold/10 transition-colors">
+              <Inbox size={14} /> Réception
+            </Link>
             <Link href="/app/biens" className="inline-flex items-center gap-2 border border-brand-gold/40 text-brand-goldLight px-3 py-2 font-body text-xs tracking-wider uppercase hover:bg-brand-gold/10 transition-colors">
               <FolderOpen size={14} /> Dossiers
             </Link>
@@ -172,6 +204,31 @@ export default function EspaceApp() {
           </div>
         </div>
       </header>
+
+      {/* ── Demander à l'app ── */}
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 pt-6">
+        <form onSubmit={demanderAssistant} className="border border-brand-gold/40 bg-brand-gold/5 p-4 sm:p-5">
+          <div className="flex items-center gap-2 mb-3">
+            <Sparkles size={16} className="text-brand-gold" />
+            <p className="font-body text-[11px] tracking-widest uppercase text-brand-muted">Demander à ton assistant</p>
+          </div>
+          <div className="flex flex-col sm:flex-row gap-2">
+            <input
+              value={question} onChange={(e) => setQuestion(e.target.value)}
+              placeholder="Ex. : Est-ce que je me suis mis un rappel pour le champagne de Cossonay ?"
+              className="flex-1 bg-brand-dark border border-brand-border px-3 py-2.5 font-body text-sm text-white focus:outline-none focus:border-brand-gold/50"
+            />
+            <button type="submit" disabled={demande || !question.trim()} className="btn-gold inline-flex items-center justify-center gap-2 bg-brand-gold text-brand-dark px-5 py-2.5 font-body text-xs font-medium tracking-widest uppercase hover:bg-brand-goldLight transition-colors disabled:opacity-60">
+              <Sparkles size={14} /> {demande ? 'Recherche…' : 'Demander'}
+            </button>
+          </div>
+          {reponse && (
+            <div className="mt-3 border-l-2 border-brand-gold/40 pl-3">
+              <p className="font-body text-sm text-brand-text whitespace-pre-line">{reponse}</p>
+            </div>
+          )}
+        </form>
+      </div>
 
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 py-6 grid grid-cols-1 lg:grid-cols-[380px_1fr] gap-6">
         {/* ── À faire aujourd'hui ── */}
@@ -197,13 +254,21 @@ export default function EspaceApp() {
               </ul>
             )}
 
-            <form onSubmit={ajouterTache} className="mt-4 flex gap-2">
+            <form onSubmit={ajouterTache} className="mt-4 space-y-2">
               <input
                 value={nouvelleTache} onChange={(e) => setNouvelleTache(e.target.value)}
-                placeholder="Ajouter une tâche…"
-                className="flex-1 bg-brand-dark border border-brand-border px-3 py-2 font-body text-sm text-white focus:outline-none focus:border-brand-gold/50"
+                placeholder="Tâche ou rappel… (ex. acheter le champagne pour la signature)"
+                className="w-full bg-brand-dark border border-brand-border px-3 py-2 font-body text-sm text-white focus:outline-none focus:border-brand-gold/50"
               />
-              <button type="submit" className="border border-brand-border px-3 text-brand-muted hover:text-white transition-colors"><Plus size={16} /></button>
+              <div className="flex gap-2">
+                <input
+                  type="date" value={dateTache} onChange={(e) => setDateTache(e.target.value)}
+                  title="Quand veux-tu qu'on te le rappelle ? (vide = aujourd'hui)"
+                  className="flex-1 bg-brand-dark border border-brand-border px-3 py-2 font-body text-sm text-brand-text focus:outline-none focus:border-brand-gold/50 [color-scheme:dark]"
+                />
+                <button type="submit" className="inline-flex items-center gap-1.5 border border-brand-gold/40 text-brand-goldLight px-4 py-2 font-body text-xs uppercase tracking-wider hover:bg-brand-gold/10 transition-colors"><Plus size={15} /> Ajouter</button>
+              </div>
+              <p className="font-body text-[11px] text-brand-muted/70">Sans date → aujourd&apos;hui. Avec une date → le rappel apparaît ce jour-là (et dans ton email de 7h).</p>
             </form>
           </div>
 
