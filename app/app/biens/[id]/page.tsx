@@ -11,13 +11,14 @@ import { useParams, useRouter } from 'next/navigation'
 import Link from 'next/link'
 import {
   ArrowLeft, Bell, Plus, Check, Users, PhoneCall, FileText, Upload, Download,
-  Trash2, MessageSquare, Send,
+  Trash2, MessageSquare, Send, Pencil,
 } from 'lucide-react'
 import { createClient } from '@/lib/supabase/client'
 import { formatCHF, formatDate } from '@/lib/format'
 import { STATUT_DOC_LABELS, STATUT_BIEN_LABELS, CANAL_LABELS } from '@/lib/dossier/checklist'
 import { acquereursCorrespondants } from '@/lib/dossier/matching'
 import { TYPE_BIEN_LABELS, type TypeBien } from '@/lib/estimation/types'
+import { COMMUNES } from '@/lib/estimation/parametres-marche'
 import type { AcquereurRow, BienRow, ContactRow, DocumentRow, EchangeRow, TacheRow } from '@/lib/supabase/rows'
 
 const supabase = createClient()
@@ -46,6 +47,8 @@ export default function DossierBien() {
   const [nouvelleTache, setNouvelleTache] = useState('')
   const [nouveauDoc, setNouveauDoc] = useState('')
   const [nouvelEchange, setNouvelEchange] = useState('')
+  const [edition, setEdition] = useState(false)
+  const [fEdit, setFEdit] = useState<{ reference: string; type: TypeBien; commune: string; adresse: string }>({ reference: '', type: 'villa', commune: '', adresse: '' })
 
   const charger = useCallback(async () => {
     setErreur(null)
@@ -92,6 +95,39 @@ export default function DossierBien() {
   // ── Actions ────────────────────────────────────────────────────────────────
   const changerStatutBien = async (statut: string) => {
     await supabase.from('biens').update({ statut }).eq('id', id)
+    charger()
+  }
+  const ouvrirEdition = () => {
+    if (!bien) return
+    setErreur(null)
+    setFEdit({
+      reference: bien.reference ?? '',
+      type: bien.type as TypeBien,
+      commune: bien.commune ?? '',
+      adresse: bien.adresse ?? '',
+    })
+    setEdition(true)
+  }
+  const enregistrerModifs = async (e: React.FormEvent) => {
+    e.preventDefault()
+    if (!fEdit.commune.trim()) {
+      setErreur('La commune est obligatoire.')
+      return
+    }
+    const { error } = await supabase
+      .from('biens')
+      .update({
+        reference: fEdit.reference.trim() || null,
+        type: fEdit.type,
+        commune: fEdit.commune.trim(),
+        adresse: fEdit.adresse.trim() || null,
+      })
+      .eq('id', id)
+    if (error) {
+      setErreur(`Modification impossible : ${error.message}`)
+      return
+    }
+    setEdition(false)
     charger()
   }
   const ajouterTache = async (e: React.FormEvent) => {
@@ -185,9 +221,9 @@ export default function DossierBien() {
           <div className="flex items-center gap-3 min-w-0">
             <Link href="/app/biens" className="text-brand-muted hover:text-brand-gold transition-colors shrink-0"><ArrowLeft size={18} /></Link>
             <div className="min-w-0">
-              <p className="font-display text-lg sm:text-xl text-white truncate">{bien.commune}</p>
+              <p className="font-display text-lg sm:text-xl text-white truncate">{bien.reference || bien.commune}</p>
               <p className="font-body text-[10px] tracking-widest uppercase text-brand-muted truncate">
-                {TYPE_BIEN_LABELS[bien.type as TypeBien] ?? bien.type}{bien.adresse ? ` · ${bien.adresse}` : ''}
+                {TYPE_BIEN_LABELS[bien.type as TypeBien] ?? bien.type}{bien.reference ? ` · ${bien.commune}` : ''}{bien.adresse ? ` · ${bien.adresse}` : ''}
               </p>
             </div>
           </div>
@@ -200,15 +236,56 @@ export default function DossierBien() {
               {Object.keys(STATUT_BIEN_LABELS).map((s) => <option key={s} value={s}>{STATUT_BIEN_LABELS[s]}</option>)}
             </select>
             <button
+              onClick={ouvrirEdition}
+              title="Modifier le dossier"
+              className="inline-flex items-center gap-1.5 border border-brand-border text-brand-muted hover:text-brand-gold hover:border-brand-gold/40 transition-colors px-3 py-2 font-body text-xs"
+            >
+              <Pencil size={14} /> <span className="hidden sm:inline">Modifier</span>
+            </button>
+            <button
               onClick={supprimerDossier}
               title="Supprimer le dossier"
-              className="border border-brand-border text-brand-muted hover:text-red-400 hover:border-red-500/40 transition-colors p-2"
+              className="inline-flex items-center gap-1.5 border border-brand-border text-brand-muted hover:text-red-400 hover:border-red-500/40 transition-colors px-3 py-2 font-body text-xs"
             >
-              <Trash2 size={15} />
+              <Trash2 size={14} /> <span className="hidden sm:inline">Supprimer</span>
             </button>
           </div>
         </div>
       </header>
+
+      {edition && (
+        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 pt-6">
+          <form onSubmit={enregistrerModifs} className="border border-brand-gold/40 bg-brand-card p-5 space-y-4">
+            <h2 className="flex items-center gap-2 font-display text-lg text-white"><Pencil size={16} className="text-brand-gold" /> Modifier le dossier</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <label className="block sm:col-span-2">
+                <span className="block font-body text-[11px] tracking-wider uppercase text-brand-muted mb-1">Libellé (optionnel)</span>
+                <input value={fEdit.reference} onChange={(e) => setFEdit({ ...fEdit, reference: e.target.value })} placeholder="Ex. Villa Durussel – Yvonand" className="w-full bg-brand-dark border border-brand-border px-3 py-2 font-body text-sm text-white focus:outline-none focus:border-brand-gold/50" />
+              </label>
+              <label className="block">
+                <span className="block font-body text-[11px] tracking-wider uppercase text-brand-muted mb-1">Type</span>
+                <select value={fEdit.type} onChange={(e) => setFEdit({ ...fEdit, type: e.target.value as TypeBien })} className="w-full bg-brand-dark border border-brand-border px-3 py-2 font-body text-sm text-white focus:outline-none focus:border-brand-gold/50">
+                  {(Object.keys(TYPE_BIEN_LABELS) as TypeBien[]).map((t) => <option key={t} value={t}>{TYPE_BIEN_LABELS[t]}</option>)}
+                </select>
+              </label>
+              <label className="block">
+                <span className="block font-body text-[11px] tracking-wider uppercase text-brand-muted mb-1">Commune</span>
+                <input list="communes-edit" value={fEdit.commune} onChange={(e) => setFEdit({ ...fEdit, commune: e.target.value })} className="w-full bg-brand-dark border border-brand-border px-3 py-2 font-body text-sm text-white focus:outline-none focus:border-brand-gold/50" />
+                <datalist id="communes-edit">{COMMUNES.map((c) => <option key={c} value={c} />)}</datalist>
+              </label>
+              <label className="block sm:col-span-2">
+                <span className="block font-body text-[11px] tracking-wider uppercase text-brand-muted mb-1">Adresse (optionnel)</span>
+                <input value={fEdit.adresse} onChange={(e) => setFEdit({ ...fEdit, adresse: e.target.value })} className="w-full bg-brand-dark border border-brand-border px-3 py-2 font-body text-sm text-white focus:outline-none focus:border-brand-gold/50" />
+              </label>
+            </div>
+            {erreur && <p className="font-body text-red-400 text-sm">{erreur}</p>}
+            <div className="flex items-center gap-2">
+              <button type="submit" className="btn-gold bg-brand-gold text-brand-dark px-5 py-2 font-body text-xs font-medium tracking-widest uppercase hover:bg-brand-goldLight transition-colors">Enregistrer</button>
+              <button type="button" onClick={() => { setEdition(false); setErreur(null) }} className="border border-brand-border text-brand-muted hover:text-white px-4 py-2 font-body text-xs">Annuler</button>
+            </div>
+          </form>
+        </div>
+      )}
 
       {estim && (
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 pt-6">
