@@ -23,6 +23,15 @@ interface Plan {
   tache_echeance: string
   document_nom: string
   document_statut: string
+  prospect_societe: string
+  prospect_prenom: string
+  prospect_nom: string
+  prospect_email: string
+  prospect_telephone: string
+  prospect_recherche: string
+  prospect_communes: string
+  prospect_typologies: string
+  prospect_budget: string
 }
 
 interface BienBref {
@@ -50,6 +59,14 @@ export default function InboxPage() {
   const [erreur, setErreur] = useState<string | null>(null)
 
   const maj = (patch: Partial<Plan>) => setPlan((p) => (p ? { ...p, ...patch } : p))
+
+  /** Coche / décoche une typologie recherchée par le prospect. */
+  const basculerTypologie = (t: TypeBien) => {
+    if (!plan) return
+    const actuelles = plan.prospect_typologies.split(',').map((s) => s.trim()).filter(Boolean)
+    const suivantes = actuelles.includes(t) ? actuelles.filter((x) => x !== t) : [...actuelles, t]
+    maj({ prospect_typologies: suivantes.join(', ') })
+  }
 
   const analyser = async () => {
     if (!texte.trim()) return
@@ -249,6 +266,42 @@ export default function InboxPage() {
               {plan.document_nom && (dest === DEST_AUCUN) && (
                 <p className="font-body text-[11px] text-brand-muted/70 italic mt-1">Le document ne sera enregistré que s&apos;il est rattaché à un dossier.</p>
               )}
+            </div>
+
+            {/* Prospect acquéreur — entre au fichier et devient « matchable » */}
+            <div>
+              <span className={label}>
+                👤 Prospect acquéreur
+                {(plan.prospect_societe || plan.prospect_nom || plan.prospect_prenom) && (
+                  <span className="text-brand-gold normal-case tracking-normal"> · acheteur détecté</span>
+                )}
+              </span>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
+                <input value={plan.prospect_societe} onChange={(e) => maj({ prospect_societe: e.target.value })} placeholder="Société (si pro)" className={champ} />
+                <input value={plan.prospect_prenom} onChange={(e) => maj({ prospect_prenom: e.target.value })} placeholder="Prénom" className={champ} />
+                <input value={plan.prospect_nom} onChange={(e) => maj({ prospect_nom: e.target.value })} placeholder="Nom" className={champ} />
+                <input value={plan.prospect_email} onChange={(e) => maj({ prospect_email: e.target.value })} placeholder="E-mail" className={champ} />
+                <input value={plan.prospect_telephone} onChange={(e) => maj({ prospect_telephone: e.target.value })} placeholder="Téléphone" className={champ} />
+                <input value={plan.prospect_budget} onChange={(e) => maj({ prospect_budget: e.target.value })} placeholder="Budget (CHF)" className={champ} />
+                <input value={plan.prospect_recherche} onChange={(e) => maj({ prospect_recherche: e.target.value })} placeholder="Ce qu'il cherche (ex. biens à rénover)" className={`${champ} sm:col-span-3`} />
+                <input value={plan.prospect_communes} onChange={(e) => maj({ prospect_communes: e.target.value })} placeholder="Communes visées, séparées par des virgules" className={`${champ} sm:col-span-3`} />
+              </div>
+              <div className="flex flex-wrap items-center gap-x-4 gap-y-1.5 mt-2">
+                <span className="font-body text-[11px] text-brand-muted">Typologies :</span>
+                {TYPES.map((t) => {
+                  const actif = plan.prospect_typologies.split(',').map((s) => s.trim()).includes(t)
+                  return (
+                    <label key={t} className="inline-flex items-center gap-1.5 cursor-pointer">
+                      <input type="checkbox" checked={actif} onChange={() => basculerTypologie(t)} className="accent-brand-gold" />
+                      <span className={`font-body text-xs ${actif ? 'text-white' : 'text-brand-muted'}`}>{TYPE_BIEN_LABELS[t]}</span>
+                    </label>
+                  )
+                })}
+              </div>
+              <p className="font-body text-[11px] text-brand-muted/70 mt-1.5">
+                Renseigné, le prospect entre au fichier acquéreurs et sera proposé automatiquement sur les dossiers correspondants.
+                Le rapprochement se fait sur des <strong>noms de communes exacts</strong> — pas de région ni d&apos;« environs ».
+              </p>
             </div>
 
             <div className="flex items-center gap-2 pt-1">
