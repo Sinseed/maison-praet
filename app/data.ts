@@ -93,7 +93,7 @@ export const MANDATS: Mandat[] = [
   },
   {
     id: 29, slug: 'appartement-cossonay-eolia', titre: 'Appartement PPE 4.5 pièces neuf', lieu: 'Cossonay-Ville',
-    prix: "1'195'000", pieces: '4.5', surface: '100 m²', terrain: '-', categorie: 'reserve', datereserve: '2026-07',
+    prix: "1'195'000", pieces: '4.5', surface: '100 m²', terrain: '-', categorie: 'vendu', datevente: '2026-07',
     img: '/photos/cossonay-eolia/01-balcon-vue.jpg',
     photos: [
       '/photos/cossonay-eolia/01-balcon-vue.jpg',
