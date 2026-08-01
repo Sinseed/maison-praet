@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from 'react'
 import { Phone, Mail, MapPin, ArrowRight, Shield, TrendingUp, Users, Camera, BookOpen } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { MANDATS, ARTICLES, STATS, FILTRES } from './data'
+import { MANDATS, ARTICLES, STATS, FILTRES, VENTES_PALIER } from './data'
 import DerniereVente from './components/DerniereVente'
 import Reveal from './components/Reveal'
 import AnimatedNumber from './components/AnimatedNumber'
@@ -62,7 +62,7 @@ function Hero() {
             Je défends votre bien comme si c&apos;était le mien.
           </p>
           <p className="hero-in font-body text-sm text-brand-muted mb-10 md:mb-12 max-w-lg" style={{animationDelay: '0.56s'}}>
-            Courtier certifié USPI · Plus de 90 transactions · Arc lémanique et canton de Vaud
+            Courtier certifié USPI · Plus de {VENTES_PALIER} transactions · Arc lémanique et canton de Vaud
           </p>
 
           <div className="hero-in flex flex-col sm:flex-row gap-4 mb-10 md:mb-16" style={{animationDelay: '0.68s'}}>

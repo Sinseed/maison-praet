@@ -4,14 +4,15 @@ import Image from 'next/image'
 import { ArrowRight, Phone, Mail } from 'lucide-react'
 import Reveal from '../components/Reveal'
 import Eyebrow from '../components/Eyebrow'
+import { CHIFFRES, VENTES_PALIER } from '../data'
 
 export const metadata: Metadata = {
   title: 'À propos de Thomas Praet, courtier immobilier à Lausanne | Maison Praet',
-  description: "Thomas Praet, courtier diplômé USPI chez Golay Immobilier SA à Lausanne. Plus de 90 transactions depuis 2020, 39 communes couvertes sur l'arc lémanique et le canton de Vaud.",
+  description: `Thomas Praet, courtier diplômé USPI chez Golay Immobilier SA à Lausanne. Plus de ${VENTES_PALIER} transactions depuis 2020, ${CHIFFRES.communes} communes couvertes sur l'arc lémanique et le canton de Vaud.`,
   alternates: { canonical: 'https://maisonpraet.ch/a-propos' },
   openGraph: {
     title: 'Thomas Praet, courtier immobilier à Lausanne',
-    description: "Courtier diplômé USPI, plus de 90 transactions depuis 2020. Arc lémanique et canton de Vaud.",
+    description: `Courtier diplômé USPI, plus de ${VENTES_PALIER} transactions depuis 2020. Arc lémanique et canton de Vaud.`,
     url: 'https://maisonpraet.ch/a-propos',
     images: [{ url: 'https://maisonpraet.ch/photos/portrait.jpg', width: 800, height: 1000, alt: 'Thomas Praet' }],
   },
@@ -79,7 +80,7 @@ export default function AProposPage() {
           Thomas <span className="italic text-brand-gold">Praet</span>
         </h1>
         <p className="font-body text-lg text-brand-muted leading-relaxed max-w-2xl">
-          Courtier immobilier diplômé USPI, actif depuis 2020 sur l'arc lémanique et le canton de Vaud. Plus de 90 transactions documentées, 39 communes couvertes, un seul interlocuteur du premier rendez-vous à la signature chez le notaire.
+          Courtier immobilier diplômé USPI, actif depuis 2020 sur l&apos;arc lémanique et le canton de Vaud. Plus de {VENTES_PALIER} transactions documentées, {CHIFFRES.communes} communes couvertes, un seul interlocuteur du premier rendez-vous à la signature chez le notaire.
         </p>
         <div className="mt-12 space-y-5 font-body text-brand-text leading-relaxed max-w-2xl">
           <p>Je suis arrivé de Belgique en 2017. Sans réseau, sans nom, sans portefeuille de clients. Ce que je savais faire, c'était écouter, apprendre vite, et tenir parole.</p>
@@ -98,10 +99,10 @@ export default function AProposPage() {
               <Eyebrow className="mb-6">En chiffres</Eyebrow>
               <div className="grid grid-cols-2 gap-4">
                 {[
-                  { val: '90+', label: 'Transactions depuis 2020' },
-                  { val: '39', label: 'Communes couvertes' },
+                  { val: `${VENTES_PALIER}+`, label: 'Transactions depuis 2020' },
+                  { val: `${CHIFFRES.communes}`, label: 'Communes couvertes' },
                   { val: '96.8%', label: 'Vendus au prix estimé' },
-                  { val: 'CHF 107M', label: 'Volume sous mandat' },
+                  { val: `CHF ${Math.floor(CHIFFRES.volume / 1_000_000)}M`, label: 'Volume sous mandat' },
                 ].map(s => (
                   <div key={s.label} className="border border-brand-border p-4">
                     <p className="font-display text-2xl text-brand-gold">{s.val}</p>

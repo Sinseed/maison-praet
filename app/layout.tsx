@@ -3,6 +3,7 @@ import { Cormorant_Garamond, Outfit } from 'next/font/google'
 import './globals.css'
 import Nav from './components/Nav'
 import MobileCTA from './components/MobileCTA'
+import { VENTES_PALIER } from './data'
 import ScrollProgress from './components/ScrollProgress'
 import Trackers from './components/Trackers'
 
@@ -77,7 +78,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       "url": "https://maisonpraet.ch",
       "logo": "https://maisonpraet.ch/og-image.jpg",
       "image": "https://maisonpraet.ch/photos/portrait.jpg",
-      "description": "Thomas Praet, courtier immobilier certifié USPI chez Golay Immobilier SA. Estimation, vente et conseil sur l'arc lémanique et le canton de Vaud. Plus de 90 transactions documentées depuis 2020.",
+      "description": `Thomas Praet, courtier immobilier certifié USPI chez Golay Immobilier SA. Estimation, vente et conseil sur l'arc lémanique et le canton de Vaud. Plus de ${VENTES_PALIER} transactions documentées depuis 2020.`,
       "founder": {
         "@type": "Person",
         "name": "Thomas Praet",
