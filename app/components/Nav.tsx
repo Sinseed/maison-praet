@@ -40,15 +40,15 @@ export default function Nav() {
           <Link href="/" className="flex items-center shrink-0">
             <img src="/logo-maison-praet.png" alt="Maison Praet" style={{width: 'clamp(90px, 12vw, 160px)', height: 'auto'}} />
           </Link>
-          <span className="hidden sm:block h-7 w-px bg-brand-border shrink-0" aria-hidden="true" />
+          <span className="block h-6 sm:h-7 w-px bg-brand-border shrink-0" aria-hidden="true" />
           <a
             href="https://www.golay-immobilier.ch"
             target="_blank"
             rel="noopener noreferrer"
             title="Chaque mandat est signé sous Golay Immobilier SA"
-            className="hidden sm:flex items-center opacity-55 hover:opacity-100 transition-opacity duration-300 shrink-0"
+            className="flex items-center opacity-55 hover:opacity-100 transition-opacity duration-300 shrink-0"
           >
-            <img src="/logo-golay-blanc.png" alt="Golay Immobilier SA" style={{width: 'clamp(84px, 8vw, 116px)', height: 'auto'}} />
+            <img src="/logo-golay-blanc.png" alt="Golay Immobilier SA" style={{width: 'clamp(68px, 8vw, 116px)', height: 'auto'}} />
           </a>
         </div>
         <div className="hidden md:flex items-center gap-10">
