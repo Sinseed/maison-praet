@@ -283,7 +283,13 @@ function Contact() {
 function Footer() {
   return (
     <footer className="max-w-7xl mx-auto px-6 py-10 flex flex-col sm:flex-row items-center justify-between gap-4">
-      <p className="font-display text-lg text-white">Maison <span className="text-brand-gold">Praet</span></p>
+      <div className="flex items-center gap-4">
+        <p className="font-display text-lg text-white">Maison <span className="text-brand-gold">Praet</span></p>
+        <span className="h-5 w-px bg-brand-border" aria-hidden="true" />
+        <a href="https://www.golay-immobilier.ch" target="_blank" rel="noopener noreferrer" title="Chaque mandat est signé sous Golay Immobilier SA" className="opacity-50 hover:opacity-100 transition-opacity duration-300">
+          <img src="/logo-golay-blanc.png" alt="Golay Immobilier SA" style={{width: '96px', height: 'auto'}} />
+        </a>
+      </div>
       <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-6">
         <Link href="/mentions-legales" className="font-body text-xs text-brand-muted tracking-wider hover:text-brand-gold transition-colors">Mentions légales</Link>
         <p className="font-body text-xs text-brand-muted tracking-wider">© {new Date().getFullYear()} Thomas Praet · Courtier au sein de <a href="https://www.golay-immobilier.ch" target="_blank" rel="noopener noreferrer" className="hover:text-brand-gold transition-colors">Golay Immobilier SA</a>, Lausanne</p>
