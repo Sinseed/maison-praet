@@ -11,7 +11,7 @@ import { useParams, useRouter } from 'next/navigation'
 import Link from 'next/link'
 import {
   ArrowLeft, Bell, Plus, Check, Users, PhoneCall, FileText, Upload, Download,
-  Trash2, MessageSquare, Send, Pencil,
+  Trash2, MessageSquare, Send, Pencil, UserRound, Mail,
 } from 'lucide-react'
 import { createClient } from '@/lib/supabase/client'
 import { formatCHF, formatDate } from '@/lib/format'
@@ -23,6 +23,7 @@ import type { AcquereurRow, BienRow, ContactRow, DocumentRow, EchangeRow, TacheR
 
 const supabase = createClient()
 const aujourdHui = () => new Date().toISOString().slice(0, 10)
+const champVend = 'w-full bg-brand-dark border border-brand-border px-3 py-2 font-body text-sm text-white focus:outline-none focus:border-brand-gold/50'
 
 function nomAcq(a: AcquereurRow) {
   const c = a.contact
@@ -47,6 +48,13 @@ export default function DossierBien() {
   const [nouvelleTache, setNouvelleTache] = useState('')
   const [nouveauDoc, setNouveauDoc] = useState('')
   const [nouvelEchange, setNouvelEchange] = useState('')
+  const [contacts, setContacts] = useState<ContactRow[]>([])
+  const [editVendeur, setEditVendeur] = useState(false)
+  const [fVend, setFVend] = useState({
+    prenom: '', nom: '', societe: '', telephone: '', email: '',
+    adresse: '', npa_localite: '', notes: '',
+    consentement_lpd: false, lba_identifie: false,
+  })
   const [edition, setEdition] = useState(false)
   const [fEdit, setFEdit] = useState<{ reference: string; type: TypeBien; commune: string; adresse: string }>({ reference: '', type: 'villa', commune: '', adresse: '' })
   const [dragActif, setDragActif] = useState(false)
@@ -72,6 +80,7 @@ export default function DossierBien() {
     setTaches((t.data as unknown as TacheRow[]) ?? [])
     setDocuments((d.data as unknown as DocumentRow[]) ?? [])
     setEchanges((e.data as unknown as EchangeRow[]) ?? [])
+    setContacts((cts.data as unknown as ContactRow[]) ?? [])
     const parId = new Map(((cts.data as unknown as ContactRow[]) ?? []).map((c) => [c.id, c]))
     setAcquereurs(
       ((acq.data as unknown as AcquereurRow[]) ?? []).map((a) => ({
@@ -99,6 +108,80 @@ export default function DossierBien() {
     await supabase.from('biens').update({ statut }).eq('id', id)
     charger()
   }
+  // ── Propriétaire (vendeur) ─────────────────────────────────────────────────
+  const vendeur = bien?.vendeur_id ? contacts.find((c) => c.id === bien.vendeur_id) ?? null : null
+
+  const ouvrirEditVendeur = () => {
+    setErreur(null)
+    setFVend({
+      prenom: vendeur?.prenom ?? '', nom: vendeur?.nom ?? '', societe: vendeur?.societe ?? '',
+      telephone: vendeur?.telephone ?? '', email: vendeur?.email ?? '',
+      adresse: vendeur?.adresse ?? '', npa_localite: vendeur?.npa_localite ?? '',
+      notes: vendeur?.notes ?? '',
+      consentement_lpd: vendeur?.consentement_lpd ?? false,
+      lba_identifie: vendeur?.lba_identifie ?? false,
+    })
+    setEditVendeur(true)
+  }
+
+  /** Rattache un contact déjà existant comme propriétaire du bien. */
+  const rattacherVendeur = async (contactId: string) => {
+    setErreur(null)
+    const { data, error } = await supabase
+      .from('biens').update({ vendeur_id: contactId || null }).eq('id', id).select('id')
+    if (error || !data?.length) {
+      setErreur(`Rattachement impossible : ${error?.message ?? 'aucune ligne modifiée.'}`)
+      return
+    }
+    setEditVendeur(false)
+    charger()
+  }
+
+  const enregistrerVendeur = async (e: React.FormEvent) => {
+    e.preventDefault()
+    if (!fVend.nom.trim() && !fVend.prenom.trim() && !fVend.societe.trim()) {
+      setErreur('Indiquez au moins un nom, un prénom ou une société.')
+      return
+    }
+    setErreur(null)
+    const champs = {
+      type: 'vendeur',
+      prenom: fVend.prenom.trim() || null,
+      nom: fVend.nom.trim() || null,
+      societe: fVend.societe.trim() || null,
+      telephone: fVend.telephone.trim() || null,
+      email: fVend.email.trim() || null,
+      adresse: fVend.adresse.trim() || null,
+      npa_localite: fVend.npa_localite.trim() || null,
+      notes: fVend.notes.trim() || null,
+      consentement_lpd: fVend.consentement_lpd,
+      lba_identifie: fVend.lba_identifie,
+    }
+
+    if (vendeur) {
+      const { data, error } = await supabase
+        .from('contacts').update(champs).eq('id', vendeur.id).select('id')
+      if (error || !data?.length) {
+        setErreur(`Modification impossible : ${error?.message ?? 'aucune ligne modifiée.'}`)
+        return
+      }
+    } else {
+      const { data: cree, error } = await supabase.from('contacts').insert(champs).select().single()
+      if (error || !cree) {
+        setErreur(`Création du contact impossible : ${error?.message ?? ''}`)
+        return
+      }
+      const { data: lie, error: eLien } = await supabase
+        .from('biens').update({ vendeur_id: (cree as { id: string }).id }).eq('id', id).select('id')
+      if (eLien || !lie?.length) {
+        setErreur(`Contact créé, mais rattachement au dossier impossible : ${eLien?.message ?? 'aucune ligne modifiée.'}`)
+        return
+      }
+    }
+    setEditVendeur(false)
+    charger()
+  }
+
   const ouvrirEdition = () => {
     if (!bien) return
     setErreur(null)
@@ -343,6 +426,102 @@ export default function DossierBien() {
       )}
 
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 py-6 grid grid-cols-1 lg:grid-cols-2 gap-6">
+        {/* Propriétaire du bien (vendeur) */}
+        <section className="border border-brand-border bg-brand-card p-5 lg:col-span-2">
+          <div className="flex items-center justify-between gap-3 mb-4">
+            <h2 className="flex items-center gap-2 font-display text-xl text-white"><UserRound size={18} className="text-brand-gold" /> Propriétaire</h2>
+            {!editVendeur && (
+              <button onClick={ouvrirEditVendeur} className="inline-flex items-center gap-1.5 border border-brand-border text-brand-muted hover:text-brand-gold hover:border-brand-gold/40 transition-colors px-3 py-1.5 font-body text-xs">
+                <Pencil size={13} /> {vendeur ? 'Modifier' : 'Ajouter'}
+              </button>
+            )}
+          </div>
+
+          {editVendeur ? (
+            <form onSubmit={enregistrerVendeur} className="space-y-4">
+              {!vendeur && contacts.length > 0 && (
+                <label className="block">
+                  <span className="block font-body text-[11px] tracking-wider uppercase text-brand-muted mb-1">Ou rattacher un contact déjà enregistré</span>
+                  <select
+                    defaultValue=""
+                    onChange={(e) => { if (e.target.value) rattacherVendeur(e.target.value) }}
+                    className="w-full bg-brand-dark border border-brand-border px-3 py-2 font-body text-sm text-white focus:outline-none focus:border-brand-gold/50"
+                  >
+                    <option value="">— nouveau contact ci-dessous —</option>
+                    {contacts.map((c) => (
+                      <option key={c.id} value={c.id}>
+                        {[c.societe, c.prenom, c.nom].filter(Boolean).join(' ') || 'Contact sans nom'}
+                        {c.type && c.type !== 'autre' ? ` (${c.type})` : ''}
+                        {c.telephone ? ` · ${c.telephone}` : ''}
+                      </option>
+                    ))}
+                  </select>
+                </label>
+              )}
+
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                <input value={fVend.prenom} onChange={(e) => setFVend({ ...fVend, prenom: e.target.value })} placeholder="Prénom" className={champVend} />
+                <input value={fVend.nom} onChange={(e) => setFVend({ ...fVend, nom: e.target.value })} placeholder="Nom" className={champVend} />
+                <input value={fVend.societe} onChange={(e) => setFVend({ ...fVend, societe: e.target.value })} placeholder="Société (si applicable)" className={champVend} />
+                <input value={fVend.telephone} onChange={(e) => setFVend({ ...fVend, telephone: e.target.value })} placeholder="Téléphone" className={champVend} />
+                <input value={fVend.email} onChange={(e) => setFVend({ ...fVend, email: e.target.value })} placeholder="E-mail" className={`${champVend} sm:col-span-2`} />
+                <input value={fVend.adresse} onChange={(e) => setFVend({ ...fVend, adresse: e.target.value })} placeholder="Adresse" className={`${champVend} sm:col-span-2`} />
+                <input value={fVend.npa_localite} onChange={(e) => setFVend({ ...fVend, npa_localite: e.target.value })} placeholder="NPA et localité" className={champVend} />
+                <input value={fVend.notes} onChange={(e) => setFVend({ ...fVend, notes: e.target.value })} placeholder="Remarques (ex. joignable en soirée)" className={`${champVend} sm:col-span-3`} />
+              </div>
+
+              <div className="flex flex-wrap items-center gap-x-6 gap-y-2 border-t border-brand-border pt-3">
+                <span className="font-body text-[11px] tracking-wider uppercase text-brand-muted">Obligations légales</span>
+                <label className="inline-flex items-center gap-2 cursor-pointer">
+                  <input type="checkbox" checked={fVend.consentement_lpd} onChange={(e) => setFVend({ ...fVend, consentement_lpd: e.target.checked })} className="accent-brand-gold" />
+                  <span className="font-body text-xs text-brand-text">Consentement nLPD obtenu</span>
+                </label>
+                <label className="inline-flex items-center gap-2 cursor-pointer">
+                  <input type="checkbox" checked={fVend.lba_identifie} onChange={(e) => setFVend({ ...fVend, lba_identifie: e.target.checked })} className="accent-brand-gold" />
+                  <span className="font-body text-xs text-brand-text">Identification LBA faite</span>
+                </label>
+              </div>
+
+              <div className="flex items-center gap-2">
+                <button type="submit" className="btn-gold bg-brand-gold text-brand-dark px-5 py-2 font-body text-xs font-medium tracking-widest uppercase hover:bg-brand-goldLight transition-colors">Enregistrer</button>
+                <button type="button" onClick={() => { setEditVendeur(false); setErreur(null) }} className="border border-brand-border text-brand-muted hover:text-white px-4 py-2 font-body text-xs">Annuler</button>
+              </div>
+            </form>
+          ) : vendeur ? (
+            <div className="flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-8">
+              <div className="min-w-0">
+                <p className="font-body text-white">{[vendeur.societe, vendeur.prenom, vendeur.nom].filter(Boolean).join(' ') || 'Contact sans nom'}</p>
+                {(vendeur.adresse || vendeur.npa_localite) && (
+                  <p className="font-body text-sm text-brand-muted mt-0.5">{[vendeur.adresse, vendeur.npa_localite].filter(Boolean).join(' · ')}</p>
+                )}
+                {vendeur.notes && <p className="font-body text-xs text-brand-muted italic mt-1">{vendeur.notes}</p>}
+              </div>
+              <div className="flex flex-wrap items-center gap-2">
+                {vendeur.telephone && (
+                  <a href={`tel:${vendeur.telephone.replace(/\s/g, '')}`} className="inline-flex items-center gap-2 border border-brand-border px-3 py-2 font-body text-sm text-brand-text hover:text-brand-gold hover:border-brand-gold/40 transition-colors">
+                    <PhoneCall size={14} className="text-brand-gold" /> {vendeur.telephone}
+                  </a>
+                )}
+                {vendeur.email && (
+                  <a href={`mailto:${vendeur.email}`} className="inline-flex items-center gap-2 border border-brand-border px-3 py-2 font-body text-sm text-brand-text hover:text-brand-gold hover:border-brand-gold/40 transition-colors">
+                    <Mail size={14} className="text-brand-gold" /> {vendeur.email}
+                  </a>
+                )}
+              </div>
+              <div className="flex flex-wrap items-center gap-2 sm:ml-auto">
+                <span className={`px-2 py-1 font-body text-[11px] border ${vendeur.consentement_lpd ? 'bg-emerald-500/15 text-emerald-300 border-emerald-500/30' : 'bg-red-500/15 text-red-300 border-red-500/30'}`}>
+                  nLPD {vendeur.consentement_lpd ? '✓' : 'manquant'}
+                </span>
+                <span className={`px-2 py-1 font-body text-[11px] border ${vendeur.lba_identifie ? 'bg-emerald-500/15 text-emerald-300 border-emerald-500/30' : 'bg-red-500/15 text-red-300 border-red-500/30'}`}>
+                  LBA {vendeur.lba_identifie ? '✓' : 'à faire'}
+                </span>
+              </div>
+            </div>
+          ) : (
+            <p className="font-body text-sm text-brand-muted italic">Aucun propriétaire rattaché à ce dossier.</p>
+          )}
+        </section>
+
         {/* Tâches — en premier */}
         <section className="border border-brand-gold/40 bg-brand-gold/5 p-5 lg:col-span-2">
           <h2 className="flex items-center gap-2 font-display text-xl text-white mb-4"><Bell size={18} className="text-brand-gold" /> Tâches en cours</h2>
