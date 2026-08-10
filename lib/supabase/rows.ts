@@ -2,10 +2,18 @@
 
 export interface ContactRow {
   id: string
+  type: string
   prenom: string | null
   nom: string | null
+  societe: string | null
   telephone: string | null
   email: string | null
+  adresse: string | null
+  npa_localite: string | null
+  /** nLPD : consentement au traitement des données. */
+  consentement_lpd: boolean
+  /** LBA : identification du cocontractant faite. */
+  lba_identifie: boolean
   notes: string | null
 }
 
