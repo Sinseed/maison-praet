@@ -300,6 +300,31 @@ function Footer() {
 
 const TEMOIGNAGES = [
   {
+    nom: 'Jessica Regev',
+    texte: "Nous avons fait appel à Thomas Praet pour la vente de notre appartement et nous sommes absolument ravis de son travail ! Dès la première visite, il a su mettre notre bien en valeur et, à notre grande satisfaction, il a trouvé un acheteur immédiatement. Une vente rapide et efficace, tout en restant très professionnel et à l'écoute. Nous avons particulièrement apprécié sa disponibilité, son sérieux et son efficacité. Une expérience vraiment positive du début à la fin. Nous le recommandons les yeux fermés.",
+    etoiles: 5,
+  },
+  {
+    nom: 'Lara & Benoit Corot Horak',
+    texte: "L'achat de notre appartement s'est déroulé dans les meilleures conditions grâce à l'accompagnement de Thomas Praet. Toujours disponible, réactif et de bon conseil, il a su nous mettre en confiance tout au long du processus. Une très belle expérience que nous recommandons sans hésiter.",
+    etoiles: 5,
+  },
+  {
+    nom: 'Barbara Aellen',
+    texte: "Une vente réalisée par les bons soins de Thomas Praet. Un contact agréable, des explications et un suivi de dossier irréprochables. Je ne peux que le recommander ! Son approche, sa vision et son profond respect ont fait en sorte que je me sente rassurée sur son efficacité à vendre l'appartement dont j'étais propriétaire.",
+    etoiles: 5,
+  },
+  {
+    nom: 'Myriam Golay',
+    texte: "Dans le cadre de la vente de la maison de nos parents suite à une succession, nous avons été accompagnés avec beaucoup de professionnalisme, d'écoute et de bienveillance par Thomas. Un grand merci pour cet accompagnement de qualité durant cette période particulière. Nous recommandons vivement ce courtier pour vos futurs projets.",
+    etoiles: 5,
+  },
+  {
+    nom: 'Norma Ramis',
+    texte: "Un grand merci à Thomas Praet pour son excellent accompagnement lors de notre projet d'achat-vente. Son suivi personnalisé, sa disponibilité et son approche très humaine ont fait toute la différence. Nous sommes entièrement satisfaits et recommandons vivement cette agence ainsi que Thomas pour leur professionnalisme et leur engagement.",
+    etoiles: 5,
+  },
+  {
     nom: 'Francis Reymond',
     texte: "Vendre un bien à Lausanne en pilotant l'opération depuis l'Australie aurait pu être un casse-tête. Avec Thomas Praet, tout a été fluide, du premier rendez-vous à la signature chez le notaire. Disponible malgré le décalage, franc dans ses conseils, efficace dans l'exécution.",
     etoiles: 5,
@@ -331,7 +356,7 @@ const TEMOIGNAGES = [
   },
   {
     nom: 'Sophie Suys',
-    texte: "Nous avons eu le plaisir d'être accompagnés par M. Praet lors de l'achat de notre maison. Son professionnalisme, sa disponibilité et ses précieux conseils nous ont permis de vivre cette étape importante avec sérénité. Toujours à l'écoute et réactif, il a su nous accompagner efficacement tout au long du processus. Un grand merci pour son engagement et sa sympathie.",
+    texte: "Nous avons eu le plaisir d'être accompagnés par M. Praet lors de l'achat de notre maison. Son professionnalisme, sa disponibilité et ses précieux conseils nous ont permis de vivre cette étape importante avec sérénité. Toujours à l'écoute et réactif, il a su nous accompagner efficacement tout au long du processus. Un grand merci pour son engagement et sa sympathie. Nous le recommandons sans hésitation.",
     etoiles: 5,
   },
   {
