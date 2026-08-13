@@ -8,7 +8,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import { ArrowLeft, Sparkles, Check, X } from 'lucide-react'
+import { ArrowLeft, Sparkles, Check, X, PenLine, Copy } from 'lucide-react'
 import { TYPE_BIEN_LABELS, type TypeBien } from '@/lib/estimation/types'
 
 interface Plan {
@@ -59,6 +59,9 @@ export default function InboxPage() {
   const [resultat, setResultat] = useState<string[] | null>(null)
   const [bienId, setBienId] = useState<string | null>(null)
   const [erreur, setErreur] = useState<string | null>(null)
+  const [redige, setRedige] = useState(false)
+  const [reponse, setReponse] = useState<string | null>(null)
+  const [copie, setCopie] = useState(false)
 
   const maj = (patch: Partial<Plan>) => setPlan((p) => (p ? { ...p, ...patch } : p))
 
@@ -96,6 +99,42 @@ export default function InboxPage() {
       setErreur('Analyse impossible. Réessayez.')
     } finally {
       setAnalyse(false)
+    }
+  }
+
+  const rediger = async () => {
+    if (!texte.trim()) return
+    setRedige(true)
+    setErreur(null)
+    setReponse(null)
+    setCopie(false)
+    try {
+      const res = await fetch('/api/app/repondre', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ texte }),
+      })
+      const data = await res.json()
+      if (!res.ok) {
+        setErreur(data.error ?? 'Rédaction impossible.')
+        return
+      }
+      setReponse(data.reponse as string)
+    } catch {
+      setErreur('Rédaction impossible. Réessaie.')
+    } finally {
+      setRedige(false)
+    }
+  }
+
+  const copierReponse = async () => {
+    if (!reponse) return
+    try {
+      await navigator.clipboard.writeText(reponse)
+      setCopie(true)
+      setTimeout(() => setCopie(false), 2000)
+    } catch {
+      setErreur('Copie impossible : sélectionne le texte et copie-le à la main.')
     }
   }
 
@@ -171,15 +210,51 @@ export default function InboxPage() {
           className="w-full bg-brand-card border border-brand-border px-4 py-3 font-body text-sm text-white focus:outline-none focus:border-brand-gold/50"
         />
 
-        <button
-          onClick={analyser}
-          disabled={analyse || !texte.trim()}
-          className="btn-gold inline-flex items-center gap-2 bg-brand-gold text-brand-dark px-5 py-2.5 font-body text-xs font-medium tracking-widest uppercase hover:bg-brand-goldLight transition-colors disabled:opacity-60"
-        >
-          <Sparkles size={15} /> {analyse ? 'Analyse…' : 'Analyser'}
-        </button>
+        <div className="flex flex-wrap items-center gap-2">
+          <button
+            onClick={analyser}
+            disabled={analyse || !texte.trim()}
+            className="btn-gold inline-flex items-center gap-2 bg-brand-gold text-brand-dark px-5 py-2.5 font-body text-xs font-medium tracking-widest uppercase hover:bg-brand-goldLight transition-colors disabled:opacity-60"
+          >
+            <Sparkles size={15} /> {analyse ? 'Analyse…' : 'Analyser'}
+          </button>
+          <button
+            onClick={rediger}
+            disabled={redige || !texte.trim()}
+            title="Rédiger un brouillon de réponse à ce mail"
+            className="inline-flex items-center gap-2 border border-brand-gold/40 text-brand-goldLight px-5 py-2.5 font-body text-xs font-medium tracking-widest uppercase hover:border-brand-gold hover:text-brand-gold transition-colors disabled:opacity-60"
+          >
+            <PenLine size={15} /> {redige ? 'Rédaction…' : 'Proposer une réponse'}
+          </button>
+        </div>
 
         {erreur && <p className="font-body text-red-400 text-sm">{erreur}</p>}
+
+        {/* Brouillon de réponse — à relire et corriger, rien n'est envoyé */}
+        {reponse !== null && (
+          <div className="border border-brand-gold/40 bg-brand-gold/5 p-5 space-y-3">
+            <div className="flex items-center justify-between gap-2">
+              <p className="font-display text-lg text-white">Brouillon de réponse</p>
+              <div className="flex items-center gap-2">
+                <button onClick={copierReponse} className="inline-flex items-center gap-1.5 border border-brand-border px-3 py-1.5 font-body text-xs text-brand-text hover:text-brand-gold hover:border-brand-gold/40 transition-colors">
+                  {copie ? <><Check size={13} className="text-emerald-400" /> Copié</> : <><Copy size={13} /> Copier</>}
+                </button>
+                <button onClick={() => setReponse(null)} className="inline-flex items-center gap-1.5 border border-brand-border px-3 py-1.5 font-body text-xs text-brand-muted hover:text-white transition-colors">
+                  <X size={13} /> Fermer
+                </button>
+              </div>
+            </div>
+            <textarea
+              value={reponse}
+              onChange={(e) => setReponse(e.target.value)}
+              rows={14}
+              className="w-full bg-brand-card border border-brand-border px-4 py-3 font-body text-sm text-white leading-relaxed focus:outline-none focus:border-brand-gold/50 whitespace-pre-wrap"
+            />
+            <p className="font-body text-[11px] text-brand-muted/70 italic">
+              Brouillon à relire et ajuster avant envoi. Rien n&apos;est envoyé depuis l&apos;app : copie le texte dans ta messagerie.
+            </p>
+          </div>
+        )}
 
         {/* Proposition — modifiable */}
         {plan && (

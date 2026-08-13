@@ -258,16 +258,31 @@ export async function appliquerPlan(
   // validée par une analyse de solvabilité — au courtier de la lever.
   const offreMontant = montant(plan.offre_montant)
   if (offreMontant && bienId) {
-    const { error } = await supabase.from('offres').insert({
-      ...proprio,
-      bien_id: bienId,
-      acquereur_id: acquereurId,
-      montant: offreMontant,
-      notes: plan.offre_notes || null,
-      acquereur_non_qualifie: true,
-    })
-    if (error) throw new Error(`Enregistrement de l'offre impossible : ${error.message}`)
-    actions.push(`Offre enregistrée : CHF ${offreMontant.toLocaleString('de-CH')}.-`)
+    // Anti-doublon : le transfert d'email s'applique SANS relecture. Reclasser
+    // deux fois le même mail (ou un rappel du même acheteur) ne doit pas empiler
+    // deux fois la même offre. On considère qu'une offre identique — même dossier,
+    // même acquéreur, même montant — est un doublon et on ne réécrit pas. Une
+    // vraie nouvelle offre au même montant se saisit à la main depuis le dossier
+    // (le formulaire, lui, ne déduplique pas).
+    let doublonQ = supabase.from('offres').select('id').eq('bien_id', bienId).eq('montant', offreMontant)
+    if (opts.courtierId) doublonQ = doublonQ.eq('courtier_id', opts.courtierId)
+    doublonQ = acquereurId ? doublonQ.eq('acquereur_id', acquereurId) : doublonQ.is('acquereur_id', null)
+    const { data: doublons } = await doublonQ.limit(1)
+
+    if ((doublons as { id: string }[] | null)?.length) {
+      actions.push(`Offre déjà enregistrée (doublon ignoré) : CHF ${offreMontant.toLocaleString('de-CH')}.-`)
+    } else {
+      const { error } = await supabase.from('offres').insert({
+        ...proprio,
+        bien_id: bienId,
+        acquereur_id: acquereurId,
+        montant: offreMontant,
+        notes: plan.offre_notes || null,
+        acquereur_non_qualifie: true,
+      })
+      if (error) throw new Error(`Enregistrement de l'offre impossible : ${error.message}`)
+      actions.push(`Offre enregistrée : CHF ${offreMontant.toLocaleString('de-CH')}.-`)
+    }
   } else if (offreMontant && !bienId) {
     actions.push("Offre détectée mais non enregistrée : rattache-la à un dossier.")
   }
