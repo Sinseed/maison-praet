@@ -32,6 +32,8 @@ interface Plan {
   prospect_communes: string
   prospect_typologies: string
   prospect_budget: string
+  offre_montant: string
+  offre_notes: string
 }
 
 interface BienBref {
@@ -302,6 +304,19 @@ export default function InboxPage() {
                 Renseigné, le prospect entre au fichier acquéreurs et sera proposé automatiquement sur les dossiers correspondants.
                 Le rapprochement se fait sur des <strong>noms de communes exacts</strong> — pas de région ni d&apos;« environs ».
               </p>
+            </div>
+
+            {/* Offre d'achat — devient une ligne suivable dans le dossier */}
+            <div>
+              <span className={label}>
+                💰 Offre reçue
+                {plan.offre_montant && <span className="text-brand-gold normal-case tracking-normal"> · offre détectée</span>}
+              </span>
+              <input value={plan.offre_montant} onChange={(e) => maj({ offre_montant: e.target.value })} placeholder="Montant de l'offre en CHF (ex. 620000)" inputMode="numeric" className={champ} />
+              <input value={plan.offre_notes} onChange={(e) => maj({ offre_notes: e.target.value })} placeholder="Contexte de l'offre (ex. offre révisée, variantes proposées, conditions)" className={`${champ} mt-2`} />
+              {plan.offre_montant && dest === DEST_AUCUN && (
+                <p className="font-body text-[11px] text-brand-muted/70 italic mt-1">L&apos;offre ne sera enregistrée que si elle est rattachée à un dossier.</p>
+              )}
             </div>
 
             <div className="flex items-center gap-2 pt-1">
