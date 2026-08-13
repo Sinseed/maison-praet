@@ -73,3 +73,16 @@ export interface EchangeRow {
   date_echange: string
   created_at: string
 }
+
+export interface OffreRow {
+  id: string
+  bien_id: string
+  acquereur_id: string | null
+  montant: number
+  statut: string // recue | en_negociation | acceptee | refusee | retiree | caduque
+  date_offre: string
+  /** Garde-fou : true si l'acquéreur n'était pas (encore) qualifié à la réception. */
+  acquereur_non_qualifie: boolean
+  notes: string | null
+  created_at: string
+}

@@ -67,6 +67,15 @@ export const STATUT_BIEN_LABELS: Record<string, string> = {
   perdu: 'Perdu',
 }
 
+export const STATUT_OFFRE_LABELS: Record<string, { label: string; classe: string }> = {
+  recue: { label: 'Reçue', classe: 'bg-sky-500/15 text-sky-300 border-sky-500/30' },
+  en_negociation: { label: 'En négociation', classe: 'bg-amber-500/15 text-amber-300 border-amber-500/30' },
+  acceptee: { label: 'Acceptée', classe: 'bg-emerald-500/15 text-emerald-300 border-emerald-500/30' },
+  refusee: { label: 'Refusée', classe: 'bg-red-500/15 text-red-300 border-red-500/30' },
+  retiree: { label: 'Retirée', classe: 'bg-white/5 text-brand-muted border-brand-border' },
+  caduque: { label: 'Caduque', classe: 'bg-white/5 text-brand-muted border-brand-border' },
+}
+
 export const CANAL_LABELS: Record<string, string> = {
   note: 'Note',
   email: 'Email',

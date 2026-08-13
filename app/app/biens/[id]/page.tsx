@@ -11,15 +11,15 @@ import { useParams, useRouter } from 'next/navigation'
 import Link from 'next/link'
 import {
   ArrowLeft, Bell, Plus, Check, Users, PhoneCall, FileText, Upload, Download,
-  Trash2, MessageSquare, Send, Pencil, UserRound, Mail,
+  Trash2, MessageSquare, Send, Pencil, UserRound, Mail, Coins, AlertTriangle,
 } from 'lucide-react'
 import { createClient } from '@/lib/supabase/client'
 import { formatCHF, formatDate } from '@/lib/format'
-import { STATUT_DOC_LABELS, STATUT_BIEN_LABELS, CANAL_LABELS } from '@/lib/dossier/checklist'
+import { STATUT_DOC_LABELS, STATUT_BIEN_LABELS, STATUT_OFFRE_LABELS, CANAL_LABELS } from '@/lib/dossier/checklist'
 import { acquereursCorrespondants } from '@/lib/dossier/matching'
 import { TYPE_BIEN_LABELS, type TypeBien } from '@/lib/estimation/types'
 import { COMMUNES } from '@/lib/estimation/parametres-marche'
-import type { AcquereurRow, BienRow, ContactRow, DocumentRow, EchangeRow, TacheRow } from '@/lib/supabase/rows'
+import type { AcquereurRow, BienRow, ContactRow, DocumentRow, EchangeRow, OffreRow, TacheRow } from '@/lib/supabase/rows'
 
 const supabase = createClient()
 const aujourdHui = () => new Date().toISOString().slice(0, 10)
@@ -40,6 +40,7 @@ export default function DossierBien() {
   const [taches, setTaches] = useState<TacheRow[]>([])
   const [documents, setDocuments] = useState<DocumentRow[]>([])
   const [echanges, setEchanges] = useState<EchangeRow[]>([])
+  const [offres, setOffres] = useState<OffreRow[]>([])
   const [acquereurs, setAcquereurs] = useState<AcquereurRow[]>([])
   const [estim, setEstim] = useState<{ valeur_venale: number | null; prix_mise_en_vente: number | null; prix_plancher: number | null } | null>(null)
   const [charge, setCharge] = useState(true)
@@ -48,6 +49,7 @@ export default function DossierBien() {
   const [nouvelleTache, setNouvelleTache] = useState('')
   const [nouveauDoc, setNouveauDoc] = useState('')
   const [nouvelEchange, setNouvelEchange] = useState('')
+  const [nouvelleOffre, setNouvelleOffre] = useState({ montant: '', acquereur_id: '', notes: '' })
   const [contacts, setContacts] = useState<ContactRow[]>([])
   const [editVendeur, setEditVendeur] = useState(false)
   const [fVend, setFVend] = useState({
@@ -62,11 +64,12 @@ export default function DossierBien() {
 
   const charger = useCallback(async () => {
     setErreur(null)
-    const [b, t, d, e, acq, cts, est] = await Promise.all([
+    const [b, t, d, e, off, acq, cts, est] = await Promise.all([
       supabase.from('biens').select('*').eq('id', id).single(),
       supabase.from('taches').select('*').eq('bien_id', id).eq('statut', 'a_faire').order('echeance', { ascending: true, nullsFirst: false }),
       supabase.from('documents').select('*').eq('bien_id', id).order('created_at', { ascending: true }),
       supabase.from('echanges').select('*').eq('bien_id', id).order('date_echange', { ascending: false }),
+      supabase.from('offres').select('*').eq('bien_id', id).order('date_offre', { ascending: false }),
       supabase.from('acquereurs').select('*'),
       supabase.from('contacts').select('*'),
       supabase.from('estimations').select('valeur_venale, prix_mise_en_vente, prix_plancher, version').eq('bien_id', id).order('version', { ascending: false }).limit(1),
@@ -80,6 +83,7 @@ export default function DossierBien() {
     setTaches((t.data as unknown as TacheRow[]) ?? [])
     setDocuments((d.data as unknown as DocumentRow[]) ?? [])
     setEchanges((e.data as unknown as EchangeRow[]) ?? [])
+    setOffres((off.data as unknown as OffreRow[]) ?? [])
     setContacts((cts.data as unknown as ContactRow[]) ?? [])
     const parId = new Map(((cts.data as unknown as ContactRow[]) ?? []).map((c) => [c.id, c]))
     setAcquereurs(
@@ -301,6 +305,51 @@ export default function DossierBien() {
     if (!nouvelEchange.trim()) return
     await supabase.from('echanges').insert({ bien_id: id, canal: 'note', contenu: nouvelEchange.trim() })
     setNouvelEchange('')
+    charger()
+  }
+  // ── Offres reçues ──────────────────────────────────────────────────────────
+  const nomAcquereur = (acqId: string | null) => {
+    if (!acqId) return null
+    const a = acquereurs.find((x) => x.id === acqId)
+    return a ? nomAcq(a) : null
+  }
+  const ajouterOffre = async (e: React.FormEvent) => {
+    e.preventDefault()
+    const brut = parseFloat(nouvelleOffre.montant.replace(/[^0-9.]/g, ''))
+    if (!Number.isFinite(brut) || brut <= 0) {
+      setErreur('Indique un montant d’offre valide.')
+      return
+    }
+    setErreur(null)
+    const { error } = await supabase.from('offres').insert({
+      bien_id: id,
+      acquereur_id: nouvelleOffre.acquereur_id || null,
+      montant: brut,
+      notes: nouvelleOffre.notes.trim() || null,
+    })
+    if (error) {
+      setErreur(`Enregistrement de l’offre impossible : ${error.message}`)
+      return
+    }
+    setNouvelleOffre({ montant: '', acquereur_id: '', notes: '' })
+    charger()
+  }
+  const changerStatutOffre = async (offre: OffreRow, statut: string) => {
+    setErreur(null)
+    const { data, error } = await supabase.from('offres').update({ statut }).eq('id', offre.id).select('id')
+    if (error || !data?.length) {
+      setErreur(`Changement de statut impossible : ${error?.message ?? 'aucune ligne modifiée.'}`)
+      return
+    }
+    charger()
+  }
+  const supprimerOffre = async (offre: OffreRow) => {
+    setErreur(null)
+    const { data, error } = await supabase.from('offres').delete().eq('id', offre.id).select('id')
+    if (error || !data?.length) {
+      setErreur(`Suppression de l’offre impossible : ${error?.message ?? 'aucune ligne supprimée.'}`)
+      return
+    }
     charger()
   }
   const supprimerDossier = async () => {
@@ -541,6 +590,82 @@ export default function DossierBien() {
           <form onSubmit={ajouterTache} className="mt-4 flex gap-2">
             <input value={nouvelleTache} onChange={(e) => setNouvelleTache(e.target.value)} placeholder="Ajouter une tâche à ce dossier…" className="flex-1 bg-brand-dark border border-brand-border px-3 py-2 font-body text-sm text-white focus:outline-none focus:border-brand-gold/50" />
             <button type="submit" className="border border-brand-border px-3 text-brand-muted hover:text-white transition-colors"><Plus size={16} /></button>
+          </form>
+        </section>
+
+        {/* Offres reçues */}
+        <section className="border border-brand-border bg-brand-card p-5 lg:col-span-2">
+          <h2 className="flex items-center gap-2 font-display text-xl text-white mb-1"><Coins size={18} className="text-brand-gold" /> Offres reçues</h2>
+          <p className="font-body text-xs text-brand-muted mb-4">Chaque proposition chiffrée, son statut et l&apos;acquéreur — reprise automatiquement des mails classés.</p>
+          {offres.length === 0 ? (
+            <p className="font-body text-sm text-brand-muted italic">Aucune offre enregistrée sur ce dossier.</p>
+          ) : (
+            <div className="space-y-3">
+              {offres.map((o) => {
+                const st = STATUT_OFFRE_LABELS[o.statut] ?? STATUT_OFFRE_LABELS.recue
+                const acq = nomAcquereur(o.acquereur_id)
+                const sousPlancher = estim?.prix_plancher != null && o.montant < estim.prix_plancher
+                return (
+                  <div key={o.id} className="border border-brand-border bg-brand-dark p-3">
+                    <div className="flex flex-wrap items-center justify-between gap-2">
+                      <div className="flex items-baseline gap-3">
+                        <span className="font-display text-lg text-brand-gold">{formatCHF(o.montant)}</span>
+                        <span className="font-body text-[11px] text-brand-muted">{formatDate(o.date_offre)}</span>
+                      </div>
+                      <span className={`shrink-0 font-body text-[10px] uppercase tracking-wider border px-2 py-0.5 ${st.classe}`}>{st.label}</span>
+                    </div>
+                    <div className="flex flex-wrap items-center gap-x-3 gap-y-1 mt-1">
+                      {acq && <span className="font-body text-sm text-brand-text">{acq}</span>}
+                      {o.acquereur_non_qualifie && (
+                        <span className="inline-flex items-center gap-1 font-body text-[11px] text-amber-300" title="Solvabilité non vérifiée à la réception">
+                          <AlertTriangle size={12} /> à qualifier
+                        </span>
+                      )}
+                      {sousPlancher && (
+                        <span className="inline-flex items-center gap-1 font-body text-[11px] text-red-300" title="Inférieure au prix plancher de l’estimation">
+                          <AlertTriangle size={12} /> sous le plancher
+                        </span>
+                      )}
+                    </div>
+                    {o.notes && <p className="font-body text-xs text-brand-muted mt-1 whitespace-pre-wrap">{o.notes}</p>}
+                    <div className="flex flex-wrap items-center gap-2 mt-3">
+                      <select
+                        value={o.statut}
+                        onChange={(ev) => changerStatutOffre(o, ev.target.value)}
+                        className="bg-brand-card border border-brand-border text-brand-text px-2 py-1 font-body text-[11px] focus:outline-none focus:border-brand-gold/50"
+                      >
+                        {Object.keys(STATUT_OFFRE_LABELS).map((s) => <option key={s} value={s}>{STATUT_OFFRE_LABELS[s].label}</option>)}
+                      </select>
+                      <button onClick={() => supprimerOffre(o)} className="ml-auto text-brand-muted hover:text-red-400 transition-colors p-1" title="Supprimer l’offre"><Trash2 size={14} /></button>
+                    </div>
+                  </div>
+                )
+              })}
+            </div>
+          )}
+          <form onSubmit={ajouterOffre} className="mt-4 grid grid-cols-1 sm:grid-cols-[1fr_1fr_auto] gap-2">
+            <input
+              value={nouvelleOffre.montant}
+              onChange={(e) => setNouvelleOffre({ ...nouvelleOffre, montant: e.target.value })}
+              placeholder="Montant de l’offre (CHF)"
+              inputMode="numeric"
+              className="bg-brand-dark border border-brand-border px-3 py-2 font-body text-sm text-white focus:outline-none focus:border-brand-gold/50"
+            />
+            <select
+              value={nouvelleOffre.acquereur_id}
+              onChange={(e) => setNouvelleOffre({ ...nouvelleOffre, acquereur_id: e.target.value })}
+              className="bg-brand-dark border border-brand-border px-3 py-2 font-body text-sm text-white focus:outline-none focus:border-brand-gold/50"
+            >
+              <option value="">— acquéreur (optionnel) —</option>
+              {acquereurs.map((a) => <option key={a.id} value={a.id}>{nomAcq(a)}</option>)}
+            </select>
+            <button type="submit" className="border border-brand-border px-3 text-brand-muted hover:text-white transition-colors" title="Ajouter l’offre"><Plus size={16} /></button>
+            <input
+              value={nouvelleOffre.notes}
+              onChange={(e) => setNouvelleOffre({ ...nouvelleOffre, notes: e.target.value })}
+              placeholder="Note (ex. offre alternative, conditions)…"
+              className="sm:col-span-3 bg-brand-dark border border-brand-border px-3 py-2 font-body text-sm text-white focus:outline-none focus:border-brand-gold/50"
+            />
           </form>
         </section>
 

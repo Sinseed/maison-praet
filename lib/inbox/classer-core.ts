@@ -32,6 +32,9 @@ export interface Plan {
   prospect_communes: string
   prospect_typologies: string
   prospect_budget: string
+  // — Offre d'achat détectée (voir appliquerPlan) —
+  offre_montant: string
+  offre_notes: string
 }
 
 export interface BienContexte {
@@ -47,6 +50,7 @@ export const PLAN_KEYS = [
   'prospect_societe', 'prospect_prenom', 'prospect_nom', 'prospect_email',
   'prospect_telephone', 'prospect_recherche', 'prospect_communes',
   'prospect_typologies', 'prospect_budget',
+  'offre_montant', 'offre_notes',
 ] as const
 
 /** Typologies acceptées par l'enum `type_bien` de la base. */
@@ -73,6 +77,8 @@ const planParDefaut = (p: Partial<Plan>): Plan => ({
   prospect_communes: p.prospect_communes ?? '',
   prospect_typologies: p.prospect_typologies ?? '',
   prospect_budget: p.prospect_budget ?? '',
+  offre_montant: p.offre_montant ?? '',
+  offre_notes: p.offre_notes ?? '',
 })
 
 /** « Lausanne, Gland » → ['Lausanne', 'Gland'] */
@@ -115,6 +121,13 @@ export async function analyserTexte(
       "éventuel (prospect_budget, en chiffres). Ne remplis ces champs QUE pour un acheteur : un propriétaire " +
       "qui veut VENDRE n'est pas un prospect acquéreur (dans ce cas, propose plutôt un dossier de bien). " +
       "Laisse tous les champs prospect_* vides s'il n'y a aucun acheteur identifiable.\n\n" +
+      "OFFRE D'ACHAT — si le texte formule une proposition d'achat chiffrée sur un bien précis (« je vous " +
+      "propose CHF 620'000 », « mon offre est de… »), remplis offre_montant avec le montant en chiffres " +
+      "(sans devise ni séparateur : 620000). Choisis le montant qui se rapporte au dossier retenu (bien_id) : " +
+      "si l'acheteur propose plusieurs variantes (un bien seul, un autre, ou un lot), retiens celle qui " +
+      "correspond au bien classé et récapitule les autres variantes ainsi que le contexte (offre révisée, " +
+      "préférence exprimée, conditions) dans offre_notes. Laisse offre_montant vide s'il n'y a pas de " +
+      "proposition chiffrée ferme (une simple estimation ou un prix affiché n'est pas une offre).\n\n" +
       `Nous sommes le ${opts.aujourdhui}. IMPORTANT : si le texte mentionne une date limite ou une échéance ` +
       "(« pour le 2 août », « d'ici vendredi », « avant la fin du mois »…), déduis la date correspondante et " +
       "mets-la dans tache_echeance au format AAAA-MM-JJ (année à venir si le mois est déjà passé). Crée alors " +
@@ -177,6 +190,7 @@ export async function appliquerPlan(
   // Sans cela, un acheteur repéré dans un mail resterait une simple note dans
   // l'historique d'un dossier : il ne remonterait jamais dans le matching.
   const identite = plan.prospect_societe || plan.prospect_nom || plan.prospect_prenom
+  let acquereurId: string | null = null
   if (identite) {
     const designation = plan.prospect_societe || [plan.prospect_prenom, plan.prospect_nom].filter(Boolean).join(' ')
 
@@ -213,22 +227,49 @@ export async function appliquerPlan(
     // Une fiche acquéreur par contact : on ne duplique pas les critères déjà
     // saisis (le courtier peut les avoir affinés à la main).
     const { data: fiches } = await supabase.from('acquereurs').select('id').eq('contact_id', contactId).limit(1)
-    if ((fiches as { id: string }[] | null)?.length) {
+    const ficheExistante = (fiches as { id: string }[] | null)?.[0] ?? null
+    if (ficheExistante) {
+      acquereurId = ficheExistante.id
       actions.push(`Prospect déjà au fichier : ${designation} (critères inchangés)`)
     } else {
       const typologies = liste(plan.prospect_typologies).filter((t): t is (typeof TYPOLOGIES_VALIDES)[number] =>
         (TYPOLOGIES_VALIDES as readonly string[]).includes(t),
       )
-      const { error } = await supabase.from('acquereurs').insert({
+      const { data: fiche, error } = await supabase.from('acquereurs').insert({
         ...proprio,
         contact_id: contactId,
         communes_recherchees: liste(plan.prospect_communes),
         typologies,
         budget_valide: montant(plan.prospect_budget),
       })
+        .select('id')
+        .single()
       if (error) throw new Error(`Création de l'acquéreur impossible : ${error.message}`)
+      acquereurId = (fiche as { id: string }).id
       actions.push(`Prospect ajouté au fichier acquéreurs : ${designation}`)
     }
+  }
+
+  // ── Offre d'achat : ligne structurée dans `offres` (montant, statut suivable) ─
+  // Une offre chiffrée ne doit pas rester une simple note : elle porte la
+  // négociation et, à terme, la commission. On la rattache au dossier (obligatoire)
+  // et, si on a pu identifier l'acheteur, à sa fiche acquéreur. Le garde-fou
+  // `acquereur_non_qualifie` reste vrai : une offre reçue par mail n'a pas été
+  // validée par une analyse de solvabilité — au courtier de la lever.
+  const offreMontant = montant(plan.offre_montant)
+  if (offreMontant && bienId) {
+    const { error } = await supabase.from('offres').insert({
+      ...proprio,
+      bien_id: bienId,
+      acquereur_id: acquereurId,
+      montant: offreMontant,
+      notes: plan.offre_notes || null,
+      acquereur_non_qualifie: true,
+    })
+    if (error) throw new Error(`Enregistrement de l'offre impossible : ${error.message}`)
+    actions.push(`Offre enregistrée : CHF ${offreMontant.toLocaleString('de-CH')}.-`)
+  } else if (offreMontant && !bienId) {
+    actions.push("Offre détectée mais non enregistrée : rattache-la à un dossier.")
   }
 
   if (plan.document_nom && plan.document_statut && bienId) {
