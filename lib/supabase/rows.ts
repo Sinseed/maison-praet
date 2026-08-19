@@ -7,6 +7,17 @@ export interface ContactRow {
   telephone: string | null
   email: string | null
   notes: string | null
+  type?: string
+  societe?: string | null
+  created_at?: string
+}
+
+export interface ContactLienRow {
+  id: string
+  contact_id: string
+  bien_id: string
+  role: string | null
+  created_at: string
 }
 
 export interface AcquereurRow {

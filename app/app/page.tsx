@@ -192,6 +192,9 @@ export default function EspaceApp() {
             <Link href="/app/biens" className="inline-flex items-center gap-2 border border-brand-gold/40 text-brand-goldLight px-3 py-2 font-body text-xs tracking-wider uppercase hover:bg-brand-gold/10 transition-colors">
               <FolderOpen size={14} /> Dossiers
             </Link>
+            <Link href="/app/contacts" className="hidden sm:inline-flex items-center gap-2 border border-brand-gold/40 text-brand-goldLight px-3 py-2 font-body text-xs tracking-wider uppercase hover:bg-brand-gold/10 transition-colors">
+              <Users size={14} /> Répertoire
+            </Link>
             <Link href="/app/estimation" className="hidden sm:inline-flex items-center gap-2 border border-brand-gold/40 text-brand-goldLight px-3 py-2 font-body text-xs tracking-wider uppercase hover:bg-brand-gold/10 transition-colors">
               <TrendingUp size={14} /> Estimation
             </Link>

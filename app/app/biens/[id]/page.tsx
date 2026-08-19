@@ -39,6 +39,7 @@ export default function DossierBien() {
   const [documents, setDocuments] = useState<DocumentRow[]>([])
   const [echanges, setEchanges] = useState<EchangeRow[]>([])
   const [acquereurs, setAcquereurs] = useState<AcquereurRow[]>([])
+  const [contactsLies, setContactsLies] = useState<Array<ContactRow & { role: string | null }>>([])
   const [estim, setEstim] = useState<{ valeur_venale: number | null; prix_mise_en_vente: number | null; prix_plancher: number | null } | null>(null)
   const [charge, setCharge] = useState(true)
   const [erreur, setErreur] = useState<string | null>(null)
@@ -51,7 +52,7 @@ export default function DossierBien() {
 
   const charger = useCallback(async () => {
     setErreur(null)
-    const [b, t, d, e, acq, cts, est] = await Promise.all([
+    const [b, t, d, e, acq, cts, est, liens] = await Promise.all([
       supabase.from('biens').select('*').eq('id', id).single(),
       supabase.from('taches').select('*').eq('bien_id', id).eq('statut', 'a_faire').order('echeance', { ascending: true, nullsFirst: false }),
       supabase.from('documents').select('*').eq('bien_id', id).order('created_at', { ascending: true }),
@@ -59,6 +60,7 @@ export default function DossierBien() {
       supabase.from('acquereurs').select('*'),
       supabase.from('contacts').select('*'),
       supabase.from('estimations').select('valeur_venale, prix_mise_en_vente, prix_plancher, version').eq('bien_id', id).order('version', { ascending: false }).limit(1),
+      supabase.from('contacts_biens').select('contact_id, role').eq('bien_id', id),
     ])
     if (b.error) {
       setErreur(`Chargement impossible : ${b.error.message}`)
@@ -75,6 +77,12 @@ export default function DossierBien() {
         ...a,
         contact: a.contact_id ? parId.get(a.contact_id) ?? null : null,
       })),
+    )
+    const lignesLiens = (liens.data as unknown as Array<{ contact_id: string; role: string | null }>) ?? []
+    setContactsLies(
+      lignesLiens
+        .map((l) => { const c = parId.get(l.contact_id); return c ? { ...c, role: l.role } : null })
+        .filter(Boolean) as Array<ContactRow & { role: string | null }>,
     )
     const estRows = (est.data as unknown as Array<{ valeur_venale: number | null; prix_mise_en_vente: number | null; prix_plancher: number | null }>) ?? []
     setEstim(estRows[0] ?? null)
@@ -300,6 +308,28 @@ export default function DossierBien() {
             </div>
           )}
         </section>
+
+        {/* Contacts du dossier */}
+        {contactsLies.length > 0 && (
+          <section className="border border-brand-border bg-brand-card p-5">
+            <h2 className="flex items-center gap-2 font-display text-xl text-white mb-4"><Users size={18} className="text-brand-gold" /> Contacts</h2>
+            <div className="space-y-2">
+              {contactsLies.map((c) => (
+                <Link key={c.id} href={`/app/contacts/${c.id}`} className="flex items-center justify-between gap-3 border border-brand-border bg-brand-dark p-3 hover:border-brand-gold/40 transition-colors">
+                  <div className="min-w-0">
+                    <p className="font-body text-sm text-white truncate">{[c.prenom, c.nom].filter(Boolean).join(' ') || c.societe || c.email || 'Contact'}</p>
+                    <p className="font-body text-xs text-brand-muted truncate">{c.email || ''}{c.telephone ? ` · ${c.telephone}` : ''}</p>
+                  </div>
+                  {c.role && (
+                    <span className="shrink-0 font-body text-[10px] uppercase tracking-wider text-brand-gold">
+                      {(({ vendeur: 'Vendeur', acquereur: 'Acquéreur', notaire: 'Notaire', courtier_tiers: 'Courtier', artisan: 'Artisan', autre: 'Contact' } as Record<string, string>)[c.role]) ?? c.role}
+                    </span>
+                  )}
+                </Link>
+              ))}
+            </div>
+          </section>
+        )}
 
         {/* Documents */}
         <section className="border border-brand-border bg-brand-card p-5">

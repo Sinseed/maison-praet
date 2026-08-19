@@ -23,6 +23,7 @@ interface Plan {
   tache_echeance: string
   document_nom: string
   document_statut: string
+  contacts: { prenom: string; nom: string; role: string; email: string; telephone: string }[]
 }
 
 interface BienBref {
@@ -250,6 +251,24 @@ export default function InboxPage() {
                 <p className="font-body text-[11px] text-brand-muted/70 italic mt-1">Le document ne sera enregistré que s&apos;il est rattaché à un dossier.</p>
               )}
             </div>
+
+            {/* Contacts détectés */}
+            {plan.contacts?.length > 0 && (
+              <div>
+                <span className={label}>👤 Personnes détectées</span>
+                <ul className="space-y-1">
+                  {plan.contacts.map((c, i) => (
+                    <li key={i} className="font-body text-sm text-brand-text">
+                      {[c.prenom, c.nom].filter(Boolean).join(' ') || c.email}
+                      <span className="text-brand-gold"> · {c.role}</span>
+                      {c.email && <span className="text-brand-muted"> · {c.email}</span>}
+                      {c.telephone && <span className="text-brand-muted"> · {c.telephone}</span>}
+                    </li>
+                  ))}
+                </ul>
+                <p className="font-body text-[11px] text-brand-muted/70 mt-1">Ces personnes seront ajoutées à ton répertoire et reliées au dossier.</p>
+              </div>
+            )}
 
             <div className="flex items-center gap-2 pt-1">
               <button onClick={appliquer} disabled={applique} className="btn-gold inline-flex items-center gap-2 bg-brand-gold text-brand-dark px-4 py-2 font-body text-xs font-medium uppercase tracking-wider hover:bg-brand-goldLight transition-colors disabled:opacity-60">
