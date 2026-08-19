@@ -111,10 +111,8 @@ export async function POST(req: Request) {
   // 5. Classer + écrire.
   let actions: string[] = []
   let bienId: string | null = null
-  let contactsDetectes: string[] = []
   try {
     const plan = await analyserTexte(new Anthropic(), { texte: contenu, biens: (biens as BienContexte[]) ?? [], aujourdhui })
-    contactsDetectes = plan.contacts.map((c) => `${[c.prenom, c.nom].filter(Boolean).join(' ') || c.email} (${c.role})`)
     const res = await appliquerPlan(supa, plan, { courtierId })
     actions = res.actions
     bienId = res.bienId
@@ -182,5 +180,5 @@ export async function POST(req: Request) {
     // L'accusé est secondaire : le classement a déjà réussi.
   }
 
-  return NextResponse.json({ ok: true, actions, bienId, contacts_detectes: contactsDetectes })
+  return NextResponse.json({ ok: true, actions, bienId })
 }

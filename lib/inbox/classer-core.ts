@@ -9,6 +9,15 @@
 
 import type Anthropic from '@anthropic-ai/sdk'
 import { TYPE_BIEN_LABELS } from '@/lib/estimation/types'
+import { COURTIER } from '@/lib/courtier'
+
+// Le courtier lui-même ne doit jamais devenir un contact fiché : sa signature
+// apparaît dans les mails transférés.
+const EMAILS_COURTIER = new Set([COURTIER.email.toLowerCase(), 'thom.praet@gmail.com'])
+const estLeCourtier = (c: { prenom: string; nom: string; email: string }) => {
+  if (c.email && EMAILS_COURTIER.has(c.email.toLowerCase())) return true
+  return `${c.prenom} ${c.nom}`.trim().toLowerCase() === COURTIER.courtier.toLowerCase()
+}
 
 export interface PlanContact {
   prenom: string
@@ -80,6 +89,7 @@ const nettoyerContacts = (v: unknown): PlanContact[] => {
       }
     })
     .filter((c) => c.nom || c.prenom || c.email) // au moins un identifiant
+    .filter((c) => !estLeCourtier(c)) // jamais le courtier lui-même
     .slice(0, 10)
 }
 

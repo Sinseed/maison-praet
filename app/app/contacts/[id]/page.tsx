@@ -6,9 +6,9 @@
  */
 
 import { useCallback, useEffect, useState } from 'react'
-import { useParams } from 'next/navigation'
+import { useParams, useRouter } from 'next/navigation'
 import Link from 'next/link'
-import { ArrowLeft, Mail, Phone, Building2, FolderOpen, MessageSquare } from 'lucide-react'
+import { ArrowLeft, Mail, Phone, Building2, FolderOpen, MessageSquare, Trash2 } from 'lucide-react'
 import { createClient } from '@/lib/supabase/client'
 import { formatDate } from '@/lib/format'
 import { TYPE_BIEN_LABELS, type TypeBien } from '@/lib/estimation/types'
@@ -21,6 +21,7 @@ interface DossierLie extends BienRow { role: string | null }
 
 export default function FicheContactPage() {
   const params = useParams()
+  const router = useRouter()
   const id = String(params.id)
   const [contact, setContact] = useState<ContactRow | null>(null)
   const [dossiers, setDossiers] = useState<DossierLie[]>([])
@@ -50,6 +51,12 @@ export default function FicheContactPage() {
 
   useEffect(() => { charger() }, [charger])
 
+  const supprimer = async () => {
+    if (!window.confirm('Supprimer définitivement ce contact du répertoire ?')) return
+    await supabase.from('contacts').delete().eq('id', id)
+    router.push('/app/contacts')
+  }
+
   if (charge) return <div className="min-h-screen bg-brand-dark flex items-center justify-center"><p className="font-body text-brand-muted">Chargement…</p></div>
   if (!contact) return <div className="min-h-screen bg-brand-dark flex items-center justify-center"><p className="font-body text-brand-muted">Contact introuvable.</p></div>
 
@@ -62,6 +69,7 @@ export default function FicheContactPage() {
           {contact.type && ROLE_LABELS[contact.type] && (
             <span className="shrink-0 font-body text-[10px] uppercase tracking-wider border border-brand-gold/40 text-brand-goldLight px-2 py-0.5">{ROLE_LABELS[contact.type]}</span>
           )}
+          <button onClick={supprimer} className="ml-auto shrink-0 text-brand-muted hover:text-red-400 transition-colors p-1" title="Supprimer ce contact"><Trash2 size={16} /></button>
         </div>
       </header>
 
