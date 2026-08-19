@@ -120,6 +120,41 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: `Classement impossible : ${(e as Error).message}` }, { status: 500 })
   }
 
+  // 5bis. Pièces jointes → documents du dossier. On saute les images « inline »
+  //       (signatures, logos) et on importe les vrais fichiers (PDF, etc.).
+  const pjs = Array.isArray(d.attachments) ? (d.attachments as Array<Record<string, unknown>>) : []
+  if (bienId && pjs.length && emailId) {
+    const eid: string = emailId
+    let nb = 0
+    for (const a of pjs) {
+      try {
+        const attId = String(a.id ?? '')
+        const disposition = String(a.content_disposition ?? '')
+        const ctype = String(a.content_type ?? '')
+        if (!attId || (disposition === 'inline' && ctype.startsWith('image/'))) continue
+        const { data: att } = await resend.emails.receiving.attachments.get({ emailId: eid, id: attId })
+        const url = (att as { download_url?: string } | null)?.download_url
+        if (!url) continue
+        const resp = await fetch(url)
+        if (!resp.ok) continue
+        const buff = Buffer.from(await resp.arrayBuffer())
+        const nomFichier = String(a.filename ?? (att as { filename?: string } | null)?.filename ?? `piece-${attId}`)
+        const propre = nomFichier.replace(/[^a-zA-Z0-9.\-_]/g, '_')
+        const path = `${courtierId}/${bienId}/${Date.now()}-${propre}`
+        const { error: up } = await supa.storage.from('documents').upload(path, buff, { contentType: ctype || 'application/octet-stream', upsert: false })
+        if (up) continue
+        await supa.from('documents').insert({
+          courtier_id: courtierId, bien_id: bienId, type: 'autre', nom: nomFichier,
+          statut: 'recu', storage_path: path, date_reception: new Date().toISOString().slice(0, 10),
+        })
+        nb++
+      } catch {
+        // Une pièce qui échoue ne bloque pas le reste.
+      }
+    }
+    if (nb) actions.push(`${nb} document(s) importé(s) depuis le mail`)
+  }
+
   // 6. Accusé de classement au courtier — seulement s'il y a eu quelque chose à
   //    classer (un mail sans action ne consomme aucun envoi), et désactivable
   //    entièrement via INBOUND_CONFIRM=off pour préserver le quota d'envoi.
