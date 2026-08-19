@@ -106,21 +106,25 @@ export async function GET(req: Request) {
   const compte = priorites.length + docsParBien.size + silencieux.length
 
   const MAX = 6
+  const court = (s: string, n = 90) => (s.length > n ? `${s.slice(0, n - 1).trim()}…` : s)
+  // Cartes en TABLEAU (le seul rendu fiable dans Outlook/Gmail).
   const carte = (p: Prio) =>
-    `<a href="${p.url}" style="display:block;text-decoration:none;margin:8px 0;padding:12px 14px;background:#fafafa;border:1px solid #eee;border-left:3px solid ${p.retard ? '#c0392b' : '#C9A96E'};border-radius:6px;">` +
-    `<span style="display:block;color:#0C0F14;font-size:15px;font-weight:600;line-height:1.35;">${p.titre}</span>` +
-    `<span style="display:block;margin-top:2px;color:#888;font-size:12px;">${p.retard ? '<span style="color:#c0392b;font-weight:600;">En retard</span> · ' : ''}${p.sous ?? 'non rattaché'}</span></a>`
+    `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-collapse:separate;margin:0 0 8px;"><tr>` +
+    `<td style="padding:11px 14px;background:#fafafa;border:1px solid #eee;border-left:3px solid ${p.retard ? '#c0392b' : '#C9A96E'};border-radius:6px;">` +
+    `<div style="margin:0 0 3px;line-height:1.35;"><a href="${p.url}" style="color:#0C0F14;font-size:15px;font-weight:600;text-decoration:none;">${court(p.titre)}</a></div>` +
+    `<div style="color:#888;font-size:12px;">${p.retard ? '<span style="color:#c0392b;font-weight:600;">En retard</span> · ' : ''}${p.sous ?? 'non rattaché'}</div>` +
+    `</td></tr></table>`
   const reste = priorites.length > MAX
-    ? `<p style="margin:8px 0 0;font-size:13px;color:#999;">+ ${priorites.length - MAX} autre(s) à faire — <a href="${APP}" style="color:#C9A96E;">voir l'app</a></p>`
+    ? `<div style="margin:8px 0 0;font-size:13px;color:#999;">+ ${priorites.length - MAX} autre(s) à faire — <a href="${APP}" style="color:#C9A96E;">voir l'app</a></div>`
     : ''
 
   const petit = (titre: string, lignes: string[]) =>
-    lignes.length ? `<p style="margin:22px 0 6px;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:#999;">${titre}</p>${lignes.join('')}` : ''
+    lignes.length ? `<div style="margin:24px 0 8px;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:#999;">${titre}</div>${lignes.join('')}` : ''
   const docLignes = Array.from(docsParBien.entries()).slice(0, 4).map(([id, e]) =>
-    `<a href="${href(id)}" style="display:block;text-decoration:none;margin:3px 0;color:#333;font-size:13px;">📄 <strong style="color:#0C0F14;">${e.label}</strong> — ${e.docs.join(', ')}</a>`)
-  if (docsParBien.size > 4) docLignes.push(`<p style="margin:3px 0;font-size:12px;color:#999;">+ ${docsParBien.size - 4} autre(s) dossier(s)…</p>`)
+    `<div style="margin:5px 0;font-size:13px;color:#333;line-height:1.4;"><a href="${href(id)}" style="color:#333;text-decoration:none;">📄 <strong style="color:#0C0F14;">${e.label}</strong> — ${court(e.docs.join(', '), 80)}</a></div>`)
+  if (docsParBien.size > 4) docLignes.push(`<div style="margin:5px 0;font-size:12px;color:#999;">+ ${docsParBien.size - 4} autre(s) dossier(s)…</div>`)
   const silLignes = silencieux.slice(0, 3).map((s) =>
-    `<a href="${href(s.id)}" style="display:block;text-decoration:none;margin:3px 0;color:#333;font-size:13px;">💤 ${s.bien} <span style="color:#999;">· ${s.jours} j sans nouvelle</span></a>`)
+    `<div style="margin:5px 0;font-size:13px;color:#333;"><a href="${href(s.id)}" style="color:#333;text-decoration:none;">💤 ${s.bien} <span style="color:#999;">· ${s.jours} j sans nouvelle</span></a></div>`)
 
   const essentiel = priorites.length
     ? `<p style="margin:2px 0 8px;font-size:12px;letter-spacing:1px;text-transform:uppercase;color:#C9A96E;font-weight:700;">⚡ L'essentiel aujourd'hui</p>${priorites.slice(0, MAX).map(carte).join('')}${reste}`
