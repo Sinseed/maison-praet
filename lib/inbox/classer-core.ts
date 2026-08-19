@@ -30,7 +30,21 @@ export interface Plan {
   tache_echeance: string
   document_nom: string
   document_statut: string
+  // — Personnes détectées (répertoire de contacts) —
   contacts: PlanContact[]
+  // — Prospect acquéreur détecté dans le texte (voir appliquerPlan) —
+  prospect_societe: string
+  prospect_prenom: string
+  prospect_nom: string
+  prospect_email: string
+  prospect_telephone: string
+  prospect_recherche: string
+  prospect_communes: string
+  prospect_typologies: string
+  prospect_budget: string
+  // — Offre d'achat détectée (voir appliquerPlan) —
+  offre_montant: string
+  offre_notes: string
 }
 
 const ROLES_CONTACT = ['vendeur', 'acquereur', 'notaire', 'courtier_tiers', 'artisan', 'autre']
@@ -45,6 +59,10 @@ export interface BienContexte {
 export const PLAN_KEYS = [
   'resume', 'bien_id', 'nouveau_bien_type', 'nouveau_bien_commune', 'nouveau_bien_adresse',
   'echange', 'canal', 'tache', 'tache_echeance', 'document_nom', 'document_statut',
+  'prospect_societe', 'prospect_prenom', 'prospect_nom', 'prospect_email',
+  'prospect_telephone', 'prospect_recherche', 'prospect_communes',
+  'prospect_typologies', 'prospect_budget',
+  'offre_montant', 'offre_notes',
 ] as const
 
 const nettoyerContacts = (v: unknown): PlanContact[] => {
@@ -65,6 +83,9 @@ const nettoyerContacts = (v: unknown): PlanContact[] => {
     .slice(0, 10)
 }
 
+/** Typologies acceptées par l'enum `type_bien` de la base. */
+const TYPOLOGIES_VALIDES = ['villa', 'ppe', 'immeuble', 'terrain'] as const
+
 const planParDefaut = (p: Partial<Plan> & { contacts?: unknown }): Plan => ({
   resume: p.resume ?? '',
   bien_id: p.bien_id ?? '',
@@ -78,7 +99,27 @@ const planParDefaut = (p: Partial<Plan> & { contacts?: unknown }): Plan => ({
   document_nom: p.document_nom ?? '',
   document_statut: p.document_statut ?? '',
   contacts: nettoyerContacts(p.contacts),
+  prospect_societe: p.prospect_societe ?? '',
+  prospect_prenom: p.prospect_prenom ?? '',
+  prospect_nom: p.prospect_nom ?? '',
+  prospect_email: p.prospect_email ?? '',
+  prospect_telephone: p.prospect_telephone ?? '',
+  prospect_recherche: p.prospect_recherche ?? '',
+  prospect_communes: p.prospect_communes ?? '',
+  prospect_typologies: p.prospect_typologies ?? '',
+  prospect_budget: p.prospect_budget ?? '',
+  offre_montant: p.offre_montant ?? '',
+  offre_notes: p.offre_notes ?? '',
 })
+
+/** « Lausanne, Gland » → ['Lausanne', 'Gland'] */
+const liste = (v: string) => v.split(',').map((s) => s.trim()).filter(Boolean)
+
+/** « CHF 1'200'000.- » → 1200000 (null si illisible) */
+const montant = (v: string) => {
+  const n = parseFloat(v.replace(/[^0-9.]/g, ''))
+  return Number.isFinite(n) && n > 0 ? n : null
+}
 
 /** Claude lit le texte + la liste des dossiers et propose un classement. */
 export async function analyserTexte(
@@ -101,6 +142,23 @@ export async function analyserTexte(
       "et nouveau_bien_commune, la commune étant celle du bien concerné). Extrais, s'il " +
       "y a lieu : un échange à consigner, une tâche de suivi, un changement de statut de document " +
       "(ex. CECB demandé/reçu). Laisse vides (chaîne vide) les champs non pertinents.\n\n" +
+      "PROSPECT ACQUÉREUR — important pour le courtier : si le texte révèle une personne ou une société qui " +
+      "CHERCHE À ACHETER (investisseur, particulier en recherche, régie mandatée pour acquérir), remplis les " +
+      "champs prospect_* afin de l'enregistrer au fichier acquéreurs. Extrais son identité (prospect_societe " +
+      "pour une société, prospect_prenom/prospect_nom pour une personne), ses coordonnées, ce qu'elle cherche " +
+      "en une phrase (prospect_recherche), les communes visées (prospect_communes, séparées par des virgules — " +
+      "uniquement des noms de communes, jamais des régions ni « environs »), les typologies " +
+      "(prospect_typologies parmi villa, ppe, immeuble, terrain, séparées par des virgules) et le budget " +
+      "éventuel (prospect_budget, en chiffres). Ne remplis ces champs QUE pour un acheteur : un propriétaire " +
+      "qui veut VENDRE n'est pas un prospect acquéreur (dans ce cas, propose plutôt un dossier de bien). " +
+      "Laisse tous les champs prospect_* vides s'il n'y a aucun acheteur identifiable.\n\n" +
+      "OFFRE D'ACHAT — si le texte formule une proposition d'achat chiffrée sur un bien précis (« je vous " +
+      "propose CHF 620'000 », « mon offre est de… »), remplis offre_montant avec le montant en chiffres " +
+      "(sans devise ni séparateur : 620000). Choisis le montant qui se rapporte au dossier retenu (bien_id) : " +
+      "si l'acheteur propose plusieurs variantes (un bien seul, un autre, ou un lot), retiens celle qui " +
+      "correspond au bien classé et récapitule les autres variantes ainsi que le contexte (offre révisée, " +
+      "préférence exprimée, conditions) dans offre_notes. Laisse offre_montant vide s'il n'y a pas de " +
+      "proposition chiffrée ferme (une simple estimation ou un prix affiché n'est pas une offre).\n\n" +
       `Nous sommes le ${opts.aujourdhui}. IMPORTANT : si le texte mentionne une date limite ou une échéance ` +
       "(« pour le 2 août », « d'ici vendredi », « avant la fin du mois »…), déduis la date correspondante et " +
       "mets-la dans tache_echeance au format AAAA-MM-JJ (année à venir si le mois est déjà passé). Crée alors " +
@@ -114,7 +172,8 @@ export async function analyserTexte(
       '. Toutes les valeurs sont des chaînes SAUF `contacts`, qui est un tableau d\'objets ' +
       '{prenom, nom, role, email, telephone} (tableau vide si aucune personne).' +
       ` Contraintes : nouveau_bien_type ∈ ["","villa","ppe","immeuble","terrain"] ; ` +
-      `canal ∈ ["note","email","appel","notaire","autre"] ; document_statut ∈ ["","demande","recu"].`,
+      `canal ∈ ["note","email","appel","notaire","autre"] ; document_statut ∈ ["","demande","recu"] ; ` +
+      `prospect_typologies : sous-ensemble de ["villa","ppe","immeuble","terrain"] séparé par des virgules.`,
     messages: [
       { role: 'user', content: `Dossiers existants :\n${listeBiens}\n\nÉlément à classer :\n"""${opts.texte}"""` },
     ],
@@ -161,6 +220,107 @@ export async function appliquerPlan(
     const echeance = dateOk ? new Date(`${plan.tache_echeance}T08:00:00`).toISOString() : new Date().toISOString()
     await supabase.from('taches').insert({ ...proprio, titre: plan.tache, bien_id: bienId, echeance })
     actions.push(`Tâche créée : ${plan.tache}${dateOk ? ` (rappel le ${plan.tache_echeance})` : ''}`)
+  }
+
+  // ── Prospect acquéreur : contact + fiche acquéreur (avec ses critères) ────
+  // Sans cela, un acheteur repéré dans un mail resterait une simple note dans
+  // l'historique d'un dossier : il ne remonterait jamais dans le matching.
+  const identite = plan.prospect_societe || plan.prospect_nom || plan.prospect_prenom
+  let acquereurId: string | null = null
+  if (identite) {
+    const designation = plan.prospect_societe || [plan.prospect_prenom, plan.prospect_nom].filter(Boolean).join(' ')
+
+    // Dédoublonnage : un même acheteur peut écrire plusieurs fois. On cherche
+    // d'abord sur l'e-mail (identifiant le plus fiable), sinon sur la société.
+    let requete = supabase.from('contacts').select('id')
+    if (opts.courtierId) requete = requete.eq('courtier_id', opts.courtierId)
+    requete = plan.prospect_email
+      ? requete.eq('email', plan.prospect_email)
+      : requete.eq('societe', plan.prospect_societe || '~introuvable~')
+    const { data: dejaVus } = await requete.limit(1)
+    const existant = (dejaVus as { id: string }[] | null)?.[0] ?? null
+
+    let contactId = existant?.id ?? null
+    if (!contactId) {
+      const { data: contact, error } = await supabase
+        .from('contacts')
+        .insert({
+          ...proprio,
+          type: 'acquereur',
+          societe: plan.prospect_societe || null,
+          prenom: plan.prospect_prenom || null,
+          nom: plan.prospect_nom || null,
+          email: plan.prospect_email || null,
+          telephone: plan.prospect_telephone || null,
+          notes: plan.prospect_recherche || null,
+        })
+        .select()
+        .single()
+      if (error) throw new Error(`Création du contact impossible : ${error.message}`)
+      contactId = (contact as { id: string }).id
+    }
+
+    // Une fiche acquéreur par contact : on ne duplique pas les critères déjà
+    // saisis (le courtier peut les avoir affinés à la main).
+    const { data: fiches } = await supabase.from('acquereurs').select('id').eq('contact_id', contactId).limit(1)
+    const ficheExistante = (fiches as { id: string }[] | null)?.[0] ?? null
+    if (ficheExistante) {
+      acquereurId = ficheExistante.id
+      actions.push(`Prospect déjà au fichier : ${designation} (critères inchangés)`)
+    } else {
+      const typologies = liste(plan.prospect_typologies).filter((t): t is (typeof TYPOLOGIES_VALIDES)[number] =>
+        (TYPOLOGIES_VALIDES as readonly string[]).includes(t),
+      )
+      const { data: fiche, error } = await supabase.from('acquereurs').insert({
+        ...proprio,
+        contact_id: contactId,
+        communes_recherchees: liste(plan.prospect_communes),
+        typologies,
+        budget_valide: montant(plan.prospect_budget),
+      })
+        .select('id')
+        .single()
+      if (error) throw new Error(`Création de l'acquéreur impossible : ${error.message}`)
+      acquereurId = (fiche as { id: string }).id
+      actions.push(`Prospect ajouté au fichier acquéreurs : ${designation}`)
+    }
+  }
+
+  // ── Offre d'achat : ligne structurée dans `offres` (montant, statut suivable) ─
+  // Une offre chiffrée ne doit pas rester une simple note : elle porte la
+  // négociation et, à terme, la commission. On la rattache au dossier (obligatoire)
+  // et, si on a pu identifier l'acheteur, à sa fiche acquéreur. Le garde-fou
+  // `acquereur_non_qualifie` reste vrai : une offre reçue par mail n'a pas été
+  // validée par une analyse de solvabilité — au courtier de la lever.
+  const offreMontant = montant(plan.offre_montant)
+  if (offreMontant && bienId) {
+    // Anti-doublon : le transfert d'email s'applique SANS relecture. Reclasser
+    // deux fois le même mail (ou un rappel du même acheteur) ne doit pas empiler
+    // deux fois la même offre. On considère qu'une offre identique — même dossier,
+    // même acquéreur, même montant — est un doublon et on ne réécrit pas. Une
+    // vraie nouvelle offre au même montant se saisit à la main depuis le dossier
+    // (le formulaire, lui, ne déduplique pas).
+    let doublonQ = supabase.from('offres').select('id').eq('bien_id', bienId).eq('montant', offreMontant)
+    if (opts.courtierId) doublonQ = doublonQ.eq('courtier_id', opts.courtierId)
+    doublonQ = acquereurId ? doublonQ.eq('acquereur_id', acquereurId) : doublonQ.is('acquereur_id', null)
+    const { data: doublons } = await doublonQ.limit(1)
+
+    if ((doublons as { id: string }[] | null)?.length) {
+      actions.push(`Offre déjà enregistrée (doublon ignoré) : CHF ${offreMontant.toLocaleString('de-CH')}.-`)
+    } else {
+      const { error } = await supabase.from('offres').insert({
+        ...proprio,
+        bien_id: bienId,
+        acquereur_id: acquereurId,
+        montant: offreMontant,
+        notes: plan.offre_notes || null,
+        acquereur_non_qualifie: true,
+      })
+      if (error) throw new Error(`Enregistrement de l'offre impossible : ${error.message}`)
+      actions.push(`Offre enregistrée : CHF ${offreMontant.toLocaleString('de-CH')}.-`)
+    }
+  } else if (offreMontant && !bienId) {
+    actions.push("Offre détectée mais non enregistrée : rattache-la à un dossier.")
   }
 
   if (plan.document_nom && plan.document_statut && bienId) {

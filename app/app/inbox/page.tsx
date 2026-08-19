@@ -8,7 +8,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import { ArrowLeft, Sparkles, Check, X } from 'lucide-react'
+import { ArrowLeft, Sparkles, Check, X, PenLine, Copy } from 'lucide-react'
 import { TYPE_BIEN_LABELS, type TypeBien } from '@/lib/estimation/types'
 
 interface Plan {
@@ -24,6 +24,17 @@ interface Plan {
   document_nom: string
   document_statut: string
   contacts: { prenom: string; nom: string; role: string; email: string; telephone: string }[]
+  prospect_societe: string
+  prospect_prenom: string
+  prospect_nom: string
+  prospect_email: string
+  prospect_telephone: string
+  prospect_recherche: string
+  prospect_communes: string
+  prospect_typologies: string
+  prospect_budget: string
+  offre_montant: string
+  offre_notes: string
 }
 
 interface BienBref {
@@ -49,8 +60,19 @@ export default function InboxPage() {
   const [resultat, setResultat] = useState<string[] | null>(null)
   const [bienId, setBienId] = useState<string | null>(null)
   const [erreur, setErreur] = useState<string | null>(null)
+  const [redige, setRedige] = useState(false)
+  const [reponse, setReponse] = useState<string | null>(null)
+  const [copie, setCopie] = useState(false)
 
   const maj = (patch: Partial<Plan>) => setPlan((p) => (p ? { ...p, ...patch } : p))
+
+  /** Coche / décoche une typologie recherchée par le prospect. */
+  const basculerTypologie = (t: TypeBien) => {
+    if (!plan) return
+    const actuelles = plan.prospect_typologies.split(',').map((s) => s.trim()).filter(Boolean)
+    const suivantes = actuelles.includes(t) ? actuelles.filter((x) => x !== t) : [...actuelles, t]
+    maj({ prospect_typologies: suivantes.join(', ') })
+  }
 
   const analyser = async () => {
     if (!texte.trim()) return
@@ -78,6 +100,42 @@ export default function InboxPage() {
       setErreur('Analyse impossible. Réessayez.')
     } finally {
       setAnalyse(false)
+    }
+  }
+
+  const rediger = async () => {
+    if (!texte.trim()) return
+    setRedige(true)
+    setErreur(null)
+    setReponse(null)
+    setCopie(false)
+    try {
+      const res = await fetch('/api/app/repondre', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ texte }),
+      })
+      const data = await res.json()
+      if (!res.ok) {
+        setErreur(data.error ?? 'Rédaction impossible.')
+        return
+      }
+      setReponse(data.reponse as string)
+    } catch {
+      setErreur('Rédaction impossible. Réessaie.')
+    } finally {
+      setRedige(false)
+    }
+  }
+
+  const copierReponse = async () => {
+    if (!reponse) return
+    try {
+      await navigator.clipboard.writeText(reponse)
+      setCopie(true)
+      setTimeout(() => setCopie(false), 2000)
+    } catch {
+      setErreur('Copie impossible : sélectionne le texte et copie-le à la main.')
     }
   }
 
@@ -153,15 +211,51 @@ export default function InboxPage() {
           className="w-full bg-brand-card border border-brand-border px-4 py-3 font-body text-sm text-white focus:outline-none focus:border-brand-gold/50"
         />
 
-        <button
-          onClick={analyser}
-          disabled={analyse || !texte.trim()}
-          className="btn-gold inline-flex items-center gap-2 bg-brand-gold text-brand-dark px-5 py-2.5 font-body text-xs font-medium tracking-widest uppercase hover:bg-brand-goldLight transition-colors disabled:opacity-60"
-        >
-          <Sparkles size={15} /> {analyse ? 'Analyse…' : 'Analyser'}
-        </button>
+        <div className="flex flex-wrap items-center gap-2">
+          <button
+            onClick={analyser}
+            disabled={analyse || !texte.trim()}
+            className="btn-gold inline-flex items-center gap-2 bg-brand-gold text-brand-dark px-5 py-2.5 font-body text-xs font-medium tracking-widest uppercase hover:bg-brand-goldLight transition-colors disabled:opacity-60"
+          >
+            <Sparkles size={15} /> {analyse ? 'Analyse…' : 'Analyser'}
+          </button>
+          <button
+            onClick={rediger}
+            disabled={redige || !texte.trim()}
+            title="Rédiger un brouillon de réponse à ce mail"
+            className="inline-flex items-center gap-2 border border-brand-gold/40 text-brand-goldLight px-5 py-2.5 font-body text-xs font-medium tracking-widest uppercase hover:border-brand-gold hover:text-brand-gold transition-colors disabled:opacity-60"
+          >
+            <PenLine size={15} /> {redige ? 'Rédaction…' : 'Proposer une réponse'}
+          </button>
+        </div>
 
         {erreur && <p className="font-body text-red-400 text-sm">{erreur}</p>}
+
+        {/* Brouillon de réponse — à relire et corriger, rien n'est envoyé */}
+        {reponse !== null && (
+          <div className="border border-brand-gold/40 bg-brand-gold/5 p-5 space-y-3">
+            <div className="flex items-center justify-between gap-2">
+              <p className="font-display text-lg text-white">Brouillon de réponse</p>
+              <div className="flex items-center gap-2">
+                <button onClick={copierReponse} className="inline-flex items-center gap-1.5 border border-brand-border px-3 py-1.5 font-body text-xs text-brand-text hover:text-brand-gold hover:border-brand-gold/40 transition-colors">
+                  {copie ? <><Check size={13} className="text-emerald-400" /> Copié</> : <><Copy size={13} /> Copier</>}
+                </button>
+                <button onClick={() => setReponse(null)} className="inline-flex items-center gap-1.5 border border-brand-border px-3 py-1.5 font-body text-xs text-brand-muted hover:text-white transition-colors">
+                  <X size={13} /> Fermer
+                </button>
+              </div>
+            </div>
+            <textarea
+              value={reponse}
+              onChange={(e) => setReponse(e.target.value)}
+              rows={14}
+              className="w-full bg-brand-card border border-brand-border px-4 py-3 font-body text-sm text-white leading-relaxed focus:outline-none focus:border-brand-gold/50 whitespace-pre-wrap"
+            />
+            <p className="font-body text-[11px] text-brand-muted/70 italic">
+              Brouillon à relire et ajuster avant envoi. Rien n&apos;est envoyé depuis l&apos;app : copie le texte dans ta messagerie.
+            </p>
+          </div>
+        )}
 
         {/* Proposition — modifiable */}
         {plan && (
@@ -252,7 +346,7 @@ export default function InboxPage() {
               )}
             </div>
 
-            {/* Contacts détectés */}
+            {/* Contacts détectés — ajoutés au répertoire et reliés au dossier */}
             {plan.contacts?.length > 0 && (
               <div>
                 <span className={label}>👤 Personnes détectées</span>
@@ -269,6 +363,55 @@ export default function InboxPage() {
                 <p className="font-body text-[11px] text-brand-muted/70 mt-1">Ces personnes seront ajoutées à ton répertoire et reliées au dossier.</p>
               </div>
             )}
+
+            {/* Prospect acquéreur — entre au fichier et devient « matchable » */}
+            <div>
+              <span className={label}>
+                👤 Prospect acquéreur
+                {(plan.prospect_societe || plan.prospect_nom || plan.prospect_prenom) && (
+                  <span className="text-brand-gold normal-case tracking-normal"> · acheteur détecté</span>
+                )}
+              </span>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
+                <input value={plan.prospect_societe} onChange={(e) => maj({ prospect_societe: e.target.value })} placeholder="Société (si pro)" className={champ} />
+                <input value={plan.prospect_prenom} onChange={(e) => maj({ prospect_prenom: e.target.value })} placeholder="Prénom" className={champ} />
+                <input value={plan.prospect_nom} onChange={(e) => maj({ prospect_nom: e.target.value })} placeholder="Nom" className={champ} />
+                <input value={plan.prospect_email} onChange={(e) => maj({ prospect_email: e.target.value })} placeholder="E-mail" className={champ} />
+                <input value={plan.prospect_telephone} onChange={(e) => maj({ prospect_telephone: e.target.value })} placeholder="Téléphone" className={champ} />
+                <input value={plan.prospect_budget} onChange={(e) => maj({ prospect_budget: e.target.value })} placeholder="Budget (CHF)" className={champ} />
+                <input value={plan.prospect_recherche} onChange={(e) => maj({ prospect_recherche: e.target.value })} placeholder="Ce qu'il cherche (ex. biens à rénover)" className={`${champ} sm:col-span-3`} />
+                <input value={plan.prospect_communes} onChange={(e) => maj({ prospect_communes: e.target.value })} placeholder="Communes visées, séparées par des virgules" className={`${champ} sm:col-span-3`} />
+              </div>
+              <div className="flex flex-wrap items-center gap-x-4 gap-y-1.5 mt-2">
+                <span className="font-body text-[11px] text-brand-muted">Typologies :</span>
+                {TYPES.map((t) => {
+                  const actif = plan.prospect_typologies.split(',').map((s) => s.trim()).includes(t)
+                  return (
+                    <label key={t} className="inline-flex items-center gap-1.5 cursor-pointer">
+                      <input type="checkbox" checked={actif} onChange={() => basculerTypologie(t)} className="accent-brand-gold" />
+                      <span className={`font-body text-xs ${actif ? 'text-white' : 'text-brand-muted'}`}>{TYPE_BIEN_LABELS[t]}</span>
+                    </label>
+                  )
+                })}
+              </div>
+              <p className="font-body text-[11px] text-brand-muted/70 mt-1.5">
+                Renseigné, le prospect entre au fichier acquéreurs et sera proposé automatiquement sur les dossiers correspondants.
+                Le rapprochement se fait sur des <strong>noms de communes exacts</strong> — pas de région ni d&apos;« environs ».
+              </p>
+            </div>
+
+            {/* Offre d'achat — devient une ligne suivable dans le dossier */}
+            <div>
+              <span className={label}>
+                💰 Offre reçue
+                {plan.offre_montant && <span className="text-brand-gold normal-case tracking-normal"> · offre détectée</span>}
+              </span>
+              <input value={plan.offre_montant} onChange={(e) => maj({ offre_montant: e.target.value })} placeholder="Montant de l'offre en CHF (ex. 620000)" inputMode="numeric" className={champ} />
+              <input value={plan.offre_notes} onChange={(e) => maj({ offre_notes: e.target.value })} placeholder="Contexte de l'offre (ex. offre révisée, variantes proposées, conditions)" className={`${champ} mt-2`} />
+              {plan.offre_montant && dest === DEST_AUCUN && (
+                <p className="font-body text-[11px] text-brand-muted/70 italic mt-1">L&apos;offre ne sera enregistrée que si elle est rattachée à un dossier.</p>
+              )}
+            </div>
 
             <div className="flex items-center gap-2 pt-1">
               <button onClick={appliquer} disabled={applique} className="btn-gold inline-flex items-center gap-2 bg-brand-gold text-brand-dark px-4 py-2 font-body text-xs font-medium uppercase tracking-wider hover:bg-brand-goldLight transition-colors disabled:opacity-60">

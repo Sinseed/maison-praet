@@ -3,7 +3,7 @@ import { useState, useMemo } from 'react'
 import dynamic from 'next/dynamic'
 import Link from 'next/link'
 import { ArrowRight, MapPin, Building2, Home, Building, Layers, Trees, Mountain } from 'lucide-react'
-import { MANDATS } from '../data'
+import { MANDATS, CHIFFRES } from '../data'
 import Eyebrow from '../components/Eyebrow'
 import { COMMUNES_COORDS } from '../communes-data'
 import Reveal from '../components/Reveal'
@@ -34,38 +34,19 @@ function Hero() {
 }
 
 // ─── STATS AGRÉGÉES ─────────────────────────────────────────────────────────
-// Médiane forfaitaire utilisée pour estimer le volume des transactions historiques
-// dont le prix exact reste confidentiel. Volontairement prudente (en dessous de
-// la médiane réelle du marché vaudois 2020-2023) pour rester défensive.
-const MEDIANE_HISTORIQUE = 900_000
+// Les chiffres viennent de CHIFFRES (app/data.ts), source unique du site : les
+// recalculer ici ferait diverger le track record du reste des pages.
 
 function Stats() {
-  const stats = useMemo(() => {
-    // Toutes les transactions documentées : mandats actuels (avec photos) + historique (sans photos mais avec annee_vente)
-    const valides = MANDATS.filter(m => m.photos.length > 0 || m.annee_vente)
-    // Compteur de transactions : 1 par mandat, indépendamment du nombre de lots vendus
-    // (mode "mandats décrochés", plus modeste et lisible que "lots individuels vendus")
-    const totalTransactions = valides.length
-    // Volume cumulé : prix réels + estimation forfaitaire * nb_lots pour les sans-prix
-    // (mode "actes notariés générés", qui reflète la réalité économique des promotions)
-    const volume = valides.reduce((sum, m) => {
-      const n = parseInt(m.prix.replace(/'/g, '').replace(/[^\d]/g, ''))
-      if (!isNaN(n) && n > 0) return sum + n
-      return sum + ((m.nb_lots || 1) * MEDIANE_HISTORIQUE)
-    }, 0)
-    const communes = new Set(valides.map(m => m.lieu)).size
-    return { total: totalTransactions, volume, communes }
-  }, [])
-
   const formatChf = (n: number) => {
     if (n >= 1_000_000) return `${(n / 1_000_000).toFixed(1)}M`
     return `${(n / 1000).toFixed(0)}K`
   }
 
   const items = [
-    { label: 'Mandats documentés', value: `${stats.total}`, sub: 'Plus de 90 transactions au total depuis 2020' },
-    { label: 'Volume cumulé sous mandat', value: `CHF ${formatChf(stats.volume)}`, sub: 'Actes notariés générés' },
-    { label: 'Communes traitées', value: `${stats.communes}`, sub: 'Arc lémanique et Vaud' },
+    { label: 'Mandats documentés', value: `${CHIFFRES.mandats}`, sub: `${CHIFFRES.ventes} ventes signées depuis 2020` },
+    { label: 'Volume cumulé sous mandat', value: `CHF ${formatChf(CHIFFRES.volume)}`, sub: 'Actes notariés générés' },
+    { label: 'Communes traitées', value: `${CHIFFRES.communes}`, sub: 'Arc lémanique et Vaud' },
   ]
 
   return (

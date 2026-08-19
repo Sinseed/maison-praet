@@ -24,7 +24,7 @@ export default function BiensPage() {
   const [charge, setCharge] = useState(true)
   const [erreur, setErreur] = useState<string | null>(null)
   const [creation, setCreation] = useState(false)
-  const [f, setF] = useState<{ type: TypeBien; commune: string; adresse: string }>({ type: 'villa', commune: '', adresse: '' })
+  const [f, setF] = useState<{ type: TypeBien; commune: string; adresse: string; reference: string }>({ type: 'villa', commune: '', adresse: '', reference: '' })
 
   const charger = useCallback(async () => {
     setErreur(null)
@@ -56,7 +56,7 @@ export default function BiensPage() {
     try {
       const { data: bien, error: eB } = await supabase
         .from('biens')
-        .insert({ type: f.type, commune: f.commune.trim(), adresse: f.adresse.trim() || null, statut: 'prospection' })
+        .insert({ type: f.type, commune: f.commune.trim(), adresse: f.adresse.trim() || null, reference: f.reference.trim() || null, statut: 'prospection' })
         .select()
         .single()
       if (eB || !bien) {
@@ -94,6 +94,10 @@ export default function BiensPage() {
         <div className="border border-brand-border bg-brand-card p-5">
           <h2 className="flex items-center gap-2 font-display text-xl text-white mb-4"><Plus size={18} className="text-brand-gold" /> Nouveau dossier</h2>
           <form onSubmit={creerBien} className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            <label className="block sm:col-span-3">
+              <span className="block font-body text-[11px] tracking-wider uppercase text-brand-muted mb-1">Libellé (optionnel)</span>
+              <input value={f.reference} onChange={(e) => setF({ ...f, reference: e.target.value })} placeholder="Ex. Villa Durussel – Yvonand" className="w-full bg-brand-dark border border-brand-border px-3 py-2 font-body text-sm text-white focus:outline-none focus:border-brand-gold/50" />
+            </label>
             <label className="block">
               <span className="block font-body text-[11px] tracking-wider uppercase text-brand-muted mb-1">Type</span>
               <select value={f.type} onChange={(e) => setF({ ...f, type: e.target.value as TypeBien })} className="w-full bg-brand-dark border border-brand-border px-3 py-2 font-body text-sm text-white focus:outline-none focus:border-brand-gold/50">
@@ -131,8 +135,8 @@ export default function BiensPage() {
                     <FolderOpen size={16} className="text-brand-gold" />
                     <span className="font-body text-[10px] tracking-widest uppercase">{STATUT_BIEN_LABELS[b.statut] ?? b.statut}</span>
                   </div>
-                  <p className="font-display text-xl text-white">{b.commune}</p>
-                  <p className="font-body text-sm text-brand-muted">{TYPE_BIEN_LABELS[b.type as TypeBien] ?? b.type}</p>
+                  <p className="font-display text-xl text-white">{b.reference || b.commune}</p>
+                  <p className="font-body text-sm text-brand-muted">{TYPE_BIEN_LABELS[b.type as TypeBien] ?? b.type}{b.reference ? ` · ${b.commune}` : ''}</p>
                   {b.adresse && <p className="font-body text-xs text-brand-muted mt-1">{b.adresse}</p>}
                   {manquants > 0 && (
                     <p className="mt-3 inline-flex items-center gap-1.5 font-body text-xs text-amber-300">

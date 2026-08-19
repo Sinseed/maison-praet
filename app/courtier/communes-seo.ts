@@ -158,7 +158,7 @@ const COMMUNES_SEO_EXTRA: CommuneSEO[] = [
     marche: "Cossonay-Ville est le chef-lieu du district du Gros-de-Vaud. La commune offre un cadre de vie authentique avec toutes les commodités d'un centre régional. Le marché immobilier y est plus accessible que sur l'arc lémanique, avec une demande stable pour les villas jumelées et les appartements en promotion neuve.",
     prix: "Les appartements PPE neufs entre CHF 6'500.- et CHF 8'500.- par m². Les villas jumelées entre CHF 1'000'000.- et CHF 1'600'000.-.",
     pointFort: "Chef-lieu régional, prix accessibles, cadre authentique",
-    terrain: "J'ai vendu une villa jumelée et j'ai un mandat actif sur un appartement 4.5 pièces neuf à Cossonay. Le Gros-de-Vaud attire des familles qui cherchent l'espace sans s'éloigner de Lausanne."
+    terrain: "J'ai vendu une villa jumelée et un appartement 4.5 pièces neuf à Cossonay. Le Gros-de-Vaud attire des familles qui cherchent l'espace sans s'éloigner de Lausanne."
   },
   {
     slug: 'echallens',

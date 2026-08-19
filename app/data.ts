@@ -93,7 +93,7 @@ export const MANDATS: Mandat[] = [
   },
   {
     id: 29, slug: 'appartement-cossonay-eolia', titre: 'Appartement PPE 4.5 pièces neuf', lieu: 'Cossonay-Ville',
-    prix: "1'195'000", pieces: '4.5', surface: '100 m²', terrain: '-', categorie: 'reserve', datereserve: '2026-07',
+    prix: "1'195'000", pieces: '4.5', surface: '100 m²', terrain: '-', categorie: 'vendu', datevente: '2026-07-30',
     img: '/photos/cossonay-eolia/01-balcon-vue.jpg',
     photos: [
       '/photos/cossonay-eolia/01-balcon-vue.jpg',
@@ -1893,10 +1893,56 @@ La vente à terme est un mécanisme équilibré : le vendeur obtient la certitud
   },
 ]
 
+// ─── STATISTIQUES PUBLIQUES ─────────────────────────────────────────────────
+/**
+ * Chiffres annoncés sur le site, calculés depuis MANDATS afin qu'ils ne se
+ * périment jamais. Toute affirmation chiffrée du site DOIT venir d'ici :
+ * une valeur écrite en dur redevient fausse à la vente suivante.
+ *
+ * Ces chiffres doivent pouvoir être défendus devant un vendeur. En cas de
+ * doute, on retient toujours la lecture la plus prudente.
+ */
+
+/** Mandats documentés : ceux qui ont des photos, ou une année de vente
+ *  (transactions historiques conservées sans détail par confidentialité). */
+const DOCUMENTES = MANDATS.filter((m) => m.photos.length > 0 || m.annee_vente)
+
+/** Actes notariés : une promotion de 7 lots génère 7 actes, pas 1. */
+const actes = (liste: Mandat[]) => liste.reduce((s, m) => s + (m.nb_lots || 1), 0)
+
+/** Médiane prudente pour les transactions dont le prix reste confidentiel. */
+export const MEDIANE_HISTORIQUE = 900_000
+
+export const CHIFFRES = {
+  /** Mandats décrochés (1 par mandat, promotions comprises). */
+  mandats: DOCUMENTES.length,
+  /**
+   * Ventes effectuées, en actes notariés signés.
+   * N'inclut ni les biens en vente, ni les réservations non signées : c'est
+   * le seul chiffre qu'on puisse annoncer comme « vendu ».
+   */
+  ventes: actes(DOCUMENTES.filter((m) => m.categorie === 'vendu')),
+  /** Communes distinctes touchées. */
+  communes: new Set(DOCUMENTES.map((m) => m.lieu)).size,
+  /** Volume cumulé (CHF) : prix réels, médiane prudente à défaut. */
+  volume: DOCUMENTES.reduce((s, m) => {
+    const n = parseInt(m.prix.replace(/'/g, '').replace(/[^\d]/g, ''))
+    return !isNaN(n) && n > 0 ? s + n : s + (m.nb_lots || 1) * MEDIANE_HISTORIQUE
+  }, 0),
+}
+
+/**
+ * Palier de communication : arrondi à la dizaine INFÉRIEURE.
+ * 91 ventes → « plus de 90 ». Le jour de la 100e, le site affiche « plus de
+ * 100 » de lui-même, sans intervention. L'arrondi vers le bas garantit qu'on
+ * ne surestime jamais.
+ */
+export const VENTES_PALIER = Math.floor(CHIFFRES.ventes / 10) * 10
+
 // ─── HELPERS ────────────────────────────────────────────────────────────────
 export const STATS = [
   { value: '6+', label: "Années d'expérience" },
-  { value: '90+', label: 'Transactions réalisées' },
+  { value: `${VENTES_PALIER}+`, label: 'Transactions réalisées' },
   { value: '96.8%', label: 'Vendus au prix estimé' },
 ]
 

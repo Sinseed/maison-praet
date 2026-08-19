@@ -2,13 +2,19 @@
 
 export interface ContactRow {
   id: string
+  type: string
   prenom: string | null
   nom: string | null
+  societe: string | null
   telephone: string | null
   email: string | null
+  adresse: string | null
+  npa_localite: string | null
+  /** nLPD : consentement au traitement des données. */
+  consentement_lpd: boolean
+  /** LBA : identification du cocontractant faite. */
+  lba_identifie: boolean
   notes: string | null
-  type?: string
-  societe?: string | null
   created_at?: string
 }
 
@@ -74,5 +80,18 @@ export interface EchangeRow {
   canal: string
   contenu: string
   date_echange: string
+  created_at: string
+}
+
+export interface OffreRow {
+  id: string
+  bien_id: string
+  acquereur_id: string | null
+  montant: number
+  statut: string // recue | en_negociation | acceptee | refusee | retiree | caduque
+  date_offre: string
+  /** Garde-fou : true si l'acquéreur n'était pas (encore) qualifié à la réception. */
+  acquereur_non_qualifie: boolean
+  notes: string | null
   created_at: string
 }
