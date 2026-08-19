@@ -367,16 +367,16 @@ export async function appliquerPlan(
         const nomComplet = [c.prenom, c.nom].filter(Boolean).join(' ').trim()
         let contactId: string | undefined
 
-        // 1. Retrouver un contact existant (email prioritaire, sinon nom+prénom).
+        // 1. Retrouver un contact existant. Avec un email → UNIQUEMENT sur l'email
+        //    (identifiant fiable). Sans email → rapprochement sur nom ET prénom
+        //    EXACTS — jamais le nom de famille seul : des co-vendeurs le partagent.
         if (c.email) {
           const { data } = await supabase.from('contacts').select('id').ilike('email', c.email).limit(1).maybeSingle()
           contactId = (data as { id?: string } | null)?.id
-        }
-        if (!contactId && c.nom) {
-          const { data } = await supabase.from('contacts').select('id, prenom').ilike('nom', c.nom).limit(5)
+        } else if (c.nom || c.prenom) {
+          const { data } = await supabase.from('contacts').select('id, prenom').ilike('nom', c.nom || '~introuvable~').limit(10)
           const rows = (data as { id: string; prenom: string | null }[] | null) ?? []
-          const exact = rows.find((r) => (r.prenom ?? '').toLowerCase() === c.prenom.toLowerCase())
-          contactId = exact?.id ?? (rows.length === 1 ? rows[0].id : undefined)
+          contactId = rows.find((r) => (r.prenom ?? '').toLowerCase() === (c.prenom || '').toLowerCase())?.id
         }
 
         // 2. Créer si inconnu.
