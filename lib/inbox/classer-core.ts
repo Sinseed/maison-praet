@@ -215,15 +215,33 @@ export async function appliquerPlan(
   }
 
   if (plan.echange) {
-    await supabase.from('echanges').insert({ ...proprio, bien_id: bienId, canal: plan.canal || 'note', contenu: plan.echange })
-    actions.push("Échange ajouté à l'historique")
+    // Anti-doublon : reclasser le même mail ne réécrit pas le même échange.
+    let q = supabase.from('echanges').select('id').eq('contenu', plan.echange)
+    q = bienId ? q.eq('bien_id', bienId) : q.is('bien_id', null)
+    if (opts.courtierId) q = q.eq('courtier_id', opts.courtierId)
+    const { data: dup } = await q.limit(1)
+    if ((dup as { id: string }[] | null)?.length) {
+      actions.push('Échange déjà consigné (doublon ignoré)')
+    } else {
+      await supabase.from('echanges').insert({ ...proprio, bien_id: bienId, canal: plan.canal || 'note', contenu: plan.echange })
+      actions.push("Échange ajouté à l'historique")
+    }
   }
 
   if (plan.tache) {
     const dateOk = /^\d{4}-\d{2}-\d{2}$/.test(plan.tache_echeance || '')
     const echeance = dateOk ? new Date(`${plan.tache_echeance}T08:00:00`).toISOString() : new Date().toISOString()
-    await supabase.from('taches').insert({ ...proprio, titre: plan.tache, bien_id: bienId, echeance })
-    actions.push(`Tâche créée : ${plan.tache}${dateOk ? ` (rappel le ${plan.tache_echeance})` : ''}`)
+    // Anti-doublon : même titre, encore ouverte, sur le même dossier.
+    let q = supabase.from('taches').select('id').eq('titre', plan.tache).in('statut', ['a_faire', 'en_cours'])
+    q = bienId ? q.eq('bien_id', bienId) : q.is('bien_id', null)
+    if (opts.courtierId) q = q.eq('courtier_id', opts.courtierId)
+    const { data: dup } = await q.limit(1)
+    if ((dup as { id: string }[] | null)?.length) {
+      actions.push('Tâche déjà présente (doublon ignoré)')
+    } else {
+      await supabase.from('taches').insert({ ...proprio, titre: plan.tache, bien_id: bienId, echeance })
+      actions.push(`Tâche créée : ${plan.tache}${dateOk ? ` (rappel le ${plan.tache_echeance})` : ''}`)
+    }
   }
 
   // ── Prospect acquéreur : contact + fiche acquéreur (avec ses critères) ────
