@@ -107,49 +107,59 @@ export async function GET(req: Request) {
 
   const MAX = 6
   const court = (s: string, n = 90) => (s.length > n ? `${s.slice(0, n - 1).trim()}…` : s)
-  // Cartes en TABLEAU (le seul rendu fiable dans Outlook/Gmail).
+  const dateAff = dateFr.charAt(0).toUpperCase() + dateFr.slice(1)
+  const tagRetard = '<span style="background:#f7e7e5;color:#b23b32;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.4px;padding:2px 7px;border-radius:11px;">En retard</span>&nbsp;&nbsp;'
+
+  // Lignes aérées, séparateur fin, pastille de priorité — rendu fiable (tableaux).
   const carte = (p: Prio) =>
-    `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-collapse:separate;margin:0 0 8px;"><tr>` +
-    `<td style="padding:11px 14px;background:#fafafa;border:1px solid #eee;border-left:3px solid ${p.retard ? '#c0392b' : '#C9A96E'};border-radius:6px;">` +
-    `<div style="margin:0 0 3px;line-height:1.35;"><a href="${p.url}" style="color:#0C0F14;font-size:15px;font-weight:600;text-decoration:none;">${court(p.titre)}</a></div>` +
-    `<div style="color:#888;font-size:12px;">${p.retard ? '<span style="color:#c0392b;font-weight:600;">En retard</span> · ' : ''}${p.sous ?? 'non rattaché'}</div>` +
+    `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;"><tr>` +
+    `<td width="18" valign="top" style="padding:15px 0;"><div style="width:7px;height:7px;border-radius:50%;background:${p.retard ? '#c0392b' : '#C9A96E'};"></div></td>` +
+    `<td style="padding:15px 0;border-bottom:1px solid #efece5;">` +
+    `<a href="${p.url}" style="color:#14161a;font-size:15px;font-weight:600;line-height:1.45;text-decoration:none;">${court(p.titre)}</a>` +
+    `<div style="margin-top:5px;color:#a59f95;font-size:12px;">${p.retard ? tagRetard : ''}${p.sous ?? 'non rattaché'}</div>` +
     `</td></tr></table>`
   const reste = priorites.length > MAX
-    ? `<div style="margin:8px 0 0;font-size:13px;color:#999;">+ ${priorites.length - MAX} autre(s) à faire — <a href="${APP}" style="color:#C9A96E;">voir l'app</a></div>`
+    ? `<div style="margin:14px 0 0;font-size:13px;color:#a59f95;">+ ${priorites.length - MAX} autre(s) — <a href="${APP}" style="color:#a8823f;text-decoration:none;font-weight:600;">tout voir</a></div>`
     : ''
 
-  const petit = (titre: string, lignes: string[]) =>
-    lignes.length ? `<div style="margin:24px 0 8px;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:#999;">${titre}</div>${lignes.join('')}` : ''
+  const label2 = (t: string) => `<div style="margin:30px 0 4px;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#a8823f;font-weight:700;">${t}</div>`
+  const petit = (titre: string, lignes: string[]) => (lignes.length ? label2(titre) + lignes.join('') : '')
+  const ligneSec = (url: string, contenu: string) =>
+    `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;"><tr><td style="padding:10px 0;border-bottom:1px solid #efece5;">` +
+    `<a href="${url}" style="color:#3a3a38;font-size:13px;line-height:1.5;text-decoration:none;">${contenu}</a></td></tr></table>`
   const docLignes = Array.from(docsParBien.entries()).slice(0, 4).map(([id, e]) =>
-    `<div style="margin:5px 0;font-size:13px;color:#333;line-height:1.4;"><a href="${href(id)}" style="color:#333;text-decoration:none;">📄 <strong style="color:#0C0F14;">${e.label}</strong> — ${court(e.docs.join(', '), 80)}</a></div>`)
-  if (docsParBien.size > 4) docLignes.push(`<div style="margin:5px 0;font-size:12px;color:#999;">+ ${docsParBien.size - 4} autre(s) dossier(s)…</div>`)
+    ligneSec(href(id), `<strong style="color:#14161a;">${e.label}</strong> &nbsp;<span style="color:#a59f95;">${court(e.docs.join(', '), 80)}</span>`))
+  if (docsParBien.size > 4) docLignes.push(`<div style="margin:10px 0 0;font-size:12px;color:#a59f95;">+ ${docsParBien.size - 4} autre(s) dossier(s)…</div>`)
   const silLignes = silencieux.slice(0, 3).map((s) =>
-    `<div style="margin:5px 0;font-size:13px;color:#333;"><a href="${href(s.id)}" style="color:#333;text-decoration:none;">💤 ${s.bien} <span style="color:#999;">· ${s.jours} j sans nouvelle</span></a></div>`)
+    ligneSec(href(s.id), `${s.bien} &nbsp;<span style="color:#a59f95;">${s.jours} j sans nouvelle</span>`))
 
-  const essentiel = priorites.length
-    ? `<p style="margin:2px 0 8px;font-size:12px;letter-spacing:1px;text-transform:uppercase;color:#C9A96E;font-weight:700;">⚡ L'essentiel aujourd'hui</p>${priorites.slice(0, MAX).map(carte).join('')}${reste}`
-    : `<div style="padding:20px;background:#fafafa;border:1px solid #eee;border-radius:8px;text-align:center;color:#555;font-size:15px;">Rien d'urgent ce matin — journée dégagée ☕️</div>`
   const enRetard = priorites.filter((p) => p.retard).length
   const resume = priorites.length ? `${priorites.length} priorité${priorites.length > 1 ? 's' : ''}${enRetard ? ` · ${enRetard} en retard` : ''}` : 'Journée dégagée'
+  const essentiel = priorites.length
+    ? label2("L'essentiel aujourd'hui") + priorites.slice(0, MAX).map(carte).join('') + reste
+    : `<div style="padding:30px 20px;text-align:center;color:#8a857c;font-size:15px;">Rien d'urgent ce matin.<br/><span style="color:#b8b2a8;font-size:13px;">Journée dégagée ☕</span></div>`
 
   const bouton =
-    `<table role="presentation" cellpadding="0" cellspacing="0" style="margin:26px 0 2px;"><tr><td style="background:#C9A96E;border-radius:6px;">` +
-    `<a href="${APP}" style="display:inline-block;padding:13px 24px;color:#0C0F14;font-size:14px;font-weight:600;text-decoration:none;">Ouvrir mon tableau de bord →</a></td></tr></table>`
+    `<table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr><td align="center" style="padding-top:30px;">` +
+    `<table role="presentation" cellpadding="0" cellspacing="0"><tr><td style="background:#C9A96E;border-radius:999px;">` +
+    `<a href="${APP}" style="display:inline-block;padding:14px 32px;color:#14161a;font-size:14px;font-weight:600;letter-spacing:.3px;text-decoration:none;">Ouvrir mon tableau de bord →</a>` +
+    `</td></tr></table></td></tr></table>`
 
-  const html = `<!doctype html><html><body style="margin:0;background:#f4f4f5;padding:24px;font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;">
-    <div style="max-width:600px;margin:0 auto;background:#fff;border-radius:12px;overflow:hidden;border:1px solid #e5e5e5;">
-      <div style="background:#0C0F14;padding:22px 26px;">
-        <p style="margin:0;color:#C9A96E;font-size:11px;letter-spacing:2px;text-transform:uppercase;">CourtierOS · Point du jour</p>
-        <p style="margin:6px 0 0;color:#fff;font-size:20px;">Bonjour Thomas 👋</p>
-        <p style="margin:2px 0 0;color:#9aa0a6;font-size:13px;text-transform:capitalize;">${dateFr} · ${resume}</p>
+  const html = `<!doctype html><html><body style="margin:0;background:#f4f2ee;padding:28px 16px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+    <div style="max-width:600px;margin:0 auto;background:#fff;border-radius:18px;overflow:hidden;border:1px solid #eceae4;box-shadow:0 4px 20px rgba(20,22,26,0.06);">
+      <div style="background:#0C0F14;padding:32px 34px 28px;">
+        <div style="color:#C9A96E;font-size:11px;letter-spacing:3px;text-transform:uppercase;">Point du jour</div>
+        <div style="margin-top:12px;color:#ffffff;font-family:Georgia,'Times New Roman',serif;font-size:27px;font-weight:400;line-height:1.1;">Bonjour Thomas</div>
+        <div style="margin-top:8px;color:#8b8f96;font-size:13px;">${dateAff} · ${resume}</div>
       </div>
-      <div style="padding:20px 26px 26px;">
+      <div style="padding:26px 34px 34px;">
         ${essentiel}
-        ${petit('📄 Documents à obtenir', docLignes)}
-        ${petit(`💤 Dossiers sans nouvelle (${JOURS_SILENCE}j+)`, silLignes)}
+        ${petit('Documents à obtenir', docLignes)}
+        ${petit(`Dossiers sans nouvelle (${JOURS_SILENCE}j+)`, silLignes)}
         ${bouton}
       </div>
     </div>
+    <div style="max-width:600px;margin:16px auto 0;text-align:center;color:#b8b2a8;font-size:11px;">CourtierOS · Maison Praet</div>
   </body></html>`
 
   try {
