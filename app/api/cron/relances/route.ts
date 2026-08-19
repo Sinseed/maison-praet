@@ -56,23 +56,22 @@ export async function GET(req: Request) {
   const tachesDues = ((tData ?? []) as { titre: string; echeance: string | null; bien_id: string | null }[])
     .filter((t) => t.echeance && jour(t.echeance) <= auj)
     .sort((a, b) => (a.echeance! < b.echeance! ? -1 : 1))
-    .map((t) => ({ titre: t.titre, bien: label(t.bien_id), retard: jour(t.echeance!) < auj }))
+    .map((t) => ({ titre: t.titre, bien: label(t.bien_id), bienId: t.bien_id, retard: jour(t.echeance!) < auj }))
 
   // 2. Relances non faites, prévues <= aujourd'hui
   const { data: rData } = await supa.from('relances').select('type, date_prevue, bien_id').eq('faite', false)
   const relancesDues = ((rData ?? []) as { type: string; date_prevue: string; bien_id: string | null }[])
     .filter((r) => jour(r.date_prevue) <= auj)
-    .map((r) => ({ type: r.type, bien: label(r.bien_id) }))
+    .map((r) => ({ type: r.type, bien: label(r.bien_id), bienId: r.bien_id, retard: jour(r.date_prevue) < auj }))
 
   // 3. Documents manquants / demandés sur biens actifs
   const { data: dData } = await supa.from('documents').select('nom, statut, bien_id').in('statut', ['manquant', 'demande'])
-  const docsParBien = new Map<string, string[]>()
+  const docsParBien = new Map<string, { label: string; docs: string[] }>()
   for (const d of (dData ?? []) as { nom: string; statut: string; bien_id: string | null }[]) {
     if (!d.bien_id || !idsActifs.has(d.bien_id)) continue
-    const l = label(d.bien_id) ?? 'Dossier'
-    const arr = docsParBien.get(l) ?? []
-    arr.push(`${d.nom}${d.statut === 'demande' ? ' (demandé)' : ''}`)
-    docsParBien.set(l, arr)
+    const entree = docsParBien.get(d.bien_id) ?? { label: label(d.bien_id) ?? 'Dossier', docs: [] }
+    entree.docs.push(`${d.nom}${d.statut === 'demande' ? ' (demandé)' : ''}`)
+    docsParBien.set(d.bien_id, entree)
   }
 
   // 4. Dossiers silencieux : aucun échange depuis JOURS_SILENCE jours
@@ -89,39 +88,62 @@ export async function GET(req: Request) {
     .filter((b) => { const l = dernier.get(b.id); return !l || new Date(l) < limite })
     .map((b) => {
       const l = dernier.get(b.id) ?? b.created_at
-      return { bien: `${b.commune}${b.adresse ? ` — ${b.adresse}` : ''}`, jours: Math.floor((Date.now() - new Date(l).getTime()) / 86400000) }
+      return { id: b.id, bien: `${b.commune}${b.adresse ? ` — ${b.adresse}` : ''}`, jours: Math.floor((Date.now() - new Date(l).getTime()) / 86400000) }
     })
     .sort((a, b) => b.jours - a.jours)
 
-  const compte = tachesDues.length + relancesDues.length + docsParBien.size + silencieux.length
-
-  // ── Construction de l'email ────────────────────────────────────────────────
+  // ── Construction de l'email : court, priorisé, cliquable ────────────────────
+  const APP = 'https://maisonpraet.ch/app'
+  const href = (bienId: string | null) => (bienId ? `${APP}/biens/${bienId}` : APP)
   const dateFr = new Date().toLocaleDateString('fr-CH', { timeZone: 'Europe/Zurich', weekday: 'long', day: 'numeric', month: 'long' })
-  const li = (s: string) => `<li style="margin:4px 0;line-height:1.5;">${s}</li>`
-  const bloc = (titre: string, items: string[]) =>
-    items.length ? `<h2 style="font-size:15px;color:#0C0F14;margin:22px 0 6px;border-bottom:1px solid #eee;padding-bottom:4px;">${titre}</h2><ul style="margin:0;padding-left:18px;color:#333;font-size:14px;">${items.join('')}</ul>` : ''
 
-  const sections = [
-    bloc('✅ Rappels & tâches du jour', tachesDues.map((t) =>
-      li(`${t.retard ? '<span style="color:#c0392b;font-weight:600;">En retard — </span>' : ''}${t.titre}${t.bien ? ` <span style="color:#999;">· ${t.bien}</span>` : ''}`))),
-    bloc('🔔 Relances prévues', relancesDues.map((r) => li(`${r.type}${r.bien ? ` <span style="color:#999;">· ${r.bien}</span>` : ''}`))),
-    bloc('📄 Documents à obtenir', Array.from(docsParBien.entries()).map(([b, docs]) => li(`<strong>${b}</strong> : ${docs.join(', ')}`))),
-    bloc(`💤 Dossiers sans nouvelle (${JOURS_SILENCE}j+)`, silencieux.map((s) => li(`${s.bien} <span style="color:#999;">· ${s.jours} j</span>`))),
-  ].filter(Boolean).join('')
+  // Priorités = tâches + relances dues, EN RETARD d'abord.
+  type Prio = { titre: string; sous: string | null; retard: boolean; url: string }
+  const priorites: Prio[] = [
+    ...tachesDues.map((t) => ({ titre: t.titre, sous: t.bien, retard: t.retard, url: href(t.bienId) })),
+    ...relancesDues.map((r) => ({ titre: `Relance ${r.type}`, sous: r.bien, retard: r.retard, url: href(r.bienId) })),
+  ].sort((a, b) => Number(b.retard) - Number(a.retard))
+  const compte = priorites.length + docsParBien.size + silencieux.length
 
-  const corps = compte === 0
-    ? `<p style="color:#555;font-size:14px;">Rien d'urgent ce matin — journée dégagée. ☕️</p>`
-    : sections
+  const MAX = 6
+  const carte = (p: Prio) =>
+    `<a href="${p.url}" style="display:block;text-decoration:none;margin:8px 0;padding:12px 14px;background:#fafafa;border:1px solid #eee;border-left:3px solid ${p.retard ? '#c0392b' : '#C9A96E'};border-radius:6px;">` +
+    `<span style="display:block;color:#0C0F14;font-size:15px;font-weight:600;line-height:1.35;">${p.titre}</span>` +
+    `<span style="display:block;margin-top:2px;color:#888;font-size:12px;">${p.retard ? '<span style="color:#c0392b;font-weight:600;">En retard</span> · ' : ''}${p.sous ?? 'non rattaché'}</span></a>`
+  const reste = priorites.length > MAX
+    ? `<p style="margin:8px 0 0;font-size:13px;color:#999;">+ ${priorites.length - MAX} autre(s) à faire — <a href="${APP}" style="color:#C9A96E;">voir l'app</a></p>`
+    : ''
+
+  const petit = (titre: string, lignes: string[]) =>
+    lignes.length ? `<p style="margin:22px 0 6px;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:#999;">${titre}</p>${lignes.join('')}` : ''
+  const docLignes = Array.from(docsParBien.entries()).slice(0, 4).map(([id, e]) =>
+    `<a href="${href(id)}" style="display:block;text-decoration:none;margin:3px 0;color:#333;font-size:13px;">📄 <strong style="color:#0C0F14;">${e.label}</strong> — ${e.docs.join(', ')}</a>`)
+  if (docsParBien.size > 4) docLignes.push(`<p style="margin:3px 0;font-size:12px;color:#999;">+ ${docsParBien.size - 4} autre(s) dossier(s)…</p>`)
+  const silLignes = silencieux.slice(0, 3).map((s) =>
+    `<a href="${href(s.id)}" style="display:block;text-decoration:none;margin:3px 0;color:#333;font-size:13px;">💤 ${s.bien} <span style="color:#999;">· ${s.jours} j sans nouvelle</span></a>`)
+
+  const essentiel = priorites.length
+    ? `<p style="margin:2px 0 8px;font-size:12px;letter-spacing:1px;text-transform:uppercase;color:#C9A96E;font-weight:700;">⚡ L'essentiel aujourd'hui</p>${priorites.slice(0, MAX).map(carte).join('')}${reste}`
+    : `<div style="padding:20px;background:#fafafa;border:1px solid #eee;border-radius:8px;text-align:center;color:#555;font-size:15px;">Rien d'urgent ce matin — journée dégagée ☕️</div>`
+  const enRetard = priorites.filter((p) => p.retard).length
+  const resume = priorites.length ? `${priorites.length} priorité${priorites.length > 1 ? 's' : ''}${enRetard ? ` · ${enRetard} en retard` : ''}` : 'Journée dégagée'
+
+  const bouton =
+    `<table role="presentation" cellpadding="0" cellspacing="0" style="margin:26px 0 2px;"><tr><td style="background:#C9A96E;border-radius:6px;">` +
+    `<a href="${APP}" style="display:inline-block;padding:13px 24px;color:#0C0F14;font-size:14px;font-weight:600;text-decoration:none;">Ouvrir mon tableau de bord →</a></td></tr></table>`
 
   const html = `<!doctype html><html><body style="margin:0;background:#f4f4f5;padding:24px;font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;">
-    <div style="max-width:560px;margin:0 auto;background:#fff;border-radius:10px;overflow:hidden;border:1px solid #e5e5e5;">
-      <div style="background:#0C0F14;padding:20px 24px;">
-        <p style="margin:0;color:#C9A96E;font-size:12px;letter-spacing:2px;text-transform:uppercase;">CourtierOS · Point du jour</p>
-        <p style="margin:4px 0 0;color:#fff;font-size:19px;text-transform:capitalize;">${dateFr}</p>
+    <div style="max-width:600px;margin:0 auto;background:#fff;border-radius:12px;overflow:hidden;border:1px solid #e5e5e5;">
+      <div style="background:#0C0F14;padding:22px 26px;">
+        <p style="margin:0;color:#C9A96E;font-size:11px;letter-spacing:2px;text-transform:uppercase;">CourtierOS · Point du jour</p>
+        <p style="margin:6px 0 0;color:#fff;font-size:20px;">Bonjour Thomas 👋</p>
+        <p style="margin:2px 0 0;color:#9aa0a6;font-size:13px;text-transform:capitalize;">${dateFr} · ${resume}</p>
       </div>
-      <div style="padding:8px 24px 24px;">
-        ${corps}
-        <p style="margin:26px 0 0;font-size:12px;color:#aaa;">Ouvre ton espace : <a href="https://maisonpraet.ch/app" style="color:#C9A96E;">maisonpraet.ch/app</a></p>
+      <div style="padding:20px 26px 26px;">
+        ${essentiel}
+        ${petit('📄 Documents à obtenir', docLignes)}
+        ${petit(`💤 Dossiers sans nouvelle (${JOURS_SILENCE}j+)`, silLignes)}
+        ${bouton}
       </div>
     </div>
   </body></html>`
@@ -131,7 +153,9 @@ export async function GET(req: Request) {
     await resend.emails.send({
       from: 'Maison Praet <noreply@maisonpraet.ch>',
       to: DEST,
-      subject: `☀️ Ton point du jour — ${dateFr}${compte ? ` (${compte})` : ''}`,
+      subject: priorites.length
+        ? `⚡ ${priorites.length} priorité${priorites.length > 1 ? 's' : ''} aujourd'hui${enRetard ? ` (${enRetard} en retard)` : ''}`
+        : `☀️ Journée dégagée — ${dateFr}`,
       html,
     })
   } catch (e) {
