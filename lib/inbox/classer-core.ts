@@ -163,10 +163,14 @@ export async function analyserTexte(
       "(« pour le 2 août », « d'ici vendredi », « avant la fin du mois »…), déduis la date correspondante et " +
       "mets-la dans tache_echeance au format AAAA-MM-JJ (année à venir si le mois est déjà passé). Crée alors " +
       "une tâche claire décrivant l'action attendue. Sans date explicite, laisse tache_echeance vide.\n\n" +
-      "PERSONNES : repère toutes les personnes citées avec un minimum d'information (vendeurs, acquéreurs, " +
-      "notaires, artisans, banquiers…) et liste-les dans `contacts`. Pour chacune : prenom, nom, role " +
-      `(∈ ["vendeur","acquereur","notaire","courtier_tiers","artisan","autre"]), email, telephone — champs ` +
-      "inconnus laissés en chaîne vide. N'invente jamais un email ou un nom absent du texte.\n\n" +
+      "PERSONNES : repère TOUTES les personnes citées avec un minimum d'information (vendeurs, acquéreurs, " +
+      "notaires, artisans, banquiers…) et liste-les dans `contacts` — une entrée par personne. Inclus " +
+      "explicitement les CO-PROPRIÉTAIRES et CO-VENDEURS, ainsi que toute personne dont on te communique le " +
+      "nom, l'email ou le téléphone, MÊME si elle n'est pas l'expéditeur du message (ex. « je vous communique " +
+      "les adresses de mes deux frères : … » → crée une entrée pour CHAQUE frère). Pour chacune : prenom, nom, " +
+      `role (∈ ["vendeur","acquereur","notaire","courtier_tiers","artisan","autre"]), email, telephone — ` +
+      "champs inconnus laissés en chaîne vide. N'invente jamais un email ou un nom absent du texte, mais " +
+      "n'oublie personne qui y figure.\n\n" +
       'Réponds UNIQUEMENT par un objet JSON valide, sans aucun texte autour, avec exactement ces clés : ' +
       JSON.stringify([...PLAN_KEYS, 'contacts']) +
       '. Toutes les valeurs sont des chaînes SAUF `contacts`, qui est un tableau d\'objets ' +
