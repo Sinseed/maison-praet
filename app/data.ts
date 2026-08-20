@@ -49,6 +49,9 @@ export const MANDATS: Mandat[] = [
     id: 31, slug: 'maison-yvonand', titre: 'Maison de caractère', lieu: 'Yvonand',
     prix: "1'150'000", pieces: '8', surface: '190 m²', terrain: "1'804 m²", categorie: 'en_vente',
     img: '/photos/maison-yvonand/01-vue-aerienne.jpg',
+    video: '/videos/maison-yvonand.mp4',
+    videoPoster: '/videos/maison-yvonand-poster.jpg',
+    videoDate: '2026-08-20',
     photos: [
       '/photos/maison-yvonand/01-vue-aerienne.jpg',
       '/photos/maison-yvonand/02-maison-jardin.jpg',
@@ -162,6 +165,9 @@ export const MANDATS: Mandat[] = [
     id: 1, slug: 'maison-yverdon', titre: 'Maison individuelle', lieu: 'Yverdon-les-Bains',
     prix: "2'190'000", pieces: '8.5', surface: '240 m²', terrain: "1'260 m²", categorie: 'en_vente',
     img: '/photos/yverdon/drone_coucher.jpg',
+    video: '/videos/maison-yverdon.mp4',
+    videoPoster: '/videos/maison-yverdon-poster.jpg',
+    videoDate: '2026-08-20',
     photos: ['/photos/yverdon/drone_coucher.jpg','/photos/yverdon/IMG_5987.jpg','/photos/yverdon/IMG_5989.jpg','/photos/yverdon/IMG_5990.jpg','/photos/yverdon/IMG_5993.jpg','/photos/yverdon/IMG_5994.jpg','/photos/yverdon/IMG_6001.jpg','/photos/yverdon/IMG_6002.jpg','/photos/yverdon/IMG_6003.jpg','/photos/yverdon/IMG_6006.jpg','/photos/yverdon/IMG_6010.jpg','/photos/yverdon/IMG_6012.jpg','/photos/yverdon/IMG_6013.jpg','/photos/yverdon/IMG_6014.jpg','/photos/yverdon/IMG_6017.jpg','/photos/yverdon/IMG_6019.jpg','/photos/yverdon/IMG_6022.jpg','/photos/yverdon/IMG_6025.jpg'],
     description: "Implantée sur une parcelle de plus de 1'260 m² à Yverdon-les-Bains, cette maison individuelle de 8.5 pièces offre 240 m² habitables. Volumes généreux, jardin arboré et potentiel d'agrandissement d'environ 524 m². Proximité immédiate des thermes et de toutes les commodités."
   },
@@ -169,6 +175,9 @@ export const MANDATS: Mandat[] = [
     id: 19, slug: 'maison-riex', titre: 'Maison vigneronne', lieu: 'Riex, Lavaux',
     prix: "1'250'000", pieces: '2.5', surface: '100 m²', terrain: '39 m²', categorie: 'en_vente',
     img: '/photos/riex/drone-facade.jpg',
+    video: '/videos/maison-riex.mp4',
+    videoPoster: '/videos/maison-riex-poster.jpg',
+    videoDate: '2026-08-20',
     photos: ['/photos/riex/drone-facade.jpg','/photos/riex/drone-lac-panorama.jpg','/photos/riex/drone-lac-alpes.jpg','/photos/riex/drone-village.jpg','/photos/riex/salon.jpg','/photos/riex/cuisine.jpg','/photos/riex/salle-de-bains.jpg','/photos/riex/sauna.jpg','/photos/riex/sauna-douche.jpg'],
     description: "Au coeur du village de Riex, dans le périmètre UNESCO de Lavaux, cette maison vigneronne de 1680 entièrement rénovée en 1989 déploie ses 100 m² habitables sur quatre niveaux. Séjour lumineux avec double hauteur, cuisine ouverte avec accès balcon, chambre au dernier étage avec vide sur séjour et salle de bains moderne sous vélux. Sauna privatif au sous-sol, deux places de parking couvert. La porte de la façade sud est classée monument historique. Vue sur les toits, le lac Léman et les Alpes."
   },
