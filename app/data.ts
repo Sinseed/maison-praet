@@ -49,9 +49,6 @@ export const MANDATS: Mandat[] = [
     id: 31, slug: 'maison-yvonand', titre: 'Maison de caractère', lieu: 'Yvonand',
     prix: "1'150'000", pieces: '8', surface: '190 m²', terrain: "1'804 m²", categorie: 'en_vente',
     img: '/photos/maison-yvonand/01-vue-aerienne.jpg',
-    video: '/videos/maison-yvonand.mp4',
-    videoPoster: '/videos/maison-yvonand-poster.jpg',
-    videoDate: '2026-07-26',
     photos: [
       '/photos/maison-yvonand/01-vue-aerienne.jpg',
       '/photos/maison-yvonand/02-maison-jardin.jpg',
@@ -172,9 +169,6 @@ export const MANDATS: Mandat[] = [
     id: 19, slug: 'maison-riex', titre: 'Maison vigneronne', lieu: 'Riex, Lavaux',
     prix: "1'250'000", pieces: '2.5', surface: '100 m²', terrain: '39 m²', categorie: 'en_vente',
     img: '/photos/riex/drone-facade.jpg',
-    video: '/videos/maison-riex.mp4',
-    videoPoster: '/videos/maison-riex-poster.jpg',
-    videoDate: '2026-07-26',
     photos: ['/photos/riex/drone-facade.jpg','/photos/riex/drone-lac-panorama.jpg','/photos/riex/drone-lac-alpes.jpg','/photos/riex/drone-village.jpg','/photos/riex/salon.jpg','/photos/riex/cuisine.jpg','/photos/riex/salle-de-bains.jpg','/photos/riex/sauna.jpg','/photos/riex/sauna-douche.jpg'],
     description: "Au coeur du village de Riex, dans le périmètre UNESCO de Lavaux, cette maison vigneronne de 1680 entièrement rénovée en 1989 déploie ses 100 m² habitables sur quatre niveaux. Séjour lumineux avec double hauteur, cuisine ouverte avec accès balcon, chambre au dernier étage avec vide sur séjour et salle de bains moderne sous vélux. Sauna privatif au sous-sol, deux places de parking couvert. La porte de la façade sud est classée monument historique. Vue sur les toits, le lac Léman et les Alpes."
   },
