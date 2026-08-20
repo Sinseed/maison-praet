@@ -16,7 +16,7 @@ import Anthropic from '@anthropic-ai/sdk'
 import { Resend } from 'resend'
 import { createClient } from '@supabase/supabase-js'
 import { SUPABASE_URL } from '@/lib/supabase/config'
-import { analyserTexte, appliquerPlan, type BienContexte } from '@/lib/inbox/classer-core'
+import { analyserTexte, appliquerPlan, cloturerTaches, type BienContexte } from '@/lib/inbox/classer-core'
 
 export const runtime = 'nodejs'
 export const dynamic = 'force-dynamic'
@@ -111,13 +111,24 @@ export async function POST(req: Request) {
   // 5. Classer + écrire.
   let actions: string[] = []
   let bienId: string | null = null
+  const anthropic = new Anthropic()
   try {
-    const plan = await analyserTexte(new Anthropic(), { texte: contenu, biens: (biens as BienContexte[]) ?? [], aujourdhui })
+    const plan = await analyserTexte(anthropic, { texte: contenu, biens: (biens as BienContexte[]) ?? [], aujourdhui })
     const res = await appliquerPlan(supa, plan, { courtierId })
     actions = res.actions
     bienId = res.bienId
   } catch (e) {
     return NextResponse.json({ error: `Classement impossible : ${(e as Error).message}` }, { status: 500 })
+  }
+
+  // Clôture automatique des tâches que ce mail accomplit (mails sortants en Cci).
+  if (bienId) {
+    try {
+      const closes = await cloturerTaches(supa, anthropic, { texte: contenu, bienId, courtierId })
+      for (const t of closes) actions.push(`✓ Tâche clôturée : ${t}`)
+    } catch {
+      // La clôture auto est un bonus : son échec ne bloque pas le classement.
+    }
   }
 
   // 5bis. Pièces jointes → documents du dossier. On saute les images « inline »

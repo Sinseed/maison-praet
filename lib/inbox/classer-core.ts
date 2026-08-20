@@ -422,3 +422,47 @@ export async function appliquerPlan(
 
   return { actions, bienId }
 }
+
+/**
+ * Clôture automatique : parmi les tâches OUVERTES du dossier, marque « faite »
+ * celles que l'email accomplit réellement. STRICT — une intention future ou une
+ * promesse ne clôturent rien. Renvoie les libellés des tâches clôturées.
+ */
+export async function cloturerTaches(
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  supabase: any,
+  client: Anthropic,
+  opts: { texte: string; bienId: string; courtierId?: string },
+): Promise<string[]> {
+  let q = supabase.from('taches').select('id, titre').eq('bien_id', opts.bienId).in('statut', ['a_faire', 'en_cours'])
+  if (opts.courtierId) q = q.eq('courtier_id', opts.courtierId)
+  const { data } = await q
+  const taches = (data as { id: string; titre: string }[] | null) ?? []
+  if (!taches.length) return []
+
+  const liste = taches.map((t, i) => `${i + 1}. ${t.titre}`).join('\n')
+  const message = await client.messages.create({
+    model: 'claude-haiku-4-5',
+    max_tokens: 400,
+    system:
+      "On te donne un email (souvent rédigé par le courtier lui-même) et la liste des tâches OUVERTES d'un " +
+      "dossier. Détermine lesquelles cet email ACCOMPLIT RÉELLEMENT : action effectuée, document envoyé, " +
+      "relance faite, question répondue. Sois STRICT : une intention future (« je le ferai », « je vais »), " +
+      "une simple mention, une question ou une promesse ne clôturent PAS une tâche. En cas de doute, ne " +
+      "clôture pas. Réponds UNIQUEMENT par un tableau JSON des NUMÉROS des tâches accomplies (ex. [1,3]), " +
+      "ou [] si aucune.",
+    messages: [{ role: 'user', content: `TÂCHES OUVERTES :\n${liste}\n\nEMAIL :\n"""${opts.texte}"""` }],
+  })
+  const bloc = message.content.find((b) => b.type === 'text')
+  const brut = bloc && bloc.type === 'text' ? bloc.text : '[]'
+  const m = brut.match(/\[[\s\S]*\]/)
+  let nums: number[] = []
+  try { nums = (JSON.parse(m ? m[0] : '[]') as unknown[]).map(Number).filter((n) => Number.isInteger(n)) } catch { nums = [] }
+  const aClore = taches.filter((_, i) => nums.includes(i + 1))
+  const titres: string[] = []
+  for (const t of aClore) {
+    await supabase.from('taches').update({ statut: 'faite' }).eq('id', t.id)
+    titres.push(t.titre)
+  }
+  return titres
+}

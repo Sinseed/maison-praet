@@ -38,6 +38,7 @@ export default function DossierBien() {
   const [userId, setUserId] = useState('')
   const [bien, setBien] = useState<BienRow | null>(null)
   const [taches, setTaches] = useState<TacheRow[]>([])
+  const [tachesFaites, setTachesFaites] = useState<TacheRow[]>([])
   const [documents, setDocuments] = useState<DocumentRow[]>([])
   const [echanges, setEchanges] = useState<EchangeRow[]>([])
   const [offres, setOffres] = useState<OffreRow[]>([])
@@ -65,7 +66,7 @@ export default function DossierBien() {
 
   const charger = useCallback(async () => {
     setErreur(null)
-    const [b, t, d, e, off, acq, cts, est, liens] = await Promise.all([
+    const [b, t, d, e, off, acq, cts, est, liens, tf] = await Promise.all([
       supabase.from('biens').select('*').eq('id', id).single(),
       supabase.from('taches').select('*').eq('bien_id', id).eq('statut', 'a_faire').order('echeance', { ascending: true, nullsFirst: false }),
       supabase.from('documents').select('*').eq('bien_id', id).order('created_at', { ascending: true }),
@@ -75,6 +76,7 @@ export default function DossierBien() {
       supabase.from('contacts').select('*'),
       supabase.from('estimations').select('valeur_venale, prix_mise_en_vente, prix_plancher, version').eq('bien_id', id).order('version', { ascending: false }).limit(1),
       supabase.from('contacts_biens').select('contact_id, role').eq('bien_id', id),
+      supabase.from('taches').select('*').eq('bien_id', id).eq('statut', 'faite').order('updated_at', { ascending: false }).limit(5),
     ])
     if (b.error) {
       setErreur(`Chargement impossible : ${b.error.message}`)
@@ -83,6 +85,7 @@ export default function DossierBien() {
     }
     setBien(b.data as unknown as BienRow)
     setTaches((t.data as unknown as TacheRow[]) ?? [])
+    setTachesFaites((tf.data as unknown as TacheRow[]) ?? [])
     setDocuments((d.data as unknown as DocumentRow[]) ?? [])
     setEchanges((e.data as unknown as EchangeRow[]) ?? [])
     setOffres((off.data as unknown as OffreRow[]) ?? [])
@@ -236,6 +239,10 @@ export default function DossierBien() {
   }
   const terminerTache = async (tid: string) => {
     await supabase.from('taches').update({ statut: 'faite' }).eq('id', tid)
+    charger()
+  }
+  const rouvrirTache = async (tid: string) => {
+    await supabase.from('taches').update({ statut: 'a_faire' }).eq('id', tid)
     charger()
   }
   const relancerAcq = async (a: AcquereurRow) => {
@@ -599,6 +606,21 @@ export default function DossierBien() {
             <input value={nouvelleTache} onChange={(e) => setNouvelleTache(e.target.value)} placeholder="Ajouter une tâche à ce dossier…" className="flex-1 bg-brand-dark border border-brand-border px-3 py-2 font-body text-sm text-white focus:outline-none focus:border-brand-gold/50" />
             <button type="submit" className="border border-brand-border px-3 text-brand-muted hover:text-white transition-colors"><Plus size={16} /></button>
           </form>
+
+          {tachesFaites.length > 0 && (
+            <div className="mt-5 pt-4 border-t border-brand-border">
+              <p className="font-body text-[11px] tracking-widest uppercase text-brand-muted mb-2">Récemment clôturé</p>
+              <ul className="space-y-1.5">
+                {tachesFaites.map((t) => (
+                  <li key={t.id} className="flex items-center gap-3 text-brand-muted">
+                    <Check size={14} className="text-emerald-500 shrink-0" />
+                    <span className="font-body text-sm line-through flex-1">{t.titre}</span>
+                    <button onClick={() => rouvrirTache(t.id)} className="font-body text-[11px] text-brand-muted hover:text-brand-goldLight transition-colors shrink-0">Rouvrir</button>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
         </section>
 
         {/* Offres reçues */}
