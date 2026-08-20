@@ -108,58 +108,59 @@ export async function GET(req: Request) {
   const MAX = 6
   const court = (s: string, n = 90) => (s.length > n ? `${s.slice(0, n - 1).trim()}…` : s)
   const dateAff = dateFr.charAt(0).toUpperCase() + dateFr.slice(1)
-  const tagRetard = '<span style="background:#3a201e;color:#e79087;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.4px;padding:2px 7px;border-radius:11px;">En retard</span>&nbsp;&nbsp;'
+  const tagRetard = '<span style="background:#f6e9e7;color:#b23b32;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;padding:2px 8px;border-radius:11px;">En retard</span>&nbsp;&nbsp;'
 
-  // Thème sombre premium. Lignes aérées, pastille de priorité, séparateurs fins.
+  // Clair, aéré, éditorial. L'or juste en touche fine ; pas de cases lourdes.
   const carte = (p: Prio) =>
     `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;"><tr>` +
-    `<td width="18" valign="top" style="padding:15px 0;"><div style="width:7px;height:7px;border-radius:50%;background:${p.retard ? '#e05a4d' : '#C9A96E'};"></div></td>` +
-    `<td style="padding:15px 0;border-bottom:1px solid #24262b;">` +
-    `<a href="${p.url}" style="color:#ece9e3;font-size:15px;font-weight:600;line-height:1.45;text-decoration:none;">${court(p.titre)}</a>` +
-    `<div style="margin-top:5px;color:#8b857b;font-size:12px;">${p.retard ? tagRetard : ''}${p.sous ?? 'non rattaché'}</div>` +
+    `<td width="20" valign="top" style="padding:16px 0;"><div style="width:6px;height:6px;border-radius:50%;background:${p.retard ? '#c0392b' : '#b5904f'};"></div></td>` +
+    `<td style="padding:16px 0;border-bottom:1px solid #efefec;">` +
+    `<a href="${p.url}" style="color:#22242a;font-size:15px;font-weight:600;line-height:1.5;text-decoration:none;">${court(p.titre)}</a>` +
+    `<div style="margin-top:5px;color:#9a988f;font-size:12px;">${p.retard ? tagRetard : ''}${p.sous ?? 'non rattaché'}</div>` +
     `</td></tr></table>`
   const reste = priorites.length > MAX
-    ? `<div style="margin:14px 0 0;font-size:13px;color:#8b857b;">+ ${priorites.length - MAX} autre(s) — <a href="${APP}" style="color:#C9A96E;text-decoration:none;font-weight:600;">tout voir</a></div>`
+    ? `<div style="margin:16px 0 0;font-size:13px;color:#9a988f;">+ ${priorites.length - MAX} autre(s) — <a href="${APP}" style="color:#b28a4c;text-decoration:none;font-weight:600;">tout voir</a></div>`
     : ''
 
-  const label2 = (t: string) => `<div style="margin:30px 0 4px;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#C9A96E;font-weight:700;">${t}</div>`
+  const label2 = (t: string) => `<div style="margin:32px 0 2px;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:#b28a4c;font-weight:700;">${t}</div>`
   const petit = (titre: string, lignes: string[]) => (lignes.length ? label2(titre) + lignes.join('') : '')
   const ligneSec = (url: string, contenu: string) =>
-    `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;"><tr><td style="padding:10px 0;border-bottom:1px solid #24262b;">` +
-    `<a href="${url}" style="color:#c9c5bd;font-size:13px;line-height:1.5;text-decoration:none;">${contenu}</a></td></tr></table>`
+    `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;"><tr><td style="padding:12px 0;border-bottom:1px solid #efefec;">` +
+    `<a href="${url}" style="color:#54534d;font-size:13px;line-height:1.55;text-decoration:none;">${contenu}</a></td></tr></table>`
   const docLignes = Array.from(docsParBien.entries()).slice(0, 4).map(([id, e]) =>
-    ligneSec(href(id), `<strong style="color:#ece9e3;">${e.label}</strong> &nbsp;<span style="color:#8b857b;">${court(e.docs.join(', '), 80)}</span>`))
-  if (docsParBien.size > 4) docLignes.push(`<div style="margin:10px 0 0;font-size:12px;color:#8b857b;">+ ${docsParBien.size - 4} autre(s) dossier(s)…</div>`)
+    ligneSec(href(id), `<strong style="color:#22242a;font-weight:600;">${e.label}</strong> &nbsp;<span style="color:#9a988f;">${court(e.docs.join(', '), 80)}</span>`))
+  if (docsParBien.size > 4) docLignes.push(`<div style="margin:12px 0 0;font-size:12px;color:#9a988f;">+ ${docsParBien.size - 4} autre(s) dossier(s)…</div>`)
   const silLignes = silencieux.slice(0, 3).map((s) =>
-    ligneSec(href(s.id), `${s.bien} &nbsp;<span style="color:#8b857b;">${s.jours} j sans nouvelle</span>`))
+    ligneSec(href(s.id), `${s.bien} &nbsp;<span style="color:#9a988f;">${s.jours} j sans nouvelle</span>`))
 
   const enRetard = priorites.filter((p) => p.retard).length
   const resume = priorites.length ? `${priorites.length} priorité${priorites.length > 1 ? 's' : ''}${enRetard ? ` · ${enRetard} en retard` : ''}` : 'Journée dégagée'
   const essentiel = priorites.length
     ? label2("L'essentiel aujourd'hui") + priorites.slice(0, MAX).map(carte).join('') + reste
-    : `<div style="padding:30px 20px;text-align:center;color:#9a948a;font-size:15px;">Rien d'urgent ce matin.<br/><span style="color:#6f6a61;font-size:13px;">Journée dégagée ☕</span></div>`
+    : `<div style="padding:34px 20px;text-align:center;color:#6f6d66;font-size:16px;font-family:Georgia,'Times New Roman',serif;">Rien d'urgent ce matin.<br/><span style="color:#a8a69e;font-size:13px;font-family:-apple-system,'Segoe UI',sans-serif;">Journée dégagée.</span></div>`
 
   const bouton =
-    `<table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr><td align="center" style="padding-top:30px;">` +
-    `<table role="presentation" cellpadding="0" cellspacing="0"><tr><td style="background:#C9A96E;border-radius:999px;">` +
-    `<a href="${APP}" style="display:inline-block;padding:14px 32px;color:#14161a;font-size:14px;font-weight:600;letter-spacing:.3px;text-decoration:none;">Ouvrir mon tableau de bord →</a>` +
+    `<table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr><td align="center" style="padding-top:34px;">` +
+    `<table role="presentation" cellpadding="0" cellspacing="0"><tr><td style="background:#16181c;border-radius:999px;">` +
+    `<a href="${APP}" style="display:inline-block;padding:15px 34px;color:#ffffff;font-size:13px;font-weight:600;letter-spacing:.4px;text-decoration:none;">Ouvrir mon tableau de bord →</a>` +
     `</td></tr></table></td></tr></table>`
 
-  const html = `<!doctype html><html><body style="margin:0;background:#08090b;padding:28px 16px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
-    <div style="max-width:600px;margin:0 auto;background:#14161a;border-radius:18px;overflow:hidden;border:1px solid #26282d;">
-      <div style="padding:32px 34px 26px;border-bottom:1px solid #26282d;">
-        <div style="color:#C9A96E;font-size:11px;letter-spacing:3px;text-transform:uppercase;">Point du jour</div>
-        <div style="margin-top:12px;color:#ffffff;font-family:Georgia,'Times New Roman',serif;font-size:27px;font-weight:400;line-height:1.1;">Bonjour Thomas</div>
-        <div style="margin-top:8px;color:#7e7a72;font-size:13px;">${dateAff} · ${resume}</div>
+  const html = `<!doctype html><html><body style="margin:0;background:#eeedea;padding:32px 16px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+    <div style="max-width:600px;margin:0 auto;background:#ffffff;border-radius:14px;overflow:hidden;border:1px solid #e7e6e2;">
+      <div style="padding:40px 40px 30px;">
+        <div style="color:#b28a4c;font-size:11px;letter-spacing:3px;text-transform:uppercase;">Point du jour</div>
+        <div style="width:34px;height:2px;background:#d9c39a;margin:14px 0 16px;"></div>
+        <div style="color:#16181c;font-family:Georgia,'Times New Roman',serif;font-size:30px;font-weight:400;line-height:1.1;">Bonjour Thomas</div>
+        <div style="margin-top:10px;color:#9a988f;font-size:13px;">${dateAff} · ${resume}</div>
       </div>
-      <div style="padding:22px 34px 34px;">
+      <div style="padding:4px 40px 40px;">
         ${essentiel}
         ${petit('Documents à obtenir', docLignes)}
         ${petit(`Dossiers sans nouvelle (${JOURS_SILENCE}j+)`, silLignes)}
         ${bouton}
       </div>
     </div>
-    <div style="max-width:600px;margin:16px auto 0;text-align:center;color:#4f4c47;font-size:11px;">CourtierOS · Maison Praet</div>
+    <div style="max-width:600px;margin:18px auto 0;text-align:center;color:#b0aea7;font-size:11px;letter-spacing:.5px;">CourtierOS · Maison Praet</div>
   </body></html>`
 
   try {
