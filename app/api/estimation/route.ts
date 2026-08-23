@@ -1,8 +1,6 @@
 import { Resend } from 'resend'
 import { NextResponse } from 'next/server'
 
-const resend = new Resend(process.env.RESEND_API_KEY)
-
 export async function POST(req: Request) {
   try {
     const { nom, contact, type, localisation, surface, pieces, message } = await req.json()
@@ -19,6 +17,10 @@ export async function POST(req: Request) {
       autre: 'Autre',
     }
 
+    if (!process.env.RESEND_API_KEY) {
+      return NextResponse.json({ error: 'Service e-mail non configuré.' }, { status: 500 })
+    }
+    const resend = new Resend(process.env.RESEND_API_KEY)
     await resend.emails.send({
       from: 'Maison Praet <noreply@maisonpraet.ch>',
       to: 'tpraet@golay-immobilier.ch',
