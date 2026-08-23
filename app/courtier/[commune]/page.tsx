@@ -4,6 +4,8 @@ import Image from 'next/image'
 import { ArrowLeft, Phone, Mail, ArrowRight } from 'lucide-react'
 import Reveal from '../../components/Reveal'
 import Eyebrow from '../../components/Eyebrow'
+import BadgeBien from '../../components/BadgeBien'
+import PrixBien from '../../components/PrixBien'
 import { COMMUNES_SEO_ALL as COMMUNES_SEO } from '../communes-seo'
 import { MANDATS, ARTICLES } from '../../data'
 
@@ -159,14 +161,12 @@ export default async function CommunePage({ params }: { params: Promise<{ commun
                   <div className="relative aspect-[4/3] overflow-hidden">
                     <Image src={m.photos[0]} alt={m.titre} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" className="object-cover group-hover:scale-105 transition-transform duration-700" />
                     <div className="absolute top-3 right-3">
-                      <span className={`px-2 py-1 font-body text-xs font-medium tracking-widest uppercase ${m.categorie === 'en_vente' ? 'bg-brand-gold text-brand-dark' : m.categorie === 'reserve' ? 'bg-amber-700/60 text-amber-200' : 'bg-green-800/60 text-green-200'}`}>
-                        {m.categorie === 'en_vente' ? 'En vente' : m.categorie === 'reserve' ? 'Réservé' : 'Vendu'}
-                      </span>
+                      <BadgeBien categorie={m.categorie} taille="sm" />
                     </div>
                   </div>
                   <div className="p-5">
                     <h3 className="font-display text-lg text-white mb-1">{m.titre}</h3>
-                    <p className="font-body text-sm text-brand-gold">CHF {m.prix}.-</p>
+                    <PrixBien prix={m.prix} taille="sm" couleur="or" />
                   </div>
                 </Reveal>
               ))}

@@ -4,6 +4,8 @@ import { ArrowLeft, Phone, Mail } from 'lucide-react'
 import { MANDATS } from '../../data'
 import BienGallery from '../../components/BienGallery'
 import BienVideo from '../../components/BienVideo'
+import BadgeBien from '../../components/BadgeBien'
+import PrixBien from '../../components/PrixBien'
 
 // ─── Static params ────────────────────────────────────────────────────────────
 export function generateStaticParams() {
@@ -52,8 +54,6 @@ export default async function BienPage({ params }: { params: Promise<{ slug: str
     </div>
   )
 
-  const badgeLabel = bien.categorie === 'en_vente' ? 'En vente' : bien.categorie === 'reserve' ? 'Réservé' : 'Vendu'
-  const badgeColor = bien.categorie === 'en_vente' ? 'bg-brand-gold text-brand-dark' : bien.categorie === 'reserve' ? 'bg-amber-700/60 text-amber-200' : 'bg-green-800/60 text-green-200'
 
   // Schema.org VideoObject : permet à Google d'indexer le teaser et d'afficher
   // une vignette vidéo dans les résultats de recherche.
@@ -127,14 +127,11 @@ export default async function BienPage({ params }: { params: Promise<{ slug: str
         <div className="grid md:grid-cols-3 gap-12">
           <div className="md:col-span-2">
             <div className="flex items-center gap-4 mb-6">
-              <span className={`px-3 py-1 font-body text-xs font-medium tracking-widest uppercase ${badgeColor}`}>{badgeLabel}</span>
+              <BadgeBien categorie={bien.categorie} />
               <p className="font-body text-sm tracking-widest uppercase text-brand-gold">{bien.lieu}</p>
             </div>
             <h1 className="font-display text-4xl md:text-5xl font-light text-white mb-6">{bien.titre}</h1>
-            <div className="flex items-baseline gap-2 mb-8">
-              <span className="font-body text-lg text-brand-muted">CHF</span>
-              <span className="font-display text-3xl text-brand-gold">{bien.prix}.-</span>
-            </div>
+            <div className="mb-8"><PrixBien prix={bien.prix} taille="lg" couleur="or" /></div>
             <div className="flex flex-wrap gap-6 mb-10 pb-10 border-b border-brand-border">
               {bien.composition
                 ? <div><p className="font-body text-xs tracking-widest uppercase text-brand-muted mb-1">Composition</p><p className="font-display text-xl text-white">{bien.composition}</p></div>

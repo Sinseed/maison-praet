@@ -8,6 +8,8 @@ import DerniereVente from './components/DerniereVente'
 import Reveal from './components/Reveal'
 import AnimatedNumber from './components/AnimatedNumber'
 import Eyebrow from './components/Eyebrow'
+import BadgeBien from './components/BadgeBien'
+import PrixBien from './components/PrixBien'
 
 function Hero() {
   const portraitRef = useRef<HTMLDivElement>(null)
@@ -171,8 +173,6 @@ function MandatsSection() {
     const dateB = b.datereserve ?? b.datevente ?? ''
     return dateB.localeCompare(dateA)
   })
-  const badgeLabel = (cat: string) => cat === 'en_vente' ? 'En vente' : cat === 'reserve' ? 'Réservé' : 'Vendu'
-  const badgeColor = (cat: string) => cat === 'en_vente' ? 'bg-brand-gold text-brand-dark' : cat === 'reserve' ? 'bg-amber-700/60 text-amber-200' : 'bg-green-800/60 text-green-200'
   return (
     <section id="nosbiens" className="max-w-7xl mx-auto px-6 py-24 md:py-32">
       <Reveal className="text-center mb-12">
@@ -188,14 +188,14 @@ function MandatsSection() {
             <div className="relative aspect-[4/3] bg-brand-dark overflow-hidden">
               {m.img ? (<Image src={m.img} alt={m.titre} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" className="object-cover group-hover:scale-105 transition-transform duration-700" />
               ) : (<div className="absolute inset-0 flex flex-col items-center justify-center gap-3"><Camera size={32} className="text-brand-muted/30" /><p className="font-body text-xs tracking-widest uppercase text-brand-muted/40">Photos à venir</p></div>)}
-              <div className="absolute top-4 right-4"><span className={`px-3 py-1 font-body text-xs font-medium tracking-widest uppercase ${badgeColor(m.categorie)}`}>{badgeLabel(m.categorie)}</span></div>
+              <div className="absolute top-4 right-4"><BadgeBien categorie={m.categorie} /></div>
               {m.photos.length > 0 && (<div className="absolute bottom-4 left-4 flex items-center gap-1.5 bg-black/50 backdrop-blur-sm px-2.5 py-1"><Camera size={12} className="text-white/80" /><span className="font-body text-xs text-white/80">{m.photos.length}</span></div>)}
               <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-brand-card to-transparent" />
             </div>
             <div className="p-6">
               <p className="font-body text-xs tracking-widest uppercase text-brand-gold mb-2">{m.lieu}</p>
               <h3 className="font-display text-2xl text-white mb-3">{m.titre}</h3>
-              <div className="flex items-baseline gap-1 mb-4"><span className="font-body text-sm text-brand-muted">CHF</span><span className="font-display text-xl text-white">{m.prix}.-</span></div>
+              <div className="mb-4"><PrixBien prix={m.prix} taille="md" couleur="blanc" /></div>
               <div className="flex gap-4 text-brand-muted font-body text-sm">
                 {m.composition ? <span>{m.composition}</span> : m.pieces !== '-' && <span>{m.pieces} pièces</span>}
                 {m.surface !== '-' && <span>{m.surface}</span>}
