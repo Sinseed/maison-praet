@@ -25,7 +25,7 @@ function finDeJournee(d = new Date()) {
 function nomAcquereur(a: AcquereurRow): string {
   const c = a.contact
   const nom = [c?.prenom, c?.nom].filter(Boolean).join(' ').trim()
-  return nom || 'Acquéreur sans nom'
+  return nom || c?.societe || 'Acquéreur sans nom'
 }
 
 export default function EspaceApp() {

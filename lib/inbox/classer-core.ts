@@ -271,8 +271,8 @@ export async function appliquerPlan(
     let requete = supabase.from('contacts').select('id')
     if (opts.courtierId) requete = requete.eq('courtier_id', opts.courtierId)
     requete = plan.prospect_email
-      ? requete.eq('email', plan.prospect_email)
-      : requete.eq('societe', plan.prospect_societe || '~introuvable~')
+      ? requete.ilike('email', plan.prospect_email)
+      : requete.ilike('societe', plan.prospect_societe || '~introuvable~')
     const { data: dejaVus } = await requete.limit(1)
     const existant = (dejaVus as { id: string }[] | null)?.[0] ?? null
 

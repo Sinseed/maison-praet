@@ -27,7 +27,7 @@ const champVend = 'w-full bg-brand-dark border border-brand-border px-3 py-2 fon
 
 function nomAcq(a: AcquereurRow) {
   const c = a.contact
-  return [c?.prenom, c?.nom].filter(Boolean).join(' ').trim() || 'Acquéreur sans nom'
+  return [c?.prenom, c?.nom].filter(Boolean).join(' ').trim() || c?.societe || 'Acquéreur sans nom'
 }
 
 export default function DossierBien() {
