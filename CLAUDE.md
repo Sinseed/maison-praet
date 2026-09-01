@@ -44,8 +44,11 @@ donne l'illusion d'un bug non résolu. (Le README, obsolète, ne mentionne que
 - Cron Vercel : `/api/cron/relances`, quotidien à 05:00 UTC (`vercel.json`).
 
 Commandes : `npm run dev`, `npm run build`.
-Typecheck : `./node_modules/.bin/tsc --noEmit` — ⚠️ `npx tsc` échoue sur une
-option dépréciée du `tsconfig.json`, passer par le binaire local.
+Vérif avant push : **`npm run check`** (typecheck `tsc --noEmit` + `next build`).
+Le CI GitHub (`.github/workflows/ci.yml`) rejoue ce check à chaque push/PR.
+Le build ne réclame plus de clé (Resend est instancié à l'exécution, pas au
+chargement). `tsconfig` : `target` = `es2017` (l'ancien `es5` déclenchait une
+dépréciation qui faisait échouer `tsc`).
 
 ### ⚠️ Piège n°2 : Supabase est injoignable depuis Claude Code (web)
 
