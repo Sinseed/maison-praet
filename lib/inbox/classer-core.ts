@@ -167,7 +167,11 @@ export async function analyserTexte(
       "(sans devise ni séparateur : 620000). Choisis le montant qui se rapporte au dossier retenu (bien_id) : " +
       "si l'acheteur propose plusieurs variantes (un bien seul, un autre, ou un lot), retiens celle qui " +
       "correspond au bien classé et récapitule les autres variantes ainsi que le contexte (offre révisée, " +
-      "préférence exprimée, conditions) dans offre_notes. Laisse offre_montant vide s'il n'y a pas de " +
+      "préférence exprimée, conditions) dans offre_notes. Quand une offre est détectée, IDENTIFIE " +
+      "l'acheteur qui la formule (le candidat acquéreur concerné — pas forcément l'expéditeur du mail, qui " +
+      "peut être un courtier ou un notaire qui transmet) et remplis prospect_prenom, prospect_nom, " +
+      "prospect_email, prospect_telephone (prospect_societe si c'est une société) avec SON identité, afin " +
+      "que l'offre lui soit rattachée à sa fiche. Laisse offre_montant vide s'il n'y a pas de " +
       "proposition chiffrée ferme (une simple estimation ou un prix affiché n'est pas une offre).\n\n" +
       `Nous sommes le ${opts.aujourdhui}. IMPORTANT : si le texte mentionne une date limite ou une échéance ` +
       "(« pour le 2 août », « d'ici vendredi », « avant la fin du mois »…), déduis la date correspondante et " +
@@ -326,19 +330,24 @@ export async function appliquerPlan(
   // validée par une analyse de solvabilité — au courtier de la lever.
   const offreMontant = montant(plan.offre_montant)
   if (offreMontant && bienId) {
-    // Anti-doublon : le transfert d'email s'applique SANS relecture. Reclasser
-    // deux fois le même mail (ou un rappel du même acheteur) ne doit pas empiler
-    // deux fois la même offre. On considère qu'une offre identique — même dossier,
-    // même acquéreur, même montant — est un doublon et on ne réécrit pas. Une
-    // vraie nouvelle offre au même montant se saisit à la main depuis le dossier
-    // (le formulaire, lui, ne déduplique pas).
-    let doublonQ = supabase.from('offres').select('id').eq('bien_id', bienId).eq('montant', offreMontant)
-    if (opts.courtierId) doublonQ = doublonQ.eq('courtier_id', opts.courtierId)
-    doublonQ = acquereurId ? doublonQ.eq('acquereur_id', acquereurId) : doublonQ.is('acquereur_id', null)
-    const { data: doublons } = await doublonQ.limit(1)
+    const dateAuj = new Date().toLocaleDateString('fr-CH', { timeZone: 'Europe/Zurich' })
+    // On cherche une offre VIVANTE (reçue / en négociation) du même acheteur sur
+    // ce dossier. Une offre révisée (même acheteur, montant différent) MET À JOUR
+    // la ligne existante — pas de doublon. Un renvoi identique est ignoré.
+    let liveQ = supabase.from('offres').select('id, montant').eq('bien_id', bienId).in('statut', ['recue', 'en_negociation'])
+    if (opts.courtierId) liveQ = liveQ.eq('courtier_id', opts.courtierId)
+    liveQ = acquereurId ? liveQ.eq('acquereur_id', acquereurId) : liveQ.is('acquereur_id', null)
+    const { data: lives } = await liveQ.order('created_at', { ascending: false }).limit(1)
+    const live = (lives as { id: string; montant: number }[] | null)?.[0] ?? null
 
-    if ((doublons as { id: string }[] | null)?.length) {
+    if (live && Number(live.montant) === offreMontant) {
       actions.push(`Offre déjà enregistrée (doublon ignoré) : CHF ${offreMontant.toLocaleString('de-CH')}.-`)
+    } else if (live && acquereurId) {
+      // Même acheteur identifié, montant différent → offre révisée : on met à jour.
+      const noteRev = `Révisée le ${dateAuj} (précédent : CHF ${Number(live.montant).toLocaleString('de-CH')}.-)${plan.offre_notes ? ` — ${plan.offre_notes}` : ''}`
+      const { error } = await supabase.from('offres').update({ montant: offreMontant, statut: 'en_negociation', notes: noteRev }).eq('id', live.id)
+      if (error) throw new Error(`Mise à jour de l'offre impossible : ${error.message}`)
+      actions.push(`Offre révisée : CHF ${Number(live.montant).toLocaleString('de-CH')}.- → CHF ${offreMontant.toLocaleString('de-CH')}.-`)
     } else {
       const { error } = await supabase.from('offres').insert({
         ...proprio,
@@ -349,7 +358,7 @@ export async function appliquerPlan(
         acquereur_non_qualifie: true,
       })
       if (error) throw new Error(`Enregistrement de l'offre impossible : ${error.message}`)
-      actions.push(`Offre enregistrée : CHF ${offreMontant.toLocaleString('de-CH')}.-`)
+      actions.push(`Offre enregistrée : CHF ${offreMontant.toLocaleString('de-CH')}.-${acquereurId ? '' : ' (acheteur à préciser)'}`)
     }
   } else if (offreMontant && !bienId) {
     actions.push("Offre détectée mais non enregistrée : rattache-la à un dossier.")
