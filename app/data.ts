@@ -73,7 +73,7 @@ export const MANDATS: Mandat[] = [
   },
   {
     id: 30, slug: 'immeuble-lausanne-tour', titre: 'Immeuble de rendement', lieu: 'Lausanne',
-    prix: "4'300'000", pieces: '-', surface: '-', terrain: '231 m²', categorie: 'en_vente',
+    prix: "4'300'000", pieces: '-', surface: '-', terrain: '231 m²', categorie: 'vendu', datevente: '2026-09-01',
     composition: '14 logements + 1 café-bar', rendement: '4.77% brut',
     img: '/photos/lausanne-tour/01-facade.jpg',
     photos: [
