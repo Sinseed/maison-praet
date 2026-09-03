@@ -604,7 +604,7 @@ Mon conseil : faites le calcul complet avant de fixer votre prix minimum. J'acco
     categorie: 'Marché',
     contenu: `Le marché immobilier du Canton de Vaud continue de surprendre. Malgré les hausses de taux de 2023-2024, les prix n'ont pas corrigé significativement. Voici pourquoi, et ce que cela signifie si vous envisagez de vendre.
 
-L'offre reste structurellement insuffisante. La croissance démographique du canton (+1.2% par an en moyenne) dépasse largement le rythme de construction. Le taux de vacance reste parmi les plus bas de Suisse, particulièrement sur l'arc lémanique. Conséquence : les biens bien situés et correctement pricés se vendent rapidement.
+L'offre reste structurellement insuffisante. La croissance démographique du canton (+1.2% par an en moyenne) dépasse largement le rythme de construction. Le taux de vacance reste parmi les plus bas de Suisse, particulièrement sur l'arc lémanique. Conséquence : les biens bien situés et affichés à leur juste prix se vendent rapidement.
 
 Les taux hypothécaires se sont stabilisés. Après la hausse rapide de 2023, les taux fixes à 10 ans se situent désormais autour de 1.8 à 2.2%. C'est suffisamment bas pour maintenir la demande, mais assez haut pour que les acquéreurs soient plus sélectifs qu'en 2021.
 
@@ -1897,97 +1897,64 @@ La vente à terme est un mécanisme équilibré : le vendeur obtient la certitud
   {
     slug: 'marche-immobilier-vaudois-rentree-2026',
     titre: "Marché immobilier vaudois : le point de rentrée 2026",
-    chapeau: "Taux bas, offre rare, acquéreurs sélectifs : après un été calme, le marché vaudois repart sur les mêmes fondamentaux. Ce qui change, ce sont les marges d'erreur, qui se resserrent. Mon point de rentrée, chiffres et terrain à l'appui.",
+    chapeau: "Taux bas, offre rare, mais des acquéreurs plus exigeants : mon point de rentrée 2026 sur le marché immobilier vaudois, et ce que cela change pour vendre.",
     date: '2026-09-03',
     categorie: 'Marché',
     contenu: `Chaque rentrée, la même question revient de la part des propriétaires que j'accompagne : "Est-ce encore le bon moment ?" Après un été plus calme sur les visites, voici où en est réellement le marché vaudois, et ce que cela change concrètement si vous envisagez de vendre ces prochains mois.
 
-## Des taux qui restent historiquement bas
+## Où en sont les taux hypothécaires à la rentrée 2026 ?
 
-La BNS maintient son taux directeur à 0% depuis mi-2025, et les taux hypothécaires fixes à long terme évoluent toujours entre 1,2 et 1,8% selon les profils et les durées. Pour un acquéreur, c'est un contexte de financement favorable, qui soutient la demande. Mais l'argent bon marché ne veut pas dire crédit facile : les banques restent strictes sur la capacité de remboursement, calculée sur un taux théorique bien supérieur au taux réel. Résultat, les dossiers solides passent, les dossiers tendus calent, souvent au pire moment.
+Les taux restent historiquement bas. La BNS maintient son taux directeur à 0% depuis mi-2025, et les taux hypothécaires fixes à long terme évoluent toujours entre 1,2 et 1,8% selon les profils et les durées. Pour un acquéreur, c'est un contexte de financement favorable, qui soutient la demande. Mais l'argent bon marché ne veut pas dire crédit facile : les banques restent strictes sur la capacité de remboursement, calculée sur un taux théorique bien supérieur au taux réel. Résultat, les dossiers solides passent, les dossiers tendus calent, souvent au pire moment.
 
-## L'offre reste le vrai moteur des prix
+## Pourquoi les prix ne baissent-ils pas malgré la hausse des taux ?
 
-Rien n'a changé sur le fond : le canton de Vaud construit moins vite qu'il ne gagne d'habitants, et le taux de vacance reste parmi les plus bas de Suisse sur l'arc lémanique. C'est cette rareté, plus que les taux, qui tient les prix. Un bien correctement situé et [correctement pricé](/journal/estimer-son-bien-canton-de-vaud) trouve preneur en quelques semaines. Un bien mal positionné, lui, s'installe dans la durée, et [chaque semaine en ligne érode sa crédibilité](/journal/pourquoi-votre-bien-ne-se-vend-pas).
+Parce que l'offre reste le vrai moteur des prix. Le canton de Vaud construit moins vite qu'il ne gagne d'habitants, et le taux de vacance reste parmi les plus bas de Suisse sur l'arc lémanique. C'est cette rareté, plus que les taux, qui tient les prix. Un bien correctement situé et [affiché à son juste prix](/journal/estimer-son-bien-canton-de-vaud) trouve preneur en quelques semaines. Un bien mal positionné, lui, s'installe dans la durée, et [chaque semaine en ligne érode sa crédibilité](/journal/pourquoi-votre-bien-ne-se-vend-pas).
 
-## Ce qui a vraiment évolué : la sélectivité des acquéreurs
+## Qu'est-ce qui a changé pour les acquéreurs en 2026 ?
 
-C'est le point le plus important de cette rentrée. Les acquéreurs sont mieux informés qu'il y a deux ans, ils comparent, et ils ne surpaient plus n'importe quoi. La conséquence est contre-intuitive : un marché de vendeurs peut coexister avec des acquéreurs exigeants. Sur les villas entre CHF 1'000'000.- et CHF 2'000'000.-, la demande dépasse largement l'offre, et je vois régulièrement plusieurs offres sur un même bien. Mais dès qu'un défaut n'est pas traité, un [CECB médiocre](/journal/cecb-obligatoire-vente-vaud), des charges PPE opaques, une [servitude découverte tard](/journal/servitudes-charges-foncieres-vente-vaud), la négociation se durcit immédiatement.
+Ils sont devenus nettement plus sélectifs, et c'est le point le plus important de cette rentrée. Les acquéreurs sont mieux informés qu'il y a deux ans, ils comparent, et ils ne surpaient plus n'importe quoi. La conséquence est contre-intuitive : un marché de vendeurs peut coexister avec des acquéreurs exigeants. Sur les villas entre CHF 1'000'000.- et CHF 2'000'000.-, la demande dépasse largement l'offre, et il n'est pas rare de voir [plusieurs offres arriver sur un même bien](/journal/plusieurs-offres-meme-bien-vaud). Mais dès qu'un défaut n'est pas traité, un [CECB médiocre](/journal/cecb-obligatoire-vente-vaud), des charges de PPE opaques, une [servitude découverte tard](/journal/servitudes-charges-foncieres-vente-vaud), la négociation se durcit immédiatement.
 
-## Le segment locatif : rendements comprimés, intérêt intact
+## Faut-il investir dans l'immobilier de rendement vaudois en 2026 ?
 
-Côté immeubles et appartements de rendement, les [investisseurs restent présents](/journal/investir-locatif-vaud-2026) mais leurs marges se sont resserrées : un rendement brut de 3 à 4% est devenu la norme pour un bien en bon état sur l'arc lémanique. Ils cherchent désormais du potentiel (rénovation énergétique, optimisation locative) plutôt que du rendement facial. En toile de fond, la suppression programmée de la valeur locative au 1er janvier 2029 commence à peser dans les arbitrages patrimoniaux : ce n'est pas une raison d'attendre, c'est une raison de structurer chaque dossier avec un horizon clair.
+L'intérêt reste intact, mais les marges se sont resserrées. Côté immeubles et appartements de rendement, les [investisseurs restent présents](/journal/investir-locatif-vaud-2026) : un rendement brut de 3 à 4% est devenu la norme pour un bien en bon état sur l'arc lémanique. Ils cherchent désormais du potentiel (rénovation énergétique, optimisation locative) plutôt que du rendement facial. En toile de fond, la suppression programmée de la valeur locative au 1er janvier 2029 commence à peser dans les arbitrages patrimoniaux : ce n'est pas une raison d'attendre, c'est une raison de structurer chaque dossier avec un horizon clair.
 
-## Mon conseil pour cette rentrée
+## Est-ce le bon moment pour vendre son bien cet automne ?
 
-Le marché récompense la préparation et sanctionne l'approximation. Si votre bien est en bon état, correctement documenté et positionné au juste prix, l'automne est une bonne fenêtre : les acquéreurs sérieux reviennent après l'été, et la concurrence entre annonces reste faible avant les fêtes. Le seul vrai risque n'est pas le marché, c'est de surcoter "pour voir" et de brûler les premières semaines, celles qui comptent le plus. Un prix juste dès le premier jour reste, aujourd'hui encore, la meilleure stratégie de vente.`,
+Oui, à condition d'être bien préparé. Le marché récompense la préparation et sanctionne l'approximation. Si votre bien est en bon état, correctement documenté et affiché à son juste prix, l'automne est une bonne fenêtre : les acquéreurs sérieux reviennent après l'été, et la concurrence entre annonces reste faible avant les fêtes. Le seul vrai risque n'est pas le marché, c'est de surévaluer son bien "pour voir" et de brûler les premières semaines, celles qui comptent le plus. Un prix juste dès le premier jour reste, aujourd'hui encore, la meilleure stratégie de vente.`,
     cta: "Vous vous demandez si c'est le bon moment pour votre bien ? Contactez-moi pour un avis honnête, chiffres à l'appui."
   },
   {
     slug: 'plusieurs-offres-meme-bien-vaud',
     titre: "Plusieurs offres sur un même bien : comment se décide une vente au-dessus du prix",
-    chapeau: "Quand un bien bien positionné attire plusieurs acquéreurs en même temps, la question n'est plus de savoir s'il se vendra, mais comment arbitrer sans casser la confiance. Ce qu'une vente à plusieurs offres exige vraiment d'un courtier, sans jamais transformer une transaction en enchère sauvage.",
-    date: '2026-09-02',
+    chapeau: "Plusieurs acquéreurs sur un même bien dans le canton de Vaud : comment un courtier arbitre, pourquoi le prix peut dépasser l'estimation, et ce que dit la loi.",
+    date: '2026-08-20',
     categorie: 'Conseils vendeurs',
-    contenu: `Il arrive, sur un bien juste estimé et bien présenté, que plusieurs acquéreurs se déclarent en même temps. Pour un vendeur, c'est une bonne nouvelle. Mais c'est aussi le moment où un mandat se joue vraiment. Mal géré, il laisse un vendeur avec le sentiment d'avoir mal choisi et des acquéreurs avec celui d'avoir été baladés. Bien géré, il aboutit à une vente ferme, souvent au-dessus du prix affiché, et sans rancune. Voici comment j'aborde ces situations. Tous les exemples ci-dessous sont volontairement génériques : je ne commente jamais un dossier réel.
+    contenu: `Il arrive, sur un bien estimé à son juste prix et bien présenté, que plusieurs acquéreurs se déclarent en même temps. Pour un vendeur, c'est une bonne nouvelle. Mais c'est aussi le moment où un mandat se joue vraiment. Mal géré, il laisse un vendeur avec le sentiment d'avoir mal choisi et des acquéreurs avec celui d'avoir été baladés. Bien géré, il aboutit à une vente ferme, souvent au-dessus du prix affiché, et sans rancune. Voici comment j'aborde ces situations. Tous les exemples ci-dessous sont volontairement génériques : je ne commente jamais un dossier réel.
 
-## Une offre n'est pas qu'un chiffre
+## Faut-il toujours accepter l'offre la plus élevée ?
 
-Le réflexe naturel du vendeur est de regarder le montant le plus élevé. C'est une erreur fréquente. Une offre se lit sur trois axes : le prix, la solidité du financement, et le calendrier. Une offre 20'000 francs plus haute mais assortie [d'une condition suspensive de financement](/journal/vente-a-terme-immobilier-vaud) vaut souvent moins qu'une offre ferme, confirmée par la banque, prête à signer. J'ai vu des ventes tomber des semaines après l'acceptation parce qu'on avait retenu le plus offrant plutôt que le plus sûr. Mon rôle, c'est de présenter au vendeur non pas un classement par montant, mais une lecture complète de chaque dossier.
+Non. Le réflexe naturel du vendeur est de regarder le montant le plus élevé, et c'est une erreur fréquente. Une offre se lit sur trois axes : le prix, la solidité du financement, et le calendrier. Une offre de CHF 20'000.- plus haute mais assortie [d'une condition suspensive de financement](/journal/vente-a-terme-immobilier-vaud) vaut souvent moins qu'une offre ferme, confirmée par la banque, prête à signer. J'ai vu des ventes tomber des semaines après l'acceptation parce qu'on avait retenu le plus offrant plutôt que le plus sûr. Mon rôle, c'est de présenter au vendeur non pas un classement par montant, mais une lecture complète de chaque dossier.
 
-## Transparence sur les règles, confidentialité sur les montants
+## Un courtier peut-il faire monter les enchères entre acquéreurs ?
 
-Dès que plusieurs acquéreurs sont en lice, je leur dis la même chose à tous : le bien suscite plusieurs intérêts, voici la date jusqu'à laquelle vous pouvez transmettre votre meilleure offre, et voici comment le vendeur décidera. Ce que je ne fais jamais, c'est communiquer les montants des uns aux autres pour faire monter les enchères. Ce n'est ni loyal, ni utile : un acquéreur poussé au-delà de sa conviction se rétracte ou renégocie à la première occasion. La transparence porte sur les règles du jeu, pas sur les chiffres des concurrents.
+Non, et je m'y refuse. Dès que plusieurs acquéreurs sont en lice, je leur dis la même chose à tous : le bien suscite plusieurs intérêts, voici la date jusqu'à laquelle vous pouvez transmettre votre meilleure offre, et voici comment le vendeur décidera. Ce que je ne fais jamais, c'est communiquer les montants des uns aux autres pour faire monter les enchères. Ce n'est ni loyal, ni utile : un acquéreur poussé au-delà de sa conviction se rétracte ou renégocie à la première occasion. La transparence porte sur les règles du jeu, pas sur les chiffres des concurrents.
 
-## Le vendeur décide, en toute connaissance
+## Le vendeur est-il obligé de vendre au plus offrant ?
 
-En droit suisse, le vendeur n'est jamais obligé de vendre au plus offrant, ni même de vendre du tout tant qu'il n'a pas signé. Tant qu'aucun acte authentique n'est passé devant notaire, [rien n'est définitivement engagé](/journal/vente-a-terme-immobilier-vaud). Cette liberté est précieuse : elle permet au vendeur de choisir l'acquéreur qui offre le meilleur équilibre entre prix, sécurité et calendrier, sans se sentir prisonnier d'une mécanique d'enchères. Mon travail est de lui donner tous les éléments pour trancher, puis de respecter et de porter sa décision.
+Non. En droit suisse, le vendeur n'est jamais obligé de vendre au plus offrant, ni même de vendre du tout tant qu'il n'a pas signé. Tant qu'aucun acte authentique n'est passé devant notaire, [rien n'est définitivement engagé](/journal/vente-a-terme-immobilier-vaud). Cette liberté est précieuse : elle permet au vendeur de choisir l'acquéreur qui offre le meilleur équilibre entre prix, sécurité et calendrier, sans se sentir prisonnier d'une mécanique d'enchères. Mon travail est de lui donner tous les éléments pour trancher, puis de respecter et de porter sa décision.
 
-## Pourquoi le prix final dépasse parfois l'estimation
+## Pourquoi le prix de vente dépasse-t-il parfois le prix affiché ?
 
-Quand un bien part au-dessus du prix affiché, ce n'est pas parce que l'estimation était trop basse. C'est parce que le bien a rencontré, au même moment, plusieurs acquéreurs pour qui il représentait exactement ce qu'ils cherchaient. La rareté fait le prix. Mais cela ne fonctionne qu'à une condition : que [le prix de départ ait été juste](/journal/estimer-son-bien-canton-de-vaud). Un prix affiché trop haut décourage les acquéreurs avant même la visite et tue toute dynamique de concurrence. Un prix juste attire, crée l'affluence, et c'est cette affluence qui, parfois, fait monter le résultat final. Surestimer pour "garder de la marge" produit l'effet exactement inverse.
+Quand un bien part au-dessus du prix affiché, ce n'est pas parce que l'estimation était trop basse. C'est parce que le bien a rencontré, au même moment, plusieurs acquéreurs pour qui il représentait exactement ce qu'ils cherchaient. La rareté fait le prix. Mais cela ne fonctionne qu'à une condition : que [le prix de départ ait été fixé avec justesse](/journal/estimer-son-bien-canton-de-vaud). Un prix affiché trop haut décourage les acquéreurs avant même la visite et tue toute dynamique de concurrence. Un prix juste attire, crée l'affluence, et c'est cette affluence qui, parfois, fait monter le résultat final. Surestimer pour "garder de la marge" produit l'effet exactement inverse.
 
-## Gérer les acquéreurs non retenus
+## Comment annoncer le refus aux acquéreurs non retenus ?
 
-Une vente à plusieurs offres laisse, par définition, des acquéreurs déçus. La façon dont on leur annonce compte. Je préviens chacun personnellement, je remercie de l'intérêt et du temps consacré, et j'explique que le choix s'est fait sur un équilibre global, pas uniquement sur le montant. Sur un marché aussi restreint que le nôtre, les acquéreurs d'aujourd'hui sont ceux de demain : un acheteur non retenu mais traité avec respect reviendra vers moi pour son prochain projet. C'est aussi cela, la différence entre vendre un bien et exercer un métier dans la durée.
+Une vente à plusieurs offres laisse, par définition, des acquéreurs déçus. La façon dont on leur annonce compte. Je préviens chacun personnellement, je remercie de l'intérêt et du temps consacré, et j'explique que le choix s'est fait sur un équilibre global, pas uniquement sur le montant. Sur [un marché aussi restreint que le nôtre](/journal/marche-immobilier-vaudois-rentree-2026), les acquéreurs d'aujourd'hui sont ceux de demain : un acheteur non retenu mais traité avec respect reviendra vers moi pour son prochain projet. C'est aussi cela, la différence entre vendre un bien et exercer un métier dans la durée.
 
 ## Ce que j'en retiens
 
 Une situation à plusieurs offres n'est pas une aubaine à exploiter, c'est une responsabilité à tenir. Le vendeur veut le meilleur résultat, mais aussi une vente qui aboutit sans mauvaise surprise. Les acquéreurs veulent être traités équitablement. Concilier les deux, avec un seul interlocuteur du début à la fin, c'est précisément ce qui distingue une vente bien menée d'une vente simplement conclue.`,
     cta: "Votre bien pourrait susciter plusieurs offres ? Parlons de la manière de le préparer et de l'arbitrer sereinement."
-  },
-  {
-    slug: 'place-de-parc-ppe-droit-preemption-vaud',
-    titre: "Place de parc en PPE : ce que le règlement change quand vous vendez",
-    chapeau: "Vendre une place de parc, un box ou une cave séparément de son appartement n'est pas toujours aussi libre qu'on le croit. Selon l'acte constitutif de la PPE, les autres copropriétaires peuvent disposer d'une priorité. Ce qu'il faut vérifier avant de promettre quoi que ce soit à un acquéreur.",
-    date: '2026-09-01',
-    categorie: 'Juridique',
-    contenu: `C'est une question qui revient souvent dans mes dossiers en PPE : "Je vends mon appartement, mais je garde ma deuxième place de parc, ou je la vends à quelqu'un d'autre. Ai-je le droit ?" La réponse n'est pas dans une règle générale : elle est dans l'acte constitutif et le règlement de votre copropriété. Et elle réserve parfois des surprises.
-
-## Une place de parc peut avoir plusieurs statuts juridiques
-
-Avant même de parler de vente, il faut savoir ce qu'est juridiquement votre place. Dans une PPE vaudoise, elle peut être une part d'étage à part entière, avec son propre feuillet au registre foncier et sa quote-part, ou un simple droit d'usage particulier (droit exclusif) sur une partie commune. Ces deux statuts n'ont pas les mêmes conséquences : une part d'étage indépendante peut en principe se vendre séparément, un droit d'usage rattaché à un lot suit généralement ce lot et ne se cède pas librement à un tiers extérieur.
-
-La première chose que je vérifie sur un dossier avec parking, c'est donc l'[extrait du registre foncier et l'acte constitutif](/journal/documents-vente-immobiliere-vaud), pour établir exactement ce qui est vendu et sous quelle forme.
-
-## Le règlement peut donner une priorité aux copropriétaires
-
-C'est le point que beaucoup de vendeurs découvrent trop tard. De nombreux actes constitutifs et règlements de PPE contiennent une clause réservant aux copropriétaires une priorité, souvent formulée comme un droit de préemption ou une obligation d'offre préalable, lorsqu'une place de parc est vendue à une personne extérieure à la copropriété. L'idée est simple : éviter que des tiers non-habitants ne se retrouvent propriétaires de places dans l'immeuble, ce qui compliquerait la vie de la communauté.
-
-Concrètement, cela peut signifier que vous ne pouvez pas vendre votre place à un acquéreur extérieur sans l'avoir d'abord proposée aux autres copropriétaires, aux conditions prévues par le règlement. Ce n'est pas une règle légale automatique : elle existe uniquement si l'acte de votre PPE la prévoit. D'où l'importance de lire le texte, et non de supposer.
-
-## Pourquoi ça compte au moment de vendre
-
-Ignorer cette clause, c'est risquer de promettre à un acquéreur quelque chose qu'on ne peut pas tenir. J'ai le principe de ne jamais annoncer une place de parc comme "vendue avec le bien" ou "cessible séparément" sans avoir vérifié le règlement. Un acquéreur qui achète un appartement en comptant sur une deuxième place, et qui découvre après coup qu'elle est grevée d'une priorité au bénéfice des voisins, a toutes les raisons de renégocier, voire de se retirer.
-
-La transparence, ici, protège tout le monde : le vendeur contre une renégociation tardive, l'acquéreur contre une mauvaise surprise, et la vente contre un blocage devant le notaire. Comme pour [les servitudes](/journal/servitudes-charges-foncieres-vente-vaud), ce qui crée de la méfiance n'est jamais l'existence de la clause, mais sa découverte au dernier moment.
-
-## Ce que je fais systématiquement
-
-Dès qu'un dossier comporte une ou plusieurs places de parc en PPE, je demande l'acte constitutif, le règlement d'administration et l'extrait du registre foncier, et je vérifie trois choses : le statut juridique exact de chaque place, l'existence éventuelle d'une clause de priorité ou de préemption au profit des copropriétaires, et la répartition des places entre les lots. Ces éléments figurent ensuite noir sur blanc dans le dossier remis aux acquéreurs.
-
-Les règles précises varient d'une copropriété à l'autre, et seule la lecture de vos documents permet de trancher votre cas. Le notaire instrumentant valide ces points avant la signature, mais mieux vaut les avoir clarifiés dès le mandat que de les découvrir la veille de l'acte. Si vous vendez un bien en PPE avec parking dans le canton de Vaud et que vous vous interrogez sur ce que vous pouvez réellement céder, je vérifie ces éléments avec vous avant toute mise en vente.`,
-    cta: "Une vente en PPE avec place de parc ? Contactez-moi, je vérifie ce que vous pouvez réellement vendre avant de vous engager."
   },
 ]
 
