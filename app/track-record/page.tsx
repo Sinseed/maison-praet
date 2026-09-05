@@ -210,6 +210,16 @@ function TypologiesSection() {
         {selected === 'all' ? 'Masquer la liste' : `Voir l'ensemble des ${breakdown.total} mandats`}
       </button>
 
+      {/* Pages dédiées par type (indexables) */}
+      <p className="font-body text-xs tracking-widest uppercase text-brand-muted mt-8">
+        Pages dédiées :{' '}
+        <Link href="/transactions/appartements" className="text-brand-gold hover:text-brand-goldLight transition-colors">Appartements</Link>
+        {' · '}
+        <Link href="/transactions/villas" className="text-brand-gold hover:text-brand-goldLight transition-colors">Villas</Link>
+        {' · '}
+        <Link href="/transactions/maisons" className="text-brand-gold hover:text-brand-goldLight transition-colors">Maisons</Link>
+      </p>
+
       {/* Liste filtrée */}
       {selected !== null && filtered.length > 0 && (
         <div className="mt-10">
