@@ -50,25 +50,54 @@ export default async function CommunePage({ params }: { params: Promise<{ commun
     </div>
   )
 
-  // Biens dans cette commune
-  const biensCommune = MANDATS.filter(m =>
-    m.lieu.toLowerCase().includes(c.nom.toLowerCase()) && m.photos.length > 0
-  ).slice(0, 3)
+  // ── Transactions documentées dans cette commune (source unique : MANDATS) ──
+  const dansCommune = MANDATS.filter(m => m.lieu.toLowerCase().includes(c.nom.toLowerCase()))
+  // Biens publics = ceux qui ont une fiche détaillée (photos). Détails déjà
+  // publics sur /biens/[slug], donc exposables ici sans enjeu de confidentialité.
+  const biensCommune = dansCommune.filter(m => m.photos.length > 0)
+  const biensAffiches = biensCommune.slice(0, 6)
+  const ventesRealisees = biensCommune.filter(m => m.categorie === 'vendu').length
+  // Total documenté : inclut l'historique confidentiel (compté, jamais détaillé,
+  // conformément à la règle de la page track record).
+  const totalDocumente = dansCommune.filter(m => m.photos.length > 0 || m.annee_vente).length
+  const disponibles = biensCommune.filter(m => m.categorie === 'en_vente' || m.categorie === 'reserve')
+
+  // Helpers pour les données structurées
+  const toNumber = (s: string) => { const n = parseInt(s.replace(/[^\d]/g, ''), 10); return isNaN(n) || n === 0 ? undefined : n }
+  const typeSchema = (m: typeof MANDATS[number]) => {
+    const t = m.titre.toLowerCase()
+    if (t.startsWith('immeuble')) return 'ApartmentComplex'
+    if (t.includes('appartement') || t.includes('ppe') || t.includes('attique')) return 'Apartment'
+    if (t.includes('terrain') || t.includes('bien-fonds')) return 'Place'
+    return 'House'
+  }
+  const bienItem = (m: typeof MANDATS[number]) => ({
+    '@type': typeSchema(m),
+    name: `${m.titre} à ${m.lieu}`,
+    url: `https://maisonpraet.ch/biens/${m.slug}`,
+    ...(m.pieces !== '-' ? { numberOfRoomsTotal: m.pieces } : {}),
+    ...(toNumber(m.surface) ? { floorSize: { '@type': 'QuantitativeValue', value: toNumber(m.surface), unitCode: 'MTK' } } : {}),
+    address: { '@type': 'PostalAddress', addressLocality: m.lieu, addressRegion: 'Vaud', addressCountry: 'CH' },
+    ...(toNumber(m.prix) ? { offers: { '@type': 'Offer', price: toNumber(m.prix), priceCurrency: 'CHF', availability: m.categorie === 'vendu' ? 'https://schema.org/SoldOut' : 'https://schema.org/InStock' } } : {}),
+  })
 
   // Articles pertinents (on prend les 3 les plus récents)
   const articlesRecents = [...ARTICLES]
     .sort((a, b) => b.date.localeCompare(a.date))
     .slice(0, 3)
 
-  // Schema LocalBusiness
+  // Schema RealEstateAgent local, rattaché à l'entité principale, avec les
+  // biens actuellement disponibles dans la commune (makesOffer).
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'RealEstateAgent',
+    '@id': `https://maisonpraet.ch/courtier/${commune}#agent`,
     name: `Thomas Praet – Courtier immobilier à ${c.nom}`,
-    description: `Courtier immobilier certifié USPI actif à ${c.nom} et dans la région ${c.region}. Estimation, vente, conseil.`,
+    description: `Courtier immobilier certifié USPI actif à ${c.nom} (${c.region}, canton de Vaud).${totalDocumente > 0 ? ` ${totalDocumente} bien${totalDocumente > 1 ? 's' : ''} traité${totalDocumente > 1 ? 's' : ''} à ${c.nom}.` : ''} Estimation, vente, conseil.`,
     url: `https://maisonpraet.ch/courtier/${commune}`,
     telephone: '+41799690191',
     email: 'tpraet@golay-immobilier.ch',
+    parentOrganization: { '@type': 'RealEstateAgent', '@id': 'https://maisonpraet.ch/#agent', name: 'Maison Praet' },
     address: {
       '@type': 'PostalAddress',
       streetAddress: 'Grand-Chêne 2',
@@ -85,11 +114,35 @@ export default async function CommunePage({ params }: { params: Promise<{ commun
         name: 'Canton de Vaud',
       },
     },
+    ...(disponibles.length > 0 ? {
+      makesOffer: disponibles.map(m => ({
+        '@type': 'Offer',
+        ...(toNumber(m.prix) ? { price: toNumber(m.prix), priceCurrency: 'CHF' } : {}),
+        availability: m.categorie === 'reserve' ? 'https://schema.org/PreOrder' : 'https://schema.org/InStock',
+        itemOffered: bienItem(m),
+      })),
+    } : {}),
   }
+
+  // ItemList : la chaîne factuelle des transactions publiques de la commune,
+  // lisible par les moteurs de réponse (ChatGPT, Perplexity, Google AI Overviews).
+  const transactionsSchema = biensCommune.length > 0 ? {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: `Transactions et biens immobiliers à ${c.nom} – Thomas Praet`,
+    description: `Biens et transactions documentés par Thomas Praet, courtier immobilier, à ${c.nom} (canton de Vaud).`,
+    numberOfItems: biensCommune.length,
+    itemListElement: biensCommune.map((m, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      item: bienItem(m),
+    })),
+  } : null
 
   return (
     <div className="min-h-screen bg-brand-dark pt-24">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      {transactionsSchema && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(transactionsSchema) }} />}
 
       {/* Hero */}
       <div className="max-w-4xl mx-auto px-6 py-16">
@@ -147,29 +200,45 @@ export default async function CommunePage({ params }: { params: Promise<{ commun
         </div>
       </div>
 
-      {/* Biens dans la commune */}
-      {biensCommune.length > 0 && (
+      {/* Transactions & biens documentés dans la commune */}
+      {totalDocumente > 0 && (
         <div className="border-t border-brand-border">
           <div className="max-w-4xl mx-auto px-6 py-16">
-            <Eyebrow className="mb-4">Portefeuille</Eyebrow>
-            <h2 className="font-display text-3xl font-light text-white mb-10">
-              Biens à <span className="italic text-brand-gold">{c.nom}</span>
+            <Eyebrow className="mb-4">Track record local</Eyebrow>
+            <h2 className="font-display text-3xl font-light text-white mb-4">
+              Mes transactions à <span className="italic text-brand-gold">{c.nom}</span>
             </h2>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {biensCommune.map((m, i) => (
-                <Reveal key={m.id} as={Link} href={`/biens/${m.slug}`} delay={i * 90} className="card-luxe group bg-brand-dark border border-brand-border overflow-hidden hover:border-brand-gold/30 hover:-translate-y-1 transition-all duration-500 block">
-                  <div className="relative aspect-[4/3] overflow-hidden">
-                    <Image src={m.photos[0]} alt={m.titre} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" className="object-cover group-hover:scale-105 transition-transform duration-700" />
-                    <div className="absolute top-3 right-3">
-                      <BadgeBien categorie={m.categorie} taille="sm" />
-                    </div>
-                  </div>
-                  <div className="p-5">
-                    <h3 className="font-display text-lg text-white mb-1">{m.titre}</h3>
-                    <PrixBien prix={m.prix} taille="sm" couleur="or" />
-                  </div>
-                </Reveal>
-              ))}
+            <p className="font-body text-brand-text leading-relaxed text-[17px] mb-10 max-w-2xl">
+              {totalDocumente} bien{totalDocumente > 1 ? 's' : ''} documenté{totalDocumente > 1 ? 's' : ''} à {c.nom}{ventesRealisees > 0 ? `, dont ${ventesRealisees} vente${ventesRealisees > 1 ? 's' : ''} récente${ventesRealisees > 1 ? 's' : ''} détaillée${ventesRealisees > 1 ? 's' : ''} ci-dessous` : ''}. Les transactions plus anciennes restent confidentielles par respect de mes clients, mais sont comptabilisées dans mon <Link href="/track-record" className="text-brand-gold underline decoration-brand-gold/40 underline-offset-4 hover:decoration-brand-gold">track record complet</Link>.
+            </p>
+
+            {biensAffiches.length > 0 && (
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                {biensAffiches.map((m, i) => {
+                  const carac = [m.pieces !== '-' ? `${m.pieces} pièces` : null, m.surface !== '-' ? m.surface : null].filter(Boolean).join(' · ')
+                  return (
+                    <Reveal key={m.id} as={Link} href={`/biens/${m.slug}`} delay={i * 90} className="card-luxe group bg-brand-dark border border-brand-border overflow-hidden hover:border-brand-gold/30 hover:-translate-y-1 transition-all duration-500 block">
+                      <div className="relative aspect-[4/3] overflow-hidden">
+                        <Image src={m.photos[0]} alt={`${m.titre} à ${m.lieu}`} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" className="object-cover group-hover:scale-105 transition-transform duration-700" />
+                        <div className="absolute top-3 right-3">
+                          <BadgeBien categorie={m.categorie} taille="sm" />
+                        </div>
+                      </div>
+                      <div className="p-5">
+                        <h3 className="font-display text-lg text-white mb-1">{m.titre}</h3>
+                        {carac && <p className="font-body text-xs text-brand-muted mb-2">{carac}</p>}
+                        <PrixBien prix={m.prix} taille="sm" couleur="or" />
+                      </div>
+                    </Reveal>
+                  )
+                })}
+              </div>
+            )}
+
+            <div className="mt-8">
+              <Link href="/track-record" className="inline-flex items-center gap-2 font-body text-sm text-brand-gold hover:text-brand-goldLight transition-colors">
+                Voir tout mon track record <ArrowRight size={14} />
+              </Link>
             </div>
           </div>
         </div>

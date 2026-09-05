@@ -81,11 +81,21 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       "description": `Thomas Praet, courtier immobilier certifié USPI chez Golay Immobilier SA. Estimation, vente et conseil sur l'arc lémanique et le canton de Vaud. Plus de ${VENTES_PALIER} transactions documentées depuis 2020.`,
       "founder": {
         "@type": "Person",
+        "@id": "https://maisonpraet.ch/#thomas-praet",
         "name": "Thomas Praet",
         "jobTitle": "Courtier immobilier diplômé USPI",
         "telephone": "+41799690191",
         "email": "tpraet@golay-immobilier.ch",
-        "image": "https://maisonpraet.ch/photos/portrait.jpg"
+        "image": "https://maisonpraet.ch/photos/portrait.jpg",
+        "url": "https://maisonpraet.ch/a-propos",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Golay Immobilier SA",
+          "url": "https://www.golay-immobilier.ch"
+        },
+        "sameAs": [
+          "https://ch.linkedin.com/in/thomas-praet"
+        ]
       },
       "foundingDate": "2020",
       "telephone": "+41799690191",
