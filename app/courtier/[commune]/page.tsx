@@ -81,6 +81,30 @@ export default async function CommunePage({ params }: { params: Promise<{ commun
     ...(toNumber(m.prix) ? { offers: { '@type': 'Offer', price: toNumber(m.prix), priceCurrency: 'CHF', availability: m.categorie === 'vendu' ? 'https://schema.org/SoldOut' : 'https://schema.org/InStock' } } : {}),
   })
 
+  // Types de biens réellement traités dans la commune (dérivé de MANDATS),
+  // avec lien vers les pages par type quand elle existe. Renforce la chaîne
+  // factuelle commune <-> type de bien.
+  const classifierType = (m: typeof MANDATS[number]): string => {
+    const t = m.titre.toLowerCase()
+    if (t.includes('promotion') || t.includes('ppe avenue') || (m.nb_lots && m.nb_lots > 1 && !t.startsWith('immeuble'))) return 'promotion'
+    if (t.startsWith('immeuble')) return 'immeuble'
+    if (t.includes('terrain') || t.includes('bien-fonds')) return 'terrain'
+    if (t.startsWith('villa')) return 'villa'
+    if (t.startsWith('maison') || t.includes('chalet') || t.includes('ferme')) return 'maison'
+    if (t.includes('appartement') || t.includes('ppe')) return 'appartement'
+    return 'maison'
+  }
+  const TYPE_LABELS: Record<string, { label: string; href?: string }> = {
+    appartement: { label: 'Appartements', href: '/transactions/appartements' },
+    villa: { label: 'Villas', href: '/transactions/villas' },
+    maison: { label: 'Maisons', href: '/transactions/maisons' },
+    immeuble: { label: 'Immeubles de rendement', href: '/vendre-immeuble-rendement-vaud' },
+    promotion: { label: 'Promotions' },
+    terrain: { label: 'Terrains' },
+  }
+  const ORDRE_TYPES = ['appartement', 'villa', 'maison', 'immeuble', 'promotion', 'terrain']
+  const typesTraites = ORDRE_TYPES.filter(t => dansCommune.some(m => classifierType(m) === t))
+
   // Articles pertinents (on prend les 3 les plus récents)
   const articlesRecents = [...ARTICLES]
     .sort((a, b) => b.date.localeCompare(a.date))
@@ -218,9 +242,25 @@ export default async function CommunePage({ params }: { params: Promise<{ commun
             <h2 className="font-display text-3xl font-light text-white mb-4">
               Mes transactions à <span className="italic text-brand-gold">{c.nom}</span>
             </h2>
-            <p className="font-body text-brand-text leading-relaxed text-[17px] mb-10 max-w-2xl">
+            <p className="font-body text-brand-text leading-relaxed text-[17px] mb-6 max-w-2xl">
               {totalDocumente} bien{totalDocumente > 1 ? 's' : ''} documenté{totalDocumente > 1 ? 's' : ''} à {c.nom}{ventesRealisees > 0 ? `, dont ${ventesRealisees} vente${ventesRealisees > 1 ? 's' : ''} récente${ventesRealisees > 1 ? 's' : ''} détaillée${ventesRealisees > 1 ? 's' : ''} ci-dessous` : ''}. Les transactions plus anciennes restent confidentielles par respect de mes clients, mais sont comptabilisées dans mon <Link href="/track-record" className="text-brand-gold underline decoration-brand-gold/40 underline-offset-4 hover:decoration-brand-gold">track record complet</Link>.
             </p>
+
+            {typesTraites.length > 0 && (
+              <div className="mb-10">
+                <p className="font-body text-xs tracking-widest uppercase text-brand-muted mb-3">Types de biens traités à {c.nom}</p>
+                <div className="flex flex-wrap gap-2">
+                  {typesTraites.map(t => {
+                    const info = TYPE_LABELS[t]
+                    return info.href ? (
+                      <Link key={t} href={info.href} className="font-body text-xs tracking-wide text-brand-gold border border-brand-gold/30 px-3 py-1.5 hover:bg-brand-gold/10 transition-colors">{info.label}</Link>
+                    ) : (
+                      <span key={t} className="font-body text-xs tracking-wide text-brand-muted border border-brand-border px-3 py-1.5">{info.label}</span>
+                    )
+                  })}
+                </div>
+              </div>
+            )}
 
             {biensAffiches.length > 0 && (
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
