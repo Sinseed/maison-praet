@@ -1956,6 +1956,86 @@ Une vente à plusieurs offres laisse, par définition, des acquéreurs déçus. 
 Une situation à plusieurs offres n'est pas une aubaine à exploiter, c'est une responsabilité à tenir. Le vendeur veut le meilleur résultat, mais aussi une vente qui aboutit sans mauvaise surprise. Les acquéreurs veulent être traités équitablement. Concilier les deux, avec un seul interlocuteur du début à la fin, c'est précisément ce qui distingue une vente bien menée d'une vente simplement conclue.`,
     cta: "Votre bien pourrait susciter plusieurs offres ? Parlons de la manière de le préparer et de l'arbitrer sereinement."
   },
+  {
+    slug: 'commission-courtier-immobilier-vaud',
+    titre: "Combien prend un courtier immobilier dans le canton de Vaud ?",
+    chapeau: "Commission au pourcentage ou forfait, ce qu'elle couvre, pourquoi elle est déductible : l'essentiel sur les honoraires d'un courtier immobilier dans le canton de Vaud.",
+    date: '2026-09-05',
+    categorie: 'Guide pratique',
+    contenu: `"Et vous, vous prenez combien ?" C'est souvent la première question d'un propriétaire. Elle est légitime, mais elle est aussi la moins utile si on s'arrête au chiffre. Voici comment fonctionne la rémunération d'un courtier dans le canton de Vaud, et pourquoi le taux n'est pas le bon critère de décision.
+
+## Comment se calcule la commission d'un courtier dans le canton de Vaud ?
+
+La commission de courtage est généralement calculée en pourcentage du prix de vente, plus TVA. Certains courtiers proposent un forfait fixe. Il n'existe pas de tarif réglementé : les honoraires se négocient librement, selon le type de bien, la complexité de la vente et le niveau de service convenu.
+
+Concrètement, la rémunération n'est due qu'en cas de succès : pas de vente, pas de commission. Le courtier avance le temps, l'énergie et les frais de commercialisation, et n'est payé que si la transaction aboutit chez le notaire.
+
+## Pourquoi je ne donne pas de fourchette de taux ?
+
+Comparer des courtiers uniquement sur leur pourcentage, c'est comme choisir un chirurgien sur son tarif. La vraie question n'est pas "combien coûte ce courtier", mais "combien va-t-il me faire gagner, net, une fois sa commission déduite".
+
+Un courtier qui obtient un prix supérieur, tient ce prix face à un acquéreur qui négocie et évite les erreurs coûteuses vous laisse souvent plus dans la poche qu'une vente bradée à moindres frais. Le bon repère, c'est [à quel pourcentage du prix estimé ses biens se vendent réellement](/journal/choisir-son-courtier-suisse-romande), pas son taux d'honoraires.
+
+## La commission est-elle déductible d'impôt ?
+
+Oui, intégralement. La commission de courtage est déductible de [l'impôt sur le gain immobilier](/journal/impot-gain-immobilier-vaud). Ce n'est donc pas une charge sèche : une partie de son coût est neutralisée par l'économie d'impôt réalisée sur la plus-value.
+
+C'est un point que beaucoup de vendeurs ignorent, et qui change l'équation : plus vos frais de vente déductibles sont élevés, moins vous payez d'impôt sur le gain.
+
+## Quand la commission est-elle due ?
+
+En principe à la conclusion de la vente, c'est-à-dire à la signature de l'acte authentique chez le notaire. Le mode de rémunération, le montant et les conditions figurent noir sur blanc dans le mandat de courtage signé au départ.
+
+Dans un [mandat exclusif](/journal/choisir-son-courtier-suisse-romande), le courtier s'engage pleinement parce qu'il sait que son travail sera rémunéré s'il aboutit. C'est ce qui aligne ses intérêts sur les vôtres : il n'a aucune raison de brader votre bien pour conclure vite.
+
+## Forfait ou pourcentage : que choisir ?
+
+Le pourcentage aligne la rémunération du courtier sur le résultat : plus il vend cher, plus il gagne, et vous aussi. Le forfait offre une visibilité totale sur le coût, indépendamment du prix obtenu. Aucun des deux n'est meilleur dans l'absolu.
+
+Ce qui compte, c'est ce que le courtier met en face : se déplace-t-il à chaque visite, vous accompagne-t-il chez le notaire, sait-il argumenter face à un acquéreur qui négocie durement, connaît-il [vraiment votre marché local](/journal/estimer-son-bien-canton-de-vaud) ? La franchise sur ces points en dit plus qu'un taux.
+
+Mon approche : je discute honoraires ouvertement, dès le premier rendez-vous, et je vous explique exactement ce que vous obtenez en face. Pas de zone d'ombre, pas de surprise à la signature.`,
+    cta: "Vous voulez y voir clair sur les honoraires et ce qu'ils couvrent ? Parlons-en, sans engagement."
+  },
+  {
+    slug: 'delai-vente-immobiliere-vaud',
+    titre: "Combien de temps faut-il pour vendre un bien dans le canton de Vaud ?",
+    chapeau: "Quelques semaines pour un bien bien estimé, plusieurs mois pour un bien surévalué : les délais réels de vente dans le canton de Vaud, par type de bien.",
+    date: '2026-09-04',
+    categorie: 'Conseils vendeurs',
+    contenu: `"En combien de temps mon bien sera-t-il vendu ?" La réponse honnête tient en une phrase : cela dépend d'abord du prix. Un bien estimé à son juste prix se vend vite ; un bien surévalué s'installe. Voici les délais réels que j'observe sur le terrain, par type de bien.
+
+## Combien de temps pour vendre un appartement à Lausanne ?
+
+Un appartement estimé à son juste prix et bien présenté trouve généralement preneur en quelques semaines à Lausanne, où la demande est soutenue et le taux de vacance bas. Sur les biens les plus recherchés, [il n'est pas rare de recevoir plusieurs offres](/journal/plusieurs-offres-meme-bien-vaud) dès les premières visites.
+
+À l'inverse, un appartement affiché trop haut peut rester des mois en ligne, et [chaque semaine qui passe érode sa crédibilité](/journal/pourquoi-votre-bien-ne-se-vend-pas).
+
+## Combien de temps pour vendre une villa dans le canton de Vaud ?
+
+Sur le segment tendu de l'arc lémanique, entre CHF 1'000'000.- et CHF 2'000'000.-, une villa correctement estimée se vend souvent en quelques semaines : la demande y dépasse largement l'offre. Les biens plus haut de gamme ou atypiques demandent davantage de temps et une clientèle ciblée.
+
+Le facteur déterminant reste [le juste prix de départ](/journal/estimer-son-bien-canton-de-vaud) : une villa surévaluée, même dans un secteur recherché, ne déclenche pas de visites sérieuses.
+
+## Combien de temps pour vendre un immeuble de rendement ?
+
+Pour un immeuble, le délai dépend surtout de la qualité du dossier et de l'accès aux bons acquéreurs. Une vente peut se mener [de façon confidentielle, hors annonce publique](/vendre-immeuble-rendement-vaud), auprès d'un cercle ciblé d'investisseurs. Un dossier complet, avec un état locatif propre et des charges maîtrisées, se négocie plus vite.
+
+L'investisseur achète du rationnel : moins il découvre de zones d'ombre en cours de route, plus la transaction avance rapidement.
+
+## Pourquoi un bien surévalué met-il plus de temps à se vendre ?
+
+Parce que le marché est informé. Les acquéreurs comparent, et un bien affiché au-dessus de sa valeur est écarté avant même la visite. Il accumule alors les jours en ligne, un signal que [tout acquéreur interprète comme un problème](/journal/pourquoi-votre-bien-ne-se-vend-pas), ce qui renforce sa position de négociation. C'est un cercle vicieux : plus le bien stagne, plus il faut finalement baisser.
+
+Un prix juste dès le premier jour n'est pas seulement plus rapide, il protège aussi votre prix de vente final.
+
+## Combien de temps entre l'accord et la remise des clés ?
+
+Trouver l'acquéreur n'est qu'une étape. Dans le canton de Vaud, la plupart des ventes se signent en la forme de [la vente à terme](/journal/vente-a-terme-immobilier-vaud) : l'acte est signé chez le notaire, mais le transfert de propriété intervient plus tard, le plus souvent trois à neuf mois après.
+
+Ce délai n'est pas une lenteur : il laisse au vendeur le temps d'organiser son déménagement et à l'acquéreur celui de finaliser son financement, tout en sécurisant la transaction pour les deux parties.`,
+    cta: "Vous vous demandez en combien de temps votre bien peut se vendre ? Contactez-moi pour une estimation réaliste, délais compris."
+  },
 ]
 
 // ─── STATISTIQUES PUBLIQUES ─────────────────────────────────────────────────
