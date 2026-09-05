@@ -281,8 +281,42 @@ function Contact() {
 }
 
 function Footer() {
+  const liens: { titre: string; items: { label: string; href: string }[] }[] = [
+    { titre: 'Vendre', items: [
+      { label: 'Vendre un appartement à Lausanne', href: '/vendre-appartement-lausanne' },
+      { label: 'Vendre un immeuble de rendement', href: '/vendre-immeuble-rendement-vaud' },
+      { label: 'Estimation immobilière à Lausanne', href: '/estimation-immobiliere-lausanne' },
+    ]},
+    { titre: 'Régions', items: [
+      { label: 'Courtier immobilier à Lausanne', href: '/courtier/lausanne' },
+      { label: 'Courtier immobilier sur La Côte', href: '/courtier-immobilier-la-cote' },
+      { label: 'Courtier immobilier à Lavaux', href: '/courtier-immobilier-lavaux' },
+    ]},
+    { titre: 'Le cabinet', items: [
+      { label: 'Track record', href: '/track-record' },
+      { label: 'Journal & conseils', href: '/journal' },
+      { label: 'À propos', href: '/a-propos' },
+    ]},
+  ]
   return (
-    <footer className="max-w-7xl mx-auto px-6 py-10 flex flex-col sm:flex-row items-center justify-between gap-4">
+    <>
+    <nav aria-label="Liens utiles" className="border-t border-brand-border">
+      <div className="max-w-7xl mx-auto px-6 py-12 grid grid-cols-2 md:grid-cols-3 gap-8">
+        {liens.map(col => (
+          <div key={col.titre}>
+            <p className="font-body text-xs tracking-widest uppercase text-brand-gold mb-4">{col.titre}</p>
+            <ul className="space-y-2.5">
+              {col.items.map(it => (
+                <li key={it.href}>
+                  <Link href={it.href} className="font-body text-sm text-brand-muted hover:text-brand-gold transition-colors">{it.label}</Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </nav>
+    <footer className="max-w-7xl mx-auto px-6 py-10 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-brand-border">
       <div className="flex items-center gap-4">
         <p className="font-display text-lg text-white">Maison <span className="text-brand-gold">Praet</span></p>
         <span className="h-5 w-px bg-brand-border" aria-hidden="true" />
@@ -295,6 +329,7 @@ function Footer() {
         <p className="font-body text-xs text-brand-muted tracking-wider">© {new Date().getFullYear()} Thomas Praet · Courtier au sein de <a href="https://www.golay-immobilier.ch" target="_blank" rel="noopener noreferrer" className="hover:text-brand-gold transition-colors">Golay Immobilier SA</a>, Lausanne</p>
       </div>
     </footer>
+    </>
   )
 }
 

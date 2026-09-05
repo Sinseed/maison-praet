@@ -1,6 +1,7 @@
 import { MetadataRoute } from 'next'
 import { MANDATS, ARTICLES } from './data'
 import { COMMUNES_SEO_ALL as COMMUNES_SEO } from './courtier/communes-seo'
+import { LANDING_SLUGS } from './courtier/landing-seo'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://maisonpraet.ch'
@@ -44,5 +45,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.75,
   }))
 
-  return [...staticPages, ...communePages, ...articlePages, ...bienPages]
+  const landingPages = LANDING_SLUGS.map(slug => ({
+    url: `${baseUrl}/${slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.85,
+  }))
+
+  return [...staticPages, ...landingPages, ...communePages, ...articlePages, ...bienPages]
 }
