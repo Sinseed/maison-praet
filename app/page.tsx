@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from 'react'
 import { Phone, Mail, MapPin, ArrowRight, Shield, TrendingUp, Users, Camera, BookOpen } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { MANDATS, ARTICLES, STATS, FILTRES, VENTES_PALIER } from './data'
+import { MANDATS, ARTICLES, STATS, FILTRES, VENTES_PALIER, CHIFFRES } from './data'
 import DerniereVente from './components/DerniereVente'
 import Reveal from './components/Reveal'
 import AnimatedNumber from './components/AnimatedNumber'
@@ -100,7 +100,7 @@ function StatsBar() {
           <p className="font-body text-xs tracking-widest uppercase text-brand-muted mt-2">Années d&apos;expérience</p>
         </div>
         <div className="text-center">
-          <p className="font-display text-3xl md:text-4xl font-light text-brand-gold"><AnimatedNumber value={39} /></p>
+          <p className="font-display text-3xl md:text-4xl font-light text-brand-gold"><AnimatedNumber value={CHIFFRES.communes} /></p>
           <p className="font-body text-xs tracking-widest uppercase text-brand-muted mt-2">Communes couvertes</p>
         </div>
         <div className="text-center col-span-2 md:col-span-1">

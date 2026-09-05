@@ -139,10 +139,20 @@ export default async function CommunePage({ params }: { params: Promise<{ commun
     })),
   } : null
 
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://maisonpraet.ch' },
+      { '@type': 'ListItem', position: 2, name: `Courtier immobilier à ${c.nom}`, item: `https://maisonpraet.ch/courtier/${commune}` },
+    ],
+  }
+
   return (
     <div className="min-h-screen bg-brand-dark pt-24">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       {transactionsSchema && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(transactionsSchema) }} />}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 
       {/* Hero */}
       <div className="max-w-4xl mx-auto px-6 py-16">
