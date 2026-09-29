@@ -460,6 +460,26 @@ const COMMUNES_SEO_EXTRA: CommuneSEO[] = [
     pointFort: "Lac de Neuchâtel, calme, prix accessibles, espace",
     terrain: "J'ai un mandat actif à Yvonand sur une maison de caractère. Le nord vaudois offre encore des opportunités réelles pour les acheteurs qui ne sont pas contraints par la proximité genevoise."
   },
+  {
+    slug: 'bursins',
+    nom: 'Bursins',
+    region: 'La Côte',
+    canton: 'Vaud',
+    marche: "Bursins est un village viticole des coteaux de La Côte, entre Rolle et Gland, dominant le vignoble classé et le lac Léman. La commune attire une clientèle patrimoniale en quête de calme, de vues dégagées et de discrétion, à proximité des axes vers Genève et Lausanne. Le marché y est rare et sélectif : peu de transactions annuelles, mais une demande soutenue pour les biens de caractère et les propriétés avec vue.",
+    prix: "Les maisons villageoises et de caractère se négocient généralement entre CHF 1'500'000.- et CHF 3'000'000.-. Les propriétés d'exception avec vue lac et grande parcelle atteignent plusieurs millions.",
+    pointFort: "Vignoble, vue lac et Mont-Blanc, calme, clientèle patrimoniale",
+    terrain: "J'ai un mandat actif à Bursins sur une propriété de maître avec vue sur le lac et le Mont-Blanc. Ces biens rares demandent une clientèle ciblée et une présentation à la hauteur."
+  },
+  {
+    slug: 'cuarny',
+    nom: 'Cuarny',
+    region: 'Nord vaudois',
+    canton: 'Vaud',
+    marche: "Cuarny est un village du plateau qui domine Yverdon-les-Bains, dans le nord vaudois. Ici la campagne est immédiate et l'ambiance résidentielle et calme, à quelques minutes des commodités d'Yverdon et de la sortie d'autoroute. Le marché y est discret, porté par des familles qui cherchent l'espace et un cadre paisible à des prix nettement inférieurs à l'arc lémanique.",
+    prix: "Les villas individuelles et contemporaines se négocient généralement entre CHF 900'000.- et CHF 1'600'000.- selon la surface, l'état et les prestations.",
+    pointFort: "Campagne, calme, proximité d'Yverdon, prix accessibles",
+    terrain: "J'ai un mandat actif à Cuarny sur une villa contemporaine de 2019. Le nord vaudois séduit des familles qui privilégient l'espace et la qualité de construction sans la pression de prix de l'arc lémanique."
+  },
 ]
 
 // Fusionner avec les communes principales
