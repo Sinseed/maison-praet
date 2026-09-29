@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Cormorant_Garamond, Outfit } from 'next/font/google'
+import localFont from 'next/font/local'
 import './globals.css'
 import Nav from './components/Nav'
 import MobileCTA from './components/MobileCTA'
@@ -7,17 +7,33 @@ import { VENTES_PALIER } from './data'
 import ScrollProgress from './components/ScrollProgress'
 import Trackers from './components/Trackers'
 
-const cormorant = Cormorant_Garamond({
-  subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'],
-  style: ['normal', 'italic'],
+// Polices auto-hébergées (woff2 dans app/fonts) : aucun appel à Google Fonts au
+// build -> build déterministe, plus de flake next/font, chargement plus rapide.
+const cormorant = localFont({
+  src: [
+    { path: './fonts/cormorant-garamond-300.woff2', weight: '300', style: 'normal' },
+    { path: './fonts/cormorant-garamond-300-italic.woff2', weight: '300', style: 'italic' },
+    { path: './fonts/cormorant-garamond-400.woff2', weight: '400', style: 'normal' },
+    { path: './fonts/cormorant-garamond-400-italic.woff2', weight: '400', style: 'italic' },
+    { path: './fonts/cormorant-garamond-500.woff2', weight: '500', style: 'normal' },
+    { path: './fonts/cormorant-garamond-500-italic.woff2', weight: '500', style: 'italic' },
+    { path: './fonts/cormorant-garamond-600.woff2', weight: '600', style: 'normal' },
+    { path: './fonts/cormorant-garamond-600-italic.woff2', weight: '600', style: 'italic' },
+    { path: './fonts/cormorant-garamond-700.woff2', weight: '700', style: 'normal' },
+    { path: './fonts/cormorant-garamond-700-italic.woff2', weight: '700', style: 'italic' },
+  ],
   variable: '--font-display',
   display: 'swap',
 })
 
-const outfit = Outfit({
-  subsets: ['latin'],
-  weight: ['200', '300', '400', '500', '600'],
+const outfit = localFont({
+  src: [
+    { path: './fonts/outfit-200.woff2', weight: '200', style: 'normal' },
+    { path: './fonts/outfit-300.woff2', weight: '300', style: 'normal' },
+    { path: './fonts/outfit-400.woff2', weight: '400', style: 'normal' },
+    { path: './fonts/outfit-500.woff2', weight: '500', style: 'normal' },
+    { path: './fonts/outfit-600.woff2', weight: '600', style: 'normal' },
+  ],
   variable: '--font-body',
   display: 'swap',
 })
