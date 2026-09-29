@@ -36,6 +36,33 @@ export type Article = {
 // ─── MANDATS ────────────────────────────────────────────────────────────────
 export const MANDATS: Mandat[] = [
   {
+    id: 231, slug: 'propriete-bursins', titre: 'Propriété de maître', lieu: 'Bursins',
+    prix: "9'400'000", pieces: '-', surface: '690 m²', terrain: "4'358 m²", categorie: 'en_vente',
+    img: '/photos/propriete-bursins/01.jpg',
+    photos: [
+      '/photos/propriete-bursins/01.jpg','/photos/propriete-bursins/02.jpg','/photos/propriete-bursins/03.jpg','/photos/propriete-bursins/04.jpg','/photos/propriete-bursins/05.jpg','/photos/propriete-bursins/06.jpg','/photos/propriete-bursins/07.jpg','/photos/propriete-bursins/08.jpg','/photos/propriete-bursins/09.jpg','/photos/propriete-bursins/10.jpg','/photos/propriete-bursins/11.jpg','/photos/propriete-bursins/12.jpg','/photos/propriete-bursins/13.jpg','/photos/propriete-bursins/14.jpg'
+    ],
+    description: "Au-dessus de Bursins, là où le village s'efface derrière les vignes, un mur d'enceinte et des arbres centenaires ferment un domaine de près d'un demi-hectare. Depuis la terrasse, le regard descend sur les vignobles, traverse le lac Léman et s'arrête sur le Mont-Blanc. La villa principale, sa piscine intérieure ouverte sur le jardin et son appartement de service composent avec une ancienne maison vigneronne reliée par une passerelle. Une propriété de maître rare, sur une parcelle de 4'358 m² face au lac, sur les hauts de La Côte."
+  },
+  {
+    id: 232, slug: 'maison-caractere-lausanne', titre: 'Maison de caractère', lieu: 'Lausanne',
+    prix: "1'990'000", pieces: '6.5', surface: '220 m²', terrain: '232 m²', categorie: 'en_vente',
+    img: '/photos/maison-caractere-lausanne/01.jpg',
+    photos: [
+      '/photos/maison-caractere-lausanne/01.jpg','/photos/maison-caractere-lausanne/02.jpg','/photos/maison-caractere-lausanne/03.jpg','/photos/maison-caractere-lausanne/04.jpg','/photos/maison-caractere-lausanne/05.jpg','/photos/maison-caractere-lausanne/06.jpg','/photos/maison-caractere-lausanne/07.jpg','/photos/maison-caractere-lausanne/08.jpg','/photos/maison-caractere-lausanne/09.jpg','/photos/maison-caractere-lausanne/10.jpg','/photos/maison-caractere-lausanne/11.jpg','/photos/maison-caractere-lausanne/12.jpg'
+    ],
+    description: "Une rue en retrait, à quelques minutes du centre de Lausanne, où l'on entend les oiseaux plutôt que la ville. Cette maison de 1925 occupe une position rare, adossée au coteau, ouverte sur un jardin clos et sur une vue qui porte jusqu'aux hauts de la ville. Elle n'a jamais été dénaturée : les parquets, les moulures, l'escalier tournant et le bow-window du salon sont d'origine. 6.5 pièces sur quatre niveaux, box attenant avec accès direct depuis la chaussée, terrasse et balcon avec vue dégagée."
+  },
+  {
+    id: 230, slug: 'villa-cuarny', titre: 'Villa contemporaine', lieu: 'Cuarny',
+    prix: "1'490'000", pieces: '4.5', surface: '140 m²', terrain: '-', categorie: 'en_vente',
+    img: '/photos/villa-cuarny/01.jpg',
+    photos: [
+      '/photos/villa-cuarny/01.jpg','/photos/villa-cuarny/02.jpg','/photos/villa-cuarny/03.jpg','/photos/villa-cuarny/04.jpg','/photos/villa-cuarny/05.jpg','/photos/villa-cuarny/06.jpg','/photos/villa-cuarny/07.jpg','/photos/villa-cuarny/08.jpg','/photos/villa-cuarny/09.jpg','/photos/villa-cuarny/10.jpg','/photos/villa-cuarny/11.jpg','/photos/villa-cuarny/12.jpg','/photos/villa-cuarny/13.jpg','/photos/villa-cuarny/14.jpg'
+    ],
+    description: "Sur le plateau qui domine Yverdon-les-Bains, la campagne commence au bout du jardin. Construite en 2019 au fond d'une allée privée, ouverte sur les champs et les collines, cette villa contemporaine réunit ce que les familles cherchent longtemps sans le trouver au même endroit : des pièces de vie claires et de plain-pied sur une terrasse sous pergola bioclimatique, un étage entièrement consacré aux nuits, un sous-sol aménagé avec salle de cinéma. Poêle à bois, panneaux solaires, garage pour deux véhicules. Il n'y a rien à reprendre, seulement à poser ses valises."
+  },
+  {
     id: 229, slug: 'attique-prilly', titre: 'Attique 3.5 pièces', lieu: 'Prilly',
     prix: "1'350'000", pieces: '3.5', surface: '92 m²', terrain: '-', categorie: 'en_vente',
     img: '/photos/prilly-attique/01-terrasse-couchant.jpg',
