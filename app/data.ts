@@ -36,6 +36,15 @@ export type Article = {
 // ─── MANDATS ────────────────────────────────────────────────────────────────
 export const MANDATS: Mandat[] = [
   {
+    id: 233, slug: 'appartement-bethusy-lausanne', titre: 'Appartement 2 pièces', lieu: 'Lausanne',
+    prix: "560'000", pieces: '2', surface: '44 m²', terrain: '-', categorie: 'en_vente',
+    img: '/photos/appartement-bethusy-lausanne/01.jpg',
+    photos: [
+      '/photos/appartement-bethusy-lausanne/01.jpg','/photos/appartement-bethusy-lausanne/02.jpg','/photos/appartement-bethusy-lausanne/03.jpg','/photos/appartement-bethusy-lausanne/04.jpg','/photos/appartement-bethusy-lausanne/05.jpg','/photos/appartement-bethusy-lausanne/06.jpg','/photos/appartement-bethusy-lausanne/07.jpg','/photos/appartement-bethusy-lausanne/08.jpg'
+    ],
+    description: "Dans le quartier résidentiel et verdoyant de Béthusy, à quelques minutes du centre de Lausanne, ce 2 pièces occupe le 3e étage d'une résidence de 1972 entourée de verdure. Un séjour et une chambre, une cave et un garage box en sous-sol en propriété. Un bien compact et bien situé, à rafraîchir selon ses goûts, idéal pour un premier achat ou un investissement : l'appartement et le garage sont actuellement loués, avec des baux distincts en cours."
+  },
+  {
     id: 231, slug: 'propriete-bursins', titre: 'Propriété de maître', lieu: 'Bursins',
     prix: "9'400'000", pieces: '-', surface: '690 m²', terrain: "4'358 m²", categorie: 'en_vente',
     img: '/photos/propriete-bursins/01.jpg',
