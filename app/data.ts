@@ -83,7 +83,7 @@ export const MANDATS: Mandat[] = [
   },
   {
     id: 31, slug: 'maison-yvonand', titre: 'Maison de caractère', lieu: 'Yvonand',
-    prix: "1'150'000", pieces: '8', surface: '190 m²', terrain: "1'804 m²", categorie: 'en_vente',
+    prix: "1'150'000", pieces: '8', surface: '190 m²', terrain: "1'804 m²", categorie: 'reserve', datereserve: '2026-10',
     img: '/photos/maison-yvonand/01-vue-aerienne.jpg',
     video: '/videos/maison-yvonand.mp4',
     videoPoster: '/videos/maison-yvonand-poster.jpg',
