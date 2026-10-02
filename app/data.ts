@@ -269,7 +269,7 @@ export const MANDATS: Mandat[] = [
   },
   {
     id: 9, slug: 'maison-tartegnin', titre: 'Maison villageoise', lieu: 'Tartegnin',
-    prix: "1'660'000", pieces: '3.5', surface: '141 m²', terrain: '-', categorie: 'reserve',
+    prix: "1'660'000", pieces: '3.5', surface: '141 m²', terrain: '-', categorie: 'vendu',
     img: '/photos/tartegnin/Retouchées__1_.jpg',
     photos: ['/photos/tartegnin/Retouchées__1_.jpg','/photos/tartegnin/IMG_5604.jpg','/photos/tartegnin/IMG_5745.jpg','/photos/tartegnin/IMG_5746.jpg','/photos/tartegnin/IMG_5747.jpg','/photos/tartegnin/IMG_5748.jpg','/photos/tartegnin/IMG_5749.jpg','/photos/tartegnin/IMG_5750.jpg','/photos/tartegnin/IMG_5752.jpg','/photos/tartegnin/IMG_5755.jpg'],
     description: "Maison villageoise de charme à Tartegnin, au coeur du vignoble de La Côte. Vue lac, piscine, jardin généreux et combles aménagés avec goût. Un cadre de vie rare entre village et nature."
