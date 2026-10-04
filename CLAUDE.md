@@ -198,6 +198,13 @@ consentement nLPD manquant, etc.
 - Ne créer une pull request que si elle est explicitement demandée.
 - `main` bouge vite : en cas de conflit, **résoudre en local** (fetch + merge),
   jamais dans l'éditeur de conflits GitHub.
+- **Vérification visuelle** : après l'ajout ou la modification d'un bien ou
+  d'une page publique, générer une **capture mobile** via Playwright local
+  (Chromium préinstallé dans `/opt/pw-browsers`, `executablePath` sur le binaire
+  ; `npm i --no-save playwright-core`, `next start`, viewport 390×844) et la
+  montrer à Thomas pour validation. Ne **pas** ajouter Playwright à la CI
+  (surcoût, flakes, et le CRM `/app` est intestable en CI puisque Supabase y est
+  bloqué) : l'outil sert à la vérification à la demande, pas en pipeline.
 
 ---
 
