@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import localFont from 'next/font/local'
 import './globals.css'
 import Nav from './components/Nav'
@@ -77,6 +77,10 @@ export const metadata: Metadata = {
     ],
     apple: { url: '/apple-touch-icon.png', sizes: '180x180' },
   },
+}
+
+export const viewport: Viewport = {
+  themeColor: '#0C0F14',
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

@@ -53,6 +53,8 @@ export default function BienGallery({ photos, titre }: { photos: string[], titre
             <button
               key={i}
               onClick={() => setPhotoIdx(i)}
+              aria-label={`Voir la photo ${i + 1} sur ${photos.length}`}
+              aria-current={i === photoIdx}
               className={`relative shrink-0 w-20 h-14 border overflow-hidden transition-all ${i === photoIdx ? 'border-brand-gold' : 'border-brand-border opacity-60 hover:opacity-100'}`}
             >
               <Image src={p} alt="" fill sizes="80px" className="object-cover" />
@@ -62,24 +64,26 @@ export default function BienGallery({ photos, titre }: { photos: string[], titre
       </div>
 
       {lightbox && (
-        <div className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center" onClick={() => setLightbox(false)}>
-          <button className="absolute top-6 right-6 text-white/60 hover:text-white" onClick={() => setLightbox(false)}>
+        <div className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center overscroll-contain" role="dialog" aria-modal="true" aria-label={`Galerie photos — ${titre}`} onClick={() => setLightbox(false)}>
+          <button className="absolute top-6 right-6 text-white/60 hover:text-white" aria-label="Fermer la galerie" onClick={() => setLightbox(false)}>
             <X size={28} />
           </button>
           <button
             className="absolute left-4 top-1/2 -translate-y-1/2 text-white/60 hover:text-white p-2"
+            aria-label="Photo précédente"
             onClick={e => { e.stopPropagation(); prev() }}
           >
             <ChevronLeft size={36} />
           </button>
           <img
             src={photos[photoIdx]}
-            alt=""
+            alt={`${titre} — photo ${photoIdx + 1} sur ${photos.length}`}
             className="max-h-[85vh] max-w-[90vw] object-contain"
             onClick={e => e.stopPropagation()}
           />
           <button
             className="absolute right-4 top-1/2 -translate-y-1/2 text-white/60 hover:text-white p-2"
+            aria-label="Photo suivante"
             onClick={e => { e.stopPropagation(); next() }}
           >
             <ChevronRight size={36} />

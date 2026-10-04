@@ -71,12 +71,12 @@ export default function Nav() {
             )
           ))}
         </div>
-        <button onClick={() => setOpen(!open)} className="md:hidden text-white">
+        <button onClick={() => setOpen(!open)} className="md:hidden text-white" aria-label={open ? 'Fermer le menu' : 'Ouvrir le menu'} aria-expanded={open} aria-controls="menu-mobile">
           {open ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
       {open && (
-        <div className="md:hidden bg-brand-dark/98 backdrop-blur-lg border-t border-brand-border px-6 pb-6 space-y-4">
+        <div id="menu-mobile" className="md:hidden bg-brand-dark/98 backdrop-blur-lg border-t border-brand-border px-6 pb-6 space-y-4">
           {links.map(item => (
             item.href.startsWith('#') ? (
               <a key={item.label} href={item.href} onClick={() => setOpen(false)} className="block font-body text-sm tracking-widest uppercase text-brand-muted hover:text-brand-gold transition-colors">{item.label}</a>
