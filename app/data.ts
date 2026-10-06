@@ -83,7 +83,7 @@ export const MANDATS: Mandat[] = [
   },
   {
     id: 31, slug: 'maison-yvonand', titre: 'Maison de caractère', lieu: 'Yvonand',
-    prix: "1'150'000", pieces: '8', surface: '190 m²', terrain: "1'804 m²", categorie: 'reserve', datereserve: '2026-10',
+    prix: "1'150'000", pieces: '8', surface: '190 m²', terrain: "1'804 m²", categorie: 'vendu', datevente: '2026-10-06',
     img: '/photos/maison-yvonand/01-vue-aerienne.jpg',
     video: '/videos/maison-yvonand.mp4',
     videoPoster: '/videos/maison-yvonand-poster.jpg',
@@ -236,7 +236,7 @@ export const MANDATS: Mandat[] = [
   },
   {
     id: 2, slug: 'immeuble-lausanne-vallon', titre: 'Immeuble de rendement', lieu: 'Lausanne',
-    prix: "6'000'000", pieces: '-', surface: "1'015 m²", terrain: '-', categorie: 'reserve',
+    prix: "6'000'000", pieces: '-', surface: "1'015 m²", terrain: '-', categorie: 'vendu',
     composition: '20 appartements + 1 local commercial',
     img: '/photos/lausanne-vallon/DJI_20260116105551_0007_D.jpg',
     photos: ['/photos/lausanne-vallon/DJI_20260116105551_0007_D.jpg','/photos/lausanne-vallon/IMG_6521.jpg','/photos/lausanne-vallon/IMG_6523.jpg','/photos/lausanne-vallon/IMG_6524.jpg','/photos/lausanne-vallon/IMG_6525.jpg','/photos/lausanne-vallon/IMG_6526.jpg'],
