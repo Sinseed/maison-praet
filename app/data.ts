@@ -36,6 +36,15 @@ export type Article = {
 // ─── MANDATS ────────────────────────────────────────────────────────────────
 export const MANDATS: Mandat[] = [
   {
+    id: 234, slug: 'maison-grandvaux', titre: 'Maison individuelle', lieu: 'Grandvaux',
+    prix: "2'590'000", pieces: '4.5', surface: '173 m²', terrain: "1'582 m²", categorie: 'en_vente',
+    img: '/photos/maison-grandvaux/01.jpg',
+    photos: [
+      '/photos/maison-grandvaux/01.jpg','/photos/maison-grandvaux/02.jpg','/photos/maison-grandvaux/03.jpg','/photos/maison-grandvaux/04.jpg','/photos/maison-grandvaux/05.jpg','/photos/maison-grandvaux/06.jpg','/photos/maison-grandvaux/07.jpg','/photos/maison-grandvaux/08.jpg','/photos/maison-grandvaux/09.jpg','/photos/maison-grandvaux/10.jpg','/photos/maison-grandvaux/11.jpg'
+    ],
+    description: "On entre, et le lac est là. Posée sur le coteau de Grandvaux, au-dessus des vignes en terrasses de Lavaux classées à l'UNESCO, la maison s'ouvre tout entière sur le Léman, la côte savoyarde et les Alpes. Entièrement repensée lors d'une transformation importante entre 2011 et 2013, elle réunit de grandes baies vitrées, une cheminée centrale et une cuisine ouverte sur la vue. 4.5 pièces dont trois chambres, deux entrées indépendantes, cave à vin climatisée et pompe à chaleur. Dehors, un jardin en paliers de plus de 1'300 m² invite à vivre dehors dès les premiers beaux jours, à dix minutes de Lausanne."
+  },
+  {
     id: 233, slug: 'appartement-bethusy-lausanne', titre: 'Appartement 2 pièces', lieu: 'Lausanne',
     prix: "560'000", pieces: '2', surface: '44 m²', terrain: '-', categorie: 'en_vente',
     img: '/photos/appartement-bethusy-lausanne/01.jpg',
