@@ -244,14 +244,6 @@ export const MANDATS: Mandat[] = [
     description: "Maison jumelée d'exception à Gland. Architecture contemporaine, volumes généreux et finitions soignées. Terrasse, jardin privatif et vue dégagée."
   },
   {
-    id: 2, slug: 'immeuble-lausanne-vallon', titre: 'Immeuble de rendement', lieu: 'Lausanne',
-    prix: "6'000'000", pieces: '-', surface: "1'015 m²", terrain: '-', categorie: 'vendu',
-    composition: '20 appartements + 1 local commercial',
-    img: '/photos/lausanne-vallon/DJI_20260116105551_0007_D.jpg',
-    photos: ['/photos/lausanne-vallon/DJI_20260116105551_0007_D.jpg','/photos/lausanne-vallon/IMG_6521.jpg','/photos/lausanne-vallon/IMG_6523.jpg','/photos/lausanne-vallon/IMG_6524.jpg','/photos/lausanne-vallon/IMG_6525.jpg','/photos/lausanne-vallon/IMG_6526.jpg'],
-    description: "Immeuble de rendement à Lausanne, 1'015 m² de surface locative répartis entre 20 appartements et 1 local commercial. Revenus locatifs stables, emplacement urbain recherché. Détails financiers sur demande."
-  },
-  {
     id: 3, slug: 'immeuble-glion', titre: 'Immeuble locatif', lieu: 'Glion',
     prix: "2'420'000", pieces: '-', surface: '-', terrain: '-', categorie: 'en_vente',
     composition: '4 appartements',
