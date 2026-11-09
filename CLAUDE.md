@@ -200,8 +200,10 @@ consentement nLPD manquant, etc.
   jamais dans l'éditeur de conflits GitHub.
 - **Vérification visuelle** : après l'ajout ou la modification d'un bien ou
   d'une page publique, générer une **capture mobile** via Playwright local
-  (Chromium préinstallé dans `/opt/pw-browsers`, `executablePath` sur le binaire
-  ; `npm i --no-save playwright-core`, `next start`, viewport 390×844) et la
+  (Chromium préinstallé dans `/opt/pw-browsers`, binaire auto-détecté via
+  `ls /opt/pw-browsers/chromium-*/chrome-linux*/chrome | head -1` — le chemin
+  change selon la version du conteneur ; `npm i --no-save playwright-core`,
+  `next start`, viewport 390×844) et la
   montrer à Thomas pour validation. Ne **pas** ajouter Playwright à la CI
   (surcoût, flakes, et le CRM `/app` est intestable en CI puisque Supabase y est
   bloqué) : l'outil sert à la vérification à la demande, pas en pipeline.
