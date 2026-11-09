@@ -37,6 +37,8 @@ body::before {
 
 @layer utilities {
   .text-balance { text-wrap: balance; }
+  /* Fûts tabulaires : alignement parfait des chiffres (prix, statistiques) */
+  .tabular-figures { font-variant-numeric: tabular-nums; font-feature-settings: "tnum" 1; }
 }
 
 /* ---- Keyboard focus: visible gold ring (mouse clicks stay clean) ---- */
@@ -142,7 +144,13 @@ body::before {
 }
 
 /* ---- Golden button with a shine sweep on hover ---- */
-.btn-gold { position: relative; overflow: hidden; }
+.btn-gold {
+  position: relative;
+  overflow: hidden;
+  transition-property: transform, background-color, box-shadow;
+  transition-duration: 0.3s;
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
 .btn-gold::before {
   content: '';
   position: absolute;
@@ -154,9 +162,15 @@ body::before {
   z-index: 3;
 }
 .btn-gold:hover::before { transform: translateX(130%) skewX(-20deg); }
+.btn-gold:hover { transform: translateY(-2px); }
 
 /* ---- Luxe card: gradient border glow + layered shadow on hover ---- */
-.card-luxe { position: relative; }
+.card-luxe {
+  position: relative;
+  transition-property: transform, box-shadow, border-color;
+  transition-duration: 0.55s;
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
 .card-luxe::after {
   content: '';
   position: absolute;
@@ -224,4 +238,6 @@ body::before {
   .ken-burns { animation: none; transform: none; }
   .scroll-cue-dot { animation: none; opacity: 0.7; }
   .btn-gold::before { transition: none; }
+  .btn-gold:hover { transform: none; }
+  .card-luxe { transition: none; }
 }

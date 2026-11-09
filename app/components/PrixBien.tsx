@@ -28,7 +28,7 @@ export default function PrixBien({
   return (
     <span className={`inline-flex items-baseline gap-1.5 ${className}`}>
       <span className={`font-body ${tailleChf} text-brand-muted`}>CHF</span>
-      <span className={`font-display ${tailleNum} ${teinte}`}>{prix}.-</span>
+      <span className={`font-display ${tailleNum} ${teinte} tabular-figures`}>{prix}.-</span>
     </span>
   )
 }

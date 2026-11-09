@@ -54,7 +54,7 @@ export default function AnimatedNumber({ value, decimals = 0, duration = 1600, c
   }, [value, duration])
 
   return (
-    <span ref={ref} className={className}>
+    <span ref={ref} className={`${className ?? ''} tabular-figures`}>
       {display.toFixed(decimals)}
     </span>
   )
