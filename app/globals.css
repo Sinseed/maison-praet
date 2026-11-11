@@ -147,6 +147,7 @@ body::before {
 .btn-gold {
   position: relative;
   overflow: hidden;
+  box-shadow: 0 10px 30px -16px rgba(201, 169, 110, 0.5);
   transition-property: transform, background-color, box-shadow;
   transition-duration: 0.3s;
   transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
@@ -167,6 +168,7 @@ body::before {
 /* ---- Luxe card: gradient border glow + layered shadow on hover ---- */
 .card-luxe {
   position: relative;
+  box-shadow: 0 6px 20px -12px rgba(0, 0, 0, 0.55);
   transition-property: transform, box-shadow, border-color;
   transition-duration: 0.55s;
   transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
