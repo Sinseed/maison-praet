@@ -2073,6 +2073,84 @@ Trouver l'acquéreur n'est qu'une étape. Dans le canton de Vaud, la plupart des
 Ce délai n'est pas une lenteur : il laisse au vendeur le temps d'organiser son déménagement et à l'acquéreur celui de finaliser son financement, tout en sécurisant la transaction pour les deux parties.`,
     cta: "Vous vous demandez en combien de temps votre bien peut se vendre ? Contactez-moi pour une estimation réaliste, délais compris."
   },
+  {
+    slug: 'vendre-hiver-ou-printemps-vaud',
+    titre: "Faut-il vendre en hiver ou attendre le printemps dans le canton de Vaud ?",
+    chapeau: "Le printemps est la saison réputée des ventes. Mais vendre en hiver dans le canton de Vaud a des avantages réels. Ce que la saison change vraiment, et ce qui compte plus qu'elle.",
+    date: '2026-11-18',
+    categorie: 'Conseils vendeurs',
+    contenu: `"On attend le printemps pour vendre ?" C'est la question que me posent presque tous les propriétaires à l'approche de l'hiver. La réponse mérite mieux qu'un réflexe : la saison a une influence réelle, mais rarement celle qu'on imagine.
+
+## Le printemps est-il vraiment la meilleure saison pour vendre ?
+
+Oui et non. Le printemps amène plus d'acquéreurs sur le marché : les jardins sont en fleurs, la lumière est belle, les familles veulent emménager avant la rentrée. Mais il amène aussi plus de biens concurrents. Votre annonce se retrouve noyée parmi beaucoup d'autres, et l'acheteur a l'embarras du choix.
+
+Autrement dit, plus de demande, mais plus d'offre : les deux se compensent largement. La saison n'est pas le facteur décisif qu'on croit.
+
+## Quels sont les avantages de vendre en hiver ?
+
+Moins de concurrence et des acheteurs plus sérieux. En hiver, il y a nettement moins de biens sur le marché vaudois : votre bien ressort davantage. Et ceux qui visitent en décembre ou en janvier ne le font pas pour se promener : ce sont des acquéreurs motivés, souvent avec un projet et un financement déjà avancés.
+
+Un bien bien préparé, mis en hiver face à peu de concurrence et à des acheteurs décidés, se vend souvent plus vite qu'au cœur d'un printemps saturé.
+
+## Un bien se vend-il moins cher en hiver ?
+
+Non, pas si le prix est juste. La saison influence surtout le délai et le nombre de visites, pas le prix de vente final. Un acquéreur sérieux ne négocie pas parce qu'on est en novembre : il négocie parce qu'un bien est [surévalué ou mal présenté](/journal/pourquoi-votre-bien-ne-se-vend-pas).
+
+L'idée reçue du "rabais d'hiver" vient de vendeurs pressés qui bradent en fin d'année. Ce n'est pas la saison qui fait le prix, c'est [l'estimation de départ](/journal/estimer-son-bien-canton-de-vaud) et la préparation du dossier.
+
+## Faut-il attendre le printemps si mon bien a un grand jardin ?
+
+C'est le seul cas où la saison compte vraiment. Pour une villa dont l'extérieur est l'atout majeur, un jardin détrempé ou sous la neige vend moins bien le potentiel. Mais la solution n'est pas d'attendre six mois : il suffit d'utiliser des photos prises à la belle saison, ou des images par drone, et de mettre le bien en avant malgré l'hiver.
+
+Reporter une vente de plusieurs mois "pour le printemps" fait perdre un temps précieux, pendant lequel votre situation ou le marché peuvent changer. Mieux vaut bien présenter en hiver qu'attendre une saison idéale qui n'existe pas vraiment.
+
+## Au fond, qu'est-ce qui compte le plus ?
+
+Le juste prix et la préparation, bien avant la saison. Un bien correctement estimé, bien présenté et accompagné se vend en toute saison ; un bien surévalué stagne aussi bien en mai qu'en janvier, et [chaque semaine en ligne lui coûte en crédibilité](/journal/pourquoi-votre-bien-ne-se-vend-pas).
+
+Mon conseil : ne calez pas votre décision sur le calendrier, mais sur votre projet de vie et sur l'état de préparation de votre dossier. Si vous êtes prêt en novembre, vendez en novembre. La bonne saison pour vendre, c'est quand votre bien est prêt à l'être.`,
+    cta: "Vous hésitez sur le moment de mettre votre bien en vente ? Parlons-en, je vous donne un avis franc selon votre situation."
+  },
+  {
+    slug: 'vendre-promoteur-ou-particulier-vaud',
+    titre: "Vendre à un promoteur ou à un particulier : quelles différences ?",
+    chapeau: "Un promoteur achète un potentiel constructible, un particulier un lieu de vie. Prix, délais, conditions, risques : ce qui change selon l'acquéreur dans le canton de Vaud.",
+    date: '2026-11-10',
+    categorie: 'Guide pratique',
+    contenu: `Certains biens intéressent autant un particulier qu'un promoteur : une maison sur une grande parcelle, un bien ancien en zone à densifier, un terrain avec des droits à bâtir non exploités. Les deux acheteurs ne regardent pas la même chose, ne paient pas la même chose, et n'offrent pas les mêmes garanties. Voici comment s'y retrouver dans le canton de Vaud.
+
+## Quand vendre à un promoteur a-t-il du sens ?
+
+Quand c'est le potentiel constructible qui a de la valeur, plus que le bâtiment existant. Une grande parcelle sous-exploitée, une maison vétuste en zone à bâtir dense, des droits à bâtir inutilisés : dans ces cas, un promoteur voit ce qu'on peut construire à la place, et peut proposer davantage qu'un particulier qui, lui, achète le bien tel quel.
+
+À l'inverse, pour une maison de caractère bien entretenue dans un quartier résidentiel, c'est presque toujours un particulier qui valorisera le mieux le bien, parce qu'il achète un art de vivre, pas un terrain.
+
+## Le promoteur paie-t-il plus cher ?
+
+Pas systématiquement. Le promoteur paie la valeur foncière, c'est-à-dire ce qu'il pourra construire et vendre, moins ses coûts et sa marge. Si votre parcelle permet plusieurs logements, cette valeur peut dépasser celle du bien pour un particulier. Mais si le bâti actuel a du charme et une vraie valeur d'usage, un particulier paiera souvent plus, car il valorise ce que le promoteur, lui, compte démolir.
+
+D'où l'importance d'une [double lecture de la valeur](/journal/estimer-son-bien-canton-de-vaud) : valeur d'usage pour un particulier, valeur foncière pour un promoteur. Les deux chiffres peuvent être très différents.
+
+## Quelles différences de conditions et de délais ?
+
+Elles sont majeures. Un particulier achète un bien existant : le processus est relativement simple et rapide, avec un financement bancaire et [une vente à terme classique](/journal/vente-a-terme-immobilier-vaud) de quelques mois.
+
+Un promoteur, lui, achète un projet. Son offre est presque toujours assortie de conditions suspensives : obtention du permis de construire, absence d'opposition, parfois une mise à l'enquête préalable. Les délais s'allongent de plusieurs mois, voire d'un an ou plus, et la vente reste incertaine tant que le permis n'est pas acquis.
+
+## Quels risques pour le vendeur face à un promoteur ?
+
+Le principal risque est que la vente dépende d'un permis qui n'est pas garanti. Une opposition de voisinage, un refus de l'autorité ou un recours peuvent tout retarder, ou faire tomber l'affaire. Pendant ce temps, votre bien est bloqué, retiré du marché.
+
+C'est pourquoi, dans ce type de vente, je veille particulièrement à sécuriser le vendeur : conditions clairement bornées dans le temps, acompte et [peine conventionnelle](/journal/vente-a-terme-immobilier-vaud) adaptés, et possibilité de rester libre si le projet n'aboutit pas dans un délai défini. Une offre de promoteur plus élevée mais pleine d'aléas n'est pas forcément la meilleure.
+
+## Comment savoir quelle voie choisir ?
+
+En faisant estimer son bien sous les deux angles avant de décider. Beaucoup de propriétaires acceptent une offre de promoteur sans savoir ce qu'un particulier aurait donné, ou l'inverse. Mon rôle est de poser les deux scénarios à plat : le prix réaliste côté particulier, le prix réaliste côté promoteur, et surtout les conditions, les délais et les risques de chacun.
+
+La meilleure vente n'est pas toujours la plus chère sur le papier : c'est celle qui, une fois les délais et les aléas intégrés, vous laisse le plus de sécurité et de sérénité. Si votre bien peut intéresser les deux, cela vaut la peine d'y réfléchir avant de signer quoi que ce soit.`,
+    cta: "Votre bien pourrait intéresser un promoteur comme un particulier ? Contactez-moi, j'évalue les deux pistes avant que vous décidiez."
+  },
 ]
 
 // ─── STATISTIQUES PUBLIQUES ─────────────────────────────────────────────────
