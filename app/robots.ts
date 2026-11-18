@@ -6,7 +6,7 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: '*',
         allow: '/',
-        disallow: ['/crm', '/api/'],
+        disallow: ['/app', '/crm', '/api/'],
       },
     ],
     sitemap: 'https://maisonpraet.ch/sitemap.xml',
